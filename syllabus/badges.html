@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>(experimental) Badge Visualizations &#8212; Computer Systems and Programming Tools</title>
+    <title>Badge Visualizations &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="about.html">Computer Systems and Programming Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools and Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="grading.html">Grading</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">(experimental) Badge Visualizations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Badge Visualizations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="badge_calc.html">Badge Calculations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uri_resources.html">Support</a></li>
@@ -401,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>(experimental) Badge Visualizations</h1>
+    <h1>Badge Visualizations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,7 +411,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badge-status">Badge status</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-work-and-experience-badges-process">Prepare work and Experience Badges Process</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-and-practice-badge">Review and Practice Badge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-badges">Explore Badges</a></li>
@@ -427,244 +426,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="experimental-badge-visualizations">
-<h1>(experimental) Badge Visualizations<a class="headerlink" href="#experimental-badge-visualizations" title="Permalink to this headline">#</a></h1>
-<section id="badge-status">
-<h2>Badge status<a class="headerlink" href="#badge-status" title="Permalink to this headline">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>this is not guaranteed to stay up to date with current, but the listed date is accurate.
-You can see the code that generates the figure behind the “click to show” button.  It is  Python code that you should be able to run anywhere with the required libraries installed.</p>
-</div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span><span class="n">timedelta</span>
-<span class="kn">import</span> <span class="nn">calendar</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
-<span class="c1"># style note: when I wrote this code, it was not all one cell. I merged the cells</span>
-<span class="c1"># for display on the course website, since Python is not the main outcome of this course</span>
-
-<span class="c1"># semester settings</span>
-<span class="n">first_day</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
-<span class="n">last_day</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">meeting_days</span> <span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># datetime has 0=Monday</span>
-<span class="n">spring_break</span> <span class="o">=</span> <span class="p">(</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">19</span><span class="p">))</span>
-<span class="n">penalty_free_end</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-
-
-<span class="c1"># enumerate weeks</span>
-<span class="n">weeks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">last_day</span><span class="o">-</span><span class="n">first_day</span><span class="p">)</span><span class="o">.</span><span class="n">days</span><span class="o">/</span><span class="mi">7</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># create differences</span>
-<span class="n">mtg_delta</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">meeting_days</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">meeting_days</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">week_delta</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">skips</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">28</span><span class="p">)]</span>
-<span class="n">weeks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">last_day</span><span class="o">-</span><span class="n">first_day</span><span class="p">)</span><span class="o">.</span><span class="n">days</span><span class="o">/</span><span class="mi">7</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">meeting_days</span> <span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">mtg_delta</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">meeting_days</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">meeting_days</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">week_delta</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-
-<span class="n">during_sb</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">spring_break</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="n">d</span><span class="o">&lt;</span><span class="n">spring_break</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-
-<span class="n">possible</span> <span class="o">=</span> <span class="p">[(</span><span class="n">first_day</span><span class="o">+</span><span class="n">week_delta</span><span class="o">*</span><span class="n">w</span><span class="p">,</span> <span class="n">first_day</span><span class="o">+</span><span class="n">mtg_delta</span><span class="o">+</span><span class="n">week_delta</span><span class="o">*</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">weeks</span><span class="p">)]</span>
-<span class="n">weekly_meetings</span> <span class="o">=</span> <span class="p">[[</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">]</span> <span class="k">for</span> <span class="n">c1</span><span class="p">,</span><span class="n">c2</span> <span class="ow">in</span> <span class="n">possible</span> <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">during_sb</span><span class="p">(</span><span class="n">c1</span><span class="p">))]</span>
-<span class="n">meetings</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">weekly_meetings</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">w</span> <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">m</span> <span class="ow">in</span> <span class="n">skips</span><span class="p">)]</span>
-
-
-<span class="c1"># build a table for the dates</span>
-<span class="n">badge_types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">,</span> <span class="s1">&#39;review&#39;</span><span class="p">,</span> <span class="s1">&#39;practice&#39;</span><span class="p">]</span>
-<span class="n">target_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;review_target&#39;</span><span class="p">,</span><span class="s1">&#39;practice_target&#39;</span><span class="p">]</span>
-<span class="n">df_cols</span> <span class="o">=</span> <span class="n">badge_types</span> <span class="o">+</span> <span class="n">target_cols</span>
-<span class="n">badge_target_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">meetings</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;future&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">df_cols</span><span class="p">)]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">meetings</span><span class="p">),</span>
-                                <span class="n">columns</span><span class="o">=</span><span class="n">df_cols</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
-                                   <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="s1">&#39;date&#39;</span><span class="p">})</span>
-<span class="c1"># set relative dates</span>
-<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-<span class="n">start_deadline</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">complete_deadline</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
-
-<span class="c1"># mark eligible experience badges</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;eligible&#39;</span>
-<span class="c1"># mark targets, cascading from most recent to oldest to not have to check &lt; and &gt;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review_target&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice_target&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review_target&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                          <span class="o">&lt;=</span> <span class="n">start_deadline</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;started&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice_target&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                            <span class="o">&lt;=</span> <span class="n">start_deadline</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;started&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review_target&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                          <span class="o">&lt;=</span> <span class="n">complete_deadline</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;completed&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice_target&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                            <span class="o">&lt;=</span> <span class="n">complete_deadline</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;completed&#39;</span>
-<span class="c1"># mark enforced deadlines</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                          <span class="o">&lt;=</span> <span class="n">start_deadline</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;started&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                            <span class="o">&lt;=</span> <span class="n">start_deadline</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;started&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                          <span class="o">&lt;=</span> <span class="n">complete_deadline</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;completed&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                            <span class="o">&lt;=</span> <span class="n">complete_deadline</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;completed&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                          <span class="o">&lt;=</span> <span class="n">penalty_free_end</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;penalty free&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">][</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-                          <span class="o">&lt;=</span> <span class="n">penalty_free_end</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;penalty free&#39;</span>
-
-<span class="c1"># convert to numbers and set dates as index for heatmap compatibility</span>
-<span class="n">status_numbers_hm</span> <span class="o">=</span> <span class="p">{</span><span class="n">status</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">status</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;future&#39;</span><span class="p">,</span><span class="s1">&#39;eligible&#39;</span><span class="p">,</span><span class="s1">&#39;active&#39;</span><span class="p">,</span><span class="s1">&#39;penalty free&#39;</span><span class="p">,</span><span class="s1">&#39;started&#39;</span><span class="p">,</span><span class="s1">&#39;completed&#39;</span><span class="p">])}</span>
-<span class="n">badge_target_df_hm</span> <span class="o">=</span> <span class="n">badge_target_df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">status_numbers_hm</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
-
-<span class="c1"># set column names to shorter ones to fit better</span>
-<span class="n">badge_target_df_hm</span> <span class="o">=</span> <span class="n">badge_target_df_hm</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;review&#39;</span><span class="p">:</span><span class="s1">&#39;review(e)&#39;</span><span class="p">,</span><span class="s1">&#39;practice&#39;</span><span class="p">:</span><span class="s1">&#39;practice(e)&#39;</span><span class="p">,</span>
-                                                       <span class="s1">&#39;review_target&#39;</span><span class="p">:</span><span class="s1">&#39;review(t)&#39;</span><span class="p">,</span><span class="s1">&#39;practice_target&#39;</span><span class="p">:</span><span class="s1">&#39;practice(t)&#39;</span><span class="p">,})</span>
-<span class="c1"># build a custom color bar </span>
-<span class="n">n_statuses</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">status_numbers_hm</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="n">manual_palette</span> <span class="o">=</span> <span class="p">[</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;pastel&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">7</span><span class="p">],</span>
-                 <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;colorblind&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span>
-                 <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;muted&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span>
-                 <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;colorblind&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">9</span><span class="p">],</span>
-                 <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;colorblind&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">8</span><span class="p">],</span>
-                 <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;colorblind&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">3</span><span class="p">]]</span>
-<span class="c1"># generate the figure, with the colorbar and spacing</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">badge_target_df_hm</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">manual_palette</span><span class="p">,</span><span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># mote titles from bottom tot op</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_top</span><span class="p">()</span>
-<span class="c1"># pull the colorbar object for handling</span>
-<span class="n">colorbar</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">colorbar</span> 
-<span class="c1"># fix the location fo the labels on the colorbar</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">colorbar</span><span class="o">.</span><span class="n">vmax</span> <span class="o">-</span> <span class="n">colorbar</span><span class="o">.</span><span class="n">vmin</span> 
-<span class="n">colorbar</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([</span><span class="n">colorbar</span><span class="o">.</span><span class="n">vmin</span> <span class="o">+</span> <span class="n">r</span> <span class="o">/</span> <span class="n">n_statuses</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_statuses</span><span class="p">)])</span>
-<span class="n">colorbar</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">status_numbers_hm</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-<span class="c1"># add a title</span>
-<span class="n">today_string</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;today&#39;</span><span class="p">,</span><span class="n">today_string</span><span class="p">,</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;today_notdisplayed&#39;</span><span class="p">,</span><span class="s2">&quot;not today&quot;</span><span class="p">,</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Badge Status as of &#39;</span><span class="o">+</span> <span class="n">today_string</span><span class="p">);</span> 
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Badge Status as of 2023-09-07&#39;)
-</pre></div>
-</div>
-<img alt="../_images/85deba767318fb5a862ea89665b24d2cade0e605bef9328855d3441e10f9e5b3.png" src="../_images/85deba767318fb5a862ea89665b24d2cade0e605bef9328855d3441e10f9e5b3.png" />
-</div>
-</div>
-<p>The (e) columns are what will be enforced, the (t) columns is ideal, see the <a class="reference internal" href="grading.html#rp-status"><span class="std std-ref">deadlines section of the syllabus for more on the statuses</span></a> for more detail.</p>
-<p>The following table shows, as of  <span class="output text_plain">‘2023-09-07’</span>, the number of badges with each status.</p>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">status_list_summary</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;eligible&#39;</span><span class="p">,</span> <span class="s1">&#39;penalty free&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="s1">&#39;started&#39;</span><span class="p">,</span> <span class="s1">&#39;completed&#39;</span><span class="p">]</span>
-<span class="n">badge_count_df</span> <span class="o">=</span> <span class="n">badge_target_df</span><span class="p">[</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="n">today</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">status_list_summary</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
-                    <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;exp_ontrack&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">badge_count_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;eligible&#39;</span><span class="p">,</span><span class="s1">&#39;experience&#39;</span><span class="p">]),</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;exp_min&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">badge_count_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;eligible&#39;</span><span class="p">,</span><span class="s1">&#39;experience&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;rp_completed&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">badge_count_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;completed&#39;</span><span class="p">,</span><span class="s1">&#39;review_target&#39;</span><span class="p">]),</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;rp_started&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">badge_count_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;started&#39;</span><span class="p">,</span><span class="s1">&#39;review_target&#39;</span><span class="p">]),</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">badge_count_df</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">status_list_summary</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;eligible&#39;</span><span class="p">,</span> <span class="s1">&#39;penalty free&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="s1">&#39;started&#39;</span><span class="p">,</span> <span class="s1">&#39;completed&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">badge_count_df</span> <span class="o">=</span> <span class="n">badge_target_df</span><span class="p">[</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="n">today</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">status_list_summary</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                     <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">glue</span><span class="p">(</span><span class="s1">&#39;exp_ontrack&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">badge_count_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;eligible&#39;</span><span class="p">,</span><span class="s1">&#39;experience&#39;</span><span class="p">]),</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">glue</span><span class="p">(</span><span class="s1">&#39;exp_min&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">badge_count_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;eligible&#39;</span><span class="p">,</span><span class="s1">&#39;experience&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/indexing.py:1103,</span> in <span class="ni">_LocationIndexer.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span> <span class="n">axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="ow">or</span> <span class="mi">0</span>
-<span class="g g-Whitespace">   </span><span class="mi">1102</span> <span class="n">maybe_callable</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">apply_if_callable</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1103</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_axis</span><span class="p">(</span><span class="n">maybe_callable</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/indexing.py:1332,</span> in <span class="ni">_LocIndexer._getitem_axis</span><span class="nt">(self, key, axis)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1329</span>     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1330</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot index with multidimensional key&quot;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1332</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_iterable</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1334</span> <span class="c1"># nested tuple slicing</span>
-<span class="g g-Whitespace">   </span><span class="mi">1335</span> <span class="k">if</span> <span class="n">is_nested_tuple</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/indexing.py:1272,</span> in <span class="ni">_LocIndexer._getitem_iterable</span><span class="nt">(self, key, axis)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1269</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_key</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1271</span> <span class="c1"># A collection of keys</span>
-<span class="ne">-&gt; </span><span class="mi">1272</span> <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_listlike_indexer</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1273</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_reindex_with_indexers</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1274</span>     <span class="p">{</span><span class="n">axis</span><span class="p">:</span> <span class="p">[</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">]},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">allow_dups</span><span class="o">=</span><span class="kc">True</span>
-<span class="g g-Whitespace">   </span><span class="mi">1275</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/indexing.py:1462,</span> in <span class="ni">_LocIndexer._get_listlike_indexer</span><span class="nt">(self, key, axis)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1459</span> <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_get_axis</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="n">axis_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_get_axis_name</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1462</span> <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">_get_indexer_strict</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis_name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1464</span> <span class="k">return</span> <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/indexes/base.py:5877,</span> in <span class="ni">Index._get_indexer_strict</span><span class="nt">(self, key, axis_name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5874</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5875</span>     <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">new_indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_non_unique</span><span class="p">(</span><span class="n">keyarr</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">5877</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_missing</span><span class="p">(</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis_name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5879</span> <span class="n">keyarr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5880</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">Index</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">5881</span>     <span class="c1"># GH 42790 - Preserve name from an Index</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/indexes/base.py:5941,</span> in <span class="ni">Index._raise_if_missing</span><span class="nt">(self, key, indexer, axis_name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5938</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;None of [</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">] are in the [</span><span class="si">{</span><span class="n">axis_name</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5940</span> <span class="n">not_found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ensure_index</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="n">missing_mask</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="ne">-&gt; </span><span class="mi">5941</span> <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">not_found</span><span class="si">}</span><span class="s2"> not in index&quot;</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: &quot;[&#39;active&#39;, &#39;started&#39;] not in index&quot;
-</pre></div>
-</div>
-</div>
-</div>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This date is formatted like this because it comes from the code</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Remember, there will be 26 badge opportunities, but do not need all of them.  See the <a class="reference internal" href="grading.html#badgecounts"><span class="std std-ref">Learning Badges</span></a> section of the syllabus for how they map into letter grades</p>
-</div>
-</aside>
-<p>This means that, as of <span class="output text_plain">‘2023-09-07’</span> you are fully caught up if you have:</p>
-<ul class="simple">
-<li><p> experience badges submitted.</p></li>
-<li><p> total review and practice badges completed.</p></li>
-<li><p> additional review and/or practice badges started and in progress.</p></li>
-</ul>
-<p>Notes:</p>
-<ul class="simple">
-<li><p>If you do not have at least  experience badges earned, you should visit office hours to get caught up.</p></li>
-<li><p>There are are 6 review and practice badges that are from the penalty free zone, so they never expire.</p></li>
-<li><p>Most of your experience and completed badges should be earned, but there is no deadline to fix issues with them.</p></li>
-</ul>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="badge-visualizations">
+<h1>Badge Visualizations<a class="headerlink" href="#badge-visualizations" title="Permalink to this headline">#</a></h1>
+<p>This page includes more visual versions of the information on the badge page.  You should read both, but this one is often more helpful, because some of the processes take a lot of words to explain and make more sense with a diagram for a lot of people.</p>
 <section id="prepare-work-and-experience-badges-process">
 <h2>Prepare work and Experience Badges Process<a class="headerlink" href="#prepare-work-and-experience-badges-process" title="Permalink to this headline">#</a></h2>
 <p>This is for a single example with specific dates, but it is similar for all future dates</p>
@@ -991,7 +755,6 @@ style earned fill:#2cf
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badge-status">Badge status</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-work-and-experience-badges-process">Prepare work and Experience Badges Process</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-and-practice-badge">Review and Practice Badge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-badges">Explore Badges</a></li>
