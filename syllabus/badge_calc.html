@@ -1,0 +1,1043 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Badge Calculations &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'syllabus/badge_calc';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Schedule" href="schedule.html" />
+    <link rel="prev" title="(experimental) Badge Visualizations" href="badges.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="badges.html">(experimental) Badge Visualizations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Badge Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uri_resources.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uri_statements.html">General URI Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notes/2023-09-07.html">1. Welcome</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">More Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">KWL File Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/spring2023# The URL to your book's repository" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/spring2023# The URL to your book's repository/edit/main/syllabus/badge_calc.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/spring2023# The URL to your book's repository/issues/new?title=Issue%20on%20page%20%2Fsyllabus/badge_calc.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/syllabus/badge_calc.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Badge Calculations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="badge-calculations">
+<h1>Badge Calculations<a class="headerlink" href="#badge-calculations" title="Permalink to this headline">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This page is generated with code and calculations, you can view them for more precise implementations of what the english sentences mean.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span><span class="n">timedelta</span>
+<span class="kn">import</span> <span class="nn">calendar</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="c1"># learning complexities</span>
+<span class="n">weights_mrw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;experience&#39;</span> <span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;review&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span><span class="s1">&#39;practice&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span><span class="s1">&#39;explore&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span><span class="s1">&#39;build&#39;</span> <span class="p">:</span><span class="mi">36</span><span class="p">}</span>
+<span class="c1"># base grade influence cutoffs</span>
+<span class="n">thresh_mrw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;D &#39;</span><span class="p">:</span><span class="mi">23</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">],</span> <span class="s1">&#39;C &#39;</span><span class="p">:</span><span class="mi">23</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">18</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">],</span>
+          <span class="s1">&#39;B &#39;</span><span class="p">:</span><span class="mi">23</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">18</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">],</span>
+          <span class="s1">&#39;A &#39;</span><span class="p">:</span> <span class="mi">23</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">18</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;explore&#39;</span><span class="p">]}</span>
+
+<span class="n">examples_mrw</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">24</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">24</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">ex_df_mrw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">examples_mrw</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">weights_mrw</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">w_df_mrw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[(</span><span class="n">ex_df_mrw</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="n">col</span><span class="p">])</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">weights_mrw</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">col</span><span class="p">:</span><span class="n">col</span> <span class="o">+</span> <span class="s1">&#39;_weight&#39;</span><span class="p">)</span>
+<span class="n">w_df_mrw</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">w_df_mrw</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># [ex_df[col]*weights[col] for col in weights]</span>
+<span class="c1"># columns = [col + &#39;_weight&#39; for col in weights ]</span>
+<span class="n">badge_thresh_df_mrw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">ex_df_mrw</span><span class="p">,</span><span class="n">w_df_mrw</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+
+<span class="n">delta</span> <span class="o">=</span> <span class="n">thresh_mrw</span><span class="p">[</span><span class="s1">&#39;C &#39;</span><span class="p">]</span><span class="o">-</span><span class="n">thresh_mrw</span><span class="p">[</span><span class="s1">&#39;D &#39;</span><span class="p">]</span>
+<span class="n">minus_thresh</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">-</span><span class="n">delta</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">thresh_mrw</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="n">minus_thresh</span>
+
+<span class="n">plus_thresh</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;+&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="n">delta</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">thresh_mrw</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="c1"># calculate the final thresholds for all leter grades</span>
+<span class="n">thresh_mrw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">minus_thresh</span><span class="p">)</span>
+<span class="n">thresh_mrw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plus_thresh</span><span class="p">)</span>
+<span class="n">thresh_mrw</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;A+&#39;</span><span class="p">);</span>
+
+<span class="n">ind_badges_mrw</span> <span class="o">=</span> <span class="p">[[</span><span class="n">exid</span><span class="p">,</span><span class="n">bt</span><span class="p">,</span><span class="n">bw</span><span class="p">,</span><span class="n">bc</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">examples_mrw</span><span class="p">)</span> <span class="k">for</span> <span class="n">bc</span><span class="p">,(</span><span class="n">bt</span><span class="p">,</span><span class="n">bw</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="n">weights_mrw</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> 
+                                      <span class="k">for</span> <span class="n">exid</span> <span class="ow">in</span> <span class="n">bc</span><span class="o">*</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+<span class="n">per_badge_df_mrw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ind_badges_mrw</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="s1">&#39;badge&#39;</span><span class="p">,</span><span class="s1">&#39;complexity&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+
+<span class="c1"># weight community badges, </span>
+<span class="n">community_weights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;plus&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="o">*</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;experience_makeup&#39;</span><span class="p">:</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>
+                    <span class="s1">&#39;review_makeup&#39;</span><span class="p">:</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span>
+                     <span class="s1">&#39;review_upgrade&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>
+                    <span class="s1">&#39;practice_makeup&#39;</span><span class="p">:</span><span class="n">weights_mrw</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">7</span><span class="p">}</span>
+
+<span class="n">learning_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">weights_mrw</span><span class="p">,</span><span class="n">name</span> <span class="o">=</span><span class="s1">&#39;complexity&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">learning_df</span><span class="p">[</span><span class="s1">&#39;badge_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;learning&#39;</span>
+<span class="n">comm_df</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">community_weights</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">comm_df</span><span class="p">[</span><span class="s1">&#39;badge_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;community&#39;</span>
+<span class="c1"># nans are for learning badges which all ahve weight 1</span>
+<span class="n">influence_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">learning_df</span><span class="p">,</span><span class="n">comm_df</span><span class="p">])</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span><span class="s1">&#39;badge&#39;</span><span class="p">})</span>
+<span class="c1"># final df</span>
+<span class="n">influence_df</span><span class="p">[</span><span class="s1">&#39;influence&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">influence_df</span><span class="p">[</span><span class="s1">&#39;complexity&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">influence_df</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Grade cutorrs are:</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">th_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">thresh_mrw</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">th_list</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;letter&#39;</span><span class="p">,</span><span class="s1">&#39;threshold&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;threshold&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;letter&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>threshold</th>
+    </tr>
+    <tr>
+      <th>letter</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>D-</th>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>46</td>
+    </tr>
+    <tr>
+      <th>D+</th>
+      <td>64</td>
+    </tr>
+    <tr>
+      <th>C-</th>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>C+</th>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>B-</th>
+      <td>136</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>154</td>
+    </tr>
+    <tr>
+      <th>B+</th>
+      <td>172</td>
+    </tr>
+    <tr>
+      <th>A-</th>
+      <td>190</td>
+    </tr>
+    <tr>
+      <th>A</th>
+      <td>208</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The total influence of each badge is as follows:</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display</span>
+<span class="n">influence_df</span><span class="p">[[</span><span class="s1">&#39;badge_type&#39;</span><span class="p">,</span><span class="s1">&#39;badge&#39;</span><span class="p">,</span><span class="s1">&#39;complexity&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span><span class="s1">&#39;influence&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>badge_type</th>
+      <th>badge</th>
+      <th>complexity</th>
+      <th>weight</th>
+      <th>influence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>learning</td>
+      <td>experience</td>
+      <td>2.0</td>
+      <td>1.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>learning</td>
+      <td>review</td>
+      <td>3.0</td>
+      <td>1.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>learning</td>
+      <td>practice</td>
+      <td>6.0</td>
+      <td>1.000000</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>learning</td>
+      <td>explore</td>
+      <td>9.0</td>
+      <td>1.000000</td>
+      <td>9.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>learning</td>
+      <td>build</td>
+      <td>36.0</td>
+      <td>1.000000</td>
+      <td>36.000000</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>community</td>
+      <td>plus</td>
+      <td>1.0</td>
+      <td>1.800000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>community</td>
+      <td>experience_makeup</td>
+      <td>1.0</td>
+      <td>0.666667</td>
+      <td>0.666667</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>community</td>
+      <td>review_makeup</td>
+      <td>1.0</td>
+      <td>0.750000</td>
+      <td>0.750000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>community</td>
+      <td>review_upgrade</td>
+      <td>1.0</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>community</td>
+      <td>practice_makeup</td>
+      <td>1.0</td>
+      <td>0.857143</td>
+      <td>0.857143</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example calculation helper functions</span>
+<span class="k">def</span> <span class="nf">commumunity_example</span><span class="p">(</span><span class="n">badges</span><span class="p">,</span><span class="n">exid</span><span class="p">,</span><span class="n">cw_type</span><span class="p">):</span>
+    <span class="n">case_weights</span> <span class="o">=</span> <span class="n">weights_mrw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">case_weights</span><span class="p">[</span><span class="s1">&#39;community&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">community_weights</span><span class="p">[</span><span class="n">cw_type</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">exid</span><span class="p">,</span><span class="n">bt</span><span class="p">,</span><span class="n">bw</span><span class="p">,</span><span class="n">bc</span><span class="p">]</span> <span class="k">for</span> <span class="n">bc</span><span class="p">,(</span><span class="n">bt</span><span class="p">,</span><span class="n">bw</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">badges</span><span class="p">,</span><span class="n">case_weights</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> 
+                                      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bc</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">commumunity_example</span><span class="p">(</span><span class="n">badges</span><span class="p">,</span><span class="n">exid</span><span class="p">,</span><span class="n">cw_type</span><span class="p">):</span>
+    <span class="n">case_weights</span> <span class="o">=</span> <span class="n">weights_mrw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">cw_type</span><span class="p">)</span><span class="o">==</span><span class="nb">list</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">cw</span> <span class="ow">in</span> <span class="n">cw_type</span><span class="p">:</span>
+            <span class="n">case_weights</span><span class="p">[</span><span class="s1">&#39;community_&#39;</span><span class="o">+</span><span class="n">cw</span><span class="p">]</span> <span class="o">=</span> <span class="n">community_weights</span><span class="p">[</span><span class="n">cw</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">case_weights</span><span class="p">[</span><span class="s1">&#39;community&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">community_weights</span><span class="p">[</span><span class="n">cw_type</span><span class="p">]</span>
+<span class="c1">#     print(badge)</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">exid</span><span class="p">,</span><span class="n">bt</span><span class="p">,</span><span class="n">bt</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="n">bw</span><span class="p">,</span><span class="n">bc</span><span class="p">]</span> <span class="k">for</span> <span class="n">bc</span><span class="p">,(</span><span class="n">bt</span><span class="p">,</span><span class="n">bw</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">badges</span><span class="p">,</span><span class="n">case_weights</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> 
+                                      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bc</span><span class="p">)]</span>
+<span class="c1"># </span>
+
+
+<span class="k">def</span> <span class="nf">get_row</span><span class="p">(</span><span class="n">exid</span><span class="p">,</span><span class="n">badge_detail</span><span class="p">,</span><span class="n">badge_category</span><span class="p">,</span><span class="n">badge_mult</span><span class="p">,</span><span class="n">badge_count</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;community&#39;</span> <span class="ow">in</span> <span class="n">badge_detail</span><span class="p">:</span>
+        <span class="n">badge_complexity</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">badge_weight</span> <span class="o">=</span> <span class="n">badge_mult</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">badge_complexity</span> <span class="o">=</span> <span class="n">badge_mult</span>
+        <span class="n">badge_weight</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="n">badge_row</span> <span class="o">=</span> <span class="p">[</span><span class="n">exid</span><span class="p">,</span><span class="n">badge_detail</span><span class="p">,</span><span class="n">badge_category</span><span class="p">,</span>
+                 <span class="n">badge_complexity</span><span class="p">,</span> <span class="n">badge_weight</span><span class="p">,</span><span class="n">badge_count</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">badge_row</span>
+
+<span class="k">def</span> <span class="nf">commumunity_example_comp_w</span><span class="p">(</span><span class="n">badges</span><span class="p">,</span><span class="n">exid</span><span class="p">,</span><span class="n">cw_type</span><span class="p">):</span>
+    <span class="n">case_weights</span> <span class="o">=</span> <span class="n">weights_mrw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">cw_type</span><span class="p">)</span><span class="o">==</span><span class="nb">list</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">cw</span> <span class="ow">in</span> <span class="n">cw_type</span><span class="p">:</span>
+            <span class="n">case_weights</span><span class="p">[</span><span class="s1">&#39;community_&#39;</span><span class="o">+</span><span class="n">cw</span><span class="p">]</span> <span class="o">=</span> <span class="n">community_weights</span><span class="p">[</span><span class="n">cw</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">case_weights</span><span class="p">[</span><span class="s1">&#39;community&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">community_weights</span><span class="p">[</span><span class="n">cw_type</span><span class="p">]</span>
+<span class="c1">#     print(badge)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">get_row</span><span class="p">(</span><span class="n">exid</span><span class="p">,</span><span class="n">bt</span><span class="p">,</span><span class="n">bt</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="n">bw</span><span class="p">,</span><span class="n">bc</span><span class="p">)</span> <span class="k">for</span> <span class="n">bc</span><span class="p">,(</span><span class="n">bt</span><span class="p">,</span><span class="n">bw</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">badges</span><span class="p">,</span><span class="n">case_weights</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> 
+                                      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bc</span><span class="p">)]</span>
+<span class="c1"># make more examples</span>
+<span class="n">ind_badges_mrw_c</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_row</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exid</span><span class="p">),</span><span class="n">bt</span><span class="p">,</span><span class="n">bt</span><span class="p">,</span><span class="n">bw</span><span class="p">,</span><span class="n">bc</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">examples_mrw</span><span class="p">)</span> <span class="k">for</span> <span class="n">bc</span><span class="p">,(</span><span class="n">bt</span><span class="p">,</span><span class="n">bw</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="n">weights_mrw</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> 
+                                      <span class="k">for</span> <span class="n">exid</span> <span class="ow">in</span> <span class="n">bc</span><span class="o">*</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+
+<span class="n">examples_mrw_cplus</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+                     <span class="p">[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]]</span>
+<span class="n">ind_badges_mrw_c</span> <span class="o">+=</span><span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">examples_mrw_cplus</span><span class="p">)</span> 
+                    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">commumunity_example_comp_w</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;cp&#39;</span><span class="p">,[</span><span class="s1">&#39;plus&#39;</span><span class="p">])]</span>
+<span class="n">examples_mrw_em</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">22</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">21</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">23</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">13</span><span class="p">],[</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">],[</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">]]</span>
+<span class="n">ind_badges_mrw_c</span> <span class="o">+=</span><span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">examples_mrw_em</span><span class="p">)</span> 
+                    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">commumunity_example_comp_w</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;cem&#39;</span><span class="p">,[</span><span class="s1">&#39;experience_makeup&#39;</span><span class="p">])]</span>
+<span class="n">examples_mrw_rm</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">22</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">24</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">]]</span>
+<span class="n">ind_badges_mrw_c</span> <span class="o">+=</span><span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">examples_mrw_rm</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> 
+                    <span class="n">commumunity_example_comp_w</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;cemrm&#39;</span><span class="p">,[</span><span class="s1">&#39;experience_makeup&#39;</span><span class="p">,</span><span class="s1">&#39;review_makeup&#39;</span><span class="p">])]</span>
+<span class="n">examples_mrw_ru</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">14</span><span class="p">],[</span><span class="mi">23</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">]]</span>
+<span class="n">ind_badges_mrw_c</span> <span class="o">+=</span><span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">examples_mrw_ru</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> 
+                    <span class="n">commumunity_example_comp_w</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;cemrupm&#39;</span><span class="p">,[</span><span class="s1">&#39;experience_makeup&#39;</span><span class="p">,</span><span class="s1">&#39;review_upgrade&#39;</span><span class="p">,</span><span class="s1">&#39;practice_makeup&#39;</span><span class="p">])]</span>
+<span class="c1"># ind_badges_mrw_c</span>
+
+<span class="n">per_badge_df_mrw_c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ind_badges_mrw_c</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="s1">&#39;badge_det&#39;</span><span class="p">,</span><span class="s1">&#39;badge&#39;</span><span class="p">,</span>
+                                                            <span class="s1">&#39;complexity&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+<span class="n">per_badge_df_mrw_c</span><span class="p">[</span><span class="s1">&#39;influence&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">per_badge_df_mrw_c</span><span class="p">[</span><span class="s1">&#39;complexity&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">per_badge_df_mrw_c</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+
+<span class="c1"># get example letter grades</span>
+<span class="n">grade_calc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">-</span><span class="mi">48</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">delta</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">delta</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">48</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">ex_grade</span> <span class="o">=</span> <span class="n">per_badge_df_mrw_c</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;example&#39;</span><span class="p">])[</span><span class="s1">&#39;influence&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">grade_calc</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                    <span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;influence&#39;</span><span class="p">:</span><span class="s1">&#39;influence_total&#39;</span><span class="p">})</span>
+
+<span class="n">thresh_mrw_rv</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">thresh_mrw</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="n">ex_grade</span><span class="p">[</span><span class="s1">&#39;letter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ex_grade</span><span class="p">[</span><span class="s1">&#39;influence_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">thresh_mrw_rv</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+
+<span class="c1"># ex_grade = ((per_badge_df_mrw_c.groupby([&#39;example&#39;])[&#39;influence&#39;].sum()-48).floordiv((delta/3))*(delta/3)+48).astype(int).reset_index()</span>
+
+
+<span class="n">per_badge_df_mrw_cletter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">per_badge_df_mrw_c</span><span class="p">,</span><span class="n">ex_grade</span><span class="p">[[</span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="s1">&#39;letter&#39;</span><span class="p">,</span><span class="s1">&#39;influence_total&#39;</span><span class="p">]],</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+
+<span class="c1"># sort to improve visual display</span>
+<span class="n">badges_in_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">,</span><span class="s1">&#39;community_experience_makeup&#39;</span><span class="p">,</span> <span class="s1">&#39;review&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;community_review_makeup&#39;</span><span class="p">,</span><span class="s1">&#39;community_review_upgrade&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;practice&#39;</span><span class="p">,</span><span class="s1">&#39;community_practice_makeup&#39;</span><span class="p">,</span> <span class="s1">&#39;explore&#39;</span><span class="p">,</span> <span class="s1">&#39;build&#39;</span><span class="p">,</span><span class="s1">&#39;community_plus&#39;</span><span class="p">]</span>
+<span class="n">badge_order_num</span> <span class="o">=</span><span class="p">{</span><span class="n">b</span><span class="p">:</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">badges_in_order</span><span class="p">)}</span>
+<span class="n">per_badge_df_mrw_cletter</span><span class="p">[</span><span class="s1">&#39;badge_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">per_badge_df_mrw_cletter</span><span class="p">[</span><span class="s1">&#39;badge_det&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">bd</span><span class="p">:</span><span class="n">badge_order_num</span><span class="p">[</span><span class="n">bd</span><span class="p">])</span>
+
+<span class="c1"># per_badge_df_mrw_c= per_badge_df_mrw_c.sort_values(by=&#39;example&#39;)</span>
+<span class="n">per_badge_df_mrw_cletter</span> <span class="o">=</span> <span class="n">per_badge_df_mrw_cletter</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;badge_num&#39;</span><span class="p">,</span><span class="s1">&#39;influence_total&#39;</span><span class="p">],</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">72</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="n">ex_grade</span> <span class="o">=</span> <span class="n">per_badge_df_mrw_c</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;example&#39;</span><span class="p">])[</span><span class="s1">&#39;influence&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">grade_calc</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>                     <span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;influence&#39;</span><span class="p">:</span><span class="s1">&#39;influence_total&#39;</span><span class="p">})</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="n">thresh_mrw_rv</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">thresh_mrw</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="ne">---&gt; </span><span class="mi">72</span> <span class="n">ex_grade</span><span class="p">[</span><span class="s1">&#39;letter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ex_grade</span><span class="p">[</span><span class="s1">&#39;influence_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">thresh_mrw_rv</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="c1"># ex_grade = ((per_badge_df_mrw_c.groupby([&#39;example&#39;])[&#39;influence&#39;].sum()-48).floordiv((delta/3))*(delta/3)+48).astype(int).reset_index()</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="n">per_badge_df_mrw_cletter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">per_badge_df_mrw_c</span><span class="p">,</span><span class="n">ex_grade</span><span class="p">[[</span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="s1">&#39;letter&#39;</span><span class="p">,</span><span class="s1">&#39;influence_total&#39;</span><span class="p">]],</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/series.py:4630,</span> in <span class="ni">Series.apply</span><span class="nt">(self, func, convert_dtype, args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4520</span> <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4521</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4522</span>     <span class="n">func</span><span class="p">:</span> <span class="n">AggFuncType</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4525</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4526</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Series</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4527</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4528</span><span class="sd">     Invoke function on values of Series.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4529</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4628</span><span class="sd">     dtype: float64</span>
+<span class="g g-Whitespace">   </span><span class="mi">4629</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4630</span>     <span class="k">return</span> <span class="n">SeriesApply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">convert_dtype</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/apply.py:1025,</span> in <span class="ni">SeriesApply.apply</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_str</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="c1"># self.f is Callable</span>
+<span class="ne">-&gt; </span><span class="mi">1025</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_standard</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/apply.py:1076,</span> in <span class="ni">SeriesApply.apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1074</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1075</span>         <span class="n">values</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span><span class="o">.</span><span class="n">_values</span>
+<span class="ne">-&gt; </span><span class="mi">1076</span>         <span class="n">mapped</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">map_infer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1077</span>             <span class="n">values</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1078</span>             <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1079</span>             <span class="n">convert</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">convert_dtype</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1080</span>         <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1082</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mapped</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mapped</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ABCSeries</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1083</span>     <span class="c1"># GH#43986 Need to do list(mapped) in order to get treated as nested</span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span>     <span class="c1">#  See also GH#25959 regarding EA support</span>
+<span class="g g-Whitespace">   </span><span class="mi">1085</span>     <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">_constructor_expanddim</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">mapped</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/_libs/lib.pyx:2834,</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">Cell In[4], line 72,</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(v)</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="n">ex_grade</span> <span class="o">=</span> <span class="n">per_badge_df_mrw_c</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;example&#39;</span><span class="p">])[</span><span class="s1">&#39;influence&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">grade_calc</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>                     <span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;influence&#39;</span><span class="p">:</span><span class="s1">&#39;influence_total&#39;</span><span class="p">})</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="n">thresh_mrw_rv</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">thresh_mrw</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="ne">---&gt; </span><span class="mi">72</span> <span class="n">ex_grade</span><span class="p">[</span><span class="s1">&#39;letter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ex_grade</span><span class="p">[</span><span class="s1">&#39;influence_total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">thresh_mrw_rv</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="c1"># ex_grade = ((per_badge_df_mrw_c.groupby([&#39;example&#39;])[&#39;influence&#39;].sum()-48).floordiv((delta/3))*(delta/3)+48).astype(int).reset_index()</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="n">per_badge_df_mrw_cletter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">per_badge_df_mrw_c</span><span class="p">,</span><span class="n">ex_grade</span><span class="p">[[</span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="s1">&#39;letter&#39;</span><span class="p">,</span><span class="s1">&#39;influence_total&#39;</span><span class="p">]],</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: 48
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make plot</span>
+<span class="n">fig_cur</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">per_badge_df_mrw_cletter</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;influence&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;badge_det&#39;</span><span class="p">,</span>
+                 <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;badge&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">,</span><span class="s1">&#39;letter&#39;</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
+<span class="n">fig_cur</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">tickmode</span><span class="o">=</span><span class="s1">&#39;array&#39;</span><span class="p">,</span>
+                              <span class="n">tickvals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">thresh_mrw</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+                              <span class="n">ticktext</span> <span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">thresh_mrw</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+                                  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;grade&#39;</span><span class="p">))</span>
+<span class="c1"># fig.update_layout( xaxis={&#39;categoryorder&#39;:&#39;array&#39;,&#39;categoryarray&#39;:per_badge_df_mrw_cletter[&#39;influence_total&#39;].unique()})</span>
+<span class="n">fig_cur</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># make plot</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">fig_cur</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">per_badge_df_mrw_cletter</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;influence&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;badge_det&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                  <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;badge&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">,</span><span class="s1">&#39;letter&#39;</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">fig_cur</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">tickmode</span><span class="o">=</span><span class="s1">&#39;array&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                               <span class="n">tickvals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">thresh_mrw</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                               <span class="n">ticktext</span> <span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">thresh_mrw</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                                   <span class="n">title</span><span class="o">=</span><span class="s1">&#39;grade&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># fig.update_layout( xaxis={&#39;categoryorder&#39;:&#39;array&#39;,&#39;categoryarray&#39;:per_badge_df_mrw_cletter[&#39;influence_total&#39;].unique()})</span>
+
+<span class="ne">NameError</span>: name &#39;per_badge_df_mrw_cletter&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>the labels on the horizontal axis are just example names, they do not have any meaning, I just have not figured out what I want to replace them with that might have meaning and need some sort of unique identifier there for the plot to work.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig_cur.to_html(&#39;influence.html&#39;,include_plotlyjs=&#39;cdn&#39;,</span>
+<span class="c1">#                full_html=False,div_id=&#39;badge_grade_graph&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Officially what is on the <a class="reference internal" href="grading.html"><span class="doc std std-doc">Grading</span></a> page is what applies if this page is in conflict with that.</p>
+</div>
+<p>The total influence of a badge on your grade is the product of the badge’s weight and its complexity.  All learning badges have a weight of 1, but have varying complexity.  All community badges have a complexity of 1, but the weight of a community badge can vary depending on what learning badges you earn.</p>
+<p>There are also some hard thresholds on learning badges.
+You must have:</p>
+<ul class="simple">
+<li><p>22 experience badges to earn a D or above</p></li>
+<li><p>at least 18 additional badges total across review and practice to earn above C or above</p></li>
+</ul>
+<p>Only community badges can make exceptions to these thresholds. So if you are missing learning badges required to get to a threshold, your community badges will fill in for those.  If you meet all of the thresholds, the community badges will be applied with more weight to give you a step up (eg C to C+ or B+ to A-).</p>
+<p>Community badges have the most weight if you are on track for a grade between D and B+</p>
+<p>If you are on track for an A, community badges can be used to fill in for learning badges, so for example, at the end of the semester, you might be able to skip some the low complexity learning badges (experience, review, practice) and focus on your high complexity ones to ensure you get an A.</p>
+<p>More precisely the order of application for community badges:</p>
+<ul class="simple">
+<li><p>to make up missing experience badges</p></li>
+<li><p>to make up for missing review or practice badge to reach a total of 18 between these two types</p></li>
+<li><p>to upgrade review to practice to meet a threshold</p></li>
+<li><p>to give a step up (highest weight)</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./syllabus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="badges.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">(experimental) Badge Visualizations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="schedule.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Schedule</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
