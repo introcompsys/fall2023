@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Welcome &#8212; Computer Systems and Programming Tools</title>
+    <title>1. Welcome, Introduction, and Setup &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Welcome</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Welcome, Introduction, and Setup</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -388,7 +388,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -399,11 +401,52 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome</h1>
+    <h1>Welcome, Introduction, and Setup</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductions">1.1. Introductions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prismia">1.2. Prismia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-background">1.2.1. Some Background</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course-will-be-different">1.3. This course will be different</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-focus-is-for-you-to-learn">1.3.1. My focus is for you to learn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-comes-in-many-forms">1.3.2. Learning comes in many forms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-is-the-goal">1.4. Learning is the goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">1.5. What about AI?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-a-college-course">1.6. This is a college course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-never-use-what-i-learned-in-college">1.7. “I never use what I learned in college”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-this-work">1.8. How does this work?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class">1.8.1. In class:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outside-of-class">1.8.2. Outside of class:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">1.9. Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-course-about">1.10. What is this course about?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-fits-into-your-cs-degree">1.10.1. How it fits into your CS degree</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-your-degree">1.11. In your degree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-terminology">1.12. Git and GitHub terminology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-is-collaborative">1.12.1. Programming is Collaborative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-forum">1.12.2. Class forum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-actions">1.13. Update the actions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-credit-for-todays-class">1.13.1. Get Credit for Today’s class</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -413,12 +456,235 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1><span class="section-number">1. </span>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome-introduction-and-setup">
+<h1><span class="section-number">1. </span>Welcome, Introduction, and Setup<a class="headerlink" href="#welcome-introduction-and-setup" title="Permalink to this headline">#</a></h1>
+<section id="introductions">
+<h2><span class="section-number">1.1. </span>Introductions<a class="headerlink" href="#introductions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Dr. Sarah Brown</p></li>
+<li><p>Please address me as Dr. Brown or Professor Brown,</p></li>
+</ul>
+<p>You can see more about me in the about section of the syllabus.</p>
+<p>I look forward to getting to know you all better.</p>
+</section>
+<section id="prismia">
+<h2><span class="section-number">1.2. </span>Prismia<a class="headerlink" href="#prismia" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>instead of slides</p></li>
+<li><p>you can message us</p></li>
+<li><p>we can see all of your responses</p></li>
+<li><p>emoji!</p></li>
+</ul>
+<p>questions can  be “graded”</p>
+<ul class="simple">
+<li><p>this is instant feedback</p></li>
+<li><p>participation will be checked, not impact your final grade</p></li>
+<li><p>this helps both me and you know how you are doing</p></li>
+</ul>
+<section id="some-background">
+<h3><span class="section-number">1.2.1. </span>Some Background<a class="headerlink" href="#some-background" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>What programming environments do you have?</p></li>
+<li><p>What programming environments are you most comfortable with?</p></li>
+<li><p>what programming tools are you familiar with?</p></li>
+</ul>
+<p>This information will help me prepare</p>
+</section>
+</section>
+<section id="this-course-will-be-different">
+<h2><span class="section-number">1.3. </span>This course will be different<a class="headerlink" href="#this-course-will-be-different" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>no Brightspace</p></li>
+<li><p>300 level = more independence</p></li>
+<li><p>I will give advice, but only hold you accountable to a minimal set</p></li>
+<li><p>High expectations, with a lot of flexibility to work in a way that works for you</p></li>
+</ul>
+<section id="my-focus-is-for-you-to-learn">
+<h3><span class="section-number">1.3.1. </span>My focus is for you to learn<a class="headerlink" href="#my-focus-is-for-you-to-learn" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>that means, practice, feedback, and reflection</p></li>
+<li><p>you should know that you have learned</p></li>
+<li><p>you should be able to apply this material in other courses</p></li>
+</ul>
+</section>
+<section id="learning-comes-in-many-forms">
+<h3><span class="section-number">1.3.2. </span>Learning comes in many forms<a class="headerlink" href="#learning-comes-in-many-forms" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>different types of material are best remembered in different ways</p></li>
+<li><p>some things are hard to explain, but watching it  is very concrete</p></li>
+</ul>
+</section>
+</section>
+<section id="learning-is-the-goal">
+<h2><span class="section-number">1.4. </span>Learning is the goal<a class="headerlink" href="#learning-is-the-goal" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>producing outputs as fast as possible is not learning</p></li>
+<li><p>in a job, you may get paid to do things fast</p></li>
+<li><p>your work also needs to be correct, without someone telling you it is</p></li>
+<li><p>in a job you are trusted to know your work is correct, your boss does not check your work or grade you</p></li>
+<li><p>to get a job, you have to interview, which means explaining, in words, to another person how to do something</p></li>
+</ul>
+</section>
+<section id="what-about-ai">
+<h2><span class="section-number">1.5. </span>What about AI?<a class="headerlink" href="#what-about-ai" title="Permalink to this headline">#</a></h2>
+<p>Large Language Models will change what programming looks like, but understanding is always going to be more effective than asking an AI.  Large language models actually do not know anything, they just know what languages loook like and generate text.</p>
+<p><em>if you cannot tell it when it’s wrong, you can not add value for a company</em></p>
+<p><strong>learning deeply means you can actually use them effectively and add value beyond an AI</strong></p>
+</section>
+<section id="this-is-a-college-course">
+<h2><span class="section-number">1.6. </span>This is a college course<a class="headerlink" href="#this-is-a-college-course" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>more than getting you one job, a bootcamp gets you one job</p></li>
+<li><p>build a long (or maybe short, but fruitful) career</p></li>
+<li><p>build critical thinking skill that makes you adaptable</p></li>
+<li><p>have options</p></li>
+</ul>
+</section>
+<section id="i-never-use-what-i-learned-in-college">
+<h2><span class="section-number">1.7. </span>“I never use what I learned in college”<a class="headerlink" href="#i-never-use-what-i-learned-in-college" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>very common saying</p></li>
+<li><p>it’s actually a sign of deep learning</p></li>
+<li><p>when we have expertise, we do not even notice when we apply it</p></li>
+<li><p>college is not about the facts, but the processes</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We may not think that we use the fact that we know the order of letters in the English language very often. Most of us learned the alphabet with a song, but we do not sing that on a dialy basis.</p>
+<p>However, we do fill out forms where we have to, for example, find the state we live in, in a dropdown and knowing the alphabetical order of the states helps us find ours faster.</p>
+<p>When you know things really well, you apply them without noticing.</p>
+</div>
+</section>
+<section id="how-does-this-work">
+<h2><span class="section-number">1.8. </span>How does this work?<a class="headerlink" href="#how-does-this-work" title="Permalink to this headline">#</a></h2>
+<section id="in-class">
+<h3><span class="section-number">1.8.1. </span>In class:<a class="headerlink" href="#in-class" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Memory/ understanding check</p></li>
+<li><p>Review/ clarification as needed</p></li>
+<li><p>New topic demo with follow along, tiny practice</p></li>
+<li><p>Review, submit questions</p></li>
+</ol>
+</section>
+<section id="outside-of-class">
+<h3><span class="section-number">1.8.2. </span>Outside of class:<a class="headerlink" href="#outside-of-class" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Build your cookbook with your team</p></li>
+<li><p>Read notes Notes to refresh the material, check your understanding, and find more details</p></li>
+<li><p>Practice material that has been taught</p></li>
+<li><p>Activate your memory of related things to what we will cover</p></li>
+<li><p>Read articles/ watch videos to either fill in gaps or learn more details</p></li>
+<li><p>Bring questions to class</p></li>
+</ol>
+</section>
+</section>
+<section id="getting-started">
+<h2><span class="section-number">1.9. </span>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
+<p>Your KWL chart is where you will start by tracking what you know now/before we start and what you want to learn about each topic.  Then you will update it throughout the semester. You will also add material to the repository to produce evidence of your learning.</p>
+<p><a class="reference external" href="https://classroom.github.com/a/hiZVsWhI">Accept the assignment</a> to create your repo</p>
+<ol class="arabic simple">
+<li><p>click on .gihub, then workflows, then track.yml</p></li>
+<li><p>click the 3 dots menu and select delete</p></li>
+<li><p>commit directly to main with the default message</p></li>
+<li><p>back to the main code tab</p></li>
+<li><p>Click the pencil to edit the readme</p></li>
+<li><p>Add your name</p></li>
+<li><p>Add a descriptive commit message</p></li>
+<li><p>Choose create a branch and open a pull request</p></li>
+<li><p>name the branch</p></li>
+<li><p>Click on the list of commits, now you have one more!</p></li>
+</ol>
+</section>
+<section id="what-is-this-course-about">
+<h2><span class="section-number">1.10. </span>What is this course about?<a class="headerlink" href="#what-is-this-course-about" title="Permalink to this headline">#</a></h2>
+<p>In your KWL chart, there are a lot of different topics that are not obviously related, so what is this course really about?</p>
+<ul class="simple">
+<li><p>practical exposure to important tools</p></li>
+<li><p>design features of those tool categories</p></li>
+<li><p>basic knowledge of many parts of the CS core</p></li>
+<li><p>focus on the connections</p></li>
+</ul>
+<p>We will use learning the tools to understand how computer scientists think and work.</p>
+<p>Then we will use the tools to examine the field of Computer Science top to bottom (possibly out of order).</p>
+<section id="how-it-fits-into-your-cs-degree">
+<h3><span class="section-number">1.10.1. </span>How it fits into your CS degree<a class="headerlink" href="#how-it-fits-into-your-cs-degree" title="Permalink to this headline">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>knowing where you’ve been and where we’re going will help you understand and remember</p>
+</div>
+</aside>
+</section>
+</section>
+<section id="in-your-degree">
+<h2><span class="section-number">1.11. </span>In your degree<a class="headerlink" href="#in-your-degree" title="Permalink to this headline">#</a></h2>
+<p>In CSC110, you learn to program in python and see algorithms from a variety of domain areas where computer science is applied.</p>
+<p>Then in CSC 340 and 440 you study the algorithms more mathematically, their complexity, etc.</p>
+<p>In CSC211, 212, you learn the foundations of computer science: general programming and data structures.</p>
+<p>Then in 301, 305, 411, 412 you study different aspects of software design and how computers work.</p>
+<p>In this class, we’re going to connect different ideas. We are going to learn the tools used by computer scientists, deeply. You will understand why the tools are the way they are and how to use them even when things go wrong.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition-further-reading admonition">
+<p class="admonition-title">Further Reading</p>
+<p>GitHub Docs are really helpful and have screenshots</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">editing a file</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">pull request</a></p></li>
+</ul>
+</div>
+</aside>
+</section>
+<section id="git-and-github-terminology">
+<h2><span class="section-number">1.12. </span>Git and GitHub terminology<a class="headerlink" href="#git-and-github-terminology" title="Permalink to this headline">#</a></h2>
+<p>We also discussed some of the terminology for git. We will also come back to these ideas in greater detail later.</p>
+<section id="programming-is-collaborative">
+<h3><span class="section-number">1.12.1. </span>Programming is Collaborative<a class="headerlink" href="#programming-is-collaborative" title="Permalink to this headline">#</a></h3>
+<p>There are two very common types of collaboration</p>
+<ul class="simple">
+<li><p>code review (working independently and then reviewing)</p></li>
+<li><p>pair programming (sitting together and discussing while writing)</p></li>
+</ul>
+<p>We are going to build your skill in the <em>code review</em> model.  This means you need to collaborate, but collaboration in school tends to be more stressful than it needs to. If students have different goals or motivation levels it can create conflict.  So <strong>you will have no group graded work</strong> but you will get the chance to work on something together in a low stakes way.</p>
+<p>You will have a “home team” that you work with throughout the semester to build a
+glossary and a “cookbook” of systems recipes.</p>
+<p>Your contributions and your <strong>peer reviews</strong> will be assessed individually for your grade, but you need a team to be able to practice these collaborative aspects.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>This will be posted <strong>after</strong> class</p>
+<p>Remember to fill out the <a class="reference external" href="https://forms.gle/6mPDKG23fkzqUDaZ9">team formation survey</a></p>
 </div>
+</section>
+<section id="class-forum">
+<h3><span class="section-number">1.12.2. </span>Class forum<a class="headerlink" href="#class-forum" title="Permalink to this headline">#</a></h3>
+<p>This <a class="reference external" href="https://classroom.github.com/a/kkhQI9dc">community repository “assignment”</a> will add you to a “team” with the whole class. It allows us to share things on GitHub, for the whole class, but not the whole internet.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When you click that link join the existing team, do not make a new one</p>
+</div>
+</section>
+</section>
+<section id="update-the-actions">
+<h2><span class="section-number">1.13. </span>Update the actions<a class="headerlink" href="#update-the-actions" title="Permalink to this headline">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is different from in class and you should do it.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Go to pull requests</p></li>
+<li><p>Create a new pull request</p></li>
+<li><p>Make the compare branch fa24</p></li>
+<li><p>Create the pull request</p></li>
+<li><p>Merge the pull request</p></li>
+</ol>
+<section id="get-credit-for-todays-class">
+<h3><span class="section-number">1.13.1. </span>Get Credit for Today’s class<a class="headerlink" href="#get-credit-for-todays-class" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Run your Experience Reflection (inclass) action on your kwl repo</p></li>
+<li><p>Complete the file.</p></li>
+</ol>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -479,6 +745,53 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductions">1.1. Introductions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prismia">1.2. Prismia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-background">1.2.1. Some Background</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course-will-be-different">1.3. This course will be different</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-focus-is-for-you-to-learn">1.3.1. My focus is for you to learn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-comes-in-many-forms">1.3.2. Learning comes in many forms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-is-the-goal">1.4. Learning is the goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">1.5. What about AI?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-a-college-course">1.6. This is a college course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-never-use-what-i-learned-in-college">1.7. “I never use what I learned in college”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-this-work">1.8. How does this work?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class">1.8.1. In class:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outside-of-class">1.8.2. Outside of class:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">1.9. Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-course-about">1.10. What is this course about?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-fits-into-your-cs-degree">1.10.1. How it fits into your CS degree</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-your-degree">1.11. In your degree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-terminology">1.12. Git and GitHub terminology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-is-collaborative">1.12.1. Programming is Collaborative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-forum">1.12.2. Class forum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-actions">1.13. Update the actions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-credit-for-todays-class">1.13.1. Get Credit for Today’s class</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
