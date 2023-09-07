@@ -1,0 +1,74 @@
+format: jb-book
+root: index
+parts:
+  - caption: Syllabus
+    chapters:
+    # - file: syllabus/index
+    - file: syllabus/about
+    - file: syllabus/tools
+    - file: syllabus/grading
+    - file: syllabus/badges
+    - file: syllabus/badge_calc
+    - file: syllabus/schedule
+    - file: syllabus/uri_resources
+    - file: syllabus/uri_statements
+    - file: syllabus/communication
+  - caption: Notes
+    numbered: True
+    chapters:
+      - file: notes/2023-01-24
+      - file: notes/2023-01-26
+      - file: notes/2023-01-31
+      - file: notes/2023-02-02
+      - file: notes/2023-02-07
+      - file: notes/2023-02-09
+      - file: notes/2023-02-14
+      - file: notes/2023-02-16
+      - file: notes/2023-02-21
+      - file: notes/2023-02-23
+      - file: notes/2023-03-02
+      - file: notes/2023-03-07
+      - file: notes/2023-03-09
+      - file: notes/2023-03-21
+      - file: notes/2023-03-23
+      - file: notes/2023-03-28
+      - file: notes/2023-03-30
+      - file: notes/2023-04-04
+      - file: notes/2023-04-06
+      - file: notes/2023-04-11
+      - file: notes/2023-04-13
+      - file: notes/2023-04-18
+      - file: notes/2023-04-20
+      - file: notes/2023-04-25
+      - file: notes/2023-04-27
+  - caption: Activities
+    chapters:
+    - file: activities/kwl
+    - file: activities/team
+    - file: activities/review
+    - file: activities/prepare
+    - file: activities/practice
+    - file: genindex
+    - file: activities/explore
+    - file: activities/build
+  - caption: FAQ
+    chapters:
+    - file: faq/syllabus
+    - file: faq/github
+  - caption: Resources
+    chapters:
+    - file: resources/glossary
+    - file: resources/tips
+    - file: resources/learning
+    - file: resources/github
+    - file: resources/gettinghelp
+    - file: resources/organization
+    - file: resources/more_info_on_cpus
+    - file: resources/windows
+    - url: https://introcompsys.github.io/spring2022/resources/testimonials.html
+      title: Advice from Spring 2022 Students
+    # - file: letters/index
+
+
+
+# - file: assignments/index
