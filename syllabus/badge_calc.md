@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.1
+    jupytext_version: 1.15.1
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -19,7 +19,8 @@ This page is generated with code and calculations, you can view them for more pr
 ```
 
 ```{code-cell} ipython3
-:tags: ["hide-input"]
+:tags: [hide-input]
+
 import os
 from datetime import date,timedelta
 import calendar
@@ -32,14 +33,14 @@ import plotly.express as px
 # learning complexities
 weights_mrw = {'experience' :2,'review': 3,'practice': 6,'explore': 9,'build' :36}
 # base grade influence cutoffs
-thresh_mrw = {'D ':23*weights_mrw['experience'], 'C ':23*weights_mrw['experience']+18*weights_mrw['review'],
-          'B ':23*weights_mrw['experience']+18*weights_mrw['practice'],
-          'A ': 23*weights_mrw['experience']+18*weights_mrw['practice'] + 6*weights_mrw['explore']}
+thresh_mrw = {'D ':22*weights_mrw['experience'], 'C ':22*weights_mrw['experience']+18*weights_mrw['review'],
+          'B ':22*weights_mrw['experience']+18*weights_mrw['practice'],
+          'A ': 22*weights_mrw['experience']+18*weights_mrw['practice'] + 6*weights_mrw['explore']}
 
-examples_mrw = [[24,0,0,0,0],[24,18,0,0,0],[24,24,0,0,0],[24,18,6,0,0],
-                [24,18,0,0,1],[24,0,18,0,0],[24,12,12,0,0],[24,0,24,0,0],
-                [24,0,18,6,0],[24,0,18,4,0],[24,0,18,0,1],
-                [24,18,0,0,3],[24,6,12,4,1],[24,12,6,2,2],[24,0,24,2,0]]
+examples_mrw = [[22,0,0,0,0],[23,18,0,0,0],[22,24,0,0,0],[24,18,6,0,0],
+                [22,18,0,0,1],[26,0,18,0,0],[24,12,12,0,0],[24,0,24,0,0],
+                [25,0,18,6,0],[25,0,18,4,0],[24,0,18,0,1],
+                [22,18,0,0,3],[24,6,12,4,1],[24,12,6,2,2],[24,0,24,2,0]]
 
 ex_df_mrw = pd.DataFrame(data=examples_mrw,columns = weights_mrw.keys())
 w_df_mrw = pd.DataFrame(data=[(ex_df_mrw[col]*weights_mrw[col]) for col in weights_mrw]).T.rename(columns=lambda col:col + '_weight')
@@ -59,6 +60,7 @@ plus_thresh = {k.strip()+'+':int(v+delta/3) for k,v in thresh_mrw.items()}
 thresh_mrw.update(minus_thresh)
 thresh_mrw.update(plus_thresh)
 thresh_mrw.pop('A+');
+thresh_mrw.pop('D-');
 
 ind_badges_mrw = [[exid,bt,bw,bc,1] for i,ex in enumerate(examples_mrw) for bc,(bt,bw) in zip(ex,weights_mrw.items()) 
                                       for exid in bc*[i]]
@@ -80,9 +82,11 @@ influence_df = pd.concat([learning_df,comm_df]).fillna(1).rename(columns={'index
 influence_df['influence'] = influence_df['complexity']*influence_df['weight']
 ```
 
-Grade cutorrs are:
+Grade cutoffs for total influence are:
+
 ```{code-cell} ipython3
-:tags: ["hide-input"]
+:tags: [hide-input]
+
 th_list = [[k,v] for k,v in thresh_mrw.items()]
 pd.DataFrame(th_list, columns = ['letter','threshold']).sort_values(by='threshold').set_index('letter')
 ```
@@ -90,13 +94,14 @@ pd.DataFrame(th_list, columns = ['letter','threshold']).sort_values(by='threshol
 The total influence of each badge is as follows:
 
 ```{code-cell} ipython3
-:tags: ["hide-input"]
+:tags: [hide-input]
+
 # display
 influence_df[['badge_type','badge','complexity','weight','influence']]
 ```
 
 ```{code-cell} ipython3
-:tags: ["hide-input"]
+:tags: [hide-input]
 
 # example calculation helper functions
 def commumunity_example(badges,exid,cw_type):
@@ -168,9 +173,16 @@ grade_calc = lambda df: (np.floor((df.sum()-48)/(delta/3))*(delta/3)+48).astype(
 ex_grade = per_badge_df_mrw_c.groupby(['example'])['influence'].apply(grade_calc).reset_index().rename(
                     columns = {'influence':'influence_total'})
 
+# get letter for each example
 thresh_mrw_rv = {v:k for k, v in thresh_mrw.items()}
-ex_grade['letter'] = ex_grade['influence_total'].apply(lambda v: thresh_mrw_rv[v])
+thresh_mrw_rv[0] = 'F'
+thresh_mrw_cutoffs = np.asarray(sorted(thresh_mrw_rv))
+ex_grade['letter'] = ex_grade['influence_total'].apply(lambda v: thresh_mrw_rv[thresh_mrw_cutoffs[(v > thresh_mrw_cutoffs)].max()])
 
+# improve sample names
+example_names = {old:'example ' +str(i) for i,old in enumerate(list(ex_grade['example']))}
+ex_grade['example'] = ex_grade['example'].replace(example_names)
+per_badge_df_mrw_c['example'] = per_badge_df_mrw_c['example'].replace(example_names)
 # ex_grade = ((per_badge_df_mrw_c.groupby(['example'])['influence'].sum()-48).floordiv((delta/3))*(delta/3)+48).astype(int).reset_index()
 
 
@@ -188,7 +200,8 @@ per_badge_df_mrw_cletter = per_badge_df_mrw_cletter.sort_values(by=['badge_num',
 ```
 
 ```{code-cell} ipython3
-:tags: ["hide-input"]
+:tags: [hide-input]
+
 # make plot
 fig_cur = px.bar(per_badge_df_mrw_cletter,x='example',y='influence',color='badge_det',
                  hover_data=['badge','count','letter'],height=700)
@@ -204,12 +217,7 @@ fig_cur
 the labels on the horizontal axis are just example names, they do not have any meaning, I just have not figured out what I want to replace them with that might have meaning and need some sort of unique identifier there for the plot to work. 
 ```
 
-```{code-cell} ipython3
-# fig_cur.to_html('influence.html',include_plotlyjs='cdn',
-#                full_html=False,div_id='badge_grade_graph')
-```
-
-
++++
 
 ```{warning}
 Officially what is on the [](grading) page is what applies if this page is in conflict with that.  

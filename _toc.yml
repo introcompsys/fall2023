@@ -37,6 +37,7 @@ parts:
     - file: resources/tips
     - file: resources/learning
     - file: resources/github
+    - file: resources/languages
     - file: resources/gettinghelp
     - file: resources/organization
     - file: resources/more_info_on_cpus
