@@ -196,6 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
@@ -498,7 +499,7 @@ If there's an error your notebook it can't complete running. You can allow it to
 <p><strong>note: these instructions use the main branch the way we use the badge branches and the feedback branch the way we use the main branch in this course</strong></p>
 <p>You’ll have to work offline and use GitHub in your browser together for this fix. The following instuctions will work in terminal on Mac or Linux or in GitBash for Windows. (see <a class="reference internal" href="../syllabus/tools.html#programming-env"><span class="std std-ref">Programming Environment section on the tools page</span></a>).</p>
 <p>First get the url to clone your repository (unless you already have it cloned then skip ahead): on the main page for your repository, click the green “Code” button, then copy the url that’s show
-<img alt="screenshot of copying .git url" src="img/get_clone_url.png" /></p>
+<img alt="screenshot of copying .git url" src="../_images/get_clone_url.png" /></p>
 <p>Next open a terminal or GitBash and type the following.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span>
 </pre></div>
@@ -514,11 +515,11 @@ If there's an error your notebook it can't complete running. You can allow it to
 </pre></div>
 </div>
 <p>Now, you have to figure out what commit to revert to, so go back to GitHub in your browser, and swithc to the feedback branch there. Click on where it says <code class="docutils literal notranslate"><span class="pre">main</span></code> on the top right next to the branch icon and choose feedback from the list.</p>
-<p><img alt="screenshot of switching to the feedback branch on github" src="img/switch_to_feedback.png" /></p>
+<p><img alt="screenshot of switching to the feedback branch on github" src="../_images/switch_to_feedback.png" /></p>
 <p>Now view the list of all of the commits to this branch, by clicking on the clock icon with a number of commits</p>
-<p><img alt="screenshot of clicking to view commits" src="img/view_commits.png" /></p>
+<p><img alt="screenshot of clicking to view commits" src="../_images/view_commits.png" /></p>
 <p>On the commits page scroll down and find the commit titled “Setting up GitHub Classroom Feedback” and copy its hash, by clicking on the clipboard icon next to the short version.</p>
-<p><img alt="screenshot copying hash" src="img/copy_hash.png" /></p>
+<p><img alt="screenshot copying hash" src="../_images/copy_hash.png" /></p>
 <p>Now, back on your terminal, type the following</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span>
 </pre></div>
@@ -556,13 +557,13 @@ If there's an error your notebook it can't complete running. You can allow it to
 </div>
 <p>Again, the numbers will be different and it will be your url, not mine.</p>
 <p>Now back on GitHub, in your browser, click on the code tab. It should look something like this now. Notice that it says, “This branch is 11 commits behind main” your number will be different but it should be 1 less than the number you had when you checked <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>. This is because we reverted the changes you made to main (11 for me) and the 1 commit for merging main into feedback. Also the last commit (at the top, should say “Setting up GitHub Classroom Feedback”).</p>
-<p><img alt="screenshot of feedback branch code tab after revert" src="img/code_tab_post_revert.png" /></p>
+<p><img alt="screenshot of feedback branch code tab after revert" src="../_images/code_tab_post_revert.png" /></p>
 <p>Now, you need to recreate your Pull Request, click where it says pull request.</p>
-<p><img alt="screenshot of pull request link highlighted" src="img/pr_after_revert.png" /></p>
+<p><img alt="screenshot of pull request link highlighted" src="../_images/pr_after_revert.png" /></p>
 <p>It will say there isn’t anything to compare, but this is because it’s trying to use <code class="docutils literal notranslate"><span class="pre">feedback</span></code> to update <code class="docutils literal notranslate"><span class="pre">main</span></code>. We want to use <code class="docutils literal notranslate"><span class="pre">main</span></code> to update <code class="docutils literal notranslate"><span class="pre">feedback</span></code> for this PR. So we have to swap them. Change base from <code class="docutils literal notranslate"><span class="pre">main</span></code> to <code class="docutils literal notranslate"><span class="pre">feedback</span></code> by clicking on it and choosing <code class="docutils literal notranslate"><span class="pre">feedback</span></code> from the list.</p>
-<p><img alt="screenshot of changing pr base to feedback" src="img/pr_change_base.png" /></p>
+<p><img alt="screenshot of changing pr base to feedback" src="../_images/pr_change_base.png" /></p>
 <p>Then the change the compare <code class="docutils literal notranslate"><span class="pre">feedback</span></code> on the right to <code class="docutils literal notranslate"><span class="pre">main</span></code>. Once you do that the page will change to the “Open a Pull Request” interface.</p>
-<p><img alt="screenshot of making a pr" src="img/open_pr.png" /></p>
+<p><img alt="screenshot of making a pr" src="../_images/open_pr.png" /></p>
 <p>Make the title “Feedback” put a note in the body and then click the green “Create Pull Request” button.</p>
 <p>Now you’re done!</p>
 <p>If you have trouble, create an issue and tag <code class="docutils literal notranslate"><span class="pre">&#64;&#64;rhodyprog4ds/fall20instructors</span></code> for help.</p>

@@ -196,6 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
@@ -431,15 +432,19 @@ document.write(`
 <p>This page includes more visual versions of the information on the badge page.  You should read both, but this one is often more helpful, because some of the processes take a lot of words to explain and make more sense with a diagram for a lot of people.</p>
 <section id="prepare-work-and-experience-badges-process">
 <h2>Prepare work and Experience Badges Process<a class="headerlink" href="#prepare-work-and-experience-badges-process" title="Permalink to this headline">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This was changed substantively on 2023-09-08</p>
+</div>
 <p>This is for a single example with specific dates, but it is similar for all future dates</p>
 <p>The columns (and purple boxes) correspond to branches in your KWL repo and the yellow boxes are the things that you have to do. The “critical” box is what you have to wait for us on. The arrows represent PRs (or a local merge for the first one)</p>
 <div class="mermaid">
             sequenceDiagram
-    participant P as prepare Feb 21
-    participant E as experience Feb 23
+    participant P as prepare Sep 12
+    participant E as experience Sep 12
     participant M as main 
-    note over P: complete prepare work&lt;br/&gt; between feb 21 and 23
-    note over E: run experience badge workflow &lt;br/&gt; at the end of class feb 23
+    note over P: complete prepare work&lt;br/&gt; between feb Sep 7 and Sep12
+    note over E: run experience badge workflow &lt;br/&gt; at the end of class Sep12
     P -&gt;&gt; E: local merge or PR you that &lt;br/&gt; does not need approval
     note over E: fill in experience reflection 
     critical Badge review by instructor or TA
@@ -455,17 +460,17 @@ document.write(`
    commit
    commit
    checkout main
-   branch prepare-2023-02-21
-   checkout prepare-2023-02-21
+   branch prepare-2023-09-12
+   checkout prepare-2023-09-12
    commit id: &quot;gitunderstanding.md&quot;
-   branch experience-2023-02-23
-   checkout experience-2023-02-23
+   branch experience-2023-09-12
+   checkout experience-2023-09-12
    commit id: &quot;initexp&quot;
-   merge prepare-2023-02-21
+   merge prepare-2023-09-12
    commit id: &quot;fillinexp&quot;
    commit id: &quot;revisions&quot; tag:&quot;approved&quot;
    checkout main
-   merge experience-2023-02-23
+   merge experience-2023-09-12
         </div><p>Where the “approved” tag represents and approving reivew on the PR.</p>
 </section>
 <section id="review-and-practice-badge">

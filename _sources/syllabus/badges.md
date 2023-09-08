@@ -17,6 +17,9 @@ This page includes more visual versions of the information on the badge page.  Y
 
 ## Prepare work and Experience Badges Process
 
+```{warning}
+This was changed substantively on 2023-09-08
+```
 This is for a single example with specific dates, but it is similar for all future dates
 
 The columns (and purple boxes) correspond to branches in your KWL repo and the yellow boxes are the things that you have to do. The "critical" box is what you have to wait for us on. The arrows represent PRs (or a local merge for the first one)
@@ -24,11 +27,11 @@ The columns (and purple boxes) correspond to branches in your KWL repo and the y
 
 ```{mermaid}
 sequenceDiagram
-    participant P as prepare Feb 21
-    participant E as experience Feb 23
+    participant P as prepare Sep 12
+    participant E as experience Sep 12
     participant M as main 
-    note over P: complete prepare work<br/> between feb 21 and 23
-    note over E: run experience badge workflow <br/> at the end of class feb 23
+    note over P: complete prepare work<br/> between feb Sep 7 and Sep12
+    note over E: run experience badge workflow <br/> at the end of class Sep12
     P ->> E: local merge or PR you that <br/> does not need approval
     note over E: fill in experience reflection 
     critical Badge review by instructor or TA
@@ -42,22 +45,23 @@ sequenceDiagram
 
 In the end the commit sequence for this will look like the following:
 
+
 ```{mermaid}
 gitGraph
    commit
    commit
    checkout main
-   branch prepare-2023-02-21
-   checkout prepare-2023-02-21
+   branch prepare-2023-09-12
+   checkout prepare-2023-09-12
    commit id: "gitunderstanding.md"
-   branch experience-2023-02-23
-   checkout experience-2023-02-23
+   branch experience-2023-09-12
+   checkout experience-2023-09-12
    commit id: "initexp"
-   merge prepare-2023-02-21
+   merge prepare-2023-09-12
    commit id: "fillinexp"
    commit id: "revisions" tag:"approved"
    checkout main
-   merge experience-2023-02-23
+   merge experience-2023-09-12
 ```
 
 Where the "approved" tag represents and approving reivew on the PR. 
