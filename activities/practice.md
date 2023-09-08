@@ -12,3 +12,10 @@ cover in class.
 Activities will appear here once the semester begins
 ```
 
+## 2023-09-07
+
+[related notes](../notes/2023-09-07)
+
+Activities:
+```{include} ../_practice/2023-09-07.md
+```
