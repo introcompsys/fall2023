@@ -8,3 +8,11 @@ These tasks are not always based on things that we have already done.  Sometimes
 The correct answer is not as important for these activities as it is to do them before class.  We will build on these in class. These are evaluated on completion only, but we may ask you questions or leave comments if appropriate, in that event you should reply and then we'll approve. 
 
 
+
+## 2023-09-12
+
+[related notes](../notes/2023-09-12)
+
+Activities:
+```{include} ../_prepare/2023-09-12.md
+```
