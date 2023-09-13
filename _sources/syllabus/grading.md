@@ -214,7 +214,9 @@ At the end of notes and on the separate pages in the activities section on the l
 
 **You should create one PR per badge**
 
+
 The key difference between review and practice is the depth of the activity. Work submitted for review and practice badges will be assessed for correctness and completeness. Revisions will be common for these activities, because understanding correctly, without misconceptions, is important. 
+
 
 ```{important}
 Revisions are to help you improve your work **and** to get used to the process of making revisions.  Even excellent work can be improved.  The **process** of making revisions and taking good work to excellent or excellent to exceptional is a useful learning outcome.  It will help you later to be really good at working through PR revisions; we will use the same process as code reviews in industry, even though most of it will not be code alone. 

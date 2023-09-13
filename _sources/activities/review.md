@@ -14,3 +14,10 @@ After each class, you will need to review the day's material. This includes revi
 Activities:
 ```{include} ../_review/2023-09-07.md
 ```
+## 2023-09-12
+
+[related notes](../notes/2023-09-12)
+
+Activities:
+```{include} ../_review/2023-09-12.md
+```

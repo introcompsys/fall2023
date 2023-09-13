@@ -8,6 +8,8 @@ answer.
 
 ```{glossary}
 
+absolute path
+  the path defined from the root of the system
 
 add (new files in a repository)
   the step that stages/prepares files to be committed to a repository from a local branch
@@ -89,6 +91,8 @@ integreated development environment
 Linker
   a program that links together the object files and libraries to output an executable file.
   
+path
+  the "location" of a file or folder(directory) in a computer
 
 pull (changes from a repository)
   download changes from a remote repository and update the local repository with these changes.
@@ -96,6 +100,8 @@ pull (changes from a repository)
 push (changes to a repository)
   to put whatever you were working on from your local machine onto a remote copy of the repository in a version control system.
 
+relative path
+  the path defined **relative** to another file or the current working directory
 
 repository
   a project folder with tracking information in it in the form of a .git file

@@ -1,0 +1,923 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Course Logistics and Learning &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-12';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="1. Welcome, Introduction, and Setup" href="2023-09-07.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Visualizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Badge Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Course Logistics and Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">More Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">KWL File Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/spring2023# The URL to your book's repository" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/spring2023# The URL to your book's repository/edit/main/notes/2023-09-12.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/spring2023# The URL to your book's repository/issues/new?title=Issue%20on%20page%20%2Fnotes/2023-09-12.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2023-09-12.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Course Logistics and Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-mean-to-study-computer-systems">2.1. What does it mean to study Computer Systems?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mental-models-and-learning">2.2. Mental Models and Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-for-computer-systems">2.3. Why do we need this for computer systems?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-are-designed-by-programmers">2.3.1. Systems are designed by programmers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-matters">2.3.2. Context Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-is-relative">2.3.3. Optimal is relative</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-get-organized">2.4. Let’s get organized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">2.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">2.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">2.7. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">2.8. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">2.9. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal">2.9.1. I wonder why Mac and Linux have built-in terminals but Windows, arguably the most popular OS, does not have a built-in terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-real-questions-maybe-curious-about-downloading-github-files-using-commands">2.9.2. No real questions, maybe curious about downloading github files using commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible">2.9.3. I’ve seen this type of material before so I would want to know about from other things I’ve seen would be how to interact with apps (google chrome) and stuff like that if that’s even possible?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept">2.9.4. Will we be piping things in the command line often, or are we mostly getting an introduction to the concept?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-what-reverting-does-to-github">2.9.5. I want to know more about what reverting does to github</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-making-directories-in-a-shell-put-them-in-the-directory-automatically">2.9.6. does making directories in a shell put them in the directory automatically?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else">2.9.7. Are there any benefits to choosing either zsh or bash? Ease of use, compatability, or anything else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-cd-and-cd-do-the-same-thing">2.9.8. why does cd and cd~ do the same thing?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use">2.9.9. I want to know more about how git is connected and will be applied to github and other tools we use.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-make-up-lectures">2.9.10. how do I make up lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-merge-the-add-my-name-to-readme-pull-request">2.9.11. Should I merge the add my name to readme pull request?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-my-lab-was-approved-can-i-merge-the-pull-request">2.9.12. if my lab was approved can i merge the pull request~</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder">2.9.13. in what cases does the terminal file explorer get used as opposed to just navigating the file explorer/finder?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different">2.9.14. I think I’m still just a little confused on badges, and if they’re basically this class’s version of assignments, or something completely different.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="course-logistics-and-learning">
+<h1><span class="section-number">2. </span>Course Logistics and Learning<a class="headerlink" href="#course-logistics-and-learning" title="Permalink to this headline">#</a></h1>
+<section id="what-does-it-mean-to-study-computer-systems">
+<h2><span class="section-number">2.1. </span>What does it mean to study Computer Systems?<a class="headerlink" href="#what-does-it-mean-to-study-computer-systems" title="Permalink to this headline">#</a></h2>
+<p><em>“Systems”</em> in computing often refers to all the parts that help make the
+“more exciting” algorithmic parts work. Systems is like the magic that helps
+you get things done in practice, so that you can shift your attention elsewhere.
+In intro courses, we typically give you an environment to hide all the problems
+that could occur at the systems level.</p>
+<p>Most of us have had a bug, where we found a solution to get by, without really understanding <strong>why</strong> the solution fixed it or why that bug happened.</p>
+<p>Debugging often requires understanding, in practice, of how the programming language works, how it translates that to hardware, and how the hardware works.</p>
+<p><a class="reference external" href="https://education.nationalgeographic.org/resource/worlds-first-computer-bug/">the first “bug” was an <strong>actual</strong> moth</a></p>
+<p>These programmers had to know how to take apart the physical computer in order to find the insect.</p>
+<p>our computers are a lot different, but we still need systems understanding to be efficient.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In this course, we will take the time to understand all of this stuff. This means that we will use a different set of strategies to study it than we normally see in computer science.</p>
+</div>
+<p>This is a 300 level course, so you are one step closer to being a <em>professional</em> instead of <strong>only</strong> a <em>student</em>.</p>
+<p>This is still a college course, so we will be taking time to understand the theory and the <em>why</em> not only the <em>what</em> that a bootcamp or on the job training might provide.</p>
+<p>However, instead of using a text book that is designed explicitly and primarily for a school context, we will use <strong>primary sources</strong>.</p>
+<p>In our context, that means using three main types of sources:</p>
+<ul class="simple">
+<li><p>official reference docs</p></li>
+<li><p>direct research results</p></li>
+<li><p>first hand accounts by professional developers</p></li>
+</ul>
+<p>Back to what a system is …</p>
+<p>From ACM Transactions on Computer Systems</p>
+<blockquote>
+<div><p>ACM Transactions on Computer Systems (TOCS) presents research and development results on the design, specification, realization, behavior, and use of computer systems. The term “computer systems” is interpreted broadly and includes systems architectures, operating systems, distributed systems, and computer networks. Articles that appear in TOCS will tend either to present new techniques and concepts or to report on experiences and experiments with actual systems. Insights useful to system designers, builders, and users will be emphasized.</p>
+</div></blockquote>
+<p>We are going to be studying aspects <em>of</em> computer systems, but to really understand them, we also have to think about why they are the way they are.  We will therefore study in a broad way.</p>
+<p>We will look at blogs, surveys of developers, and actually examine the systems themselves.</p>
+</section>
+<section id="mental-models-and-learning">
+<h2><span class="section-number">2.2. </span>Mental Models and Learning<a class="headerlink" href="#mental-models-and-learning" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>When we know something well, it is easier to do, we can do it multple ways,</p></li>
+<li><p>it is easy to explain to others and we can explain it multiple ways.</p></li>
+<li><p>we can do the task almost automatically and combine and create things in new ways.</p></li>
+</ul>
+<p>This is true for all sorts of things.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We will practice and reinforce things a lot</p>
+</div>
+<p>a mental model is how you think about a concept and your way of relating it.</p>
+<p>Novices have sparse mental models, experts have connected mental models.</p>
+</section>
+<section id="why-do-we-need-this-for-computer-systems">
+<h2><span class="section-number">2.3. </span>Why do we need this for computer systems?<a class="headerlink" href="#why-do-we-need-this-for-computer-systems" title="Permalink to this headline">#</a></h2>
+<section id="systems-are-designed-by-programmers">
+<h3><span class="section-number">2.3.1. </span>Systems are designed by programmers<a class="headerlink" href="#systems-are-designed-by-programmers" title="Permalink to this headline">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this section is a little different than what I said in class, but it is still important and related.</p>
+</div>
+<p>Computer Science is not a natural science like biology or physics where we try
+to understand some aspect of the world that we live in.  Computer Science as a
+discipline, like algorithms, mostly derives from Math.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Historically, Computer Science Departments were often initally formed by professors
+in math  creating a new department or, sometimes, making a new degree programs
+without even creating a new department at first.  In other places, CS degree
+programs also grew within or out of Electrical Engineering.  At URI, CS grew
+out of math.</p>
+</aside>
+<p>So, when we study computer science, while parts of it are limited by physics<a class="footnote-reference brackets" href="#physics" id="id1">1</a>, most of it is essentially an
+imaginary world that is made by people.  Understanding how people think, both
+generally, and common patterns within the community of programmers<a class="footnote-reference brackets" href="#programmerthink" id="id2">2</a>
+understand how things work and why they are the way they are.  The why can also
+make it easier to remember, or, it can help you know what things you can find
+alternatives for, or even where you might invent a whole new thing that is
+better in some way.</p>
+</section>
+<section id="context-matters">
+<h3><span class="section-number">2.3.2. </span>Context Matters<a class="headerlink" href="#context-matters" title="Permalink to this headline">#</a></h3>
+<p>This context of how things were developed can influence how we understand it.
+We will also talk about the history of computing as we go through different
+topics in class so that we can build that context up.</p>
+</section>
+<section id="optimal-is-relative">
+<h3><span class="section-number">2.3.3. </span>Optimal is relative<a class="headerlink" href="#optimal-is-relative" title="Permalink to this headline">#</a></h3>
+<p>The “best” way to do something is always relative to the context.  “Best” is a
+vague term.  It could be most computationally efficient theoretically,
+fastest to run on a particular type of hardware, or easiest for another programmer
+to read.</p>
+<p>We will see how the best choice varies a lot as we investigate things at
+different levels of abstraction.</p>
+<div class="toggle docutils container">
+<p>For finding and reading this section, add a link to the heading above <code class="docutils literal notranslate"><span class="pre">Systems</span> <span class="pre">are</span> <span class="pre">designed</span> <span class="pre">by</span> <span class="pre">programmers</span></code> to your <code class="docutils literal notranslate"><span class="pre">community_contributions.md</span></code> in your KWL repo on a new branch, title the PR “Community Badge- Careful Reading” and <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review">request a review</a> from Dr Brown (<code class="docutils literal notranslate"><span class="pre">&#64;brownsarahm</span></code>)</p>
+<p>this will count for one community badge!</p>
+</div>
+</section>
+</section>
+<section id="lets-get-organized">
+<h2><span class="section-number">2.4. </span>Let’s get organized<a class="headerlink" href="#lets-get-organized" title="Permalink to this headline">#</a></h2>
+<p>For class you should have a folder on your computer where you will keep all of your materials.</p>
+<p>Open a terminal window.  I am going to use <code class="docutils literal notranslate"><span class="pre">bash</span></code> commands</p>
+<ul class="simple">
+<li><p>if you are on mac, your default shell is <code class="docutils literal notranslate"><span class="pre">zsh</span></code> which is mostly the same as bash for casual use. you can switch to bash to make your output more like mine using the command <code class="docutils literal notranslate"><span class="pre">bash</span></code> if you want, but it is not required.</p></li>
+<li><p>if you are on windows, your <strong>GitBash</strong> terminal will be the least setup work to use <code class="docutils literal notranslate"><span class="pre">bash</span></code></p></li>
+<li><p>if you have WSL (if you do not, no need to worry) you should be able to set your linux shell to <code class="docutils literal notranslate"><span class="pre">bash</span></code></p></li>
+</ul>
+<p>The first command we will use is <code class="docutils literal notranslate"><span class="pre">pwd</span></code> which stands for <strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span>
+</pre></div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>these terms link to the site glossary</p>
+</div>
+</aside>
+<p>this is called the <a class="reference internal" href="../resources/glossary.html#term-path"><span class="xref std std-term">path</span></a> and specifically this is an <a class="reference internal" href="../resources/glossary.html#term-absolute-path"><span class="xref std std-term">absolute path</span></a></p>
+<p>We can change into another directory with  <code class="docutils literal notranslate"><span class="pre">cd</span></code> for <strong>c</strong>hange <strong>d</strong>irectory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>To see what changed, we use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> again</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span>
+</pre></div>
+</div>
+<p>Note that the current path is the same as the old one plus the place we changed to.</p>
+<p>I moved one step further into my inclass folder</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">inclass</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>We can <strong>m</strong>a<strong>k</strong> a new <strong>dir</strong>ectory with <code class="docutils literal notranslate"><span class="pre">mkdir</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">systems</span>
+</pre></div>
+</div>
+<p>What you want to have is a folder for class (mine is systems) in a place you can find it. (mine is in my inclass folder)</p>
+<p>We can view what is in a folder with <code class="docutils literal notranslate"><span class="pre">ls</span></code> for <strong>list</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<p>I have a few other folders here</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fa22</span>		<span class="n">prog4dsfa23</span>	<span class="n">sp23</span>		<span class="n">systems</span>
+</pre></div>
+</div>
+<p>And again check the path</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span>
+</pre></div>
+</div>
+<p>then I can do into the new folder I just made</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">systems</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>and look at the path one more time</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span>
+</pre></div>
+</div>
+<p>We can change back to the home directory with <code class="docutils literal notranslate"><span class="pre">~</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
+</pre></div>
+</div>
+<p>and confirm:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span>
+</pre></div>
+</div>
+<p>just like before</p>
+<p>Then we can use the <a class="reference internal" href="../resources/glossary.html#term-relative-path"><span class="xref std std-term">relative path</span></a>` of where we want to go:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span></code> with no path also works</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
+</pre></div>
+</div>
+<p>and we can use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to see where we end up</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span>
+</pre></div>
+</div>
+<p>it’s the home directoy just like <code class="docutils literal notranslate"><span class="pre">~</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">..</span></code> stands for up one level,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="prepare-for-next-class">
+<h2><span class="section-number">2.5. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Find the glossary page for the course website, link it below. Review the terms for the next class: shell, terminal, bash, git, GitHub.</p></li>
+<li><p>Check your kwl repo before class and see if you have recieved feedback, reply or merge accordingly.</p></li>
+<li><p>Make sure you have a working environment, see the list in the syllabus, including <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI if you use mac`. Use the discussions to ask for help.</p></li>
+</ol>
+</section>
+<section id="review-todays-class">
+<h2><span class="section-number">2.6. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>review notes after they are posted, both rendered and the raw markdown include links to each in your badge PR</p></li>
+<li><p>map out your computing knowledge and add it to your kwl chart repo. this can be an image that you upload or a text-based outline in a file called <span class="target" id="index-0"></span>prior-knowledge-map. (optional) try mapping out using <a class="reference external" href="https://mermaid-js.github.io/mermaid/#/">mermaid</a> syntax, we’ll be using other tools that will faciltate rendering later</p></li>
+</ol>
+</section>
+<section id="more-practice">
+<h2><span class="section-number">2.7. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>review notes after they are posted, both rendered and the raw markdown versions. Include links to both views in your badge PR comment.</p></li>
+<li><p>read Chapter 1, “Decoding your confusion while coding” in <a class="reference external" href="https://www.manning.com/books/the-programmers-brain#toc">The Programmer’s Brain</a> add a file called <span class="target" id="index-1"></span>brain.md to your kwl repo that summarizes your thoughts on the chapter and how, if at all, it changes how you think about debugging and learning to program.</p></li>
+<li><p>map out your computing knowledge and add it to your kwl chart repo in a file called <span class="target" id="index-2"></span>prior-knowledge-map.md. Use <a class="reference external" href="https://mermaid-js.github.io/mermaid/#/">mermaid</a> syntax, to draw your map. GitHub can render it for you including while you work using the preview button.</p></li>
+<li><p>Read more about <a class="reference external" href="https://www.atlassian.com/git/tutorials/what-is-version-control">version control in general</a> and add a “version control” row to your KWL chart with all 3 columns filled in.</p></li>
+</ol>
+</section>
+<section id="experience-report-evidence">
+<h2><span class="section-number">2.8. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<p>In office hours, show us that you have a folder to work in for class.</p>
+</section>
+<section id="questions-after-todays-class">
+<h2><span class="section-number">2.9. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<section id="i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal">
+<h3><span class="section-number">2.9.1. </span>I wonder why Mac and Linux have built-in terminals but Windows, arguably the most popular OS, does not have a built-in terminal?<a class="headerlink" href="#i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal" title="Permalink to this headline">#</a></h3>
+<p>It does ahve a built in terminal, it just uses a Windows-only shell, <code class="docutils literal notranslate"><span class="pre">bash</span></code> is the most popular shell to learn, because it is used on unix and linux systems and those are most commonly used for <strong>developers</strong> and code <strong>production</strong> environments where you may only have remote, terminal only access.</p>
+</section>
+<section id="no-real-questions-maybe-curious-about-downloading-github-files-using-commands">
+<h3><span class="section-number">2.9.2. </span>No real questions, maybe curious about downloading github files using commands<a class="headerlink" href="#no-real-questions-maybe-curious-about-downloading-github-files-using-commands" title="Permalink to this headline">#</a></h3>
+<p>that is what we will do Thursday</p>
+</section>
+<section id="ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible">
+<h3><span class="section-number">2.9.3. </span>I’ve seen this type of material before so I would want to know about from other things I’ve seen would be how to interact with apps (google chrome) and stuff like that if that’s even possible?<a class="headerlink" href="#ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible" title="Permalink to this headline">#</a></h3>
+<p>one step of the action that builds the course syllabus pdf launches chromium and prints the syllabus to a pdf.</p>
+</section>
+<section id="will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept">
+<h3><span class="section-number">2.9.4. </span>Will we be piping things in the command line often, or are we mostly getting an introduction to the concept?<a class="headerlink" href="#will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept" title="Permalink to this headline">#</a></h3>
+<p>we will be workign with the shell A LOT</p>
+</section>
+<section id="i-want-to-know-more-about-what-reverting-does-to-github">
+<h3><span class="section-number">2.9.5. </span>I want to know more about what reverting does to github<a class="headerlink" href="#i-want-to-know-more-about-what-reverting-does-to-github" title="Permalink to this headline">#</a></h3>
+<p>In a few classes, we will get there!</p>
+</section>
+<section id="does-making-directories-in-a-shell-put-them-in-the-directory-automatically">
+<h3><span class="section-number">2.9.6. </span>does making directories in a shell put them in the directory automatically?<a class="headerlink" href="#does-making-directories-in-a-shell-put-them-in-the-directory-automatically" title="Permalink to this headline">#</a></h3>
+<p>it puts them where you say, nothing explicit, is an implicit relative path to your current working directory.</p>
+</section>
+<section id="are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else">
+<h3><span class="section-number">2.9.7. </span>Are there any benefits to choosing either zsh or bash? Ease of use, compatability, or anything else<a class="headerlink" href="#are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">bash</span></code> is more standard
+<code class="docutils literal notranslate"><span class="pre">zsh</span></code> can do some things a little faster</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Learning more about the differences is an option for an explore badge</p>
+</div>
+</section>
+<section id="why-does-cd-and-cd-do-the-same-thing">
+<h3><span class="section-number">2.9.8. </span>why does cd and cd~ do the same thing?<a class="headerlink" href="#why-does-cd-and-cd-do-the-same-thing" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">~</span></code> is a shortcut for home and so is nothing.</p>
+</section>
+<section id="i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use">
+<h3><span class="section-number">2.9.9. </span>I want to know more about how git is connected and will be applied to github and other tools we use.<a class="headerlink" href="#i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use" title="Permalink to this headline">#</a></h3>
+<p>we will do this over the next few classes</p>
+</section>
+<section id="how-do-i-make-up-lectures">
+<h3><span class="section-number">2.9.10. </span>how do I make up lectures<a class="headerlink" href="#how-do-i-make-up-lectures" title="Permalink to this headline">#</a></h3>
+<p>Read the notes and complete the experience report (makeup) action</p>
+</section>
+<section id="should-i-merge-the-add-my-name-to-readme-pull-request">
+<h3><span class="section-number">2.9.11. </span>Should I merge the add my name to readme pull request?<a class="headerlink" href="#should-i-merge-the-add-my-name-to-readme-pull-request" title="Permalink to this headline">#</a></h3>
+<p>yes</p>
+</section>
+<section id="if-my-lab-was-approved-can-i-merge-the-pull-request">
+<h3><span class="section-number">2.9.12. </span>if my lab was approved can i merge the pull request~<a class="headerlink" href="#if-my-lab-was-approved-can-i-merge-the-pull-request" title="Permalink to this headline">#</a></h3>
+<p>yes</p>
+</section>
+<section id="in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder">
+<h3><span class="section-number">2.9.13. </span>in what cases does the terminal file explorer get used as opposed to just navigating the file explorer/finder?<a class="headerlink" href="#in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder" title="Permalink to this headline">#</a></h3>
+<p>Once you know the terminal, it becomes faster than the GUI.  Also, if you need to programmatically move files, bash allows you to make scripts!</p>
+</section>
+<section id="i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different">
+<h3><span class="section-number">2.9.14. </span>I think I’m still just a little confused on badges, and if they’re basically this class’s version of assignments, or something completely different.<a class="headerlink" href="#i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different" title="Permalink to this headline">#</a></h3>
+<p>they’re roughly like assignments, it’s how we track what work you have completed. Not <em>all</em> assigned badges are required though, no matter what grade you want to earn.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="physics"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>when we are <em>really</em> close to the hardware</p>
+</dd>
+<dt class="label" id="programmerthink"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Of course, not <em>all</em> programmers think the same way, but when
+people spend time together and communicate, they start to share patterns in how
+they think. So, while you do <strong>not</strong> have to think the same way as these patterns,
+knowing what they are will help you reading code, and understanding things.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-09-07.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Welcome, Introduction, and Setup</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-mean-to-study-computer-systems">2.1. What does it mean to study Computer Systems?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mental-models-and-learning">2.2. Mental Models and Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-for-computer-systems">2.3. Why do we need this for computer systems?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-are-designed-by-programmers">2.3.1. Systems are designed by programmers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-matters">2.3.2. Context Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-is-relative">2.3.3. Optimal is relative</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-get-organized">2.4. Let’s get organized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">2.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">2.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">2.7. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">2.8. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">2.9. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal">2.9.1. I wonder why Mac and Linux have built-in terminals but Windows, arguably the most popular OS, does not have a built-in terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-real-questions-maybe-curious-about-downloading-github-files-using-commands">2.9.2. No real questions, maybe curious about downloading github files using commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible">2.9.3. I’ve seen this type of material before so I would want to know about from other things I’ve seen would be how to interact with apps (google chrome) and stuff like that if that’s even possible?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept">2.9.4. Will we be piping things in the command line often, or are we mostly getting an introduction to the concept?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-what-reverting-does-to-github">2.9.5. I want to know more about what reverting does to github</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-making-directories-in-a-shell-put-them-in-the-directory-automatically">2.9.6. does making directories in a shell put them in the directory automatically?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else">2.9.7. Are there any benefits to choosing either zsh or bash? Ease of use, compatability, or anything else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-cd-and-cd-do-the-same-thing">2.9.8. why does cd and cd~ do the same thing?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use">2.9.9. I want to know more about how git is connected and will be applied to github and other tools we use.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-make-up-lectures">2.9.10. how do I make up lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-merge-the-add-my-name-to-readme-pull-request">2.9.11. Should I merge the add my name to readme pull request?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-my-lab-was-approved-can-i-merge-the-pull-request">2.9.12. if my lab was approved can i merge the pull request~</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder">2.9.13. in what cases does the terminal file explorer get used as opposed to just navigating the file explorer/finder?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different">2.9.14. I think I’m still just a little confused on badges, and if they’re basically this class’s version of assignments, or something completely different.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

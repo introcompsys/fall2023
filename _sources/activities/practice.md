@@ -19,3 +19,11 @@ Activities will appear here once the semester begins
 Activities:
 ```{include} ../_practice/2023-09-07.md
 ```
+
+## 2023-09-12
+
+[related notes](../notes/2023-09-12)
+
+Activities:
+```{include} ../_practice/2023-09-12.md
+```
