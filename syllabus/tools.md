@@ -25,7 +25,7 @@ in the course
 
 On BrightSpace, you will find links to other resource, this site and others. 
 Any links that are for private discussion among those enrolled in the course 
-will be available only from our course {{ bssite }}.
+will be available only from Brightspace.
 
 
 ## Prismia chat
