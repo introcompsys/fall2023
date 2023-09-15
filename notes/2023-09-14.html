@@ -1,0 +1,1016 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3. How do I use git offline? &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-14';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="2. Course Logistics and Learning" href="2023-09-12.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Visualizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Badge Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. How do I use git offline?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">More Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">KWL File Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/edit/main/notes/2023-09-14.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/issues/new?title=Issue%20on%20page%20%2Fnotes/2023-09-14.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2023-09-14.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>How do I use git offline?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">3.1. Open a Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-toy-repo-for-in-class">3.2. A toy repo for in class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-github">3.3. Connecting with GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authenticating-with-github">3.3.1. Authenticating with GitHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-gitbash">3.3.2. Windows (gitbash)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-x">3.3.3. MacOS X</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-nothing-else-works">3.3.4. If nothing else works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repo">3.3.5. Cloning a repo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-in-a-repo">3.4. What is in a repo?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-what-git-knows">3.5. How do I know what git knows?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-branch-with-github">3.6. Making a branch with GitHub.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">3.7. Creating a file on the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">3.8. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">3.9. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">3.10. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">3.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">3.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on">3.12.1. Are the things we learned in the terminal available to revisit later on?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot">3.12.2. what’s the difference between git checkout and git pull, i used pull in 305 a lot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-situations-would-you-use-the-terminal-over-something-like-vscode-for">3.12.3. What situations would you use the terminal over something like VScode for?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run">3.12.4. Will we learn how to fix mistakes in the terminal? As in commands we did not mean to run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal">3.12.5. Im curious about the benefits to viewing files in the terminal as opposed to quick viewing them in finder, or other things that seem to be easier outside of terminal</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="how-do-i-use-git-offline">
+<h1><span class="section-number">3. </span>How do I use git offline?<a class="headerlink" href="#how-do-i-use-git-offline" title="Permalink to this headline">#</a></h1>
+<section id="open-a-terminal">
+<h2><span class="section-number">3.1. </span>Open a Terminal<a class="headerlink" href="#open-a-terminal" title="Permalink to this headline">#</a></h2>
+<p>Use the same one we used in the last class</p>
+<p>and move to the folder we made to use as a working directory for in class</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>we did some review, see the last notes instead of recapping that here</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">..</span></code> is a special file that points to a specific relative path, of one level up.</p>
+<p>we can use <code class="docutils literal notranslate"><span class="pre">cd</span></code> and <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to illustrate what “one level up” means</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span>
+</pre></div>
+</div>
+<p>we move to make the current working directory the one, one step prior in the hierarchy with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">systems</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="a-toy-repo-for-in-class">
+<h2><span class="section-number">3.2. </span>A toy repo for in class<a class="headerlink" href="#a-toy-repo-for-in-class" title="Permalink to this headline">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I removed the link from the public notes, but you can get it in prismia</p>
+</div>
+<p><strong>this repo will be for <em>in class</em> work, you will not get feedback inside of it, unless you ask, but you will answer questions in your kwl repo about what we do in this repo sometimes</strong></p>
+<p><strong>only work in this repo during class time</strong> or making up class, unless specifically instructed to (will happen once in a few weeks)</p>
+</section>
+<section id="connecting-with-github">
+<h2><span class="section-number">3.3. </span>Connecting with GitHub<a class="headerlink" href="#connecting-with-github" title="Permalink to this headline">#</a></h2>
+<p>We have two choices to Download a repository:</p>
+<ol class="arabic simple">
+<li><p>clone to maintain a link using git</p></li>
+<li><p>download zip to not have to use git, but have no link</p></li>
+</ol>
+<p>we want option 1 beacuse we are learning git</p>
+<section id="authenticating-with-github">
+<h3><span class="section-number">3.3.1. </span>Authenticating with GitHub<a class="headerlink" href="#authenticating-with-github" title="Permalink to this headline">#</a></h3>
+<p>There are many ways to authenticate securely with GitHub and other git clients.  We’re going to use <em>easier</em> ones for today, but we’ll come back to the third, which is a bit more secure and is a more general type of authentication.</p>
+<ol class="arabic simple">
+<li><p>ssh keys (we will do this later)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI / gitscm in GitBash through browser</p></li>
+</ol>
+</section>
+<section id="windows-gitbash">
+<h3><span class="section-number">3.3.2. </span>Windows (gitbash)<a class="headerlink" href="#windows-gitbash" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> and paste your URL from GitHub</p></li>
+<li><p>then follow the prompts, choosing to authenticate in Browser.</p></li>
+</ul>
+</section>
+<section id="macos-x">
+<h3><span class="section-number">3.3.3. </span>MacOS X<a class="headerlink" href="#macos-x" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>GitHub CLI: enter <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">auth</span> <span class="pre">login</span></code> and follow the prompts.</p></li>
+<li><p>then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> and paste your URL from github</p></li>
+</ul>
+</section>
+<section id="if-nothing-else-works">
+<h3><span class="section-number">3.3.4. </span>If nothing else works<a class="headerlink" href="#if-nothing-else-works" title="Permalink to this headline">#</a></h3>
+<p>Create a <a class="reference external" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">personal access token</a>. This is a special one time password that you can use like a password, but it is limited in scope and will expire (as long as you choose settings well).</p>
+<p>Then proceed to the clone step. You may need to configure an identity later with <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code></a></p>
+</section>
+<section id="cloning-a-repo">
+<h3><span class="section-number">3.3.5. </span>Cloning a repo<a class="headerlink" href="#cloning-a-repo" title="Permalink to this headline">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>then we get several messages back from git and GitHub (the remote)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cloning</span> <span class="n">into</span> <span class="s1">&#39;github-inclass-fa23-brownsarahm&#39;</span><span class="o">...</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">8</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">8</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">4</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">Receiving</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">8</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Confirm it worked with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+</pre></div>
+</div>
+<p>We see the new folder that matches our repo name</p>
+</section>
+</section>
+<section id="what-is-in-a-repo">
+<h2><span class="section-number">3.4. </span>What is in a repo?<a class="headerlink" href="#what-is-in-a-repo" title="Permalink to this headline">#</a></h2>
+<p>We can enter that folder</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>When we compare the local directory to GitHub</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>Notice that the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> that we see on GitHub is missing,
+that is because it is <em>hidden</em>.  All file names that start with <code class="docutils literal notranslate"><span class="pre">.</span></code> are hidden.</p>
+<p>We can actually see the rest with the <code class="docutils literal notranslate"><span class="pre">-a</span></code> for <strong>all</strong> <em>option</em> or <em>flag</em>.  Options are how we can pass non required parameters to command line programs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>		<span class="o">.</span><span class="n">git</span>		<span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="o">..</span>		<span class="o">.</span><span class="n">github</span>
+</pre></div>
+</div>
+<p>We also see some special “files”, <code class="docutils literal notranslate"><span class="pre">.</span></code> the current location and <code class="docutils literal notranslate"><span class="pre">..</span></code> up one directory</p>
+</section>
+<section id="how-do-i-know-what-git-knows">
+<h2><span class="section-number">3.5. </span>How do I know what git knows?<a class="headerlink" href="#how-do-i-know-what-git-knows" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://git-scm.com/docs/git-status"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></a> is your friend.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">satus</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="p">:</span> <span class="s1">&#39;satus&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">git</span> <span class="n">command</span><span class="o">.</span> <span class="n">See</span> <span class="s1">&#39;git --help&#39;</span><span class="o">.</span>
+
+<span class="n">The</span> <span class="n">most</span> <span class="n">similar</span> <span class="n">command</span> <span class="ow">is</span>
+	<span class="n">status</span>
+</pre></div>
+</div>
+<p>git give you hits, when you try to use a command that doesn’t exist. It is friendly, not scary!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>this command compares your working directory (what you can see with <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code> and all subfolders except the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directorty) to the current state of your <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory.</p>
+<p>this tells us:</p>
+<ul class="simple">
+<li><p>the branch we are on (<code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">branch</span> <span class="pre">main</span></code>)</p></li>
+<li><p>that we have incorporated all changes downloaded from GitHub (<code class="docutils literal notranslate"><span class="pre">up</span> <span class="pre">to</span> <span class="pre">date</span> <span class="pre">with</span> <span class="pre">'origin/main'</span></code>)</p></li>
+<li><p>that our working directory matches what it was after the repo’s last commit (<code class="docutils literal notranslate"><span class="pre">nothing</span> <span class="pre">to</span> <span class="pre">commit,</span> <span class="pre">working</span> <span class="pre">tree</span> <span class="pre">clean</span></code>)</p></li>
+</ul>
+</section>
+<section id="making-a-branch-with-github">
+<h2><span class="section-number">3.6. </span>Making a branch with GitHub.<a class="headerlink" href="#making-a-branch-with-github" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Run the one action in the github in class repo one time to get the issues</p>
+</div>
+<p>First on an issue, create a branch using the link in the development section of the right side panel. See the <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-a-branch-for-an-issue">github docs</a> for how to do that.</p>
+<p>Then it gives you two steps to do. We are going to do them one at a time so we can see better what they each do.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">orign</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fatal</span><span class="p">:</span> <span class="s1">&#39;orign&#39;</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">appear</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="n">git</span> <span class="n">repository</span>
+<span class="n">fatal</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="n">read</span> <span class="kn">from</span> <span class="nn">remote</span> <span class="n">repository</span><span class="o">.</span>
+
+<span class="n">Please</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">have</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">access</span> <span class="n">rights</span>
+<span class="ow">and</span> <span class="n">the</span> <span class="n">repository</span> <span class="n">exists</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Since the argument after <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> is the variable anme of a remote, when I splled <code class="docutils literal notranslate"><span class="pre">origin</span></code> wrong, it says that it can’t find it.</p>
+<p>First we will update the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory without changing the working directory using <a class="reference external" href="https://git-scm.com/docs/git-fetch">git fetch</a>. We have to tell git fetch where to get the data from, we do that using a name of a <span class="xref std std-term">remote</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">From</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span> <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+</pre></div>
+</div>
+<p>then we check status again</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>Looks like nothing so far.</p>
+<p>Next, we switch to that branch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">branch</span> <span class="s1">&#39;1-create-an-about-file&#39;</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+<span class="n">Switched</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="s1">&#39;1-create-an-about-file&#39;</span>
+</pre></div>
+</div>
+<p>and verify what happened</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-a-file-on-the-terminal">
+<h2><span class="section-number">3.7. </span>Creating a file on the terminal<a class="headerlink" href="#creating-a-file-on-the-terminal" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">touch</span></code> command creates an empty file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see our working directory now.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we see something new. Git tells us that there is a file in the working directory that it has not been told to track the changes in and it knows nothing.</p>
+<p>It also tells us what we can do next. Under “Untracked files” it gives us advice for how to handle those files specifically. If we had made more than one type of change, there would be multiple subheadings each with their own suggestions.</p>
+<p>The very last line is advice of what do to overall.</p>
+<p>We’re going to do a bit more work first though, by adding conent to the file.</p>
+<p>We are going to use the <a class="reference external" href="https://www.nano-editor.org/">nano</a> text editor to edit the file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<p>On the nano editor the <code class="docutils literal notranslate"><span class="pre">^</span></code> stands for control.</p>
+<p>and we can look at the contents of it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
+<span class="mi">2027</span>
+</pre></div>
+</div>
+<p>Now we will check again</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case both say to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to track or to include in what will be committed.  Under untracked files is it says <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;...</span></code>, in our case this would look like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">about.md</span></code>.  However, remember we learned that the <code class="docutils literal notranslate"><span class="pre">.</span></code>  that is always in every directory is a special “file” that points to the current directory, so we can use that to add <strong>all</strong> files. Since we have only one, the two are equivalent, and the <code class="docutils literal notranslate"><span class="pre">.</span></code> is a common shortcut, because most of the time we want to add everything we have recently worked on in a single commit.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> puts a file in the “staging area” we can use the staging area to group files together and put  changes to multiple files in a single commit. This is something we <strong>cannot</strong> do on GitHub in the browser, in order to save changes at all, we have to commit. Offline, we can save changes to our computer without commiting at all, and we can group many changes into a single commit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>We will use status to see what has changed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+
+</pre></div>
+</div>
+<p>Now that one file is marked as a new file and it is in the group “to be committed”. Git also tells us how to undo the thing we just did.</p>
+<div class="anchor admonition">
+<p class="admonition-title">Try this yourself</p>
+<p>Try making a change, adding it, then restoring it. Use git status to see what happens at each point</p>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you forget the <code class="docutils literal notranslate"><span class="pre">-m</span></code> you will be put into <code class="docutils literal notranslate"><span class="pre">vi</span></code> or <code class="docutils literal notranslate"><span class="pre">vim</span></code> text editor. Press <code class="docutils literal notranslate"><span class="pre">a</span></code> to enter <code class="docutils literal notranslate"><span class="pre">~insert&quot;</span> <span class="pre">mode</span> <span class="pre">(that</span> <span class="pre">will</span> <span class="pre">appear</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">bottom</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">terminal</span> <span class="pre">window),</span> <span class="pre">type</span> <span class="pre">your</span> <span class="pre">commit</span> <span class="pre">message,</span> <span class="pre">then</span> <span class="pre">press</span> </code>escape<code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">exit</span> <span class="pre">insert</span> <span class="pre">mode.</span> <span class="pre">Then</span> <span class="pre">type</span></code>:wq`and press enter/return  to write(save) and quit.</p>
+</div>
+</aside>
+<p>Next, we will commit the file.  We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> for this.  the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option allows us to put our commit message dirctly on the line when we commit.  Notice that unlike commiting on GitHub, we do not choose our branch with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.  We have to be “on” that branch before the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;create and complete about file closes #1&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span> <span class="mi">693</span><span class="n">a2b5</span><span class="p">]</span> <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>At this point you might get an error or warning about your identity. Follow what git says to either set or update your identity using `git config</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>Remember, the messages that git gives you are designed to try to help you.  The developers of git know it’s a complex and powerful tool and that it’s hard to remember every little bit.</p>
+<p>We again check in with git:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git push&quot;</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">your</span> <span class="n">local</span> <span class="n">commits</span><span class="p">)</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>Now it tells us we have changes that GitHub does not know about.</p>
+<p>We can send them to github with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
+<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">347</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">347.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+   <span class="mi">6</span><span class="n">a12db0</span><span class="o">.</span><span class="mf">.693</span><span class="n">a2b5</span>  <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+</pre></div>
+</div>
+<p>This tells us the steps git took to send:</p>
+<ul class="simple">
+<li><p>counts up what is there</p></li>
+<li><p>compresses them</p></li>
+<li><p>sends them to GitHub</p></li>
+<li><p>moves the <code class="docutils literal notranslate"><span class="pre">2-create-an-about-file</span></code> branch on GitHub from commit <code class="docutils literal notranslate"><span class="pre">3f54148</span></code> to commit <code class="docutils literal notranslate"><span class="pre">57de0cd</span></code></p></li>
+<li><p>links the local <code class="docutils literal notranslate"><span class="pre">2-create-an-about-file</span></code> branch to the GitHub <code class="docutils literal notranslate"><span class="pre">2-create-an-about-file</span></code> branch</p></li>
+</ul>
+</section>
+<section id="review-todays-class">
+<h2><span class="section-number">3.8. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<p>Any steps in a badge marked <strong>lab</strong> are steps that we are going to focus in on during lab time.  Remember the goal of lab is to help you complete the work, not add additional work. The lab checkout will include some other tasks and then we will encourage you to work on this badge while we are there to help. Lab checkouts are checked only for completion though, not correctness, so steps of activities that we want you to really think about and revise if incorrect will be in a practice or review badge.</p>
+<ol class="arabic simple">
+<li><p>Read the notes. If you have any questions, post an issue on the course website repo.</p></li>
+<li><p>Using your terminal, download your KWL repo. Include the command used in your badge PR.</p></li>
+<li><p>Try using setting up git using your favorite IDE or GitHub Desktop. Make a file <span class="target" id="index-0"></span>gitoffline.md and include some notes of how it went. Was it hard? easy? what did you figure out or get stuck on? Is the terminology consistent or does it use different terms?</p></li>
+<li><p><strong>lab</strong> Explore the difference between git add and git commit: try committing and pushing without adding, then add and push without committing. Describe what happens in each case in a file called <span class="target" id="index-1"></span>gitcommit.md. Compare what happens based on what you can see on GitHub and what you can see with git status.</p></li>
+</ol>
+</section>
+<section id="more-practice">
+<h2><span class="section-number">3.9. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<p>Any steps in a badge marked <strong>lab</strong> are steps that we are going to focus in on during lab time.  Remember the goal of lab is to help you complete the work, not add additional work. The lab checkout will include some other tasks and then we will encourage you to work on this badge while we are there to help. Lab checkouts are checked only for completion though, not correctness, so steps of activities that we want you to really think about and revise if incorrect will be in a practice or review badge.</p>
+<ol class="arabic simple">
+<li><p>Read the notes. If you have any questions, post an issue on the course website repo.</p></li>
+<li><p>Using your terminal, download your KWL repo. Include the command used in your badge PR.</p></li>
+<li><p>Try using setting up git using your favorite IDE or GitHub Desktop. Make a file <span class="target" id="index-2"></span>gitoffline.md and include some notes of how it went. Was it hard? easy? what did you figure out or get stuck on? Is the terminology consistent or does it use different terms?</p></li>
+<li><p><strong>lab</strong> Explore the difference between git add and git commit: try committing and pushing without adding, then add and push without committing. Describe what happens in each case in a file called <span class="target" id="index-3"></span>gitcommit_tips.md. Compare what happens based on what you can see on GitHub and what you can see with git status. Write a scenario with examples of how a person might make mistakes with git add and commit and what to look for to get unstuck.</p></li>
+</ol>
+</section>
+<section id="prepare-for-next-class">
+<h2><span class="section-number">3.10. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Reply below with any questions you have about using terminals so that you can bring it up in class</p></li>
+<li><p>Be prepared to compare and contrast bash, shell, terminal, and git.</p></li>
+<li><p>(optional) If you like to read about things before you do them, <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts">read about merge conflicts</a>. If you prefer to see them first, read this after.</p></li>
+</ol>
+</section>
+<section id="experience-report-evidence">
+<h2><span class="section-number">3.11. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<p>link to your github inclass repo</p>
+</section>
+<section id="questions-after-todays-class">
+<h2><span class="section-number">3.12. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<section id="are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on">
+<h3><span class="section-number">3.12.1. </span>Are the things we learned in the terminal available to revisit later on?<a class="headerlink" href="#are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on" title="Permalink to this headline">#</a></h3>
+<p>Yes, in these notest!</p>
+</section>
+<section id="whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot">
+<h3><span class="section-number">3.12.2. </span>what’s the difference between git checkout and git pull, i used pull in 305 a lot<a class="headerlink" href="#whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> updates the <strong>same</strong> branch you are on. It calls <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> and then does some extra stuff. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> switches branches</p>
+</section>
+<section id="what-situations-would-you-use-the-terminal-over-something-like-vscode-for">
+<h3><span class="section-number">3.12.3. </span>What situations would you use the terminal over something like VScode for?<a class="headerlink" href="#what-situations-would-you-use-the-terminal-over-something-like-vscode-for" title="Permalink to this headline">#</a></h3>
+<p>really quick edits where the time spent to open and configure VSCode does not pay off</p>
+</section>
+<section id="will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run">
+<h3><span class="section-number">3.12.4. </span>Will we learn how to fix mistakes in the terminal? As in commands we did not mean to run<a class="headerlink" href="#will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run" title="Permalink to this headline">#</a></h3>
+<p>Yes, for the things that can be fixed, we will also see what commands cannot be undone and what safeties are in built into CLI tools.</p>
+</section>
+<section id="im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal">
+<h3><span class="section-number">3.12.5. </span>Im curious about the benefits to viewing files in the terminal as opposed to quick viewing them in finder, or other things that seem to be easier outside of terminal<a class="headerlink" href="#im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal" title="Permalink to this headline">#</a></h3>
+<p>Viewing a file in finder when we know it is really small and only text requires <strong>context switching</strong> which makes it more work.  Using a GUI can be an easier way to start, it is less to remember, but once you know how things work you cannot make them any faster, you have to move your mouse so far, wait for things to load, etc.  The terminal lets you gain speed once you learn.</p>
+<p>You can also automate and script things.</p>
+<p>Finally, sometimes a GUI is a waste of resources that you do not have to spare.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-09-12.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Course Logistics and Learning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">3.1. Open a Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-toy-repo-for-in-class">3.2. A toy repo for in class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-github">3.3. Connecting with GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authenticating-with-github">3.3.1. Authenticating with GitHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-gitbash">3.3.2. Windows (gitbash)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-x">3.3.3. MacOS X</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-nothing-else-works">3.3.4. If nothing else works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repo">3.3.5. Cloning a repo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-in-a-repo">3.4. What is in a repo?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-what-git-knows">3.5. How do I know what git knows?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-branch-with-github">3.6. Making a branch with GitHub.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">3.7. Creating a file on the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">3.8. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">3.9. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">3.10. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">3.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">3.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on">3.12.1. Are the things we learned in the terminal available to revisit later on?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot">3.12.2. what’s the difference between git checkout and git pull, i used pull in 305 a lot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-situations-would-you-use-the-terminal-over-something-like-vscode-for">3.12.3. What situations would you use the terminal over something like VScode for?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run">3.12.4. Will we learn how to fix mistakes in the terminal? As in commands we did not mean to run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal">3.12.5. Im curious about the benefits to viewing files in the terminal as opposed to quick viewing them in finder, or other things that seem to be easier outside of terminal</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
