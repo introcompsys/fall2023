@@ -23,3 +23,10 @@ Activities:
 Activities:
 ```{include} ../_prepare/2023-09-14.md
 ```
+## 2023-09-19
+
+[related notes](../notes/2023-09-19)
+
+Activities:
+```{include} ../_prepare/2023-09-19.md
+```
