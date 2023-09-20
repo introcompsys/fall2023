@@ -1,0 +1,1279 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>How do git branches work? &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-19';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Visualizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Badge Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">More Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">KWL File Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/edit/main/notes/2023-09-19.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/issues/new?title=Issue%20on%20page%20%2Fnotes/2023-09-19.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2023-09-19.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>How do git branches work?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-do-not-sync-automatically">Branches do not sync automatically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-will-downlaod-and-update">Pull will downlaod and update</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-branch-locally">making a new branch locally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-conflicts">Merge conflicts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems">How would you fix a merge conflict involving other people trying to commit on other systems?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on">are there situations where if you accidently make another branch, that you can merge it can into the one you wanted to be working on?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases">could you fix a merge conflict in github rather than in the local terminal in some cases?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-does-the-rebase-command-do">What exactly does the rebase command do?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-point-does-using-git-locally-give">What point does using git locally give?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-were-some-of-my-command-prompts-different-from-yours">Why were some of my command prompts different from yours?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal">What website do you find the most useful to resolve issues relating to git within the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github">Would it be reasonable to never use the local Terminal and just always use github?</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="how-do-git-branches-work">
+<h1>How do git branches work?<a class="headerlink" href="#how-do-git-branches-work" title="Permalink to this headline">#</a></h1>
+<section id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">#</a></h2>
+<p>Recall, We can move around and examine the computer’s file structure using shell commands.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>To confirm our current working directory we print it with <code class="docutils literal notranslate"><span class="pre">pwd</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+</pre></div>
+</div>
+<p>this confirms what we expect</p>
+<p>Now let’s see what is in our folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>and check in with git</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>this is as we left off.</p>
+</section>
+<section id="branches-do-not-sync-automatically">
+<h2>Branches do not sync automatically<a class="headerlink" href="#branches-do-not-sync-automatically" title="Permalink to this headline">#</a></h2>
+<p>Now we will look in GitHub and see what is there.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>the step below requires that you have the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI. On windows with GitBash, you have not needed this, and it can be  bit tricky to install.  If you get it done and working well, and you submit instructions to this repo about how to get it set up, for either a community badge (if it’s simple) or an explore badge if it takes a lot</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">repo</span> <span class="n">view</span> <span class="o">--</span><span class="n">web</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Opening</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">browser</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>On Github, we see that it matches the branch we were on because we had merged in our PR in class on Thursday.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>Back on our local computer, we will go back to the main branch, using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s1">&#39;main&#39;</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>now we look at the status of our repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>the file is missing.  It said it was up to date with origin main, but that is the most recent time we checked github only.  It’s up to date with our local record of what is on GitHub, not the current GitHub.</p>
+<p>Next, we will update locally, with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">1</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">Unpacking</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">),</span> <span class="mi">646</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">215.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">From</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+   <span class="mi">6</span><span class="n">a12db0</span><span class="o">..</span><span class="n">caeacb5</span>  <span class="n">main</span>       <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span>
+</pre></div>
+</div>
+<p>Here we see 2 sets of messages.  Some lines start with “remote” and other lines do not.
+The “remote” lines are what <code class="docutils literal notranslate"><span class="pre">git</span></code> on the GitHub server said in response to our request and the
+other lines are what <code class="docutils literal notranslate"><span class="pre">git</span></code> on your local computer said.</p>
+<p>So, here, it counted up the content, and then sent it on GitHub’s side. On the local side, it unpacked (remember git compressed the content before we sent it). It describes the changes that were made on the
+GitHub side, the main branch was moved from one commit to another. So it then updates the local main branch accordingly (“Updating 6a12db0…caeacb5”).</p>
+<p>We can see that this updates th working directory too:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>no changes yet. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> updates the .git directory so that git knows more, but does not update our local file system.</p>
+<p>We can use git pull to fully update.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Updating</span> <span class="mi">6</span><span class="n">a12db0</span><span class="o">..</span><span class="n">caeacb5</span>
+<span class="n">Fast</span><span class="o">-</span><span class="n">forward</span>
+ <span class="n">about</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">++</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>Now we will follow the instruction sin the README issue, commit to a new branch with <code class="docutils literal notranslate"><span class="pre">closes</span> <span class="pre">#x</span></code> where x is the issue number in the comment and make  PR.</p>
+<p>Merge the PR and then the issue closes.</p>
+</section>
+<section id="pull-will-downlaod-and-update">
+<h2>Pull will downlaod and update<a class="headerlink" href="#pull-will-downlaod-and-update" title="Permalink to this headline">#</a></h2>
+<p>We will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> again now all at once, this will do the work that fetch did before and the checkout.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">6</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">4</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">1</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">Unpacking</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="mf">1.32</span> <span class="n">KiB</span> <span class="o">|</span> <span class="mf">337.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">From</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+   <span class="n">caeacb5</span><span class="o">.</span><span class="mf">.5</span><span class="n">c8aaa9</span>  <span class="n">main</span>       <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">add</span><span class="o">-</span><span class="n">name</span>   <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span>
+<span class="n">Updating</span> <span class="n">caeacb5</span><span class="o">.</span><span class="mf">.5</span><span class="n">c8aaa9</span>
+<span class="n">Fast</span><span class="o">-</span><span class="n">forward</span>
+ <span class="n">README</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="mi">4</span> <span class="o">++++</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">4</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can see commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">5</span><span class="n">c8aaa9f2a129d551b8cb2cb294676f63c4af410</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">HEAD</span><span class="p">)</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="n">caeacb5</span> <span class="mf">65e9</span><span class="n">e39</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#5 from introcompsys/add-name</span>
+    
+    <span class="n">closes</span> <span class="c1">#2</span>
+
+<span class="n">commit</span> <span class="mf">65e9</span><span class="n">e39935be8400ef12cc9003592f12244b50da</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">closes</span> <span class="c1">#2</span>
+
+<span class="n">commit</span> <span class="n">caeacb503cf4776f075b848f0faff535671f2887</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="mi">6</span><span class="n">a12db0</span> <span class="mi">693</span><span class="n">a2b5</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#4 from introcompsys/1-create-an-about-file</span>
+    
+    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+
+<span class="n">commit</span> <span class="mi">693</span><span class="n">a2b5b9ad4c27eb3b50571b3c93dde353320a1</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">03</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+
+<span class="n">commit</span> <span class="mi">6</span><span class="n">a12db0035e7c73772f7b2348b80dd0bfb3a2a2e</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">github</span><span class="o">-</span><span class="n">classroom</span><span class="p">[</span><span class="n">bot</span><span class="p">]</span> <span class="o">&lt;</span><span class="mi">66690702</span><span class="o">+</span><span class="n">github</span><span class="o">-</span><span class="n">classroom</span><span class="p">[</span><span class="n">bot</span><span class="p">]</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">16</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">07</span> <span class="mi">2023</span> <span class="o">+</span><span class="mi">0000</span>
+
+    <span class="n">Add</span> <span class="n">online</span> <span class="n">IDE</span> <span class="n">url</span>
+
+<span class="n">commit</span> <span class="n">cfe32e5066921ad876d8a2c74b1fcb00c99b1cc7</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">github</span><span class="o">-</span><span class="n">classroom</span><span class="p">[</span><span class="n">bot</span><span class="p">]</span> <span class="o">&lt;</span><span class="mi">66690702</span><span class="o">+</span><span class="n">github</span><span class="o">-</span><span class="n">classroom</span><span class="p">[</span><span class="n">bot</span><span class="p">]</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">16</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">05</span> <span class="mi">2023</span> <span class="o">+</span><span class="mi">0000</span>
+
+    <span class="n">Initial</span> <span class="n">commit</span>
+</pre></div>
+</div>
+<p>this is a program, we can use enter/down arrow to move through it and then <code class="docutils literal notranslate"><span class="pre">q</span></code> to exit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Already</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="making-a-new-branch-locally">
+<h2>making a new branch locally<a class="headerlink" href="#making-a-new-branch-locally" title="Permalink to this headline">#</a></h2>
+<p>We’ve used <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to switch branchs before.  To also create a branch at the same time, we use the <code class="docutils literal notranslate"><span class="pre">-b</span></code> option.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">fun_fact</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Switched</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="s1">&#39;fun_fact&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>notice where each branch pointer is</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">5</span><span class="n">c8aaa9f2a129d551b8cb2cb294676f63c4af410</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">HEAD</span><span class="p">,</span> <span class="n">main</span><span class="p">)</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="n">caeacb5</span> <span class="mf">65e9</span><span class="n">e39</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#5 from introcompsys/add-name</span>
+    
+    <span class="n">closes</span> <span class="c1">#2</span>
+
+<span class="n">commit</span> <span class="mf">65e9</span><span class="n">e39935be8400ef12cc9003592f12244b50da</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">closes</span> <span class="c1">#2</span>
+
+<span class="n">commit</span> <span class="n">caeacb503cf4776f075b848f0faff535671f2887</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="mi">6</span><span class="n">a12db0</span> <span class="mi">693</span><span class="n">a2b5</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#4 from introcompsys/1-create-an-about-file</span>
+    
+    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+
+<span class="n">commit</span> <span class="mi">693</span><span class="n">a2b5b9ad4c27eb3b50571b3c93dde353320a1</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">03</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+
+<span class="n">commit</span> <span class="mi">6</span><span class="n">a12db0035e7c73772f7b2348b80dd0bfb3a2a2e</span>
+</pre></div>
+</div>
+<p>we used the <a class="reference external" href="https://www.nano-editor.org/dist/latest/nano.html">nano text editor</a>.  <code class="docutils literal notranslate"><span class="pre">nano</span></code> is simpler than other text editors that tend to be more popular among experts, <code class="docutils literal notranslate"><span class="pre">vim</span></code> and <code class="docutils literal notranslate"><span class="pre">emacs</span></code>.  Getting comfortable with nano will get you used to the ideas, without putting as much burden on your memory.  This will set you up to learn those later, if you need a more powerful terminal text editor.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<p>this opens the nano program on the terminal.  it displays reminders of the commands at the bottom of th screen and allows you to type into the file right away.</p>
+<p>Add any fun fact on the line below your content…  Then, write out (save), it will prompt the file name.  Since we opened nano with a file name (<code class="docutils literal notranslate"><span class="pre">about.md</span></code>) specified, you will not need to type a new name, but to confirm it, by pressing enter/return.</p>
+<p>My file looks like this.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
+<span class="mi">2027</span>
+<span class="o">-</span> <span class="n">i</span> <span class="n">skied</span> <span class="n">competitively</span> <span class="ow">in</span> <span class="n">high</span> <span class="n">school</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">fun_fact</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+	<span class="n">modified</span><span class="p">:</span>   <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is very similar to when we checked after creating the file before, but, notice a few things are different.</p>
+<ul class="simple">
+<li><p>the first line tells us the branch but does not compare to origin. (this branch does not have a linked branch on GitHub)</p></li>
+<li><p>thefile is listed as “not staged” instead of untracked</p></li>
+<li><p>it gives us the choice to add it to then commit OR to restore it to undo the changes</p></li>
+</ul>
+<p>We will add it to stage</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">fun_fact</span>
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+	<span class="n">modified</span><span class="p">:</span>   <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+
+</pre></div>
+</div>
+<p>and commit:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>here i gave an example of what to do if you commit without a message. This is not recommended, but important to know how to fix.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> 
+</pre></div>
+</div>
+<p>without a commit message it puts you in vim. Read the content carefully, then press <code class="docutils literal notranslate"><span class="pre">a</span></code> to get into ~insert~ mode. Type your message and/or uncomment the template.</p>
+<p>When you are done use <code class="docutils literal notranslate"><span class="pre">escape</span></code> to go back to command mode, the ~insert~ at the bottom of the screen will go away.  Then type <code class="docutils literal notranslate"><span class="pre">:wq</span></code> and press enter/return.</p>
+<p>What this is doing is adding a temporary file with the commit message that git can use to compelte your commit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">fun_fact</span> <span class="mi">6</span><span class="n">d4dbd3</span><span class="p">]</span> <span class="n">add</span> <span class="n">fun</span> <span class="n">fact</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we can look again at where our branch pointers are.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+</pre></div>
+</div>
+<p>fun_fact moved up to the new commit, but the other branches stayed behind.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">6</span><span class="n">d4dbd33860fceb9c87bd3c4509deff8cecb3f45</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">13</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">add</span> <span class="n">fun</span> <span class="n">fact</span>
+
+<span class="n">commit</span> <span class="mi">5</span><span class="n">c8aaa9f2a129d551b8cb2cb294676f63c4af410</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">HEAD</span><span class="p">,</span> <span class="n">main</span><span class="p">)</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="n">caeacb5</span> <span class="mf">65e9</span><span class="n">e39</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#5 from introcompsys/add-name</span>
+    
+    <span class="n">closes</span> <span class="c1">#2</span>
+
+<span class="n">commit</span> <span class="mf">65e9</span><span class="n">e39935be8400ef12cc9003592f12244b50da</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">closes</span> <span class="c1">#2</span>
+
+<span class="n">commit</span> <span class="n">caeacb503cf4776f075b848f0faff535671f2887</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="mi">6</span><span class="n">a12db0</span> <span class="mi">693</span><span class="n">a2b5</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#4 from introcompsys/1-create-an-about-file</span>
+    
+    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+
+<span class="n">commit</span> <span class="mi">693</span><span class="n">a2b5b9ad4c27eb3b50571b3c93dde353320a1</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we will push to github.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fatal</span><span class="p">:</span> <span class="n">The</span> <span class="n">current</span> <span class="n">branch</span> <span class="n">fun_fact</span> <span class="n">has</span> <span class="n">no</span> <span class="n">upstream</span> <span class="n">branch</span><span class="o">.</span>
+<span class="n">To</span> <span class="n">push</span> <span class="n">the</span> <span class="n">current</span> <span class="n">branch</span> <span class="ow">and</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">remote</span> <span class="k">as</span> <span class="n">upstream</span><span class="p">,</span> <span class="n">use</span>
+
+    <span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">fun_fact</span>
+
+<span class="n">To</span> <span class="n">have</span> <span class="n">this</span> <span class="n">happen</span> <span class="n">automatically</span> <span class="k">for</span> <span class="n">branches</span> <span class="n">without</span> <span class="n">a</span> <span class="n">tracking</span>
+<span class="n">upstream</span><span class="p">,</span> <span class="n">see</span> <span class="s1">&#39;push.autoSetupRemote&#39;</span> <span class="ow">in</span> <span class="s1">&#39;git help config&#39;</span><span class="o">.</span>
+
+</pre></div>
+</div>
+<p>It cannot push, because it does not know where to push, like we noted above that it did not comapre to origin, that was beecause it does not have an “upstream branch” or a corresponding branch on a remote server.
+It does not work at first because this branch does not have a remote.</p>
+<p>git stores its list of remotes in a <code class="docutils literal notranslate"><span class="pre">.git/config</span></code> file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">config</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">core</span><span class="p">]</span>
+	<span class="n">repositoryformatversion</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">filemode</span> <span class="o">=</span> <span class="n">true</span>
+	<span class="n">bare</span> <span class="o">=</span> <span class="n">false</span>
+	<span class="n">logallrefupdates</span> <span class="o">=</span> <span class="n">true</span>
+	<span class="n">ignorecase</span> <span class="o">=</span> <span class="n">true</span>
+	<span class="n">precomposeunicode</span> <span class="o">=</span> <span class="n">true</span>
+<span class="p">[</span><span class="n">remote</span> <span class="s2">&quot;origin&quot;</span><span class="p">]</span>
+	<span class="n">url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+	<span class="n">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/*</span>
+<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;main&quot;</span><span class="p">]</span>
+	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
+	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
+<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;1-create-an-about-file&quot;</span><span class="p">]</span>
+	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
+	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+</pre></div>
+</div>
+<p>we can see our other branches have <code class="docutils literal notranslate"><span class="pre">remote</span> <span class="pre">=</span> <span class="pre">origin</span></code> but our new branch is not there.</p>
+<p>To fix it, we do as git said.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">fun_fact</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
+<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">311</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">311.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">1</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">),</span> <span class="n">completed</span> <span class="k">with</span> <span class="mi">1</span> <span class="n">local</span> <span class="nb">object</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> 
+<span class="n">remote</span><span class="p">:</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">pull</span> <span class="n">request</span> <span class="k">for</span> <span class="s1">&#39;fun_fact&#39;</span> <span class="n">on</span> <span class="n">GitHub</span> <span class="n">by</span> <span class="n">visiting</span><span class="p">:</span>
+<span class="n">remote</span><span class="p">:</span>      <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">pull</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">fun_fact</span>
+<span class="n">remote</span><span class="p">:</span> 
+<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">fun_fact</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span>
+<span class="n">branch</span> <span class="s1">&#39;fun_fact&#39;</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="s1">&#39;origin/fun_fact&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This time the returned message from the remote includes the link to the page to make a PR. We are not goign to make the PR though</p>
+</section>
+<section id="merge-conflicts">
+<h2>Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Permalink to this headline">#</a></h2>
+<p>First, in your browser edit the <a class="reference external" href="http://about.md">about.md</a> file to have a second fun fact.</p>
+<p>Then edit it locally to also have 2 fun facts.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
+<span class="mi">2027</span>
+<span class="o">-</span> <span class="n">i</span> <span class="n">skied</span> <span class="n">competitively</span> <span class="ow">in</span> <span class="n">high</span> <span class="n">school</span>
+<span class="o">-</span> <span class="n">I</span> <span class="n">went</span> <span class="n">to</span> <span class="n">Northeastern</span>
+</pre></div>
+</div>
+<p>now that we have edited in both places let’s pull.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">1</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">Unpacking</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">697</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">174.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">From</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+   <span class="mi">6</span><span class="n">d4dbd3</span><span class="o">.</span><span class="mf">.768</span><span class="n">dec8</span>  <span class="n">fun_fact</span>   <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">fun_fact</span>
+<span class="n">Updating</span> <span class="mi">6</span><span class="n">d4dbd3</span><span class="o">.</span><span class="mf">.768</span><span class="n">dec8</span>
+<span class="n">error</span><span class="p">:</span> <span class="n">Your</span> <span class="n">local</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">the</span> <span class="n">following</span> <span class="n">files</span> <span class="n">would</span> <span class="n">be</span> <span class="n">overwritten</span> <span class="n">by</span> <span class="n">merge</span><span class="p">:</span>
+	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+<span class="n">Please</span> <span class="n">commit</span> <span class="n">your</span> <span class="n">changes</span> <span class="ow">or</span> <span class="n">stash</span> <span class="n">them</span> <span class="n">before</span> <span class="n">you</span> <span class="n">merge</span><span class="o">.</span>
+<span class="n">Aborting</span>
+</pre></div>
+</div>
+<p>First it does not work because we have not committed.</p>
+<p>This is helpful beacause it prevents us from losing any work.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">fun_fact</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">behind</span> <span class="s1">&#39;origin/fun_fact&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="p">,</span> <span class="ow">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">fast</span><span class="o">-</span><span class="n">forwarded</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git pull&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">your</span> <span class="n">local</span> <span class="n">branch</span><span class="p">)</span>
+
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+	<span class="n">modified</span><span class="p">:</span>   <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>we can add and commit at the same time using the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option from the `git commit``</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;second fun fact&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">fun_fact</span> <span class="n">b378bd1</span><span class="p">]</span> <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we try to pull again</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hint</span><span class="p">:</span> <span class="n">You</span> <span class="n">have</span> <span class="n">divergent</span> <span class="n">branches</span> <span class="ow">and</span> <span class="n">need</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">how</span> <span class="n">to</span> <span class="n">reconcile</span> <span class="n">them</span><span class="o">.</span>
+<span class="n">hint</span><span class="p">:</span> <span class="n">You</span> <span class="n">can</span> <span class="n">do</span> <span class="n">so</span> <span class="n">by</span> <span class="n">running</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">commands</span> <span class="n">sometime</span> <span class="n">before</span>
+<span class="n">hint</span><span class="p">:</span> <span class="n">your</span> <span class="nb">next</span> <span class="n">pull</span><span class="p">:</span>
+<span class="n">hint</span><span class="p">:</span> 
+<span class="n">hint</span><span class="p">:</span>   <span class="n">git</span> <span class="n">config</span> <span class="n">pull</span><span class="o">.</span><span class="n">rebase</span> <span class="n">false</span>  <span class="c1"># merge</span>
+<span class="n">hint</span><span class="p">:</span>   <span class="n">git</span> <span class="n">config</span> <span class="n">pull</span><span class="o">.</span><span class="n">rebase</span> <span class="n">true</span>   <span class="c1"># rebase</span>
+<span class="n">hint</span><span class="p">:</span>   <span class="n">git</span> <span class="n">config</span> <span class="n">pull</span><span class="o">.</span><span class="n">ff</span> <span class="n">only</span>       <span class="c1"># fast-forward only</span>
+<span class="n">hint</span><span class="p">:</span> 
+<span class="n">hint</span><span class="p">:</span> <span class="n">You</span> <span class="n">can</span> <span class="n">replace</span> <span class="s2">&quot;git config&quot;</span> <span class="k">with</span> <span class="s2">&quot;git config --global&quot;</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">a</span> <span class="n">default</span>
+<span class="n">hint</span><span class="p">:</span> <span class="n">preference</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">repositories</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">also</span> <span class="k">pass</span> <span class="o">--</span><span class="n">rebase</span><span class="p">,</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">rebase</span><span class="p">,</span>
+<span class="n">hint</span><span class="p">:</span> <span class="ow">or</span> <span class="o">--</span><span class="n">ff</span><span class="o">-</span><span class="n">only</span> <span class="n">on</span> <span class="n">the</span> <span class="n">command</span> <span class="n">line</span> <span class="n">to</span> <span class="n">override</span> <span class="n">the</span> <span class="n">configured</span> <span class="n">default</span> <span class="n">per</span>
+<span class="n">hint</span><span class="p">:</span> <span class="n">invocation</span><span class="o">.</span>
+<span class="n">fatal</span><span class="p">:</span> <span class="n">Need</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">how</span> <span class="n">to</span> <span class="n">reconcile</span> <span class="n">divergent</span> <span class="n">branches</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Now it cannot work because the branches have diverged.  This illustrates the fact that our two versions of the branch <code class="docutils literal notranslate"><span class="pre">fun_fact</span></code> and <code class="docutils literal notranslate"><span class="pre">origin/fun_fact</span></code> are two separate things.</p>
+<div class="mermaid">
+            gitGraph
+    commit
+    commit
+    branch fun_fact
+    checkout fun_fact
+    commit
+    branch origin/fun_fact
+    checkout origin/fun_fact
+    commit
+    checkout fun_fact
+    commit
+        </div><p>the branches have diverged means that they do not agree and that they each have at least one commit that is different from the other.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="n">b378bd148e53dfa7195c58123362e40ae12ef3e7</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">13</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">20</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
+
+<span class="n">commit</span> <span class="mi">6</span><span class="n">d4dbd33860fceb9c87bd3c4509deff8cecb3f45</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">13</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">add</span> <span class="n">fun</span> <span class="n">fact</span>
+
+<span class="n">commit</span> <span class="mi">5</span><span class="n">c8aaa9f2a129d551b8cb2cb294676f63c4af410</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">HEAD</span><span class="p">,</span> <span class="n">main</span><span class="p">)</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="n">caeacb5</span> <span class="mf">65e9</span><span class="n">e39</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#5 from introcompsys/add-name</span>
+    
+    <span class="n">closes</span> <span class="c1">#2</span>
+
+<span class="n">commit</span> <span class="mf">65e9</span><span class="n">e39935be8400ef12cc9003592f12244b50da</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">closes</span> <span class="c1">#2</span>
+
+<span class="n">commit</span> <span class="n">caeacb503cf4776f075b848f0faff535671f2887</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="mi">6</span><span class="n">a12db0</span> <span class="mi">693</span><span class="n">a2b5</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+
+</pre></div>
+</div>
+<p>git gave us some options, we will use <a class="reference external" href="https://git-scm.com/docs/git-rebase">rebase</a> which will apply our local commits <em>after</em> the remote commits.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="o">--</span><span class="n">rebase</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Auto</span><span class="o">-</span><span class="n">merging</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+<span class="n">CONFLICT</span> <span class="p">(</span><span class="n">content</span><span class="p">):</span> <span class="n">Merge</span> <span class="n">conflict</span> <span class="ow">in</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+<span class="n">error</span><span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">apply</span> <span class="n">b378bd1</span><span class="o">...</span> <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
+<span class="n">hint</span><span class="p">:</span> <span class="n">Resolve</span> <span class="nb">all</span> <span class="n">conflicts</span> <span class="n">manually</span><span class="p">,</span> <span class="n">mark</span> <span class="n">them</span> <span class="k">as</span> <span class="n">resolved</span> <span class="k">with</span>
+<span class="n">hint</span><span class="p">:</span> <span class="s2">&quot;git add/rm &lt;conflicted_files&gt;&quot;</span><span class="p">,</span> <span class="n">then</span> <span class="n">run</span> <span class="s2">&quot;git rebase --continue&quot;</span><span class="o">.</span>
+<span class="n">hint</span><span class="p">:</span> <span class="n">You</span> <span class="n">can</span> <span class="n">instead</span> <span class="n">skip</span> <span class="n">this</span> <span class="n">commit</span><span class="p">:</span> <span class="n">run</span> <span class="s2">&quot;git rebase --skip&quot;</span><span class="o">.</span>
+<span class="n">hint</span><span class="p">:</span> <span class="n">To</span> <span class="n">abort</span> <span class="ow">and</span> <span class="n">get</span> <span class="n">back</span> <span class="n">to</span> <span class="n">the</span> <span class="n">state</span> <span class="n">before</span> <span class="s2">&quot;git rebase&quot;</span><span class="p">,</span> <span class="n">run</span> <span class="s2">&quot;git rebase --abort&quot;</span><span class="o">.</span>
+<span class="n">Could</span> <span class="ow">not</span> <span class="n">apply</span> <span class="n">b378bd1</span><span class="o">...</span> <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
+</pre></div>
+</div>
+<p>Now it tells us there is a conflict.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<p>We see that git marked up the conflict for us by editing the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
+<span class="mi">2027</span>
+<span class="o">-</span> <span class="n">i</span> <span class="n">skied</span> <span class="n">competitively</span> <span class="ow">in</span> <span class="n">high</span> <span class="n">school</span>
+<span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+<span class="o">-</span> <span class="n">i</span> <span class="n">started</span> <span class="n">at</span> <span class="n">URI</span> <span class="ow">in</span> <span class="mi">2020</span>
+<span class="o">=======</span>
+<span class="o">-</span> <span class="n">I</span> <span class="n">went</span> <span class="n">to</span> <span class="n">Northeastern</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="s2">&quot;add fun fact&quot;</span>
+</pre></div>
+</div>
+<p>We manually edit it to be what we want it to be.  We can take one change the other or both.  We will choose both, so my file looks like this in the end.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
+<span class="mi">2027</span>
+<span class="o">-</span> <span class="n">i</span> <span class="n">skied</span> <span class="n">competitively</span> <span class="ow">in</span> <span class="n">high</span> <span class="n">school</span>
+<span class="o">-</span> <span class="n">i</span> <span class="n">started</span> <span class="n">at</span> <span class="n">URI</span> <span class="ow">in</span> <span class="mi">2020</span>
+<span class="o">-</span> <span class="n">I</span> <span class="n">went</span> <span class="n">to</span> <span class="n">Northeastern</span>
+</pre></div>
+</div>
+<p>Now, we do git add, because above it said that was the next step.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<p>and then this was the next thing after that.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you got somethign very different at this point, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>  mine is 2.41.  If yours is different, let me know as an issue.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">rebase</span> <span class="o">--</span><span class="k">continue</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">detached</span> <span class="n">HEAD</span> <span class="mi">756</span><span class="n">c487</span><span class="p">]</span> <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+<span class="n">Successfully</span> <span class="n">rebased</span> <span class="ow">and</span> <span class="n">updated</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">fun_fact</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Once we rebase and everything is done, we can push.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
+<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">312</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">312.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">2</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">completed</span> <span class="k">with</span> <span class="mi">2</span> <span class="n">local</span> <span class="n">objects</span><span class="o">.</span>
+<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+   <span class="mi">768</span><span class="n">dec8</span><span class="o">.</span><span class="mf">.756</span><span class="n">c487</span>  <span class="n">fun_fact</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span>
+</pre></div>
+</div>
+</section>
+<section id="prepare-for-next-class">
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Read the notes from 2023-09-19 carefully</p></li>
+<li><p>Examine an open source project on GitHub.  Answer the reflection questions below in <code class="docutils literal notranslate"><span class="pre">software.md</span></code> in your kwl repo on a branch that is linked to this issue.  You do not need to make the PR, we will work with this in class on 2023-09-21.</p></li>
+</ol>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Software Reflection</span>
+
+<span class="k">1.</span> Link and title of the project
+<span class="k">1.</span> What types of files are there that are not code?
+<span class="k">1.</span> What different types of code files are in the project? Do they serve different goals?
+<span class="k">1.</span> Is it all in one language or are there multiple languages?
+<span class="k">1.</span> Are there files that are configurations or settings?
+<span class="k">1.</span> Is there help for developers? users? which support is better?
+<span class="k">1.</span> What type of things are in the hidden files? who would need to see those files vs not?
+</pre></div>
+</div>
+<p>Some open source projects if you do not have one in mind:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pandas-dev/pandas">pandas</a></p></li>
+<li><p><a class="reference external" href="https://github.com/numpy/numpy">numpy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cli/cli">GitHub CLI</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rust-lang/rust">Rust language</a></p></li>
+<li><p><a class="reference external" href="https://github.com/microsoft/vscode">vs code</a></p></li>
+<li><p><a class="reference external" href="https://github.com/microsoft/TypeScript">Typescript</a></p></li>
+<li><p><a class="reference external" href="https://github.com/apple/swift">Swift</a></p></li>
+<li><p><a class="reference external" href="https://github.com/executablebooks/jupyter-book">Jupyter book</a></p></li>
+</ul>
+</section>
+<section id="review-todays-class">
+<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a merge conflict in your github in class repo and resolve it using your favorite IDE,. Describe how you created it, show the files, and describe how your IDE helps or does not help in <span class="target" id="index-0"></span>ide_merge_conflict.md. Give advice for when you think someone should resolve a merge conflict manually vs using an IDE. (if you do not regulary use an, IDE, try VSCode)</p></li>
+<li><p>Read more details about <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">git branches</a>(you can also use other resources) add <code class="docutils literal notranslate"><span class="pre">branches.md</span></code> to your KWL repo and describe how branches work, in your own words. Include one question you have about branches or one scenario you think they could help you with.</p></li>
+</ol>
+</section>
+<section id="more-practice">
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a merge conflict in your github in class repo and resolve it using your favorite IDE, then create one and resolve it on GitHub in browser(this requires the merge conflict to occur on a PR). Describe how you created it, show the files, and describe how your IDE helps or does not help in <span class="target" id="index-1"></span>ide_merge_conflict.md. Give advice for when you think someone should resolve a merge conflict in GitHub vs using an IDE. (if you do not regulary use an, IDE, try VSCode)</p></li>
+<li><p>Learn about <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks">GitHub forks</a> and more about <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">git branches</a>(you can also use other resources)</p></li>
+<li><p>add <code class="docutils literal notranslate"><span class="pre">branches-forks.md</span></code> to your KWL repo and describe how branches work, what a fork is, and how they relate to one another. If you use other resources, include them in your file as markdown links.</p></li>
+</ol>
+</section>
+<section id="experience-report-evidence">
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>this is for if you miss class and need to make it up</p>
+</div>
+<p>run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">&gt;&gt;</span> <span class="pre">inclass2023-09-19.md</span></code> and then copy that new file into your KWL repo on the branch for your experience report</p>
+</section>
+<section id="questions-after-todays-class">
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<section id="how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems">
+<h3>How would you fix a merge conflict involving other people trying to commit on other systems?<a class="headerlink" href="#how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems" title="Permalink to this headline">#</a></h3>
+<p>The same way we did in class.</p>
+</section>
+<section id="are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on">
+<h3>are there situations where if you accidently make another branch, that you can merge it can into the one you wanted to be working on?<a class="headerlink" href="#are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on" title="Permalink to this headline">#</a></h3>
+<p>yes, exactly!</p>
+</section>
+<section id="could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases">
+<h3>could you fix a merge conflict in github rather than in the local terminal in some cases?<a class="headerlink" href="#could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases" title="Permalink to this headline">#</a></h3>
+<p>Yes, when the merge conflict arises as a result of a pull request and it is simple you can resolve it in <a class="reference external" href="http://github.com">github.com</a></p>
+</section>
+<section id="what-exactly-does-the-rebase-command-do">
+<h3>What exactly does the rebase command do?<a class="headerlink" href="#what-exactly-does-the-rebase-command-do" title="Permalink to this headline">#</a></h3>
+<p>I described it in more detail above with links to git docs.</p>
+</section>
+<section id="what-point-does-using-git-locally-give">
+<h3>What point does using git locally give?<a class="headerlink" href="#what-point-does-using-git-locally-give" title="Permalink to this headline">#</a></h3>
+<p>it’s the only way to keep your work in git and also run code locally</p>
+</section>
+<section id="why-were-some-of-my-command-prompts-different-from-yours">
+<h3>Why were some of my command prompts different from yours?<a class="headerlink" href="#why-were-some-of-my-command-prompts-different-from-yours" title="Permalink to this headline">#</a></h3>
+<p>Not sure, but it might be the version of git.</p>
+</section>
+<section id="what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal">
+<h3>What website do you find the most useful to resolve issues relating to git within the terminal?<a class="headerlink" href="#what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal" title="Permalink to this headline">#</a></h3>
+<p>I tend to rely on using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see where it is at, thinking about where I want to get and then searching and using eg stackoverflow for things I do not know how to do.</p>
+<p>that said <a class="reference external" href="https://nic-hartley.github.io/git-gud/">git gud</a> can help you visualize and we will have some other visualizations  soon.</p>
+</section>
+<section id="would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github">
+<h3>Would it be reasonable to never use the local Terminal and just always use github?<a class="headerlink" href="#would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github" title="Permalink to this headline">#</a></h3>
+<p>No, that means you would not be able to run your code to work.  Even if you work on most clous services, you still need to use the “local” terminal, on that cloud instance.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-do-not-sync-automatically">Branches do not sync automatically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-will-downlaod-and-update">Pull will downlaod and update</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-branch-locally">making a new branch locally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-conflicts">Merge conflicts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems">How would you fix a merge conflict involving other people trying to commit on other systems?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on">are there situations where if you accidently make another branch, that you can merge it can into the one you wanted to be working on?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases">could you fix a merge conflict in github rather than in the local terminal in some cases?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-does-the-rebase-command-do">What exactly does the rebase command do?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-point-does-using-git-locally-give">What point does using git locally give?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-were-some-of-my-command-prompts-different-from-yours">Why were some of my command prompts different from yours?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal">What website do you find the most useful to resolve issues relating to git within the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github">Would it be reasonable to never use the local Terminal and just always use github?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
