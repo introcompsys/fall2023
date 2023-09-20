@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Badge Visualizations 
+# Badge Procedures
 
 This page includes more visual versions of the information on the badge page.  You should read both, but this one is often more helpful, because some of the processes take a lot of words to explain and make more sense with a diagram for a lot of people. 
 
@@ -20,6 +20,7 @@ This page includes more visual versions of the information on the badge page.  Y
 ```{warning}
 This was changed substantively on 2023-09-08
 ```
+
 This is for a single example with specific dates, but it is similar for all future dates
 
 The columns (and purple boxes) correspond to branches in your KWL repo and the yellow boxes are the things that you have to do. The "critical" box is what you have to wait for us on. The arrows represent PRs (or a local merge for the first one)
@@ -294,5 +295,31 @@ style progress fill:#2cf
 style complete fill:#2cf
 style revision fill:#2cf
 style earned fill:#2cf
+
+```
+
+## Community Badges
+
+These are the instructions from your `community_contributions.md` file: 
+For each one: 
+- add an item in a bulleted list (start the line with `- ` )
+- create a link to your contribution like  `[text to display](url/of/contribution)``
+- create an individual pull request titled "Community-shortname" where `shortname` is a short name for what you did. approval on this PR by Dr. Brown will constitute credit for your grade
+- request a review on that PR from @brownsarahm
+
+```{important}
+You want one contribution per PR for tracking
+```
+
+```{mermaid}
+flowchart TD
+    contribute[Make a contribution <br> *typically not in your KWL*]
+    link[Add a link to your <br> contribution to your<br> communiyt_contribution.md<br> in your KWL repo]
+    pr[create a PR for that link]
+    rev[request a review <br> from @brownsarahm]
+    contribute --> link
+    link --> pr --> rev
+    rev --> approved[Dr. Brown approves] --> merge[Merge the PR]
+    merge --o earned
 
 ```
