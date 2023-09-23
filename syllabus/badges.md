@@ -302,8 +302,8 @@ style earned fill:#2cf
 
 These are the instructions from your `community_contributions.md` file: 
 For each one: 
-- add an item in a bulleted list (start the line with `- ` )
-- create a link to your contribution like  `[text to display](url/of/contribution)``
+- In the community_contributions.md file on your kwl repo, add an item in a bulleted list (start the line with - )
+- Include a link to your contribution like `[text to display](url/of/contribution)`
 - create an individual pull request titled "Community-shortname" where `shortname` is a short name for what you did. approval on this PR by Dr. Brown will constitute credit for your grade
 - request a review on that PR from @brownsarahm
 

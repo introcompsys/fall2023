@@ -284,7 +284,7 @@ You can earn community badges by:
 - sharing articles and discussing them in the course discussions 
 - contributing annotated resources the course website 
 
-You will maintain a list of your contributions in your KWL repo in the `community_contributions.md` file. All changes to this file should be submitted as a PR, with a review requested from @brownsarahm. 
+You will maintain a list of your contributions in your KWL repo in the `community_contributions.md` file. Every individual change to this file (representing one contribution) should be commited to a new branch and then submitted as a PR, with a review requested from @brownsarahm.
 
 ```{note}
 Some participation in your group repo and a small number of discussions will be required for experience, review, and practice badges. This means that not every single contribution or peer review to your team repo will earn a community badge. 
