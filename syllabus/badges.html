@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Badge Visualizations &#8212; Computer Systems and Programming Tools</title>
+    <title>Badge Procedures &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'syllabus/badges';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Badge Calculations" href="badge_calc.html" />
+    <link rel="next" title="Detailed Grade Calculations" href="badge_calc.html" />
     <link rel="prev" title="Grading" href="grading.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -163,8 +163,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="about.html">Computer Systems and Programming Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools and Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="grading.html">Grading</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Badge Visualizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="badge_calc.html">Badge Calculations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Badge Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="badge_calc.html">Detailed Grade Calculations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uri_statements.html">General URI Policies</a></li>
@@ -406,7 +406,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Badge Visualizations</h1>
+    <h1>Badge Procedures</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -420,6 +420,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-and-practice-badge">Review and Practice Badge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-badges">Explore Badges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-badges">Build Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-badges">Community Badges</a></li>
 </ul>
             </nav>
         </div>
@@ -431,8 +432,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="badge-visualizations">
-<h1>Badge Visualizations<a class="headerlink" href="#badge-visualizations" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="badge-procedures">
+<h1>Badge Procedures<a class="headerlink" href="#badge-procedures" title="Permalink to this headline">#</a></h1>
 <p>This page includes more visual versions of the information on the badge page.  You should read both, but this one is often more helpful, because some of the processes take a lot of words to explain and make more sense with a diagram for a lot of people.</p>
 <section id="prepare-work-and-experience-badges-process">
 <h2>Prepare work and Experience Badges Process<a class="headerlink" href="#prepare-work-and-experience-badges-process" title="Permalink to this headline">#</a></h2>
@@ -695,6 +696,32 @@ style revision fill:#2cf
 style earned fill:#2cf
 
         </div></section>
+<section id="community-badges">
+<h2>Community Badges<a class="headerlink" href="#community-badges" title="Permalink to this headline">#</a></h2>
+<p>These are the instructions from your <code class="docutils literal notranslate"><span class="pre">community_contributions.md</span></code> file:
+For each one:</p>
+<ul class="simple">
+<li><p>In the community_contributions.md file on your kwl repo, add an item in a bulleted list (start the line with - )</p></li>
+<li><p>Include a link to your contribution like <code class="docutils literal notranslate"><span class="pre">[text</span> <span class="pre">to</span> <span class="pre">display](url/of/contribution)</span></code></p></li>
+<li><p>create an individual pull request titled “Community-shortname” where <code class="docutils literal notranslate"><span class="pre">shortname</span></code> is a short name for what you did. approval on this PR by Dr. Brown will constitute credit for your grade</p></li>
+<li><p>request a review on that PR from &#64;brownsarahm</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You want one contribution per PR for tracking</p>
+</div>
+<div class="mermaid">
+            flowchart TD
+    contribute[Make a contribution &lt;br&gt; *typically not in your KWL*]
+    link[Add a link to your &lt;br&gt; contribution to your&lt;br&gt; communiyt_contribution.md&lt;br&gt; in your KWL repo]
+    pr[create a PR for that link]
+    rev[request a review &lt;br&gt; from &#64;brownsarahm]
+    contribute --&gt; link
+    link --&gt; pr --&gt; rev
+    rev --&gt; approved[Dr. Brown approves] --&gt; merge[Merge the PR]
+    merge --o earned
+
+        </div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -742,7 +769,7 @@ style earned fill:#2cf
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Badge Calculations</p>
+        <p class="prev-next-title">Detailed Grade Calculations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -768,6 +795,7 @@ style earned fill:#2cf
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-and-practice-badge">Review and Practice Badge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-badges">Explore Badges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-badges">Build Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-badges">Community Badges</a></li>
 </ul>
   </nav></div>
 

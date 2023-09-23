@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Badge Calculations 
+# Detailed Grade Calculations 
 
 ```{important} 
 This page is generated with code and calculations, you can view them for more precise implementations of what the english sentences mean. 
