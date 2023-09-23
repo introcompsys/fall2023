@@ -48,8 +48,9 @@ The exact length can vary, but these must go beyond what we do in class in scope
     - Learn a lot more about a specific number system 
     - compare another git host
     - try a different type of version control
-- Create a visual aid/memory aid to help remember a topic. Draw inspriation from Wizard Zines or 
+- Create a visual aid/memory aid to help remember a topic. Draw inspriation from [Wizard Zines](https://wizardzines.com/) 
 - Review a reference or resource for a topic
+- write a code tour that orients a new contributor to a past project or an open source tool you like. 
 
 Examples from past students:
 ````{margin}
