@@ -131,7 +131,7 @@ For an A you must complete:
 
 
 You can also mix and match to get +/-. For example
-(all examples below assume 23 experience badges)
+(all examples below assume 22+ experience badges aand 13 lab checkouts)
 - A-: 18 practice + 4 explore
 - B+: 6 review + 12 practice +  4 explore
 - B-: 6 review + 12 practice 
@@ -149,7 +149,7 @@ These counts assume that the semester goes as planned and that there are 26 avai
 You cannot earn both practice and review badges for the same class session, but most practice badge requirements will include the review requirements plus some extra steps. 
 
 (integrative)=
-At the end of the semester, there will be special *integrative* badge opportunities that have multipliers attached to them. These badges will count for more than one. For example an integrative 2x review badge counts as two review badges.  These badges will be more complex than regular badges and therefore count more.  
+In the second half of the semester, there will be special *integrative* badge opportunities that have multipliers attached to them. These badges will count for more than one. For example an integrative 2x review badge counts as two review badges.  These badges will be more complex than regular badges and therefore count more.  
 
 ```{admonition} Can you do any combination of badges?
 :class: checkin, dropdown
@@ -279,10 +279,12 @@ Community Badge values:
 
 
 You can earn community badges by: 
-- fixing small issues on the course website (during  only)
+- fixing small issues on the course website (during penalty free zone only)
 - contributing extra terms or reviews to your team repo 
 - sharing articles and discussing them in the course discussions 
 - contributing annotated resources the course website 
+
+You will maintain a list of your contributions in your KWL repo in the `community_contributions.md` file. Every individual change to this file (representing one contribution) should be commited to a new branch and then submitted as a PR, with a review requested from @brownsarahm.
 
 ```{note}
 Some participation in your group repo and a small number of discussions will be required for experience, review, and practice badges. This means that not every single contribution or peer review to your team repo will earn a community badge. 
