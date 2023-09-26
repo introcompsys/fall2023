@@ -68,6 +68,7 @@ This summary report have the following sections.
 - use version control, including releases on any open source side-project and add good contributor guidelines, README, etc 
 
 
+
 <!-- 
 ## Project Examples
 - One type of project would be to do a research project on a topic we cover in class and create a .md file with your findings that demonstrates your knowledge of the topic. The .md file would include an **Abstract**, **Body**, **Reflection** including what you did and what you learned from it, and a **Bibliography**. Potential research topics include:
