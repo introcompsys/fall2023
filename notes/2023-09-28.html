@@ -1,0 +1,1318 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>a comment &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-28';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Detailed Grade Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">More Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">KWL File Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/edit/main/notes/2023-09-28.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/issues/new?title=Issue%20on%20page%20%2Fnotes/2023-09-28.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2023-09-28.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>a comment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">a comment</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#book-settings">Book settings</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-at-https-jupyterbook-org-customize-config-html">Learn more at https://jupyterbook.org/customize/config.html</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#force-re-execution-of-notebooks-on-each-build">Force re-execution of notebooks on each build.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#see-https-jupyterbook-org-content-execute-html">See https://jupyterbook.org/content/execute.html</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-name-of-the-latex-output-file-for-pdf-builds">Define the name of the latex output file for PDF builds</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-bibtex-file-so-that-we-can-create-citations">Add a bibtex file so that we can create citations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-where-the-book-exists-on-the-web">Information about where the book exists on the web</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#add-github-buttons-to-your-book">Add GitHub buttons to your book</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#see-https-jupyterbook-org-customize-config-html-add-a-link-to-your-repository">See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-at-https-jupyterbook-org-customize-toc-html">Learn more at https://jupyterbook.org/customize/toc.html</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>python</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Python 3.11.4 (main, Jul  5 2023, 09:00:44) [Clang 14.0.6 ] on darwin
+Type “help”, “copyright”, “credits” or “license” for more information.</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>help(print)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>def ex():
+…    ‘’’ doc string
+…    ‘’’
+…    padd
+…
+help(ex)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div></div></blockquote>
+</div></blockquote>
+<section class="tex2jax_ignore mathjax_ignore" id="a-comment">
+<h1>a comment<a class="headerlink" href="#a-comment" title="Permalink to this headline">#</a></h1>
+<p>exit()</p>
+</section>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>pip install jupyter-book</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>^[[ARequirement already satisfied: jupyter-book in ./anaconda3/lib/python3.11/site-packages (0.15.1)
+Requirement already satisfied: click&lt;9,&gt;=7.1 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (8.0.4)
+Requirement already satisfied: docutils&lt;0.19,&gt;=0.15 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.16)
+Requirement already satisfied: Jinja2 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (3.1.2)
+Requirement already satisfied: jsonschema&lt;5 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (4.17.3)
+Requirement already satisfied: linkify-it-py~=2.0.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (2.0.0)
+Requirement already satisfied: myst-nb~=0.17.1 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.17.2)
+Requirement already satisfied: pyyaml in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (6.0)
+Requirement already satisfied: sphinx&lt;6,&gt;=4 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (4.5.0)
+Requirement already satisfied: sphinx-comments in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.0.3)
+Requirement already satisfied: sphinx-copybutton in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.5.2)
+Requirement already satisfied: sphinx-external-toc~=0.3.1 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.3.1)
+Requirement already satisfied: sphinx-jupyterbook-latex~=0.5.2 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.5.2)
+Requirement already satisfied: sphinx-design~=0.3.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.3.0)
+Requirement already satisfied: sphinx-thebe~=0.2.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.2.1)
+Requirement already satisfied: sphinx-book-theme~=1.0.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (1.0.1)
+Requirement already satisfied: sphinx_togglebutton in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.3.2)
+Requirement already satisfied: sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (2.5.0)
+Requirement already satisfied: sphinx-multitoc-numbering~=0.1.3 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.1.3)
+Requirement already satisfied: attrs&gt;=17.4.0 in ./anaconda3/lib/python3.11/site-packages (from jsonschema&lt;5-&gt;jupyter-book) (22.1.0)
+Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in ./anaconda3/lib/python3.11/site-packages (from jsonschema&lt;5-&gt;jupyter-book) (0.18.0)
+Requirement already satisfied: uc-micro-py in ./anaconda3/lib/python3.11/site-packages (from linkify-it-py~=2.0.0-&gt;jupyter-book) (1.0.1)
+Requirement already satisfied: importlib_metadata in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (6.0.0)
+Requirement already satisfied: ipython in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (8.12.2)
+Requirement already satisfied: jupyter-cache&lt;0.7,&gt;=0.5 in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.6.1)
+Requirement already satisfied: nbclient in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.5.13)
+Requirement already satisfied: myst-parser~=0.18.0 in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.18.1)
+Requirement already satisfied: nbformat~=5.0 in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (5.7.0)
+Requirement already satisfied: typing-extensions in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (4.7.1)
+Requirement already satisfied: ipykernel in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (6.25.0)
+Requirement already satisfied: sphinxcontrib-applehelp in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.0.2)
+Requirement already satisfied: sphinxcontrib-devhelp in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.0.2)
+Requirement already satisfied: sphinxcontrib-jsmath in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.0.1)
+Requirement already satisfied: sphinxcontrib-htmlhelp&gt;=2.0.0 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.0.0)
+Requirement already satisfied: sphinxcontrib-serializinghtml&gt;=1.1.5 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.1.5)
+Requirement already satisfied: sphinxcontrib-qthelp in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.0.3)
+Requirement already satisfied: Pygments&gt;=2.0 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.15.1)
+Requirement already satisfied: snowballstemmer&gt;=1.1 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.2.0)
+Requirement already satisfied: babel&gt;=1.3 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.11.0)
+Requirement already satisfied: alabaster&lt;0.8,&gt;=0.7 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (0.7.12)
+Requirement already satisfied: imagesize in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.4.1)
+Requirement already satisfied: requests&gt;=2.5.0 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.31.0)
+Requirement already satisfied: packaging in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (23.1)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in ./anaconda3/lib/python3.11/site-packages (from Jinja2-&gt;jupyter-book) (2.1.1)
+Requirement already satisfied: pydata-sphinx-theme&gt;=0.13.3 in ./anaconda3/lib/python3.11/site-packages (from sphinx-book-theme~=1.0.0-&gt;jupyter-book) (0.13.3)
+Requirement already satisfied: pybtex&gt;=0.24 in ./anaconda3/lib/python3.11/site-packages (from sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (0.24.0)
+Requirement already satisfied: pybtex-docutils&gt;=1.0.0 in ./anaconda3/lib/python3.11/site-packages (from sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (1.0.3)
+Requirement already satisfied: setuptools in ./anaconda3/lib/python3.11/site-packages (from sphinx_togglebutton-&gt;jupyter-book) (68.0.0)
+Requirement already satisfied: wheel in ./anaconda3/lib/python3.11/site-packages (from sphinx_togglebutton-&gt;jupyter-book) (0.38.4)
+Requirement already satisfied: pytz&gt;=2015.7 in ./anaconda3/lib/python3.11/site-packages (from babel&gt;=1.3-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2022.7)
+Requirement already satisfied: sqlalchemy&lt;3,&gt;=1.3.12 in ./anaconda3/lib/python3.11/site-packages (from jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (1.4.39)
+Requirement already satisfied: tabulate in ./anaconda3/lib/python3.11/site-packages (from jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.8.10)
+Requirement already satisfied: markdown-it-py&lt;3.0.0,&gt;=1.0.0 in ./anaconda3/lib/python3.11/site-packages (from myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.2.0)
+Requirement already satisfied: mdit-py-plugins~=0.3.1 in ./anaconda3/lib/python3.11/site-packages (from myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.3.5)
+Requirement already satisfied: traitlets&gt;=5.0.0 in ./anaconda3/lib/python3.11/site-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.7.1)
+Requirement already satisfied: jupyter-client&gt;=6.1.5 in ./anaconda3/lib/python3.11/site-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (7.4.9)
+Requirement already satisfied: nest-asyncio in ./anaconda3/lib/python3.11/site-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (1.5.6)
+Requirement already satisfied: fastjsonschema in ./anaconda3/lib/python3.11/site-packages (from nbformat~=5.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.16.2)
+Requirement already satisfied: jupyter-core in ./anaconda3/lib/python3.11/site-packages (from nbformat~=5.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.3.0)
+Requirement already satisfied: latexcodec&gt;=1.0.4 in ./anaconda3/lib/python3.11/site-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (2.0.1)
+Requirement already satisfied: six in ./anaconda3/lib/python3.11/site-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (1.16.0)
+Requirement already satisfied: beautifulsoup4 in ./anaconda3/lib/python3.11/site-packages (from pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book) (4.12.2)
+Requirement already satisfied: accessible-pygments in ./anaconda3/lib/python3.11/site-packages (from pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book) (0.0.4)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in ./anaconda3/lib/python3.11/site-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.0.4)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in ./anaconda3/lib/python3.11/site-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (3.4)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in ./anaconda3/lib/python3.11/site-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.26.16)
+Requirement already satisfied: certifi&gt;=2017.4.17 in ./anaconda3/lib/python3.11/site-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2023.7.22)
+Requirement already satisfied: zipp&gt;=0.5 in ./anaconda3/lib/python3.11/site-packages (from importlib_metadata-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (3.11.0)
+Requirement already satisfied: appnope in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.1.2)
+Requirement already satisfied: comm&gt;=0.1.1 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.1.2)
+Requirement already satisfied: debugpy&gt;=1.6.5 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (1.6.7)
+Requirement already satisfied: matplotlib-inline&gt;=0.1 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.1.6)
+Requirement already satisfied: psutil in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.9.0)
+Requirement already satisfied: pyzmq&gt;=20 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (23.2.0)
+Requirement already satisfied: tornado&gt;=6.1 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (6.3.2)
+Requirement already satisfied: backcall in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.0)
+Requirement already satisfied: decorator in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.18.1)
+Requirement already satisfied: pickleshare in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (3.0.36)
+Requirement already satisfied: stack-data in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.0)
+Requirement already satisfied: pexpect&gt;4.3 in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (4.8.0)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in ./anaconda3/lib/python3.11/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.8.3)
+Requirement already satisfied: entrypoints in ./anaconda3/lib/python3.11/site-packages (from jupyter-client&gt;=6.1.5-&gt;nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.4)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in ./anaconda3/lib/python3.11/site-packages (from jupyter-client&gt;=6.1.5-&gt;nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.8.2)
+Requirement already satisfied: platformdirs&gt;=2.5 in ./anaconda3/lib/python3.11/site-packages (from jupyter-core-&gt;nbformat~=5.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (3.10.0)
+Requirement already satisfied: mdurl~=0.1 in ./anaconda3/lib/python3.11/site-packages (from markdown-it-py&lt;3.0.0,&gt;=1.0.0-&gt;myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.1.0)
+Requirement already satisfied: ptyprocess&gt;=0.5 in ./anaconda3/lib/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.7.0)
+Requirement already satisfied: wcwidth in ./anaconda3/lib/python3.11/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.5)
+Requirement already satisfied: greenlet!=0.4.17 in ./anaconda3/lib/python3.11/site-packages (from sqlalchemy&lt;3,&gt;=1.3.12-&gt;jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.0.1)
+Requirement already satisfied: soupsieve&gt;1.2 in ./anaconda3/lib/python3.11/site-packages (from beautifulsoup4-&gt;pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book) (2.4)
+Requirement already satisfied: executing in ./anaconda3/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.8.3)
+Requirement already satisfied: asttokens in ./anaconda3/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.0.5)
+Requirement already satisfied: pure-eval in ./anaconda3/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.2)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>cd</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>cd Documents/inclass/systems/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>github-inclass-fa23-brownsarahm</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>jupyter-book create tiny-book</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>===============================================================================</p>
+<p>Your book template can be found at</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tiny-book/
+</pre></div>
+</div>
+<p>===============================================================================</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>github-inclass-fa23-brownsarahm	tiny-book</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>cd tiny-book/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>_config.yml		logo.png		notebooks.ipynb
+_toc.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	references.bib
+<a class="reference external" href="http://intro.md">intro.md</a>		<a class="reference external" href="http://markdown.md">markdown.md</a>		requirements.txt</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git status</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>fatal: not a git repository (or any of the parent directories): .git</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls -a</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>.			<a class="reference external" href="http://intro.md">intro.md</a>		notebooks.ipynb
+…			logo.png		references.bib
+_config.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	requirements.txt
+_toc.yml		<a class="reference external" href="http://markdown.md">markdown.md</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git init .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>hint: Using ‘master’ as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: 	git config –global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of ‘master’ are ‘main’, ‘trunk’ and
+hint: ‘development’. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+Initialized empty Git repository in /Users/brownsarahm/Documents/inclass/systems/tiny-book/.git/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls -a</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>.			_toc.yml		<a class="reference external" href="http://markdown.md">markdown.md</a>
+…			<a class="reference external" href="http://intro.md">intro.md</a>		notebooks.ipynb
+.git			logo.png		references.bib
+_config.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	requirements.txt</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git branch -m main</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git status</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>On branch main</p>
+<p>No commits yet</p>
+<p>Untracked files:
+(use “git add <file>…” to include in what will be committed)
+_config.yml
+_toc.yml
+<a class="reference external" href="http://intro.md">intro.md</a>
+logo.png
+<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>
+<a class="reference external" href="http://markdown.md">markdown.md</a>
+notebooks.ipynb
+references.bib
+requirements.txt</p>
+<p>nothing added to commit but untracked files present (use “git add” to track)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git add .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git commit -m ‘init jupyterbook’</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>[main (root-commit) 3fcd849] init jupyterbook
+9 files changed, 341 insertions(+)
+create mode 100644 _config.yml
+create mode 100644 _toc.yml
+create mode 100644 <a class="reference external" href="http://intro.md">intro.md</a>
+create mode 100644 logo.png
+create mode 100644 <a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>
+create mode 100644 <a class="reference external" href="http://markdown.md">markdown.md</a>
+create mode 100644 notebooks.ipynb
+create mode 100644 references.bib
+create mode 100644 requirements.txt</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>_config.yml		logo.png		notebooks.ipynb
+_toc.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	references.bib
+<a class="reference external" href="http://intro.md">intro.md</a>		<a class="reference external" href="http://markdown.md">markdown.md</a>		requirements.txt</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>cat _config.yml</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="book-settings">
+<h1>Book settings<a class="headerlink" href="#book-settings" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="learn-more-at-https-jupyterbook-org-customize-config-html">
+<h1>Learn more at <a class="reference external" href="https://jupyterbook.org/customize/config.html">https://jupyterbook.org/customize/config.html</a><a class="headerlink" href="#learn-more-at-https-jupyterbook-org-customize-config-html" title="Permalink to this headline">#</a></h1>
+<p>title: My sample book
+author: The Jupyter Book Community
+logo: logo.png</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="force-re-execution-of-notebooks-on-each-build">
+<h1>Force re-execution of notebooks on each build.<a class="headerlink" href="#force-re-execution-of-notebooks-on-each-build" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="see-https-jupyterbook-org-content-execute-html">
+<h1>See <a class="reference external" href="https://jupyterbook.org/content/execute.html">https://jupyterbook.org/content/execute.html</a><a class="headerlink" href="#see-https-jupyterbook-org-content-execute-html" title="Permalink to this headline">#</a></h1>
+<p>execute:
+execute_notebooks: force</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="define-the-name-of-the-latex-output-file-for-pdf-builds">
+<h1>Define the name of the latex output file for PDF builds<a class="headerlink" href="#define-the-name-of-the-latex-output-file-for-pdf-builds" title="Permalink to this headline">#</a></h1>
+<p>latex:
+latex_documents:
+targetname: book.tex</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="add-a-bibtex-file-so-that-we-can-create-citations">
+<h1>Add a bibtex file so that we can create citations<a class="headerlink" href="#add-a-bibtex-file-so-that-we-can-create-citations" title="Permalink to this headline">#</a></h1>
+<p>bibtex_bibfiles:</p>
+<ul class="simple">
+<li><p>references.bib</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="information-about-where-the-book-exists-on-the-web">
+<h1>Information about where the book exists on the web<a class="headerlink" href="#information-about-where-the-book-exists-on-the-web" title="Permalink to this headline">#</a></h1>
+<p>repository:
+url: <a class="github reference external" href="https://github.com/executablebooks/jupyter-book">executablebooks/jupyter-book</a>  # Online location of your book
+path_to_book: docs  # Optional path to your book, relative to the repository root
+branch: master  # Which branch of the repository should be used when creating links (optional)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="add-github-buttons-to-your-book">
+<h1>Add GitHub buttons to your book<a class="headerlink" href="#add-github-buttons-to-your-book" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="see-https-jupyterbook-org-customize-config-html-add-a-link-to-your-repository">
+<h1>See <a class="reference external" href="https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository">https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository</a><a class="headerlink" href="#see-https-jupyterbook-org-customize-config-html-add-a-link-to-your-repository" title="Permalink to this headline">#</a></h1>
+<p>html:
+use_issues_button: true
+use_repository_button: true</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>cat _toc.yml</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="table-of-contents">
+<h1>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="learn-more-at-https-jupyterbook-org-customize-toc-html">
+<h1>Learn more at <a class="reference external" href="https://jupyterbook.org/customize/toc.html">https://jupyterbook.org/customize/toc.html</a><a class="headerlink" href="#learn-more-at-https-jupyterbook-org-customize-toc-html" title="Permalink to this headline">#</a></h1>
+<p>format: jb-book
+root: intro
+chapters:</p>
+<ul class="simple">
+<li><p>file: markdown</p></li>
+<li><p>file: notebooks</p></li>
+<li><p>file: markdown-notebooks</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>_config.yml		logo.png		notebooks.ipynb
+_toc.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	references.bib
+<a class="reference external" href="http://intro.md">intro.md</a>		<a class="reference external" href="http://markdown.md">markdown.md</a>		requirements.txt</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>head notebooks.ipynb</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>{
+“cells”: [
+{
+“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [
+“# Content with notebooks\n”,
+“\n”,
+“You can also create content with Jupyter Notebooks. This means that you can include\n”,
+“code blocks and their outputs in your book.\n”,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>jupyter-book build .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Running Jupyter-Book v0.15.1
+Source Folder: /Users/brownsarahm/Documents/inclass/systems/tiny-book
+Config Path: /Users/brownsarahm/Documents/inclass/systems/tiny-book/_config.yml
+Output Path: /Users/brownsarahm/Documents/inclass/systems/tiny-book/_build/html
+Running Sphinx v4.5.0
+making output directory… done
+[etoc] Changing master_doc to ‘intro’
+checking bibtex cache… out of date
+parsing bibtex file /Users/brownsarahm/Documents/inclass/systems/tiny-book/references.bib… parsed 5 entries
+myst v0.18.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions=[‘colon_fence’, ‘dollarmath’, ‘linkify’, ‘substitution’, ‘tasklist’], disable_syntax=[], all_links_external=False, url_schemes=[‘mailto’, ‘http’, ‘https’], ref_domains=None, highlight_code_blocks=True, number_code_blocks=[], title_to_header=False, heading_anchors=None, heading_slug_func=None, footnote_transition=True, words_per_minute=200, sub_delimiters=(‘{’, ‘}’), linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes=‘tex2jax_process|mathjax_process|math|output_area’)
+myst-nb v0.17.2: NbParserConfig(custom_formats={}, metadata_key=‘mystnb’, cell_metadata_key=‘mystnb’, kernel_rgx_aliases={}, execution_mode=‘force’, execution_cache_path=‘’, execution_excludepatterns=[], execution_timeout=30, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=False, render_plugin=‘default’, remove_code_source=False, remove_code_outputs=False, code_prompt_show=‘Show code cell {type}’, code_prompt_hide=‘Hide code cell {type}’, number_source_lines=False, output_stderr=‘show’, render_text_lexer=‘myst-ansi’, render_error_lexer=‘ipythontb’, render_image_options={}, render_figure_options={}, render_markdown_format=‘commonmark’, output_folder=‘build’, append_css=True, metadata_to_fm=False)
+Using jupyter-cache at: /Users/brownsarahm/Documents/inclass/systems/tiny-book/_build/.jupyter_cache
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 4 source files that are out of date
+updating environment: [new config] 4 added, 0 changed, 0 removed
+/Users/brownsarahm/Documents/inclass/systems/tiny-book/markdown-notebooks.md: Executing notebook using local CWD [mystnb]
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+/Users/brownsarahm/Documents/inclass/systems/tiny-book/markdown-notebooks.md: Executed notebook in 1.89 seconds [mystnb]
+/Users/brownsarahm/Documents/inclass/systems/tiny-book/notebooks.ipynb: Executing notebook using local CWD [mystnb]
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+/Users/brownsarahm/Documents/inclass/systems/tiny-book/notebooks.ipynb: Executed notebook in 2.56 seconds [mystnb]</p>
+<p>looking for now-outdated files… none found
+pickling environment… done
+checking consistency… done
+preparing documents… done
+writing output… [100%] notebooks<br />
+generating indices… genindex done
+writing additional pages… search done
+copying images… [100%] _build/jupyter_execute/137405a2a8521f521f06724f6d604e5a5544cce7bd94d903975cee58b0605ccb.png
+copying static files… done
+copying extra files… done
+dumping search index in English (code: en)… done
+dumping object inventory… done
+build succeeded.</p>
+<p>The HTML pages are in _build/html.
+[etoc] missing index.html written as redirect to ‘intro.html’</p>
+<p>===============================================================================</p>
+<p>Finished generating HTML for book.
+Your book’s HTML pages are here:
+_build/html/
+You can look at your book by opening this file in a browser:
+_build/html/index.html
+Or paste this line directly into your browser bar:
+file:///Users/brownsarahm/Documents/inclass/systems/tiny-book/_build/html/index.html</p>
+<p>===============================================================================</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>_build			logo.png		references.bib
+_config.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	requirements.txt
+_toc.yml		<a class="reference external" href="http://markdown.md">markdown.md</a>
+<a class="reference external" href="http://intro.md">intro.md</a>		notebooks.ipynb</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls _build/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>html		jupyter_execute</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls _build/html/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>_images			index.html		objects.inv
+_sources		intro.html		search.html
+_sphinx_design_static	markdown-notebooks.html	searchindex.js
+_static			markdown.html
+genindex.html		notebooks.html</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git status</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>On branch main
+Untracked files:
+(use “git add <file>…” to include in what will be committed)
+_build/</p>
+<p>nothing added to commit but untracked files present (use “git add” to track)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>ls</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>_build			logo.png		references.bib
+_config.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	requirements.txt
+_toc.yml		<a class="reference external" href="http://markdown.md">markdown.md</a>
+<a class="reference external" href="http://intro.md">intro.md</a>		notebooks.ipynb</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>echo “_build/” &gt;&gt; .gitignore</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git status</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>On branch main
+Untracked files:
+(use “git add <file>…” to include in what will be committed)
+.gitignore</p>
+<p>nothing added to commit but untracked files present (use “git add” to track)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>cat .gitignore</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>_build/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git add .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git commit -m ‘ignores build’</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>[main 9c4157f] ignores build
+1 file changed, 1 insertion(+)
+create mode 100644 .gitignore</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git remote</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>cd …/github-inclass-fa23-brownsarahm/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git remote</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>origin</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>cd …/tiny-book/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git remote add origin <a class="github reference external" href="https://github.com/introcompsys/f23-tiny-book-brownsarahm.git">introcompsys/f23-tiny-book-brownsarahm.git</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git branch -M main</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git push -u origin main</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (14/14), 16.45 KiB | 8.23 MiB/s, done.
+Total 14 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To <a class="github reference external" href="https://github.com/introcompsys/f23-tiny-book-brownsarahm.git">introcompsys/f23-tiny-book-brownsarahm.git</a></p>
+<ul class="simple">
+<li><p>[new branch]      main -&gt; main
+branch ‘main’ set up to track ‘origin/main’.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<p>git remote</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>origin</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<section id="review-todays-class">
+<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Review the notes, <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">jupyterbook docs</a>, and experiment with the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CLI to determine what files are required to make <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code> run. Make your kwl repo into a jupyter book. Set it so that the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory is not under version control.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">docs.md</span></code> to your KWL repo and explain the most important things to know about documentation in your own words using other programming concepts you have learned so far.  Include in a markdown (same as HTML <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">comment</span> <span class="pre">--&gt;</span></code> ) comment the list of CSC courses you have taken for context while we give you feedback.</p></li>
+</ol>
+</section>
+<section id="prepare-for-next-class">
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Read the 2023-09-26 notes when posted</p></li>
+<li><p>Make sure that the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI tool works by using it to create an issue called test on your kwl repo with <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">issue</span> <span class="pre">create</span></code></p></li>
+<li><p>Take a few minutes to think about a time you were debugging or pay attention the next time you debug something. Make note of how you think about the problem, how do you decide what to check? how do you decide what to try? what information do you look for?</p></li>
+</ol>
+</section>
+<section id="more-practice">
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Review the notes, <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">jupyterbook docs</a>, and experiment with the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CLI to determine what files are required to make <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code> run. Make your kwl repo into a jupyter book. Set it so that the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory is not under version control.</p></li>
+<li><p>Learn about the documentation ecosystem in another language that you know using at least one official source and additional sources as you find helpful. In <code class="docutils literal notranslate"><span class="pre">docs.md</span></code> include a summary of your findings and compare and contrast it to jupyter book/sphinx.  Include a <a class="reference external" href="https://jupyterbook.org/en/stable/content/citations.html">bibtex based bibliography</a> of the sources you used. You can use <a class="reference external" href="https://url-to-bibtex.vercel.app/">this generator</a> for informal sources and <a class="reference external" href="https://digitalmeasures.oregonstate.edu/training/export-bibtex-google-scholar">google scholar</a> for formal sources.</p></li>
+</ol>
+</section>
+<section id="experience-report-evidence">
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="questions-after-todays-class">
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<p>Class Response Summary:</p>
+<p>• I was unable to install jupyter books for a while so I’m not caught up, is it complicated to navigate?</p>
+<p>• I wonder why when I ran “pip3 install jupyter-book” and the install completed, but then when I try using the jupyter-book commands, it would say command not found…</p>
+<p>• If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</p>
+<p>• Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</p>
+<p>• Can you create an entire repository with only git?</p>
+<p>• What is jupyter used for</p>
+<p>• just right</p>
+<p>• My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</p>
+<p>• So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</p>
+<p>• I had a separate install issue with jupyter-book. I was provided with a variety of errors that I tried to trouble shoot. I’ll see if I can fix it during lab tomorrow or before then</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">a comment</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#book-settings">Book settings</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-at-https-jupyterbook-org-customize-config-html">Learn more at https://jupyterbook.org/customize/config.html</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#force-re-execution-of-notebooks-on-each-build">Force re-execution of notebooks on each build.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#see-https-jupyterbook-org-content-execute-html">See https://jupyterbook.org/content/execute.html</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-name-of-the-latex-output-file-for-pdf-builds">Define the name of the latex output file for PDF builds</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-bibtex-file-so-that-we-can-create-citations">Add a bibtex file so that we can create citations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-where-the-book-exists-on-the-web">Information about where the book exists on the web</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#add-github-buttons-to-your-book">Add GitHub buttons to your book</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#see-https-jupyterbook-org-customize-config-html-add-a-link-to-your-repository">See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-at-https-jupyterbook-org-customize-toc-html">Learn more at https://jupyterbook.org/customize/toc.html</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
