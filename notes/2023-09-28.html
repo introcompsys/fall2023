@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7. a comment &#8212; Computer Systems and Programming Tools</title>
+    <title>7. How do programmers communicate about code? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -178,18 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. a comment</a></li>
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. How do programmers communicate about code?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -419,7 +408,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>a comment</h1>
+    <h1>How do programmers communicate about code?</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,27 +418,40 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. a comment</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#book-settings">8. Book settings</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-at-https-jupyterbook-org-customize-config-html">9. Learn more at https://jupyterbook.org/customize/config.html</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#force-re-execution-of-notebooks-on-each-build">10. Force re-execution of notebooks on each build.</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#see-https-jupyterbook-org-content-execute-html">11. See https://jupyterbook.org/content/execute.html</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-name-of-the-latex-output-file-for-pdf-builds">12. Define the name of the latex output file for PDF builds</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-bibtex-file-so-that-we-can-create-citations">13. Add a bibtex file so that we can create citations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-where-the-book-exists-on-the-web">14. Information about where the book exists on the web</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#add-github-buttons-to-your-book">15. Add GitHub buttons to your book</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#see-https-jupyterbook-org-customize-config-html-add-a-link-to-your-repository">16. See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">17. Table of contents</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-at-https-jupyterbook-org-customize-toc-html">18. Learn more at https://jupyterbook.org/customize/toc.html</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">18.1. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">18.2. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">18.3. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">18.4. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">18.5. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-your-codespace">7.1. Closing your Codespace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-and-explore-ideas">7.2. Build and Explore Ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-documentation">7.3. Why Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-documentation">7.4. What is documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-documentation-so-important">7.5. Why is documentation so important?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-docstring">7.6. What is a docstring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-we-do-it">7.7. So, how do we do it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book">7.8. Install Jupyter-book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-jupyer-book">7.9. Parts of a Jupyer book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">7.9.1. starting a git repo locally</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">7.9.2. Retiring racist language</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-jupyter-book">7.9.3. Structure of a Jupyter book</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-tools-mean-we-do-not-have-to-write-bibliographies-manually">7.9.4. Dev tools mean we do not have to write bibliographies manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-options">7.9.5. Configuration options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-organization">7.9.6. Content Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-book">7.9.7. Building a book</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-built-files">7.10. Ignoring Built files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">7.11. How do I push a repo that I made locally to GitHub?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">7.12. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">7.13. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">7.14. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">7.15. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">7.16. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">7.16.1. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">7.16.2. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">7.16.3. Can you create an entire repository with only git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">7.16.4. What is jupyter used for</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">7.16.5. My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">7.16.6. So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -460,751 +462,651 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>python</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Python 3.11.4 (main, Jul  5 2023, 09:00:44) [Clang 14.0.6 ] on darwin
-Type “help”, “copyright”, “credits” or “license” for more information.</p>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><p>help(print)</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><p>def ex():
-…    ‘’’ doc string
-…    ‘’’
-…    padd
-…
-help(ex)</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-<blockquote>
-<div><blockquote>
-<div></div></blockquote>
-</div></blockquote>
-<section class="tex2jax_ignore mathjax_ignore" id="a-comment">
-<h1><span class="section-number">7. </span>a comment<a class="headerlink" href="#a-comment" title="Permalink to this headline">#</a></h1>
-<p>exit()</p>
-</section>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>pip install jupyter-book</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>^[[ARequirement already satisfied: jupyter-book in ./anaconda3/lib/python3.11/site-packages (0.15.1)
-Requirement already satisfied: click&lt;9,&gt;=7.1 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (8.0.4)
-Requirement already satisfied: docutils&lt;0.19,&gt;=0.15 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.16)
-Requirement already satisfied: Jinja2 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (3.1.2)
-Requirement already satisfied: jsonschema&lt;5 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (4.17.3)
-Requirement already satisfied: linkify-it-py~=2.0.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (2.0.0)
-Requirement already satisfied: myst-nb~=0.17.1 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.17.2)
-Requirement already satisfied: pyyaml in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (6.0)
-Requirement already satisfied: sphinx&lt;6,&gt;=4 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (4.5.0)
-Requirement already satisfied: sphinx-comments in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.0.3)
-Requirement already satisfied: sphinx-copybutton in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.5.2)
-Requirement already satisfied: sphinx-external-toc~=0.3.1 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.3.1)
-Requirement already satisfied: sphinx-jupyterbook-latex~=0.5.2 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.5.2)
-Requirement already satisfied: sphinx-design~=0.3.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.3.0)
-Requirement already satisfied: sphinx-thebe~=0.2.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.2.1)
-Requirement already satisfied: sphinx-book-theme~=1.0.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (1.0.1)
-Requirement already satisfied: sphinx_togglebutton in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.3.2)
-Requirement already satisfied: sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (2.5.0)
-Requirement already satisfied: sphinx-multitoc-numbering~=0.1.3 in ./anaconda3/lib/python3.11/site-packages (from jupyter-book) (0.1.3)
-Requirement already satisfied: attrs&gt;=17.4.0 in ./anaconda3/lib/python3.11/site-packages (from jsonschema&lt;5-&gt;jupyter-book) (22.1.0)
-Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in ./anaconda3/lib/python3.11/site-packages (from jsonschema&lt;5-&gt;jupyter-book) (0.18.0)
-Requirement already satisfied: uc-micro-py in ./anaconda3/lib/python3.11/site-packages (from linkify-it-py~=2.0.0-&gt;jupyter-book) (1.0.1)
-Requirement already satisfied: importlib_metadata in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (6.0.0)
-Requirement already satisfied: ipython in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (8.12.2)
-Requirement already satisfied: jupyter-cache&lt;0.7,&gt;=0.5 in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.6.1)
-Requirement already satisfied: nbclient in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.5.13)
-Requirement already satisfied: myst-parser~=0.18.0 in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.18.1)
-Requirement already satisfied: nbformat~=5.0 in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (5.7.0)
-Requirement already satisfied: typing-extensions in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (4.7.1)
-Requirement already satisfied: ipykernel in ./anaconda3/lib/python3.11/site-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (6.25.0)
-Requirement already satisfied: sphinxcontrib-applehelp in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.0.2)
-Requirement already satisfied: sphinxcontrib-devhelp in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.0.2)
-Requirement already satisfied: sphinxcontrib-jsmath in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.0.1)
-Requirement already satisfied: sphinxcontrib-htmlhelp&gt;=2.0.0 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.0.0)
-Requirement already satisfied: sphinxcontrib-serializinghtml&gt;=1.1.5 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.1.5)
-Requirement already satisfied: sphinxcontrib-qthelp in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.0.3)
-Requirement already satisfied: Pygments&gt;=2.0 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.15.1)
-Requirement already satisfied: snowballstemmer&gt;=1.1 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.2.0)
-Requirement already satisfied: babel&gt;=1.3 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.11.0)
-Requirement already satisfied: alabaster&lt;0.8,&gt;=0.7 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (0.7.12)
-Requirement already satisfied: imagesize in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.4.1)
-Requirement already satisfied: requests&gt;=2.5.0 in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.31.0)
-Requirement already satisfied: packaging in ./anaconda3/lib/python3.11/site-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (23.1)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in ./anaconda3/lib/python3.11/site-packages (from Jinja2-&gt;jupyter-book) (2.1.1)
-Requirement already satisfied: pydata-sphinx-theme&gt;=0.13.3 in ./anaconda3/lib/python3.11/site-packages (from sphinx-book-theme~=1.0.0-&gt;jupyter-book) (0.13.3)
-Requirement already satisfied: pybtex&gt;=0.24 in ./anaconda3/lib/python3.11/site-packages (from sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (0.24.0)
-Requirement already satisfied: pybtex-docutils&gt;=1.0.0 in ./anaconda3/lib/python3.11/site-packages (from sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (1.0.3)
-Requirement already satisfied: setuptools in ./anaconda3/lib/python3.11/site-packages (from sphinx_togglebutton-&gt;jupyter-book) (68.0.0)
-Requirement already satisfied: wheel in ./anaconda3/lib/python3.11/site-packages (from sphinx_togglebutton-&gt;jupyter-book) (0.38.4)
-Requirement already satisfied: pytz&gt;=2015.7 in ./anaconda3/lib/python3.11/site-packages (from babel&gt;=1.3-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2022.7)
-Requirement already satisfied: sqlalchemy&lt;3,&gt;=1.3.12 in ./anaconda3/lib/python3.11/site-packages (from jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (1.4.39)
-Requirement already satisfied: tabulate in ./anaconda3/lib/python3.11/site-packages (from jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.8.10)
-Requirement already satisfied: markdown-it-py&lt;3.0.0,&gt;=1.0.0 in ./anaconda3/lib/python3.11/site-packages (from myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.2.0)
-Requirement already satisfied: mdit-py-plugins~=0.3.1 in ./anaconda3/lib/python3.11/site-packages (from myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.3.5)
-Requirement already satisfied: traitlets&gt;=5.0.0 in ./anaconda3/lib/python3.11/site-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.7.1)
-Requirement already satisfied: jupyter-client&gt;=6.1.5 in ./anaconda3/lib/python3.11/site-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (7.4.9)
-Requirement already satisfied: nest-asyncio in ./anaconda3/lib/python3.11/site-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (1.5.6)
-Requirement already satisfied: fastjsonschema in ./anaconda3/lib/python3.11/site-packages (from nbformat~=5.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.16.2)
-Requirement already satisfied: jupyter-core in ./anaconda3/lib/python3.11/site-packages (from nbformat~=5.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.3.0)
-Requirement already satisfied: latexcodec&gt;=1.0.4 in ./anaconda3/lib/python3.11/site-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (2.0.1)
-Requirement already satisfied: six in ./anaconda3/lib/python3.11/site-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (1.16.0)
-Requirement already satisfied: beautifulsoup4 in ./anaconda3/lib/python3.11/site-packages (from pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book) (4.12.2)
-Requirement already satisfied: accessible-pygments in ./anaconda3/lib/python3.11/site-packages (from pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book) (0.0.4)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in ./anaconda3/lib/python3.11/site-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.0.4)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in ./anaconda3/lib/python3.11/site-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (3.4)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in ./anaconda3/lib/python3.11/site-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.26.16)
-Requirement already satisfied: certifi&gt;=2017.4.17 in ./anaconda3/lib/python3.11/site-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2023.7.22)
-Requirement already satisfied: zipp&gt;=0.5 in ./anaconda3/lib/python3.11/site-packages (from importlib_metadata-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (3.11.0)
-Requirement already satisfied: appnope in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.1.2)
-Requirement already satisfied: comm&gt;=0.1.1 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.1.2)
-Requirement already satisfied: debugpy&gt;=1.6.5 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (1.6.7)
-Requirement already satisfied: matplotlib-inline&gt;=0.1 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.1.6)
-Requirement already satisfied: psutil in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.9.0)
-Requirement already satisfied: pyzmq&gt;=20 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (23.2.0)
-Requirement already satisfied: tornado&gt;=6.1 in ./anaconda3/lib/python3.11/site-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (6.3.2)
-Requirement already satisfied: backcall in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.0)
-Requirement already satisfied: decorator in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.1.1)
-Requirement already satisfied: jedi&gt;=0.16 in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.18.1)
-Requirement already satisfied: pickleshare in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.7.5)
-Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (3.0.36)
-Requirement already satisfied: stack-data in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.0)
-Requirement already satisfied: pexpect&gt;4.3 in ./anaconda3/lib/python3.11/site-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (4.8.0)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in ./anaconda3/lib/python3.11/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.8.3)
-Requirement already satisfied: entrypoints in ./anaconda3/lib/python3.11/site-packages (from jupyter-client&gt;=6.1.5-&gt;nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.4)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in ./anaconda3/lib/python3.11/site-packages (from jupyter-client&gt;=6.1.5-&gt;nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.8.2)
-Requirement already satisfied: platformdirs&gt;=2.5 in ./anaconda3/lib/python3.11/site-packages (from jupyter-core-&gt;nbformat~=5.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (3.10.0)
-Requirement already satisfied: mdurl~=0.1 in ./anaconda3/lib/python3.11/site-packages (from markdown-it-py&lt;3.0.0,&gt;=1.0.0-&gt;myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.1.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in ./anaconda3/lib/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.7.0)
-Requirement already satisfied: wcwidth in ./anaconda3/lib/python3.11/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.5)
-Requirement already satisfied: greenlet!=0.4.17 in ./anaconda3/lib/python3.11/site-packages (from sqlalchemy&lt;3,&gt;=1.3.12-&gt;jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.0.1)
-Requirement already satisfied: soupsieve&gt;1.2 in ./anaconda3/lib/python3.11/site-packages (from beautifulsoup4-&gt;pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book) (2.4)
-Requirement already satisfied: executing in ./anaconda3/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.8.3)
-Requirement already satisfied: asttokens in ./anaconda3/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.0.5)
-Requirement already satisfied: pure-eval in ./anaconda3/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.2)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>cd</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>cd Documents/inclass/systems/</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>github-inclass-fa23-brownsarahm</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>jupyter-book create tiny-book</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>===============================================================================</p>
-<p>Your book template can be found at</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tiny-book/
-</pre></div>
-</div>
-<p>===============================================================================</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>github-inclass-fa23-brownsarahm	tiny-book</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>cd tiny-book/</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>_config.yml		logo.png		notebooks.ipynb
-_toc.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	references.bib
-<a class="reference external" href="http://intro.md">intro.md</a>		<a class="reference external" href="http://markdown.md">markdown.md</a>		requirements.txt</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git status</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>fatal: not a git repository (or any of the parent directories): .git</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls -a</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>.			<a class="reference external" href="http://intro.md">intro.md</a>		notebooks.ipynb
-…			logo.png		references.bib
-_config.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	requirements.txt
-_toc.yml		<a class="reference external" href="http://markdown.md">markdown.md</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git init .</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>hint: Using ‘master’ as the name for the initial branch. This default branch name
-hint: is subject to change. To configure the initial branch name to use in all
-hint: of your new repositories, which will suppress this warning, call:
-hint:
-hint: 	git config –global init.defaultBranch <name>
-hint:
-hint: Names commonly chosen instead of ‘master’ are ‘main’, ‘trunk’ and
-hint: ‘development’. The just-created branch can be renamed via this command:
-hint:
-hint: 	git branch -m <name>
-Initialized empty Git repository in /Users/brownsarahm/Documents/inclass/systems/tiny-book/.git/</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls -a</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>.			_toc.yml		<a class="reference external" href="http://markdown.md">markdown.md</a>
-…			<a class="reference external" href="http://intro.md">intro.md</a>		notebooks.ipynb
-.git			logo.png		references.bib
-_config.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	requirements.txt</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git branch -m main</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git status</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>On branch main</p>
-<p>No commits yet</p>
-<p>Untracked files:
-(use “git add <file>…” to include in what will be committed)
-_config.yml
-_toc.yml
-<a class="reference external" href="http://intro.md">intro.md</a>
-logo.png
-<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>
-<a class="reference external" href="http://markdown.md">markdown.md</a>
-notebooks.ipynb
-references.bib
-requirements.txt</p>
-<p>nothing added to commit but untracked files present (use “git add” to track)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git add .</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git commit -m ‘init jupyterbook’</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>[main (root-commit) 3fcd849] init jupyterbook
-9 files changed, 341 insertions(+)
-create mode 100644 _config.yml
-create mode 100644 _toc.yml
-create mode 100644 <a class="reference external" href="http://intro.md">intro.md</a>
-create mode 100644 logo.png
-create mode 100644 <a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>
-create mode 100644 <a class="reference external" href="http://markdown.md">markdown.md</a>
-create mode 100644 notebooks.ipynb
-create mode 100644 references.bib
-create mode 100644 requirements.txt</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>_config.yml		logo.png		notebooks.ipynb
-_toc.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	references.bib
-<a class="reference external" href="http://intro.md">intro.md</a>		<a class="reference external" href="http://markdown.md">markdown.md</a>		requirements.txt</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>cat _config.yml</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="book-settings">
-<h1><span class="section-number">8. </span>Book settings<a class="headerlink" href="#book-settings" title="Permalink to this headline">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="learn-more-at-https-jupyterbook-org-customize-config-html">
-<h1><span class="section-number">9. </span>Learn more at <a class="reference external" href="https://jupyterbook.org/customize/config.html">https://jupyterbook.org/customize/config.html</a><a class="headerlink" href="#learn-more-at-https-jupyterbook-org-customize-config-html" title="Permalink to this headline">#</a></h1>
-<p>title: My sample book
-author: The Jupyter Book Community
-logo: logo.png</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="force-re-execution-of-notebooks-on-each-build">
-<h1><span class="section-number">10. </span>Force re-execution of notebooks on each build.<a class="headerlink" href="#force-re-execution-of-notebooks-on-each-build" title="Permalink to this headline">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="see-https-jupyterbook-org-content-execute-html">
-<h1><span class="section-number">11. </span>See <a class="reference external" href="https://jupyterbook.org/content/execute.html">https://jupyterbook.org/content/execute.html</a><a class="headerlink" href="#see-https-jupyterbook-org-content-execute-html" title="Permalink to this headline">#</a></h1>
-<p>execute:
-execute_notebooks: force</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="define-the-name-of-the-latex-output-file-for-pdf-builds">
-<h1><span class="section-number">12. </span>Define the name of the latex output file for PDF builds<a class="headerlink" href="#define-the-name-of-the-latex-output-file-for-pdf-builds" title="Permalink to this headline">#</a></h1>
-<p>latex:
-latex_documents:
-targetname: book.tex</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="add-a-bibtex-file-so-that-we-can-create-citations">
-<h1><span class="section-number">13. </span>Add a bibtex file so that we can create citations<a class="headerlink" href="#add-a-bibtex-file-so-that-we-can-create-citations" title="Permalink to this headline">#</a></h1>
-<p>bibtex_bibfiles:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="how-do-programmers-communicate-about-code">
+<h1><span class="section-number">7. </span>How do programmers communicate about code?<a class="headerlink" href="#how-do-programmers-communicate-about-code" title="Permalink to this headline">#</a></h1>
+<p>Today we are going to pick up from where we left off talking about the conventional commits.</p>
+<p>That is a core example of the types of detailed communication we do in programming that is embedded into the work.</p>
+<section id="closing-your-codespace">
+<h2><span class="section-number">7.1. </span>Closing your Codespace<a class="headerlink" href="#closing-your-codespace" title="Permalink to this headline">#</a></h2>
+<p>Use the <a class="reference external" href="https://github.com/codespaces">codespace page</a> to see all of yours.</p>
+<p>Check that your github-inclass repo has no ucnommited changes.  If it does you need to commit them, there are two strategies:</p>
 <ul class="simple">
-<li><p>references.bib</p></li>
+<li><p>start the codespace, commit and push</p></li>
+<li><p>from that page, export the changes to a branch, create a PR and merge it if needed</p></li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="information-about-where-the-book-exists-on-the-web">
-<h1><span class="section-number">14. </span>Information about where the book exists on the web<a class="headerlink" href="#information-about-where-the-book-exists-on-the-web" title="Permalink to this headline">#</a></h1>
-<p>repository:
-url: <a class="github reference external" href="https://github.com/executablebooks/jupyter-book">executablebooks/jupyter-book</a>  # Online location of your book
-path_to_book: docs  # Optional path to your book, relative to the repository root
-branch: master  # Which branch of the repository should be used when creating links (optional)</p>
+<section id="build-and-explore-ideas">
+<h2><span class="section-number">7.2. </span>Build and Explore Ideas<a class="headerlink" href="#build-and-explore-ideas" title="Permalink to this headline">#</a></h2>
+<p>I am going to put ideas in the <a class="reference external" href="https://github.com/introcompsys/discussion-fa23-community">discussions repo</a></p>
+<p>I violated the instructions a little, but I thought it made the most sense.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="add-github-buttons-to-your-book">
-<h1><span class="section-number">15. </span>Add GitHub buttons to your book<a class="headerlink" href="#add-github-buttons-to-your-book" title="Permalink to this headline">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="see-https-jupyterbook-org-customize-config-html-add-a-link-to-your-repository">
-<h1><span class="section-number">16. </span>See <a class="reference external" href="https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository">https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository</a><a class="headerlink" href="#see-https-jupyterbook-org-customize-config-html-add-a-link-to-your-repository" title="Permalink to this headline">#</a></h1>
-<p>html:
-use_issues_button: true
-use_repository_button: true</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>cat _toc.yml</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="table-of-contents">
-<h1><span class="section-number">17. </span>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="learn-more-at-https-jupyterbook-org-customize-toc-html">
-<h1><span class="section-number">18. </span>Learn more at <a class="reference external" href="https://jupyterbook.org/customize/toc.html">https://jupyterbook.org/customize/toc.html</a><a class="headerlink" href="#learn-more-at-https-jupyterbook-org-customize-toc-html" title="Permalink to this headline">#</a></h1>
-<p>format: jb-book
-root: intro
-chapters:</p>
+<section id="why-documentation">
+<h2><span class="section-number">7.3. </span>Why Documentation<a class="headerlink" href="#why-documentation" title="Permalink to this headline">#</a></h2>
+<p>Today we will talk about documentation, there are several reasons this is important:</p>
 <ul class="simple">
-<li><p>file: markdown</p></li>
-<li><p>file: notebooks</p></li>
-<li><p>file: markdown-notebooks</p></li>
+<li><p><strong>using</strong> official documentation is the best way to get better at the tools</p></li>
+<li><p>understanding how documentation is designed and built will help you use it better</p></li>
+<li><p><strong>writing</strong> and  <strong>maintaining</strong> documentation is really important part of working on a team</p></li>
+<li><p>documentation building tools are a type of developer tool (and these are generally good software design)</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>_config.yml		logo.png		notebooks.ipynb
-_toc.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	references.bib
-<a class="reference external" href="http://intro.md">intro.md</a>		<a class="reference external" href="http://markdown.md">markdown.md</a>		requirements.txt</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>head notebooks.ipynb</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>{
-“cells”: [
-{
-“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [
-“# Content with notebooks\n”,
-“\n”,
-“You can also create content with Jupyter Notebooks. This means that you can include\n”,
-“code blocks and their outputs in your book.\n”,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>jupyter-book build .</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Running Jupyter-Book v0.15.1
-Source Folder: /Users/brownsarahm/Documents/inclass/systems/tiny-book
-Config Path: /Users/brownsarahm/Documents/inclass/systems/tiny-book/_config.yml
-Output Path: /Users/brownsarahm/Documents/inclass/systems/tiny-book/_build/html
-Running Sphinx v4.5.0
-making output directory… done
-[etoc] Changing master_doc to ‘intro’
-checking bibtex cache… out of date
-parsing bibtex file /Users/brownsarahm/Documents/inclass/systems/tiny-book/references.bib… parsed 5 entries
-myst v0.18.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions=[‘colon_fence’, ‘dollarmath’, ‘linkify’, ‘substitution’, ‘tasklist’], disable_syntax=[], all_links_external=False, url_schemes=[‘mailto’, ‘http’, ‘https’], ref_domains=None, highlight_code_blocks=True, number_code_blocks=[], title_to_header=False, heading_anchors=None, heading_slug_func=None, footnote_transition=True, words_per_minute=200, sub_delimiters=(‘{’, ‘}’), linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes=‘tex2jax_process|mathjax_process|math|output_area’)
-myst-nb v0.17.2: NbParserConfig(custom_formats={}, metadata_key=‘mystnb’, cell_metadata_key=‘mystnb’, kernel_rgx_aliases={}, execution_mode=‘force’, execution_cache_path=‘’, execution_excludepatterns=[], execution_timeout=30, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=False, render_plugin=‘default’, remove_code_source=False, remove_code_outputs=False, code_prompt_show=‘Show code cell {type}’, code_prompt_hide=‘Hide code cell {type}’, number_source_lines=False, output_stderr=‘show’, render_text_lexer=‘myst-ansi’, render_error_lexer=‘ipythontb’, render_image_options={}, render_figure_options={}, render_markdown_format=‘commonmark’, output_folder=‘build’, append_css=True, metadata_to_fm=False)
-Using jupyter-cache at: /Users/brownsarahm/Documents/inclass/systems/tiny-book/_build/.jupyter_cache
-building [mo]: targets for 0 po files that are out of date
-building [html]: targets for 4 source files that are out of date
-updating environment: [new config] 4 added, 0 changed, 0 removed
-/Users/brownsarahm/Documents/inclass/systems/tiny-book/markdown-notebooks.md: Executing notebook using local CWD [mystnb]
-0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-/Users/brownsarahm/Documents/inclass/systems/tiny-book/markdown-notebooks.md: Executed notebook in 1.89 seconds [mystnb]
-/Users/brownsarahm/Documents/inclass/systems/tiny-book/notebooks.ipynb: Executing notebook using local CWD [mystnb]
-0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-/Users/brownsarahm/Documents/inclass/systems/tiny-book/notebooks.ipynb: Executed notebook in 2.56 seconds [mystnb]</p>
-<p>looking for now-outdated files… none found
-pickling environment… done
-checking consistency… done
-preparing documents… done
-writing output… [100%] notebooks<br />
-generating indices… genindex done
-writing additional pages… search done
-copying images… [100%] _build/jupyter_execute/137405a2a8521f521f06724f6d604e5a5544cce7bd94d903975cee58b0605ccb.png
-copying static files… done
-copying extra files… done
-dumping search index in English (code: en)… done
-dumping object inventory… done
-build succeeded.</p>
-<p>The HTML pages are in _build/html.
-[etoc] missing index.html written as redirect to ‘intro.html’</p>
-<p>===============================================================================</p>
-<p>Finished generating HTML for book.
-Your book’s HTML pages are here:
-_build/html/
-You can look at your book by opening this file in a browser:
-_build/html/index.html
-Or paste this line directly into your browser bar:
-file:///Users/brownsarahm/Documents/inclass/systems/tiny-book/_build/html/index.html</p>
-<p>===============================================================================</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>_build			logo.png		references.bib
-_config.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	requirements.txt
-_toc.yml		<a class="reference external" href="http://markdown.md">markdown.md</a>
-<a class="reference external" href="http://intro.md">intro.md</a>		notebooks.ipynb</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls _build/</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>html		jupyter_execute</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls _build/html/</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>_images			index.html		objects.inv
-_sources		intro.html		search.html
-_sphinx_design_static	markdown-notebooks.html	searchindex.js
-_static			markdown.html
-genindex.html		notebooks.html</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git status</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>On branch main
-Untracked files:
-(use “git add <file>…” to include in what will be committed)
-_build/</p>
-<p>nothing added to commit but untracked files present (use “git add” to track)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>ls</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>_build			logo.png		references.bib
-_config.yml		<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>	requirements.txt
-_toc.yml		<a class="reference external" href="http://markdown.md">markdown.md</a>
-<a class="reference external" href="http://intro.md">intro.md</a>		notebooks.ipynb</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>echo “_build/” &gt;&gt; .gitignore</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git status</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>On branch main
-Untracked files:
-(use “git add <file>…” to include in what will be committed)
-.gitignore</p>
-<p>nothing added to commit but untracked files present (use “git add” to track)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>cat .gitignore</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>_build/</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git add .</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git commit -m ‘ignores build’</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>[main 9c4157f] ignores build
-1 file changed, 1 insertion(+)
-create mode 100644 .gitignore</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git remote</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>cd …/github-inclass-fa23-brownsarahm/</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git remote</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>origin</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>cd …/tiny-book/</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git remote add origin <a class="github reference external" href="https://github.com/introcompsys/f23-tiny-book-brownsarahm.git">introcompsys/f23-tiny-book-brownsarahm.git</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git branch -M main</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
-<p>git push -u origin main</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Enumerating objects: 14, done.
-Counting objects: 100% (14/14), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (12/12), done.
-Writing objects: 100% (14/14), 16.45 KiB | 8.23 MiB/s, done.
-Total 14 (delta 1), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (1/1), done.
-To <a class="github reference external" href="https://github.com/introcompsys/f23-tiny-book-brownsarahm.git">introcompsys/f23-tiny-book-brownsarahm.git</a></p>
+<p>Design is best learned from examples. Some of the best examples of software <em>design</em> come from developer tools.</p>
 <ul class="simple">
-<li><p>[new branch]      main -&gt; main
-branch ‘main’ set up to track ‘origin/main’.</p></li>
+<li><p><a class="reference external" href="https://third-bit.com/sdxjs/">source (js version)</a></p></li>
+<li><p><a class="reference external" href="https://third-bit.com/sdxpy/">source (python version)</a></p></li>
 </ul>
+<p>In particular documentation tools are really good examples of:</p>
+<ul class="simple">
+<li><p>pattern matching</p></li>
+<li><p>modularity</p></li>
+<li><p>automation</p></li>
+<li><p>building</p></li>
+</ul>
+<p>By the end of today’s class you will be able to:</p>
+<ul class="simple">
+<li><p>describe different types of documentation</p></li>
+<li><p>find different information in a code repo</p></li>
+<li><p>generate documentation as html</p></li>
+<li><p>ignore content from a repo</p></li>
+<li><p>create a repo locally and push to GitHub</p></li>
+</ul>
+</section>
+<section id="what-is-documentation">
+<h2><span class="section-number">7.4. </span>What is documentation<a class="headerlink" href="#what-is-documentation" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We opened this page and discussed the different types of documentation in the table in class</p>
+</div>
+<p><a class="reference external" href="https://link.springer.com/article/10.1007/s10606-018-9333-1/tables/1">documentation types table</a></p>
+<p>from <a class="reference external" href="https://link.springer.com/article/10.1007/s10606-018-9333-1">ethnography of documentation data science</a></p>
+<p>Data Science is only <em>one</em> type of programing, but this is still pretty representative. The main difference is that in this case the “target” users  are often data scientists and more technically skilled than the “target” users of, for example, a social media app. This would mean that user-facing docs would vary.</p>
+</section>
+<section id="why-is-documentation-so-important">
+<h2><span class="section-number">7.5. </span>Why is documentation so important?<a class="headerlink" href="#why-is-documentation-so-important" title="Permalink to this headline">#</a></h2>
+<p>we should probably spend more time on it</p>
+<p><img alt="differenc ein time spent vs should" src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs10606-018-9333-1/MediaObjects/10606_2018_9333_Fig4_HTML.png?as=webp" /></p>
+<p><a class="reference external" href="https://link.springer.com/article/10.1007/s10606-018-9333-1/figures/4">via</a>
+<a class="reference external" href="https://bids.berkeley.edu/news/most-developers-think-we-should-spend-more-time-documentation">source</a></p>
+</section>
+<section id="what-is-a-docstring">
+<h2><span class="section-number">7.6. </span>What is a docstring<a class="headerlink" href="#what-is-a-docstring" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.11.4</span> <span class="p">(</span><span class="n">main</span><span class="p">,</span> <span class="n">Jul</span>  <span class="mi">5</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">44</span><span class="p">)</span> <span class="p">[</span><span class="n">Clang</span> <span class="mf">14.0.6</span> <span class="p">]</span> <span class="n">on</span> <span class="n">darwin</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">ex</span><span class="p">():</span>
+<span class="o">...</span>    <span class="s1">&#39;&#39;&#39; doc string</span>
+<span class="s1">...    &#39;&#39;&#39;</span>
+<span class="o">...</span>    <span class="n">padd</span>
+<span class="o">...</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># a comment</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="so-how-do-we-do-it">
+<h2><span class="section-number">7.7. </span>So, how do we do it?<a class="headerlink" href="#so-how-do-we-do-it" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://docathon.github.io/docathon/pages/resources.html#documentation-tools">Documenation Tools</a></p>
+<p><a class="reference external" href="https://www.writethedocs.org/">write the docs</a></p>
+<p><a class="reference external" href="https://lwn.net/Articles/705224/">linux kernel uses sphinx</a> and here is <a class="reference external" href="https://lwn.net/Articles/692704/">why</a> and <a class="reference external" href="https://lwn.net/Articles/692705/">how it works</a></p>
+</section>
+<section id="install-jupyter-book">
+<h2><span class="section-number">7.8. </span>Install Jupyter-book<a class="headerlink" href="#install-jupyter-book" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://jupyterbook.org/intro.html">Jupyterbook</a> wraps sphinx and uses markdown instead of restructured text. The project authors <a class="reference external" href="https://jupyterbook.org/en/stable/explain/sphinx.html">note in the documenation</a> that it “can be thought of as an <em>opinionated distribution of Sphinx</em>”. We’re going to use this, so that we can use most of the power of sphinx without having to learn ReStructured Text which is more complex than markdown syntax.</p>
+<p><a class="reference external" href="https://jupyterbook.org/en/stable/start/overview.html#install-jupyter-book">install jupyterbook</a> on Mac or linux those instructions will work on your regular terminal, if you have python installed. On Windows those instructions will work in the Anaconda prompt or any other terminal that is set up with python. If these steps do not make sense see the <a class="reference external" href="https://introcompsys.github.io/spring2023/syllabus/tools.html#recommendation">recommendations</a> in the syllabus for more instructions including videos of the Python install process in both Mac and Windows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>this command does a lot of stuff, it installs <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> and all of its dependencies, which is a lot.  I removed the output from the notes</p>
+<p>the thing that matters is that near the end it will say “successfully installed”</p>
+</div>
+<p>Now we move to our inclass repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+</pre></div>
+</div>
+<p>And note that we can see the other folders we have made so far, but note that we are <em>not inside</em> any of them.</p>
+<p>We can create this</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">create</span> <span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="o">===============================================================================</span>
+
+<span class="n">Your</span> <span class="n">book</span> <span class="n">template</span> <span class="n">can</span> <span class="n">be</span> <span class="n">found</span> <span class="n">at</span>
+
+    <span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
+
+<span class="o">===============================================================================</span>
 
 </pre></div>
 </div>
-<p>git remote</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<p>and it tells us the relative path to the new folder, we can use <code class="docutils literal notranslate"><span class="pre">ls</span></code> again to see that it is there.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<p>origin</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>	<span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
+</pre></div>
+</div>
+</section>
+<section id="parts-of-a-jupyer-book">
+<h2><span class="section-number">7.9. </span>Parts of a Jupyer book<a class="headerlink" href="#parts-of-a-jupyer-book" title="Permalink to this headline">#</a></h2>
+<p>First we go in the directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Then look</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>		<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<section id="starting-a-git-repo-locally">
+<h3><span class="section-number">7.9.1. </span>starting a git repo locally<a class="headerlink" href="#starting-a-git-repo-locally" title="Permalink to this headline">#</a></h3>
+<p>Before we work with the files, let’s commit the current version</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fatal</span><span class="p">:</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">git</span> <span class="n">repository</span> <span class="p">(</span><span class="ow">or</span> <span class="nb">any</span> <span class="n">of</span> <span class="n">the</span> <span class="n">parent</span> <span class="n">directories</span><span class="p">):</span> <span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>We cannot check status because we are not in a git repo.</p>
+<p>Recall a git repo is a folder that contains a <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory with the versions of our project in it. This directory is typically hidden, so to confirm it is not there we need the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option on <code class="docutils literal notranslate"><span class="pre">ls</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>			<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="o">..</span>			<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>We can create a new repo with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> and the  path to wher we want it.  We want it at our current working directory, which is <code class="docutils literal notranslate"><span class="pre">.</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span> <span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hint</span><span class="p">:</span> <span class="n">Using</span> <span class="s1">&#39;master&#39;</span> <span class="k">as</span> <span class="n">the</span> <span class="n">name</span> <span class="k">for</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">branch</span><span class="o">.</span> <span class="n">This</span> <span class="n">default</span> <span class="n">branch</span> <span class="n">name</span>
+<span class="n">hint</span><span class="p">:</span> <span class="ow">is</span> <span class="n">subject</span> <span class="n">to</span> <span class="n">change</span><span class="o">.</span> <span class="n">To</span> <span class="n">configure</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">branch</span> <span class="n">name</span> <span class="n">to</span> <span class="n">use</span> <span class="ow">in</span> <span class="nb">all</span>
+<span class="n">hint</span><span class="p">:</span> <span class="n">of</span> <span class="n">your</span> <span class="n">new</span> <span class="n">repositories</span><span class="p">,</span> <span class="n">which</span> <span class="n">will</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span>
+<span class="n">hint</span><span class="p">:</span> 
+<span class="n">hint</span><span class="p">:</span> 	<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">init</span><span class="o">.</span><span class="n">defaultBranch</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>
+<span class="n">hint</span><span class="p">:</span> 
+<span class="n">hint</span><span class="p">:</span> <span class="n">Names</span> <span class="n">commonly</span> <span class="n">chosen</span> <span class="n">instead</span> <span class="n">of</span> <span class="s1">&#39;master&#39;</span> <span class="n">are</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;trunk&#39;</span> <span class="ow">and</span>
+<span class="n">hint</span><span class="p">:</span> <span class="s1">&#39;development&#39;</span><span class="o">.</span> <span class="n">The</span> <span class="n">just</span><span class="o">-</span><span class="n">created</span> <span class="n">branch</span> <span class="n">can</span> <span class="n">be</span> <span class="n">renamed</span> <span class="n">via</span> <span class="n">this</span> <span class="n">command</span><span class="p">:</span>
+<span class="n">hint</span><span class="p">:</span> 
+<span class="n">hint</span><span class="p">:</span> 	<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>
+<span class="n">Initialized</span> <span class="n">empty</span> <span class="n">Git</span> <span class="n">repository</span> <span class="ow">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/.</span><span class="n">git</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Here we are faced with a social aspect of computing that is <em>also</em> a good reminder about how git actually works</p>
+</section>
+<section id="retiring-racist-language">
+<span id="nomaster"></span><h3><span class="section-number">7.9.2. </span>Retiring racist language<a class="headerlink" href="#retiring-racist-language" title="Permalink to this headline">#</a></h3>
+<p>Historically the default branch was called master.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html">derived from a master/slave analogy</a> which is not even how git works, but was adopted terminology from other projects</p></li>
+<li><p><a class="reference external" href="https://github.com/github/renaming">GitHub no longer does</a></p></li>
+<li><p><a class="reference external" href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">the broader community is changing as well</a></p></li>
+<li><p><a class="reference external" href="https://lore.kernel.org/git/pull.656.v4.git.1593009996.gitgitgadget&#64;gmail.com/">git allows you to make your default not be master</a></p></li>
+<li><p><a class="reference external" href="https://twitter.com/xpasky/status/1271477451756056577">literally the person who chose the names “master” and “origin” regrets that choice</a> the name main is a more accurate and not harmful term and the current convention.</p></li>
+</ul>
+<p>we’ll change our default branch to main</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">main</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>			<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
+<span class="o">..</span>			<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="o">.</span><span class="n">git</span>			<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Now we have the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory!</p>
+<p>and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+
+<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+	<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
+	<span class="n">intro</span><span class="o">.</span><span class="n">md</span>
+	<span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+	<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>
+	<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
+	<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+	<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>it works!</p>
+<p>and we will commit the template.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</pre></div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is GitBash telling you that git is helping.  Windows uses two characters for a new line <code class="docutils literal notranslate"><span class="pre">CR</span></code> (cariage return) and <code class="docutils literal notranslate"><span class="pre">LF</span></code> (line feed).
+Classic Mac Operating system used the <code class="docutils literal notranslate"><span class="pre">CR</span></code> character.  Unix-like systems (including MacOS X) use only the <code class="docutils literal notranslate"><span class="pre">LF</span></code> character.
+If you try to open a file on Windows that has only <code class="docutils literal notranslate"><span class="pre">LF</span></code> characters, Windows will think it’s all one line. To help you,
+since git knows people collaborate across file systems, when you check out files from the git database (<code class="docutils literal notranslate"><span class="pre">.git/</span></code> directory)
+git replaces <code class="docutils literal notranslate"><span class="pre">LF</span></code> characters with <code class="docutils literal notranslate"><span class="pre">CRLF</span></code> before updating your working directory.</p>
+<p>When working on Windows, when you make a file locally, each new line will have <code class="docutils literal notranslate"><span class="pre">CRLF</span></code> in it. If your collaborator
+(or server, eg GitHub) runs not a unix or linux based operating system (it almost certainly does) these extra
+characters will make a mess and make the system interpret your code wrong. To help you out,
+git will automatically, for Windows users, convert <code class="docutils literal notranslate"><span class="pre">CRLF</span></code> to <code class="docutils literal notranslate"><span class="pre">LF</span></code> when it adds
+your work to the index (staging area). Then when you push, it’s the compatible version.</p>
+<p><a class="reference external" href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#Formatting-and-Whitespace">git documentation of the feature</a>
+this is added to a <a class="reference internal" href="../resources/windows.html"><span class="doc std std-doc">new Windows page under resources</span></a></p>
+</div>
+</aside>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;init jupyterbook&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">main</span> <span class="p">(</span><span class="n">root</span><span class="o">-</span><span class="n">commit</span><span class="p">)</span> <span class="mi">3</span><span class="n">fcd849</span><span class="p">]</span> <span class="n">init</span> <span class="n">jupyterbook</span>
+ <span class="mi">9</span> <span class="n">files</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">341</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">intro</span><span class="o">.</span><span class="n">md</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="structure-of-a-jupyter-book">
+<h3><span class="section-number">7.9.3. </span>Structure of a Jupyter book<a class="headerlink" href="#structure-of-a-jupyter-book" title="Permalink to this headline">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>		<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>A jupyter book has two required files (<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>), some for content, and some helpers that are common but not required.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterbook.org/customize/config.html#configuration-defaults">config defaults</a></p></li>
+<li><p><a class="reference external" href="https://jupyterbook.org/structure/toc.html#structure-of-a-book">toc file formatting rules</a></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">*.md</span></code> files are content</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">.bib</span></code> file is bibiolography information</p></li>
+<li><p>The other files are optional, but common. <a class="reference external" href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">Requirements.txt</a> is the format for pip to install python depndencies. There are different standards in other languages for how</p></li>
+</ul>
+<p>the extention (<code class="docutils literal notranslate"><span class="pre">.yml</span></code>) is <a class="reference external" href="https://yaml.org/">yaml</a>, which stands for “YAML Ain’t Markup Language”. It consists of key, value pairs and is deigned to be a human-friendly way to encode data for use in any programming language.</p>
+</section>
+<section id="dev-tools-mean-we-do-not-have-to-write-bibliographies-manually">
+<h3><span class="section-number">7.9.4. </span>Dev tools mean we do not have to write bibliographies manually<a class="headerlink" href="#dev-tools-mean-we-do-not-have-to-write-bibliographies-manually" title="Permalink to this headline">#</a></h3>
+<p>bibliographies are generated with <a class="reference external" href="http://www.bibtex.org/">bibtex</a> which takes structured information from the references in a <a class="reference external" href="http://www.bibtex.org/Format/">bibtex file</a> with help from <a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/en/latest/">sphinxcontrib-bibtex</a></p>
+<p>For general reference, reference managers like <a class="reference external" href="https://www.zotero.org/">zotero</a> and <a class="reference external" href="https://www.mendeley.com/">mendeley</a> can track all of your sources and output the references in bibtex format that you can use anywhere or sync with tools like MS Word or Google Docs.</p>
+</section>
+<section id="configuration-options">
+<h3><span class="section-number">7.9.5. </span>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">#</a></h3>
+<p>The config file template is pretty complete, including the URL of the webpage with all of the detailed setting options.</p>
+<p>The configuration file, tells jupyter-book basic iformation about the book, it provides all of the settings that jupyterbook and sphinx need to render the content as whatever output format we want.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">_config</span><span class="o">.</span><span class="n">yml</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Book settings</span>
+<span class="c1"># Learn more at https://jupyterbook.org/customize/config.html</span>
+
+<span class="n">title</span><span class="p">:</span> <span class="n">My</span> <span class="n">sample</span> <span class="n">book</span>
+<span class="n">author</span><span class="p">:</span> <span class="n">The</span> <span class="n">Jupyter</span> <span class="n">Book</span> <span class="n">Community</span>
+<span class="n">logo</span><span class="p">:</span> <span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+
+<span class="c1"># Force re-execution of notebooks on each build.</span>
+<span class="c1"># See https://jupyterbook.org/content/execute.html</span>
+<span class="n">execute</span><span class="p">:</span>
+  <span class="n">execute_notebooks</span><span class="p">:</span> <span class="n">force</span>
+
+<span class="c1"># Define the name of the latex output file for PDF builds</span>
+<span class="n">latex</span><span class="p">:</span>
+  <span class="n">latex_documents</span><span class="p">:</span>
+    <span class="n">targetname</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">tex</span>
+
+<span class="c1"># Add a bibtex file so that we can create citations</span>
+<span class="n">bibtex_bibfiles</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+
+<span class="c1"># Information about where the book exists on the web</span>
+<span class="n">repository</span><span class="p">:</span>
+  <span class="n">url</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">executablebooks</span><span class="o">/</span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>  <span class="c1"># Online location of your book</span>
+  <span class="n">path_to_book</span><span class="p">:</span> <span class="n">docs</span>  <span class="c1"># Optional path to your book, relative to the repository root</span>
+  <span class="n">branch</span><span class="p">:</span> <span class="n">master</span>  <span class="c1"># Which branch of the repository should be used when creating links (optional)</span>
+
+<span class="c1"># Add GitHub buttons to your book</span>
+<span class="c1"># See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository</span>
+<span class="n">html</span><span class="p">:</span>
+  <span class="n">use_issues_button</span><span class="p">:</span> <span class="n">true</span>
+  <span class="n">use_repository_button</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+</section>
+<section id="content-organization">
+<h3><span class="section-number">7.9.6. </span>Content Organization<a class="headerlink" href="#content-organization" title="Permalink to this headline">#</a></h3>
+<p>The table of contents file describe how to put the other files in order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Table of contents</span>
+<span class="c1"># Learn more at https://jupyterbook.org/customize/toc.html</span>
+
+<span class="nb">format</span><span class="p">:</span> <span class="n">jb</span><span class="o">-</span><span class="n">book</span>
+<span class="n">root</span><span class="p">:</span> <span class="n">intro</span>
+<span class="n">chapters</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">markdown</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">notebooks</span>
+<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span>
+</pre></div>
+</div>
+</section>
+<section id="building-a-book">
+<h3><span class="section-number">7.9.7. </span>Building a book<a class="headerlink" href="#building-a-book" title="Permalink to this headline">#</a></h3>
+<p>We can transform from raw source to an output by <strong>building</strong> the book</p>
+<p>Building is transforming from input to output format.  In this case from markdown, yaml, and notebook files into HTML.</p>
+<p>We will see later that building is also what we refer to the whole process from source code to executable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">Jupyter</span><span class="o">-</span><span class="n">Book</span> <span class="n">v0</span><span class="mf">.15.1</span>
+<span class="n">Source</span> <span class="n">Folder</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
+<span class="n">Config</span> <span class="n">Path</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+<span class="n">Output</span> <span class="n">Path</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+<span class="n">Running</span> <span class="n">Sphinx</span> <span class="n">v4</span><span class="mf">.5.0</span>
+<span class="n">making</span> <span class="n">output</span> <span class="n">directory</span><span class="o">...</span> <span class="n">done</span>
+<span class="p">[</span><span class="n">etoc</span><span class="p">]</span> <span class="n">Changing</span> <span class="n">master_doc</span> <span class="n">to</span> <span class="s1">&#39;intro&#39;</span>
+<span class="n">checking</span> <span class="n">bibtex</span> <span class="n">cache</span><span class="o">...</span> <span class="n">out</span> <span class="n">of</span> <span class="n">date</span>
+<span class="n">parsing</span> <span class="n">bibtex</span> <span class="n">file</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">references</span><span class="o">.</span><span class="n">bib</span><span class="o">...</span> <span class="n">parsed</span> <span class="mi">5</span> <span class="n">entries</span>
+<span class="n">myst</span> <span class="n">v0</span><span class="mf">.18.1</span><span class="p">:</span> <span class="n">MdParserConfig</span><span class="p">(</span><span class="n">commonmark_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gfm_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">enable_extensions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;colon_fence&#39;</span><span class="p">,</span> <span class="s1">&#39;dollarmath&#39;</span><span class="p">,</span> <span class="s1">&#39;linkify&#39;</span><span class="p">,</span> <span class="s1">&#39;substitution&#39;</span><span class="p">,</span> <span class="s1">&#39;tasklist&#39;</span><span class="p">],</span> <span class="n">disable_syntax</span><span class="o">=</span><span class="p">[],</span> <span class="n">all_links_external</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">url_schemes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mailto&#39;</span><span class="p">,</span> <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="s1">&#39;https&#39;</span><span class="p">],</span> <span class="n">ref_domains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight_code_blocks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">number_code_blocks</span><span class="o">=</span><span class="p">[],</span> <span class="n">title_to_header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">heading_anchors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heading_slug_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">footnote_transition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">words_per_minute</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">sub_delimiters</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;{&#39;</span><span class="p">,</span> <span class="s1">&#39;}&#39;</span><span class="p">),</span> <span class="n">linkify_fuzzy_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dmath_allow_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dmath_allow_space</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dmath_allow_digits</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dmath_double_inline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">update_mathjax</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mathjax_classes</span><span class="o">=</span><span class="s1">&#39;tex2jax_process|mathjax_process|math|output_area&#39;</span><span class="p">)</span>
+<span class="n">myst</span><span class="o">-</span><span class="n">nb</span> <span class="n">v0</span><span class="mf">.17.2</span><span class="p">:</span> <span class="n">NbParserConfig</span><span class="p">(</span><span class="n">custom_formats</span><span class="o">=</span><span class="p">{},</span> <span class="n">metadata_key</span><span class="o">=</span><span class="s1">&#39;mystnb&#39;</span><span class="p">,</span> <span class="n">cell_metadata_key</span><span class="o">=</span><span class="s1">&#39;mystnb&#39;</span><span class="p">,</span> <span class="n">kernel_rgx_aliases</span><span class="o">=</span><span class="p">{},</span> <span class="n">execution_mode</span><span class="o">=</span><span class="s1">&#39;force&#39;</span><span class="p">,</span> <span class="n">execution_cache_path</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">execution_excludepatterns</span><span class="o">=</span><span class="p">[],</span> <span class="n">execution_timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">execution_in_temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">execution_allow_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">execution_raise_on_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">execution_show_tb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">merge_streams</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">render_plugin</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">remove_code_source</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">remove_code_outputs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">code_prompt_show</span><span class="o">=</span><span class="s1">&#39;Show code cell </span><span class="si">{type}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">code_prompt_hide</span><span class="o">=</span><span class="s1">&#39;Hide code cell </span><span class="si">{type}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">number_source_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">output_stderr</span><span class="o">=</span><span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="n">render_text_lexer</span><span class="o">=</span><span class="s1">&#39;myst-ansi&#39;</span><span class="p">,</span> <span class="n">render_error_lexer</span><span class="o">=</span><span class="s1">&#39;ipythontb&#39;</span><span class="p">,</span> <span class="n">render_image_options</span><span class="o">=</span><span class="p">{},</span> <span class="n">render_figure_options</span><span class="o">=</span><span class="p">{},</span> <span class="n">render_markdown_format</span><span class="o">=</span><span class="s1">&#39;commonmark&#39;</span><span class="p">,</span> <span class="n">output_folder</span><span class="o">=</span><span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="n">append_css</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">metadata_to_fm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">Using</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">cache</span> <span class="n">at</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">_build</span><span class="o">/.</span><span class="n">jupyter_cache</span>
+<span class="n">building</span> <span class="p">[</span><span class="n">mo</span><span class="p">]:</span> <span class="n">targets</span> <span class="k">for</span> <span class="mi">0</span> <span class="n">po</span> <span class="n">files</span> <span class="n">that</span> <span class="n">are</span> <span class="n">out</span> <span class="n">of</span> <span class="n">date</span>
+<span class="n">building</span> <span class="p">[</span><span class="n">html</span><span class="p">]:</span> <span class="n">targets</span> <span class="k">for</span> <span class="mi">4</span> <span class="n">source</span> <span class="n">files</span> <span class="n">that</span> <span class="n">are</span> <span class="n">out</span> <span class="n">of</span> <span class="n">date</span>
+<span class="n">updating</span> <span class="n">environment</span><span class="p">:</span> <span class="p">[</span><span class="n">new</span> <span class="n">config</span><span class="p">]</span> <span class="mi">4</span> <span class="n">added</span><span class="p">,</span> <span class="mi">0</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">0</span> <span class="n">removed</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span><span class="p">:</span> <span class="n">Executing</span> <span class="n">notebook</span> <span class="n">using</span> <span class="n">local</span> <span class="n">CWD</span> <span class="p">[</span><span class="n">mystnb</span><span class="p">]</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Debugger</span> <span class="n">warning</span><span class="p">:</span> <span class="n">It</span> <span class="n">seems</span> <span class="n">that</span> <span class="n">frozen</span> <span class="n">modules</span> <span class="n">are</span> <span class="n">being</span> <span class="n">used</span><span class="p">,</span> <span class="n">which</span> <span class="n">may</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">make</span> <span class="n">the</span> <span class="n">debugger</span> <span class="n">miss</span> <span class="n">breakpoints</span><span class="o">.</span> <span class="n">Please</span> <span class="k">pass</span> <span class="o">-</span><span class="n">Xfrozen_modules</span><span class="o">=</span><span class="n">off</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">to</span> <span class="n">python</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">frozen</span> <span class="n">modules</span><span class="o">.</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Note</span><span class="p">:</span> <span class="n">Debugging</span> <span class="n">will</span> <span class="n">proceed</span><span class="o">.</span> <span class="n">Set</span> <span class="n">PYDEVD_DISABLE_FILE_VALIDATION</span><span class="o">=</span><span class="mi">1</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">this</span> <span class="n">validation</span><span class="o">.</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Debugger</span> <span class="n">warning</span><span class="p">:</span> <span class="n">It</span> <span class="n">seems</span> <span class="n">that</span> <span class="n">frozen</span> <span class="n">modules</span> <span class="n">are</span> <span class="n">being</span> <span class="n">used</span><span class="p">,</span> <span class="n">which</span> <span class="n">may</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">make</span> <span class="n">the</span> <span class="n">debugger</span> <span class="n">miss</span> <span class="n">breakpoints</span><span class="o">.</span> <span class="n">Please</span> <span class="k">pass</span> <span class="o">-</span><span class="n">Xfrozen_modules</span><span class="o">=</span><span class="n">off</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">to</span> <span class="n">python</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">frozen</span> <span class="n">modules</span><span class="o">.</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Note</span><span class="p">:</span> <span class="n">Debugging</span> <span class="n">will</span> <span class="n">proceed</span><span class="o">.</span> <span class="n">Set</span> <span class="n">PYDEVD_DISABLE_FILE_VALIDATION</span><span class="o">=</span><span class="mi">1</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">this</span> <span class="n">validation</span><span class="o">.</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span><span class="p">:</span> <span class="n">Executed</span> <span class="n">notebook</span> <span class="ow">in</span> <span class="mf">1.89</span> <span class="n">seconds</span> <span class="p">[</span><span class="n">mystnb</span><span class="p">]</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span><span class="p">:</span> <span class="n">Executing</span> <span class="n">notebook</span> <span class="n">using</span> <span class="n">local</span> <span class="n">CWD</span> <span class="p">[</span><span class="n">mystnb</span><span class="p">]</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Debugger</span> <span class="n">warning</span><span class="p">:</span> <span class="n">It</span> <span class="n">seems</span> <span class="n">that</span> <span class="n">frozen</span> <span class="n">modules</span> <span class="n">are</span> <span class="n">being</span> <span class="n">used</span><span class="p">,</span> <span class="n">which</span> <span class="n">may</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">make</span> <span class="n">the</span> <span class="n">debugger</span> <span class="n">miss</span> <span class="n">breakpoints</span><span class="o">.</span> <span class="n">Please</span> <span class="k">pass</span> <span class="o">-</span><span class="n">Xfrozen_modules</span><span class="o">=</span><span class="n">off</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">to</span> <span class="n">python</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">frozen</span> <span class="n">modules</span><span class="o">.</span>
+<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Note</span><span class="p">:</span> <span class="n">Debugging</span> <span class="n">will</span> <span class="n">proceed</span><span class="o">.</span> <span class="n">Set</span> <span class="n">PYDEVD_DISABLE_FILE_VALIDATION</span><span class="o">=</span><span class="mi">1</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">this</span> <span class="n">validation</span><span class="o">.</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span><span class="p">:</span> <span class="n">Executed</span> <span class="n">notebook</span> <span class="ow">in</span> <span class="mf">2.56</span> <span class="n">seconds</span> <span class="p">[</span><span class="n">mystnb</span><span class="p">]</span>
+
+<span class="n">looking</span> <span class="k">for</span> <span class="n">now</span><span class="o">-</span><span class="n">outdated</span> <span class="n">files</span><span class="o">...</span> <span class="n">none</span> <span class="n">found</span>
+<span class="n">pickling</span> <span class="n">environment</span><span class="o">...</span> <span class="n">done</span>
+<span class="n">checking</span> <span class="n">consistency</span><span class="o">...</span> <span class="n">done</span>
+<span class="n">preparing</span> <span class="n">documents</span><span class="o">...</span> <span class="n">done</span>
+<span class="n">writing</span> <span class="n">output</span><span class="o">...</span> <span class="p">[</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span> <span class="n">notebooks</span>                                               
+<span class="n">generating</span> <span class="n">indices</span><span class="o">...</span> <span class="n">genindex</span> <span class="n">done</span>
+<span class="n">writing</span> <span class="n">additional</span> <span class="n">pages</span><span class="o">...</span> <span class="n">search</span> <span class="n">done</span>
+<span class="n">copying</span> <span class="n">images</span><span class="o">...</span> <span class="p">[</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span> <span class="n">_build</span><span class="o">/</span><span class="n">jupyter_execute</span><span class="o">/</span><span class="mi">137405</span><span class="n">a2a8521f521f06724f6d604e5a5544cce7bd94d903975cee58b0605ccb</span><span class="o">.</span><span class="n">png</span>
+<span class="n">copying</span> <span class="n">static</span> <span class="n">files</span><span class="o">...</span> <span class="n">done</span>
+<span class="n">copying</span> <span class="n">extra</span> <span class="n">files</span><span class="o">...</span> <span class="n">done</span>
+<span class="n">dumping</span> <span class="n">search</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">English</span> <span class="p">(</span><span class="n">code</span><span class="p">:</span> <span class="n">en</span><span class="p">)</span><span class="o">...</span> <span class="n">done</span>
+<span class="n">dumping</span> <span class="nb">object</span> <span class="n">inventory</span><span class="o">...</span> <span class="n">done</span>
+<span class="n">build</span> <span class="n">succeeded</span><span class="o">.</span>
+
+<span class="n">The</span> <span class="n">HTML</span> <span class="n">pages</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">.</span>
+<span class="p">[</span><span class="n">etoc</span><span class="p">]</span> <span class="n">missing</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span> <span class="n">written</span> <span class="k">as</span> <span class="n">redirect</span> <span class="n">to</span> <span class="s1">&#39;intro.html&#39;</span>
+
+<span class="o">===============================================================================</span>
+
+<span class="n">Finished</span> <span class="n">generating</span> <span class="n">HTML</span> <span class="k">for</span> <span class="n">book</span><span class="o">.</span>
+<span class="n">Your</span> <span class="n">book</span><span class="s1">&#39;s HTML pages are here:</span>
+    <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span>
+<span class="n">You</span> <span class="n">can</span> <span class="n">look</span> <span class="n">at</span> <span class="n">your</span> <span class="n">book</span> <span class="n">by</span> <span class="n">opening</span> <span class="n">this</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">browser</span><span class="p">:</span>
+    <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+<span class="n">Or</span> <span class="n">paste</span> <span class="n">this</span> <span class="n">line</span> <span class="n">directly</span> <span class="n">into</span> <span class="n">your</span> <span class="n">browser</span> <span class="n">bar</span><span class="p">:</span>
+    <span class="n">file</span><span class="p">:</span><span class="o">///</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>            
+
+<span class="o">===============================================================================</span>
 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<div class="admonition-try-it-yourself admonition">
+<p class="admonition-title">Try it yourself</p>
+<p>Which files created by the template are not included in the rendered output? How could you tell?</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<section id="review-todays-class">
-<h2><span class="section-number">18.1. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
-<ol class="arabic simple">
-<li><p>Review the notes, <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">jupyterbook docs</a>, and experiment with the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CLI to determine what files are required to make <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code> run. Make your kwl repo into a jupyter book. Set it so that the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory is not under version control.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">docs.md</span></code> to your KWL repo and explain the most important things to know about documentation in your own words using other programming concepts you have learned so far.  Include in a markdown (same as HTML <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">comment</span> <span class="pre">--&gt;</span></code> ) comment the list of CSC courses you have taken for context while we give you feedback.</p></li>
-</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_build</span>			<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
+<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+</pre></div>
+</div>
+<p>we note that this made a new folder called <code class="docutils literal notranslate"><span class="pre">_build</span></code>. we can look inside there.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">_build</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html</span>		<span class="n">jupyter_execute</span>
+</pre></div>
+</div>
+<p>and in the html folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_images</span>			<span class="n">index</span><span class="o">.</span><span class="n">html</span>		<span class="n">objects</span><span class="o">.</span><span class="n">inv</span>
+<span class="n">_sources</span>		<span class="n">intro</span><span class="o">.</span><span class="n">html</span>		<span class="n">search</span><span class="o">.</span><span class="n">html</span>
+<span class="n">_sphinx_design_static</span>	<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">html</span>	<span class="n">searchindex</span><span class="o">.</span><span class="n">js</span>
+<span class="n">_static</span>			<span class="n">markdown</span><span class="o">.</span><span class="n">html</span>
+<span class="n">genindex</span><span class="o">.</span><span class="n">html</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>We got HTML, CSS, and javascript files without having to write them manually.</p>
+<p>We can also copy the path to the file and open it in our browser</p>
+<p>we can change the size of a browswer window or use the screen size settings in inspect mode to see that this site is responsive.</p>
+<p>We didn’t have to write any html and we got a responsive site!</p>
+<p>If you wanted to change the styling with sphinx you can use built in
+<a class="reference external" href="https://sphinx-themes.org/">themes</a> which tell sphinx to put different
+files in the <code class="docutils literal notranslate"><span class="pre">_static</span></code> folder when it builds your site, but you don’t have to change any of your content!  If you like working on front end things (which is great! it’s just not alwasy the goal) you can even
+build <a class="reference external" href="https://www.sphinx-doc.org/en/master/development/theming.html">your own theme</a> that can work with sphinx.</p>
+</section>
+</section>
+<section id="ignoring-built-files">
+<h2><span class="section-number">7.10. </span>Ignoring Built files<a class="headerlink" href="#ignoring-built-files" title="Permalink to this headline">#</a></h2>
+<p>The built site files are compeltey redundant, content wise, to the original markdown files.</p>
+<p>We do not want to keep track of changes for the built files since they are generated from the source files. It’s redundant and makes it less clear where someone should update content.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="n">_build</span><span class="o">/</span>
+
+<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_build</span>			<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
+<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+</pre></div>
+</div>
+<p>Git helps us with this with the .gitignore</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;_build/&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">.</span><span class="n">gitignore</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="o">.</span><span class="n">gitignore</span>
+
+<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>now that’s the only new file as far as git is concerned, so we will track this,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;ignores build&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">main</span> <span class="mi">9</span><span class="n">c4157f</span><span class="p">]</span> <span class="n">ignores</span> <span class="n">build</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="o">.</span><span class="n">gitignore</span>
+</pre></div>
+</div>
+<p>We can look at the file’s contents</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">gitignore</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_build</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>What it does is, when git goes to add, it skips any specific files that match both the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;path&gt;</span></code> AND any of the paths listed in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
+</section>
+<section id="how-do-i-push-a-repo-that-i-made-locally-to-github">
+<h2><span class="section-number">7.11. </span>How do I push a repo that I made locally to GitHub?<a class="headerlink" href="#how-do-i-push-a-repo-that-i-made-locally-to-github" title="Permalink to this headline">#</a></h2>
+<p>Right now, we do not have any remotes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span>
+</pre></div>
+</div>
+<p>If we do the same in another repo that we got by cloing <em>from</em> GitHub, they all have remotes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">remote</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>
+</pre></div>
+</div>
+<p>Typically they all use the default name <code class="docutils literal notranslate"><span class="pre">origin</span></code></p>
+<p>Back to our <code class="docutils literal notranslate"><span class="pre">tiny-book</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>For today, we will create an empty github repo shared with me using the link shared on prismia.</p>
+<p>More generally, you can <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/create-a-repo">create a repo</a></p>
+<p>That default page for an empty repo if you do not initiate it with any files will give you the instructions for what remote to add.</p>
+<p>Now we add the remote, following the instructions from the blank repo page.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">f23</span><span class="o">-</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">M</span> <span class="n">main</span>
+</pre></div>
+</div>
+<p>and finally we can push!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">14</span><span class="o">/</span><span class="mi">14</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
+<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">12</span><span class="o">/</span><span class="mi">12</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">14</span><span class="o">/</span><span class="mi">14</span><span class="p">),</span> <span class="mf">16.45</span> <span class="n">KiB</span> <span class="o">|</span> <span class="mf">8.23</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">14</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">1</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">f23</span><span class="o">-</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">main</span> <span class="o">-&gt;</span> <span class="n">main</span>
+<span class="n">branch</span> <span class="s1">&#39;main&#39;</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>
+</pre></div>
+</div>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">18.2. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.12. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Read the 2023-09-26 notes when posted</p></li>
 <li><p>Make sure that the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI tool works by using it to create an issue called test on your kwl repo with <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">issue</span> <span class="pre">create</span></code></p></li>
 <li><p>Take a few minutes to think about a time you were debugging or pay attention the next time you debug something. Make note of how you think about the problem, how do you decide what to check? how do you decide what to try? what information do you look for?</p></li>
 </ol>
 </section>
+<section id="review-todays-class">
+<h2><span class="section-number">7.13. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Review the notes, <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">jupyterbook docs</a>, and experiment with the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CLI to determine what files are required to make <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code> run. Make your kwl repo into a jupyter book. Set it so that the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory is not under version control.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">docs.md</span></code> to your KWL repo and explain the most important things to know about documentation in your own words using other programming concepts you have learned so far.  Include in a markdown (same as HTML <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">comment</span> <span class="pre">--&gt;</span></code> ) comment the list of CSC courses you have taken for context while we give you feedback.</p></li>
+</ol>
+</section>
 <section id="more-practice">
-<h2><span class="section-number">18.3. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.14. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Review the notes, <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">jupyterbook docs</a>, and experiment with the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CLI to determine what files are required to make <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code> run. Make your kwl repo into a jupyter book. Set it so that the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory is not under version control.</p></li>
 <li><p>Learn about the documentation ecosystem in another language that you know using at least one official source and additional sources as you find helpful. In <code class="docutils literal notranslate"><span class="pre">docs.md</span></code> include a summary of your findings and compare and contrast it to jupyter book/sphinx.  Include a <a class="reference external" href="https://jupyterbook.org/en/stable/content/citations.html">bibtex based bibliography</a> of the sources you used. You can use <a class="reference external" href="https://url-to-bibtex.vercel.app/">this generator</a> for informal sources and <a class="reference external" href="https://digitalmeasures.oregonstate.edu/training/export-bibtex-google-scholar">google scholar</a> for formal sources.</p></li>
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">18.4. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.15. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<p>Tiny book repo should exist. Append your terminal output or this repo’s git log  to your experience report.</p>
 </section>
 <section id="questions-after-todays-class">
-<h2><span class="section-number">18.5. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
-<p>Class Response Summary:</p>
-<p>• I was unable to install jupyter books for a while so I’m not caught up, is it complicated to navigate?</p>
-<p>• I wonder why when I ran “pip3 install jupyter-book” and the install completed, but then when I try using the jupyter-book commands, it would say command not found…</p>
-<p>• If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</p>
-<p>• Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</p>
-<p>• Can you create an entire repository with only git?</p>
-<p>• What is jupyter used for</p>
-<p>• just right</p>
-<p>• My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</p>
-<p>• So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</p>
-<p>• I had a separate install issue with jupyter-book. I was provided with a variety of errors that I tried to trouble shoot. I’ll see if I can fix it during lab tomorrow or before then</p>
+<h2><span class="section-number">7.16. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<section id="if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">
+<h3><span class="section-number">7.16.1. </span>If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?<a class="headerlink" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore" title="Permalink to this headline">#</a></h3>
+<p>To track the files in the build directory you would need to delete it from the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p>
+<p>Also, of note, git does not track folders, it tracks files, but listing folder paths can help</p>
+</section>
+<section id="will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">
+<h3><span class="section-number">7.16.2. </span>Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?<a class="headerlink" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax" title="Permalink to this headline">#</a></h3>
+<p>Default it works with Python, but the <a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/describing-code.html#other-languages-c-c-others">sphinx docs</a> describe how to work with other languages. The jupyter book docs include a page on how <a class="reference external" href="https://jupyterbook.org/en/stable/explain/sphinx.html">sphinx and jupyter-book</a> are related and a <a class="reference external" href="https://jupyterbook.org/en/stable/advanced/sphinx.html">page on how to use other sphinx features in a jupyter book</a>.</p>
+<p>Jupyter notebooks also have <a class="reference external" href="https://docs.jupyter.org/en/latest/projects/kernels.html">alternative kernels</a> so notebook styled pages can be written in these languages as well.</p>
+</section>
+<section id="can-you-create-an-entire-repository-with-only-git">
+<h3><span class="section-number">7.16.3. </span>Can you create an entire repository with only git?<a class="headerlink" href="#can-you-create-an-entire-repository-with-only-git" title="Permalink to this headline">#</a></h3>
+<p>By definition git is what makes a git repository.</p>
+</section>
+<section id="what-is-jupyter-used-for">
+<h3><span class="section-number">7.16.4. </span>What is jupyter used for<a class="headerlink" href="#what-is-jupyter-used-for" title="Permalink to this headline">#</a></h3>
+<p>Jupyter is a large software project designed to support computational sciences.</p>
+<p>it includes the notebook file format specification, the lab interface for working with them, the hub for hosting it on a server.</p>
+<p>Jupyter-book is a separate, but related, project that is highly compatible.</p>
+</section>
+<section id="my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">
+<h3><span class="section-number">7.16.5. </span>My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.<a class="headerlink" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen" title="Permalink to this headline">#</a></h3>
+<p>This sounds like you may have copied the ssh url to the remote instead of the https version?</p>
+</section>
+<section id="so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">
+<h3><span class="section-number">7.16.6. </span>So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?<a class="headerlink" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia" title="Permalink to this headline">#</a></h3>
+<p>Python things do not work in GitBash by default, but do work in Anaconda Prompt, where git operations do not work. You may need to use two terminals, but should be able to do everything you need.</p>
+</section>
 </section>
 </section>
 
@@ -1275,27 +1177,40 @@ branch ‘main’ set up to track ‘origin/main’.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. a comment</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#book-settings">8. Book settings</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-at-https-jupyterbook-org-customize-config-html">9. Learn more at https://jupyterbook.org/customize/config.html</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#force-re-execution-of-notebooks-on-each-build">10. Force re-execution of notebooks on each build.</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#see-https-jupyterbook-org-content-execute-html">11. See https://jupyterbook.org/content/execute.html</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-name-of-the-latex-output-file-for-pdf-builds">12. Define the name of the latex output file for PDF builds</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-bibtex-file-so-that-we-can-create-citations">13. Add a bibtex file so that we can create citations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information-about-where-the-book-exists-on-the-web">14. Information about where the book exists on the web</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#add-github-buttons-to-your-book">15. Add GitHub buttons to your book</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#see-https-jupyterbook-org-customize-config-html-add-a-link-to-your-repository">16. See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">17. Table of contents</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-at-https-jupyterbook-org-customize-toc-html">18. Learn more at https://jupyterbook.org/customize/toc.html</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">18.1. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">18.2. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">18.3. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">18.4. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">18.5. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-your-codespace">7.1. Closing your Codespace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-and-explore-ideas">7.2. Build and Explore Ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-documentation">7.3. Why Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-documentation">7.4. What is documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-documentation-so-important">7.5. Why is documentation so important?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-docstring">7.6. What is a docstring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-we-do-it">7.7. So, how do we do it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book">7.8. Install Jupyter-book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-jupyer-book">7.9. Parts of a Jupyer book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">7.9.1. starting a git repo locally</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">7.9.2. Retiring racist language</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-jupyter-book">7.9.3. Structure of a Jupyter book</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-tools-mean-we-do-not-have-to-write-bibliographies-manually">7.9.4. Dev tools mean we do not have to write bibliographies manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-options">7.9.5. Configuration options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-organization">7.9.6. Content Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-book">7.9.7. Building a book</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-built-files">7.10. Ignoring Built files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">7.11. How do I push a repo that I made locally to GitHub?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">7.12. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">7.13. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">7.14. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">7.15. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">7.16. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">7.16.1. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">7.16.2. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">7.16.3. Can you create an entire repository with only git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">7.16.4. What is jupyter used for</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">7.16.5. My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">7.16.6. So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

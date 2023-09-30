@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-26';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7. a comment" href="2023-09-28.html" />
+    <link rel="next" title="7. How do programmers communicate about code?" href="2023-09-28.html" />
     <link rel="prev" title="5. When do I get an advantage from git and bash?" href="2023-09-21.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -178,18 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">6. What is a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. a comment</a></li>
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -429,11 +418,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">6.1. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">6.2. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">6.3. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">6.4. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">6.5. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#housekeeping">6.1. Housekeeping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-time">6.1.1. In class time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notifications">6.1.2. Notifications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalty-free-zone-is-over">6.1.3. Penalty free zone is over.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-study-what-a-commit-is">6.2. Why study what a commit is?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-github-codespace">6.3. Using a GitHub Codespace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-cursors-are-your-friend">6.4. Multiple cursors are your friend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptually-a-commit-is-a-snapshot">6.5. Conceptually, a commit is a snapshot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-commit-is-the-basic-unit-of-what-git-manages">6.6. A commit is the basic unit of what git manages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-commit">6.7. parts of a commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-parents-help-us-trace-back">6.8. Commit parents help us trace back</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-trees-are-the-hash-of-the-content">6.9. Commit trees are the hash of the content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-messages-are-essential">6.10. Commit messages are essential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">6.11. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">6.12. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">6.13. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">6.14. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">6.15. Questions After Today’s Class</a></li>
 </ul>
             </nav>
         </div>
@@ -449,16 +453,129 @@ document.write(`
 <h1><span class="section-number">6. </span>What is a commit?<a class="headerlink" href="#what-is-a-commit" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Due to events beyond my control the full details for today’s class will be posted late. In the short term, if you missed class, attend office hours and use the prismia to make up the key steps.</p>
+<p>Due to events beyond my control the full details for this class were lost.  Below contains all of the notes and explanation, but not every command that was run and the actual output at each step.</p>
+<p>No notes yet because I made an error and did not save my terminal output from the codespace before I left the classroom.</p>
+<p>To produce the notes, I will have to use the commit history and the prismia log to re-do the activity in a copy of my repo that I manipulate to undo things so that I can recreate.</p>
 </div>
-<p>References until the full notes are added:</p>
+<section id="housekeeping">
+<h2><span class="section-number">6.1. </span>Housekeeping<a class="headerlink" href="#housekeeping" title="Permalink to this headline">#</a></h2>
+<section id="in-class-time">
+<h3><span class="section-number">6.1.1. </span>In class time<a class="headerlink" href="#in-class-time" title="Permalink to this headline">#</a></h3>
+<p>reminder: you are expected to follow along with what I model in my terminal and use prismia as a backup if you miss something or get an error.</p>
+</section>
+<section id="notifications">
+<h3><span class="section-number">6.1.2. </span>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">#</a></h3>
+<p>reminder: I post announcements as <a class="reference external" href="https://github.com/introcompsys/fall2023/releases">releases</a></p>
+<p>To get notified, <a class="reference external" href="https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository">watch the repo</a>.</p>
+</section>
+<section id="penalty-free-zone-is-over">
+<h3><span class="section-number">6.1.3. </span>Penalty free zone is over.<a class="headerlink" href="#penalty-free-zone-is-over" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified">git reset</a></p></li>
-<li><p><a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commits</a></p></li>
-<li><p><a class="reference external" href="https://www.conventionalcommits.org/en/about/">Tooling and examples of conventional commits</a></p></li>
+<li><p>all past badges can be submitted at any time</p></li>
+<li><p>all badges posted today going forward have deadlines per the <a class="reference external" href="https://introcompsys.github.io/fall2023/syllabus/grading.html#deadlines">syllabus</a></p></li>
 </ul>
+</section>
+</section>
+<section id="why-study-what-a-commit-is">
+<h2><span class="section-number">6.2. </span>Why study what a commit is?<a class="headerlink" href="#why-study-what-a-commit-is" title="Permalink to this headline">#</a></h2>
+<p>A commit is the most important unit of git. Later we will talk about what git as a whole isin more detail, but understanding a commit is essential to understanding how to fix things using git.</p>
+<p>today we will continue organizing the github inclass repo as our working example.</p>
+<p>In CS we often have multiple, overlapping definitions for a concept depending on our goal.</p>
+<p>In intro classes, we try really hard to only use one definition for each concept to let you focus.</p>
+<p>Now we need to contend with multiple definitions.</p>
+<p>These definitons could be based on</p>
+<ul class="simple">
+<li><p>what it conceptually represents</p></li>
+<li><p>its role in a larger system</p></li>
+<li><p>what its parts are</p></li>
+<li><p>how it is implemented</p></li>
+</ul>
+</section>
+<section id="using-a-github-codespace">
+<h2><span class="section-number">6.3. </span>Using a GitHub Codespace<a class="headerlink" href="#using-a-github-codespace" title="Permalink to this headline">#</a></h2>
+<p>Today we will also work in github codespaces.</p>
+<ol class="arabic simple">
+<li><p>Navigate to your github inclass repo on <a class="reference external" href="http://Github.com">Github.com</a></p></li>
+<li><p>Use the link in the README or the green code button to open a new codespace on main.</p></li>
+</ol>
+<p>You are allowed to have two active code spaces at any point in time.  If you get an error, you have some still open.  Use the <a class="reference external" href="https://github.com/codespaces">codespace page</a> to see all of yours.</p>
+<p>You can deacitvate any that are running that you do not want to use.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Remember: codespace is a virutal machine on a cloud platform, not cloud access to <a class="reference external" href="http://github.com">github.com</a></p>
+<ul class="simple">
+<li><p>you need to commit changes</p></li>
+<li><p>codespace is linux</p></li>
+</ul>
+</div>
+<p><strong>this is why i teach bash</strong></p>
+<p>as developers, we will all interact with linux/unix at times, so bash is the best shell to know if you only know one or do not want to switch between multiple</p>
+</section>
+<section id="multiple-cursors-are-your-friend">
+<h2><span class="section-number">6.4. </span>Multiple cursors are your friend<a class="headerlink" href="#multiple-cursors-are-your-friend" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor">docs</a></p>
+<p>We used multiple cursors to remove the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> from the beginning of each line in the README file that we we made last class.</p>
+</section>
+<section id="conceptually-a-commit-is-a-snapshot">
+<h2><span class="section-number">6.5. </span>Conceptually, a commit is a snapshot<a class="headerlink" href="#conceptually-a-commit-is-a-snapshot" title="Permalink to this headline">#</a></h2>
+<p><img alt="storing data as snapshots over time" src="https://git-scm.com/book/en/v2/images/snapshots.png" /></p>
+</section>
+<section id="a-commit-is-the-basic-unit-of-what-git-manages">
+<h2><span class="section-number">6.6. </span>A commit is the basic unit of what git manages<a class="headerlink" href="#a-commit-is-the-basic-unit-of-what-git-manages" title="Permalink to this headline">#</a></h2>
+<p>All other git objects are defined relative to commits</p>
+<ul class="simple">
+<li><p>branches are pointers to commits</p></li>
+<li><p>tags are pointers to commits</p></li>
+</ul>
+</section>
+<section id="parts-of-a-commit">
+<h2><span class="section-number">6.7. </span>parts of a commit<a class="headerlink" href="#parts-of-a-commit" title="Permalink to this headline">#</a></h2>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> to view past commits</p>
+<p>here we see some parts:</p>
+<ul class="simple">
+<li><p>hash</p></li>
+<li><p>(if merge)</p></li>
+<li><p>author</p></li>
+<li><p>time stamp</p></li>
+<li><p>message</p></li>
+</ul>
+<p>but we know commits are supposed to represent some content and we have no information about that in this view</p>
+<p>we can view individual commits with</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code></p>
+<p>Now we see more detail:</p>
+<ul class="simple">
+<li><p>hash (used to access)</p></li>
+<li><p>tree</p></li>
+<li><p>parent</p></li>
+<li><p>author with timestamp</p></li>
+<li><p>commiter with timestamp</p></li>
+<li><p>message</p></li>
+</ul>
+</section>
+<section id="commit-parents-help-us-trace-back">
+<h2><span class="section-number">6.8. </span>Commit parents help us trace back<a class="headerlink" href="#commit-parents-help-us-trace-back" title="Permalink to this headline">#</a></h2>
+<p>kind of like a linked list</p>
+</section>
+<section id="commit-trees-are-the-hash-of-the-content">
+<h2><span class="section-number">6.9. </span>Commit trees are the hash of the content<a class="headerlink" href="#commit-trees-are-the-hash-of-the-content" title="Permalink to this headline">#</a></h2>
+<p>This separation is helpful.</p>
+<p>Let’s make a commit that includes changes to two files</p>
+<p>After the commit we can use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="n">HEAD</span><span class="o">^</span>
+</pre></div>
+</div>
+<p>to put the head pointer back and reset the working directory back to how it was at that point as well.</p>
+<p>The <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified">git reset</a> docs describe this in great detail.</p>
+</section>
+<section id="commit-messages-are-essential">
+<h2><span class="section-number">6.10. </span>Commit messages are essential<a class="headerlink" href="#commit-messages-are-essential" title="Permalink to this headline">#</a></h2>
+<p>A git commit message must exist and is <em>always</em> for people, but can also be for machines.</p>
+<p>the <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commits standard</a> is a format of commits</p>
+<p>if you use this, then you can use automated tools to generate a full change log when you release code</p>
+<p><a class="reference external" href="https://www.conventionalcommits.org/en/about/">Tooling and examples of conventional commits</a></p>
+</section>
 <section id="review-todays-class">
-<h2><span class="section-number">6.1. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.11. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>create an issue on your group repo for a tip or cheatsheet item you want to contribute. Make sure that your contribution does not overlap with one that amemb</p></li>
 <li><p>clone your group repo.</p></li>
@@ -468,7 +585,7 @@ document.write(`
 </ol>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">6.2. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.12. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Review your <a class="reference external" href="http://software.md">software.md</a> file from last prepare</p></li>
 <li><p>Review the notes from 2023-09-21</p></li>
@@ -477,7 +594,7 @@ document.write(`
 </ol>
 </section>
 <section id="more-practice">
-<h2><span class="section-number">6.3. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.13. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Find a resource/reference that helps explain a topic related to the course that you want to review. Make sure that your contribution does not overlap with one that another member is going to post by viewing other issues before you post your issue. Create an issue for your planned item.</p></li>
 <li><p>Clone your group repo.</p></li>
@@ -487,10 +604,10 @@ document.write(`
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">6.4. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.14. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="questions-after-todays-class">
-<h2><span class="section-number">6.5. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.15. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <div class="community admonition">
 <p class="admonition-title">GitHub practice for questions</p>
 <p>Use an issue to submit a question for today, or make a PR to post a question and the best answer you can find (I’ll review and fix if needed before posting) for a community badge.</p>
@@ -543,7 +660,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>a comment</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>How do programmers communicate about code?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -565,11 +682,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">6.1. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">6.2. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">6.3. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">6.4. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">6.5. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#housekeeping">6.1. Housekeeping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-time">6.1.1. In class time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notifications">6.1.2. Notifications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalty-free-zone-is-over">6.1.3. Penalty free zone is over.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-study-what-a-commit-is">6.2. Why study what a commit is?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-github-codespace">6.3. Using a GitHub Codespace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-cursors-are-your-friend">6.4. Multiple cursors are your friend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptually-a-commit-is-a-snapshot">6.5. Conceptually, a commit is a snapshot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-commit-is-the-basic-unit-of-what-git-manages">6.6. A commit is the basic unit of what git manages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-commit">6.7. parts of a commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-parents-help-us-trace-back">6.8. Commit parents help us trace back</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-trees-are-the-hash-of-the-content">6.9. Commit trees are the hash of the content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-messages-are-essential">6.10. Commit messages are essential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">6.11. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">6.12. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">6.13. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">6.14. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">6.15. Questions After Today’s Class</a></li>
 </ul>
   </nav></div>
 
