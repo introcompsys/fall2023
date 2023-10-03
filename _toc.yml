@@ -37,6 +37,7 @@ parts:
     chapters:
     - file: faq/syllabus
     - file: faq/github
+    - file: faq/tools
   - caption: Resources
     chapters:
     - file: resources/glossary
