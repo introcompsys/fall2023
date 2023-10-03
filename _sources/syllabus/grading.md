@@ -159,6 +159,8 @@ No, you cannot earn practice and review for the same date.
 
 ### Experience Badges 
 
+(expinclass)=
+#### In class
 You earn an experience badge in class by:
 - preparing for class
 - following along with the activity (creating files, using git, etc)
@@ -166,13 +168,17 @@ You earn an experience badge in class by:
 - reflecting on what you learned
 - asking a question at the end of class
 
+(expmakeup)=
+#### Makeup
+
 You can make up an experience badge by:
 - preparing for class
 - reading the posted notes
 - completing the activity from the notes
-- producing an "experience report" OR attending office hours
+- completeing an "experience report" 
+- attaching evidence as indiated in notes OR attending office hours to show the evidence
 
-An experience report is evidence you have completed the activity and reflection questions. The exact form will vary per class, if you are unsure, reach out ASAP to get instructions. These are evaluated only for completeness/ good faith effort.  Revisions will generally not be required, but clarification and additional activity steps may be adcised if your evidence suggests you may have missed a step. 
+An experience report is evidence you have completed the activity and reflection questions. The exact form will vary per class, if you are unsure, reach out ASAP to get instructions. These are evaluated only for completeness/ good faith effort.  Revisions will generally not be required, but clarification and additional activity steps may be advised if your evidence suggests you may have missed a step. 
 
 ```{admonition} Do you earn badges for prepare for class? 
 :class: checkin, dropdown

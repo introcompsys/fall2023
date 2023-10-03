@@ -7,12 +7,9 @@ We respect the rights and dignity of each individual and group. We reject prejud
 
 
 
-## Disability Services for Students Statement:
+## Disability, Access, and Inclusion Services for Students Statement
 
-Your access in this course is important. Please send me your Disability Services for Students (DSS) accommodation letter early in the semester so that we have adequate time to discuss and arrange your approved academic accommodations. If you have not yet established services through DSS, please contact them to engage in a confidential conversation about the process for requesting reasonable accommodations in the classroom. DSS can be reached by calling: 401-874-2098, visiting: web.uri.edu/disability, or emailing: dss@etal.uri.edu.  We are available to meet with students enrolled in Kingston as well as Providence courses.
-
-
-
+ Your access in this course is important. Please send me your Disability, Access, and Inclusion (DAI) accommodation letter early in the semester so that we have adequate time to discuss and arrange your approved academic accommodations. If you have not yet established services through DAI, please contact them to engage in a confidential conversation about the process for requesting reasonable accommodations in the classroom. DAI can be reached by calling: 401-874-2098, visiting: [web.uri.edu/disability](http://web.uri.edu/disability), or emailing: dai@etal.uri.edu.  We are available to meet with students enrolled in Kingston as well as Providence courses.
 
 
 ## Academic Honesty
@@ -33,16 +30,16 @@ Students are expected to be honest in all academic work. A student’s name on a
 - Facilitating or aiding another’s academic dishonesty
 - Submitting the same paper for more than one course without prior approval from the instructors
 
+### Viral Illness Precautions
 
-## URI COVID-19 Statement
+The University is committed to delivering its educational mission while protecting the health and safety of our community. Students who are experiencing symptoms of viral illness should NOT go to class/work. Those who test positive for COVID-19 should follow the isolation guidelines from the Rhode Island Department of Health and CDC.
 
-The University is committed to delivering its educational mission while protecting the health and safety of our community. While the university has worked to create a healthy learning environment for all, it is up to all of us to ensure our campus stays that way.
+If you miss class, you do not need to notify me in advance.  You can follow the makeup procedures 
 
-As members of the URI community, students are required to comply with standards of conduct and take precautions to keep themselves and others safe. Visit [web.uri.edu/coronavirus/](https://web.uri.edu/coronavirus/) for the latest information about the URI COVID-19 response.
+### Excused Absences
 
-- [Universal indoor masking](https://web.uri.edu/coronavirus/2021/08/12/university-to-follow-indoor-universal-masking-on-campus/) is required by all community members, on all campuses, regardless of vaccination status. If the universal mask mandate is discontinued during the semester, students who have an approved exemption and are not fully vaccinated will need to continue to wear a mask indoors and maintain physical distance.  
-- Students who are experiencing symptoms of illness should not come to class.  Please stay in your home/room and notify URI Health Services via phone at 401-874-2246.
-- If you are already on campus and start to feel ill, go home/back to your room and self-isolate. Notify URI Health Services via phone immediately at 401-874-2246.
+Absences due to serious illness or traumatic loss, religious observances, or participation in a university sanctioned event are considered excused absences. For this, contact Dr. Brown when you are ready to get caught up and she will help you make a plan for the best order to complete missed work so that you are able to participate in subsequent activities. Extensions on badges will be provided if needed. 
 
+### Mental Health and Wellness: 
 
-If you are unable to attend class, please notify me at brownsarahm@uri.edu. We will work together to ensure that you are able to successfully complete the course. 
+We understand that college comes with challenges and stress associated with your courses, job/family responsibilities and personal life. URI offers students a range of services to support your [mental health and wellbeing](https://web.uri.edu/healthservices/mental-health-and-wellness/), including the [URI Counseling Center](https://web.uri.edu/counseling/), [MySSP](https://web.uri.edu/counseling/myssp/) (Student Support Program) App, the [Wellness Resource Center](https://web.uri.edu/campusrec/fitness-and-wellness/wellness-programs/), and [Well-being Coaching](https://web.uri.edu/campusrec/well-being-coaching/). 
