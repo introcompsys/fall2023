@@ -21,6 +21,9 @@ parts:
       - file: notes/2023-09-14
       - file: notes/2023-09-19
       - file: notes/2023-09-21
+      - file: notes/2023-09-26
+      - file: notes/2023-09-28
+      - file: notes/2023-10-03
   - caption: Activities
     chapters:
     - file: activities/kwl
@@ -35,6 +38,7 @@ parts:
     chapters:
     - file: faq/syllabus
     - file: faq/github
+    - file: faq/tools
   - caption: Resources
     chapters:
     - file: resources/glossary
