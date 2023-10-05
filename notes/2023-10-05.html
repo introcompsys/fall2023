@@ -1,0 +1,1348 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>9. Why are these tools organized this way? &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-10-05';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="8. What is git?" href="2023-10-03.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Detailed Grade Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Why are these tools organized this way?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">More Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">KWL File List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/tools.html">Other Course Software/tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/edit/main/notes/2023-10-05.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/issues/new?title=Issue%20on%20page%20%2Fnotes/2023-10-05.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2023-10-05.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Why are these tools organized this way?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#admin">9.1. Admin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-study-design">9.2. Why should we study design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-studying-developer-tools">9.3. Why are we studying developer tools?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-philosophy">9.4. Unix Philosophy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-issues-on-the-terminal">9.4.1. Processing issues on the terminal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-study-computer-systems">9.5. How do we Study (computer) Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior">9.5.1. Behavior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">9.5.2. Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">9.5.3. Abstraction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">9.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">9.7. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">9.8. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">9.9. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">9.10. Questions After Today’s Class</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="why-are-these-tools-organized-this-way">
+<h1><span class="section-number">9. </span>Why are these tools organized this way?<a class="headerlink" href="#why-are-these-tools-organized-this-way" title="Permalink to this headline">#</a></h1>
+<p>Today we’re going to do a bit more practical stuff, but we are also going to start to get into the philosophy of how things are organized.</p>
+<p>Understanding the context and principles will help you:</p>
+<ul class="simple">
+<li><p>remember how to do things</p></li>
+<li><p>form reliable hypotheses about how to fix problems you have not seen before</p></li>
+<li><p>help you understand when you should do things as they have always been done and when you should challenge and change things.</p></li>
+</ul>
+<section id="admin">
+<h2><span class="section-number">9.1. </span>Admin<a class="headerlink" href="#admin" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>last class notes were <a class="reference external" href="https://github.com/introcompsys/fall2023/commit/3854e147e6cab8dbab512626061209a2d3f11f03">posted</a> and <a class="reference external" href="https://github.com/introcompsys/fall2023/releases/tag/c8">announced</a>, but not <a class="reference external" href="https://github.com/introcompsys/fall2023/commit/7bfee3ba98ce7ac25dfc0c4876ba41513fa61f66">linked</a></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>An issue or PR is always welcome and worth a community badge if I make a release and the website does not update</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://github.com/introcompsys/fall2023/issues/9">community badge opp</a></p>
+<p>I used mulitple cursors to type out that checklist by copying from the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file and then editing each line to start <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">fix</span> </code> instead of <code class="docutils literal notranslate">&#160; <span class="pre">-</span> <span class="pre">file</span></code></p>
+</div>
+</section>
+<section id="why-should-we-study-design">
+<h2><span class="section-number">9.2. </span>Why should we study design?<a class="headerlink" href="#why-should-we-study-design" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>it is easy to get distracted by implementation, syntax, algorithms</p></li>
+<li><p>but the core <em>principles</em> of design organize ideas into simpler rules</p></li>
+</ul>
+</section>
+<section id="why-are-we-studying-developer-tools">
+<h2><span class="section-number">9.3. </span>Why are we studying developer tools?<a class="headerlink" href="#why-are-we-studying-developer-tools" title="Permalink to this headline">#</a></h2>
+<p>Recall:</p>
+<blockquote>
+<div><p>The best way to learn design is to study examples [Schon1984, Petre2016], and some of the best examples of software design come from the tools programmers use in their own work.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://third-bit.com/sdxjs/">Software design by example</a></p>
+<p><em>note</em></p>
+<ul class="simple">
+<li><p>we will talk about some history in this course</p></li>
+<li><p>I will not take a “great men of history” approach</p></li>
+</ul>
+<p>This is because:</p>
+<ul class="simple">
+<li><p>I think that history is important context for making decisions</p></li>
+<li><p>Many of these “great men” are actually, in many ways, Not Great^TM</p></li>
+<li><p>It <em>is</em> important to remember that all of this work was done by <em>people</em></p></li>
+<li><p>all people are imperfect</p></li>
+<li><p>when people are deeply influential, ignoring their role in history is not effective, we cannot undo what they did</p></li>
+<li><p>we do not have to admire them or even say their names to acknowledge the work</p></li>
+<li><p>computing technology has been used in Very Bad ways and in Definitely Good ways</p></li>
+</ul>
+</section>
+<section id="unix-philosophy">
+<h2><span class="section-number">9.4. </span>Unix Philosophy<a class="headerlink" href="#unix-philosophy" title="Permalink to this headline">#</a></h2>
+<p>sources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Unix_philosophy">wiki</a></p></li>
+<li><p><a class="reference external" href="http://www.catb.org/~esr/writings/taoup/html/ch01s06.html">a free book</a></p></li>
+<li><p>composability over monolithic design</p></li>
+<li><p>social conventions</p></li>
+</ul>
+<p>The tenets:</p>
+<ol class="arabic simple">
+<li><p>Make it easy to write, test, and run programs.</p></li>
+<li><p>Interactive use instead of batch processing.</p></li>
+<li><p>Economy and elegance of design due to size constraints (“salvation through suffering”).</p></li>
+<li><p>Self-supporting system: all Unix software is maintained under Unix.</p></li>
+</ol>
+<p>For better or <a class="reference external" href="http://www.ceri.memphis.edu/people/smalley/ESCI7205_misc_files/The_truth_about_Unix_cleaned.pdf">worse</a> this is dominant, so understanding this is important.</p>
+<p>Also, this critique is written that unix is not a good system for  “normal folks” not in its effectiveness as a context for <em>developers</em> which is where *nix (unix, linux) systems remain popular.</p>
+<p><em>“normal folks” is the author’s term presumably attempting to describe a typical, nondeveloper computer user</em></p>
+<p>If you have the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI installed and working locally, open the terminal that it works in and navigate to your KWL repo.</p>
+<p>If you do not have that working locally, open a codespace on the main branch of your KWL repo</p>
+<p>(I have it working locally and working locally lets me save my terminal output for the notes more easily)</p>
+<p>cat the action file that posts your badges</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">repo</span> <span class="n">clone</span> <span class="n">introcompsys</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;fa23-kwl-brownsarahm&#39;...
+remote: Enumerating objects: 61, done.
+remote: Counting objects: 100% (61/61), done.
+remote: Compressing objects: 100% (46/46), done.
+remote: Total 61 (delta 20), reused 31 (delta 9), pack-reused 0
+Receiving objects: 100% (61/61), 12.50 KiB | 2.08 MiB/s, done.
+Resolving deltas: 100% (20/20), done.
+
+
+A new release of gh is available: 2.34.0 → 2.36.0
+To upgrade, run: brew upgrade gh
+https://github.com/cli/cli/releases/tag/v2.36.0
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">keep</span>      <span class="n">workflows</span><span class="o">/</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">getassignment</span><span class="o">.</span><span class="n">yml</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: Create badge issues (Edit before Running)
+on:
+  workflow_dispatch
+
+# once you edit, change the name
+
+jobs:
+  check-contents:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    # Install dependencies
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.9
+    
+    - name: Install Utils
+      run: |
+        pip install git+https://github.com/introcompsys/courseutils@main
+    - name: Get badge requirements
+      run: |
+        pretitle=&quot;prepare-&quot;$(date +&quot;%Y-%m-%d&quot;)
+        sysgetassignment | gh issue create --title $pretitle --label prepare --body-file -
+        rtitle=&quot;review-&quot;$(date +&quot;%Y-%m-%d&quot;)
+        sysgetassignment --type review | gh issue create --title $rtitle --label review --body-file -
+        pratitle=&quot;practice-&quot;$(date +&quot;%Y-%m-%d&quot;)
+        sysgetassignment --type practice| gh issue create --title $pratitle --label practice --body-file -
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#  edit the run step above for the level(s) you want. 
+#  You should keep the prepare, because they are required for experience badges 
+#     You may choose to get only the review or only the practice (and change this any time) 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Work seamlessly with GitHub from the command line.
+
+USAGE
+  gh &lt;command&gt; &lt;subcommand&gt; [flags]
+
+CORE COMMANDS
+  auth:        Authenticate gh and git with GitHub
+  browse:      Open the repository in the browser
+  codespace:   Connect to and manage codespaces
+  gist:        Manage gists
+  issue:       Manage issues
+  org:         Manage organizations
+  pr:          Manage pull requests
+  project:     Work with GitHub Projects.
+  release:     Manage releases
+  repo:        Manage repositories
+
+GITHUB ACTIONS COMMANDS
+  cache:       Manage Github Actions caches
+  run:         View details about workflow runs
+  workflow:    View details about GitHub Actions workflows
+
+EXTENSION COMMANDS
+  classroom:   Extension classroom
+
+ALIAS COMMANDS
+  co:          Alias for &quot;pr checkout&quot;
+
+ADDITIONAL COMMANDS
+  alias:       Create command shortcuts
+  api:         Make an authenticated GitHub API request
+  completion:  Generate shell completion scripts
+  config:      Manage configuration for gh
+  extension:   Manage gh extensions
+  gpg-key:     Manage GPG keys
+  label:       Manage labels
+  ruleset:     View info about repo rulesets
+  search:      Search for repositories, issues, and pull requests
+  secret:      Manage GitHub secrets
+  ssh-key:     Manage SSH keys
+  status:      Print information about relevant issues, pull requests, and notifications across repositories
+  variable:    Manage GitHub Actions variables
+
+HELP TOPICS
+  actions:     Learn about working with GitHub Actions
+  environment: Environment variables that can be used with gh
+  exit-codes:  Exit codes used by gh
+  formatting:  Formatting options for JSON data exported from gh
+  mintty:      Information about using gh with MinTTY
+  reference:   A comprehensive reference of all gh commands
+
+FLAGS
+  --help      Show help for command
+  --version   Show gh version
+
+EXAMPLES
+  $ gh issue create
+  $ gh repo clone cli/cli
+  $ gh pr checkout 321
+
+LEARN MORE
+  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
+  Read the manual at https://cli.github.com/manual
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Work seamlessly with GitHub from the command line.
+
+USAGE
+  gh &lt;command&gt; &lt;subcommand&gt; [flags]
+
+CORE COMMANDS
+  auth:        Authenticate gh and git with GitHub
+  browse:      Open the repository in the browser
+  codespace:   Connect to and manage codespaces
+  gist:        Manage gists
+  issue:       Manage issues
+  org:         Manage organizations
+  pr:          Manage pull requests
+  project:     Work with GitHub Projects.
+  release:     Manage releases
+  repo:        Manage repositories
+
+GITHUB ACTIONS COMMANDS
+  cache:       Manage Github Actions caches
+  run:         View details about workflow runs
+  workflow:    View details about GitHub Actions workflows
+
+EXTENSION COMMANDS
+  classroom:   Extension classroom
+
+ALIAS COMMANDS
+  co:          Alias for &quot;pr checkout&quot;
+
+ADDITIONAL COMMANDS
+  alias:       Create command shortcuts
+  api:         Make an authenticated GitHub API request
+  completion:  Generate shell completion scripts
+  config:      Manage configuration for gh
+  extension:   Manage gh extensions
+  gpg-key:     Manage GPG keys
+  label:       Manage labels
+  ruleset:     View info about repo rulesets
+  search:      Search for repositories, issues, and pull requests
+  secret:      Manage GitHub secrets
+  ssh-key:     Manage SSH keys
+  status:      Print information about relevant issues, pull requests, and notifications across repositories
+  variable:    Manage GitHub Actions variables
+
+HELP TOPICS
+  actions:     Learn about working with GitHub Actions
+  environment: Environment variables that can be used with gh
+  exit-codes:  Exit codes used by gh
+  formatting:  Formatting options for JSON data exported from gh
+  mintty:      Information about using gh with MinTTY
+  reference:   A comprehensive reference of all gh commands
+
+FLAGS
+  --help      Show help for command
+  --version   Show gh version
+
+EXAMPLES
+  $ gh issue create
+  $ gh repo clone cli/cli
+  $ gh pr checkout 321
+
+LEARN MORE
+  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
+  Read the manual at https://cli.github.com/manual
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">bash</span><span class="p">:</span> <span class="n">cd</span><span class="p">:</span> <span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">getassignment</span><span class="o">.</span><span class="n">yml</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: Create badge issues (Edit before Running)
+on:
+  workflow_dispatch
+
+# once you edit, change the name
+
+jobs:
+  check-contents:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    # Install dependencies
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.9
+    
+    - name: Install Utils
+      run: |
+        pip install git+https://github.com/introcompsys/courseutils@main
+    - name: Get badge requirements
+      run: |
+        pretitle=&quot;prepare-&quot;$(date +&quot;%Y-%m-%d&quot;)
+        sysgetassignment | gh issue create --title $pretitle --label prepare --body-file -
+        rtitle=&quot;review-&quot;$(date +&quot;%Y-%m-%d&quot;)
+        sysgetassignment --type review | gh issue create --title $rtitle --label review --body-file -
+        pratitle=&quot;practice-&quot;$(date +&quot;%Y-%m-%d&quot;)
+        sysgetassignment --type practice| gh issue create --title $pratitle --label practice --body-file -
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#  edit the run step above for the level(s) you want. 
+#  You should keep the prepare, because they are required for experience badges 
+#     You may choose to get only the review or only the practice (and change this any time) 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">|</span> <span class="n">gh</span> <span class="n">issue</span> <span class="n">create</span> <span class="o">--</span><span class="n">title</span> <span class="n">example</span> <span class="o">--</span><span class="n">body</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">Creating</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">introcompsys</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>
+
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">issues</span><span class="o">/</span><span class="mi">32</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Work with GitHub issues.
+
+USAGE
+  gh issue &lt;command&gt; [flags]
+
+GENERAL COMMANDS
+  create:      Create a new issue
+  list:        List issues in a repository
+  status:      Show status of relevant issues
+
+TARGETED COMMANDS
+  close:       Close issue
+  comment:     Add a comment to an issue
+  delete:      Delete issue
+  develop:     Manage linked branches for an issue
+  edit:        Edit issues
+  lock:        Lock issue conversation
+  pin:         Pin a issue
+  reopen:      Reopen issue
+  transfer:    Transfer issue to another repository
+  unlock:      Unlock issue conversation
+  unpin:       Unpin a issue
+  view:        View an issue
+
+FLAGS
+  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format
+
+INHERITED FLAGS
+  --help   Show help for command
+
+ARGUMENTS
+  An issue can be supplied as argument in any of the following formats:
+  - by number, e.g. &quot;123&quot;; or
+  - by URL, e.g. &quot;https://github.com/OWNER/REPO/issues/123&quot;.
+
+EXAMPLES
+  $ gh issue list
+  $ gh issue create --label bug
+  $ gh issue view 123 --web
+
+LEARN MORE
+  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
+  Read the manual at https://cli.github.com/manual
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="n">view</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">accepts</span> <span class="mi">1</span> <span class="n">arg</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">received</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="n">view</span> <span class="mi">32</span>
+</pre></div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>the middle of this output is cut</p>
+</div>
+</aside>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>example #32
+Open • brownsarahm opened about 2 minutes ago • 0 comments
+                         
+  762  gh                                                                   
+  763  gh                                                                   
+  764  cd fa23-kwl-brownsarahm/                                             
+  765  pwd                                                                  
+  766  cat .github/workflows/getassignment.yml                              
+  767  history | gh issue create --title example --body-file -              
+
+
+View this issue on GitHub: https://github.com/introcompsys/fa23-kwl-brownsarahm/issues/32
+</pre></div>
+</div>
+<p>We can see how this group of commands work with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Work with GitHub issues.
+
+USAGE
+  gh issue &lt;command&gt; [flags]
+
+GENERAL COMMANDS
+  create:      Create a new issue
+  list:        List issues in a repository
+  status:      Show status of relevant issues
+
+TARGETED COMMANDS
+  close:       Close issue
+  comment:     Add a comment to an issue
+  delete:      Delete issue
+  develop:     Manage linked branches for an issue
+  edit:        Edit issues
+  lock:        Lock issue conversation
+  pin:         Pin a issue
+  reopen:      Reopen issue
+  transfer:    Transfer issue to another repository
+  unlock:      Unlock issue conversation
+  unpin:       Unpin a issue
+  view:        View an issue
+
+FLAGS
+  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format
+
+INHERITED FLAGS
+  --help   Show help for command
+
+ARGUMENTS
+  An issue can be supplied as argument in any of the following formats:
+  - by number, e.g. &quot;123&quot;; or
+  - by URL, e.g. &quot;https://github.com/OWNER/REPO/issues/123&quot;.
+
+EXAMPLES
+  $ gh issue list
+  $ gh issue create --label bug
+  $ gh issue view 123 --web
+
+LEARN MORE
+  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
+  Read the manual at https://cli.github.com/manual
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="n">close</span> <span class="mi">32</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>✓ Closed issue #32 (example)
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">getassignment</span><span class="o">.</span><span class="n">yml</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: Create badge issues (Edit before Running)
+on:
+  workflow_dispatch
+
+# once you edit, change the name
+
+jobs:
+  check-contents:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    # Install dependencies
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.9
+    
+    - name: Install Utils
+      run: |
+        pip install git+https://github.com/introcompsys/courseutils@main
+    - name: Get badge requirements
+      run: |
+        pretitle=&quot;prepare-&quot;$(date +&quot;%Y-%m-%d&quot;)
+        sysgetassignment | gh issue create --title $pretitle --label prepare --body-file -
+        rtitle=&quot;review-&quot;$(date +&quot;%Y-%m-%d&quot;)
+        sysgetassignment --type review | gh issue create --title $rtitle --label review --body-file -
+        pratitle=&quot;practice-&quot;$(date +&quot;%Y-%m-%d&quot;)
+        sysgetassignment --type practice| gh issue create --title $pratitle --label practice --body-file -
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#  edit the run step above for the level(s) you want. 
+#  You should keep the prepare, because they are required for experience badges 
+#     You may choose to get only the review or only the practice (and change this any time) 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">Showing</span> <span class="mi">28</span> <span class="n">of</span> <span class="mi">28</span> <span class="nb">open</span> <span class="n">issues</span> <span class="ow">in</span> <span class="n">introcompsys</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>
+
+<span class="c1">#31  practice-2023-10-04  practice  about 1 day ago</span>
+<span class="c1">#30  review-2023-10-04    review    about 1 day ago</span>
+<span class="c1">#29  prepare-2023-10-04   prepare   about 1 day ago</span>
+<span class="c1">#28  Lab 4                          about 5 days ago</span>
+<span class="c1">#27  practice-2023-09-29  practice  about 5 days ago</span>
+<span class="c1">#26  review-2023-09-29    review    about 5 days ago</span>
+<span class="c1">#25  prepare-2023-09-29   prepare   about 5 days ago</span>
+<span class="c1">#24  practice-2023-09-27  practice  about 8 days ago</span>
+<span class="c1">#23  review-2023-09-27    review    about 8 days ago</span>
+<span class="c1">#22  prepare-2023-09-27   prepare   about 8 days ago</span>
+<span class="c1">#21  Lab 3                          about 12 days ago</span>
+<span class="c1">#20  practice-2023-09-22  practice  about 13 days ago</span>
+<span class="c1">#19  review-2023-09-22    review    about 13 days ago</span>
+<span class="c1">#18  prepare-2023-09-22   prepare   about 13 days ago</span>
+<span class="c1">#17  practice-2023-09-20  practice  about 15 days ago</span>
+<span class="c1">#16  review-2023-09-20    review    about 15 days ago</span>
+<span class="c1">#15  prepare-2023-09-20   prepare   about 15 days ago</span>
+<span class="c1">#14  Lab 2                          about 19 days ago</span>
+<span class="c1">#13  practice-2023-09-15  practice  about 20 days ago</span>
+<span class="c1">#12  review-2023-09-15    review    about 20 days ago</span>
+<span class="c1">#11  prepare-2023-09-15   prepare   about 20 days ago</span>
+<span class="c1">#10  practice-2023-09-13  practice  about 22 days ago</span>
+<span class="c1">#9   review-2023-09-13    review    about 22 days ago</span>
+<span class="c1">#8   prepare-2023-09-13   prepare   about 22 days ago</span>
+<span class="c1">#7   practice-2023-09-07  practice  about 26 days ago</span>
+<span class="c1">#6   review-2023-09-07    review    about 26 days ago</span>
+<span class="c1">#5   prepare-2023-09-08   prepare   about 26 days ago</span>
+<span class="c1">#4   Lab 1                          about 26 days ago</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This part did not happen in class due to time, but is still important.</p>
+<p>We will see these commands again, but this reference will be useful in lab</p>
+</div>
+<section id="processing-issues-on-the-terminal">
+<h3><span class="section-number">9.4.1. </span>Processing issues on the terminal<a class="headerlink" href="#processing-issues-on-the-terminal" title="Permalink to this headline">#</a></h3>
+<p>We can use a pipe to also get a count of the issues using the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command which is for word count and its <code class="docutils literal notranslate"><span class="pre">-l</span></code> option to count lines instead.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">28</span>
+</pre></div>
+</div>
+<p>Or we can filter to get a subset of them using <code class="docutils literal notranslate"><span class="pre">grep</span></code> to filter.  By default <code class="docutils literal notranslate"><span class="pre">grep</span></code> searches std in, so when we use it with a pipe it works well.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;prepare&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">29</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">04</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">04</span> <span class="mi">02</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">50</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
+<span class="mi">25</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">29</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">29</span> <span class="mi">17</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">35</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
+<span class="mi">22</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">27</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">27</span> <span class="mi">03</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">47</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
+<span class="mi">18</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">22</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">22</span> <span class="mi">11</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">52</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
+<span class="mi">15</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">20</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">20</span> <span class="mi">02</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">07</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
+<span class="mi">11</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">15</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">15</span> <span class="mi">02</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">05</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
+<span class="mi">8</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">13</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">13</span> <span class="mi">01</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">24</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
+<span class="mi">5</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">22</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">50</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You should have fewer prepare than me, in this list becaues by default we only see the open ones</p>
+</div>
+<p>we can use <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">issue</span> <span class="pre">list</span> <span class="pre">--help</span></code> to see more options</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>List issues in a GitHub repository.
+
+The search query syntax is documented here:
+&lt;https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests&gt;
+
+For more information about output formatting flags, see `gh help formatting`.
+
+USAGE
+  gh issue list [flags]
+
+FLAGS
+      --app string         Filter by GitHub App author
+  -a, --assignee string    Filter by assignee
+  -A, --author string      Filter by author
+  -q, --jq expression      Filter JSON output using a jq expression
+      --json fields        Output JSON with the specified fields
+  -l, --label strings      Filter by label
+  -L, --limit int          Maximum number of issues to fetch (default 30)
+      --mention string     Filter by mention
+  -m, --milestone string   Filter by milestone number or title
+  -S, --search query       Search issues with query
+  -s, --state string       Filter by state: {open|closed|all} (default &quot;open&quot;)
+  -t, --template string    Format JSON output using a Go template; see &quot;gh help formatting&quot;
+  -w, --web                List issues in the web browser
+
+INHERITED FLAGS
+      --help                     Show help for command
+  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format
+
+EXAMPLES
+  $ gh issue list --label &quot;bug&quot; --label &quot;help wanted&quot;
+  $ gh issue list --author monalisa
+  $ gh issue list --assignee &quot;@me&quot;
+  $ gh issue list --milestone &quot;The big 1.0&quot;
+  $ gh issue list --search &quot;error no:assignee sort:created-asc&quot;
+
+LEARN MORE
+  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
+  Read the manual at https://cli.github.com/manual
+</pre></div>
+</div>
+<p>and then we can use the <code class="docutils literal notranslate"><span class="pre">-s</span></code> flag set to all to see all to make yours match mine.</p>
+</section>
+</section>
+<section id="how-do-we-study-computer-systems">
+<h2><span class="section-number">9.5. </span>How do we Study (computer) Systems<a class="headerlink" href="#how-do-we-study-computer-systems" title="Permalink to this headline">#</a></h2>
+<p>When we think of something as a system, we can study it different ways:</p>
+<ul class="simple">
+<li><p>input/output behavior</p></li>
+<li><p>components</p></li>
+<li><p>abstraction layers</p></li>
+</ul>
+<p>These basic ideas apply whether a computer system or not.  We can probe things in different ways.</p>
+<p>In a lot of disciplines people are taught one or the other, or they divide professionally into theorists or experimentalists along the lines.</p>
+<p>People are the most effective at working with, within, and manipulating systems when they have multiple ways to achieve the same goal.</p>
+<p>These are not mutually exclusive, we will use them all together and trade off.</p>
+<p>When we study a system we can do so in two main ways.  We can look at the input/output behavior of the system as a whole and we can look at the individual components. For each component, we can look at its behavior or the subcomponents.  We can take what we know from all fo the components and piece that together.  However, for a complex system, we cannot match individual components up to the high level behavior.  This is true in both computers and other complex systems. In the first computers in the 1940s, the only things they did was arithmetic and you could match from their components al the way up pretty easily.  Modern computers connect to the internet, send signals, load complex graphics, play sounds and many other things that are harder to decompose all at once. Outside of computers, scientists have a pretty good idea of how neurons work and that appears to be the same across mammals and other species (eg squid) but we do not understand how the whole brain of a mammal works, not even smaller mammals with less complex social lives than humans.  Understanding the parts is not always enough to understand all of the complex ways the parts can work together.  Computers are much less complicated than brains.  They were made by brains.</p>
+<p>But that fact motivates another way to study a complex  system, across levels of abstraction. You can abstract away details and focus on one representation. This can be tied literally to components, but it can also be conceptual.  For example, in CSC211 you use a model of stack and heap for memory.  It’s useful for understanding programming, but is not exactly what the hardware does.  At times, it is even more useful though than understanding exactly what the hardware does.  These abstractions also serve a social, practical purpose.  In computing, and society at large really, we use <em>standards</em> these are sets of guidelines for how to build things.  Like when you use a function, you need to know it’s API and what it is supposed to do in order to use it.  The developers could change how it does that without impacting your program, as long as the API is not changed and the high level input/output behavior stays the same.</p>
+<section id="behavior">
+<h3><span class="section-number">9.5.1. </span>Behavior<a class="headerlink" href="#behavior" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>Try something,  see what happens</p>
+</div></blockquote>
+<p>This is probably how you first learned to use a computer.  Maybe a parent showed you how to do a few things, but then you probably tried other things.  For most of you, this may have been when you were very young and much less afraid of breaking things. Over time you learned how to do things and what behaviors to expect.  You also learned categories of things.  Like once you learned one social media app and that others were also <em>social media</em> you then looked for similar features.  Maybe you learned one video game had the option to save and expected it in the next one.</p>
+<p>Video games and social media are <em>classes</em> or <em>categories</em> of software and each game and app are <em>instances</em>.  Similarly, an Integrated Development Environment (IDE) is a category of software and VS Code, … are instances.  Also, version control is a category of software and git is an instance. A git host is also a category and GitHub is an instance.  Just as before you were worried about details you transferred features from one instance to another within categories, I want you to think about what you know from one IDE and how that would help you learn another.  We will study the actual features of IDE a=and what you might want to know about them so that you can choose your own.  Becoming a more independent developer you’ll start to have your own opinions about which one is better.  Think about about a person in your life who finds computers and technology overall intimidating or frustrating.  They likely only use one social media app if at all, or maybe they only know to make documents in Microsoft word and they think that Google Docs is too much to learn, because they didn’t transfer ideas from one to the other.</p>
+<p>We have focused on the behavior of individual applications to this point, but there is also the overall behavior of the system in broad terms, typing on the keyboard we expect the characters to show (and when they don’t for example in a shell password, we’re surprised and concerned it is not working).</p>
+</section>
+<section id="components">
+<h3><span class="section-number">9.5.2. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>Take it apart, asess the pieces</p>
+</div></blockquote>
+<p>We have the high level parts: keyboard, mouse, monitor/screen, tower/computer. Inside we also tend to know there is a power supply, a motherboard, graphics card, memory, etc.</p>
+<p>We can study how each of these parts works while not worrying about the others but having them there.  This is probably how you learned to use a mouse. You focused your attention on the mouse and saw what else happened.</p>
+<p>Or we can take an individual component and isolate it to study it alone.  For a mouse this would be hard. Without a computer attached its output is not very visible.  To do this, we would need additional tools to interpret its output and examine it.  Most computer components actually would need additional tools, to measure the electrical signals, but we could examine what happens at each part one at a time to then build up what they do.</p>
+<p>This idea, however that we can use another tool to understand each component is an important one.  This  is also a way to again, take care and study each piece even within a software-alone system without worrying about the hardware.</p>
+</section>
+<section id="abstraction">
+<h3><span class="section-number">9.5.3. </span>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>use a model</p>
+</div></blockquote>
+<p>As we talked about the behavior and abstraction, we talked some about software and some about hardware. These are the two coarsest ways we can think about a computer system at different levels of abstraction. We can think about it only in physical terms and examine the patterns of electricity flow or we can think about only the software and not worry about the hardware, at a higher level of abstraction.</p>
+<p>However, two levels is not really enough to understand how computer systems are designed.</p>
+<p><img alt="layers" src="https://www.secplicity.org/wp-content/uploads/2018/09/AvG0R-1.jpg" /></p>
+<ul class="simple">
+<li><p>Application - the software you run.</p></li>
+<li><p>Algorithm - the way that it is implemented, in mathematical level</p></li>
+<li><p>Programming language - the way that it is implemented for a computer.</p></li>
+<li><p>Machine code translates to binary from assembly.</p></li>
+</ul>
+<p>After the Programming language level, there is assembly.
+The advantage to assembly is that it is hardware independent and human readable. It is low level and limited to what the hardware <em>can</em> do, but it is a version of that that can be run on different hardware.
+It is much lower level.  When you compile a program, it is translated to assembly.  At this level, programs written in different level become indistinguishable. This has much lower level operations. We can do various calculations, but not things like compare. Things that were one step before, like assign become two, choose a memory location, then write to memory.
+This level of abstraction is the level of detail we will think about most.  We’ll look at the others, but spend much less time below here.</p>
+<p>The instruction set architecture is, notice, where the line between software and hardware lives.  This is because these are specific to the actual hardware, this is the level where there are different instructions if you have an Intel chip vs an Apple chip. This level reduces down the instructions even more specifically to the specifics things that an individual piece of hardware does and how they dit.</p>
+<p>The microarchitecture is the specific circuits: networks of smaller individual components. Again, we can treat the components as blocks and focus on how they work together. At this level we still have calculations like add, multiply, compare, negate, and we can store values and read them. That is all we have at this point though. At this level there are all binary numbers.</p>
+<p>The actual gates (components that implement logical operations) and registers (components that hold values) break everything down to logical operations.  Instead of adding, we have a series of <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">nand</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">xor</span></code> put together over individual bits.  Instead of numbers, we have <code class="docutils literal notranslate"><span class="pre">registers</span></code> that store individual zeros or ones. In a modern digital, electrical computer, at this level we have to actually watch the flow of electricity through the circuit and worry about things like the number of gates and whether or not the calculations finish at the same time or having other parts wait so that they are all working together.  We will see later that when we try to allow multiple cores to work independently, we have to handle these timing issues at the higher levels as well. However, a register and gate can be implemented in different ways at the device level.</p>
+<p>The device (or transistor in modern electrical digital computers) level, is where things transition between analog and digital.  The world we live in is actually all analog.  We just pay attention to lots of things at a time scale at which they appear to be be digital.  Over time devices have changed from mechanical switches to electronic transistors.  Material science innovations at the physics level have improved the transistors further over time, allowing them to be smaller and more heat efficient.  Because of abstraction, these changes could be plugged into new hardware without having to make any changes at any software levels. However, they do <em>enable</em> improvements at the higher levels.</p>
+</section>
+</section>
+<section id="review-todays-class">
+<h2><span class="section-number">9.6. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Read today’s notes when they are posted.</p></li>
+<li><p>Add to your <span class="target" id="index-0"></span>software.md a section about if that project does or does not adhere to the unix philosophy.</p></li>
+<li><p>create <span class="target" id="index-1"></span>methods.md and answer the following:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- which of the three methods for studying a system do you use most often when debugging? 
+- do you think using a different strategy might help you debug faster sometimes? why or why not? 
+</pre></div>
+</div>
+</section>
+<section id="prepare-for-next-class">
+<h2><span class="section-number">9.7. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Review the notes from past classes</p></li>
+<li><p>Think through and make some notes about what you have learned about design so far. Try to answer the questions below in <code class="docutils literal notranslate"><span class="pre">design_before.md</span></code>.  If you do not now know how to answer any of the questions, write in what questions you have.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- What past experiences with making decisions about or studying design do you have? 
+- What processes, decisions, and practices come to mind when you think about designing software?
+- From your experiences as a user you would describe the design of command line tools vs other GUI based tools?
+</pre></div>
+</div>
+</section>
+<section id="more-practice">
+<h2><span class="section-number">9.8. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Add to your <span class="target" id="index-2"></span>software.md a section about if that project does or does not adhere to the unix philosophy and why.  You can see what badge it was previously assigned in and the instructions <a class="reference external" href="https://introcompsys.github.io/fall2023/genindex.html">on the KWL file list</a>.</p></li>
+<li><p>create <span class="target" id="index-3"></span>methods.md and answer the following:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- which of the three methods for studying a system do you use most often when debugging? 
+- which do you use when you are trying to understand something new? 
+- do you think the ones you use most often are consistently effective? why or why not? When do they work or not work? 
+- what are you most interested in trying that might be different?
+</pre></div>
+</div>
+</section>
+<section id="experience-report-evidence">
+<h2><span class="section-number">9.9. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<p>Give examples of how you have used different ways of understanding things.</p>
+</section>
+<section id="questions-after-todays-class">
+<h2><span class="section-number">9.10. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>this will get added later</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-10-03.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>What <em>is</em> git?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#admin">9.1. Admin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-study-design">9.2. Why should we study design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-studying-developer-tools">9.3. Why are we studying developer tools?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-philosophy">9.4. Unix Philosophy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-issues-on-the-terminal">9.4.1. Processing issues on the terminal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-study-computer-systems">9.5. How do we Study (computer) Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior">9.5.1. Behavior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">9.5.2. Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">9.5.3. Abstraction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">9.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">9.7. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">9.8. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">9.9. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">9.10. Questions After Today’s Class</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
