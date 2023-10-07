@@ -30,7 +30,7 @@ help_df = pd.read_csv('../_data/help_hours.csv')
 
 ## Announcements
 
-Announcements will be made via GitHub Release. You can view them [online in the releases page](https://github.com/introcompsys/fall2023/releases) or you can get notifications by watching the repository, choosing "Releases" under custom [see GitHub docs for instructions with screenshots](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository). You can choose GitHub only or e-mail notificaiton [from the notification settings page](https://github.com/settings/notifications)
+Announcements will be made via GitHub Release. You can view them [online in the releases page](https://github.com/introcompsys/fall2023/releases) or you can get notifications by watching the repository, choosing "Releases" under custom [see GitHub docs for instructions with screenshots](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository). You can choose GitHub only or e-mail notification [from the notification settings page](https://github.com/settings/notifications)
 
 ```{warning}
 For the first few classes they will be made by BrightSpace too, but that will stop
@@ -107,7 +107,7 @@ for platform, data in df.groupby('platform'):
 ### Using issues
 
 - use issues for content directly related to assignments.  If you push your code to the repository and then open an issue, I can see your code and your question at the same time and download it to run it if I need to debug it
-- use issues for questions about this syllabus or class notes. At the top right there's a GitHub logo {fa}`github` that allows you to open a issue (for a question) or suggest an edit (eg if you think there's a tpo or you find an additional helpful resource related to something)
+- use issues for questions about this syllabus or class notes. At the top right there's a GitHub logo {fa}`github` that allows you to open a issue (for a question) or suggest an edit (eg if you think there's a typo or you find an additional helpful resource related to something)
 
 
 ```{admonition} ... 
