@@ -65,7 +65,7 @@ gitGraph
    merge experience-2023-09-12
 ```
 
-Where the "approved" tag represents and approving reivew on the PR. 
+Where the "approved" tag represents and approving review on the PR. 
 
 
 ## Review and Practice Badge 
@@ -314,7 +314,7 @@ You want one contribution per PR for tracking
 ```{mermaid}
 flowchart TD
     contribute[Make a contribution <br> *typically not in your KWL*]
-    link[Add a link to your <br> contribution to your<br> communiyt_contribution.md<br> in your KWL repo]
+    link[Add a link to your <br> contribution to your<br> community_contribution.md<br> in your KWL repo]
     pr[create a PR for that link]
     rev[request a review <br> from @brownsarahm]
     contribute --> link
