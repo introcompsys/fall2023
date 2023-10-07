@@ -99,7 +99,7 @@ Your grade will be based on you choosing to work with the material at different 
 - review: just the basics
 - practice: a little bit more indepdendent
 - explore: posing your own directions of inquiry 
-- build: in depth- application of course topics
+- build: in-depth application of course topics
 
 All of these badges will be tracked through PRs in your kwl repo. Each PR must have a title that includes the badge type and associated date. We will use scripts over these to track your progress.  
 
@@ -164,7 +164,7 @@ No, you cannot earn practice and review for the same date.
 You earn an experience badge in class by:
 - preparing for class
 - following along with the activity (creating files, using git, etc)
-- responding to 80% of inclass questions (even incorrect or `\:idk:``)
+- responding to 80% of inclass questions (even incorrect or idk)
 - reflecting on what you learned
 - asking a question at the end of class
 
@@ -175,7 +175,7 @@ You can make up an experience badge by:
 - preparing for class
 - reading the posted notes
 - completing the activity from the notes
-- completeing an "experience report" 
+- completing an "experience report" 
 - attaching evidence as indiated in notes OR attending office hours to show the evidence
 
 An experience report is evidence you have completed the activity and reflection questions. The exact form will vary per class, if you are unsure, reach out ASAP to get instructions. These are evaluated only for completeness/ good faith effort.  Revisions will generally not be required, but clarification and additional activity steps may be advised if your evidence suggests you may have missed a step. 
@@ -189,7 +189,7 @@ No, prepare for class tasks are folded into your experience badges.
 ```{admonition} What do you do when you miss class? 
 :class: checkin, dropdown
 
-Read the notes, follow along, and produce and experience report or attend office hours. 
+Read the notes, follow along, and produce an experience report or attend office hours. 
 ```
 
 
@@ -242,7 +242,7 @@ You can earn an explore badge by:
 - making any requested changes
 - merging the PR after approval 
 
-For these, ideas will almost always be approved, the proposal is to make sure you have the right scope (not too big or too small). Work submitted for explore badges will be assessed for depth beyond practice badges and correctness. Revisions will be more common on the first few as you get used to them, but typically decraese as you learn what to expect.  
+For these, ideas will almost always be approved, the proposal is to make sure you have the right scope (not too big or too small). Work submitted for explore badges will be assessed for depth beyond practice badges and correctness. Revisions will be more common on the first few as you get used to them, but typically decrease as you learn what to expect.  
 
 ```{important}
 Revisions are to help you improve your work **and** to get used to the process of making revisions.  Even excellent work can be improved.  The **process** of making revisions and taking good work to excellent or excellent to exceptional is a useful learning outcome.  It will help you later to be really good at working through PR revisions; we will use the same process as code reviews in industry, even though most of it will not be code alone. 
@@ -264,7 +264,7 @@ You can earn a build badge by:
 
 **You should create one PR per badge**
 
-For builds, since they're bigger, you will propose intermediate milestones. Advice for improving your work will be provided at the milestones and revisions of the compelte build are uncommon. If you do not submit work for intermediate review, you may need to revise the complete build. The build proposal will assessed for relevance to the course and depth. The work will be assessed for completeness in comparison to the propsal and correctness. The summary report will be assessed only for completeness, revisions will only be requested for skipped or incomplete sections. 
+For builds, since they're bigger, you will propose intermediate milestones. Advice for improving your work will be provided at the milestones and revisions of the complete build are uncommon. If you do not submit work for intermediate review, you may need to revise the complete build. The build proposal will assessed for relevance to the course and depth. The work will be assessed for completeness in comparison to the proposal and correctness. The summary report will be assessed only for completeness, revisions will only be requested for skipped or incomplete sections. 
 
 ## Community Badges 
 
@@ -314,7 +314,7 @@ These show that community badges can save you work at the end of the semester by
 
 All work must be correct and complete to earn credit. In general, this means that when your work is not correct, we will give you guiding questions and advice so that you can revise the work to be correct. Most of the time asking you questions is the best way to help you learn, but sometimes, especially for small things, showing you a correct example is the best way to help you learn. 
 
-Additionally, on rare occasions, a student can submit work that is incorrect or will have down-the-line consquences but does not demonstrate a misunderstanding. For example, in an experience badge, putting text below the `# ` line instead of replacing the hint within the `< >`.  Later, we will do things within the kwl repo that will rely on the title line being filled in, but it's not a big revision where the student needs to rethink about what they submitted. 
+Additionally, on rare occasions, a student can submit work that is incorrect or will have down-the-line consequences but does not demonstrate a misunderstanding. For example, in an experience badge, putting text below the `# ` line instead of replacing the hint within the `< >`.  Later, we will do things within the kwl repo that will rely on the title line being filled in, but it's not a big revision where the student needs to rethink about what they submitted. 
 
 ````{margin}
 ```{note}
@@ -373,9 +373,9 @@ these badges *should* be started before the next class. This will set you up to 
 
 These badges badges must be *started* within one week of when the are posted (2pm) and *completed* within two weeks. A task is attempted when you have answered the questions or submitted evidence of doing an activity or asked a sincere clarifying question.
 
-If a badge is planned, but not started within one week it will become expired and ineligble to be earned. You may request extensions to complete a badge by updating the PR message, these will typically be granted. Extensions for starting badges will only be granted in exceptional circumstances.  
+If a badge is planned, but not started within one week it will become expired and ineligible to be earned. You may request extensions to complete a badge by updating the PR message, these will typically be granted. Extensions for starting badges will only be granted in exceptional circumstances.  
 
-Expired badges will receive a comment and be closed
+Expired badges will receive a comment and be closed.
 
 Once you have a good-faith attempt at a complete badge, you have until the end of the semester to finish the revisions in order to *earn* the badge. 
 
@@ -386,7 +386,7 @@ Try to complete revisions quickly, it will be easier for you
 
 ### Explore Badges 
 
-Explore badges have  5stages:
+Explore badges have 5 stages:
 - proposed: issue created 
 - in progress: issue is labeled "proceed" by the instructor
 - complete: work is complete, PR created, review requested
@@ -421,7 +421,7 @@ This option exists in recognition of the fact that grading schemes are not perfe
 ```{admonition} What do you think?
 :class: community, dropdown
 
-share your thoughts on this option [in the discussions for the class](https://github.com/introcompsys/discussion-fa23-community/discussions/2) and then 
+share your thoughts on this option [in the discussions for the class](https://github.com/introcompsys/discussion-fa23-community/discussions/2)
 ```
 
 
