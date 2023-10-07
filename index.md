@@ -54,7 +54,7 @@ Special tips will be formatted like this
 ```{admonition}  Check your Comprehension
 :class: checkin, dropdown
 
-Questions to use to check your comprehension will looklike this
+Questions to use to check your comprehension will look like this
 ```
 
 ```{admonition}  Contribute
