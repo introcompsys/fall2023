@@ -101,7 +101,7 @@ environments to apply concepts.
 
 ```{tab-item} Windows- option A
 
-- Install python via [Anaconda](https://www.anaconda.com/products/individual) [video install ](https://www.youtube.com/watch?v=xxQ0mzZ8UvA)
+- Install python via [Anaconda](https://www.anaconda.com/products/individual) [video install](https://www.youtube.com/watch?v=xxQ0mzZ8UvA)
 
 - Git and Bash with [GitBash](https://gitforwindows.org/) ([video instructions](https://youtu.be/339AEqk9c-8)). 
 ```
