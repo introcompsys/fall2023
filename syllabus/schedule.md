@@ -64,17 +64,17 @@ Topics:
 Finally, we'll go in really deep on the compilation and running of code. In this part, we will work from the compilation through to assembly down to hardware and then into machine representation of data.   
 
 Topics:
-- software system and Abstraction
+- software system and abstraction
 - programming languages
 - cache and memory
-- compiliation
+- compilation
 - linking
 - basic hardware components
 
 
 ## Tentative Schedule
 
-Content from above will be expanded and slotted into specific classes as we go. This will always be a place you can get reminders of what you need to do next and/or what you missed if you miss a class as an overview.  More Details will be in other parts of the site, linked to here.
+Content from above will be expanded and slotted into specific classes as we go. This will always be a place you can get reminders of what you need to do next and/or what you missed if you miss a class as an overview.  More details will be in other parts of the site, linked to here.
 
 <!-- You can see samples of how this worked out in previous semesters in their notes:
 - [spring 22]()
