@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How does git create a commit? &#8212; Computer Systems and Programming Tools</title>
+    <title>10. How does git create a commit? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-10-12';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="9. Why are these tools organized this way?" href="2023-10-05.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
@@ -179,6 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. How does git create a commit?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -419,37 +422,37 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-to-set-the-stage">Review to set the stage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-repo-from-scratch">Creating a repo from scratch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-the-file-system">Searching the file system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-git-blob-objects-directly">Creating Git Blob Objects Directly</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-a-file">Hashing a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-to-set-the-stage">10.1. Review to set the stage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-repo-from-scratch">10.2. Creating a repo from scratch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-the-file-system">10.3. Searching the file system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-git-blob-objects-directly">10.4. Creating Git Blob Objects Directly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-a-file">10.4.1. Hashing a file</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-tree">Writing a tree</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-staging-and-snapshot-edge-case">A staging and snapshot edge case</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Writing a tree</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-commit-manually">Creating a commit manually</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-references">Git references</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-a-pointer-to-an-old-file-exist-as-an-object-in-the-git-objects">Can a pointer to an old file exist as an object in the git objects?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-manual-way-to-do-other-commands-like-git-push-and-git-add">Is there a manual way to do other commands like git push and git add?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-are-allowed-to-create-empty-trees-if-it-is-basically-a-wasted-file">Why you are allowed to create empty trees if it is basically a wasted file?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-pipes-and-redirect-different">How are pipes and redirect different?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-people-manually-create-git-objects-and-commits">When do people manually create git objects and commits?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-these-commands-so-easy-to-confuse-and-mix-up-with-each-other-i-have-a-hard-time-remembering-some-of-the-longer-commands">Why are these commands so easy to confuse and mix up with each other? I have a hard time remembering some of the longer commands.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-quicker-way-to-find-the-onbject-type-if-you-get-lost-instead-of-going-through-each-of-them-with-the-git-cat-file-t-command">Is there a quicker way to find the onbject type if you get lost. Instead of going through each of them with the “git cat-file -t” command?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-hashes">what are hashes?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-trees">What are trees?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-change-my-inclass-branch-from-master-to-main">How do I change my inclass branch from master to main??</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-the-t-and-p-flags-i-noticed-them-while-going-through-the-comnmands">What is the difference between the -t and -p flags? I noticed them while going through the comnmands.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-there-be-any-reason-to-use-these-commands-rather-than-relying-on-the-porcelain-commands">Would there be any reason to use these commands rather than relying on the porcelain commands?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-we-use-this-over-doing-it-on-github-itself-aside-from-offline">when would we use this over doing it on GitHub itself aside from offline?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-the-file-still-have-untracked-changes">Why does the file still have untracked changes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-tree">10.5. Writing a tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-staging-and-snapshot-edge-case">10.6. A staging and snapshot edge case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.7. Writing a tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-commit-manually">10.8. Creating a commit manually</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-references">10.9. Git references</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">10.10. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">10.11. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">10.12. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">10.13. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">10.14. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-a-pointer-to-an-old-file-exist-as-an-object-in-the-git-objects">10.14.1. Can a pointer to an old file exist as an object in the git objects?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-manual-way-to-do-other-commands-like-git-push-and-git-add">10.14.2. Is there a manual way to do other commands like git push and git add?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-are-allowed-to-create-empty-trees-if-it-is-basically-a-wasted-file">10.14.3. Why you are allowed to create empty trees if it is basically a wasted file?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-pipes-and-redirect-different">10.14.4. How are pipes and redirect different?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-people-manually-create-git-objects-and-commits">10.14.5. When do people manually create git objects and commits?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-these-commands-so-easy-to-confuse-and-mix-up-with-each-other-i-have-a-hard-time-remembering-some-of-the-longer-commands">10.14.6. Why are these commands so easy to confuse and mix up with each other? I have a hard time remembering some of the longer commands.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-quicker-way-to-find-the-onbject-type-if-you-get-lost-instead-of-going-through-each-of-them-with-the-git-cat-file-t-command">10.14.7. Is there a quicker way to find the onbject type if you get lost. Instead of going through each of them with the “git cat-file -t” command?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-hashes">10.14.8. what are hashes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-trees">10.14.9. What are trees?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-change-my-inclass-branch-from-master-to-main">10.14.10. How do I change my inclass branch from master to main??</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-the-t-and-p-flags-i-noticed-them-while-going-through-the-comnmands">10.14.11. What is the difference between the -t and -p flags? I noticed them while going through the comnmands.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-there-be-any-reason-to-use-these-commands-rather-than-relying-on-the-porcelain-commands">10.14.12. Would there be any reason to use these commands rather than relying on the porcelain commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-we-use-this-over-doing-it-on-github-itself-aside-from-offline">10.14.13. when would we use this over doing it on GitHub itself aside from offline?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-the-file-still-have-untracked-changes">10.14.14. Why does the file still have untracked changes?</a></li>
 </ul>
 </li>
 </ul>
@@ -464,7 +467,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-does-git-create-a-commit">
-<h1>How does git create a commit?<a class="headerlink" href="#how-does-git-create-a-commit" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">10. </span>How does git create a commit?<a class="headerlink" href="#how-does-git-create-a-commit" title="Permalink to this headline">#</a></h1>
 <p>Today we will dig into how git really works.  This will be a deep dive and provide a lot of details about how git creates a commit.  It will conceptually reinforce important concepts and practically give you some ideas about how you might fix things when things go wrong.</p>
 <p>Later, we will build on this more on the practical side, but these <strong>concepts</strong> are very important for making sense of the more practical aspects of fixing things in git.</p>
 <p>This deep dive in git is to help you build a correct, flexbile understanding of git so that you can use it independently and efficiently. The plumbing commands do not need to be a part of your daily use of git, but they are the way that we can dig in and see what <em>actually</em> happens when git creates a commit.</p>
@@ -476,7 +479,7 @@ document.write(`
 <li><p>reinforce through examples what a pointer does</p></li>
 </ul>
 <section id="review-to-set-the-stage">
-<h2>Review to set the stage<a class="headerlink" href="#review-to-set-the-stage" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.1. </span>Review to set the stage<a class="headerlink" href="#review-to-set-the-stage" title="Permalink to this headline">#</a></h2>
 <p>Let’s look at the github inclass repo.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
 </pre></div>
@@ -576,7 +579,7 @@ document.write(`
 <p>Remmeber the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file lives <strong>outside</strong> of the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory because it is intended to be manually edited by the user, instead of written to by the <code class="docutils literal notranslate"><span class="pre">git</span></code> program.</p>
 </section>
 <section id="creating-a-repo-from-scratch">
-<h2>Creating a repo from scratch<a class="headerlink" href="#creating-a-repo-from-scratch" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.2. </span>Creating a repo from scratch<a class="headerlink" href="#creating-a-repo-from-scratch" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <p>We will start in the top level course directory.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>
@@ -654,7 +657,7 @@ document.write(`
 </div>
 </section>
 <section id="searching-the-file-system">
-<h2>Searching the file system<a class="headerlink" href="#searching-the-file-system" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.3. </span>Searching the file system<a class="headerlink" href="#searching-the-file-system" title="Permalink to this headline">#</a></h2>
 <p>We can use the bash command <code class="docutils literal notranslate"><span class="pre">find</span></code> to search the file <em>system</em> note that this does not search the <strong>contents</strong> of the files, just the names.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span>
 </pre></div>
@@ -675,7 +678,7 @@ document.write(`
 <p>And we have no results. We have no objects yet. Because this is an empty repo</p>
 </section>
 <section id="creating-git-blob-objects-directly">
-<h2>Creating Git Blob Objects Directly<a class="headerlink" href="#creating-git-blob-objects-directly" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.4. </span>Creating Git Blob Objects Directly<a class="headerlink" href="#creating-git-blob-objects-directly" title="Permalink to this headline">#</a></h2>
 <p>There are 3 types:</p>
 <ul class="simple">
 <li><p>blob objects: the content of your files (data)</p></li>
@@ -770,7 +773,7 @@ document.write(`
 </div>
 <p>This is the content that we put in, as expected.</p>
 <section id="hashing-a-file">
-<h3>Hashing a file<a class="headerlink" href="#hashing-a-file" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.4.1. </span>Hashing a file<a class="headerlink" href="#hashing-a-file" title="Permalink to this headline">#</a></h3>
 <p>To hash content that corresponds to a file, we have to have a file first.  We can use a redirect <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> to send content from echo to a different file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;version 1&quot;</span> <span class="o">&gt;</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
@@ -841,7 +844,7 @@ document.write(`
 </section>
 </section>
 <section id="writing-a-tree">
-<h2>Writing a tree<a class="headerlink" href="#writing-a-tree" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.5. </span>Writing a tree<a class="headerlink" href="#writing-a-tree" title="Permalink to this headline">#</a></h2>
 <p>We can write a tree with the <code class="docutils literal notranslate"><span class="pre">write-tree</span></code> command</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">write</span><span class="o">-</span><span class="n">tree</span>
 </pre></div>
@@ -900,7 +903,7 @@ document.write(`
 </ul>
 </section>
 <section id="a-staging-and-snapshot-edge-case">
-<h2>A staging and snapshot edge case<a class="headerlink" href="#a-staging-and-snapshot-edge-case" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.6. </span>A staging and snapshot edge case<a class="headerlink" href="#a-staging-and-snapshot-edge-case" title="Permalink to this headline">#</a></h2>
 <p>Let’s check git status again:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
@@ -1011,7 +1014,7 @@ document.write(`
 <p>Hashing the content does not change the status here at all, because <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> only traces from the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer, compares that commit’s tree to the index and the current working directory.  We have no commits still and the index has not changed by hashing the content and creating a blob for it.</p>
 </section>
 <section id="id1">
-<h2>Writing a tree<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.7. </span>Writing a tree<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Now we can write a tre  and it will have content.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">write</span><span class="o">-</span><span class="n">tree</span>
 </pre></div>
@@ -1081,7 +1084,7 @@ document.write(`
 </div>
 </section>
 <section id="creating-a-commit-manually">
-<h2>Creating a commit manually<a class="headerlink" href="#creating-a-commit-manually" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.8. </span>Creating a commit manually<a class="headerlink" href="#creating-a-commit-manually" title="Permalink to this headline">#</a></h2>
 <p>We can echo a commit message through a pipe into the commit-tree plumbing function to commit a particular hashed object.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;first commit&quot;</span> <span class="o">|</span> <span class="n">git</span> <span class="n">commit</span><span class="o">-</span><span class="n">tree</span> <span class="n">d8329</span>
 </pre></div>
@@ -1170,7 +1173,7 @@ document.write(`
         </div><p>It still says no commits, even though we just verified that it has one.</p>
 </section>
 <section id="git-references">
-<h2>Git references<a class="headerlink" href="#git-references" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.9. </span>Git references<a class="headerlink" href="#git-references" title="Permalink to this headline">#</a></h2>
 <p>Remember git status compares the working directory to the current state of the active branch</p>
 <ul class="simple">
 <li><p>we cansee the working directory with: <code class="docutils literal notranslate"><span class="pre">ls</span></code></p></li>
@@ -1234,14 +1237,14 @@ document.write(`
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.10. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Read the notes from October 12. We will build on these directly in the future. <strong>You need to have the <code class="docutils literal notranslate"><span class="pre">test</span></code> repo with the same status for lab on 10/13 and class on 10/17</strong>  Make sure you have completed all of the steps in the github inclass repo from September too.</p></li>
 <li><p>Start recording notes on <em>how</em> you use IDEs for the next couple of weeks using the template file below. We will come back to these notes in class later, but it is best to record over a time period instead of trying to remember at that time. Record which IDE(s) you use, what tasks you do, what features you use, what extensions, etc. Store your notes in your kwl repo in <span class="target" id="index-0"></span>idethoughts.md on an <code class="docutils literal notranslate"><span class="pre">ide_prep</span></code> branch. <strong>This is prep for much later, it does not go in the October 17 experience badge branch</strong></p></li>
 </ol>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.11. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Make a table in <span class="target" id="index-1"></span>gitplumbingreview.md in your KWL repo that relates the two types of git commands we have seen: plubming and porcelain. The table should have two columns, one for each type of command.  Each row should have one git plumbing command and at least one of the corresponding git porcelain command(s). Include two rows: <code class="docutils literal notranslate"><span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">commit</span></code>.</p></li>
 <li><p>Contribute to your group repo and review a classmate’s contribution. Include a link to your contribution and review in your badge PR comment using markdown link syntax. Your contribution can be a short how to with a code excerpt or a resource. Include a link to your contribution and review in your badge PR comment using markdown link syntax:</p></li>
@@ -1251,7 +1254,7 @@ document.write(`
 </div>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.12. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple" start="2">
 <li><p>Read more details about <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">git internals</a> to review what we did in class in greater detail. Make a file <span class="target" id="index-2"></span>gitplumbingdetail.md and create a visualization that is compatible with version control (eg can be viewed in plain text and compared line by line, such as table or mermaid graph) that shows the relationship between at least three porcelain commands and their corresponding plumbing commands.</p></li>
 <li><p>Create <span class="target" id="index-3"></span>gitislike.md and explain main git operations we have seen (add, commit, push) in your own words in a way that will either help you remember or how you would explain it to someone else at a high level. This might be analogies or explanations using other programming concepts or concepts from a hobby.</p></li>
@@ -1259,68 +1262,68 @@ document.write(`
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.13. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>Put your list of objects in your <code class="docutils literal notranslate"><span class="pre">test</span></code> repo into a file <code class="docutils literal notranslate"><span class="pre">test_repo_ojbects.txt</span></code> in your Experience report branch.</p>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.14. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="can-a-pointer-to-an-old-file-exist-as-an-object-in-the-git-objects">
-<h3>Can a pointer to an old file exist as an object in the git objects?<a class="headerlink" href="#can-a-pointer-to-an-old-file-exist-as-an-object-in-the-git-objects" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.1. </span>Can a pointer to an old file exist as an object in the git objects?<a class="headerlink" href="#can-a-pointer-to-an-old-file-exist-as-an-object-in-the-git-objects" title="Permalink to this headline">#</a></h3>
 <p>a tree will have a pointer to the previous version of the file yes.</p>
 </section>
 <section id="is-there-a-manual-way-to-do-other-commands-like-git-push-and-git-add">
-<h3>Is there a manual way to do other commands like git push and git add?<a class="headerlink" href="#is-there-a-manual-way-to-do-other-commands-like-git-push-and-git-add" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.2. </span>Is there a manual way to do other commands like git push and git add?<a class="headerlink" href="#is-there-a-manual-way-to-do-other-commands-like-git-push-and-git-add" title="Permalink to this headline">#</a></h3>
 <p>We did git add today.  We hashed the object and added the hash to the index.  Push does have some other steps in it, those are in the practice badge.</p>
 </section>
 <section id="why-you-are-allowed-to-create-empty-trees-if-it-is-basically-a-wasted-file">
-<h3>Why you are allowed to create empty trees if it is basically a wasted file?<a class="headerlink" href="#why-you-are-allowed-to-create-empty-trees-if-it-is-basically-a-wasted-file" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.3. </span>Why you are allowed to create empty trees if it is basically a wasted file?<a class="headerlink" href="#why-you-are-allowed-to-create-empty-trees-if-it-is-basically-a-wasted-file" title="Permalink to this headline">#</a></h3>
 <p>Because it does not hurt anything.</p>
 </section>
 <section id="how-are-pipes-and-redirect-different">
-<h3>How are pipes and redirect different?<a class="headerlink" href="#how-are-pipes-and-redirect-different" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.4. </span>How are pipes and redirect different?<a class="headerlink" href="#how-are-pipes-and-redirect-different" title="Permalink to this headline">#</a></h3>
 <p>Pipes connect stdout to stdin, to connect commands.  Redirect just changes the source.</p>
 </section>
 <section id="when-do-people-manually-create-git-objects-and-commits">
-<h3>When do people manually create git objects and commits?<a class="headerlink" href="#when-do-people-manually-create-git-objects-and-commits" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.5. </span>When do people manually create git objects and commits?<a class="headerlink" href="#when-do-people-manually-create-git-objects-and-commits" title="Permalink to this headline">#</a></h3>
 <p>Manually exploring is not a common scenario.  These commands <em>exist</em> primarily for git itself, remember modular code gives more power.</p>
 <p>We went through doing it manually to see and understand. You can end up in edge case scenarios in other ways, but using the plubming commands is the best way to to see that.</p>
 </section>
 <section id="why-are-these-commands-so-easy-to-confuse-and-mix-up-with-each-other-i-have-a-hard-time-remembering-some-of-the-longer-commands">
-<h3>Why are these commands so easy to confuse and mix up with each other? I have a hard time remembering some of the longer commands.<a class="headerlink" href="#why-are-these-commands-so-easy-to-confuse-and-mix-up-with-each-other-i-have-a-hard-time-remembering-some-of-the-longer-commands" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.6. </span>Why are these commands so easy to confuse and mix up with each other? I have a hard time remembering some of the longer commands.<a class="headerlink" href="#why-are-these-commands-so-easy-to-confuse-and-mix-up-with-each-other-i-have-a-hard-time-remembering-some-of-the-longer-commands" title="Permalink to this headline">#</a></h3>
 <p>Some of the commands we have used are detailed low frequency use commands that you do not need to memorize.</p>
 </section>
 <section id="is-there-a-quicker-way-to-find-the-onbject-type-if-you-get-lost-instead-of-going-through-each-of-them-with-the-git-cat-file-t-command">
-<h3>Is there a quicker way to find the onbject type if you get lost. Instead of going through each of them with the “git cat-file -t” command?<a class="headerlink" href="#is-there-a-quicker-way-to-find-the-onbject-type-if-you-get-lost-instead-of-going-through-each-of-them-with-the-git-cat-file-t-command" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.7. </span>Is there a quicker way to find the onbject type if you get lost. Instead of going through each of them with the “git cat-file -t” command?<a class="headerlink" href="#is-there-a-quicker-way-to-find-the-onbject-type-if-you-get-lost-instead-of-going-through-each-of-them-with-the-git-cat-file-t-command" title="Permalink to this headline">#</a></h3>
 <p>For this activity, you can copmare to mine.  In a normal use scenario, you would not do this manually, so you would have some other way to know what commit or object you were looking for.</p>
 </section>
 <section id="what-are-hashes">
-<h3>what are hashes?<a class="headerlink" href="#what-are-hashes" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.8. </span>what are hashes?<a class="headerlink" href="#what-are-hashes" title="Permalink to this headline">#</a></h3>
 <p>A hash is a fixed length representation of variable lenght input.  We will see more about them in the coming weeks.</p>
 </section>
 <section id="what-are-trees">
-<h3>What are trees?<a class="headerlink" href="#what-are-trees" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.9. </span>What are trees?<a class="headerlink" href="#what-are-trees" title="Permalink to this headline">#</a></h3>
 <p>Trees are one type of git object, that contains information about the directory at a given moment.  It contains pointers to the blob objects andinformation about each file.</p>
 </section>
 <section id="how-do-i-change-my-inclass-branch-from-master-to-main">
-<h3>How do I change my inclass branch from master to main??<a class="headerlink" href="#how-do-i-change-my-inclass-branch-from-master-to-main" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.10. </span>How do I change my inclass branch from master to main??<a class="headerlink" href="#how-do-i-change-my-inclass-branch-from-master-to-main" title="Permalink to this headline">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">main</span>
 </pre></div>
 </div>
 </section>
 <section id="what-is-the-difference-between-the-t-and-p-flags-i-noticed-them-while-going-through-the-comnmands">
-<h3>What is the difference between the -t and -p flags? I noticed them while going through the comnmands.<a class="headerlink" href="#what-is-the-difference-between-the-t-and-p-flags-i-noticed-them-while-going-through-the-comnmands" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.11. </span>What is the difference between the -t and -p flags? I noticed them while going through the comnmands.<a class="headerlink" href="#what-is-the-difference-between-the-t-and-p-flags-i-noticed-them-while-going-through-the-comnmands" title="Permalink to this headline">#</a></h3>
 <p>these are options on <a class="reference external" href="https://git-scm.com/docs/git-cat-file"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code></a>.  They’re defined above and at the link.</p>
 </section>
 <section id="would-there-be-any-reason-to-use-these-commands-rather-than-relying-on-the-porcelain-commands">
-<h3>Would there be any reason to use these commands rather than relying on the porcelain commands?<a class="headerlink" href="#would-there-be-any-reason-to-use-these-commands-rather-than-relying-on-the-porcelain-commands" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.12. </span>Would there be any reason to use these commands rather than relying on the porcelain commands?<a class="headerlink" href="#would-there-be-any-reason-to-use-these-commands-rather-than-relying-on-the-porcelain-commands" title="Permalink to this headline">#</a></h3>
 <p>Not if things are going well, but they could be used to try to figure out what went wrong if you find a repo in a weird state.</p>
 </section>
 <section id="when-would-we-use-this-over-doing-it-on-github-itself-aside-from-offline">
-<h3>when would we use this over doing it on GitHub itself aside from offline?<a class="headerlink" href="#when-would-we-use-this-over-doing-it-on-github-itself-aside-from-offline" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.13. </span>when would we use this over doing it on GitHub itself aside from offline?<a class="headerlink" href="#when-would-we-use-this-over-doing-it-on-github-itself-aside-from-offline" title="Permalink to this headline">#</a></h3>
 <p>We cannot run these detailed steps on github in browser.  Recall, we do not even directly “add” files there.  In browser, we have to commit in order to save a file.</p>
 </section>
 <section id="why-does-the-file-still-have-untracked-changes">
-<h3>Why does the file still have untracked changes?<a class="headerlink" href="#why-does-the-file-still-have-untracked-changes" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.14.14. </span>Why does the file still have untracked changes?<a class="headerlink" href="#why-does-the-file-still-have-untracked-changes" title="Permalink to this headline">#</a></h3>
 <p>We hashed the file, but did not put the second hash into the tree or create a second commiit.</p>
 </section>
 </section>
@@ -1357,6 +1360,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-10-05.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Why are these tools organized this way?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1375,37 +1396,37 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-to-set-the-stage">Review to set the stage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-repo-from-scratch">Creating a repo from scratch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-the-file-system">Searching the file system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-git-blob-objects-directly">Creating Git Blob Objects Directly</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-a-file">Hashing a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-to-set-the-stage">10.1. Review to set the stage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-repo-from-scratch">10.2. Creating a repo from scratch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-the-file-system">10.3. Searching the file system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-git-blob-objects-directly">10.4. Creating Git Blob Objects Directly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-a-file">10.4.1. Hashing a file</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-tree">Writing a tree</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-staging-and-snapshot-edge-case">A staging and snapshot edge case</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Writing a tree</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-commit-manually">Creating a commit manually</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-references">Git references</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-a-pointer-to-an-old-file-exist-as-an-object-in-the-git-objects">Can a pointer to an old file exist as an object in the git objects?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-manual-way-to-do-other-commands-like-git-push-and-git-add">Is there a manual way to do other commands like git push and git add?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-are-allowed-to-create-empty-trees-if-it-is-basically-a-wasted-file">Why you are allowed to create empty trees if it is basically a wasted file?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-pipes-and-redirect-different">How are pipes and redirect different?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-people-manually-create-git-objects-and-commits">When do people manually create git objects and commits?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-these-commands-so-easy-to-confuse-and-mix-up-with-each-other-i-have-a-hard-time-remembering-some-of-the-longer-commands">Why are these commands so easy to confuse and mix up with each other? I have a hard time remembering some of the longer commands.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-quicker-way-to-find-the-onbject-type-if-you-get-lost-instead-of-going-through-each-of-them-with-the-git-cat-file-t-command">Is there a quicker way to find the onbject type if you get lost. Instead of going through each of them with the “git cat-file -t” command?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-hashes">what are hashes?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-trees">What are trees?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-change-my-inclass-branch-from-master-to-main">How do I change my inclass branch from master to main??</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-the-t-and-p-flags-i-noticed-them-while-going-through-the-comnmands">What is the difference between the -t and -p flags? I noticed them while going through the comnmands.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-there-be-any-reason-to-use-these-commands-rather-than-relying-on-the-porcelain-commands">Would there be any reason to use these commands rather than relying on the porcelain commands?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-we-use-this-over-doing-it-on-github-itself-aside-from-offline">when would we use this over doing it on GitHub itself aside from offline?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-the-file-still-have-untracked-changes">Why does the file still have untracked changes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-tree">10.5. Writing a tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-staging-and-snapshot-edge-case">10.6. A staging and snapshot edge case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.7. Writing a tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-commit-manually">10.8. Creating a commit manually</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-references">10.9. Git references</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">10.10. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">10.11. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">10.12. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">10.13. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">10.14. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-a-pointer-to-an-old-file-exist-as-an-object-in-the-git-objects">10.14.1. Can a pointer to an old file exist as an object in the git objects?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-manual-way-to-do-other-commands-like-git-push-and-git-add">10.14.2. Is there a manual way to do other commands like git push and git add?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-are-allowed-to-create-empty-trees-if-it-is-basically-a-wasted-file">10.14.3. Why you are allowed to create empty trees if it is basically a wasted file?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-pipes-and-redirect-different">10.14.4. How are pipes and redirect different?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-people-manually-create-git-objects-and-commits">10.14.5. When do people manually create git objects and commits?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-these-commands-so-easy-to-confuse-and-mix-up-with-each-other-i-have-a-hard-time-remembering-some-of-the-longer-commands">10.14.6. Why are these commands so easy to confuse and mix up with each other? I have a hard time remembering some of the longer commands.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-quicker-way-to-find-the-onbject-type-if-you-get-lost-instead-of-going-through-each-of-them-with-the-git-cat-file-t-command">10.14.7. Is there a quicker way to find the onbject type if you get lost. Instead of going through each of them with the “git cat-file -t” command?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-hashes">10.14.8. what are hashes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-trees">10.14.9. What are trees?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-change-my-inclass-branch-from-master-to-main">10.14.10. How do I change my inclass branch from master to main??</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-the-t-and-p-flags-i-noticed-them-while-going-through-the-comnmands">10.14.11. What is the difference between the -t and -p flags? I noticed them while going through the comnmands.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-there-be-any-reason-to-use-these-commands-rather-than-relying-on-the-porcelain-commands">10.14.12. Would there be any reason to use these commands rather than relying on the porcelain commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-we-use-this-over-doing-it-on-github-itself-aside-from-offline">10.14.13. when would we use this over doing it on GitHub itself aside from offline?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-the-file-still-have-untracked-changes">10.14.14. Why does the file still have untracked changes?</a></li>
 </ul>
 </li>
 </ul>
