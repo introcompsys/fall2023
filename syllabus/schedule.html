@@ -428,6 +428,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentative-schedule">Tentative Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentative-lab-schedule">Tentative Lab schedule</a></li>
 </ul>
             </nav>
         </div>
@@ -506,118 +507,396 @@ Topics:
 </section>
 <section id="tentative-schedule">
 <h2>Tentative Schedule<a class="headerlink" href="#tentative-schedule" title="Permalink to this headline">#</a></h2>
-<p>Content from above will be expanded and slotted into specific classes as we go. This will always be a place you can get reminders of what you need to do next and/or what you missed if you miss a class as an overview.  More Details will be in other parts of the site, linked to here.</p>
-<!-- You can see samples of how this worked out in previous semesters in their notes:
-- [spring 22]()
-- [fall 22]() -->
-<!-- ``````{list-table} Schedule
-:header-rows: 1
-:widths: 10 15 20 15
-:name: schedule
+<p>This is the planned schedule, but is subject to change in order to adapt to how things go in class or additional questions that come up.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;schedule.csv&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-* - Date
-  - Key Question
-  - In Class Activities
-  - Preparation
-* - 2023-01-24
-  - What are we doing this semester?
-  - Introductions, tool practice, setup
-  - Create GitHub and Prismia accounts, take stock of dev environments
-* - 2023-01-26
-  - Why study systems and tools?
-  - course  FAQ, knowledge discussion
-  - Read through the class site, notes, reflect on a thing you know well
-* - 2023-01-31
-  - How do I use git offline?
-  - cloning, pushing, file basics
-  - review notes, reflect on issues, check environment, map cs knowledge
-* - 2023-02-02
-  - Why do I need to use a terminal?
-  - bash, organizing a project
-  - review notes, practice git offline 2 ways, update kwl
-* - 2023-02-07
-  - How do programmers automate mundane tasks?
-  - shell scripting, pipes, more redirects, grep
-  - install courseutils
-* - 2023-02-09
-  - How do programmers build documentation?
-  - confirm jupyterbook is installed
-  - templating,
-* - 2023-02-14
-  - How does git really work?
-  - grading contract Q&A, git diff, hash
-  - practice, begin contract, understand git
-* - 2023-02-16
-  - What happens under the hood of git?
-  -
-  - git plumbing and more bash (pipes and find)
-* - 2023-02-21
-  - Why are git commit numbers so long?
-  - review, map git
-  - more git, number systems
-* - 2023-02-23
-  - How can git help me when I need it?
-  - reveiw numbers and hypothesize what git could help with
-  - git merges
-* - 2023-02-28
-* - 2023-03-02
-* - 2023-03-05
-  - How do I work remotely ?
-  - install reqs, reflect on grade, practice script
-  - ssh/ ssh keys, sed/ awk, file permissions
-* - 2023-03-07
-  - How do programmers keep track of all these tools?
-  - summarize IDE reflections
-  - IDE anatomy
-* - 2023-03-21
-  - How do Developers keep track of all these tools?
-  - [compare languages you know]
-  -
-* - 2023-03-23
-  - How do we choose among different programming languages?
-  - [install c compiler]
-  -
-* - 2023-03-28
-  - What happens when I build code?
-  -
-  -
-* - 2023-03-30
-  - Why is the object file unreadable on the terminal?
-  - what are operators
-  - bits, bytes, and integers/character representation
-* - 2023-04-04
-  - How does a program run?
-  - install hardware simulator
-  - hardware overview, memory, instructions, assembly
-* - 2023-04-06
-  - Where do those bitwise operations come from?
-  - review simulator
-  - gates, registers, more integer representation
-* - 2023-04-11
-  - What actually is a gate?
-  -
-  - physics, history, abstractoin of a gate
-* - 2023-04-13
-  - How do components work together?
-  -
-  - memmory, IO, bus, clocks,
-* - 2023-04-18
-  - (sub)
-  -
-  -
-* - 2023-04-20
-  - (sub)
-  -
-  -
-* - 2023-04-25
-  -
-  -
-  -
-* - 2023-04-27
-  -
-  -
-  -
-`````` -->
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>question</th>
+      <th>keyword</th>
+      <th>conceptual</th>
+      <th>practical</th>
+      <th>social</th>
+      <th>activity</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2023-09-07</th>
+      <td>Welcome, Introduction, and Setup</td>
+      <td>intro</td>
+      <td>what is a system, why study tools</td>
+      <td>GitHub basics</td>
+      <td>class intros</td>
+      <td>create kwl repo in github, navigate github.com...</td>
+    </tr>
+    <tr>
+      <th>2023-09-12</th>
+      <td>Course Logistics and Learning</td>
+      <td>logistics</td>
+      <td>github flow with issues</td>
+      <td>syllabus</td>
+      <td>working together and building common vocab</td>
+      <td>set up to work offline together, create a folder</td>
+    </tr>
+    <tr>
+      <th>2023-09-14</th>
+      <td>Bash intro &amp; git offline</td>
+      <td>terminal start</td>
+      <td>git structure, paths and file system</td>
+      <td>bash path navigation, git terminal authentication</td>
+      <td>why developers work differently than casual users</td>
+      <td>navigate files and clone a repo locally</td>
+    </tr>
+    <tr>
+      <th>2023-09-19</th>
+      <td>How can I work with branches offline?</td>
+      <td>gitoffline</td>
+      <td>git branches</td>
+      <td>github flow offline, resolving merge conflicts</td>
+      <td>commuication is important, git can help fix mi...</td>
+      <td>clone a repo and make a branch locally</td>
+    </tr>
+    <tr>
+      <th>2023-09-21</th>
+      <td>When do I get an advantage from git and bash?</td>
+      <td>why terminal</td>
+      <td>computing mental model, paths and file structure</td>
+      <td>bash navigation, tab completion</td>
+      <td>collaboration requires shared language, shared...</td>
+      <td>work with bash and recover from a mistake with...</td>
+    </tr>
+    <tr>
+      <th>2023-09-26</th>
+      <td>What *is* a commit?</td>
+      <td>merge conflicts</td>
+      <td>versions, git vlaues</td>
+      <td>merge conflicts in github, merge conflicts wit...</td>
+      <td>human and machine readable, commit messages ar...</td>
+      <td>examine commit objects, introduce plumbing com...</td>
+    </tr>
+    <tr>
+      <th>2023-09-28</th>
+      <td>How do programmers communicate about code?</td>
+      <td>documentation</td>
+      <td>build, automation, modularity, pattern matching,</td>
+      <td>generate documentation with jupyterbook, gitig...</td>
+      <td>main vs master, documentation community</td>
+      <td>make a jupyterbook</td>
+    </tr>
+    <tr>
+      <th>2023-10-03</th>
+      <td>What *is* git?</td>
+      <td>git structure</td>
+      <td>what is a file system, how does git keep track...</td>
+      <td>find in bash, seeing git config, plumbing/porc...</td>
+      <td>git workflows are conventions, git can be used...</td>
+      <td>examine git from multiple definitions and insp...</td>
+    </tr>
+    <tr>
+      <th>2023-10-05</th>
+      <td>Why are these tools like this?</td>
+      <td>unix philosophy</td>
+      <td>unix philosophy, debugging strategies</td>
+      <td>decision making for branches</td>
+      <td>social advantages of shared mental model, diff...</td>
+      <td>discussion with minor code examples</td>
+    </tr>
+    <tr>
+      <th>2023-10-12</th>
+      <td>How does git make a commit?</td>
+      <td>git internals</td>
+      <td>pointers, design and abstraction, intermediate...</td>
+      <td>inspecting git objects, when hashes are unique...</td>
+      <td>conventions vs requirements</td>
+      <td>create a commit using plumbing commands</td>
+    </tr>
+    <tr>
+      <th>2023-10-17</th>
+      <td>How can can I release and share my code?</td>
+      <td>git references</td>
+      <td>pointers, git branches and tags</td>
+      <td>git branches, advanced fixing, semver and conv...</td>
+      <td>advantages of data that is both human and mach...</td>
+      <td>make a tag and release</td>
+    </tr>
+    <tr>
+      <th>2023-10-19</th>
+      <td>What is a commit number?</td>
+      <td>numbers</td>
+      <td>hashes, number systems</td>
+      <td>git commit numbers, manual hashing with git</td>
+      <td>number  systems are derived in culture</td>
+      <td>discussion and use hashing algorithm</td>
+    </tr>
+    <tr>
+      <th>2023-10-24</th>
+      <td>How can I automate things with bash?</td>
+      <td>bash scripting</td>
+      <td>bash is a programming language, official docs,...</td>
+      <td>script files, man pages, bash variables, bash ...</td>
+      <td>using automation to make collaboration easier</td>
+      <td>build a bash script that calculates a grade</td>
+    </tr>
+    <tr>
+      <th>2023-10-26</th>
+      <td>How can I work on a remote server?</td>
+      <td>server</td>
+      <td>server, hpc, large files</td>
+      <td>ssh, large files, bash head, grep, etc</td>
+      <td>hidden impacts of remote computation</td>
+      <td>log into a remote server and work with large f...</td>
+    </tr>
+    <tr>
+      <th>2023-10-31</th>
+      <td>What is an IDE?</td>
+      <td>IDE</td>
+      <td>IDE parts</td>
+      <td>compare and contrast IDEs</td>
+      <td>collaboraiton features, developer communities</td>
+      <td>discussions and sharing IDE tips</td>
+    </tr>
+    <tr>
+      <th>2023-11-02</th>
+      <td>How do I choose a Programming Language for a p...</td>
+      <td>programming languages</td>
+      <td>types of PLs, what is PL studying</td>
+      <td>choosing a language for a project</td>
+      <td>usability depends on prior experience</td>
+      <td>discussion or independent research</td>
+    </tr>
+    <tr>
+      <th>2023-11-07</th>
+      <td>How can I authenitcate more securely from a te...</td>
+      <td>server use</td>
+      <td>ssh keys, hpc system strucutre</td>
+      <td>ssh keys, interactive, slurm</td>
+      <td>social aspects of passwords and security</td>
+      <td>configure and use ssh keys on a hpc</td>
+    </tr>
+    <tr>
+      <th>2023-11-09</th>
+      <td>What Happens when we build code?</td>
+      <td>building</td>
+      <td>building C code</td>
+      <td>ssh keys, gcc compiler</td>
+      <td>file extensions are for people, when vocabular...</td>
+      <td>build code in C and examine intermediate outputs</td>
+    </tr>
+    <tr>
+      <th>2023-11-14</th>
+      <td>What happens when we run code?</td>
+      <td>hardwar</td>
+      <td>von neuman architecture</td>
+      <td>reading a basic assembly language</td>
+      <td>historical context of computer architecures</td>
+      <td>use a hardware simulator to see step by step o...</td>
+    </tr>
+    <tr>
+      <th>2023-11-16</th>
+      <td>How does a computer represent non integer quan...</td>
+      <td>floats</td>
+      <td>float representation</td>
+      <td>floats do not equal themselves</td>
+      <td>social processes around standard developents, ...</td>
+      <td>work with float representation through fractio...</td>
+    </tr>
+    <tr>
+      <th>2023-11-21</th>
+      <td>How can we use logical operations?</td>
+      <td>bitwise operation</td>
+      <td>what is a bit, what is a register, how to brea...</td>
+      <td>how an ALU works</td>
+      <td>tech interviews look for obscure details somet...</td>
+      <td>derive addition from basic logic operations</td>
+    </tr>
+    <tr>
+      <th>2023-11-28</th>
+      <td>What *is* a computer?</td>
+      <td>architecture</td>
+      <td>physical gates, history</td>
+      <td>interpretting specs</td>
+      <td>social context influences technology</td>
+      <td>discussion</td>
+    </tr>
+    <tr>
+      <th>2023-11-30</th>
+      <td>How does timing work in a computer?</td>
+      <td>timing</td>
+      <td>timing, control unit, threading</td>
+      <td>threaded program with a race condition</td>
+      <td>different times matter in different cases</td>
+      <td>write a threaded program and fix a race condition</td>
+    </tr>
+    <tr>
+      <th>2023-12-05</th>
+      <td>How do different types of storage work together?</td>
+      <td>memory</td>
+      <td>different type of memory, different abstractions</td>
+      <td>working with large data</td>
+      <td>privacy/respect for data</td>
+      <td>large data that has to be read in batches</td>
+    </tr>
+    <tr>
+      <th>2023-12-07</th>
+      <td>How does this all work together</td>
+      <td>review</td>
+      <td>all</td>
+      <td>end of semester logistics</td>
+      <td>group work final</td>
+      <td>review quiz, integration/reflection questions</td>
+    </tr>
+    <tr>
+      <th>2023-12-12</th>
+      <td>How did this semester go?</td>
+      <td>feedback</td>
+      <td>all</td>
+      <td>grading</td>
+      <td>how to learn better together</td>
+      <td>discussion</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="tentative-lab-schedule">
+<h2>Tentative Lab schedule<a class="headerlink" href="#tentative-lab-schedule" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;labschedule.csv&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>topic</th>
+      <th>activity</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2023-10-06</th>
+      <td>unix philosophy</td>
+      <td>design a command line tool that would enable a...</td>
+    </tr>
+    <tr>
+      <th>2023-09-22</th>
+      <td>offline branches</td>
+      <td>plan for success, clean a messy repo</td>
+    </tr>
+    <tr>
+      <th>2023-10-13</th>
+      <td>git plumbing</td>
+      <td>git plumbing experiment</td>
+    </tr>
+    <tr>
+      <th>2023-10-27</th>
+      <td>scripting</td>
+      <td>releases and packaging</td>
+    </tr>
+    <tr>
+      <th>2023-09-08</th>
+      <td>GitHub Basics</td>
+      <td>syllabus quiz, setup</td>
+    </tr>
+    <tr>
+      <th>2023-12-08</th>
+      <td>os</td>
+      <td>hardware simulation</td>
+    </tr>
+    <tr>
+      <th>2023-09-29</th>
+      <td>tool familiarity</td>
+      <td>work on badges, self progress report</td>
+    </tr>
+    <tr>
+      <th>2023-11-03</th>
+      <td>remote, hpc</td>
+      <td>server work, batch scripts</td>
+    </tr>
+    <tr>
+      <th>2023-11-17</th>
+      <td>Machine representation</td>
+      <td>bits and floats and number libraries</td>
+    </tr>
+    <tr>
+      <th>2023-11-10</th>
+      <td>Compiling</td>
+      <td>C compiling experiments</td>
+    </tr>
+    <tr>
+      <th>2023-10-20</th>
+      <td>git plumbing</td>
+      <td>grade calculation script, self reflection</td>
+    </tr>
+    <tr>
+      <th>2023-09-15</th>
+      <td>working at the terminal</td>
+      <td>organization, setup kwl locally, manage issues</td>
+    </tr>
+    <tr>
+      <th>2023-12-01</th>
+      <td>hardware</td>
+      <td>self-reflection, work, project consultations</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
 </section>
 
@@ -695,6 +974,7 @@ Topics:
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentative-schedule">Tentative Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentative-lab-schedule">Tentative Lab schedule</a></li>
 </ul>
   </nav></div>
 
