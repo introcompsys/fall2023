@@ -1,8 +1,6 @@
 # Build Badges 
 
-```{warning}
-This page is subject to change until the end of the penalty free zone
-```
+Build may be individual or in pairs. 
 
 ## Proposal Template
 
@@ -53,6 +51,13 @@ This summary report have the following sections.
 1. **Reflection** a one paragraph reflection that summarizes challenges faced and what you learned doing your project
 1. **Artifacts** links to other materials required for assessing the project.  This can be a public facing web resource, a private repository, or a shared file on URI google Drive. 
 
+## Collaborative Build rules/procedures
+
+- Each student must submit a proposal PR for tracking purposes. The proposal may be shared text for most sections but the deliverables should indicate what each student will do (or be unique in each proposal). 
+- the proposal must indicate that it is a pair project, if iteration is required, I will put those comments on both repos but the students should discuss and reply/edit in collaboration
+- the project must include code reviews as a part of the workflow links to the PRs on the project repo where the code reviews were completed should be included in the reflection
+- each student must complete their own reflection.  The abstract can be written together and shared, but the reflection must be unique. 
+
 
 ## Build Ideas 
 
@@ -60,7 +65,8 @@ This summary report have the following sections.
 - make a [vs code extension](https://code.visualstudio.com/api/get-started/your-first-extension) for this class or another URI CS course
 - port the courseutils to rust. [crate clap](https://docs.rs/clap/latest/clap/) is like the python click package I used to develop the course utils
 - buld a polished documentation website for your CSC212 project with [sphinx](https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/) or another static site generator 
-- 
+- use version control, including releases on any open source side-project and add good contributor guidelines, README, etc 
+
 
 
 <!-- 
