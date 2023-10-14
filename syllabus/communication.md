@@ -17,6 +17,13 @@ kernelspec:
 # Office Hours & Communication
 
 
+```{warning}
+Due to Indigenous People's Day: 
+
+- Amoy's Tuesday office hours on 10/10 are cancelled
+- Dr. Brown's Monday office hours for 10/9 are moved to Tues 10/10
+```
+
 ```{code-cell}
 :tags: ["remove-input"]
 
