@@ -61,11 +61,133 @@ This summary report have the following sections.
 
 ## Build Ideas 
 
- 
+
+### General ideas to write a proposal for 
 - make a [vs code extension](https://code.visualstudio.com/api/get-started/your-first-extension) for this class or another URI CS course
 - port the courseutils to rust. [crate clap](https://docs.rs/clap/latest/clap/) is like the python click package I used to develop the course utils
 - buld a polished documentation website for your CSC212 project with [sphinx](https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/) or another static site generator 
 - use version control, including releases on any open source side-project and add good contributor guidelines, README, etc 
+
+### Auto-approved proposals
+
+For these build options, you can copy-paste the template below to create your proposal issue and assign it to `@brownsarahm`.
+
+For working alone there are two options, for working with a partner there is one. 
+
+#### 212 Project Solo- Docs focus
+
+Use this option if your team for your 212 project is not currently enrolled in this class or does not want to do a collaborative build. This version focuses on the user docs.
+
+
+```
+## 212 Project Doc & Developer onboarding
+
+Add documentation website and developer onboarding information to your CSC 212 project. 
+
+### Objectives
+
+<!-- in this section describe the overall goals in terms of what you will learn and the problem you will solve. this should be 2-5 sentences, it can be bullet points/numbered or a paragraph  -->
+
+This project will provide information for a user to use the data structure implemented for a CSC 212 project and for a potential collaborator to add new features to it. The information will live in the repo and be served as a rendered website. 
+
+### Method
+
+ <!-- describe what you will do , will it be research, write & present? will there be something you build? will you do experiments?-->
+1. ensure there is API level documentation in the code files
+1. build a documentation website using [jupyterbook/ sphinx/doxygen/] that includes setup instructions and examples
+1. configure the repo to automatically build the documentation website each time the main branch is updated
+
+
+### Deliverables
+
+
+- link to repo with the contents listed in method in the reflection file
+
+
+### Milestones
+
+<!-- give a target timeline -->
+
+```
+
+#### 212 Project Solo- Developer focus
+
+Use this option if your team for your 212 project is not currently enrolled in this class or does not want to do a collaborative build. This version focuses on the contributor experience. 
+
+
+```
+## 212 Project Doc & Developer onboarding
+
+Add documentation website and developer onboarding information to your CSC 212 project. 
+
+### Objectives
+
+<!-- in this section describe the overall goals in terms of what you will learn and the problem you will solve. this should be 2-5 sentences, it can be bullet points/numbered or a paragraph  -->
+
+This project will provide information for a user to use the data structure implemented for a CSC 212 project and for a potential collaborator to add new features to it. The information will live in the repo and be served as a rendered website. 
+
+### Method
+
+ <!-- describe what you will do , will it be research, write & present? will there be something you build? will you do experiments?-->
+
+1. ensure there is API level documentation in the code files
+1. add a license, readme, and contributor file
+1. add [code tours](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour) that help someone understand how the data strucutre works and learn how to contribute 
+1. set up a PR template
+1. set up 2 issue templates: 1 for feature request and 1 for bug reporting
+
+
+### Deliverables
+
+
+- link to repo with the contents listed in method in the reflection file
+
+
+### Milestones
+
+<!-- give a target timeline -->
+
+```
+
+#### 212 Project Pair
+
+Use this option if your teammate for your 212 project is in this class and wants to do a collaborative build. 
+
+
+```
+## 212 Project Doc & Developer onboarding
+
+Add documentation website and developer onboarding information to your CSC 212 project. 
+
+### Objectives
+
+<!-- in this section describe the overall goals in terms of what you will learn and the problem you will solve. this should be 2-5 sentences, it can be bullet points/numbered or a paragraph  -->
+
+This project will provide information for a user to use the data structure implemented for a CSC 212 project and for a potential collaborator to add new features to it. The information will live in the repo and be served as a rendered website. 
+
+### Method
+
+ <!-- describe what you will do , will it be research, write & present? will there be something you build? will you do experiments?-->
+1. ensure there is API level documentation in the code files
+1. build a documentation website using [jupyterbook/ sphinx/doxygen/] that includes setup instructions and examples
+1. configure the repo to automatically build the documentation website each time the main branch is updated
+1. add [code tours](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour) that help someone understand how the data strucutre works and learn how to contribute 
+1. set up a PR template
+1. set up 2 issue templates: 1 for feature request and 1 for bug reporting
+
+
+
+### Deliverables
+
+
+- link to repo with the contents listed in method in the reflection file
+
+
+### Milestones
+
+<!-- give a target timeline -->
+
+```
 
 
 
