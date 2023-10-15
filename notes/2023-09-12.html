@@ -570,10 +570,14 @@ different levels of abstraction.</p>
 <li><p>if you have WSL (if you do not, no need to worry) you should be able to set your linux shell to <code class="docutils literal notranslate"><span class="pre">bash</span></code></p></li>
 </ul>
 <p>The first command we will use is <code class="docutils literal notranslate"><span class="pre">pwd</span></code> which stands for <strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm</span>
 </pre></div>
 </div>
 <aside class="margin sidebar">
@@ -585,91 +589,155 @@ different levels of abstraction.</p>
 </aside>
 <p>this is called the <a class="reference internal" href="../resources/glossary.html#term-path"><span class="xref std std-term">path</span></a> and specifically this is an <a class="reference internal" href="../resources/glossary.html#term-absolute-path"><span class="xref std std-term">absolute path</span></a></p>
 <p>We can change into another directory with  <code class="docutils literal notranslate"><span class="pre">cd</span></code> for <strong>c</strong>hange <strong>d</strong>irectory</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>To see what changed, we use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> again</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm/Documents</span>
 </pre></div>
 </div>
 <p>Note that the current path is the same as the old one plus the place we changed to.</p>
 <p>I moved one step further into my inclass folder</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">inclass</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">inclass</span><span class="o">/</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can <strong>m</strong>a<strong>k</strong> a new <strong>dir</strong>ectory with <code class="docutils literal notranslate"><span class="pre">mkdir</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">systems</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">systems</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>What you want to have is a folder for class (mine is systems) in a place you can find it. (mine is in my inclass folder)</p>
 <p>We can view what is in a folder with <code class="docutils literal notranslate"><span class="pre">ls</span></code> for <strong>list</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>I have a few other folders here</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fa22</span>		<span class="n">prog4dsfa23</span>	<span class="n">sp23</span>		<span class="n">systems</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fa22		prog4dsfa23	sp23		systems</span>
 </pre></div>
 </div>
 <p>And again check the path</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm/Documents/inclass</span>
 </pre></div>
 </div>
 <p>then I can do into the new folder I just made</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">systems</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">systems</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>and look at the path one more time</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm/Documents/inclass/systems</span>
 </pre></div>
 </div>
 <p>We can change back to the home directory with <code class="docutils literal notranslate"><span class="pre">~</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>and confirm:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm</span>
 </pre></div>
 </div>
 <p>just like before</p>
 <p>Then we can use the <a class="reference internal" href="../resources/glossary.html#term-relative-path"><span class="xref std std-term">relative path</span></a>` of where we want to go:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">cd</span></code> with no path also works</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>and we can use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to see where we end up</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm</span>
 </pre></div>
 </div>
 <p>it’s the home directoy just like <code class="docutils literal notranslate"><span class="pre">~</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">..</span></code> stands for up one level,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm/Documents/inclass/</span>
 </pre></div>
 </div>
 </section>

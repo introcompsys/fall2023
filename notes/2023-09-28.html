@@ -533,10 +533,14 @@ document.write(`
 </section>
 <section id="what-is-a-docstring">
 <h2><span class="section-number">7.6. </span>What is a docstring<a class="headerlink" href="#what-is-a-docstring" title="Permalink to this headline">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.11.4</span> <span class="p">(</span><span class="n">main</span><span class="p">,</span> <span class="n">Jul</span>  <span class="mi">5</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">44</span><span class="p">)</span> <span class="p">[</span><span class="n">Clang</span> <span class="mf">14.0.6</span> <span class="p">]</span> <span class="n">on</span> <span class="n">darwin</span>
+</div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.11.4</span> <span class="p">(</span><span class="n">main</span><span class="p">,</span> <span class="n">Jul</span>  <span class="mi">5</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">44</span><span class="p">)</span> <span class="p">[</span><span class="n">Clang</span> <span class="mf">14.0.6</span> <span class="p">]</span> <span class="n">on</span> <span class="n">darwin</span>
 <span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
 
@@ -563,8 +567,12 @@ document.write(`
 <h2><span class="section-number">7.8. </span>Install Jupyter-book<a class="headerlink" href="#install-jupyter-book" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://jupyterbook.org/intro.html">Jupyterbook</a> wraps sphinx and uses markdown instead of restructured text. The project authors <a class="reference external" href="https://jupyterbook.org/en/stable/explain/sphinx.html">note in the documenation</a> that it “can be thought of as an <em>opinionated distribution of Sphinx</em>”. We’re going to use this, so that we can use most of the power of sphinx without having to learn ReStructured Text which is more complex than markdown syntax.</p>
 <p><a class="reference external" href="https://jupyterbook.org/en/stable/start/overview.html#install-jupyter-book">install jupyterbook</a> on Mac or linux those instructions will work on your regular terminal, if you have python installed. On Windows those instructions will work in the Anaconda prompt or any other terminal that is set up with python. If these steps do not make sense see the <a class="reference external" href="https://introcompsys.github.io/spring2023/syllabus/tools.html#recommendation">recommendations</a> in the syllabus for more instructions including videos of the Python install process in both Mac and Windows.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -572,89 +580,117 @@ document.write(`
 <p>the thing that matters is that near the end it will say “successfully installed”</p>
 </div>
 <p>Now we move to our inclass repo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+<span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
-</pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">github-inclass-fa23-brownsarahm</span>
 </pre></div>
 </div>
 <p>And note that we can see the other folders we have made so far, but note that we are <em>not inside</em> any of them.</p>
 <p>We can create this</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">create</span> <span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">create</span> <span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="o">===============================================================================</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">===============================================================================</span>
 
-<span class="n">Your</span> <span class="n">book</span> <span class="n">template</span> <span class="n">can</span> <span class="n">be</span> <span class="n">found</span> <span class="n">at</span>
+<span class="go">Your book template can be found at</span>
 
-    <span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
+<span class="go">    tiny-book/</span>
 
-<span class="o">===============================================================================</span>
-
+<span class="go">===============================================================================</span>
 </pre></div>
 </div>
 <p>and it tells us the relative path to the new folder, we can use <code class="docutils literal notranslate"><span class="pre">ls</span></code> again to see that it is there.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>	<span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">github-inclass-fa23-brownsarahm	tiny-book</span>
 </pre></div>
 </div>
 </section>
 <section id="parts-of-a-jupyer-book">
 <h2><span class="section-number">7.9. </span>Parts of a Jupyer book<a class="headerlink" href="#parts-of-a-jupyer-book" title="Permalink to this headline">#</a></h2>
 <p>First we go in the directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Then look</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
-<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
-<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>		<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">_config.yml		logo.png		notebooks.ipynb</span>
+<span class="go">_toc.yml		markdown-notebooks.md	references.bib</span>
+<span class="go">intro.md		markdown.md		requirements.txt</span>
 </pre></div>
 </div>
 <section id="starting-a-git-repo-locally">
 <h3><span class="section-number">7.9.1. </span>starting a git repo locally<a class="headerlink" href="#starting-a-git-repo-locally" title="Permalink to this headline">#</a></h3>
 <p>Before we work with the files, let’s commit the current version</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fatal</span><span class="p">:</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">git</span> <span class="n">repository</span> <span class="p">(</span><span class="ow">or</span> <span class="nb">any</span> <span class="n">of</span> <span class="n">the</span> <span class="n">parent</span> <span class="n">directories</span><span class="p">):</span> <span class="o">.</span><span class="n">git</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fatal: not a git repository (or any of the parent directories): .git</span>
 </pre></div>
 </div>
 <p>We cannot check status because we are not in a git repo.</p>
 <p>Recall a git repo is a folder that contains a <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory with the versions of our project in it. This directory is typically hidden, so to confirm it is not there we need the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option on <code class="docutils literal notranslate"><span class="pre">ls</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>			<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
-<span class="o">..</span>			<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
-<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.			intro.md		notebooks.ipynb</span>
+<span class="go">..			logo.png		references.bib</span>
+<span class="go">_config.yml		markdown-notebooks.md	requirements.txt</span>
+<span class="go">_toc.yml		markdown.md</span>
 </pre></div>
 </div>
 <p id="gitinit">We can create a new repo with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> and the  path to wher we want it.  We want it at our current working directory, which is <code class="docutils literal notranslate"><span class="pre">.</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span> <span class="o">.</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span> <span class="o">.</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hint</span><span class="p">:</span> <span class="n">Using</span> <span class="s1">&#39;master&#39;</span> <span class="k">as</span> <span class="n">the</span> <span class="n">name</span> <span class="k">for</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">branch</span><span class="o">.</span> <span class="n">This</span> <span class="n">default</span> <span class="n">branch</span> <span class="n">name</span>
-<span class="n">hint</span><span class="p">:</span> <span class="ow">is</span> <span class="n">subject</span> <span class="n">to</span> <span class="n">change</span><span class="o">.</span> <span class="n">To</span> <span class="n">configure</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">branch</span> <span class="n">name</span> <span class="n">to</span> <span class="n">use</span> <span class="ow">in</span> <span class="nb">all</span>
-<span class="n">hint</span><span class="p">:</span> <span class="n">of</span> <span class="n">your</span> <span class="n">new</span> <span class="n">repositories</span><span class="p">,</span> <span class="n">which</span> <span class="n">will</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span>
-<span class="n">hint</span><span class="p">:</span> 
-<span class="n">hint</span><span class="p">:</span> 	<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">init</span><span class="o">.</span><span class="n">defaultBranch</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>
-<span class="n">hint</span><span class="p">:</span> 
-<span class="n">hint</span><span class="p">:</span> <span class="n">Names</span> <span class="n">commonly</span> <span class="n">chosen</span> <span class="n">instead</span> <span class="n">of</span> <span class="s1">&#39;master&#39;</span> <span class="n">are</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;trunk&#39;</span> <span class="ow">and</span>
-<span class="n">hint</span><span class="p">:</span> <span class="s1">&#39;development&#39;</span><span class="o">.</span> <span class="n">The</span> <span class="n">just</span><span class="o">-</span><span class="n">created</span> <span class="n">branch</span> <span class="n">can</span> <span class="n">be</span> <span class="n">renamed</span> <span class="n">via</span> <span class="n">this</span> <span class="n">command</span><span class="p">:</span>
-<span class="n">hint</span><span class="p">:</span> 
-<span class="n">hint</span><span class="p">:</span> 	<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>
-<span class="n">Initialized</span> <span class="n">empty</span> <span class="n">Git</span> <span class="n">repository</span> <span class="ow">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/.</span><span class="n">git</span><span class="o">/</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">hint: Using &#39;master&#39; as the name for the initial branch. This default branch name</span>
+<span class="go">hint: is subject to change. To configure the initial branch name to use in all</span>
+<span class="go">hint: of your new repositories, which will suppress this warning, call:</span>
+<span class="go">hint: </span>
+<span class="go">hint: 	git config --global init.defaultBranch &lt;name&gt;</span>
+<span class="go">hint: </span>
+<span class="go">hint: Names commonly chosen instead of &#39;master&#39; are &#39;main&#39;, &#39;trunk&#39; and</span>
+<span class="go">hint: &#39;development&#39;. The just-created branch can be renamed via this command:</span>
+<span class="go">hint: </span>
+<span class="go">hint: 	git branch -m &lt;name&gt;</span>
+<span class="go">Initialized empty Git repository in /Users/brownsarahm/Documents/inclass/systems/tiny-book/.git/</span>
 </pre></div>
 </div>
 <p>Here we are faced with a social aspect of computing that is <em>also</em> a good reminder about how git actually works</p>
@@ -670,46 +706,63 @@ document.write(`
 <li><p><a class="reference external" href="https://twitter.com/xpasky/status/1271477451756056577">literally the person who chose the names “master” and “origin” regrets that choice</a> the name main is a more accurate and not harmful term and the current convention.</p></li>
 </ul>
 <p>we’ll change our default branch to main</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">main</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">main</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+</div>
+</div>
+<p>Now, we can look at the directory to see how <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> changed the folder.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>			<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
-<span class="o">..</span>			<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
-<span class="o">.</span><span class="n">git</span>			<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
-<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.			_toc.yml		markdown.md</span>
+<span class="go">..			intro.md		notebooks.ipynb</span>
+<span class="go">.git			logo.png		references.bib</span>
+<span class="go">_config.yml		markdown-notebooks.md	requirements.txt</span>
 </pre></div>
 </div>
 <p>Now we have the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory!</p>
 <p>and</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
-<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+<span class="go">No commits yet</span>
 
-<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-	<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
-	<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
-	<span class="n">intro</span><span class="o">.</span><span class="n">md</span>
-	<span class="n">logo</span><span class="o">.</span><span class="n">png</span>
-	<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>
-	<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
-	<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
-	<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
-	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">	_config.yml</span>
+<span class="go">	_toc.yml</span>
+<span class="go">	intro.md</span>
+<span class="go">	logo.png</span>
+<span class="go">	markdown-notebooks.md</span>
+<span class="go">	markdown.md</span>
+<span class="go">	notebooks.ipynb</span>
+<span class="go">	references.bib</span>
+<span class="go">	requirements.txt</span>
 
-<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>it works!</p>
 <p>and we will commit the template.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
 </pre></div>
+</div>
+</div>
 </div>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -729,31 +782,39 @@ your work to the index (staging area). Then when you push, it’s the compatible
 this is added to a <a class="reference internal" href="../resources/windows.html"><span class="doc std std-doc">new Windows page under resources</span></a></p>
 </div>
 </aside>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;init jupyterbook&#39;</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;init jupyterbook&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">main</span> <span class="p">(</span><span class="n">root</span><span class="o">-</span><span class="n">commit</span><span class="p">)</span> <span class="mi">3</span><span class="n">fcd849</span><span class="p">]</span> <span class="n">init</span> <span class="n">jupyterbook</span>
- <span class="mi">9</span> <span class="n">files</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">341</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">intro</span><span class="o">.</span><span class="n">md</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">logo</span><span class="o">.</span><span class="n">png</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">references</span><span class="o">.</span><span class="n">bib</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[main (root-commit) 3fcd849] init jupyterbook</span>
+<span class="go"> 9 files changed, 341 insertions(+)</span>
+<span class="go"> create mode 100644 _config.yml</span>
+<span class="go"> create mode 100644 _toc.yml</span>
+<span class="go"> create mode 100644 intro.md</span>
+<span class="go"> create mode 100644 logo.png</span>
+<span class="go"> create mode 100644 markdown-notebooks.md</span>
+<span class="go"> create mode 100644 markdown.md</span>
+<span class="go"> create mode 100644 notebooks.ipynb</span>
+<span class="go"> create mode 100644 references.bib</span>
+<span class="go"> create mode 100644 requirements.txt</span>
 </pre></div>
 </div>
 </section>
 <section id="structure-of-a-jupyter-book">
 <h3><span class="section-number">7.9.3. </span>Structure of a Jupyter book<a class="headerlink" href="#structure-of-a-jupyter-book" title="Permalink to this headline">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
-<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
-<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>		<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">_config.yml		logo.png		notebooks.ipynb</span>
+<span class="go">_toc.yml		markdown-notebooks.md	references.bib</span>
+<span class="go">intro.md		markdown.md		requirements.txt</span>
 </pre></div>
 </div>
 <p>A jupyter book has two required files (<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>), some for content, and some helpers that are common but not required.</p>
@@ -775,59 +836,67 @@ this is added to a <a class="reference internal" href="../resources/windows.html
 <h3><span class="section-number">7.9.5. </span>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">#</a></h3>
 <p>The config file template is pretty complete, including the URL of the webpage with all of the detailed setting options.</p>
 <p>The configuration file, tells jupyter-book basic iformation about the book, it provides all of the settings that jupyterbook and sphinx need to render the content as whatever output format we want.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">_config</span><span class="o">.</span><span class="n">yml</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">_config</span><span class="o">.</span><span class="n">yml</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Book settings</span>
-<span class="c1"># Learn more at https://jupyterbook.org/customize/config.html</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Book<span class="w"> </span>settings
+<span class="gp"># </span>Learn<span class="w"> </span>more<span class="w"> </span>at<span class="w"> </span>https://jupyterbook.org/customize/config.html
 
-<span class="n">title</span><span class="p">:</span> <span class="n">My</span> <span class="n">sample</span> <span class="n">book</span>
-<span class="n">author</span><span class="p">:</span> <span class="n">The</span> <span class="n">Jupyter</span> <span class="n">Book</span> <span class="n">Community</span>
-<span class="n">logo</span><span class="p">:</span> <span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+<span class="go">title: My sample book</span>
+<span class="go">author: The Jupyter Book Community</span>
+<span class="go">logo: logo.png</span>
 
-<span class="c1"># Force re-execution of notebooks on each build.</span>
-<span class="c1"># See https://jupyterbook.org/content/execute.html</span>
-<span class="n">execute</span><span class="p">:</span>
-  <span class="n">execute_notebooks</span><span class="p">:</span> <span class="n">force</span>
+<span class="gp"># </span>Force<span class="w"> </span>re-execution<span class="w"> </span>of<span class="w"> </span>notebooks<span class="w"> </span>on<span class="w"> </span>each<span class="w"> </span>build.
+<span class="gp"># </span>See<span class="w"> </span>https://jupyterbook.org/content/execute.html
+<span class="go">execute:</span>
+<span class="go">  execute_notebooks: force</span>
 
-<span class="c1"># Define the name of the latex output file for PDF builds</span>
-<span class="n">latex</span><span class="p">:</span>
-  <span class="n">latex_documents</span><span class="p">:</span>
-    <span class="n">targetname</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">tex</span>
+<span class="gp"># </span>Define<span class="w"> </span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>latex<span class="w"> </span>output<span class="w"> </span>file<span class="w"> </span><span class="k">for</span><span class="w"> </span>PDF<span class="w"> </span>builds
+<span class="go">latex:</span>
+<span class="go">  latex_documents:</span>
+<span class="go">    targetname: book.tex</span>
 
-<span class="c1"># Add a bibtex file so that we can create citations</span>
-<span class="n">bibtex_bibfiles</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">references</span><span class="o">.</span><span class="n">bib</span>
+<span class="gp"># </span>Add<span class="w"> </span>a<span class="w"> </span>bibtex<span class="w"> </span>file<span class="w"> </span>so<span class="w"> </span>that<span class="w"> </span>we<span class="w"> </span>can<span class="w"> </span>create<span class="w"> </span>citations
+<span class="go">bibtex_bibfiles:</span>
+<span class="go">  - references.bib</span>
 
-<span class="c1"># Information about where the book exists on the web</span>
-<span class="n">repository</span><span class="p">:</span>
-  <span class="n">url</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">executablebooks</span><span class="o">/</span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>  <span class="c1"># Online location of your book</span>
-  <span class="n">path_to_book</span><span class="p">:</span> <span class="n">docs</span>  <span class="c1"># Optional path to your book, relative to the repository root</span>
-  <span class="n">branch</span><span class="p">:</span> <span class="n">master</span>  <span class="c1"># Which branch of the repository should be used when creating links (optional)</span>
+<span class="gp"># </span>Information<span class="w"> </span>about<span class="w"> </span>where<span class="w"> </span>the<span class="w"> </span>book<span class="w"> </span>exists<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>web
+<span class="go">repository:</span>
+<span class="go">  url: https://github.com/executablebooks/jupyter-book  # Online location of your book</span>
+<span class="go">  path_to_book: docs  # Optional path to your book, relative to the repository root</span>
+<span class="go">  branch: master  # Which branch of the repository should be used when creating links (optional)</span>
 
-<span class="c1"># Add GitHub buttons to your book</span>
-<span class="c1"># See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository</span>
-<span class="n">html</span><span class="p">:</span>
-  <span class="n">use_issues_button</span><span class="p">:</span> <span class="n">true</span>
-  <span class="n">use_repository_button</span><span class="p">:</span> <span class="n">true</span>
+<span class="gp"># </span>Add<span class="w"> </span>GitHub<span class="w"> </span>buttons<span class="w"> </span>to<span class="w"> </span>your<span class="w"> </span>book
+<span class="gp"># </span>See<span class="w"> </span>https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+<span class="go">html:</span>
+<span class="go">  use_issues_button: true</span>
+<span class="go">  use_repository_button: true</span>
 </pre></div>
 </div>
 </section>
 <section id="content-organization">
 <h3><span class="section-number">7.9.6. </span>Content Organization<a class="headerlink" href="#content-organization" title="Permalink to this headline">#</a></h3>
 <p>The table of contents file describe how to put the other files in order.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Table of contents</span>
-<span class="c1"># Learn more at https://jupyterbook.org/customize/toc.html</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Table<span class="w"> </span>of<span class="w"> </span>contents
+<span class="gp"># </span>Learn<span class="w"> </span>more<span class="w"> </span>at<span class="w"> </span>https://jupyterbook.org/customize/toc.html
 
-<span class="nb">format</span><span class="p">:</span> <span class="n">jb</span><span class="o">-</span><span class="n">book</span>
-<span class="n">root</span><span class="p">:</span> <span class="n">intro</span>
-<span class="n">chapters</span><span class="p">:</span>
-<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">markdown</span>
-<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">notebooks</span>
-<span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span>
+<span class="go">format: jb-book</span>
+<span class="go">root: intro</span>
+<span class="go">chapters:</span>
+<span class="go">- file: markdown</span>
+<span class="go">- file: notebooks</span>
+<span class="go">- file: markdown-notebooks</span>
 </pre></div>
 </div>
 </section>
@@ -836,101 +905,116 @@ this is added to a <a class="reference internal" href="../resources/windows.html
 <p>We can transform from raw source to an output by <strong>building</strong> the book</p>
 <p>Building is transforming from input to output format.  In this case from markdown, yaml, and notebook files into HTML.</p>
 <p>We will see later that building is also what we refer to the whole process from source code to executable.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="o">.</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="o">.</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">Jupyter</span><span class="o">-</span><span class="n">Book</span> <span class="n">v0</span><span class="mf">.15.1</span>
-<span class="n">Source</span> <span class="n">Folder</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
-<span class="n">Config</span> <span class="n">Path</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
-<span class="n">Output</span> <span class="n">Path</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span>
-<span class="n">Running</span> <span class="n">Sphinx</span> <span class="n">v4</span><span class="mf">.5.0</span>
-<span class="n">making</span> <span class="n">output</span> <span class="n">directory</span><span class="o">...</span> <span class="n">done</span>
-<span class="p">[</span><span class="n">etoc</span><span class="p">]</span> <span class="n">Changing</span> <span class="n">master_doc</span> <span class="n">to</span> <span class="s1">&#39;intro&#39;</span>
-<span class="n">checking</span> <span class="n">bibtex</span> <span class="n">cache</span><span class="o">...</span> <span class="n">out</span> <span class="n">of</span> <span class="n">date</span>
-<span class="n">parsing</span> <span class="n">bibtex</span> <span class="n">file</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">references</span><span class="o">.</span><span class="n">bib</span><span class="o">...</span> <span class="n">parsed</span> <span class="mi">5</span> <span class="n">entries</span>
-<span class="n">myst</span> <span class="n">v0</span><span class="mf">.18.1</span><span class="p">:</span> <span class="n">MdParserConfig</span><span class="p">(</span><span class="n">commonmark_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gfm_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">enable_extensions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;colon_fence&#39;</span><span class="p">,</span> <span class="s1">&#39;dollarmath&#39;</span><span class="p">,</span> <span class="s1">&#39;linkify&#39;</span><span class="p">,</span> <span class="s1">&#39;substitution&#39;</span><span class="p">,</span> <span class="s1">&#39;tasklist&#39;</span><span class="p">],</span> <span class="n">disable_syntax</span><span class="o">=</span><span class="p">[],</span> <span class="n">all_links_external</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">url_schemes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mailto&#39;</span><span class="p">,</span> <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="s1">&#39;https&#39;</span><span class="p">],</span> <span class="n">ref_domains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight_code_blocks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">number_code_blocks</span><span class="o">=</span><span class="p">[],</span> <span class="n">title_to_header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">heading_anchors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heading_slug_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">footnote_transition</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">words_per_minute</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">sub_delimiters</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;{&#39;</span><span class="p">,</span> <span class="s1">&#39;}&#39;</span><span class="p">),</span> <span class="n">linkify_fuzzy_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dmath_allow_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dmath_allow_space</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dmath_allow_digits</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dmath_double_inline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">update_mathjax</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mathjax_classes</span><span class="o">=</span><span class="s1">&#39;tex2jax_process|mathjax_process|math|output_area&#39;</span><span class="p">)</span>
-<span class="n">myst</span><span class="o">-</span><span class="n">nb</span> <span class="n">v0</span><span class="mf">.17.2</span><span class="p">:</span> <span class="n">NbParserConfig</span><span class="p">(</span><span class="n">custom_formats</span><span class="o">=</span><span class="p">{},</span> <span class="n">metadata_key</span><span class="o">=</span><span class="s1">&#39;mystnb&#39;</span><span class="p">,</span> <span class="n">cell_metadata_key</span><span class="o">=</span><span class="s1">&#39;mystnb&#39;</span><span class="p">,</span> <span class="n">kernel_rgx_aliases</span><span class="o">=</span><span class="p">{},</span> <span class="n">execution_mode</span><span class="o">=</span><span class="s1">&#39;force&#39;</span><span class="p">,</span> <span class="n">execution_cache_path</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">execution_excludepatterns</span><span class="o">=</span><span class="p">[],</span> <span class="n">execution_timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">execution_in_temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">execution_allow_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">execution_raise_on_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">execution_show_tb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">merge_streams</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">render_plugin</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">remove_code_source</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">remove_code_outputs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">code_prompt_show</span><span class="o">=</span><span class="s1">&#39;Show code cell </span><span class="si">{type}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">code_prompt_hide</span><span class="o">=</span><span class="s1">&#39;Hide code cell </span><span class="si">{type}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">number_source_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">output_stderr</span><span class="o">=</span><span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="n">render_text_lexer</span><span class="o">=</span><span class="s1">&#39;myst-ansi&#39;</span><span class="p">,</span> <span class="n">render_error_lexer</span><span class="o">=</span><span class="s1">&#39;ipythontb&#39;</span><span class="p">,</span> <span class="n">render_image_options</span><span class="o">=</span><span class="p">{},</span> <span class="n">render_figure_options</span><span class="o">=</span><span class="p">{},</span> <span class="n">render_markdown_format</span><span class="o">=</span><span class="s1">&#39;commonmark&#39;</span><span class="p">,</span> <span class="n">output_folder</span><span class="o">=</span><span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="n">append_css</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">metadata_to_fm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">Using</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">cache</span> <span class="n">at</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">_build</span><span class="o">/.</span><span class="n">jupyter_cache</span>
-<span class="n">building</span> <span class="p">[</span><span class="n">mo</span><span class="p">]:</span> <span class="n">targets</span> <span class="k">for</span> <span class="mi">0</span> <span class="n">po</span> <span class="n">files</span> <span class="n">that</span> <span class="n">are</span> <span class="n">out</span> <span class="n">of</span> <span class="n">date</span>
-<span class="n">building</span> <span class="p">[</span><span class="n">html</span><span class="p">]:</span> <span class="n">targets</span> <span class="k">for</span> <span class="mi">4</span> <span class="n">source</span> <span class="n">files</span> <span class="n">that</span> <span class="n">are</span> <span class="n">out</span> <span class="n">of</span> <span class="n">date</span>
-<span class="n">updating</span> <span class="n">environment</span><span class="p">:</span> <span class="p">[</span><span class="n">new</span> <span class="n">config</span><span class="p">]</span> <span class="mi">4</span> <span class="n">added</span><span class="p">,</span> <span class="mi">0</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">0</span> <span class="n">removed</span>
-<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span><span class="p">:</span> <span class="n">Executing</span> <span class="n">notebook</span> <span class="n">using</span> <span class="n">local</span> <span class="n">CWD</span> <span class="p">[</span><span class="n">mystnb</span><span class="p">]</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Debugger</span> <span class="n">warning</span><span class="p">:</span> <span class="n">It</span> <span class="n">seems</span> <span class="n">that</span> <span class="n">frozen</span> <span class="n">modules</span> <span class="n">are</span> <span class="n">being</span> <span class="n">used</span><span class="p">,</span> <span class="n">which</span> <span class="n">may</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">make</span> <span class="n">the</span> <span class="n">debugger</span> <span class="n">miss</span> <span class="n">breakpoints</span><span class="o">.</span> <span class="n">Please</span> <span class="k">pass</span> <span class="o">-</span><span class="n">Xfrozen_modules</span><span class="o">=</span><span class="n">off</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">to</span> <span class="n">python</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">frozen</span> <span class="n">modules</span><span class="o">.</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Note</span><span class="p">:</span> <span class="n">Debugging</span> <span class="n">will</span> <span class="n">proceed</span><span class="o">.</span> <span class="n">Set</span> <span class="n">PYDEVD_DISABLE_FILE_VALIDATION</span><span class="o">=</span><span class="mi">1</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">this</span> <span class="n">validation</span><span class="o">.</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Debugger</span> <span class="n">warning</span><span class="p">:</span> <span class="n">It</span> <span class="n">seems</span> <span class="n">that</span> <span class="n">frozen</span> <span class="n">modules</span> <span class="n">are</span> <span class="n">being</span> <span class="n">used</span><span class="p">,</span> <span class="n">which</span> <span class="n">may</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">make</span> <span class="n">the</span> <span class="n">debugger</span> <span class="n">miss</span> <span class="n">breakpoints</span><span class="o">.</span> <span class="n">Please</span> <span class="k">pass</span> <span class="o">-</span><span class="n">Xfrozen_modules</span><span class="o">=</span><span class="n">off</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">to</span> <span class="n">python</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">frozen</span> <span class="n">modules</span><span class="o">.</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Note</span><span class="p">:</span> <span class="n">Debugging</span> <span class="n">will</span> <span class="n">proceed</span><span class="o">.</span> <span class="n">Set</span> <span class="n">PYDEVD_DISABLE_FILE_VALIDATION</span><span class="o">=</span><span class="mi">1</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">this</span> <span class="n">validation</span><span class="o">.</span>
-<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span><span class="p">:</span> <span class="n">Executed</span> <span class="n">notebook</span> <span class="ow">in</span> <span class="mf">1.89</span> <span class="n">seconds</span> <span class="p">[</span><span class="n">mystnb</span><span class="p">]</span>
-<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span><span class="p">:</span> <span class="n">Executing</span> <span class="n">notebook</span> <span class="n">using</span> <span class="n">local</span> <span class="n">CWD</span> <span class="p">[</span><span class="n">mystnb</span><span class="p">]</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Debugger</span> <span class="n">warning</span><span class="p">:</span> <span class="n">It</span> <span class="n">seems</span> <span class="n">that</span> <span class="n">frozen</span> <span class="n">modules</span> <span class="n">are</span> <span class="n">being</span> <span class="n">used</span><span class="p">,</span> <span class="n">which</span> <span class="n">may</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">make</span> <span class="n">the</span> <span class="n">debugger</span> <span class="n">miss</span> <span class="n">breakpoints</span><span class="o">.</span> <span class="n">Please</span> <span class="k">pass</span> <span class="o">-</span><span class="n">Xfrozen_modules</span><span class="o">=</span><span class="n">off</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">to</span> <span class="n">python</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">frozen</span> <span class="n">modules</span><span class="o">.</span>
-<span class="mf">0.00</span><span class="n">s</span> <span class="o">-</span> <span class="n">Note</span><span class="p">:</span> <span class="n">Debugging</span> <span class="n">will</span> <span class="n">proceed</span><span class="o">.</span> <span class="n">Set</span> <span class="n">PYDEVD_DISABLE_FILE_VALIDATION</span><span class="o">=</span><span class="mi">1</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">this</span> <span class="n">validation</span><span class="o">.</span>
-<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span><span class="p">:</span> <span class="n">Executed</span> <span class="n">notebook</span> <span class="ow">in</span> <span class="mf">2.56</span> <span class="n">seconds</span> <span class="p">[</span><span class="n">mystnb</span><span class="p">]</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Running Jupyter-Book v0.15.1</span>
+<span class="go">Source Folder: /Users/brownsarahm/Documents/inclass/systems/tiny-book</span>
+<span class="go">Config Path: /Users/brownsarahm/Documents/inclass/systems/tiny-book/_config.yml</span>
+<span class="go">Output Path: /Users/brownsarahm/Documents/inclass/systems/tiny-book/_build/html</span>
+<span class="go">Running Sphinx v4.5.0</span>
+<span class="go">making output directory... done</span>
+<span class="go">[etoc] Changing master_doc to &#39;intro&#39;</span>
+<span class="go">checking bibtex cache... out of date</span>
+<span class="go">parsing bibtex file /Users/brownsarahm/Documents/inclass/systems/tiny-book/references.bib... parsed 5 entries</span>
+<span class="go">myst v0.18.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions=[&#39;colon_fence&#39;, &#39;dollarmath&#39;, &#39;linkify&#39;, &#39;substitution&#39;, &#39;tasklist&#39;], disable_syntax=[], all_links_external=False, url_schemes=[&#39;mailto&#39;, &#39;http&#39;, &#39;https&#39;], ref_domains=None, highlight_code_blocks=True, number_code_blocks=[], title_to_header=False, heading_anchors=None, heading_slug_func=None, footnote_transition=True, words_per_minute=200, sub_delimiters=(&#39;{&#39;, &#39;}&#39;), linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes=&#39;tex2jax_process|mathjax_process|math|output_area&#39;)</span>
+<span class="go">myst-nb v0.17.2: NbParserConfig(custom_formats={}, metadata_key=&#39;mystnb&#39;, cell_metadata_key=&#39;mystnb&#39;, kernel_rgx_aliases={}, execution_mode=&#39;force&#39;, execution_cache_path=&#39;&#39;, execution_excludepatterns=[], execution_timeout=30, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=False, render_plugin=&#39;default&#39;, remove_code_source=False, remove_code_outputs=False, code_prompt_show=&#39;Show code cell {type}&#39;, code_prompt_hide=&#39;Hide code cell {type}&#39;, number_source_lines=False, output_stderr=&#39;show&#39;, render_text_lexer=&#39;myst-ansi&#39;, render_error_lexer=&#39;ipythontb&#39;, render_image_options={}, render_figure_options={}, render_markdown_format=&#39;commonmark&#39;, output_folder=&#39;build&#39;, append_css=True, metadata_to_fm=False)</span>
+<span class="go">Using jupyter-cache at: /Users/brownsarahm/Documents/inclass/systems/tiny-book/_build/.jupyter_cache</span>
+<span class="go">building [mo]: targets for 0 po files that are out of date</span>
+<span class="go">building [html]: targets for 4 source files that are out of date</span>
+<span class="go">updating environment: [new config] 4 added, 0 changed, 0 removed</span>
+<span class="go">/Users/brownsarahm/Documents/inclass/systems/tiny-book/markdown-notebooks.md: Executing notebook using local CWD [mystnb]</span>
+<span class="go">0.00s - Debugger warning: It seems that frozen modules are being used, which may</span>
+<span class="go">0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off</span>
+<span class="go">0.00s - to python to disable frozen modules.</span>
+<span class="go">0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.</span>
+<span class="go">0.00s - Debugger warning: It seems that frozen modules are being used, which may</span>
+<span class="go">0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off</span>
+<span class="go">0.00s - to python to disable frozen modules.</span>
+<span class="go">0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.</span>
+<span class="go">/Users/brownsarahm/Documents/inclass/systems/tiny-book/markdown-notebooks.md: Executed notebook in 1.89 seconds [mystnb]</span>
+<span class="go">/Users/brownsarahm/Documents/inclass/systems/tiny-book/notebooks.ipynb: Executing notebook using local CWD [mystnb]</span>
+<span class="go">0.00s - Debugger warning: It seems that frozen modules are being used, which may</span>
+<span class="go">0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off</span>
+<span class="go">0.00s - to python to disable frozen modules.</span>
+<span class="go">0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.</span>
+<span class="go">/Users/brownsarahm/Documents/inclass/systems/tiny-book/notebooks.ipynb: Executed notebook in 2.56 seconds [mystnb]</span>
 
-<span class="n">looking</span> <span class="k">for</span> <span class="n">now</span><span class="o">-</span><span class="n">outdated</span> <span class="n">files</span><span class="o">...</span> <span class="n">none</span> <span class="n">found</span>
-<span class="n">pickling</span> <span class="n">environment</span><span class="o">...</span> <span class="n">done</span>
-<span class="n">checking</span> <span class="n">consistency</span><span class="o">...</span> <span class="n">done</span>
-<span class="n">preparing</span> <span class="n">documents</span><span class="o">...</span> <span class="n">done</span>
-<span class="n">writing</span> <span class="n">output</span><span class="o">...</span> <span class="p">[</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span> <span class="n">notebooks</span>                                               
-<span class="n">generating</span> <span class="n">indices</span><span class="o">...</span> <span class="n">genindex</span> <span class="n">done</span>
-<span class="n">writing</span> <span class="n">additional</span> <span class="n">pages</span><span class="o">...</span> <span class="n">search</span> <span class="n">done</span>
-<span class="n">copying</span> <span class="n">images</span><span class="o">...</span> <span class="p">[</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span> <span class="n">_build</span><span class="o">/</span><span class="n">jupyter_execute</span><span class="o">/</span><span class="mi">137405</span><span class="n">a2a8521f521f06724f6d604e5a5544cce7bd94d903975cee58b0605ccb</span><span class="o">.</span><span class="n">png</span>
-<span class="n">copying</span> <span class="n">static</span> <span class="n">files</span><span class="o">...</span> <span class="n">done</span>
-<span class="n">copying</span> <span class="n">extra</span> <span class="n">files</span><span class="o">...</span> <span class="n">done</span>
-<span class="n">dumping</span> <span class="n">search</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">English</span> <span class="p">(</span><span class="n">code</span><span class="p">:</span> <span class="n">en</span><span class="p">)</span><span class="o">...</span> <span class="n">done</span>
-<span class="n">dumping</span> <span class="nb">object</span> <span class="n">inventory</span><span class="o">...</span> <span class="n">done</span>
-<span class="n">build</span> <span class="n">succeeded</span><span class="o">.</span>
+<span class="go">looking for now-outdated files... none found</span>
+<span class="go">pickling environment... done</span>
+<span class="go">checking consistency... done</span>
+<span class="go">preparing documents... done</span>
+<span class="go">writing output... [100%] notebooks                                               </span>
+<span class="go">generating indices... genindex done</span>
+<span class="go">writing additional pages... search done</span>
+<span class="go">copying images... [100%] _build/jupyter_execute/137405a2a8521f521f06724f6d604e5a5544cce7bd94d903975cee58b0605ccb.png</span>
+<span class="go">copying static files... done</span>
+<span class="go">copying extra files... done</span>
+<span class="go">dumping search index in English (code: en)... done</span>
+<span class="go">dumping object inventory... done</span>
+<span class="go">build succeeded.</span>
 
-<span class="n">The</span> <span class="n">HTML</span> <span class="n">pages</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">.</span>
-<span class="p">[</span><span class="n">etoc</span><span class="p">]</span> <span class="n">missing</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span> <span class="n">written</span> <span class="k">as</span> <span class="n">redirect</span> <span class="n">to</span> <span class="s1">&#39;intro.html&#39;</span>
+<span class="go">The HTML pages are in _build/html.</span>
+<span class="go">[etoc] missing index.html written as redirect to &#39;intro.html&#39;</span>
 
-<span class="o">===============================================================================</span>
+<span class="go">===============================================================================</span>
 
-<span class="n">Finished</span> <span class="n">generating</span> <span class="n">HTML</span> <span class="k">for</span> <span class="n">book</span><span class="o">.</span>
-<span class="n">Your</span> <span class="n">book</span><span class="s1">&#39;s HTML pages are here:</span>
-    <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span>
-<span class="n">You</span> <span class="n">can</span> <span class="n">look</span> <span class="n">at</span> <span class="n">your</span> <span class="n">book</span> <span class="n">by</span> <span class="n">opening</span> <span class="n">this</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">browser</span><span class="p">:</span>
-    <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
-<span class="n">Or</span> <span class="n">paste</span> <span class="n">this</span> <span class="n">line</span> <span class="n">directly</span> <span class="n">into</span> <span class="n">your</span> <span class="n">browser</span> <span class="n">bar</span><span class="p">:</span>
-    <span class="n">file</span><span class="p">:</span><span class="o">///</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>            
+<span class="go">Finished generating HTML for book.</span>
+<span class="go">Your book&#39;s HTML pages are here:</span>
+<span class="go">    _build/html/</span>
+<span class="go">You can look at your book by opening this file in a browser:</span>
+<span class="go">    _build/html/index.html</span>
+<span class="go">Or paste this line directly into your browser bar:</span>
+<span class="go">    file:///Users/brownsarahm/Documents/inclass/systems/tiny-book/_build/html/index.html            </span>
 
-<span class="o">===============================================================================</span>
-
+<span class="go">===============================================================================</span>
 </pre></div>
 </div>
 <div class="admonition-try-it-yourself admonition">
 <p class="admonition-title">Try it yourself</p>
 <p>Which files created by the template are not included in the rendered output? How could you tell?</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_build</span>			<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
-<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
-<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">_build			logo.png		references.bib</span>
+<span class="go">_config.yml		markdown-notebooks.md	requirements.txt</span>
+<span class="go">_toc.yml		markdown.md</span>
+<span class="go">intro.md		notebooks.ipynb</span>
 </pre></div>
 </div>
 <p>we note that this made a new folder called <code class="docutils literal notranslate"><span class="pre">_build</span></code>. we can look inside there.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">_build</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">_build</span><span class="o">/</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html</span>		<span class="n">jupyter_execute</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">html		jupyter_execute</span>
 </pre></div>
 </div>
 <p>and in the html folder:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_images</span>			<span class="n">index</span><span class="o">.</span><span class="n">html</span>		<span class="n">objects</span><span class="o">.</span><span class="n">inv</span>
-<span class="n">_sources</span>		<span class="n">intro</span><span class="o">.</span><span class="n">html</span>		<span class="n">search</span><span class="o">.</span><span class="n">html</span>
-<span class="n">_sphinx_design_static</span>	<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">html</span>	<span class="n">searchindex</span><span class="o">.</span><span class="n">js</span>
-<span class="n">_static</span>			<span class="n">markdown</span><span class="o">.</span><span class="n">html</span>
-<span class="n">genindex</span><span class="o">.</span><span class="n">html</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">html</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">_images			index.html		objects.inv</span>
+<span class="go">_sources		intro.html		search.html</span>
+<span class="go">_sphinx_design_static	markdown-notebooks.html	searchindex.js</span>
+<span class="go">_static			markdown.html</span>
+<span class="go">genindex.html		notebooks.html</span>
 </pre></div>
 </div>
 <p>We got HTML, CSS, and javascript files without having to write them manually.</p>
@@ -947,58 +1031,86 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
 <h2><span class="section-number">7.10. </span>Ignoring Built files<a class="headerlink" href="#ignoring-built-files" title="Permalink to this headline">#</a></h2>
 <p>The built site files are compeltey redundant, content wise, to the original markdown files.</p>
 <p>We do not want to keep track of changes for the built files since they are generated from the source files. It’s redundant and makes it less clear where someone should update content.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
-<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-	<span class="n">_build</span><span class="o">/</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">	_build/</span>
 
-<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_build</span>			<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
-<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>	<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
-<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">_build			logo.png		references.bib</span>
+<span class="go">_config.yml		markdown-notebooks.md	requirements.txt</span>
+<span class="go">_toc.yml		markdown.md</span>
+<span class="go">intro.md		notebooks.ipynb</span>
 </pre></div>
 </div>
 <p>Git helps us with this with the .gitignore</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;_build/&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">.</span><span class="n">gitignore</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;_build/&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">.</span><span class="n">gitignore</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
-<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-	<span class="o">.</span><span class="n">gitignore</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">	.gitignore</span>
 
-<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>now that’s the only new file as far as git is concerned, so we will track this,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;ignores build&#39;</span>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;ignores build&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">main</span> <span class="mi">9</span><span class="n">c4157f</span><span class="p">]</span> <span class="n">ignores</span> <span class="n">build</span>
- <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="o">.</span><span class="n">gitignore</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[main 9c4157f] ignores build</span>
+<span class="go"> 1 file changed, 1 insertion(+)</span>
+<span class="go"> create mode 100644 .gitignore</span>
 </pre></div>
 </div>
 <p>We can look at the file’s contents</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">gitignore</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">gitignore</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_build</span><span class="o">/</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">_build/</span>
 </pre></div>
 </div>
 <p>What it does is, when git goes to add, it skips any specific files that match both the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;path&gt;</span></code> AND any of the paths listed in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
@@ -1006,52 +1118,80 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
 <section id="how-do-i-push-a-repo-that-i-made-locally-to-github">
 <h2><span class="section-number">7.11. </span>How do I push a repo that I made locally to GitHub?<a class="headerlink" href="#how-do-i-push-a-repo-that-i-made-locally-to-github" title="Permalink to this headline">#</a></h2>
 <p>Right now, we do not have any remotes</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we do the same in another repo that we got by cloing <em>from</em> GitHub, they all have remotes.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
 <span class="n">git</span> <span class="n">remote</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">origin</span>
 </pre></div>
 </div>
 <p>Typically they all use the default name <code class="docutils literal notranslate"><span class="pre">origin</span></code></p>
 <p>Back to our <code class="docutils literal notranslate"><span class="pre">tiny-book</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>For today, we will create an empty github repo shared with me using the link shared on prismia.</p>
 <p>More generally, you can <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/create-a-repo">create a repo</a></p>
 <p>That default page for an empty repo if you do not initiate it with any files will give you the instructions for what remote to add.</p>
 <p>Now we add the remote, following the instructions from the blank repo page.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">f23</span><span class="o">-</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">f23</span><span class="o">-</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">M</span> <span class="n">main</span>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">M</span> <span class="n">main</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>and finally we can push!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">14</span><span class="o">/</span><span class="mi">14</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
-<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">12</span><span class="o">/</span><span class="mi">12</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">14</span><span class="o">/</span><span class="mi">14</span><span class="p">),</span> <span class="mf">16.45</span> <span class="n">KiB</span> <span class="o">|</span> <span class="mf">8.23</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Total</span> <span class="mi">14</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">1</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">f23</span><span class="o">-</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
- <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">main</span> <span class="o">-&gt;</span> <span class="n">main</span>
-<span class="n">branch</span> <span class="s1">&#39;main&#39;</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Enumerating objects: 14, done.</span>
+<span class="go">Counting objects: 100% (14/14), done.</span>
+<span class="go">Delta compression using up to 8 threads</span>
+<span class="go">Compressing objects: 100% (12/12), done.</span>
+<span class="go">Writing objects: 100% (14/14), 16.45 KiB | 8.23 MiB/s, done.</span>
+<span class="go">Total 14 (delta 1), reused 0 (delta 0), pack-reused 0</span>
+<span class="go">remote: Resolving deltas: 100% (1/1), done.</span>
+<span class="go">To https://github.com/introcompsys/f23-tiny-book-brownsarahm.git</span>
+<span class="go"> * [new branch]      main -&gt; main</span>
+<span class="go">branch &#39;main&#39; set up to track &#39;origin/main&#39;.</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">origin</span>
 </pre></div>
 </div>
 </section>

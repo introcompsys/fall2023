@@ -486,94 +486,126 @@ document.write(`
 </div>
 <p>Recall: git stores important content in <em>files</em> that it uses like variables.</p>
 <p>All of gits files, that is uses to perform the version control system actions are in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory.  Since this starts with a <code class="docutils literal notranslate"><span class="pre">.</span></code> it is “hidden” so to  see it we use the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option on <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>			<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>		<span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>
-<span class="o">..</span>			<span class="n">README</span><span class="o">.</span><span class="n">md</span>		<span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
-<span class="o">.</span><span class="n">git</span>			<span class="n">about</span><span class="o">.</span><span class="n">md</span>		<span class="n">setup</span><span class="o">.</span><span class="n">py</span>
-<span class="o">.</span><span class="n">github</span>			<span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>	<span class="n">tests</span>
-<span class="n">API</span><span class="o">.</span><span class="n">md</span>			<span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>
-<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>		<span class="n">docs</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.			LICENSE.md		helper_functions.py</span>
+<span class="go">..			README.md		important_classes.py</span>
+<span class="go">.git			about.md		setup.py</span>
+<span class="go">.github			abstract_base_class.py	tests</span>
+<span class="go">API.md			alternative_classes.py</span>
+<span class="go">CONTRIBUTING.md		docs</span>
 </pre></div>
 </div>
-<p>Insdie there we can see the files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">.</span><span class="n">git</span>
+<p>Inside there we can see the files:</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COMMIT_EDITMSG</span>	<span class="n">REBASE_HEAD</span>	<span class="n">index</span>		<span class="n">packed</span><span class="o">-</span><span class="n">refs</span>
-<span class="n">FETCH_HEAD</span>	<span class="n">config</span>		<span class="n">info</span>		<span class="n">refs</span>
-<span class="n">HEAD</span>		<span class="n">description</span>	<span class="n">logs</span>
-<span class="n">ORIG_HEAD</span>	<span class="n">hooks</span>		<span class="n">objects</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">COMMIT_EDITMSG	REBASE_HEAD	index		packed-refs</span>
+<span class="go">FETCH_HEAD	config		info		refs</span>
+<span class="go">HEAD		description	logs</span>
+<span class="go">ORIG_HEAD	hooks		objects</span>
 </pre></div>
 </div>
 <p>For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ref</span><span class="p">:</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ref: refs/heads/main</span>
 </pre></div>
 </div>
 <p>holds the current branch and points to another file that holds the commit value</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">042</span><span class="n">a42eb47c33ee43d793feb4d891a93e7460527</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">042a42eb47c33ee43d793feb4d891a93e7460527</span>
 </pre></div>
 </div>
 <p>we also see the config file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">config</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">config</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">core</span><span class="p">]</span>
-	<span class="n">repositoryformatversion</span> <span class="o">=</span> <span class="mi">0</span>
-	<span class="n">filemode</span> <span class="o">=</span> <span class="n">true</span>
-	<span class="n">bare</span> <span class="o">=</span> <span class="n">false</span>
-	<span class="n">logallrefupdates</span> <span class="o">=</span> <span class="n">true</span>
-	<span class="n">ignorecase</span> <span class="o">=</span> <span class="n">true</span>
-	<span class="n">precomposeunicode</span> <span class="o">=</span> <span class="n">true</span>
-<span class="p">[</span><span class="n">remote</span> <span class="s2">&quot;origin&quot;</span><span class="p">]</span>
-	<span class="n">url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
-	<span class="n">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/*</span>
-<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;main&quot;</span><span class="p">]</span>
-	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
-	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
-<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;1-create-an-about-file&quot;</span><span class="p">]</span>
-	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
-	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;fun_fact&quot;</span><span class="p">]</span>
-	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
-	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">fun_fact</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[core]</span>
+<span class="go">	repositoryformatversion = 0</span>
+<span class="go">	filemode = true</span>
+<span class="go">	bare = false</span>
+<span class="go">	logallrefupdates = true</span>
+<span class="go">	ignorecase = true</span>
+<span class="go">	precomposeunicode = true</span>
+<span class="go">[remote &quot;origin&quot;]</span>
+<span class="go">	url = https://github.com/introcompsys/github-inclass-fa23-brownsarahm.git</span>
+<span class="go">	fetch = +refs/heads/*:refs/remotes/origin/*</span>
+<span class="go">[branch &quot;main&quot;]</span>
+<span class="go">	remote = origin</span>
+<span class="go">	merge = refs/heads/main</span>
+<span class="go">[branch &quot;1-create-an-about-file&quot;]</span>
+<span class="go">	remote = origin</span>
+<span class="go">	merge = refs/heads/1-create-an-about-file</span>
+<span class="go">[branch &quot;fun_fact&quot;]</span>
+<span class="go">	remote = origin</span>
+<span class="go">	merge = refs/heads/fun_fact</span>
 </pre></div>
 </div>
 <p>that stores information about the different branches and remotes.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>			<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>		<span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>
-<span class="o">..</span>			<span class="n">README</span><span class="o">.</span><span class="n">md</span>		<span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
-<span class="o">.</span><span class="n">git</span>			<span class="n">about</span><span class="o">.</span><span class="n">md</span>		<span class="n">setup</span><span class="o">.</span><span class="n">py</span>
-<span class="o">.</span><span class="n">github</span>			<span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>	<span class="n">tests</span>
-<span class="n">API</span><span class="o">.</span><span class="n">md</span>			<span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>
-<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>		<span class="n">docs</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.			LICENSE.md		helper_functions.py</span>
+<span class="go">..			README.md		important_classes.py</span>
+<span class="go">.git			about.md		setup.py</span>
+<span class="go">.github			abstract_base_class.py	tests</span>
+<span class="go">API.md			alternative_classes.py</span>
+<span class="go">CONTRIBUTING.md		docs</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> is a file in the working direcotry that contains alist of files and patterns to not track.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">tiny</span><span class="o">-</span><span class="n">book</span><span class="o">/</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>			<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
-<span class="o">..</span>			<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>		<span class="n">notebooks</span><span class="o">.</span><span class="n">ipynb</span>
-<span class="o">.</span><span class="n">git</span>			<span class="n">intro</span><span class="o">.</span><span class="n">md</span>		<span class="n">references</span><span class="o">.</span><span class="n">bib</span>
-<span class="o">.</span><span class="n">gitignore</span>		<span class="n">logo</span><span class="o">.</span><span class="n">png</span>		<span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">_build</span>			<span class="n">markdown</span><span class="o">-</span><span class="n">notebooks</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.			_config.yml		markdown.md</span>
+<span class="go">..			_toc.yml		notebooks.ipynb</span>
+<span class="go">.git			intro.md		references.bib</span>
+<span class="go">.gitignore		logo.png		requirements.txt</span>
+<span class="go">_build			markdown-notebooks.md</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">gitignore</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">gitignore</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_build</span><span class="o">/</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">_build/</span>
 </pre></div>
 </div>
 <p>Remmeber the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file lives <strong>outside</strong> of the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory because it is intended to be manually edited by the user, instead of written to by the <code class="docutils literal notranslate"><span class="pre">git</span></code> program.</p>
@@ -582,22 +614,34 @@ document.write(`
 <h2><span class="section-number">10.2. </span>Creating a repo from scratch<a class="headerlink" href="#creating-a-repo-from-scratch" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <p>We will start in the top level course directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>		<span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
-<span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fa23-kwl-brownsarahm		tiny-book</span>
+<span class="go">github-inclass-fa23-brownsarahm</span>
 </pre></div>
 </div>
 <p>Yours should also have your group repo, your messy folder, etc.</p>
 <p>We can create an empty repo from scratch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span> <span class="pre">&lt;path&gt;</span></code></p>
 <p><a class="reference internal" href="2023-09-28.html#gitinit"><span class="std std-ref">Last time</span></a> we used an existing directory like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span> <span class="pre">.</span></code></p>
 <p>We will make a new directory for our repo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span> <span class="n">test</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span> <span class="n">test</span>
 </pre></div>
+</div>
+</div>
 </div>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -606,75 +650,100 @@ document.write(`
 <p><a class="reference external" href="https://introcompsys.github.io/fall2023/notes/2023-09-28.html#retiring-racist-language">we get this message again, see context from last week</a></p>
 </div>
 </aside>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hint</span><span class="p">:</span> <span class="n">Using</span> <span class="s1">&#39;master&#39;</span> <span class="k">as</span> <span class="n">the</span> <span class="n">name</span> <span class="k">for</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">branch</span><span class="o">.</span> <span class="n">This</span> <span class="n">default</span> <span class="n">branch</span> <span class="n">name</span>
-<span class="n">hint</span><span class="p">:</span> <span class="ow">is</span> <span class="n">subject</span> <span class="n">to</span> <span class="n">change</span><span class="o">.</span> <span class="n">To</span> <span class="n">configure</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">branch</span> <span class="n">name</span> <span class="n">to</span> <span class="n">use</span> <span class="ow">in</span> <span class="nb">all</span>
-<span class="n">hint</span><span class="p">:</span> <span class="n">of</span> <span class="n">your</span> <span class="n">new</span> <span class="n">repositories</span><span class="p">,</span> <span class="n">which</span> <span class="n">will</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span>
-<span class="n">hint</span><span class="p">:</span> 
-<span class="n">hint</span><span class="p">:</span> 	<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">init</span><span class="o">.</span><span class="n">defaultBranch</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>
-<span class="n">hint</span><span class="p">:</span> 
-<span class="n">hint</span><span class="p">:</span> <span class="n">Names</span> <span class="n">commonly</span> <span class="n">chosen</span> <span class="n">instead</span> <span class="n">of</span> <span class="s1">&#39;master&#39;</span> <span class="n">are</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;trunk&#39;</span> <span class="ow">and</span>
-<span class="n">hint</span><span class="p">:</span> <span class="s1">&#39;development&#39;</span><span class="o">.</span> <span class="n">The</span> <span class="n">just</span><span class="o">-</span><span class="n">created</span> <span class="n">branch</span> <span class="n">can</span> <span class="n">be</span> <span class="n">renamed</span> <span class="n">via</span> <span class="n">this</span> <span class="n">command</span><span class="p">:</span>
-<span class="n">hint</span><span class="p">:</span> 
-<span class="n">hint</span><span class="p">:</span> 	<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>
-<span class="n">Initialized</span> <span class="n">empty</span> <span class="n">Git</span> <span class="n">repository</span> <span class="ow">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">test</span><span class="o">/.</span><span class="n">git</span><span class="o">/</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">hint: Using &#39;master&#39; as the name for the initial branch. This default branch name</span>
+<span class="go">hint: is subject to change. To configure the initial branch name to use in all</span>
+<span class="go">hint: of your new repositories, which will suppress this warning, call:</span>
+<span class="go">hint: </span>
+<span class="go">hint: 	git config --global init.defaultBranch &lt;name&gt;</span>
+<span class="go">hint: </span>
+<span class="go">hint: Names commonly chosen instead of &#39;master&#39; are &#39;main&#39;, &#39;trunk&#39; and</span>
+<span class="go">hint: &#39;development&#39;. The just-created branch can be renamed via this command:</span>
+<span class="go">hint: </span>
+<span class="go">hint: 	git branch -m &lt;name&gt;</span>
+<span class="go">Initialized empty Git repository in /Users/brownsarahm/Documents/inclass/systems/test/.git/</span>
 </pre></div>
 </div>
 <p>We can see what happened:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>		<span class="n">test</span>
-<span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>	<span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fa23-kwl-brownsarahm		test</span>
+<span class="go">github-inclass-fa23-brownsarahm	tiny-book</span>
 </pre></div>
 </div>
 <p>we see the new directory</p>
-<p>thenwe can enter it</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">test</span><span class="o">/</span>
+<p>then we can enter it</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">test</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>and then rename the branch</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">main</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">main</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>As usual, we will look at the status</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
-<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+<span class="go">No commits yet</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">create</span><span class="o">/</span><span class="n">copy</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+<span class="go">nothing to commit (create/copy files and use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>Notice that there are no commits, and no origin.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">.</span><span class="n">git</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HEAD</span>		<span class="n">description</span>	<span class="n">info</span>		<span class="n">refs</span>
-<span class="n">config</span>		<span class="n">hooks</span>		<span class="n">objects</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">HEAD		description	info		refs</span>
+<span class="go">config		hooks		objects</span>
 </pre></div>
 </div>
 </section>
 <section id="searching-the-file-system">
 <h2><span class="section-number">10.3. </span>Searching the file system<a class="headerlink" href="#searching-the-file-system" title="Permalink to this headline">#</a></h2>
 <p>We can use the bash command <code class="docutils literal notranslate"><span class="pre">find</span></code> to search the file <em>system</em> note that this does not search the <strong>contents</strong> of the files, just the names.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">pack</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">info</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.git/objects/</span>
+<span class="go">.git/objects//pack</span>
+<span class="go">.git/objects//info</span>
 </pre></div>
 </div>
 <p>we have a few items in that directory and the directory itself.</p>
 <p>We can limit by type, to only files with the <code class="docutils literal notranslate"><span class="pre">-type</span></code> option set to <code class="docutils literal notranslate"><span class="pre">f</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li></li>
-</ul>
+</div>
+</div>
 <p>And we have no results. We have no objects yet. Because this is an empty repo</p>
 </section>
 <section id="creating-git-blob-objects-directly">
@@ -714,16 +783,24 @@ document.write(`
 <p>Let’s create our first git object.  git uses hashes as the key. We give the hashing function some content, it applies the algorithm and returns us the hash as the reference to that object.  We can also write to our .git directory  with  this.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hash-object</span></code> function works on files, but we do not have any files yet.  We can create a file, but we do not have to.  Remememer, <strong>everything</strong> is a file.</p>
 <p>We can put content into the stdout file with <code class="docutils literal notranslate"><span class="pre">echo</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;test content&quot;</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;test content&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="n">content</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">test content</span>
 </pre></div>
 </div>
 <p>which shows on our terminal. We can us a pipe to connect the stdout of on command to the stdin of the next.</p>
 <p>and we can use a pipe to connect std out of one command to stdin of the next command.  Then we can use the <code class="docutils literal notranslate"><span class="pre">--stdin</span></code> option to tell git hash-object to read from there.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;test content&quot;</span> <span class="o">|</span> <span class="n">git</span> <span class="nb">hash</span><span class="o">-</span><span class="nb">object</span> <span class="o">-</span><span class="n">w</span> <span class="o">--</span><span class="n">stdin</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;test content&quot;</span> <span class="o">|</span> <span class="n">git</span> <span class="nb">hash</span><span class="o">-</span><span class="nb">object</span> <span class="o">-</span><span class="n">w</span> <span class="o">--</span><span class="n">stdin</span>
 </pre></div>
+</div>
+</div>
 </div>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -744,10 +821,14 @@ document.write(`
 </pre></div>
 </div>
 <p>and we can check if it wrote to the directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">d6</span><span class="o">/</span><span class="mi">70460</span><span class="n">b4b4aece5915caf5c68d12f560a9fe3e4</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.git/objects//d6/70460b4b4aece5915caf5c68d12f560a9fe3e4</span>
 </pre></div>
 </div>
 <p>and we see a file that it was supposed to have!</p>
@@ -758,39 +839,59 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">-t</span></code> is for type</p></li>
 </ul>
 <p>We can then view the type of this object</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="n">d670</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="n">d670</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blob</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">blob</span>
 </pre></div>
 </div>
 <p>and its actual content</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="n">d670</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="n">d670</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="n">content</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">test content</span>
 </pre></div>
 </div>
 <p>This is the content that we put in, as expected.</p>
 <section id="hashing-a-file">
 <h3><span class="section-number">10.4.1. </span>Hashing a file<a class="headerlink" href="#hashing-a-file" title="Permalink to this headline">#</a></h3>
 <p>To hash content that corresponds to a file, we have to have a file first.  We can use a redirect <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> to send content from echo to a different file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;version 1&quot;</span> <span class="o">&gt;</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;version 1&quot;</span> <span class="o">&gt;</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>and store it,  by hashing it</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="nb">hash</span><span class="o">-</span><span class="nb">object</span> <span class="o">-</span><span class="n">w</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="nb">hash</span><span class="o">-</span><span class="nb">object</span> <span class="o">-</span><span class="n">w</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">83</span><span class="n">baae61804e65cc73a7201a7252750c76066a30</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">83baae61804e65cc73a7201a7252750c76066a30</span>
 </pre></div>
 </div>
 <p>we can look at what we have.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">d6</span><span class="o">/</span><span class="mi">70460</span><span class="n">b4b4aece5915caf5c68d12f560a9fe3e4</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">83</span><span class="o">/</span><span class="n">baae61804e65cc73a7201a7252750c76066a30</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.git/objects//d6/70460b4b4aece5915caf5c68d12f560a9fe3e4</span>
+<span class="go">.git/objects//83/baae61804e65cc73a7201a7252750c76066a30</span>
 </pre></div>
 </div>
 <p>Now this is the status of our repo.</p>
@@ -805,40 +906,56 @@ document.write(`
        + (blob)
     }
         </div><p>We can check the type of files with <code class="docutils literal notranslate"><span class="pre">-t</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="mi">83</span><span class="n">ba</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="mi">83</span><span class="n">ba</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blob</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">blob</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="n">d670</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="n">d670</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blob</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">blob</span>
 </pre></div>
 </div>
 <p>We have hashed content, but our git status is still saying no commits and only one untracked file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
-<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+<span class="go">No commits yet</span>
 
-<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-	<span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">	test.txt</span>
 
-<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>So far, even though we have hashed the object, git still thinks the file is untracked, because it is not in the tree and there are no commits that point to that part of the tree.</p>
 <p>the workign directory and the git repo are not strictly the same thing, and can be different like this.  Mostly they will stay in closer relationship that we currently have unless we use plumbling commands, but it is good to build a solid understanding of how the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory relates to your working directory.</p>
 <p>Notice, that we only have one file in the working directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">test.txt</span>
 </pre></div>
 </div>
 </section>
@@ -846,31 +963,47 @@ document.write(`
 <section id="writing-a-tree">
 <h2><span class="section-number">10.5. </span>Writing a tree<a class="headerlink" href="#writing-a-tree" title="Permalink to this headline">#</a></h2>
 <p>We can write a tree with the <code class="docutils literal notranslate"><span class="pre">write-tree</span></code> command</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">write</span><span class="o">-</span><span class="n">tree</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">write</span><span class="o">-</span><span class="n">tree</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="n">b825dc642cb6eb9a060e54bf8d69288fbee4904</span>
 </pre></div>
 </div>
 <p>we can see the object exists</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">d6</span><span class="o">/</span><span class="mi">70460</span><span class="n">b4b4aece5915caf5c68d12f560a9fe3e4</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">4</span><span class="n">b</span><span class="o">/</span><span class="mi">825</span><span class="n">dc642cb6eb9a060e54bf8d69288fbee4904</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">83</span><span class="o">/</span><span class="n">baae61804e65cc73a7201a7252750c76066a30</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.git/objects//d6/70460b4b4aece5915caf5c68d12f560a9fe3e4</span>
+<span class="go">.git/objects//4b/825dc642cb6eb9a060e54bf8d69288fbee4904</span>
+<span class="go">.git/objects//83/baae61804e65cc73a7201a7252750c76066a30</span>
 </pre></div>
 </div>
 <p>we can verify that it is a tree</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="mi">4</span><span class="n">b82</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="mi">4</span><span class="n">b82</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tree</span>
 </pre></div>
 </div>
 <p>and look at the tree contents</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4</span><span class="n">b82</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4</span><span class="n">b82</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>but it is empty.</p>
 <p>We have a file that was created, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">write-tree</span></code> did <em>something</em> but we told it to write a file without putting anything in the index, or staging area, that it reads from.</p>
@@ -888,9 +1021,13 @@ document.write(`
         +(tree)
     }
         </div><p>Now, we can add our file and its hashed object as it is to the index.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">update</span><span class="o">-</span><span class="n">index</span> <span class="o">--</span><span class="n">add</span> <span class="o">--</span><span class="n">cacheinfo</span> <span class="mi">100644</span> \
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">update</span><span class="o">-</span><span class="n">index</span> <span class="o">--</span><span class="n">add</span> <span class="o">--</span><span class="n">cacheinfo</span> <span class="mi">100644</span> \
  <span class="mi">83</span><span class="n">baae61804e65cc73a7201a7252750c76066a30</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>the <code class="docutils literal notranslate"><span class="pre">\</span></code> lets us wrap onto a second line.</p>
 <ul class="simple">
@@ -905,49 +1042,63 @@ document.write(`
 <section id="a-staging-and-snapshot-edge-case">
 <h2><span class="section-number">10.6. </span>A staging and snapshot edge case<a class="headerlink" href="#a-staging-and-snapshot-edge-case" title="Permalink to this headline">#</a></h2>
 <p>Let’s check git status again:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
-<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+<span class="go">No commits yet</span>
 
-<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
-	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
-
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">	new file:   test.txt</span>
 </pre></div>
 </div>
 <p>Now the file is staged.</p>
 <p>Let’s edit it further.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;version 2&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;version 2&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>So the file has two lines</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="mi">1</span>
-<span class="n">version</span> <span class="mi">2</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">version 1</span>
+<span class="go">version 2</span>
 </pre></div>
 </div>
 <p>Now check status again.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
-<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+<span class="go">No commits yet</span>
 
-<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
-	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">	new file:   test.txt</span>
 
-<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
-	<span class="n">modified</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
-
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">	modified:   test.txt</span>
 </pre></div>
 </div>
 <p>We added the first version of the file to the staging area, so that version is ready to commit  but we have changed the version in our working directory relative to the version from the hash object that we put in the staging area so we <em>also</em> have changes not staged.</p>
@@ -955,17 +1106,17 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="nb">hash</span><span class="o">-</span><span class="nb">object</span> <span class="o">-</span><span class="n">w</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">c1e7391ca4e59584f8b773ecdbbb9467eba1547</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">0c1e7391ca4e59584f8b773ecdbbb9467eba1547</span>
 </pre></div>
 </div>
 <p>and verify a new object was created?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">0</span><span class="n">c</span><span class="o">/</span><span class="mf">1e7391</span><span class="n">ca4e59584f8b773ecdbbb9467eba1547</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">d6</span><span class="o">/</span><span class="mi">70460</span><span class="n">b4b4aece5915caf5c68d12f560a9fe3e4</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">4</span><span class="n">b</span><span class="o">/</span><span class="mi">825</span><span class="n">dc642cb6eb9a060e54bf8d69288fbee4904</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">83</span><span class="o">/</span><span class="n">baae61804e65cc73a7201a7252750c76066a30</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.git/objects//0c/1e7391ca4e59584f8b773ecdbbb9467eba1547</span>
+<span class="go">.git/objects//d6/70460b4b4aece5915caf5c68d12f560a9fe3e4</span>
+<span class="go">.git/objects//4b/825dc642cb6eb9a060e54bf8d69288fbee4904</span>
+<span class="go">.git/objects//83/baae61804e65cc73a7201a7252750c76066a30</span>
 </pre></div>
 </div>
 <p>visually we now have 4 objects:</p>
@@ -996,19 +1147,18 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
-<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+<span class="go">No commits yet</span>
 
-<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
-	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">	new file:   test.txt</span>
 
-<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
-	<span class="n">modified</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
-
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">	modified:   test.txt</span>
 </pre></div>
 </div>
 <p>Hashing the content does not change the status here at all, because <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> only traces from the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer, compares that commit’s tree to the index and the current working directory.  We have no commits still and the index has not changed by hashing the content and creating a blob for it.</p>
@@ -1019,21 +1169,21 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">write</span><span class="o">-</span><span class="n">tree</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d8329fc1cc938780ffdd9f94e0d364e0ea74f579</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">d8329fc1cc938780ffdd9f94e0d364e0ea74f579</span>
 </pre></div>
 </div>
 <p>Lets examine the tree, first check the type</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="n">d832</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tree</span>
 </pre></div>
 </div>
 <p>and now we can look at its contents</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="n">d832</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">100644</span> <span class="n">blob</span> <span class="mi">83</span><span class="n">baae61804e65cc73a7201a7252750c76066a30</span>	<span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">100644 blob 83baae61804e65cc73a7201a7252750c76066a30	test.txt</span>
 </pre></div>
 </div>
 <p>it tells us the mode of the single file is a regular file, that it is a blob, the hash where the file’s content is snapshotted and the file name.</p>
@@ -1067,19 +1217,18 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
-<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+<span class="go">No commits yet</span>
 
-<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
-	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">	new file:   test.txt</span>
 
-<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
-	<span class="n">modified</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
-
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">	modified:   test.txt</span>
 </pre></div>
 </div>
 </section>
@@ -1089,7 +1238,7 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;first commit&quot;</span> <span class="o">|</span> <span class="n">git</span> <span class="n">commit</span><span class="o">-</span><span class="n">tree</span> <span class="n">d8329</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">ec6f39c964a3149d426ae45bef4385e14444b2c</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">0ec6f39c964a3149d426ae45bef4385e14444b2c</span>
 </pre></div>
 </div>
 <p>and we get back a hash. But notice that this hash is unique for each of us. Because the commit has information about the time stamp and our user.</p>
@@ -1102,37 +1251,36 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="mi">0</span><span class="n">ec6</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit</span>
 </pre></div>
 </div>
 <p>and we can look at the content</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="mi">0</span><span class="n">ec6</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="n">d8329fc1cc938780ffdd9f94e0d364e0ea74f579</span>
-<span class="n">author</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span> <span class="mi">1697131751</span> <span class="o">-</span><span class="mi">0400</span>
-<span class="n">committer</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span> <span class="mi">1697131751</span> <span class="o">-</span><span class="mi">0400</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tree d8329fc1cc938780ffdd9f94e0d364e0ea74f579</span>
+<span class="go">author Sarah M Brown &lt;brownsarahm@uri.edu&gt; 1697131751 -0400</span>
+<span class="go">committer Sarah M Brown &lt;brownsarahm@uri.edu&gt; 1697131751 -0400</span>
 
-<span class="n">first</span> <span class="n">commit</span>
+<span class="go">first commit</span>
 </pre></div>
 </div>
 <p>Now we check the final status of our repo</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
-<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+<span class="go">No commits yet</span>
 
-<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
-	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">	new file:   test.txt</span>
 
-<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
-	<span class="n">modified</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
-
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">	modified:   test.txt</span>
 </pre></div>
 </div>
 <p>we see it is “on main” this is because we set the branch to main , but since we have not written there, we have to do it directly. Notice that when we use the porcelain command for commit, it does this automatically; the porcelain commands do many things.</p>
@@ -1187,14 +1335,14 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ref</span><span class="p">:</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ref: refs/heads/main</span>
 </pre></div>
 </div>
 <p>and see that:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="p">:</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cat: .git/refs/heads/main: No such file or directory</span>
 </pre></div>
 </div>
 <p>which does not even exist!</p>
@@ -1202,12 +1350,12 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">0</span><span class="n">c</span><span class="o">/</span><span class="mf">1e7391</span><span class="n">ca4e59584f8b773ecdbbb9467eba1547</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">0</span><span class="n">e</span><span class="o">/</span><span class="n">c6f39c964a3149d426ae45bef4385e14444b2c</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">d6</span><span class="o">/</span><span class="mi">70460</span><span class="n">b4b4aece5915caf5c68d12f560a9fe3e4</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">d8</span><span class="o">/</span><span class="mi">329</span><span class="n">fc1cc938780ffdd9f94e0d364e0ea74f579</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">4</span><span class="n">b</span><span class="o">/</span><span class="mi">825</span><span class="n">dc642cb6eb9a060e54bf8d69288fbee4904</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">83</span><span class="o">/</span><span class="n">baae61804e65cc73a7201a7252750c76066a30</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.git/objects//0c/1e7391ca4e59584f8b773ecdbbb9467eba1547</span>
+<span class="go">.git/objects//0e/c6f39c964a3149d426ae45bef4385e14444b2c</span>
+<span class="go">.git/objects//d6/70460b4b4aece5915caf5c68d12f560a9fe3e4</span>
+<span class="go">.git/objects//d8/329fc1cc938780ffdd9f94e0d364e0ea74f579</span>
+<span class="go">.git/objects//4b/825dc642cb6eb9a060e54bf8d69288fbee4904</span>
+<span class="go">.git/objects//83/baae61804e65cc73a7201a7252750c76066a30</span>
 </pre></div>
 </div>
 <p>and we can create that file by putting the full hash of the commit into the file</p>
@@ -1219,20 +1367,20 @@ document.write(`
 </pre></div>
 </div>
 <p>shows the hash:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">ec6f39c964a3149d426ae45bef4385e14444b2c</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">0ec6f39c964a3149d426ae45bef4385e14444b2c</span>
 </pre></div>
 </div>
 <p>Now we check status and we are all set!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
-<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
-	<span class="n">modified</span><span class="p">:</span>   <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">	modified:   test.txt</span>
 
-<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
 </pre></div>
 </div>
 </section>

@@ -558,25 +558,36 @@ document.write(`
 <h2><span class="section-number">8.8. </span><em>How</em> does git do all these things?<a class="headerlink" href="#how-does-git-do-all-these-things" title="Permalink to this headline">#</a></h2>
 <p>Let’s look at git again in our <code class="docutils literal notranslate"><span class="pre">github-inclass</span></code> repo.</p>
 <p>I was still in my <code class="docutils literal notranslate"><span class="pre">tiny-book</span></code> repo so I went up one level, then used <code class="docutils literal notranslate"><span class="pre">ls</span></code> to remember the exact name of the <code class="docutils literal notranslate"><span class="pre">github-inclass</span></code> repo</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span>
 <span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>	<span class="n">tiny</span><span class="o">-</span><span class="n">book</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">github-inclass-fa23-brownsarahm	tiny-book</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+<p>We will change to the github inclass repo and use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to view the current working directory.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+<span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
-</pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm/Documents/inclass/systems/github-inclass-fa23-brownsarahm</span>
 </pre></div>
 </div>
 <p>We can use the bash command <code class="docutils literal notranslate"><span class="pre">find</span></code> to search the file <em>system</em> note that this does not search the contents of the files, just the names.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>and we get this output:</p>
 <aside class="margin sidebar">
@@ -586,52 +597,56 @@ document.write(`
 <p>Your output will be different than mine. These are hashes of the content,  we all have different content (name and fun facts in the files) and the commit information, where we all have different email addresses and made commits at different seconds</p>
 </div>
 </aside>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">04</span><span class="o">/</span><span class="mi">2</span><span class="n">a42eb47c33ee43d793feb4d891a93e7460527</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">04</span><span class="o">/</span><span class="n">ab89e167ed77bc2a95710f69f68d91a6219471</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">69</span><span class="o">/</span><span class="mi">3</span><span class="n">a2b5b9ad4c27eb3b50571b3c93dde353320a1</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">93</span><span class="o">/</span><span class="mi">4</span><span class="n">c15dc2655c988c981d9a836783afebda77355</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">5</span><span class="n">a</span><span class="o">/</span><span class="n">a1ed29b82e1cebb8527019b0e594ba71dda214</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">5</span><span class="n">f</span><span class="o">/</span><span class="n">e5a9821625fad2cca4c500e497e6694132c303</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">d7</span><span class="o">/</span><span class="mi">6</span><span class="n">bc523443bda5a5daae2fe7fcfbf6fba71ae6d</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">b3</span><span class="o">/</span><span class="mi">78</span><span class="n">bd148e53dfa7195c58123362e40ae12ef3e7</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">bc</span><span class="o">/</span><span class="mi">281792</span><span class="n">d6ab62b153d7bf44f7985ec7cfc3b850</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">ca</span><span class="o">/</span><span class="n">eacb503cf4776f075b848f0faff535671f2887</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">ca</span><span class="o">/</span><span class="n">feca302e31c65139b4a5294356e1ea8595dcb1</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">pack</span><span class="o">/</span><span class="n">pack</span><span class="o">-</span><span class="mi">8631</span><span class="n">fedd908bc07c0b64786e9a83f5bf7a4de110</span><span class="o">.</span><span class="n">rev</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">pack</span><span class="o">/</span><span class="n">pack</span><span class="o">-</span><span class="mi">8631</span><span class="n">fedd908bc07c0b64786e9a83f5bf7a4de110</span><span class="o">.</span><span class="n">pack</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">pack</span><span class="o">/</span><span class="n">pack</span><span class="o">-</span><span class="mi">8631</span><span class="n">fedd908bc07c0b64786e9a83f5bf7a4de110</span><span class="o">.</span><span class="n">idx</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">11</span><span class="o">/</span><span class="n">d53c24bb5d2bf2e3f645ef188f8bc75fa9c911</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">45</span><span class="o">/</span><span class="n">fcb1dd311e5e45af759cb3627dca5f47f58f04</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">75</span><span class="o">/</span><span class="mi">6</span><span class="n">c4879c0447db20980f73a26bc2ba072e08a6d</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">44</span><span class="o">/</span><span class="mi">3</span><span class="n">f164cdde5059d78df6a61ca3f07bc6a605eb0</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">43</span><span class="o">/</span><span class="n">a1267370f1af98071d53f8508abbc56fa3abde</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">88</span><span class="o">/</span><span class="mi">5588412</span><span class="n">d138cceb89f06ffed5e83c316c2b593</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">5</span><span class="n">c</span><span class="o">/</span><span class="mi">8</span><span class="n">aaa9f2a129d551b8cb2cb294676f63c4af410</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">65</span><span class="o">/</span><span class="n">e9e39935be8400ef12cc9003592f12244b50da</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">3</span><span class="n">a</span><span class="o">/</span><span class="n">cf0fb1c2febd24561294bfb966e1ad1f033eb8</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">98</span><span class="o">/</span><span class="mi">96</span><span class="n">f7a7000a7b9d2fdb12047a141524358286c3</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">37</span><span class="o">/</span><span class="mf">0e04</span><span class="n">baf4f62d1e62f4949208bc5e4d33af5336</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">6</span><span class="n">d</span><span class="o">/</span><span class="mi">4</span><span class="n">dbd33860fceb9c87bd3c4509deff8cecb3f45</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">39</span><span class="o">/</span><span class="n">f1c5eabb1458fa6cf9042611599b69665cf288</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">55</span><span class="o">/</span><span class="mi">56</span><span class="n">d17391aeeec9b2b86d2821c011d7ed5377aa</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">b8</span><span class="o">/</span><span class="mi">6</span><span class="n">eb90ba1ae5504edfcdc9ef8879e1c6d7a1b75</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">b6</span><span class="o">/</span><span class="mi">2</span><span class="n">d570421c3096d8c80c7df56357cdd3203fd3a</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">ea</span><span class="o">/</span><span class="n">c84c8320a3ab4f37a441a332b828c45ecedcc9</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">e1</span><span class="o">/</span><span class="mi">82616690</span><span class="n">a91a8d0e363f4143e68dd9e136ccee</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">e6</span><span class="o">/</span><span class="mi">9</span><span class="n">de29bb2d1d6434b8b29ae775ad8c2e48c5391</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">8</span><span class="n">c</span><span class="o">/</span><span class="mi">7</span><span class="n">cefb877c62a46a3b71c68a858c24075b379fe</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">76</span><span class="o">/</span><span class="mi">8</span><span class="n">dec80c5e0734476d476ae83376c9c786b6450</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">2</span><span class="n">b</span><span class="o">/</span><span class="n">cb5d446129df427a1ce09e8ba658a5bb8ceca3</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.git/objects//04/2a42eb47c33ee43d793feb4d891a93e7460527</span>
+<span class="go">.git/objects//04/ab89e167ed77bc2a95710f69f68d91a6219471</span>
+<span class="go">.git/objects//69/3a2b5b9ad4c27eb3b50571b3c93dde353320a1</span>
+<span class="go">.git/objects//93/4c15dc2655c988c981d9a836783afebda77355</span>
+<span class="go">.git/objects//5a/a1ed29b82e1cebb8527019b0e594ba71dda214</span>
+<span class="go">.git/objects//5f/e5a9821625fad2cca4c500e497e6694132c303</span>
+<span class="go">.git/objects//d7/6bc523443bda5a5daae2fe7fcfbf6fba71ae6d</span>
+<span class="go">.git/objects//b3/78bd148e53dfa7195c58123362e40ae12ef3e7</span>
+<span class="go">.git/objects//bc/281792d6ab62b153d7bf44f7985ec7cfc3b850</span>
+<span class="go">.git/objects//ca/eacb503cf4776f075b848f0faff535671f2887</span>
+<span class="go">.git/objects//ca/feca302e31c65139b4a5294356e1ea8595dcb1</span>
+<span class="go">.git/objects//pack/pack-8631fedd908bc07c0b64786e9a83f5bf7a4de110.rev</span>
+<span class="go">.git/objects//pack/pack-8631fedd908bc07c0b64786e9a83f5bf7a4de110.pack</span>
+<span class="go">.git/objects//pack/pack-8631fedd908bc07c0b64786e9a83f5bf7a4de110.idx</span>
+<span class="go">.git/objects//11/d53c24bb5d2bf2e3f645ef188f8bc75fa9c911</span>
+<span class="go">.git/objects//45/fcb1dd311e5e45af759cb3627dca5f47f58f04</span>
+<span class="go">.git/objects//75/6c4879c0447db20980f73a26bc2ba072e08a6d</span>
+<span class="go">.git/objects//44/3f164cdde5059d78df6a61ca3f07bc6a605eb0</span>
+<span class="go">.git/objects//43/a1267370f1af98071d53f8508abbc56fa3abde</span>
+<span class="go">.git/objects//88/5588412d138cceb89f06ffed5e83c316c2b593</span>
+<span class="go">.git/objects//5c/8aaa9f2a129d551b8cb2cb294676f63c4af410</span>
+<span class="go">.git/objects//65/e9e39935be8400ef12cc9003592f12244b50da</span>
+<span class="go">.git/objects//3a/cf0fb1c2febd24561294bfb966e1ad1f033eb8</span>
+<span class="go">.git/objects//98/96f7a7000a7b9d2fdb12047a141524358286c3</span>
+<span class="go">.git/objects//37/0e04baf4f62d1e62f4949208bc5e4d33af5336</span>
+<span class="go">.git/objects//6d/4dbd33860fceb9c87bd3c4509deff8cecb3f45</span>
+<span class="go">.git/objects//39/f1c5eabb1458fa6cf9042611599b69665cf288</span>
+<span class="go">.git/objects//55/56d17391aeeec9b2b86d2821c011d7ed5377aa</span>
+<span class="go">.git/objects//b8/6eb90ba1ae5504edfcdc9ef8879e1c6d7a1b75</span>
+<span class="go">.git/objects//b6/2d570421c3096d8c80c7df56357cdd3203fd3a</span>
+<span class="go">.git/objects//ea/c84c8320a3ab4f37a441a332b828c45ecedcc9</span>
+<span class="go">.git/objects//e1/82616690a91a8d0e363f4143e68dd9e136ccee</span>
+<span class="go">.git/objects//e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391</span>
+<span class="go">.git/objects//8c/7cefb877c62a46a3b71c68a858c24075b379fe</span>
+<span class="go">.git/objects//76/8dec80c5e0734476d476ae83376c9c786b6450</span>
+<span class="go">.git/objects//2b/cb5d446129df427a1ce09e8ba658a5bb8ceca3</span>
 </pre></div>
 </div>
 <p>This is a lot of files! It’s more than we have in our working directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>			<span class="n">about</span><span class="o">.</span><span class="n">md</span>		<span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>
-<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>		<span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>	<span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
-<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>		<span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>	<span class="n">setup</span><span class="o">.</span><span class="n">py</span>
-<span class="n">README</span><span class="o">.</span><span class="n">md</span>		<span class="n">docs</span>			<span class="n">tests</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">API.md			about.md		helper_functions.py</span>
+<span class="go">CONTRIBUTING.md		abstract_base_class.py	important_classes.py</span>
+<span class="go">LICENSE.md		alternative_classes.py	setup.py</span>
+<span class="go">README.md		docs			tests</span>
 </pre></div>
 </div>
 <p>This is a consequence of git taking snap shots and tracking both the actual contents of our working directory <strong>and</strong> our commit messages and other meta data about each commit. The content of the <code class="docutils literal notranslate"><span class="pre">.git/objects</span></code> is <em>everything</em> git knows about our project.</p>
@@ -639,20 +654,28 @@ document.write(`
 <section id="git-heads">
 <h2><span class="section-number">8.9. </span>Git HEADs<a class="headerlink" href="#git-heads" title="Permalink to this headline">#</a></h2>
 <p>If we look at the content of the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory there is always a file called <code class="docutils literal notranslate"><span class="pre">HEAD</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COMMIT_EDITMSG</span>	<span class="n">ORIG_HEAD</span>	<span class="n">description</span>	<span class="n">info</span>		<span class="n">packed</span><span class="o">-</span><span class="n">refs</span>
-<span class="n">FETCH_HEAD</span>	<span class="n">REBASE_HEAD</span>	<span class="n">hooks</span>		<span class="n">logs</span>		<span class="n">refs</span>
-<span class="n">HEAD</span>		<span class="n">config</span>		<span class="n">index</span>		<span class="n">objects</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">COMMIT_EDITMSG	ORIG_HEAD	description	info		packed-refs</span>
+<span class="go">FETCH_HEAD	REBASE_HEAD	hooks		logs		refs</span>
+<span class="go">HEAD		config		index		objects</span>
 </pre></div>
 </div>
 <p>the program <code class="docutils literal notranslate"><span class="pre">git</span></code> does not run continously the entire time you are using it for a project.  It runs quick commands each time you tell it to, it’s goal is to manage files, so this makes sense.  This also means that important information that <code class="docutils literal notranslate"><span class="pre">git</span></code> needs is also saved in files.</p>
 <p>the files in all caps are like gits variables. Lets look at the one called <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> we have intereacted with <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> before when resolving merge conflicts.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ref</span><span class="p">:</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ref: refs/heads/main</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is a pointer to the currently checked out branch.</p>
@@ -661,114 +684,149 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>You may or may not have the same heads that I do, because you may have missed a step or I may have done an extra thing in my repo to demo something to answer a question in office hours</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">REBASE_HEAD</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">REBASE_HEAD</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b378bd148e53dfa7195c58123362e40ae12ef3e7</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">b378bd148e53dfa7195c58123362e40ae12ef3e7</span>
 </pre></div>
 </div>
 <p>This poitns to a specific commit, not a branch, because rebase occurs at a pair of specific commits, and does not move forward, this is sort of like a temporary variable, that does not get destroyed.</p>
 <p>We should all have <code class="docutils literal notranslate"><span class="pre">ORIG_HEAD</span></code> which is <code class="docutils literal notranslate"><span class="pre">origin/head</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">ORIG_HEAD</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">ORIG_HEAD</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="n">c8aaa9f2a129d551b8cb2cb294676f63c4af410</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">5c8aaa9f2a129d551b8cb2cb294676f63c4af410</span>
 </pre></div>
 </div>
 <p>that points to a specific commit, instead of a branch.</p>
 <p>We can see that git status matches what branch the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> file shows.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>that matches the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> as expected.  Lets switch and look agian.</p>
 <p>first, get the options,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-  <span class="n">fun_fact</span>
-<span class="o">*</span> <span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">  1-create-an-about-file</span>
+<span class="go">  fun_fact</span>
+<span class="go">* main</span>
 </pre></div>
 </div>
 <p>then <code class="docutils literal notranslate"><span class="pre">checkout</span></code> one of the exising branches</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">fun_fact</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">fun_fact</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s1">&#39;fun_fact&#39;</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/fun_fact&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to branch &#39;fun_fact&#39;</span>
+<span class="go">Your branch is up to date with &#39;origin/fun_fact&#39;.</span>
 </pre></div>
 </div>
 <p>and we can confirm that one of the things <code class="docutils literal notranslate"><span class="pre">checkout</span></code> does is updates the head file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ref</span><span class="p">:</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">fun_fact</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ref: refs/heads/fun_fact</span>
 </pre></div>
 </div>
 </section>
 <section id="branches-are-pointers-to-commits">
 <h2><span class="section-number">8.10. </span>Branches are pointers to commits<a class="headerlink" href="#branches-are-pointers-to-commits" title="Permalink to this headline">#</a></h2>
 <p>Branches are implemented as files in <code class="docutils literal notranslate"><span class="pre">.git/refs/heads/</span></code> that contain the hash of the most recent commit “on” that branch. It’s useful to think of branches having multiple commits, and a tree like structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gitGraph</span>
-	<span class="n">commit</span>
-	<span class="n">commit</span>
-	<span class="n">branch</span> <span class="n">fun_fact</span>
-	<span class="n">checkout</span> <span class="n">fun_fact</span>
-	<span class="n">commit</span>
-	<span class="n">commit</span>
-	<span class="n">checkout</span> <span class="n">main</span>
-	<span class="n">commit</span> 
-	<span class="n">merge</span> <span class="n">fun_fact</span>
-	<span class="n">commit</span>
-</pre></div>
-</div>
-<p>but literally, they are a pointer to a single commit.  (remember each commit has a pointer to its “parent” or preceiding commit)</p>
+<div class="mermaid">
+            gitGraph
+	commit
+	commit
+	branch fun_fact
+	checkout fun_fact
+	commit
+	commit
+	checkout main
+	commit 
+	merge fun_fact
+	commit
+        </div><p>but literally, they are a pointer to a single commit.  (remember each commit has a pointer to its “parent” or preceiding commit)</p>
 <p>We can see what commit a branch points to:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">fun_fact</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">fun_fact</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">756</span><span class="n">c4879c0447db20980f73a26bc2ba072e08a6d</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">756c4879c0447db20980f73a26bc2ba072e08a6d</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> reads from the <code class="docutils literal notranslate"><span class="pre">.git/refs/heads</span></code> directory.  It has some other options that make it more powerful, but its default behavior is very similar to</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>	<span class="n">fun_fact</span>		<span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1-create-an-about-file	fun_fact		main</span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This was an answer to a question, but I do not remember the question</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">config</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">config</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">core</span><span class="p">]</span>
-	<span class="n">repositoryformatversion</span> <span class="o">=</span> <span class="mi">0</span>
-	<span class="n">filemode</span> <span class="o">=</span> <span class="n">true</span>
-	<span class="n">bare</span> <span class="o">=</span> <span class="n">false</span>
-	<span class="n">logallrefupdates</span> <span class="o">=</span> <span class="n">true</span>
-	<span class="n">ignorecase</span> <span class="o">=</span> <span class="n">true</span>
-	<span class="n">precomposeunicode</span> <span class="o">=</span> <span class="n">true</span>
-<span class="p">[</span><span class="n">remote</span> <span class="s2">&quot;origin&quot;</span><span class="p">]</span>
-	<span class="n">url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
-	<span class="n">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/*</span>
-<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;main&quot;</span><span class="p">]</span>
-	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
-	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
-<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;1-create-an-about-file&quot;</span><span class="p">]</span>
-	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
-	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;fun_fact&quot;</span><span class="p">]</span>
-	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
-	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">fun_fact</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[core]</span>
+<span class="go">	repositoryformatversion = 0</span>
+<span class="go">	filemode = true</span>
+<span class="go">	bare = false</span>
+<span class="go">	logallrefupdates = true</span>
+<span class="go">	ignorecase = true</span>
+<span class="go">	precomposeunicode = true</span>
+<span class="go">[remote &quot;origin&quot;]</span>
+<span class="go">	url = https://github.com/introcompsys/github-inclass-fa23-brownsarahm.git</span>
+<span class="go">	fetch = +refs/heads/*:refs/remotes/origin/*</span>
+<span class="go">[branch &quot;main&quot;]</span>
+<span class="go">	remote = origin</span>
+<span class="go">	merge = refs/heads/main</span>
+<span class="go">[branch &quot;1-create-an-about-file&quot;]</span>
+<span class="go">	remote = origin</span>
+<span class="go">	merge = refs/heads/1-create-an-about-file</span>
+<span class="go">[branch &quot;fun_fact&quot;]</span>
+<span class="go">	remote = origin</span>
+<span class="go">	merge = refs/heads/fun_fact</span>
 </pre></div>
 </div>
 </section>
@@ -822,45 +880,49 @@ document.write(`
 </pre></div>
 </div>
 <p>Again we can look at the list of objects:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">04</span><span class="o">/</span><span class="mi">2</span><span class="n">a42eb47c33ee43d793feb4d891a93e7460527</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">04</span><span class="o">/</span><span class="n">ab89e167ed77bc2a95710f69f68d91a6219471</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">69</span><span class="o">/</span><span class="mi">3</span><span class="n">a2b5b9ad4c27eb3b50571b3c93dde353320a1</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">93</span><span class="o">/</span><span class="mi">4</span><span class="n">c15dc2655c988c981d9a836783afebda77355</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">5</span><span class="n">a</span><span class="o">/</span><span class="n">a1ed29b82e1cebb8527019b0e594ba71dda214</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">5</span><span class="n">f</span><span class="o">/</span><span class="n">e5a9821625fad2cca4c500e497e6694132c303</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">d7</span><span class="o">/</span><span class="mi">6</span><span class="n">bc523443bda5a5daae2fe7fcfbf6fba71ae6d</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">b3</span><span class="o">/</span><span class="mi">78</span><span class="n">bd148e53dfa7195c58123362e40ae12ef3e7</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">bc</span><span class="o">/</span><span class="mi">281792</span><span class="n">d6ab62b153d7bf44f7985ec7cfc3b850</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">ca</span><span class="o">/</span><span class="n">eacb503cf4776f075b848f0faff535671f2887</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">ca</span><span class="o">/</span><span class="n">feca302e31c65139b4a5294356e1ea8595dcb1</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">pack</span><span class="o">/</span><span class="n">pack</span><span class="o">-</span><span class="mi">8631</span><span class="n">fedd908bc07c0b64786e9a83f5bf7a4de110</span><span class="o">.</span><span class="n">rev</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">pack</span><span class="o">/</span><span class="n">pack</span><span class="o">-</span><span class="mi">8631</span><span class="n">fedd908bc07c0b64786e9a83f5bf7a4de110</span><span class="o">.</span><span class="n">pack</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">pack</span><span class="o">/</span><span class="n">pack</span><span class="o">-</span><span class="mi">8631</span><span class="n">fedd908bc07c0b64786e9a83f5bf7a4de110</span><span class="o">.</span><span class="n">idx</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">11</span><span class="o">/</span><span class="n">d53c24bb5d2bf2e3f645ef188f8bc75fa9c911</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">45</span><span class="o">/</span><span class="n">fcb1dd311e5e45af759cb3627dca5f47f58f04</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">75</span><span class="o">/</span><span class="mi">6</span><span class="n">c4879c0447db20980f73a26bc2ba072e08a6d</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">44</span><span class="o">/</span><span class="mi">3</span><span class="n">f164cdde5059d78df6a61ca3f07bc6a605eb0</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">43</span><span class="o">/</span><span class="n">a1267370f1af98071d53f8508abbc56fa3abde</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">88</span><span class="o">/</span><span class="mi">5588412</span><span class="n">d138cceb89f06ffed5e83c316c2b593</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">5</span><span class="n">c</span><span class="o">/</span><span class="mi">8</span><span class="n">aaa9f2a129d551b8cb2cb294676f63c4af410</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">65</span><span class="o">/</span><span class="n">e9e39935be8400ef12cc9003592f12244b50da</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">3</span><span class="n">a</span><span class="o">/</span><span class="n">cf0fb1c2febd24561294bfb966e1ad1f033eb8</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">98</span><span class="o">/</span><span class="mi">96</span><span class="n">f7a7000a7b9d2fdb12047a141524358286c3</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">37</span><span class="o">/</span><span class="mf">0e04</span><span class="n">baf4f62d1e62f4949208bc5e4d33af5336</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">6</span><span class="n">d</span><span class="o">/</span><span class="mi">4</span><span class="n">dbd33860fceb9c87bd3c4509deff8cecb3f45</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">39</span><span class="o">/</span><span class="n">f1c5eabb1458fa6cf9042611599b69665cf288</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">55</span><span class="o">/</span><span class="mi">56</span><span class="n">d17391aeeec9b2b86d2821c011d7ed5377aa</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">b8</span><span class="o">/</span><span class="mi">6</span><span class="n">eb90ba1ae5504edfcdc9ef8879e1c6d7a1b75</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">b6</span><span class="o">/</span><span class="mi">2</span><span class="n">d570421c3096d8c80c7df56357cdd3203fd3a</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">ea</span><span class="o">/</span><span class="n">c84c8320a3ab4f37a441a332b828c45ecedcc9</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">e1</span><span class="o">/</span><span class="mi">82616690</span><span class="n">a91a8d0e363f4143e68dd9e136ccee</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="n">e6</span><span class="o">/</span><span class="mi">9</span><span class="n">de29bb2d1d6434b8b29ae775ad8c2e48c5391</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">8</span><span class="n">c</span><span class="o">/</span><span class="mi">7</span><span class="n">cefb877c62a46a3b71c68a858c24075b379fe</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">76</span><span class="o">/</span><span class="mi">8</span><span class="n">dec80c5e0734476d476ae83376c9c786b6450</span>
-<span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">2</span><span class="n">b</span><span class="o">/</span><span class="n">cb5d446129df427a1ce09e8ba658a5bb8ceca3</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.git/objects//04/2a42eb47c33ee43d793feb4d891a93e7460527</span>
+<span class="go">.git/objects//04/ab89e167ed77bc2a95710f69f68d91a6219471</span>
+<span class="go">.git/objects//69/3a2b5b9ad4c27eb3b50571b3c93dde353320a1</span>
+<span class="go">.git/objects//93/4c15dc2655c988c981d9a836783afebda77355</span>
+<span class="go">.git/objects//5a/a1ed29b82e1cebb8527019b0e594ba71dda214</span>
+<span class="go">.git/objects//5f/e5a9821625fad2cca4c500e497e6694132c303</span>
+<span class="go">.git/objects//d7/6bc523443bda5a5daae2fe7fcfbf6fba71ae6d</span>
+<span class="go">.git/objects//b3/78bd148e53dfa7195c58123362e40ae12ef3e7</span>
+<span class="go">.git/objects//bc/281792d6ab62b153d7bf44f7985ec7cfc3b850</span>
+<span class="go">.git/objects//ca/eacb503cf4776f075b848f0faff535671f2887</span>
+<span class="go">.git/objects//ca/feca302e31c65139b4a5294356e1ea8595dcb1</span>
+<span class="go">.git/objects//pack/pack-8631fedd908bc07c0b64786e9a83f5bf7a4de110.rev</span>
+<span class="go">.git/objects//pack/pack-8631fedd908bc07c0b64786e9a83f5bf7a4de110.pack</span>
+<span class="go">.git/objects//pack/pack-8631fedd908bc07c0b64786e9a83f5bf7a4de110.idx</span>
+<span class="go">.git/objects//11/d53c24bb5d2bf2e3f645ef188f8bc75fa9c911</span>
+<span class="go">.git/objects//45/fcb1dd311e5e45af759cb3627dca5f47f58f04</span>
+<span class="go">.git/objects//75/6c4879c0447db20980f73a26bc2ba072e08a6d</span>
+<span class="go">.git/objects//44/3f164cdde5059d78df6a61ca3f07bc6a605eb0</span>
+<span class="go">.git/objects//43/a1267370f1af98071d53f8508abbc56fa3abde</span>
+<span class="go">.git/objects//88/5588412d138cceb89f06ffed5e83c316c2b593</span>
+<span class="go">.git/objects//5c/8aaa9f2a129d551b8cb2cb294676f63c4af410</span>
+<span class="go">.git/objects//65/e9e39935be8400ef12cc9003592f12244b50da</span>
+<span class="go">.git/objects//3a/cf0fb1c2febd24561294bfb966e1ad1f033eb8</span>
+<span class="go">.git/objects//98/96f7a7000a7b9d2fdb12047a141524358286c3</span>
+<span class="go">.git/objects//37/0e04baf4f62d1e62f4949208bc5e4d33af5336</span>
+<span class="go">.git/objects//6d/4dbd33860fceb9c87bd3c4509deff8cecb3f45</span>
+<span class="go">.git/objects//39/f1c5eabb1458fa6cf9042611599b69665cf288</span>
+<span class="go">.git/objects//55/56d17391aeeec9b2b86d2821c011d7ed5377aa</span>
+<span class="go">.git/objects//b8/6eb90ba1ae5504edfcdc9ef8879e1c6d7a1b75</span>
+<span class="go">.git/objects//b6/2d570421c3096d8c80c7df56357cdd3203fd3a</span>
+<span class="go">.git/objects//ea/c84c8320a3ab4f37a441a332b828c45ecedcc9</span>
+<span class="go">.git/objects//e1/82616690a91a8d0e363f4143e68dd9e136ccee</span>
+<span class="go">.git/objects//e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391</span>
+<span class="go">.git/objects//8c/7cefb877c62a46a3b71c68a858c24075b379fe</span>
+<span class="go">.git/objects//76/8dec80c5e0734476d476ae83376c9c786b6450</span>
+<span class="go">.git/objects//2b/cb5d446129df427a1ce09e8ba658a5bb8ceca3</span>
 </pre></div>
 </div>
 <p>I am going to look at my alphabetically last object:</p>
@@ -869,11 +931,15 @@ document.write(`
 <p>you cannot copy my path here, you have to use <strong>your</strong> last path</p>
 <p>I copied the last line from my output above to make the next command.</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">2</span><span class="n">b</span><span class="o">/</span><span class="n">cb5d446129df427a1ce09e8ba658a5bb8ceca3</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">//</span><span class="mi">2</span><span class="n">b</span><span class="o">/</span><span class="n">cb5d446129df427a1ce09e8ba658a5bb8ceca3</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>x+)JMU040g01??̒??$???x^?}#}??}????kW?ch``fb?????몗?°#o&#39;??u?,o?ܙ??}?Ln?t)TQbR~i	H?????ݧ?s+?g%??gߓ??O?.{
-	
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x+)JMU040g01??̒??$???x^?}#}??}????kW?ch``fb?????몗?°#o&#39;??u?,o?ܙ??}?Ln?t)TQbR~i	H?????ݧ?s+?g%??gߓ??O?.{</span>
+<span class="go">	</span>
 </pre></div>
 </div>
 <p>This looks like nonsense.  That is because the object files are stored in a binary, not human-readable format. When we use cat, our terminal takes every 8 bits and turns it into an ascii character and that is what we see.</p>
@@ -892,10 +958,14 @@ document.write(`
 <p>Now, we can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> which is the first plumbing command we have seen so far to look at the git object associated with the the last hash in the list above.</p>
 <p>Remember git commands that take a hash as input do not need the whole hash.  They need at least 4 characters and enough to unique.</p>
 <p>With the <code class="docutils literal notranslate"><span class="pre">-t</span></code> option <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> tells you the type of object.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="mi">2</span><span class="n">bcb</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="mi">2</span><span class="n">bcb</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tree</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -903,12 +973,16 @@ document.write(`
 <p>at this point we all got different object types, (well out of the 3)</p>
 </div>
 <p>Then I looked at the <em>contents</em> of that same objects.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2</span><span class="n">bcb</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2</span><span class="n">bcb</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">040000</span> <span class="n">tree</span> <span class="mi">95</span><span class="n">b60ce8cdec1bc4e1df1416e0c0e6ecbd3e7a8c</span>	<span class="o">.</span><span class="n">github</span>
-<span class="mi">100644</span> <span class="n">blob</span> <span class="n">b86eb90ba1ae5504edfcdc9ef8879e1c6d7a1b75</span>	<span class="n">README</span><span class="o">.</span><span class="n">md</span>
-<span class="mi">100644</span> <span class="n">blob</span> <span class="mi">443</span><span class="n">f164cdde5059d78df6a61ca3f07bc6a605eb0</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">040000 tree 95b60ce8cdec1bc4e1df1416e0c0e6ecbd3e7a8c	.github</span>
+<span class="go">100644 blob b86eb90ba1ae5504edfcdc9ef8879e1c6d7a1b75	README.md</span>
+<span class="go">100644 blob 443f164cdde5059d78df6a61ca3f07bc6a605eb0	about.md</span>
 </pre></div>
 </div>
 <p>Since mine is a tree we can see that it has a list of items and each item in the list includes:</p>
@@ -919,64 +993,80 @@ document.write(`
 <li><p>the file name</p></li>
 </ul>
 <p>Then for the README blob, I looked at the contents:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="n">b86e</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="n">b86e</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># GitHub Practice
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>GitHub<span class="w"> </span>Practice
 
-Name: Sarah Brown
+<span class="go">Name: Sarah Brown</span>
 
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=11872426)
+<span class="go">[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=11872426)</span>
 </pre></div>
 </div>
 <p>I can use <code class="docutils literal notranslate"><span class="pre">cat</span></code> to see the file and currently it matches.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># GitHub Practice
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>GitHub<span class="w"> </span>Practice
 
-Name: Sarah Brown
+<span class="go">Name: Sarah Brown</span>
 
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=11872426)
+<span class="go">[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=11872426)</span>
 </pre></div>
 </div>
 <p>If I switch back to the main branch</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s1">&#39;main&#39;</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to branch &#39;main&#39;</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 </pre></div>
 </div>
 <p>Now it no longer matches:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># GitHub Practice
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>GitHub<span class="w"> </span>Practice
 
-Name: Sarah Brown
+<span class="go">Name: Sarah Brown</span>
 
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=11872426)
-age=35
-|file | contents |
-&gt; | ++++++| ++++++- |
-&gt; | abstract_base_class.py | core abstract classes for the project |
-&gt; | helper_functions.py | utitly funtions that are called by many classes |
-&gt; | important_classes.py | classes that inherit from the abc |
-&gt; | alternative_classes.py | classes that inherit from the abc |
-&gt; | LICENSE.md | the info on how the code can be reused|
-&gt; | CONTRIBUTING.md | instructions for how people can contribute to the project|
-&gt; | setup.py | file with function with instructions for pip |
-&gt; | tests_abc.py | tests for constructors and methods in abstract_base_class.py|
-&gt; | tests_helpers.py | tests for constructors and methods in helper_functions.py|
-&gt; | tests_imp.py | tests for constructors and methods in important_classes.py|
-&gt; | tests_alt.py | tests for constructors and methods in alternative_classes.py|
-&gt; | API.md | jupyterbook file to generate api documentation |
-&gt; | _config.yml | jupyterbook config for documentation |
-&gt; | _toc.yml | jupyter book toc file for documentation |
-&gt; | philosophy.md | overview of how the code is organized for docs |
-&gt; | example.md | myst notebook example of using the code |
-&gt; | scratch.ipynb | jupyter notebook from dev |
+<span class="go">[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=11872426)</span>
+<span class="go">age=35</span>
+<span class="go">|file | contents |</span>
+<span class="go">&gt; | ++++++| ++++++- |</span>
+<span class="go">&gt; | abstract_base_class.py | core abstract classes for the project |</span>
+<span class="go">&gt; | helper_functions.py | utitly funtions that are called by many classes |</span>
+<span class="go">&gt; | important_classes.py | classes that inherit from the abc |</span>
+<span class="go">&gt; | alternative_classes.py | classes that inherit from the abc |</span>
+<span class="go">&gt; | LICENSE.md | the info on how the code can be reused|</span>
+<span class="go">&gt; | CONTRIBUTING.md | instructions for how people can contribute to the project|</span>
+<span class="go">&gt; | setup.py | file with function with instructions for pip |</span>
+<span class="go">&gt; | tests_abc.py | tests for constructors and methods in abstract_base_class.py|</span>
+<span class="go">&gt; | tests_helpers.py | tests for constructors and methods in helper_functions.py|</span>
+<span class="go">&gt; | tests_imp.py | tests for constructors and methods in important_classes.py|</span>
+<span class="go">&gt; | tests_alt.py | tests for constructors and methods in alternative_classes.py|</span>
+<span class="go">&gt; | API.md | jupyterbook file to generate api documentation |</span>
+<span class="go">&gt; | _config.yml | jupyterbook config for documentation |</span>
+<span class="go">&gt; | _toc.yml | jupyter book toc file for documentation |</span>
+<span class="go">&gt; | philosophy.md | overview of how the code is organized for docs |</span>
+<span class="go">&gt; | example.md | myst notebook example of using the code |</span>
+<span class="go">&gt; | scratch.ipynb | jupyter notebook from dev |</span>
 </pre></div>
 </div>
 <div class="admonition important">

@@ -458,32 +458,48 @@ document.write(`
 <section id="review">
 <h2><span class="section-number">4.1. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">#</a></h2>
 <p>Recall, We can move around and examine the computer’s file structure using shell commands.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>To confirm our current working directory we print it with <code class="docutils literal notranslate"><span class="pre">pwd</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm/Documents/inclass/systems/github-inclass-fa23-brownsarahm</span>
 </pre></div>
 </div>
 <p>this confirms what we expect</p>
 <p>Now let’s see what is in our folder:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">README.md	about.md</span>
 </pre></div>
 </div>
 <p>and check in with git</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
+<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>this is as we left off.</p>
@@ -495,48 +511,68 @@ document.write(`
 <p class="admonition-title">Warning</p>
 <p>the step below requires that you have the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI. On windows with GitBash, you have not needed this, and it can be  bit tricky to install.  If you get it done and working well, and you submit instructions to this repo about how to get it set up, for either a community badge (if it’s simple) or an explore badge if it takes a lot</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">repo</span> <span class="n">view</span> <span class="o">--</span><span class="n">web</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">repo</span> <span class="n">view</span> <span class="o">--</span><span class="n">web</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Opening</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">browser</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Opening github.com/introcompsys/github-inclass-fa23-brownsarahm in your browser.</span>
 </pre></div>
 </div>
 <p>On Github, we see that it matches the branch we were on because we had merged in our PR in class on Thursday.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
+<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>Back on our local computer, we will go back to the main branch, using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s1">&#39;main&#39;</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to branch &#39;main&#39;</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 </pre></div>
 </div>
 <p>now we look at the status of our repo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">README.md</span>
 </pre></div>
 </div>
 <p>the file is missing.  It said it was up to date with origin main, but that is the most recent time we checked github only.  It’s up to date with our local record of what is on GitHub, not the current GitHub.</p>
 <p>Next, we will update locally, with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">1</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
-<span class="n">Unpacking</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">),</span> <span class="mi">646</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">215.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">From</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
-   <span class="mi">6</span><span class="n">a12db0</span><span class="o">..</span><span class="n">caeacb5</span>  <span class="n">main</span>       <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">remote: Enumerating objects: 1, done.</span>
+<span class="go">remote: Counting objects: 100% (1/1), done.</span>
+<span class="go">remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0</span>
+<span class="go">Unpacking objects: 100% (1/1), 646 bytes | 215.00 KiB/s, done.</span>
+<span class="go">From https://github.com/introcompsys/github-inclass-fa23-brownsarahm</span>
+<span class="go">   6a12db0..caeacb5  main       -&gt; origin/main</span>
 </pre></div>
 </div>
 <p>Here we see 2 sets of messages.  Some lines start with “remote” and other lines do not.
@@ -545,37 +581,53 @@ other lines are what <code class="docutils literal notranslate"><span class="pre
 <p>So, here, it counted up the content, and then sent it on GitHub’s side. On the local side, it unpacked (remember git compressed the content before we sent it). It describes the changes that were made on the
 GitHub side, the main branch was moved from one commit to another. So it then updates the local main branch accordingly (“Updating 6a12db0…caeacb5”).</p>
 <p>We can see that this updates th working directory too:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">README.md</span>
 </pre></div>
 </div>
 <p>no changes yet. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> updates the .git directory so that git knows more, but does not update our local file system.</p>
 <p>We can use git pull to fully update.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Updating</span> <span class="mi">6</span><span class="n">a12db0</span><span class="o">..</span><span class="n">caeacb5</span>
-<span class="n">Fast</span><span class="o">-</span><span class="n">forward</span>
- <span class="n">about</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">++</span>
- <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Updating 6a12db0..caeacb5</span>
+<span class="go">Fast-forward</span>
+<span class="go"> about.md | 2 ++</span>
+<span class="go"> 1 file changed, 2 insertions(+)</span>
+<span class="go"> create mode 100644 about.md</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">README.md	about.md</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>Now we will follow the instruction sin the README issue, commit to a new branch with <code class="docutils literal notranslate"><span class="pre">closes</span> <span class="pre">#x</span></code> where x is the issue number in the comment and make  PR.</p>
@@ -584,158 +636,190 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <section id="pull-will-downlaod-and-update">
 <h2><span class="section-number">4.3. </span>Pull will downlaod and update<a class="headerlink" href="#pull-will-downlaod-and-update" title="Permalink to this headline">#</a></h2>
 <p>We will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> again now all at once, this will do the work that fetch did before and the checkout.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">6</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">4</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">1</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
-<span class="n">Unpacking</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="mf">1.32</span> <span class="n">KiB</span> <span class="o">|</span> <span class="mf">337.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">From</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
-   <span class="n">caeacb5</span><span class="o">.</span><span class="mf">.5</span><span class="n">c8aaa9</span>  <span class="n">main</span>       <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span>
- <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">add</span><span class="o">-</span><span class="n">name</span>   <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span>
-<span class="n">Updating</span> <span class="n">caeacb5</span><span class="o">.</span><span class="mf">.5</span><span class="n">c8aaa9</span>
-<span class="n">Fast</span><span class="o">-</span><span class="n">forward</span>
- <span class="n">README</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="mi">4</span> <span class="o">++++</span>
- <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">4</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">remote: Enumerating objects: 6, done.</span>
+<span class="go">remote: Counting objects: 100% (6/6), done.</span>
+<span class="go">remote: Compressing objects: 100% (4/4), done.</span>
+<span class="go">remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0</span>
+<span class="go">Unpacking objects: 100% (4/4), 1.32 KiB | 337.00 KiB/s, done.</span>
+<span class="go">From https://github.com/introcompsys/github-inclass-fa23-brownsarahm</span>
+<span class="go">   caeacb5..5c8aaa9  main       -&gt; origin/main</span>
+<span class="go"> * [new branch]      add-name   -&gt; origin/add-name</span>
+<span class="go">Updating caeacb5..5c8aaa9</span>
+<span class="go">Fast-forward</span>
+<span class="go"> README.md | 4 ++++</span>
+<span class="go"> 1 file changed, 4 insertions(+)</span>
 </pre></div>
 </div>
 <p>We can see commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">5</span><span class="n">c8aaa9f2a129d551b8cb2cb294676f63c4af410</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">HEAD</span><span class="p">)</span>
-<span class="n">Merge</span><span class="p">:</span> <span class="n">caeacb5</span> <span class="mf">65e9</span><span class="n">e39</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 5c8aaa9f2a129d551b8cb2cb294676f63c4af410 (HEAD -&gt; main, origin/main, origin/HEAD)</span>
+<span class="go">Merge: caeacb5 65e9e39</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 12:47:08 2023 -0400</span>
 
-    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#5 from introcompsys/add-name</span>
-    
-    <span class="n">closes</span> <span class="c1">#2</span>
+<span class="go">    Merge pull request #5 from introcompsys/add-name</span>
+<span class="go">    </span>
+<span class="go">    closes #2</span>
 
-<span class="n">commit</span> <span class="mf">65e9</span><span class="n">e39935be8400ef12cc9003592f12244b50da</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span><span class="p">)</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit 65e9e39935be8400ef12cc9003592f12244b50da (origin/add-name)</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 12:46:00 2023 -0400</span>
 
-    <span class="n">closes</span> <span class="c1">#2</span>
+<span class="go">    closes #2</span>
 
-<span class="n">commit</span> <span class="n">caeacb503cf4776f075b848f0faff535671f2887</span>
-<span class="n">Merge</span><span class="p">:</span> <span class="mi">6</span><span class="n">a12db0</span> <span class="mi">693</span><span class="n">a2b5</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit caeacb503cf4776f075b848f0faff535671f2887</span>
+<span class="go">Merge: 6a12db0 693a2b5</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Thu Sep 14 13:38:54 2023 -0400</span>
 
-    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#4 from introcompsys/1-create-an-about-file</span>
-    
-    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+<span class="go">    Merge pull request #4 from introcompsys/1-create-an-about-file</span>
+<span class="go">    </span>
+<span class="go">    create and complete about file closes #1</span>
 
-<span class="n">commit</span> <span class="mi">693</span><span class="n">a2b5b9ad4c27eb3b50571b3c93dde353320a1</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">)</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">03</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit 693a2b5b9ad4c27eb3b50571b3c93dde353320a1 (origin/1-create-an-about-file, 1-create-an-about-file)</span>
+<span class="go">Author: Sarah M Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Thu Sep 14 13:36:03 2023 -0400</span>
 
-    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+<span class="go">    create and complete about file closes #1</span>
 
-<span class="n">commit</span> <span class="mi">6</span><span class="n">a12db0035e7c73772f7b2348b80dd0bfb3a2a2e</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">github</span><span class="o">-</span><span class="n">classroom</span><span class="p">[</span><span class="n">bot</span><span class="p">]</span> <span class="o">&lt;</span><span class="mi">66690702</span><span class="o">+</span><span class="n">github</span><span class="o">-</span><span class="n">classroom</span><span class="p">[</span><span class="n">bot</span><span class="p">]</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">16</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">07</span> <span class="mi">2023</span> <span class="o">+</span><span class="mi">0000</span>
+<span class="go">commit 6a12db0035e7c73772f7b2348b80dd0bfb3a2a2e</span>
+<span class="go">Author: github-classroom[bot] &lt;66690702+github-classroom[bot]@users.noreply.github.com&gt;</span>
+<span class="go">Date:   Thu Sep 14 16:43:07 2023 +0000</span>
 
-    <span class="n">Add</span> <span class="n">online</span> <span class="n">IDE</span> <span class="n">url</span>
+<span class="go">    Add online IDE url</span>
 
-<span class="n">commit</span> <span class="n">cfe32e5066921ad876d8a2c74b1fcb00c99b1cc7</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">github</span><span class="o">-</span><span class="n">classroom</span><span class="p">[</span><span class="n">bot</span><span class="p">]</span> <span class="o">&lt;</span><span class="mi">66690702</span><span class="o">+</span><span class="n">github</span><span class="o">-</span><span class="n">classroom</span><span class="p">[</span><span class="n">bot</span><span class="p">]</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">16</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">05</span> <span class="mi">2023</span> <span class="o">+</span><span class="mi">0000</span>
+<span class="go">commit cfe32e5066921ad876d8a2c74b1fcb00c99b1cc7</span>
+<span class="go">Author: github-classroom[bot] &lt;66690702+github-classroom[bot]@users.noreply.github.com&gt;</span>
+<span class="go">Date:   Thu Sep 14 16:43:05 2023 +0000</span>
 
-    <span class="n">Initial</span> <span class="n">commit</span>
+<span class="go">    Initial commit</span>
 </pre></div>
 </div>
 <p>this is a program, we can use enter/down arrow to move through it and then <code class="docutils literal notranslate"><span class="pre">q</span></code> to exit.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Already</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Already up to date.</span>
 </pre></div>
 </div>
 </section>
 <section id="making-a-new-branch-locally">
 <h2><span class="section-number">4.4. </span>making a new branch locally<a class="headerlink" href="#making-a-new-branch-locally" title="Permalink to this headline">#</a></h2>
 <p>We’ve used <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to switch branchs before.  To also create a branch at the same time, we use the <code class="docutils literal notranslate"><span class="pre">-b</span></code> option.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">fun_fact</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">fun_fact</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Switched</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="s1">&#39;fun_fact&#39;</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to a new branch &#39;fun_fact&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>notice where each branch pointer is</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">5</span><span class="n">c8aaa9f2a129d551b8cb2cb294676f63c4af410</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">HEAD</span><span class="p">,</span> <span class="n">main</span><span class="p">)</span>
-<span class="n">Merge</span><span class="p">:</span> <span class="n">caeacb5</span> <span class="mf">65e9</span><span class="n">e39</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 5c8aaa9f2a129d551b8cb2cb294676f63c4af410 (HEAD -&gt; fun_fact, origin/main, origin/HEAD, main)</span>
+<span class="go">Merge: caeacb5 65e9e39</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 12:47:08 2023 -0400</span>
 
-    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#5 from introcompsys/add-name</span>
-    
-    <span class="n">closes</span> <span class="c1">#2</span>
+<span class="go">    Merge pull request #5 from introcompsys/add-name</span>
+<span class="go">    </span>
+<span class="go">    closes #2</span>
 
-<span class="n">commit</span> <span class="mf">65e9</span><span class="n">e39935be8400ef12cc9003592f12244b50da</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span><span class="p">)</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit 65e9e39935be8400ef12cc9003592f12244b50da (origin/add-name)</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 12:46:00 2023 -0400</span>
 
-    <span class="n">closes</span> <span class="c1">#2</span>
+<span class="go">    closes #2</span>
 
-<span class="n">commit</span> <span class="n">caeacb503cf4776f075b848f0faff535671f2887</span>
-<span class="n">Merge</span><span class="p">:</span> <span class="mi">6</span><span class="n">a12db0</span> <span class="mi">693</span><span class="n">a2b5</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit caeacb503cf4776f075b848f0faff535671f2887</span>
+<span class="go">Merge: 6a12db0 693a2b5</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Thu Sep 14 13:38:54 2023 -0400</span>
 
-    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#4 from introcompsys/1-create-an-about-file</span>
-    
-    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+<span class="go">    Merge pull request #4 from introcompsys/1-create-an-about-file</span>
+<span class="go">    </span>
+<span class="go">    create and complete about file closes #1</span>
 
-<span class="n">commit</span> <span class="mi">693</span><span class="n">a2b5b9ad4c27eb3b50571b3c93dde353320a1</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">)</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">03</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit 693a2b5b9ad4c27eb3b50571b3c93dde353320a1 (origin/1-create-an-about-file, 1-create-an-about-file)</span>
+<span class="go">Author: Sarah M Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Thu Sep 14 13:36:03 2023 -0400</span>
 
-    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+<span class="go">    create and complete about file closes #1</span>
 
-<span class="n">commit</span> <span class="mi">6</span><span class="n">a12db0035e7c73772f7b2348b80dd0bfb3a2a2e</span>
+<span class="go">commit 6a12db0035e7c73772f7b2348b80dd0bfb3a2a2e</span>
 </pre></div>
 </div>
 <p>we used the <a class="reference external" href="https://www.nano-editor.org/dist/latest/nano.html">nano text editor</a>.  <code class="docutils literal notranslate"><span class="pre">nano</span></code> is simpler than other text editors that tend to be more popular among experts, <code class="docutils literal notranslate"><span class="pre">vim</span></code> and <code class="docutils literal notranslate"><span class="pre">emacs</span></code>.  Getting comfortable with nano will get you used to the ideas, without putting as much burden on your memory.  This will set you up to learn those later, if you need a more powerful terminal text editor.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
+</div>
+</div>
 </div>
 <p>this opens the nano program on the terminal.  it displays reminders of the commands at the bottom of th screen and allows you to type into the file right away.</p>
 <p>Add any fun fact on the line below your content…  Then, write out (save), it will prompt the file name.  Since we opened nano with a file name (<code class="docutils literal notranslate"><span class="pre">about.md</span></code>) specified, you will not need to type a new name, but to confirm it, by pressing enter/return.</p>
 <p>My file looks like this.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
-<span class="mi">2027</span>
-<span class="o">-</span> <span class="n">i</span> <span class="n">skied</span> <span class="n">competitively</span> <span class="ow">in</span> <span class="n">high</span> <span class="n">school</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sarah Brown</span>
+<span class="go">2027</span>
+<span class="go">- i skied competitively in high school</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">fun_fact</span>
-<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
-	<span class="n">modified</span><span class="p">:</span>   <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch fun_fact</span>
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">	modified:   about.md</span>
 
-<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
 </pre></div>
 </div>
 <p>This is very similar to when we checked after creating the file before, but, notice a few things are different.</p>
@@ -745,17 +829,24 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <li><p>it gives us the choice to add it to then commit OR to restore it to undo the changes</p></li>
 </ul>
 <p>We will add it to stage</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">fun_fact</span>
-<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
-	<span class="n">modified</span><span class="p">:</span>   <span class="n">about</span><span class="o">.</span><span class="n">md</span>
-
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch fun_fact</span>
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">	modified:   about.md</span>
 </pre></div>
 </div>
 <p>and commit:</p>
@@ -763,111 +854,130 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <p class="admonition-title">Warning</p>
 <p>here i gave an example of what to do if you commit without a message. This is not recommended, but important to know how to fix.</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> 
 </pre></div>
+</div>
+</div>
 </div>
 <p>without a commit message it puts you in vim. Read the content carefully, then press <code class="docutils literal notranslate"><span class="pre">a</span></code> to get into ~insert~ mode. Type your message and/or uncomment the template.</p>
 <p>When you are done use <code class="docutils literal notranslate"><span class="pre">escape</span></code> to go back to command mode, the ~insert~ at the bottom of the screen will go away.  Then type <code class="docutils literal notranslate"><span class="pre">:wq</span></code> and press enter/return.</p>
 <p>What this is doing is adding a temporary file with the commit message that git can use to compelte your commit.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">fun_fact</span> <span class="mi">6</span><span class="n">d4dbd3</span><span class="p">]</span> <span class="n">add</span> <span class="n">fun</span> <span class="n">fact</span>
- <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[fun_fact 6d4dbd3] add fun fact</span>
+<span class="go"> 1 file changed, 1 insertion(+)</span>
 </pre></div>
 </div>
 <p>Now we can look again at where our branch pointers are.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>fun_fact moved up to the new commit, but the other branches stayed behind.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">6</span><span class="n">d4dbd33860fceb9c87bd3c4509deff8cecb3f45</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span><span class="p">)</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">13</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 6d4dbd33860fceb9c87bd3c4509deff8cecb3f45 (HEAD -&gt; fun_fact)</span>
+<span class="go">Author: Sarah M Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 13:06:54 2023 -0400</span>
 
-    <span class="n">add</span> <span class="n">fun</span> <span class="n">fact</span>
+<span class="go">    add fun fact</span>
 
-<span class="n">commit</span> <span class="mi">5</span><span class="n">c8aaa9f2a129d551b8cb2cb294676f63c4af410</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">HEAD</span><span class="p">,</span> <span class="n">main</span><span class="p">)</span>
-<span class="n">Merge</span><span class="p">:</span> <span class="n">caeacb5</span> <span class="mf">65e9</span><span class="n">e39</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit 5c8aaa9f2a129d551b8cb2cb294676f63c4af410 (origin/main, origin/HEAD, main)</span>
+<span class="go">Merge: caeacb5 65e9e39</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 12:47:08 2023 -0400</span>
 
-    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#5 from introcompsys/add-name</span>
-    
-    <span class="n">closes</span> <span class="c1">#2</span>
+<span class="go">    Merge pull request #5 from introcompsys/add-name</span>
+<span class="go">    </span>
+<span class="go">    closes #2</span>
 
-<span class="n">commit</span> <span class="mf">65e9</span><span class="n">e39935be8400ef12cc9003592f12244b50da</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span><span class="p">)</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit 65e9e39935be8400ef12cc9003592f12244b50da (origin/add-name)</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 12:46:00 2023 -0400</span>
 
-    <span class="n">closes</span> <span class="c1">#2</span>
+<span class="go">    closes #2</span>
 
-<span class="n">commit</span> <span class="n">caeacb503cf4776f075b848f0faff535671f2887</span>
-<span class="n">Merge</span><span class="p">:</span> <span class="mi">6</span><span class="n">a12db0</span> <span class="mi">693</span><span class="n">a2b5</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit caeacb503cf4776f075b848f0faff535671f2887</span>
+<span class="go">Merge: 6a12db0 693a2b5</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Thu Sep 14 13:38:54 2023 -0400</span>
 
-    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#4 from introcompsys/1-create-an-about-file</span>
-    
-    <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
+<span class="go">    Merge pull request #4 from introcompsys/1-create-an-about-file</span>
+<span class="go">    </span>
+<span class="go">    create and complete about file closes #1</span>
 
-<span class="n">commit</span> <span class="mi">693</span><span class="n">a2b5b9ad4c27eb3b50571b3c93dde353320a1</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span><span class="p">)</span>
+<span class="go">commit 693a2b5b9ad4c27eb3b50571b3c93dde353320a1 (origin/1-create-an-about-file, 1-create-an-about-file)</span>
 </pre></div>
 </div>
 <p>Now we will push to github.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fatal</span><span class="p">:</span> <span class="n">The</span> <span class="n">current</span> <span class="n">branch</span> <span class="n">fun_fact</span> <span class="n">has</span> <span class="n">no</span> <span class="n">upstream</span> <span class="n">branch</span><span class="o">.</span>
-<span class="n">To</span> <span class="n">push</span> <span class="n">the</span> <span class="n">current</span> <span class="n">branch</span> <span class="ow">and</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">remote</span> <span class="k">as</span> <span class="n">upstream</span><span class="p">,</span> <span class="n">use</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fatal: The current branch fun_fact has no upstream branch.</span>
+<span class="go">To push the current branch and set the remote as upstream, use</span>
 
-    <span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">fun_fact</span>
+<span class="go">    git push --set-upstream origin fun_fact</span>
 
-<span class="n">To</span> <span class="n">have</span> <span class="n">this</span> <span class="n">happen</span> <span class="n">automatically</span> <span class="k">for</span> <span class="n">branches</span> <span class="n">without</span> <span class="n">a</span> <span class="n">tracking</span>
-<span class="n">upstream</span><span class="p">,</span> <span class="n">see</span> <span class="s1">&#39;push.autoSetupRemote&#39;</span> <span class="ow">in</span> <span class="s1">&#39;git help config&#39;</span><span class="o">.</span>
-
+<span class="go">To have this happen automatically for branches without a tracking</span>
+<span class="go">upstream, see &#39;push.autoSetupRemote&#39; in &#39;git help config&#39;.</span>
 </pre></div>
 </div>
 <p>It cannot push, because it does not know where to push, like we noted above that it did not comapre to origin, that was beecause it does not have an “upstream branch” or a corresponding branch on a remote server.
 It does not work at first because this branch does not have a remote.</p>
 <p>git stores its list of remotes in a <code class="docutils literal notranslate"><span class="pre">.git/config</span></code> file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">config</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">config</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">core</span><span class="p">]</span>
-	<span class="n">repositoryformatversion</span> <span class="o">=</span> <span class="mi">0</span>
-	<span class="n">filemode</span> <span class="o">=</span> <span class="n">true</span>
-	<span class="n">bare</span> <span class="o">=</span> <span class="n">false</span>
-	<span class="n">logallrefupdates</span> <span class="o">=</span> <span class="n">true</span>
-	<span class="n">ignorecase</span> <span class="o">=</span> <span class="n">true</span>
-	<span class="n">precomposeunicode</span> <span class="o">=</span> <span class="n">true</span>
-<span class="p">[</span><span class="n">remote</span> <span class="s2">&quot;origin&quot;</span><span class="p">]</span>
-	<span class="n">url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
-	<span class="n">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/*</span>
-<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;main&quot;</span><span class="p">]</span>
-	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
-	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
-<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;1-create-an-about-file&quot;</span><span class="p">]</span>
-	<span class="n">remote</span> <span class="o">=</span> <span class="n">origin</span>
-	<span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[core]</span>
+<span class="go">	repositoryformatversion = 0</span>
+<span class="go">	filemode = true</span>
+<span class="go">	bare = false</span>
+<span class="go">	logallrefupdates = true</span>
+<span class="go">	ignorecase = true</span>
+<span class="go">	precomposeunicode = true</span>
+<span class="go">[remote &quot;origin&quot;]</span>
+<span class="go">	url = https://github.com/introcompsys/github-inclass-fa23-brownsarahm.git</span>
+<span class="go">	fetch = +refs/heads/*:refs/remotes/origin/*</span>
+<span class="go">[branch &quot;main&quot;]</span>
+<span class="go">	remote = origin</span>
+<span class="go">	merge = refs/heads/main</span>
+<span class="go">[branch &quot;1-create-an-about-file&quot;]</span>
+<span class="go">	remote = origin</span>
+<span class="go">	merge = refs/heads/1-create-an-about-file</span>
 </pre></div>
 </div>
 <p>we can see our other branches have <code class="docutils literal notranslate"><span class="pre">remote</span> <span class="pre">=</span> <span class="pre">origin</span></code> but our new branch is not there.</p>
 <p>To fix it, we do as git said.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">fun_fact</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">fun_fact</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
-<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">311</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">311.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">1</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">),</span> <span class="n">completed</span> <span class="k">with</span> <span class="mi">1</span> <span class="n">local</span> <span class="nb">object</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> 
-<span class="n">remote</span><span class="p">:</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">pull</span> <span class="n">request</span> <span class="k">for</span> <span class="s1">&#39;fun_fact&#39;</span> <span class="n">on</span> <span class="n">GitHub</span> <span class="n">by</span> <span class="n">visiting</span><span class="p">:</span>
-<span class="n">remote</span><span class="p">:</span>      <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">pull</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">fun_fact</span>
-<span class="n">remote</span><span class="p">:</span> 
-<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
- <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">fun_fact</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span>
-<span class="n">branch</span> <span class="s1">&#39;fun_fact&#39;</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="s1">&#39;origin/fun_fact&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Enumerating objects: 5, done.</span>
+<span class="go">Counting objects: 100% (5/5), done.</span>
+<span class="go">Delta compression using up to 8 threads</span>
+<span class="go">Compressing objects: 100% (3/3), done.</span>
+<span class="go">Writing objects: 100% (3/3), 311 bytes | 311.00 KiB/s, done.</span>
+<span class="go">Total 3 (delta 1), reused 0 (delta 0), pack-reused 0</span>
+<span class="go">remote: Resolving deltas: 100% (1/1), completed with 1 local object.</span>
+<span class="go">remote: </span>
+<span class="go">remote: Create a pull request for &#39;fun_fact&#39; on GitHub by visiting:</span>
+<span class="go">remote:      https://github.com/introcompsys/github-inclass-fa23-brownsarahm/pull/new/fun_fact</span>
+<span class="go">remote: </span>
+<span class="go">To https://github.com/introcompsys/github-inclass-fa23-brownsarahm.git</span>
+<span class="go"> * [new branch]      fun_fact -&gt; fun_fact</span>
+<span class="go">branch &#39;fun_fact&#39; set up to track &#39;origin/fun_fact&#39;.</span>
 </pre></div>
 </div>
 <p>This time the returned message from the remote includes the link to the page to make a PR. We are not goign to make the PR though</p>
@@ -876,78 +986,98 @@ It does not work at first because this branch does not have a remote.</p>
 <h2><span class="section-number">4.5. </span>Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Permalink to this headline">#</a></h2>
 <p>First, in your browser edit the <a class="reference external" href="http://about.md">about.md</a> file to have a second fun fact.</p>
 <p>Then edit it locally to also have 2 fun facts.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
-<span class="mi">2027</span>
-<span class="o">-</span> <span class="n">i</span> <span class="n">skied</span> <span class="n">competitively</span> <span class="ow">in</span> <span class="n">high</span> <span class="n">school</span>
-<span class="o">-</span> <span class="n">I</span> <span class="n">went</span> <span class="n">to</span> <span class="n">Northeastern</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sarah Brown</span>
+<span class="go">2027</span>
+<span class="go">- i skied competitively in high school</span>
+<span class="go">- I went to Northeastern</span>
 </pre></div>
 </div>
 <p>now that we have edited in both places let’s pull.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">1</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
-<span class="n">Unpacking</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">697</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">174.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">From</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
-   <span class="mi">6</span><span class="n">d4dbd3</span><span class="o">.</span><span class="mf">.768</span><span class="n">dec8</span>  <span class="n">fun_fact</span>   <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">fun_fact</span>
-<span class="n">Updating</span> <span class="mi">6</span><span class="n">d4dbd3</span><span class="o">.</span><span class="mf">.768</span><span class="n">dec8</span>
-<span class="n">error</span><span class="p">:</span> <span class="n">Your</span> <span class="n">local</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">the</span> <span class="n">following</span> <span class="n">files</span> <span class="n">would</span> <span class="n">be</span> <span class="n">overwritten</span> <span class="n">by</span> <span class="n">merge</span><span class="p">:</span>
-	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
-<span class="n">Please</span> <span class="n">commit</span> <span class="n">your</span> <span class="n">changes</span> <span class="ow">or</span> <span class="n">stash</span> <span class="n">them</span> <span class="n">before</span> <span class="n">you</span> <span class="n">merge</span><span class="o">.</span>
-<span class="n">Aborting</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">remote: Enumerating objects: 5, done.</span>
+<span class="go">remote: Counting objects: 100% (5/5), done.</span>
+<span class="go">remote: Compressing objects: 100% (3/3), done.</span>
+<span class="go">remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0</span>
+<span class="go">Unpacking objects: 100% (3/3), 697 bytes | 174.00 KiB/s, done.</span>
+<span class="go">From https://github.com/introcompsys/github-inclass-fa23-brownsarahm</span>
+<span class="go">   6d4dbd3..768dec8  fun_fact   -&gt; origin/fun_fact</span>
+<span class="go">Updating 6d4dbd3..768dec8</span>
+<span class="go">error: Your local changes to the following files would be overwritten by merge:</span>
+<span class="go">	about.md</span>
+<span class="go">Please commit your changes or stash them before you merge.</span>
+<span class="go">Aborting</span>
 </pre></div>
 </div>
 <p>First it does not work because we have not committed.</p>
 <p>This is helpful beacause it prevents us from losing any work.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">fun_fact</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">behind</span> <span class="s1">&#39;origin/fun_fact&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="p">,</span> <span class="ow">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">fast</span><span class="o">-</span><span class="n">forwarded</span><span class="o">.</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git pull&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">your</span> <span class="n">local</span> <span class="n">branch</span><span class="p">)</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch fun_fact</span>
+<span class="go">Your branch is behind &#39;origin/fun_fact&#39; by 1 commit, and can be fast-forwarded.</span>
+<span class="go">  (use &quot;git pull&quot; to update your local branch)</span>
 
-<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
-	<span class="n">modified</span><span class="p">:</span>   <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">	modified:   about.md</span>
 
-<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
 </pre></div>
 </div>
 <p>we can add and commit at the same time using the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option from the `git commit``</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;second fun fact&#39;</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;second fun fact&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">fun_fact</span> <span class="n">b378bd1</span><span class="p">]</span> <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
- <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[fun_fact b378bd1] second fun fact</span>
+<span class="go"> 1 file changed, 1 insertion(+)</span>
 </pre></div>
 </div>
 <p>Now we try to pull again</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hint</span><span class="p">:</span> <span class="n">You</span> <span class="n">have</span> <span class="n">divergent</span> <span class="n">branches</span> <span class="ow">and</span> <span class="n">need</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">how</span> <span class="n">to</span> <span class="n">reconcile</span> <span class="n">them</span><span class="o">.</span>
-<span class="n">hint</span><span class="p">:</span> <span class="n">You</span> <span class="n">can</span> <span class="n">do</span> <span class="n">so</span> <span class="n">by</span> <span class="n">running</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">commands</span> <span class="n">sometime</span> <span class="n">before</span>
-<span class="n">hint</span><span class="p">:</span> <span class="n">your</span> <span class="nb">next</span> <span class="n">pull</span><span class="p">:</span>
-<span class="n">hint</span><span class="p">:</span> 
-<span class="n">hint</span><span class="p">:</span>   <span class="n">git</span> <span class="n">config</span> <span class="n">pull</span><span class="o">.</span><span class="n">rebase</span> <span class="n">false</span>  <span class="c1"># merge</span>
-<span class="n">hint</span><span class="p">:</span>   <span class="n">git</span> <span class="n">config</span> <span class="n">pull</span><span class="o">.</span><span class="n">rebase</span> <span class="n">true</span>   <span class="c1"># rebase</span>
-<span class="n">hint</span><span class="p">:</span>   <span class="n">git</span> <span class="n">config</span> <span class="n">pull</span><span class="o">.</span><span class="n">ff</span> <span class="n">only</span>       <span class="c1"># fast-forward only</span>
-<span class="n">hint</span><span class="p">:</span> 
-<span class="n">hint</span><span class="p">:</span> <span class="n">You</span> <span class="n">can</span> <span class="n">replace</span> <span class="s2">&quot;git config&quot;</span> <span class="k">with</span> <span class="s2">&quot;git config --global&quot;</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">a</span> <span class="n">default</span>
-<span class="n">hint</span><span class="p">:</span> <span class="n">preference</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">repositories</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">also</span> <span class="k">pass</span> <span class="o">--</span><span class="n">rebase</span><span class="p">,</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">rebase</span><span class="p">,</span>
-<span class="n">hint</span><span class="p">:</span> <span class="ow">or</span> <span class="o">--</span><span class="n">ff</span><span class="o">-</span><span class="n">only</span> <span class="n">on</span> <span class="n">the</span> <span class="n">command</span> <span class="n">line</span> <span class="n">to</span> <span class="n">override</span> <span class="n">the</span> <span class="n">configured</span> <span class="n">default</span> <span class="n">per</span>
-<span class="n">hint</span><span class="p">:</span> <span class="n">invocation</span><span class="o">.</span>
-<span class="n">fatal</span><span class="p">:</span> <span class="n">Need</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">how</span> <span class="n">to</span> <span class="n">reconcile</span> <span class="n">divergent</span> <span class="n">branches</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">hint: You have divergent branches and need to specify how to reconcile them.</span>
+<span class="go">hint: You can do so by running one of the following commands sometime before</span>
+<span class="go">hint: your next pull:</span>
+<span class="go">hint: </span>
+<span class="go">hint:   git config pull.rebase false  # merge</span>
+<span class="go">hint:   git config pull.rebase true   # rebase</span>
+<span class="go">hint:   git config pull.ff only       # fast-forward only</span>
+<span class="go">hint: </span>
+<span class="go">hint: You can replace &quot;git config&quot; with &quot;git config --global&quot; to set a default</span>
+<span class="go">hint: preference for all repositories. You can also pass --rebase, --no-rebase,</span>
+<span class="go">hint: or --ff-only on the command line to override the configured default per</span>
+<span class="go">hint: invocation.</span>
+<span class="go">fatal: Need to specify how to reconcile divergent branches.</span>
 </pre></div>
 </div>
 <p>Now it cannot work because the branches have diverged.  This illustrates the fact that our two versions of the branch <code class="docutils literal notranslate"><span class="pre">fun_fact</span></code> and <code class="docutils literal notranslate"><span class="pre">origin/fun_fact</span></code> are two separate things.</p>
@@ -964,113 +1094,140 @@ It does not work at first because this branch does not have a remote.</p>
     checkout fun_fact
     commit
         </div><p>the branches have diverged means that they do not agree and that they each have at least one commit that is different from the other.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="n">b378bd148e53dfa7195c58123362e40ae12ef3e7</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span><span class="p">)</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">13</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">20</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit b378bd148e53dfa7195c58123362e40ae12ef3e7 (HEAD -&gt; fun_fact)</span>
+<span class="go">Author: Sarah M Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 13:26:20 2023 -0400</span>
 
-    <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
+<span class="go">    second fun fact</span>
 
-<span class="n">commit</span> <span class="mi">6</span><span class="n">d4dbd33860fceb9c87bd3c4509deff8cecb3f45</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">M</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">13</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit 6d4dbd33860fceb9c87bd3c4509deff8cecb3f45</span>
+<span class="go">Author: Sarah M Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 13:06:54 2023 -0400</span>
 
-    <span class="n">add</span> <span class="n">fun</span> <span class="n">fact</span>
+<span class="go">    add fun fact</span>
 
-<span class="n">commit</span> <span class="mi">5</span><span class="n">c8aaa9f2a129d551b8cb2cb294676f63c4af410</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">HEAD</span><span class="p">,</span> <span class="n">main</span><span class="p">)</span>
-<span class="n">Merge</span><span class="p">:</span> <span class="n">caeacb5</span> <span class="mf">65e9</span><span class="n">e39</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit 5c8aaa9f2a129d551b8cb2cb294676f63c4af410 (origin/main, origin/HEAD, main)</span>
+<span class="go">Merge: caeacb5 65e9e39</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 12:47:08 2023 -0400</span>
 
-    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#5 from introcompsys/add-name</span>
-    
-    <span class="n">closes</span> <span class="c1">#2</span>
+<span class="go">    Merge pull request #5 from introcompsys/add-name</span>
+<span class="go">    </span>
+<span class="go">    closes #2</span>
 
-<span class="n">commit</span> <span class="mf">65e9</span><span class="n">e39935be8400ef12cc9003592f12244b50da</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">name</span><span class="p">)</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
+<span class="go">commit 65e9e39935be8400ef12cc9003592f12244b50da (origin/add-name)</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Tue Sep 19 12:46:00 2023 -0400</span>
 
-    <span class="n">closes</span> <span class="c1">#2</span>
+<span class="go">    closes #2</span>
 
-<span class="n">commit</span> <span class="n">caeacb503cf4776f075b848f0faff535671f2887</span>
-<span class="n">Merge</span><span class="p">:</span> <span class="mi">6</span><span class="n">a12db0</span> <span class="mi">693</span><span class="n">a2b5</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Sarah</span> <span class="n">Brown</span> <span class="o">&lt;</span><span class="n">brownsarahm</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
-<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">13</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2023</span> <span class="o">-</span><span class="mi">0400</span>
-
+<span class="go">commit caeacb503cf4776f075b848f0faff535671f2887</span>
+<span class="go">Merge: 6a12db0 693a2b5</span>
+<span class="go">Author: Sarah Brown &lt;brownsarahm@uri.edu&gt;</span>
+<span class="go">Date:   Thu Sep 14 13:38:54 2023 -0400</span>
 </pre></div>
 </div>
 <p>git gave us some options, we will use <a class="reference external" href="https://git-scm.com/docs/git-rebase">rebase</a> which will apply our local commits <em>after</em> the remote commits.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="o">--</span><span class="n">rebase</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="o">--</span><span class="n">rebase</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Auto</span><span class="o">-</span><span class="n">merging</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
-<span class="n">CONFLICT</span> <span class="p">(</span><span class="n">content</span><span class="p">):</span> <span class="n">Merge</span> <span class="n">conflict</span> <span class="ow">in</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
-<span class="n">error</span><span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">apply</span> <span class="n">b378bd1</span><span class="o">...</span> <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
-<span class="n">hint</span><span class="p">:</span> <span class="n">Resolve</span> <span class="nb">all</span> <span class="n">conflicts</span> <span class="n">manually</span><span class="p">,</span> <span class="n">mark</span> <span class="n">them</span> <span class="k">as</span> <span class="n">resolved</span> <span class="k">with</span>
-<span class="n">hint</span><span class="p">:</span> <span class="s2">&quot;git add/rm &lt;conflicted_files&gt;&quot;</span><span class="p">,</span> <span class="n">then</span> <span class="n">run</span> <span class="s2">&quot;git rebase --continue&quot;</span><span class="o">.</span>
-<span class="n">hint</span><span class="p">:</span> <span class="n">You</span> <span class="n">can</span> <span class="n">instead</span> <span class="n">skip</span> <span class="n">this</span> <span class="n">commit</span><span class="p">:</span> <span class="n">run</span> <span class="s2">&quot;git rebase --skip&quot;</span><span class="o">.</span>
-<span class="n">hint</span><span class="p">:</span> <span class="n">To</span> <span class="n">abort</span> <span class="ow">and</span> <span class="n">get</span> <span class="n">back</span> <span class="n">to</span> <span class="n">the</span> <span class="n">state</span> <span class="n">before</span> <span class="s2">&quot;git rebase&quot;</span><span class="p">,</span> <span class="n">run</span> <span class="s2">&quot;git rebase --abort&quot;</span><span class="o">.</span>
-<span class="n">Could</span> <span class="ow">not</span> <span class="n">apply</span> <span class="n">b378bd1</span><span class="o">...</span> <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Auto-merging about.md</span>
+<span class="go">CONFLICT (content): Merge conflict in about.md</span>
+<span class="go">error: could not apply b378bd1... second fun fact</span>
+<span class="go">hint: Resolve all conflicts manually, mark them as resolved with</span>
+<span class="go">hint: &quot;git add/rm &lt;conflicted_files&gt;&quot;, then run &quot;git rebase --continue&quot;.</span>
+<span class="go">hint: You can instead skip this commit: run &quot;git rebase --skip&quot;.</span>
+<span class="go">hint: To abort and get back to the state before &quot;git rebase&quot;, run &quot;git rebase --abort&quot;.</span>
+<span class="go">Could not apply b378bd1... second fun fact</span>
 </pre></div>
 </div>
 <p>Now it tells us there is a conflict.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
+</div>
+</div>
 <p>We see that git marked up the conflict for us by editing the file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
-<span class="mi">2027</span>
-<span class="o">-</span> <span class="n">i</span> <span class="n">skied</span> <span class="n">competitively</span> <span class="ow">in</span> <span class="n">high</span> <span class="n">school</span>
-<span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
-<span class="o">-</span> <span class="n">i</span> <span class="n">started</span> <span class="n">at</span> <span class="n">URI</span> <span class="ow">in</span> <span class="mi">2020</span>
-<span class="o">=======</span>
-<span class="o">-</span> <span class="n">I</span> <span class="n">went</span> <span class="n">to</span> <span class="n">Northeastern</span>
-<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="s2">&quot;add fun fact&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sarah Brown</span>
+<span class="go">2027</span>
+<span class="go">- i skied competitively in high school</span>
+<span class="go">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span class="go">- i started at URI in 2020</span>
+<span class="go">=======</span>
+<span class="go">- I went to Northeastern</span>
+<span class="go">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; &quot;add fun fact&quot;</span>
 </pre></div>
 </div>
 <p>We manually edit it to be what we want it to be.  We can take one change the other or both.  We will choose both, so my file looks like this in the end.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
-<span class="mi">2027</span>
-<span class="o">-</span> <span class="n">i</span> <span class="n">skied</span> <span class="n">competitively</span> <span class="ow">in</span> <span class="n">high</span> <span class="n">school</span>
-<span class="o">-</span> <span class="n">i</span> <span class="n">started</span> <span class="n">at</span> <span class="n">URI</span> <span class="ow">in</span> <span class="mi">2020</span>
-<span class="o">-</span> <span class="n">I</span> <span class="n">went</span> <span class="n">to</span> <span class="n">Northeastern</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sarah Brown</span>
+<span class="go">2027</span>
+<span class="go">- i skied competitively in high school</span>
+<span class="go">- i started at URI in 2020</span>
+<span class="go">- I went to Northeastern</span>
 </pre></div>
 </div>
 <p>Now, we do git add, because above it said that was the next step.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
+</div>
+</div>
 </div>
 <p>and then this was the next thing after that.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you got somethign very different at this point, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>  mine is 2.41.  If yours is different, let me know as an issue.</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">rebase</span> <span class="o">--</span><span class="k">continue</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">rebase</span> <span class="o">--</span><span class="k">continue</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">detached</span> <span class="n">HEAD</span> <span class="mi">756</span><span class="n">c487</span><span class="p">]</span> <span class="n">second</span> <span class="n">fun</span> <span class="n">fact</span>
- <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
-<span class="n">Successfully</span> <span class="n">rebased</span> <span class="ow">and</span> <span class="n">updated</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">fun_fact</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[detached HEAD 756c487] second fun fact</span>
+<span class="go"> 1 file changed, 2 insertions(+)</span>
+<span class="go">Successfully rebased and updated refs/heads/fun_fact.</span>
 </pre></div>
 </div>
 <p>Once we rebase and everything is done, we can push.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
-<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">312</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">312.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">2</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">completed</span> <span class="k">with</span> <span class="mi">2</span> <span class="n">local</span> <span class="n">objects</span><span class="o">.</span>
-<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
-   <span class="mi">768</span><span class="n">dec8</span><span class="o">.</span><span class="mf">.756</span><span class="n">c487</span>  <span class="n">fun_fact</span> <span class="o">-&gt;</span> <span class="n">fun_fact</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Enumerating objects: 5, done.</span>
+<span class="go">Counting objects: 100% (5/5), done.</span>
+<span class="go">Delta compression using up to 8 threads</span>
+<span class="go">Compressing objects: 100% (3/3), done.</span>
+<span class="go">Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.</span>
+<span class="go">Total 3 (delta 2), reused 0 (delta 0), pack-reused 0</span>
+<span class="go">remote: Resolving deltas: 100% (2/2), completed with 2 local objects.</span>
+<span class="go">To https://github.com/introcompsys/github-inclass-fa23-brownsarahm.git</span>
+<span class="go">   768dec8..756c487  fun_fact -&gt; fun_fact</span>
 </pre></div>
 </div>
 </section>

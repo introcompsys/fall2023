@@ -465,8 +465,12 @@ document.write(`
 <h2><span class="section-number">3.1. </span>Open a Terminal<a class="headerlink" href="#open-a-terminal" title="Permalink to this headline">#</a></h2>
 <p>Use the same one we used in the last class</p>
 <p>and move to the folder we made to use as a working directory for in class</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -474,24 +478,40 @@ document.write(`
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">..</span></code> is a special file that points to a specific relative path, of one level up.</p>
 <p>we can use <code class="docutils literal notranslate"><span class="pre">cd</span></code> and <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to illustrate what “one level up” means</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm/Documents/inclass/systems</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm/Documents/inclass</span>
 </pre></div>
 </div>
 <p>we move to make the current working directory the one, one step prior in the hierarchy with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">systems</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">systems</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="a-toy-repo-for-in-class">
@@ -540,23 +560,31 @@ document.write(`
 </section>
 <section id="cloning-a-repo">
 <h3><span class="section-number">3.3.5. </span>Cloning a repo<a class="headerlink" href="#cloning-a-repo" title="Permalink to this headline">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>then we get several messages back from git and GitHub (the remote)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cloning</span> <span class="n">into</span> <span class="s1">&#39;github-inclass-fa23-brownsarahm&#39;</span><span class="o">...</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">8</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">8</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">4</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
-<span class="n">Receiving</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">8</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Cloning into &#39;github-inclass-fa23-brownsarahm&#39;...</span>
+<span class="go">remote: Enumerating objects: 8, done.</span>
+<span class="go">remote: Counting objects: 100% (8/8), done.</span>
+<span class="go">remote: Compressing objects: 100% (5/5), done.</span>
+<span class="go">remote: Total 8 (delta 0), reused 4 (delta 0), pack-reused 0</span>
+<span class="go">Receiving objects: 100% (8/8), done.</span>
 </pre></div>
 </div>
 <p>Confirm it worked with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">github-inclass-fa23-brownsarahm</span>
 </pre></div>
 </div>
 <p>We see the new folder that matches our repo name</p>
@@ -565,24 +593,36 @@ document.write(`
 <section id="what-is-in-a-repo">
 <h2><span class="section-number">3.4. </span>What is in a repo?<a class="headerlink" href="#what-is-in-a-repo" title="Permalink to this headline">#</a></h2>
 <p>We can enter that folder</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>When we compare the local directory to GitHub</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">README.md</span>
 </pre></div>
 </div>
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> that we see on GitHub is missing,
 that is because it is <em>hidden</em>.  All file names that start with <code class="docutils literal notranslate"><span class="pre">.</span></code> are hidden.</p>
 <p>We can actually see the rest with the <code class="docutils literal notranslate"><span class="pre">-a</span></code> for <strong>all</strong> <em>option</em> or <em>flag</em>.  Options are how we can pass non required parameters to command line programs.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>		<span class="o">.</span><span class="n">git</span>		<span class="n">README</span><span class="o">.</span><span class="n">md</span>
-<span class="o">..</span>		<span class="o">.</span><span class="n">github</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.		.git		README.md</span>
+<span class="go">..		.github</span>
 </pre></div>
 </div>
 <p>We also see some special “files”, <code class="docutils literal notranslate"><span class="pre">.</span></code> the current location and <code class="docutils literal notranslate"><span class="pre">..</span></code> up one directory</p>
@@ -590,23 +630,32 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 <section id="how-do-i-know-what-git-knows">
 <h2><span class="section-number">3.5. </span>How do I know what git knows?<a class="headerlink" href="#how-do-i-know-what-git-knows" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://git-scm.com/docs/git-status"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></a> is your friend.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">satus</span>
+<p>Let’s see how it works:</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">satus</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="p">:</span> <span class="s1">&#39;satus&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">git</span> <span class="n">command</span><span class="o">.</span> <span class="n">See</span> <span class="s1">&#39;git --help&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git: &#39;satus&#39; is not a git command. See &#39;git --help&#39;.</span>
 
-<span class="n">The</span> <span class="n">most</span> <span class="n">similar</span> <span class="n">command</span> <span class="ow">is</span>
-	<span class="n">status</span>
+<span class="go">The most similar command is</span>
+<span class="go">	status</span>
 </pre></div>
 </div>
 <p>git give you hits, when you try to use a command that doesn’t exist. It is friendly, not scary!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>this command compares your working directory (what you can see with <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code> and all subfolders except the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directorty) to the current state of your <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory.</p>
@@ -625,79 +674,111 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 </div>
 <p>First on an issue, create a branch using the link in the development section of the right side panel. See the <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-a-branch-for-an-issue">github docs</a> for how to do that.</p>
 <p>Then it gives you two steps to do. We are going to do them one at a time so we can see better what they each do.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">orign</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">orign</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fatal</span><span class="p">:</span> <span class="s1">&#39;orign&#39;</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">appear</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="n">git</span> <span class="n">repository</span>
-<span class="n">fatal</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="n">read</span> <span class="kn">from</span> <span class="nn">remote</span> <span class="n">repository</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fatal: &#39;orign&#39; does not appear to be a git repository</span>
+<span class="go">fatal: Could not read from remote repository.</span>
 
-<span class="n">Please</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">have</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">access</span> <span class="n">rights</span>
-<span class="ow">and</span> <span class="n">the</span> <span class="n">repository</span> <span class="n">exists</span><span class="o">.</span>
+<span class="go">Please make sure you have the correct access rights</span>
+<span class="go">and the repository exists.</span>
 </pre></div>
 </div>
 <p>Since the argument after <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> is the variable anme of a remote, when I splled <code class="docutils literal notranslate"><span class="pre">origin</span></code> wrong, it says that it can’t find it.</p>
 <p>First we will update the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory without changing the working directory using <a class="reference external" href="https://git-scm.com/docs/git-fetch">git fetch</a>. We have to tell git fetch where to get the data from, we do that using a name of a <span class="xref std std-term">remote</span>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">From</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span>
- <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span> <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">From https://github.com/introcompsys/github-inclass-fa23-brownsarahm</span>
+<span class="go"> * [new branch]      1-create-an-about-file -&gt; origin/1-create-an-about-file</span>
 </pre></div>
 </div>
 <p>then we check status again</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>Looks like nothing so far.</p>
 <p>Next, we switch to that branch.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">branch</span> <span class="s1">&#39;1-create-an-about-file&#39;</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
-<span class="n">Switched</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="s1">&#39;1-create-an-about-file&#39;</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">branch &#39;1-create-an-about-file&#39; set up to track &#39;origin/1-create-an-about-file&#39;.</span>
+<span class="go">Switched to a new branch &#39;1-create-an-about-file&#39;</span>
 </pre></div>
 </div>
 <p>and verify what happened</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
+<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 </section>
 <section id="creating-a-file-on-the-terminal">
 <h2><span class="section-number">3.7. </span>Creating a file on the terminal<a class="headerlink" href="#creating-a-file-on-the-terminal" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">touch</span></code> command creates an empty file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see our working directory now.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">README.md	about.md</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
+<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
 
-<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">	about.md</span>
 
-<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>Now we see something new. Git tells us that there is a file in the working directory that it has not been told to track the changes in and it knows nothing.</p>
@@ -705,48 +786,67 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 <p>The very last line is advice of what do to overall.</p>
 <p>We’re going to do a bit more work first though, by adding conent to the file.</p>
 <p>We are going to use the <a class="reference external" href="https://www.nano-editor.org/">nano</a> text editor to edit the file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
+</div>
+</div>
 </div>
 <p>On the nano editor the <code class="docutils literal notranslate"><span class="pre">^</span></code> stands for control.</p>
 <p>and we can look at the contents of it.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sarah</span> <span class="n">Brown</span>
-<span class="mi">2027</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sarah Brown</span>
+<span class="go">2027</span>
 </pre></div>
 </div>
 <p>Now we will check again</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
+<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
 
-<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
-	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">	about.md</span>
 
-<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>In this case both say to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to track or to include in what will be committed.  Under untracked files is it says <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;...</span></code>, in our case this would look like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">about.md</span></code>.  However, remember we learned that the <code class="docutils literal notranslate"><span class="pre">.</span></code>  that is always in every directory is a special “file” that points to the current directory, so we can use that to add <strong>all</strong> files. Since we have only one, the two are equivalent, and the <code class="docutils literal notranslate"><span class="pre">.</span></code> is a common shortcut, because most of the time we want to add everything we have recently worked on in a single commit.</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> puts a file in the “staging area” we can use the staging area to group files together and put  changes to multiple files in a single commit. This is something we <strong>cannot</strong> do on GitHub in the browser, in order to save changes at all, we have to commit. Offline, we can save changes to our computer without commiting at all, and we can group many changes into a single commit.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>We will use status to see what has changed.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
+<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
 
-<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
-	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">about</span><span class="o">.</span><span class="n">md</span>
-
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">	new file:   about.md</span>
 </pre></div>
 </div>
 <p>Now that one file is marked as a new file and it is in the group “to be committed”. Git also tells us how to undo the thing we just did.</p>
@@ -762,49 +862,65 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 </div>
 </aside>
 <p>Next, we will commit the file.  We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> for this.  the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option allows us to put our commit message dirctly on the line when we commit.  Notice that unlike commiting on GitHub, we do not choose our branch with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.  We have to be “on” that branch before the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;create and complete about file closes #1&#39;</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;create and complete about file closes #1&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span> <span class="mi">693</span><span class="n">a2b5</span><span class="p">]</span> <span class="n">create</span> <span class="ow">and</span> <span class="n">complete</span> <span class="n">about</span> <span class="n">file</span> <span class="n">closes</span> <span class="c1">#1</span>
- <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
- <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[1-create-an-about-file 693a2b5] create and complete about file closes #1</span>
+<span class="go"> 1 file changed, 2 insertions(+)</span>
+<span class="go"> create mode 100644 about.md</span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>At this point you might get an error or warning about your identity. Follow what git says to either set or update your identity using `git config</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">README.md	about.md</span>
 </pre></div>
 </div>
 <p>Remember, the messages that git gives you are designed to try to help you.  The developers of git know it’s a complex and powerful tool and that it’s hard to remember every little bit.</p>
 <p>We again check in with git:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="o">.</span>
-  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git push&quot;</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">your</span> <span class="n">local</span> <span class="n">commits</span><span class="p">)</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
+<span class="go">Your branch is ahead of &#39;origin/1-create-an-about-file&#39; by 1 commit.</span>
+<span class="go">  (use &quot;git push&quot; to publish your local commits)</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>Now it tells us we have changes that GitHub does not know about.</p>
 <p>We can send them to github with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
-<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">347</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">347.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
-<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
-<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
-   <span class="mi">6</span><span class="n">a12db0</span><span class="o">.</span><span class="mf">.693</span><span class="n">a2b5</span>  <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Enumerating objects: 4, done.</span>
+<span class="go">Counting objects: 100% (4/4), done.</span>
+<span class="go">Delta compression using up to 8 threads</span>
+<span class="go">Compressing objects: 100% (2/2), done.</span>
+<span class="go">Writing objects: 100% (3/3), 347 bytes | 347.00 KiB/s, done.</span>
+<span class="go">Total 3 (delta 0), reused 0 (delta 0), pack-reused 0</span>
+<span class="go">To https://github.com/introcompsys/github-inclass-fa23-brownsarahm.git</span>
+<span class="go">   6a12db0..693a2b5  1-create-an-about-file -&gt; 1-create-an-about-file</span>
 </pre></div>
 </div>
 <p>This tells us the steps git took to send:</p>

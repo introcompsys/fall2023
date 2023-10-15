@@ -542,348 +542,358 @@ document.write(`
 <p>If you do not have that working locally, open a codespace on the main branch of your KWL repo</p>
 <p>(I have it working locally and working locally lets me save my terminal output for the notes more easily)</p>
 <p>cat the action file that posts your badges</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+</div>
+</div>
+<p>then check the repo’s status</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
+
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">repo</span> <span class="n">clone</span> <span class="n">introcompsys</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">getassignment</span><span class="o">.</span><span class="n">yml</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;fa23-kwl-brownsarahm&#39;...
-remote: Enumerating objects: 61, done.
-remote: Counting objects: 100% (61/61), done.
-remote: Compressing objects: 100% (46/46), done.
-remote: Total 61 (delta 20), reused 31 (delta 9), pack-reused 0
-Receiving objects: 100% (61/61), 12.50 KiB | 2.08 MiB/s, done.
-Resolving deltas: 100% (20/20), done.
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">name: Create badge issues (Edit before Running)</span>
+<span class="go">on:</span>
+<span class="go">  workflow_dispatch</span>
 
+<span class="gp"># </span>once<span class="w"> </span>you<span class="w"> </span>edit,<span class="w"> </span>change<span class="w"> </span>the<span class="w"> </span>name
 
-A new release of gh is available: 2.34.0 → 2.36.0
-To upgrade, run: brew upgrade gh
-https://github.com/cli/cli/releases/tag/v2.36.0
-
+<span class="go">jobs:</span>
+<span class="go">  check-contents:</span>
+<span class="go">    runs-on: ubuntu-latest</span>
+<span class="go">    steps:</span>
+<span class="go">    - uses: actions/checkout@v2</span>
+<span class="go">    </span>
+<span class="gp">    # </span>Install<span class="w"> </span>dependencies
+<span class="go">    - name: Set up Python 3.9</span>
+<span class="go">      uses: actions/setup-python@v1</span>
+<span class="go">      with:</span>
+<span class="go">        python-version: 3.9</span>
+<span class="go">    </span>
+<span class="go">    - name: Install Utils</span>
+<span class="go">      run: |</span>
+<span class="go">        pip install git+https://github.com/introcompsys/courseutils@main</span>
+<span class="go">    - name: Get badge requirements</span>
+<span class="go">      run: |</span>
+<span class="hll"><span class="go">        pretitle=&quot;prepare-&quot;$(date +&quot;%Y-%m-%d&quot;)</span>
+</span><span class="hll"><span class="go">        sysgetassignment | gh issue create --title $pretitle --label prepare --body-file -</span>
+</span><span class="hll"><span class="go">        rtitle=&quot;review-&quot;$(date +&quot;%Y-%m-%d&quot;)</span>
+</span><span class="hll"><span class="go">        sysgetassignment --type review | gh issue create --title $rtitle --label review --body-file -</span>
+</span><span class="hll"><span class="go">        pratitle=&quot;practice-&quot;$(date +&quot;%Y-%m-%d&quot;)</span>
+</span><span class="hll"><span class="go">        sysgetassignment --type practice| gh issue create --title $pratitle --label practice --body-file -</span>
+</span><span class="go">      env:</span>
+<span class="go">        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}</span>
+<span class="gp">#  </span>edit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>step<span class="w"> </span>above<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>level<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>you<span class="w"> </span>want.<span class="w"> </span>
+<span class="gp">#  </span>You<span class="w"> </span>should<span class="w"> </span>keep<span class="w"> </span>the<span class="w"> </span>prepare,<span class="w"> </span>because<span class="w"> </span>they<span class="w"> </span>are<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>experience<span class="w"> </span>badges<span class="w"> </span>
+<span class="gp">#     </span>You<span class="w"> </span>may<span class="w"> </span>choose<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>review<span class="w"> </span>or<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>practice<span class="w"> </span><span class="o">(</span>and<span class="w"> </span>change<span class="w"> </span>this<span class="w"> </span>any<span class="w"> </span><span class="nb">time</span><span class="o">)</span><span class="w"> </span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Work seamlessly with GitHub from the command line.</span>
+
+<span class="go">USAGE</span>
+<span class="go">  gh &lt;command&gt; &lt;subcommand&gt; [flags]</span>
+
+<span class="go">CORE COMMANDS</span>
+<span class="go">  auth:        Authenticate gh and git with GitHub</span>
+<span class="go">  browse:      Open the repository in the browser</span>
+<span class="go">  codespace:   Connect to and manage codespaces</span>
+<span class="go">  gist:        Manage gists</span>
+<span class="go">  issue:       Manage issues</span>
+<span class="go">  org:         Manage organizations</span>
+<span class="go">  pr:          Manage pull requests</span>
+<span class="go">  project:     Work with GitHub Projects.</span>
+<span class="go">  release:     Manage releases</span>
+<span class="go">  repo:        Manage repositories</span>
+
+<span class="go">GITHUB ACTIONS COMMANDS</span>
+<span class="go">  cache:       Manage Github Actions caches</span>
+<span class="go">  run:         View details about workflow runs</span>
+<span class="go">  workflow:    View details about GitHub Actions workflows</span>
+
+<span class="go">EXTENSION COMMANDS</span>
+<span class="go">  classroom:   Extension classroom</span>
+
+<span class="go">ALIAS COMMANDS</span>
+<span class="go">  co:          Alias for &quot;pr checkout&quot;</span>
+
+<span class="go">ADDITIONAL COMMANDS</span>
+<span class="go">  alias:       Create command shortcuts</span>
+<span class="go">  api:         Make an authenticated GitHub API request</span>
+<span class="go">  completion:  Generate shell completion scripts</span>
+<span class="go">  config:      Manage configuration for gh</span>
+<span class="go">  extension:   Manage gh extensions</span>
+<span class="go">  gpg-key:     Manage GPG keys</span>
+<span class="go">  label:       Manage labels</span>
+<span class="go">  ruleset:     View info about repo rulesets</span>
+<span class="go">  search:      Search for repositories, issues, and pull requests</span>
+<span class="go">  secret:      Manage GitHub secrets</span>
+<span class="go">  ssh-key:     Manage SSH keys</span>
+<span class="go">  status:      Print information about relevant issues, pull requests, and notifications across repositories</span>
+<span class="go">  variable:    Manage GitHub Actions variables</span>
+
+<span class="go">HELP TOPICS</span>
+<span class="go">  actions:     Learn about working with GitHub Actions</span>
+<span class="go">  environment: Environment variables that can be used with gh</span>
+<span class="go">  exit-codes:  Exit codes used by gh</span>
+<span class="go">  formatting:  Formatting options for JSON data exported from gh</span>
+<span class="go">  mintty:      Information about using gh with MinTTY</span>
+<span class="go">  reference:   A comprehensive reference of all gh commands</span>
+
+<span class="go">FLAGS</span>
+<span class="go">  --help      Show help for command</span>
+<span class="go">  --version   Show gh version</span>
+
+<span class="go">EXAMPLES</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create
+<span class="gp">  $ </span>gh<span class="w"> </span>repo<span class="w"> </span>clone<span class="w"> </span>cli/cli
+<span class="gp">  $ </span>gh<span class="w"> </span>pr<span class="w"> </span>checkout<span class="w"> </span><span class="m">321</span>
+
+<span class="go">LEARN MORE</span>
+<span class="go">  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.</span>
+<span class="go">  Read the manual at https://cli.github.com/manual</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Work seamlessly with GitHub from the command line.</span>
 
-<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+<span class="go">USAGE</span>
+<span class="go">  gh &lt;command&gt; &lt;subcommand&gt; [flags]</span>
+
+<span class="go">CORE COMMANDS</span>
+<span class="go">  auth:        Authenticate gh and git with GitHub</span>
+<span class="go">  browse:      Open the repository in the browser</span>
+<span class="go">  codespace:   Connect to and manage codespaces</span>
+<span class="go">  gist:        Manage gists</span>
+<span class="go">  issue:       Manage issues</span>
+<span class="go">  org:         Manage organizations</span>
+<span class="go">  pr:          Manage pull requests</span>
+<span class="go">  project:     Work with GitHub Projects.</span>
+<span class="go">  release:     Manage releases</span>
+<span class="go">  repo:        Manage repositories</span>
+
+<span class="go">GITHUB ACTIONS COMMANDS</span>
+<span class="go">  cache:       Manage Github Actions caches</span>
+<span class="go">  run:         View details about workflow runs</span>
+<span class="go">  workflow:    View details about GitHub Actions workflows</span>
+
+<span class="go">EXTENSION COMMANDS</span>
+<span class="go">  classroom:   Extension classroom</span>
+
+<span class="go">ALIAS COMMANDS</span>
+<span class="go">  co:          Alias for &quot;pr checkout&quot;</span>
+
+<span class="go">ADDITIONAL COMMANDS</span>
+<span class="go">  alias:       Create command shortcuts</span>
+<span class="go">  api:         Make an authenticated GitHub API request</span>
+<span class="go">  completion:  Generate shell completion scripts</span>
+<span class="go">  config:      Manage configuration for gh</span>
+<span class="go">  extension:   Manage gh extensions</span>
+<span class="go">  gpg-key:     Manage GPG keys</span>
+<span class="go">  label:       Manage labels</span>
+<span class="go">  ruleset:     View info about repo rulesets</span>
+<span class="go">  search:      Search for repositories, issues, and pull requests</span>
+<span class="go">  secret:      Manage GitHub secrets</span>
+<span class="go">  ssh-key:     Manage SSH keys</span>
+<span class="go">  status:      Print information about relevant issues, pull requests, and notifications across repositories</span>
+<span class="go">  variable:    Manage GitHub Actions variables</span>
+
+<span class="go">HELP TOPICS</span>
+<span class="go">  actions:     Learn about working with GitHub Actions</span>
+<span class="go">  environment: Environment variables that can be used with gh</span>
+<span class="go">  exit-codes:  Exit codes used by gh</span>
+<span class="go">  formatting:  Formatting options for JSON data exported from gh</span>
+<span class="go">  mintty:      Information about using gh with MinTTY</span>
+<span class="go">  reference:   A comprehensive reference of all gh commands</span>
+
+<span class="go">FLAGS</span>
+<span class="go">  --help      Show help for command</span>
+<span class="go">  --version   Show gh version</span>
+
+<span class="go">EXAMPLES</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create
+<span class="gp">  $ </span>gh<span class="w"> </span>repo<span class="w"> </span>clone<span class="w"> </span>cli/cli
+<span class="gp">  $ </span>gh<span class="w"> </span>pr<span class="w"> </span>checkout<span class="w"> </span><span class="m">321</span>
+
+<span class="go">LEARN MORE</span>
+<span class="go">  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.</span>
+<span class="go">  Read the manual at https://cli.github.com/manual</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">keep</span>      <span class="n">workflows</span><span class="o">/</span> 
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-bash: cd: fa23-kwl-brownsarahm/: No such file or directory</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">getassignment</span><span class="o">.</span><span class="n">yml</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: Create badge issues (Edit before Running)
-on:
-  workflow_dispatch
-
-# once you edit, change the name
-
-jobs:
-  check-contents:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    
-    # Install dependencies
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.9
-    
-    - name: Install Utils
-      run: |
-        pip install git+https://github.com/introcompsys/courseutils@main
-    - name: Get badge requirements
-      run: |
-        pretitle=&quot;prepare-&quot;$(date +&quot;%Y-%m-%d&quot;)
-        sysgetassignment | gh issue create --title $pretitle --label prepare --body-file -
-        rtitle=&quot;review-&quot;$(date +&quot;%Y-%m-%d&quot;)
-        sysgetassignment --type review | gh issue create --title $rtitle --label review --body-file -
-        pratitle=&quot;practice-&quot;$(date +&quot;%Y-%m-%d&quot;)
-        sysgetassignment --type practice| gh issue create --title $pratitle --label practice --body-file -
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#  edit the run step above for the level(s) you want. 
-#  You should keep the prepare, because they are required for experience badges 
-#     You may choose to get only the review or only the practice (and change this any time) 
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/brownsarahm/Documents/inclass/systems/fa23-kwl-brownsarahm</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">getassignment</span><span class="o">.</span><span class="n">yml</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Work seamlessly with GitHub from the command line.
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">name: Create badge issues (Edit before Running)</span>
+<span class="go">on:</span>
+<span class="go">  workflow_dispatch</span>
 
-USAGE
-  gh &lt;command&gt; &lt;subcommand&gt; [flags]
+<span class="gp"># </span>once<span class="w"> </span>you<span class="w"> </span>edit,<span class="w"> </span>change<span class="w"> </span>the<span class="w"> </span>name
 
-CORE COMMANDS
-  auth:        Authenticate gh and git with GitHub
-  browse:      Open the repository in the browser
-  codespace:   Connect to and manage codespaces
-  gist:        Manage gists
-  issue:       Manage issues
-  org:         Manage organizations
-  pr:          Manage pull requests
-  project:     Work with GitHub Projects.
-  release:     Manage releases
-  repo:        Manage repositories
-
-GITHUB ACTIONS COMMANDS
-  cache:       Manage Github Actions caches
-  run:         View details about workflow runs
-  workflow:    View details about GitHub Actions workflows
-
-EXTENSION COMMANDS
-  classroom:   Extension classroom
-
-ALIAS COMMANDS
-  co:          Alias for &quot;pr checkout&quot;
-
-ADDITIONAL COMMANDS
-  alias:       Create command shortcuts
-  api:         Make an authenticated GitHub API request
-  completion:  Generate shell completion scripts
-  config:      Manage configuration for gh
-  extension:   Manage gh extensions
-  gpg-key:     Manage GPG keys
-  label:       Manage labels
-  ruleset:     View info about repo rulesets
-  search:      Search for repositories, issues, and pull requests
-  secret:      Manage GitHub secrets
-  ssh-key:     Manage SSH keys
-  status:      Print information about relevant issues, pull requests, and notifications across repositories
-  variable:    Manage GitHub Actions variables
-
-HELP TOPICS
-  actions:     Learn about working with GitHub Actions
-  environment: Environment variables that can be used with gh
-  exit-codes:  Exit codes used by gh
-  formatting:  Formatting options for JSON data exported from gh
-  mintty:      Information about using gh with MinTTY
-  reference:   A comprehensive reference of all gh commands
-
-FLAGS
-  --help      Show help for command
-  --version   Show gh version
-
-EXAMPLES
-  $ gh issue create
-  $ gh repo clone cli/cli
-  $ gh pr checkout 321
-
-LEARN MORE
-  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
-  Read the manual at https://cli.github.com/manual
-
+<span class="go">jobs:</span>
+<span class="go">  check-contents:</span>
+<span class="go">    runs-on: ubuntu-latest</span>
+<span class="go">    steps:</span>
+<span class="go">    - uses: actions/checkout@v2</span>
+<span class="go">    </span>
+<span class="gp">    # </span>Install<span class="w"> </span>dependencies
+<span class="go">    - name: Set up Python 3.9</span>
+<span class="go">      uses: actions/setup-python@v1</span>
+<span class="go">      with:</span>
+<span class="go">        python-version: 3.9</span>
+<span class="go">    </span>
+<span class="go">    - name: Install Utils</span>
+<span class="go">      run: |</span>
+<span class="go">        pip install git+https://github.com/introcompsys/courseutils@main</span>
+<span class="go">    - name: Get badge requirements</span>
+<span class="go">      run: |</span>
+<span class="go">        pretitle=&quot;prepare-&quot;$(date +&quot;%Y-%m-%d&quot;)</span>
+<span class="go">        sysgetassignment | gh issue create --title $pretitle --label prepare --body-file -</span>
+<span class="go">        rtitle=&quot;review-&quot;$(date +&quot;%Y-%m-%d&quot;)</span>
+<span class="go">        sysgetassignment --type review | gh issue create --title $rtitle --label review --body-file -</span>
+<span class="go">        pratitle=&quot;practice-&quot;$(date +&quot;%Y-%m-%d&quot;)</span>
+<span class="go">        sysgetassignment --type practice| gh issue create --title $pratitle --label practice --body-file -</span>
+<span class="go">      env:</span>
+<span class="go">        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}</span>
+<span class="gp">#  </span>edit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>step<span class="w"> </span>above<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>level<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>you<span class="w"> </span>want.<span class="w"> </span>
+<span class="gp">#  </span>You<span class="w"> </span>should<span class="w"> </span>keep<span class="w"> </span>the<span class="w"> </span>prepare,<span class="w"> </span>because<span class="w"> </span>they<span class="w"> </span>are<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>experience<span class="w"> </span>badges<span class="w"> </span>
+<span class="gp">#     </span>You<span class="w"> </span>may<span class="w"> </span>choose<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>review<span class="w"> </span>or<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>practice<span class="w"> </span><span class="o">(</span>and<span class="w"> </span>change<span class="w"> </span>this<span class="w"> </span>any<span class="w"> </span><span class="nb">time</span><span class="o">)</span><span class="w"> </span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">|</span> <span class="n">gh</span> <span class="n">issue</span> <span class="n">create</span> <span class="o">--</span><span class="n">title</span> <span class="n">example</span> <span class="o">--</span><span class="n">body</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Work seamlessly with GitHub from the command line.
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Creating issue in introcompsys/fa23-kwl-brownsarahm</span>
 
-USAGE
-  gh &lt;command&gt; &lt;subcommand&gt; [flags]
-
-CORE COMMANDS
-  auth:        Authenticate gh and git with GitHub
-  browse:      Open the repository in the browser
-  codespace:   Connect to and manage codespaces
-  gist:        Manage gists
-  issue:       Manage issues
-  org:         Manage organizations
-  pr:          Manage pull requests
-  project:     Work with GitHub Projects.
-  release:     Manage releases
-  repo:        Manage repositories
-
-GITHUB ACTIONS COMMANDS
-  cache:       Manage Github Actions caches
-  run:         View details about workflow runs
-  workflow:    View details about GitHub Actions workflows
-
-EXTENSION COMMANDS
-  classroom:   Extension classroom
-
-ALIAS COMMANDS
-  co:          Alias for &quot;pr checkout&quot;
-
-ADDITIONAL COMMANDS
-  alias:       Create command shortcuts
-  api:         Make an authenticated GitHub API request
-  completion:  Generate shell completion scripts
-  config:      Manage configuration for gh
-  extension:   Manage gh extensions
-  gpg-key:     Manage GPG keys
-  label:       Manage labels
-  ruleset:     View info about repo rulesets
-  search:      Search for repositories, issues, and pull requests
-  secret:      Manage GitHub secrets
-  ssh-key:     Manage SSH keys
-  status:      Print information about relevant issues, pull requests, and notifications across repositories
-  variable:    Manage GitHub Actions variables
-
-HELP TOPICS
-  actions:     Learn about working with GitHub Actions
-  environment: Environment variables that can be used with gh
-  exit-codes:  Exit codes used by gh
-  formatting:  Formatting options for JSON data exported from gh
-  mintty:      Information about using gh with MinTTY
-  reference:   A comprehensive reference of all gh commands
-
-FLAGS
-  --help      Show help for command
-  --version   Show gh version
-
-EXAMPLES
-  $ gh issue create
-  $ gh repo clone cli/cli
-  $ gh pr checkout 321
-
-LEARN MORE
-  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
-  Read the manual at https://cli.github.com/manual
-
+<span class="go">https://github.com/introcompsys/fa23-kwl-brownsarahm/issues/32</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">gh</span></code> commands without an option to get the help for how to use them.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">bash</span><span class="p">:</span> <span class="n">cd</span><span class="p">:</span> <span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Work with GitHub issues.</span>
+
+<span class="go">USAGE</span>
+<span class="go">  gh issue &lt;command&gt; [flags]</span>
+
+<span class="go">GENERAL COMMANDS</span>
+<span class="go">  create:      Create a new issue</span>
+<span class="go">  list:        List issues in a repository</span>
+<span class="go">  status:      Show status of relevant issues</span>
+
+<span class="go">TARGETED COMMANDS</span>
+<span class="go">  close:       Close issue</span>
+<span class="go">  comment:     Add a comment to an issue</span>
+<span class="go">  delete:      Delete issue</span>
+<span class="go">  develop:     Manage linked branches for an issue</span>
+<span class="go">  edit:        Edit issues</span>
+<span class="go">  lock:        Lock issue conversation</span>
+<span class="go">  pin:         Pin a issue</span>
+<span class="go">  reopen:      Reopen issue</span>
+<span class="go">  transfer:    Transfer issue to another repository</span>
+<span class="go">  unlock:      Unlock issue conversation</span>
+<span class="go">  unpin:       Unpin a issue</span>
+<span class="go">  view:        View an issue</span>
+
+<span class="go">FLAGS</span>
+<span class="go">  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format</span>
+
+<span class="go">INHERITED FLAGS</span>
+<span class="go">  --help   Show help for command</span>
+
+<span class="go">ARGUMENTS</span>
+<span class="go">  An issue can be supplied as argument in any of the following formats:</span>
+<span class="go">  - by number, e.g. &quot;123&quot;; or</span>
+<span class="go">  - by URL, e.g. &quot;https://github.com/OWNER/REPO/issues/123&quot;.</span>
+
+<span class="go">EXAMPLES</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>list
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>--label<span class="w"> </span>bug
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>view<span class="w"> </span><span class="m">123</span><span class="w"> </span>--web
+
+<span class="go">LEARN MORE</span>
+<span class="go">  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.</span>
+<span class="go">  Read the manual at https://cli.github.com/manual</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="n">view</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">accepts 1 arg(s), received 0</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">getassignment</span><span class="o">.</span><span class="n">yml</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="n">view</span> <span class="mi">32</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: Create badge issues (Edit before Running)
-on:
-  workflow_dispatch
-
-# once you edit, change the name
-
-jobs:
-  check-contents:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    
-    # Install dependencies
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.9
-    
-    - name: Install Utils
-      run: |
-        pip install git+https://github.com/introcompsys/courseutils@main
-    - name: Get badge requirements
-      run: |
-        pretitle=&quot;prepare-&quot;$(date +&quot;%Y-%m-%d&quot;)
-        sysgetassignment | gh issue create --title $pretitle --label prepare --body-file -
-        rtitle=&quot;review-&quot;$(date +&quot;%Y-%m-%d&quot;)
-        sysgetassignment --type review | gh issue create --title $rtitle --label review --body-file -
-        pratitle=&quot;practice-&quot;$(date +&quot;%Y-%m-%d&quot;)
-        sysgetassignment --type practice| gh issue create --title $pratitle --label practice --body-file -
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#  edit the run step above for the level(s) you want. 
-#  You should keep the prepare, because they are required for experience badges 
-#     You may choose to get only the review or only the practice (and change this any time) 
-</pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">|</span> <span class="n">gh</span> <span class="n">issue</span> <span class="n">create</span> <span class="o">--</span><span class="n">title</span> <span class="n">example</span> <span class="o">--</span><span class="n">body</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">Creating</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">introcompsys</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>
-
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span><span class="n">issues</span><span class="o">/</span><span class="mi">32</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> 
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Work with GitHub issues.
-
-USAGE
-  gh issue &lt;command&gt; [flags]
-
-GENERAL COMMANDS
-  create:      Create a new issue
-  list:        List issues in a repository
-  status:      Show status of relevant issues
-
-TARGETED COMMANDS
-  close:       Close issue
-  comment:     Add a comment to an issue
-  delete:      Delete issue
-  develop:     Manage linked branches for an issue
-  edit:        Edit issues
-  lock:        Lock issue conversation
-  pin:         Pin a issue
-  reopen:      Reopen issue
-  transfer:    Transfer issue to another repository
-  unlock:      Unlock issue conversation
-  unpin:       Unpin a issue
-  view:        View an issue
-
-FLAGS
-  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format
-
-INHERITED FLAGS
-  --help   Show help for command
-
-ARGUMENTS
-  An issue can be supplied as argument in any of the following formats:
-  - by number, e.g. &quot;123&quot;; or
-  - by URL, e.g. &quot;https://github.com/OWNER/REPO/issues/123&quot;.
-
-EXAMPLES
-  $ gh issue list
-  $ gh issue create --label bug
-  $ gh issue view 123 --web
-
-LEARN MORE
-  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
-  Read the manual at https://cli.github.com/manual
-
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="n">view</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">accepts</span> <span class="mi">1</span> <span class="n">arg</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">received</span> <span class="mi">0</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="n">view</span> <span class="mi">32</span>
-</pre></div>
 </div>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -892,149 +902,163 @@ LEARN MORE
 <p>the middle of this output is cut</p>
 </div>
 </aside>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>example #32
-Open • brownsarahm opened about 2 minutes ago • 0 comments
-                         
-  762  gh                                                                   
-  763  gh                                                                   
-  764  cd fa23-kwl-brownsarahm/                                             
-  765  pwd                                                                  
-  766  cat .github/workflows/getassignment.yml                              
-  767  history | gh issue create --title example --body-file -              
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">example #32</span>
+<span class="go">Open • brownsarahm opened about 2 minutes ago • 0 comments</span>
+<span class="go">                         </span>
+<span class="go">  762  gh                                                                   </span>
+<span class="go">  763  gh                                                                   </span>
+<span class="go">  764  cd fa23-kwl-brownsarahm/                                             </span>
+<span class="go">  765  pwd                                                                  </span>
+<span class="go">  766  cat .github/workflows/getassignment.yml                              </span>
+<span class="go">  767  history | gh issue create --title example --body-file -              </span>
 
 
-View this issue on GitHub: https://github.com/introcompsys/fa23-kwl-brownsarahm/issues/32
+<span class="go">View this issue on GitHub: https://github.com/introcompsys/fa23-kwl-brownsarahm/issues/32</span>
 </pre></div>
 </div>
 <p>We can see how this group of commands work with</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Work with GitHub issues.
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Work with GitHub issues.</span>
 
-USAGE
-  gh issue &lt;command&gt; [flags]
+<span class="go">USAGE</span>
+<span class="go">  gh issue &lt;command&gt; [flags]</span>
 
-GENERAL COMMANDS
-  create:      Create a new issue
-  list:        List issues in a repository
-  status:      Show status of relevant issues
+<span class="go">GENERAL COMMANDS</span>
+<span class="go">  create:      Create a new issue</span>
+<span class="go">  list:        List issues in a repository</span>
+<span class="go">  status:      Show status of relevant issues</span>
 
-TARGETED COMMANDS
-  close:       Close issue
-  comment:     Add a comment to an issue
-  delete:      Delete issue
-  develop:     Manage linked branches for an issue
-  edit:        Edit issues
-  lock:        Lock issue conversation
-  pin:         Pin a issue
-  reopen:      Reopen issue
-  transfer:    Transfer issue to another repository
-  unlock:      Unlock issue conversation
-  unpin:       Unpin a issue
-  view:        View an issue
+<span class="go">TARGETED COMMANDS</span>
+<span class="go">  close:       Close issue</span>
+<span class="go">  comment:     Add a comment to an issue</span>
+<span class="go">  delete:      Delete issue</span>
+<span class="go">  develop:     Manage linked branches for an issue</span>
+<span class="go">  edit:        Edit issues</span>
+<span class="go">  lock:        Lock issue conversation</span>
+<span class="go">  pin:         Pin a issue</span>
+<span class="go">  reopen:      Reopen issue</span>
+<span class="go">  transfer:    Transfer issue to another repository</span>
+<span class="go">  unlock:      Unlock issue conversation</span>
+<span class="go">  unpin:       Unpin a issue</span>
+<span class="go">  view:        View an issue</span>
 
-FLAGS
-  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format
+<span class="go">FLAGS</span>
+<span class="go">  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format</span>
 
-INHERITED FLAGS
-  --help   Show help for command
+<span class="go">INHERITED FLAGS</span>
+<span class="go">  --help   Show help for command</span>
 
-ARGUMENTS
-  An issue can be supplied as argument in any of the following formats:
-  - by number, e.g. &quot;123&quot;; or
-  - by URL, e.g. &quot;https://github.com/OWNER/REPO/issues/123&quot;.
+<span class="go">ARGUMENTS</span>
+<span class="go">  An issue can be supplied as argument in any of the following formats:</span>
+<span class="go">  - by number, e.g. &quot;123&quot;; or</span>
+<span class="go">  - by URL, e.g. &quot;https://github.com/OWNER/REPO/issues/123&quot;.</span>
 
-EXAMPLES
-  $ gh issue list
-  $ gh issue create --label bug
-  $ gh issue view 123 --web
+<span class="go">EXAMPLES</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>list
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>--label<span class="w"> </span>bug
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>view<span class="w"> </span><span class="m">123</span><span class="w"> </span>--web
 
-LEARN MORE
-  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
-  Read the manual at https://cli.github.com/manual
-
+<span class="go">LEARN MORE</span>
+<span class="go">  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.</span>
+<span class="go">  Read the manual at https://cli.github.com/manual</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="n">close</span> <span class="mi">32</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="n">close</span> <span class="mi">32</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>✓ Closed issue #32 (example)
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">✓ Closed issue #32 (example)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">getassignment</span><span class="o">.</span><span class="n">yml</span> 
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">getassignment</span><span class="o">.</span><span class="n">yml</span> 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: Create badge issues (Edit before Running)
-on:
-  workflow_dispatch
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">name: Create badge issues (Edit before Running)</span>
+<span class="go">on:</span>
+<span class="go">  workflow_dispatch</span>
 
-# once you edit, change the name
+<span class="gp"># </span>once<span class="w"> </span>you<span class="w"> </span>edit,<span class="w"> </span>change<span class="w"> </span>the<span class="w"> </span>name
 
-jobs:
-  check-contents:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    
-    # Install dependencies
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.9
-    
-    - name: Install Utils
-      run: |
-        pip install git+https://github.com/introcompsys/courseutils@main
-    - name: Get badge requirements
-      run: |
-        pretitle=&quot;prepare-&quot;$(date +&quot;%Y-%m-%d&quot;)
-        sysgetassignment | gh issue create --title $pretitle --label prepare --body-file -
-        rtitle=&quot;review-&quot;$(date +&quot;%Y-%m-%d&quot;)
-        sysgetassignment --type review | gh issue create --title $rtitle --label review --body-file -
-        pratitle=&quot;practice-&quot;$(date +&quot;%Y-%m-%d&quot;)
-        sysgetassignment --type practice| gh issue create --title $pratitle --label practice --body-file -
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#  edit the run step above for the level(s) you want. 
-#  You should keep the prepare, because they are required for experience badges 
-#     You may choose to get only the review or only the practice (and change this any time) 
+<span class="go">jobs:</span>
+<span class="go">  check-contents:</span>
+<span class="go">    runs-on: ubuntu-latest</span>
+<span class="go">    steps:</span>
+<span class="go">    - uses: actions/checkout@v2</span>
+<span class="go">    </span>
+<span class="gp">    # </span>Install<span class="w"> </span>dependencies
+<span class="go">    - name: Set up Python 3.9</span>
+<span class="go">      uses: actions/setup-python@v1</span>
+<span class="go">      with:</span>
+<span class="go">        python-version: 3.9</span>
+<span class="go">    </span>
+<span class="go">    - name: Install Utils</span>
+<span class="go">      run: |</span>
+<span class="hll"><span class="go">        pip install git+https://github.com/introcompsys/courseutils@main</span>
+</span><span class="hll"><span class="go">    - name: Get badge requirements</span>
+</span><span class="hll"><span class="go">      run: |</span>
+</span><span class="hll"><span class="go">        pretitle=&quot;prepare-&quot;$(date +&quot;%Y-%m-%d&quot;)</span>
+</span><span class="hll"><span class="go">        sysgetassignment | gh issue create --title $pretitle --label prepare --body-file -</span>
+</span><span class="hll"><span class="go">        rtitle=&quot;review-&quot;$(date +&quot;%Y-%m-%d&quot;)</span>
+</span><span class="go">        sysgetassignment --type review | gh issue create --title $rtitle --label review --body-file -</span>
+<span class="go">        pratitle=&quot;practice-&quot;$(date +&quot;%Y-%m-%d&quot;)</span>
+<span class="go">        sysgetassignment --type practice| gh issue create --title $pratitle --label practice --body-file -</span>
+<span class="go">      env:</span>
+<span class="go">        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}</span>
+<span class="gp">#  </span>edit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>step<span class="w"> </span>above<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>level<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>you<span class="w"> </span>want.<span class="w"> </span>
+<span class="gp">#  </span>You<span class="w"> </span>should<span class="w"> </span>keep<span class="w"> </span>the<span class="w"> </span>prepare,<span class="w"> </span>because<span class="w"> </span>they<span class="w"> </span>are<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>experience<span class="w"> </span>badges<span class="w"> </span>
+<span class="gp">#     </span>You<span class="w"> </span>may<span class="w"> </span>choose<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>review<span class="w"> </span>or<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>practice<span class="w"> </span><span class="o">(</span>and<span class="w"> </span>change<span class="w"> </span>this<span class="w"> </span>any<span class="w"> </span><span class="nb">time</span><span class="o">)</span><span class="w"> </span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="nb">list</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="nb">list</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">Showing</span> <span class="mi">28</span> <span class="n">of</span> <span class="mi">28</span> <span class="nb">open</span> <span class="n">issues</span> <span class="ow">in</span> <span class="n">introcompsys</span><span class="o">/</span><span class="n">fa23</span><span class="o">-</span><span class="n">kwl</span><span class="o">-</span><span class="n">brownsarahm</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Showing 28 of 28 open issues in introcompsys/fa23-kwl-brownsarahm</span>
 
-<span class="c1">#31  practice-2023-10-04  practice  about 1 day ago</span>
-<span class="c1">#30  review-2023-10-04    review    about 1 day ago</span>
-<span class="c1">#29  prepare-2023-10-04   prepare   about 1 day ago</span>
-<span class="c1">#28  Lab 4                          about 5 days ago</span>
-<span class="c1">#27  practice-2023-09-29  practice  about 5 days ago</span>
-<span class="c1">#26  review-2023-09-29    review    about 5 days ago</span>
-<span class="c1">#25  prepare-2023-09-29   prepare   about 5 days ago</span>
-<span class="c1">#24  practice-2023-09-27  practice  about 8 days ago</span>
-<span class="c1">#23  review-2023-09-27    review    about 8 days ago</span>
-<span class="c1">#22  prepare-2023-09-27   prepare   about 8 days ago</span>
-<span class="c1">#21  Lab 3                          about 12 days ago</span>
-<span class="c1">#20  practice-2023-09-22  practice  about 13 days ago</span>
-<span class="c1">#19  review-2023-09-22    review    about 13 days ago</span>
-<span class="c1">#18  prepare-2023-09-22   prepare   about 13 days ago</span>
-<span class="c1">#17  practice-2023-09-20  practice  about 15 days ago</span>
-<span class="c1">#16  review-2023-09-20    review    about 15 days ago</span>
-<span class="c1">#15  prepare-2023-09-20   prepare   about 15 days ago</span>
-<span class="c1">#14  Lab 2                          about 19 days ago</span>
-<span class="c1">#13  practice-2023-09-15  practice  about 20 days ago</span>
-<span class="c1">#12  review-2023-09-15    review    about 20 days ago</span>
-<span class="c1">#11  prepare-2023-09-15   prepare   about 20 days ago</span>
-<span class="c1">#10  practice-2023-09-13  practice  about 22 days ago</span>
-<span class="c1">#9   review-2023-09-13    review    about 22 days ago</span>
-<span class="c1">#8   prepare-2023-09-13   prepare   about 22 days ago</span>
-<span class="c1">#7   practice-2023-09-07  practice  about 26 days ago</span>
-<span class="c1">#6   review-2023-09-07    review    about 26 days ago</span>
-<span class="c1">#5   prepare-2023-09-08   prepare   about 26 days ago</span>
-<span class="c1">#4   Lab 1                          about 26 days ago</span>
+<span class="gp">#</span><span class="m">31</span><span class="w">  </span>practice-2023-10-04<span class="w">  </span>practice<span class="w">  </span>about<span class="w"> </span><span class="m">1</span><span class="w"> </span>day<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">30</span><span class="w">  </span>review-2023-10-04<span class="w">    </span>review<span class="w">    </span>about<span class="w"> </span><span class="m">1</span><span class="w"> </span>day<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">29</span><span class="w">  </span>prepare-2023-10-04<span class="w">   </span>prepare<span class="w">   </span>about<span class="w"> </span><span class="m">1</span><span class="w"> </span>day<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">28</span><span class="w">  </span>Lab<span class="w"> </span><span class="m">4</span><span class="w">                          </span>about<span class="w"> </span><span class="m">5</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">27</span><span class="w">  </span>practice-2023-09-29<span class="w">  </span>practice<span class="w">  </span>about<span class="w"> </span><span class="m">5</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">26</span><span class="w">  </span>review-2023-09-29<span class="w">    </span>review<span class="w">    </span>about<span class="w"> </span><span class="m">5</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">25</span><span class="w">  </span>prepare-2023-09-29<span class="w">   </span>prepare<span class="w">   </span>about<span class="w"> </span><span class="m">5</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">24</span><span class="w">  </span>practice-2023-09-27<span class="w">  </span>practice<span class="w">  </span>about<span class="w"> </span><span class="m">8</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">23</span><span class="w">  </span>review-2023-09-27<span class="w">    </span>review<span class="w">    </span>about<span class="w"> </span><span class="m">8</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">22</span><span class="w">  </span>prepare-2023-09-27<span class="w">   </span>prepare<span class="w">   </span>about<span class="w"> </span><span class="m">8</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">21</span><span class="w">  </span>Lab<span class="w"> </span><span class="m">3</span><span class="w">                          </span>about<span class="w"> </span><span class="m">12</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">20</span><span class="w">  </span>practice-2023-09-22<span class="w">  </span>practice<span class="w">  </span>about<span class="w"> </span><span class="m">13</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">19</span><span class="w">  </span>review-2023-09-22<span class="w">    </span>review<span class="w">    </span>about<span class="w"> </span><span class="m">13</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">18</span><span class="w">  </span>prepare-2023-09-22<span class="w">   </span>prepare<span class="w">   </span>about<span class="w"> </span><span class="m">13</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">17</span><span class="w">  </span>practice-2023-09-20<span class="w">  </span>practice<span class="w">  </span>about<span class="w"> </span><span class="m">15</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">16</span><span class="w">  </span>review-2023-09-20<span class="w">    </span>review<span class="w">    </span>about<span class="w"> </span><span class="m">15</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">15</span><span class="w">  </span>prepare-2023-09-20<span class="w">   </span>prepare<span class="w">   </span>about<span class="w"> </span><span class="m">15</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">14</span><span class="w">  </span>Lab<span class="w"> </span><span class="m">2</span><span class="w">                          </span>about<span class="w"> </span><span class="m">19</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">13</span><span class="w">  </span>practice-2023-09-15<span class="w">  </span>practice<span class="w">  </span>about<span class="w"> </span><span class="m">20</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">12</span><span class="w">  </span>review-2023-09-15<span class="w">    </span>review<span class="w">    </span>about<span class="w"> </span><span class="m">20</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">11</span><span class="w">  </span>prepare-2023-09-15<span class="w">   </span>prepare<span class="w">   </span>about<span class="w"> </span><span class="m">20</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">10</span><span class="w">  </span>practice-2023-09-13<span class="w">  </span>practice<span class="w">  </span>about<span class="w"> </span><span class="m">22</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">9</span><span class="w">   </span>review-2023-09-13<span class="w">    </span>review<span class="w">    </span>about<span class="w"> </span><span class="m">22</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">8</span><span class="w">   </span>prepare-2023-09-13<span class="w">   </span>prepare<span class="w">   </span>about<span class="w"> </span><span class="m">22</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">7</span><span class="w">   </span>practice-2023-09-07<span class="w">  </span>practice<span class="w">  </span>about<span class="w"> </span><span class="m">26</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">6</span><span class="w">   </span>review-2023-09-07<span class="w">    </span>review<span class="w">    </span>about<span class="w"> </span><span class="m">26</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">5</span><span class="w">   </span>prepare-2023-09-08<span class="w">   </span>prepare<span class="w">   </span>about<span class="w"> </span><span class="m">26</span><span class="w"> </span>days<span class="w"> </span>ago
+<span class="gp">#</span><span class="m">4</span><span class="w">   </span>Lab<span class="w"> </span><span class="m">1</span><span class="w">                          </span>about<span class="w"> </span><span class="m">26</span><span class="w"> </span>days<span class="w"> </span>ago
 </pre></div>
 </div>
 <div class="admonition important">
@@ -1045,24 +1069,32 @@ jobs:
 <section id="processing-issues-on-the-terminal">
 <h3><span class="section-number">9.4.1. </span>Processing issues on the terminal<a class="headerlink" href="#processing-issues-on-the-terminal" title="Permalink to this headline">#</a></h3>
 <p>We can use a pipe to also get a count of the issues using the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command which is for word count and its <code class="docutils literal notranslate"><span class="pre">-l</span></code> option to count lines instead.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">28</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">28</span>
 </pre></div>
 </div>
 <p>Or we can filter to get a subset of them using <code class="docutils literal notranslate"><span class="pre">grep</span></code> to filter.  By default <code class="docutils literal notranslate"><span class="pre">grep</span></code> searches std in, so when we use it with a pipe it works well.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;prepare&#39;</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">issue</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;prepare&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">29</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">04</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">04</span> <span class="mi">02</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">50</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
-<span class="mi">25</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">29</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">29</span> <span class="mi">17</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">35</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
-<span class="mi">22</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">27</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">27</span> <span class="mi">03</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">47</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
-<span class="mi">18</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">22</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">22</span> <span class="mi">11</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">52</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
-<span class="mi">15</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">20</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">20</span> <span class="mi">02</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">07</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
-<span class="mi">11</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">15</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">15</span> <span class="mi">02</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">05</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
-<span class="mi">8</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">13</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">13</span> <span class="mi">01</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">24</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
-<span class="mi">5</span>	<span class="n">OPEN</span>	<span class="n">prepare</span><span class="o">-</span><span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span>	<span class="n">prepare</span>	<span class="mi">2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">22</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">50</span> <span class="o">+</span><span class="mi">0000</span> <span class="n">UTC</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">29	OPEN	prepare-2023-10-04	prepare	2023-10-04 02:38:50 +0000 UTC</span>
+<span class="go">25	OPEN	prepare-2023-09-29	prepare	2023-09-29 17:52:35 +0000 UTC</span>
+<span class="go">22	OPEN	prepare-2023-09-27	prepare	2023-09-27 03:25:47 +0000 UTC</span>
+<span class="go">18	OPEN	prepare-2023-09-22	prepare	2023-09-22 11:11:52 +0000 UTC</span>
+<span class="go">15	OPEN	prepare-2023-09-20	prepare	2023-09-20 02:00:07 +0000 UTC</span>
+<span class="go">11	OPEN	prepare-2023-09-15	prepare	2023-09-15 02:06:05 +0000 UTC</span>
+<span class="go">8	OPEN	prepare-2023-09-13	prepare	2023-09-13 01:42:24 +0000 UTC</span>
+<span class="go">5	OPEN	prepare-2023-09-08	prepare	2023-09-08 22:11:50 +0000 UTC</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -1070,45 +1102,45 @@ jobs:
 <p>You should have fewer prepare than me, in this list becaues by default we only see the open ones</p>
 </div>
 <p>we can use <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">issue</span> <span class="pre">list</span> <span class="pre">--help</span></code> to see more options</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>List issues in a GitHub repository.
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">List issues in a GitHub repository.</span>
 
-The search query syntax is documented here:
-&lt;https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests&gt;
+<span class="go">The search query syntax is documented here:</span>
+<span class="go">&lt;https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests&gt;</span>
 
-For more information about output formatting flags, see `gh help formatting`.
+<span class="go">For more information about output formatting flags, see `gh help formatting`.</span>
 
-USAGE
-  gh issue list [flags]
+<span class="go">USAGE</span>
+<span class="go">  gh issue list [flags]</span>
 
-FLAGS
-      --app string         Filter by GitHub App author
-  -a, --assignee string    Filter by assignee
-  -A, --author string      Filter by author
-  -q, --jq expression      Filter JSON output using a jq expression
-      --json fields        Output JSON with the specified fields
-  -l, --label strings      Filter by label
-  -L, --limit int          Maximum number of issues to fetch (default 30)
-      --mention string     Filter by mention
-  -m, --milestone string   Filter by milestone number or title
-  -S, --search query       Search issues with query
-  -s, --state string       Filter by state: {open|closed|all} (default &quot;open&quot;)
-  -t, --template string    Format JSON output using a Go template; see &quot;gh help formatting&quot;
-  -w, --web                List issues in the web browser
+<span class="go">FLAGS</span>
+<span class="go">      --app string         Filter by GitHub App author</span>
+<span class="go">  -a, --assignee string    Filter by assignee</span>
+<span class="go">  -A, --author string      Filter by author</span>
+<span class="go">  -q, --jq expression      Filter JSON output using a jq expression</span>
+<span class="go">      --json fields        Output JSON with the specified fields</span>
+<span class="go">  -l, --label strings      Filter by label</span>
+<span class="go">  -L, --limit int          Maximum number of issues to fetch (default 30)</span>
+<span class="go">      --mention string     Filter by mention</span>
+<span class="go">  -m, --milestone string   Filter by milestone number or title</span>
+<span class="go">  -S, --search query       Search issues with query</span>
+<span class="go">  -s, --state string       Filter by state: {open|closed|all} (default &quot;open&quot;)</span>
+<span class="go">  -t, --template string    Format JSON output using a Go template; see &quot;gh help formatting&quot;</span>
+<span class="go">  -w, --web                List issues in the web browser</span>
 
-INHERITED FLAGS
-      --help                     Show help for command
-  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format
+<span class="go">INHERITED FLAGS</span>
+<span class="go">      --help                     Show help for command</span>
+<span class="go">  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format</span>
 
-EXAMPLES
-  $ gh issue list --label &quot;bug&quot; --label &quot;help wanted&quot;
-  $ gh issue list --author monalisa
-  $ gh issue list --assignee &quot;@me&quot;
-  $ gh issue list --milestone &quot;The big 1.0&quot;
-  $ gh issue list --search &quot;error no:assignee sort:created-asc&quot;
+<span class="go">EXAMPLES</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>list<span class="w"> </span>--label<span class="w"> </span><span class="s2">&quot;bug&quot;</span><span class="w"> </span>--label<span class="w"> </span><span class="s2">&quot;help wanted&quot;</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>list<span class="w"> </span>--author<span class="w"> </span>monalisa
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>list<span class="w"> </span>--assignee<span class="w"> </span><span class="s2">&quot;@me&quot;</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>list<span class="w"> </span>--milestone<span class="w"> </span><span class="s2">&quot;The big 1.0&quot;</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>list<span class="w"> </span>--search<span class="w"> </span><span class="s2">&quot;error no:assignee sort:created-asc&quot;</span>
 
-LEARN MORE
-  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.
-  Read the manual at https://cli.github.com/manual
+<span class="go">LEARN MORE</span>
+<span class="go">  Use &#39;gh &lt;command&gt; &lt;subcommand&gt; --help&#39; for more information about a command.</span>
+<span class="go">  Read the manual at https://cli.github.com/manual</span>
 </pre></div>
 </div>
 <p>and then we can use the <code class="docutils literal notranslate"><span class="pre">-s</span></code> flag set to all to see all to make yours match mine.</p>
