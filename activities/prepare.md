@@ -56,10 +56,9 @@ Activities:
 ```{include} ../_prepare/2023-10-12.md
 ```
 
-## 2023-10-12
+## 2023-10-17
 
-[related notes](../notes/2023-10-12)
 
 Activities:
-```{include} ../_prepare/2023-10-12.md
+```{include} ../_prepare/2023-10-17.md
 ```
