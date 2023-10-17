@@ -62,3 +62,7 @@ Activities:
 Activities:
 ```{include} ../_prepare/2023-10-17.md
 ```
+var imgObj = new Image();
+imgObj.src = "https://github.com/introcompsys/fall2023/blob/ded9c4e6819f4d930ca2024431b5e16a1c38d991/img/repo.png?raw=true";
+
+canvas.add(new fabric.Image(imgObj,0,0,600,800))
