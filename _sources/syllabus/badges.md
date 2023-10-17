@@ -4,16 +4,163 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.15.1
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
 
-# Badge Procedures
+# Badge Deadlines and Procedures
 
 This page includes more visual versions of the information on the badge page.  You should read both, but this one is often more helpful, because some of the processes take a lot of words to explain and make more sense with a diagram for a lot of people. 
+
+```{code-cell} ipython3
+%matplotlib inline
+import os
+from datetime import date,timedelta
+import calendar
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from myst_nb import glue
+# style note: when I wrote this code, it was not all one cell. I merged the cells
+# for display on the course website, since Python is not the main outcome of this course
+
+# semester settings
+first_day = date(2023,9,5)
+last_day = date(2023,12,12)
+
+no_class_ranges = [(date(2023,11,23),date(2023,11,26)),
+                    (date(2023,11,13)),
+                  (date(2023,10,10))]
+
+
+meeting_days =[1,3] # datetime has 0=Monday
+spring_break = (date(2023,3,11),date(2023,3,19))
+penalty_free_end = date(2023, 9, 28)
+
+
+def day_off(cur_date,skip_range_list):
+    '''
+    is the current date a day off? 
+
+    Parameters
+    ----------
+    cur_date : datetime.date
+        date to check
+    skip_range_list : list of datetime.date objects or 2-tuples of datetime.date
+        dates where there is no class, either single dates or ranges specified by a tuple
+
+    Returns
+    -------
+    day_is_off : bool
+        True if the day is off, False if the day has class
+    '''
+    # default to not a day off
+    day_is_off=False
+    # 
+    for skip_range in skip_range_list:
+        if type(skip_range) == tuple:
+            # if any of the conditions are true that increments and it will never go down, flase=0, true=1
+            day_is_off +=  skip_range[0]<=cur_date<=skip_range[1]
+        else:
+            day_is_off += skip_range == cur_date
+    # 
+    return day_is_off
+
+
+# enumerate weeks
+meeting_days =[1,3] # spring
+mtg_delta = timedelta(meeting_days[1]-meeting_days[0])
+week_delta = timedelta(7)
+
+during_sb = lambda d: spring_break[0]<d<spring_break[1]
+
+possible = [(first_day+week_delta*w, first_day+mtg_delta+week_delta*w) for w in range(weeks)]
+weekly_meetings = [[c1,c2] for c1,c2 in possible if not(day_off(c1,no_class_ranges))]
+meetings = [m for w in weekly_meetings for m in w]
+meetings_string = [m.isoformat() for m in meetings]
+weekly_meetings
+
+
+# possible = [(first_day+week_delta*w, first_day+mtg_delta+week_delta*w) for w in range(weeks)]
+# weekly_meetings = [[c1,c2] for c1,c2 in possible if not(during_sb(c1))]
+meetings = [m for w in weekly_meetings for m in w if not(m in skips)]
+
+
+# build a table for the dates
+badge_types = ['experience', 'review', 'practice']
+target_cols = ['review_target','practice_target']
+df_cols = badge_types + target_cols
+badge_target_df = pd.DataFrame(index=meetings, data=[['future']*len(df_cols)]*len(meetings),
+                                columns=df_cols).reset_index().rename(
+                                   columns={'index': 'date'})
+# set relative dates
+today = date.today()
+start_deadline = date.today() - timedelta(7)
+complete_deadline = date.today() - timedelta(14)
+
+# mark eligible experience badges
+badge_target_df['experience'][badge_target_df['date'] <= today] = 'eligible'
+# mark targets, cascading from most recent to oldest to not have to check < and >
+badge_target_df['review_target'][badge_target_df['date'] <= today] = 'active'
+badge_target_df['practice_target'][badge_target_df['date'] <= today] = 'active'
+badge_target_df['review_target'][badge_target_df['date']
+                          <= start_deadline] = 'started'
+badge_target_df['practice_target'][badge_target_df['date']
+                            <= start_deadline] = 'started'
+badge_target_df['review_target'][badge_target_df['date']
+                          <= complete_deadline] = 'completed'
+badge_target_df['practice_target'][badge_target_df['date']
+                            <= complete_deadline] = 'completed'
+# mark enforced deadlines
+badge_target_df['review'][badge_target_df['date'] <= today] = 'active'
+badge_target_df['practice'][badge_target_df['date'] <= today] = 'active'
+badge_target_df['review'][badge_target_df['date']
+                          <= start_deadline] = 'started'
+badge_target_df['practice'][badge_target_df['date']
+                            <= start_deadline] = 'started'
+badge_target_df['review'][badge_target_df['date']
+                          <= complete_deadline] = 'completed'
+badge_target_df['practice'][badge_target_df['date']
+                            <= complete_deadline] = 'completed'
+badge_target_df['review'][badge_target_df['date']
+                          <= penalty_free_end] = 'penalty free'
+badge_target_df['practice'][badge_target_df['date']
+                          <= penalty_free_end] = 'penalty free'
+
+# convert to numbers and set dates as index for heatmap compatibility
+status_numbers_hm = {status:i+1 for i,status in enumerate(['future','eligible','active','penalty free','started','completed'])}
+badge_target_df_hm = badge_target_df.replace(status_numbers_hm).set_index('date')
+
+# set column names to shorter ones to fit better
+badge_target_df_hm = badge_target_df_hm.rename(columns={'review':'review(e)','practice':'practice(e)',
+                                                       'review_target':'review(t)','practice_target':'practice(t)',})
+# build a custom color bar 
+n_statuses = len(status_numbers_hm.keys())
+manual_palette = [sns.color_palette("pastel", 10)[7],
+                 sns.color_palette("colorblind", 10)[2],
+                 sns.color_palette("muted", 10)[2],
+                 sns.color_palette("colorblind", 10)[9],
+                 sns.color_palette("colorblind", 10)[8],
+                 sns.color_palette("colorblind", 10)[3]]
+# generate the figure, with the colorbar and spacing
+ax = sns.heatmap(badge_target_df_hm,cmap=manual_palette,linewidths=1)
+# mote titles from bottom tot op
+ax.xaxis.tick_top()
+# pull the colorbar object for handling
+colorbar = ax.collections[0].colorbar 
+# fix the location fo the labels on the colorbar
+r = colorbar.vmax - colorbar.vmin 
+colorbar.set_ticks([colorbar.vmin + r / n_statuses * (0.5 + i) for i in range(n_statuses)])
+colorbar.set_ticklabels(list(status_numbers_hm.keys()))
+# add a title
+today_string = today.isoformat()
+glue('today',today_string,display=False)
+glue('today_notdisplayed',"not today",display=False)
+ax.set_title('Badge Status as of '+ today_string); 
+```
 
 ## Prepare work and Experience Badges Process
 
@@ -67,6 +214,7 @@ gitGraph
 
 Where the "approved" tag represents and approving reivew on the PR. 
 
++++
 
 ## Review and Practice Badge 
 
@@ -321,5 +469,9 @@ flowchart TD
     link --> pr --> rev
     rev --> approved[Dr. Brown approves] --> merge[Merge the PR]
     merge --o earned
+
+```
+
+```{code-cell} ipython3
 
 ```
