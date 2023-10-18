@@ -24,6 +24,19 @@ Experience reports for missing class is on a case by case basis depending on why
 Explore and build, we'll agree to a deadline when you propose. 
 ```
 
+## Who should I request to review my work?
+```{toggle}
+- Experience badge (inclass): TA in your group
+- Experience report(makeup) `@brownsarahm``
+- Review badge: `@instructors` team (it will convert to one of the three of us)
+- Explore Proposal: `@brownsarahm`
+- Explore Badge: `@brownsarahm`
+- Build Proposal: `@brownsarahm`
+- Build Badge: `@brownsarahm`
+
+
+```
+
 ## Will everything done in the penalty free zone be approved even if there are mistakes?
 ```{toggle}
 No. In the penalty-free zone I still want you to learn things, but we will do extra work to make sure that you get credit for all of your effort even if you make mistakes in how to use GitHub.  We will ask you to fix things that we have taught you to fix, but not things that we will not cover until later.  
