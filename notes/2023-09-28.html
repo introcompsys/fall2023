@@ -182,6 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -447,12 +448,21 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">7.14. More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">7.15. Experience Report Evidence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">7.16. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">7.16.1. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">7.16.2. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">7.16.3. Can you create an entire repository with only git?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">7.16.4. What is jupyter used for</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">7.16.5. My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">7.16.6. So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python">7.16.1. Why would one experience missing .exe files within their python library, even after reinstalling python?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">7.16.2. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">7.16.3. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">7.16.4. Can you create an entire repository with only git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">7.16.5. What is jupyter used for</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">7.16.6. My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">7.16.7. So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files">7.16.8. Is it possible to edit the Jupyter Book website on a web front site or does it have to be in the files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-their-alternatives-to-jupyterbook-that-have-similar-functionality">7.16.9. Are their alternatives to Jupyterbook that have similar functionality?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.16.10. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.16.11. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-questions-for-explore-badges">7.17. Good Questions for Explore Badges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-platforms-libraries-are-used-to-generate-similar-webpages">7.17.1. What other platforms/libraries are used to generate similar webpages?</a></li>
 </ul>
 </li>
 </ul>
@@ -1221,33 +1231,65 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
 </section>
 <section id="questions-after-todays-class">
 <h2><span class="section-number">7.16. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<section id="why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python">
+<h3><span class="section-number">7.16.1. </span>Why would one experience missing .exe files within their python library, even after reinstalling python?<a class="headerlink" href="#why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python" title="Permalink to this headline">#</a></h3>
+<p>it is probably a missing path</p>
+</section>
 <section id="if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">
-<h3><span class="section-number">7.16.1. </span>If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?<a class="headerlink" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.2. </span>If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?<a class="headerlink" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore" title="Permalink to this headline">#</a></h3>
 <p>To track the files in the build directory you would need to delete it from the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p>
 <p>Also, of note, git does not track folders, it tracks files, but listing folder paths can help</p>
 </section>
 <section id="will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">
-<h3><span class="section-number">7.16.2. </span>Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?<a class="headerlink" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.3. </span>Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?<a class="headerlink" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax" title="Permalink to this headline">#</a></h3>
 <p>Default it works with Python, but the <a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/describing-code.html#other-languages-c-c-others">sphinx docs</a> describe how to work with other languages. The jupyter book docs include a page on how <a class="reference external" href="https://jupyterbook.org/en/stable/explain/sphinx.html">sphinx and jupyter-book</a> are related and a <a class="reference external" href="https://jupyterbook.org/en/stable/advanced/sphinx.html">page on how to use other sphinx features in a jupyter book</a>.</p>
 <p>Jupyter notebooks also have <a class="reference external" href="https://docs.jupyter.org/en/latest/projects/kernels.html">alternative kernels</a> so notebook styled pages can be written in these languages as well.</p>
 </section>
 <section id="can-you-create-an-entire-repository-with-only-git">
-<h3><span class="section-number">7.16.3. </span>Can you create an entire repository with only git?<a class="headerlink" href="#can-you-create-an-entire-repository-with-only-git" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.4. </span>Can you create an entire repository with only git?<a class="headerlink" href="#can-you-create-an-entire-repository-with-only-git" title="Permalink to this headline">#</a></h3>
 <p>By definition git is what makes a git repository.</p>
 </section>
 <section id="what-is-jupyter-used-for">
-<h3><span class="section-number">7.16.4. </span>What is jupyter used for<a class="headerlink" href="#what-is-jupyter-used-for" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.5. </span>What is jupyter used for<a class="headerlink" href="#what-is-jupyter-used-for" title="Permalink to this headline">#</a></h3>
 <p>Jupyter is a large software project designed to support computational sciences.</p>
 <p>it includes the notebook file format specification, the lab interface for working with them, the hub for hosting it on a server.</p>
 <p>Jupyter-book is a separate, but related, project that is highly compatible.</p>
 </section>
 <section id="my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">
-<h3><span class="section-number">7.16.5. </span>My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.<a class="headerlink" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.6. </span>My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.<a class="headerlink" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen" title="Permalink to this headline">#</a></h3>
 <p>This sounds like you may have copied the ssh url to the remote instead of the https version?</p>
 </section>
 <section id="so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">
-<h3><span class="section-number">7.16.6. </span>So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?<a class="headerlink" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.7. </span>So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?<a class="headerlink" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia" title="Permalink to this headline">#</a></h3>
 <p>Python things do not work in GitBash by default, but do work in Anaconda Prompt, where git operations do not work. You may need to use two terminals, but should be able to do everything you need.</p>
+</section>
+<section id="is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files">
+<h3><span class="section-number">7.16.8. </span>Is it possible to edit the Jupyter Book website on a web front site or does it have to be in the files?<a class="headerlink" href="#is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files" title="Permalink to this headline">#</a></h3>
+<p>You have to edit the source files not the built ones to keep the changes.</p>
+<p>You can however, add custom HTML and/or CSS.</p>
+</section>
+<section id="are-their-alternatives-to-jupyterbook-that-have-similar-functionality">
+<h3><span class="section-number">7.16.9. </span>Are their alternatives to Jupyterbook that have similar functionality?<a class="headerlink" href="#are-their-alternatives-to-jupyterbook-that-have-similar-functionality" title="Permalink to this headline">#</a></h3>
+<p>Yes, this is the practice badge.</p>
+</section>
+<section id="id1">
+<h3><span class="section-number">7.16.10. </span>If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>It has to not be in .gitignore to be tracked.</p>
+</section>
+<section id="id2">
+<h3><span class="section-number">7.16.11. </span>Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>By default it looks for Python, but you can configure it to work with other languages.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is one thing you could do for a build badge.</p>
+</div>
+</section>
+</section>
+<section id="good-questions-for-explore-badges">
+<h2><span class="section-number">7.17. </span>Good Questions for Explore Badges<a class="headerlink" href="#good-questions-for-explore-badges" title="Permalink to this headline">#</a></h2>
+<section id="what-other-platforms-libraries-are-used-to-generate-similar-webpages">
+<h3><span class="section-number">7.17.1. </span>What other platforms/libraries are used to generate similar webpages?<a class="headerlink" href="#what-other-platforms-libraries-are-used-to-generate-similar-webpages" title="Permalink to this headline">#</a></h3>
+<p>Learning about the landscape of static site generators is a great topic.</p>
 </section>
 </section>
 </section>
@@ -1344,12 +1386,21 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">7.14. More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">7.15. Experience Report Evidence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">7.16. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">7.16.1. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">7.16.2. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">7.16.3. Can you create an entire repository with only git?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">7.16.4. What is jupyter used for</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">7.16.5. My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">7.16.6. So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python">7.16.1. Why would one experience missing .exe files within their python library, even after reinstalling python?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">7.16.2. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">7.16.3. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">7.16.4. Can you create an entire repository with only git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">7.16.5. What is jupyter used for</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">7.16.6. My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">7.16.7. So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files">7.16.8. Is it possible to edit the Jupyter Book website on a web front site or does it have to be in the files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-their-alternatives-to-jupyterbook-that-have-similar-functionality">7.16.9. Are their alternatives to Jupyterbook that have similar functionality?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.16.10. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.16.11. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-questions-for-explore-badges">7.17. Good Questions for Explore Badges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-platforms-libraries-are-used-to-generate-similar-webpages">7.17.1. What other platforms/libraries are used to generate similar webpages?</a></li>
 </ul>
 </li>
 </ul>

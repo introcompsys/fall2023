@@ -182,6 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-03.html">8. What <em>is</em> git?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-05.html">9. Why are these tools organized this way?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-17.html">11. What is a commit number?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -512,7 +513,7 @@ Topics:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;schedule.csv&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;schedule.csv&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -645,21 +646,21 @@ Topics:
     </tr>
     <tr>
       <th>2023-10-17</th>
-      <td>How can can I release and share my code?</td>
-      <td>git references</td>
-      <td>pointers, git branches and tags</td>
-      <td>git branches, advanced fixing, semver and conv...</td>
-      <td>advantages of data that is both human and mach...</td>
-      <td>make a tag and release</td>
-    </tr>
-    <tr>
-      <th>2023-10-19</th>
       <td>What is a commit number?</td>
       <td>numbers</td>
       <td>hashes, number systems</td>
       <td>git commit numbers, manual hashing with git</td>
       <td>number  systems are derived in culture</td>
       <td>discussion and use hashing algorithm</td>
+    </tr>
+    <tr>
+      <th>2023-10-19</th>
+      <td>How can can I release and share my code?</td>
+      <td>git references</td>
+      <td>pointers, git branches and tags</td>
+      <td>git branches, advanced fixing, semver and conv...</td>
+      <td>advantages of data that is both human and mach...</td>
+      <td>make a tag and release</td>
     </tr>
     <tr>
       <th>2023-10-24</th>
@@ -796,7 +797,7 @@ Topics:
 <h2>Tentative Lab schedule<a class="headerlink" href="#tentative-lab-schedule" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;labschedule.csv&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;labschedule.csv&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -830,59 +831,9 @@ Topics:
   </thead>
   <tbody>
     <tr>
-      <th>2023-10-06</th>
-      <td>unix philosophy</td>
-      <td>design a command line tool that would enable a...</td>
-    </tr>
-    <tr>
-      <th>2023-09-22</th>
-      <td>offline branches</td>
-      <td>plan for success, clean a messy repo</td>
-    </tr>
-    <tr>
-      <th>2023-10-13</th>
-      <td>git plumbing</td>
-      <td>git plumbing experiment</td>
-    </tr>
-    <tr>
-      <th>2023-10-27</th>
-      <td>scripting</td>
-      <td>releases and packaging</td>
-    </tr>
-    <tr>
       <th>2023-09-08</th>
       <td>GitHub Basics</td>
       <td>syllabus quiz, setup</td>
-    </tr>
-    <tr>
-      <th>2023-12-08</th>
-      <td>os</td>
-      <td>hardware simulation</td>
-    </tr>
-    <tr>
-      <th>2023-09-29</th>
-      <td>tool familiarity</td>
-      <td>work on badges, self progress report</td>
-    </tr>
-    <tr>
-      <th>2023-11-03</th>
-      <td>remote, hpc</td>
-      <td>server work, batch scripts</td>
-    </tr>
-    <tr>
-      <th>2023-11-17</th>
-      <td>Machine representation</td>
-      <td>bits and floats and number libraries</td>
-    </tr>
-    <tr>
-      <th>2023-11-10</th>
-      <td>Compiling</td>
-      <td>C compiling experiments</td>
-    </tr>
-    <tr>
-      <th>2023-10-20</th>
-      <td>git plumbing</td>
-      <td>grade calculation script, self reflection</td>
     </tr>
     <tr>
       <th>2023-09-15</th>
@@ -890,9 +841,59 @@ Topics:
       <td>organization, setup kwl locally, manage issues</td>
     </tr>
     <tr>
+      <th>2023-09-22</th>
+      <td>offline branches</td>
+      <td>plan for success, clean a messy repo</td>
+    </tr>
+    <tr>
+      <th>2023-09-29</th>
+      <td>tool familiarity</td>
+      <td>work on badges, self progress report</td>
+    </tr>
+    <tr>
+      <th>2023-10-06</th>
+      <td>unix philosophy</td>
+      <td>design a command line tool that would enable a...</td>
+    </tr>
+    <tr>
+      <th>2023-10-13</th>
+      <td>git plumbing</td>
+      <td>git plumbing experiment</td>
+    </tr>
+    <tr>
+      <th>2023-10-20</th>
+      <td>git plumbing</td>
+      <td>grade calculation script, self reflection</td>
+    </tr>
+    <tr>
+      <th>2023-10-27</th>
+      <td>scripting</td>
+      <td>releases and packaging</td>
+    </tr>
+    <tr>
+      <th>2023-11-03</th>
+      <td>remote, hpc</td>
+      <td>server work, batch scripts</td>
+    </tr>
+    <tr>
+      <th>2023-11-10</th>
+      <td>Compiling</td>
+      <td>C compiling experiments</td>
+    </tr>
+    <tr>
+      <th>2023-11-17</th>
+      <td>Machine representation</td>
+      <td>bits and floats and number libraries</td>
+    </tr>
+    <tr>
       <th>2023-12-01</th>
       <td>hardware</td>
       <td>self-reflection, work, project consultations</td>
+    </tr>
+    <tr>
+      <th>2023-12-08</th>
+      <td>os</td>
+      <td>hardware simulation</td>
     </tr>
   </tbody>
 </table>

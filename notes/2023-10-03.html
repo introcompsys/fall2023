@@ -182,6 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. What <em>is</em> git?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -442,7 +443,24 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">8.13. Review today’s class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">8.14. More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">8.15. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">8.16. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">8.16. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-contents-of-one-item-of-a-tree-stored-in-key-value-pairs-or-are-they-like-a-tuple-of-information">8.16.1. Are the contents of one item of a tree stored in key-value pairs or are they like a tuple of information?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-does-the-ordinary-developer-need-to-use-plumbing-commands">8.16.2. How often does the ordinary developer need to use plumbing commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-know-about-our-objects-file">8.16.3. Why do we need to know about our objects file?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-the-hashes-be-decoded">8.16.4. Can the hashes be decoded?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-learn-the-commands">8.16.5. How to learn the commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-anyone-ever-want-to-use-a-gui-once-they-learn-terminnal-commands-would-there-still-be-benefits-to-a-gui">8.16.6. Why would anyone ever want to use a GUI once they learn Terminnal commands? Would there still be benefits to a GUI?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-command-to-find-specific-type-such-as-commits-or-trees-or-blobs">8.16.7. What command to find specific type, such as commits, or trees, or blobs?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-defines-a-vcs">8.16.8. What defines a VCS?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-commit-hash-account-for-just-the-email-and-time-or-does-it-use-other-data">8.16.9. Does the commit hash account for just the email and time or does it use other data?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-practical-uses-of-finding-the-git-object-types-for-developers">8.16.10. What are the practical uses of finding the git object types for developers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-see-this-in-future-classes">8.16.11. Will we see this in future classes?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-good-for-explore-badges">8.17. Questions Good for Explore badges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-systems-generally">8.17.1. Version control systems generally</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1116,10 +1134,79 @@ document.write(`
 </section>
 <section id="questions-after-todays-class">
 <h2><span class="section-number">8.16. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>I realized that most of you are asking questions in your experience badge file instead of prismia.  I need to update my script to gather the questions, but will start adding those questions to Q&amp;A</p>
+<section id="are-the-contents-of-one-item-of-a-tree-stored-in-key-value-pairs-or-are-they-like-a-tuple-of-information">
+<h3><span class="section-number">8.16.1. </span>Are the contents of one item of a tree stored in key-value pairs or are they like a tuple of information?<a class="headerlink" href="#are-the-contents-of-one-item-of-a-tree-stored-in-key-value-pairs-or-are-they-like-a-tuple-of-information" title="Permalink to this headline">#</a></h3>
+<p>A tree can be though of like a list of tuples.</p>
+<p>Recall the one that we looked at was like:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">040000 tree 95b60ce8cdec1bc4e1df1416e0c0e6ecbd3e7a8c	.github</span>
+<span class="go">100644 blob b86eb90ba1ae5504edfcdc9ef8879e1c6d7a1b75	README.md</span>
+<span class="go">100644 blob 443f164cdde5059d78df6a61ca3f07bc6a605eb0	about.md</span>
+</pre></div>
 </div>
+<p>This ree has 3 items.  Each item has a type of file (that number), a type of object, the hash of the object and the name of the content content.</p>
+<p>The 040000 type is for folder and 100644 is for a file.</p>
+</section>
+<section id="how-often-does-the-ordinary-developer-need-to-use-plumbing-commands">
+<h3><span class="section-number">8.16.2. </span>How often does the ordinary developer need to use plumbing commands?<a class="headerlink" href="#how-often-does-the-ordinary-developer-need-to-use-plumbing-commands" title="Permalink to this headline">#</a></h3>
+<p>Only when you make a mistake, but they are really helpful for getting a better understanding.</p>
+</section>
+<section id="why-do-we-need-to-know-about-our-objects-file">
+<h3><span class="section-number">8.16.3. </span>Why do we need to know about our objects file?<a class="headerlink" href="#why-do-we-need-to-know-about-our-objects-file" title="Permalink to this headline">#</a></h3>
+<p>Buliding up a better understanding of what git is, sets us up to study how it works in greater detail.  This understanding helps you use git more effectively, both to not make mistakes as often and to fix them if you (or a coworker/team mate) still do make one.</p>
+</section>
+<section id="can-the-hashes-be-decoded">
+<h3><span class="section-number">8.16.4. </span>Can the hashes be decoded?<a class="headerlink" href="#can-the-hashes-be-decoded" title="Permalink to this headline">#</a></h3>
+<p>No these are cryptographic hashes, so they are not reversible.</p>
+</section>
+<section id="how-to-learn-the-commands">
+<h3><span class="section-number">8.16.5. </span>How to learn the commands?<a class="headerlink" href="#how-to-learn-the-commands" title="Permalink to this headline">#</a></h3>
+<p>Practice!</p>
+</section>
+<section id="why-would-anyone-ever-want-to-use-a-gui-once-they-learn-terminnal-commands-would-there-still-be-benefits-to-a-gui">
+<h3><span class="section-number">8.16.6. </span>Why would anyone ever want to use a GUI once they learn Terminnal commands? Would there still be benefits to a GUI?<a class="headerlink" href="#why-would-anyone-ever-want-to-use-a-gui-once-they-learn-terminnal-commands-would-there-still-be-benefits-to-a-gui" title="Permalink to this headline">#</a></h3>
+<p>Some tools have helpful utility and no command line interface to them.  When using a touchscreen device?</p>
+<p>Really, most people that get comfortable with a terminal, do use it a lot.</p>
+</section>
+<section id="what-command-to-find-specific-type-such-as-commits-or-trees-or-blobs">
+<h3><span class="section-number">8.16.7. </span>What command to find specific type, such as commits, or trees, or blobs?<a class="headerlink" href="#what-command-to-find-specific-type-such-as-commits-or-trees-or-blobs" title="Permalink to this headline">#</a></h3>
+<p>You can get a list of all objects with <code class="docutils literal notranslate"><span class="pre">find</span></code> and then check the type.</p>
+<p>You can also trace through following the pointers.  So starting from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> to get the commit hashes, and then using one of those to get the tree, then the tree to get blobs.</p>
+</section>
+<section id="what-defines-a-vcs">
+<h3><span class="section-number">8.16.8. </span>What defines a VCS?<a class="headerlink" href="#what-defines-a-vcs" title="Permalink to this headline">#</a></h3>
+<p>A version control system has to keep track of different versions of code in a systematic way.  A more detailed answer for this is a good explore badge topic.</p>
+</section>
+<section id="does-the-commit-hash-account-for-just-the-email-and-time-or-does-it-use-other-data">
+<h3><span class="section-number">8.16.9. </span>Does the commit hash account for just the email and time or does it use other data?<a class="headerlink" href="#does-the-commit-hash-account-for-just-the-email-and-time-or-does-it-use-other-data" title="Permalink to this headline">#</a></h3>
+<p>The commit hash is produced using the hashing function with the inputs:</p>
+<ul class="simple">
+<li><p>a header</p></li>
+<li><p>the tree</p></li>
+<li><p>the author with time stamp</p></li>
+<li><p>the committer with time stamp</p></li>
+<li><p>a blank line</p></li>
+<li><p>the commit message</p></li>
+</ul>
+</section>
+<section id="what-are-the-practical-uses-of-finding-the-git-object-types-for-developers">
+<h3><span class="section-number">8.16.10. </span>What are the practical uses of finding the git object types for developers?<a class="headerlink" href="#what-are-the-practical-uses-of-finding-the-git-object-types-for-developers" title="Permalink to this headline">#</a></h3>
+<p>This is how you can trace out and manually recover something you thought was lost.</p>
+<p>More importantly undersanding what happens under the hood prepares you to learn more advanced porcelain commands.</p>
+</section>
+<section id="will-we-see-this-in-future-classes">
+<h3><span class="section-number">8.16.11. </span>Will we see this in future classes?<a class="headerlink" href="#will-we-see-this-in-future-classes" title="Permalink to this headline">#</a></h3>
+<p>Yes!</p>
+</section>
+</section>
+<section id="questions-good-for-explore-badges">
+<h2><span class="section-number">8.17. </span>Questions Good for Explore badges<a class="headerlink" href="#questions-good-for-explore-badges" title="Permalink to this headline">#</a></h2>
+<section id="version-control-systems-generally">
+<h3><span class="section-number">8.17.1. </span>Version control systems generally<a class="headerlink" href="#version-control-systems-generally" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>What other version control systems are there besides git?</p></li>
+<li><p>what features do they have in common?</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -1210,7 +1297,24 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">8.13. Review today’s class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">8.14. More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">8.15. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">8.16. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">8.16. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-contents-of-one-item-of-a-tree-stored-in-key-value-pairs-or-are-they-like-a-tuple-of-information">8.16.1. Are the contents of one item of a tree stored in key-value pairs or are they like a tuple of information?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-does-the-ordinary-developer-need-to-use-plumbing-commands">8.16.2. How often does the ordinary developer need to use plumbing commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-know-about-our-objects-file">8.16.3. Why do we need to know about our objects file?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-the-hashes-be-decoded">8.16.4. Can the hashes be decoded?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-learn-the-commands">8.16.5. How to learn the commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-anyone-ever-want-to-use-a-gui-once-they-learn-terminnal-commands-would-there-still-be-benefits-to-a-gui">8.16.6. Why would anyone ever want to use a GUI once they learn Terminnal commands? Would there still be benefits to a GUI?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-command-to-find-specific-type-such-as-commits-or-trees-or-blobs">8.16.7. What command to find specific type, such as commits, or trees, or blobs?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-defines-a-vcs">8.16.8. What defines a VCS?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-commit-hash-account-for-just-the-email-and-time-or-does-it-use-other-data">8.16.9. Does the commit hash account for just the email and time or does it use other data?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-practical-uses-of-finding-the-git-object-types-for-developers">8.16.10. What are the practical uses of finding the git object types for developers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-see-this-in-future-classes">8.16.11. Will we see this in future classes?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-good-for-explore-badges">8.17. Questions Good for Explore badges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-systems-generally">8.17.1. Version control systems generally</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

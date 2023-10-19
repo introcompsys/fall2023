@@ -182,6 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -441,7 +442,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">6.12. Review today’s class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">6.13. More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">6.14. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">6.15. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">6.15. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-use-the-terminal-for-any-ide-that-is-not-only-vscode-in-codespaces">6.15.1. Can you use the terminal for any IDE that is not only VScode in Codespaces?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-using-git-reset-and-git-revert">6.15.2. What is the difference between using git reset and git revert?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-learn-more-neat-tricks-like-multicursor-very-usefull-and-i-do-not-know-how-i-have-never-known-about-it">6.15.3. How can I learn more neat tricks like multicursor?! Very usefull and I do not know how I have never known about it.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-always-a-way-to-return-to-a-state-of-a-repo-no-matter-how-far-along-or-how-much-as-been-commited-or-changed">6.15.4. Is there always a way to return to a state of a repo, no matter how far along or how much as been commited or changed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-the-commit-message-convention-you-showed-us-in-class-do-it-needs-a-script-to-attach-to-it-but-what-is-the-end-goal-of-the-scripts">6.15.5. What does the commit message convention you showed us in class do? It needs a script to attach to it but what is the end goal of the scripts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-write-a-script-to-automate-this-process-so-that-i-dont-need-to-write-as-many-commands">6.15.6. Is there a way to write a script to automate this process so that I don’t need to write as many commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-more-efficient-to-look-for-the-commit-id-and-create-a-branch-off-it-in-the-terminal-rather-than-to-do-it-manually-in-github">6.15.7. Is it more efficient to look for the commit id and create a branch off it in the terminal rather than to do it manually in github?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-you-know-of-some-situations-where-restore-saved-the-worst-possible-mistakes-in-a-repo">6.15.8. Do you know of some situations where restore saved the worst possible mistakes in a repo?</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -612,10 +623,43 @@ document.write(`
 </section>
 <section id="questions-after-todays-class">
 <h2><span class="section-number">6.15. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
-<div class="community admonition">
-<p class="admonition-title">GitHub practice for questions</p>
-<p>Use an issue to submit a question for today, or make a PR to post a question and the best answer you can find (I’ll review and fix if needed before posting) for a community badge.</p>
+<section id="can-you-use-the-terminal-for-any-ide-that-is-not-only-vscode-in-codespaces">
+<h3><span class="section-number">6.15.1. </span>Can you use the terminal for any IDE that is not only VScode in Codespaces?<a class="headerlink" href="#can-you-use-the-terminal-for-any-ide-that-is-not-only-vscode-in-codespaces" title="Permalink to this headline">#</a></h3>
+<p>Yes.</p>
+</section>
+<section id="what-is-the-difference-between-using-git-reset-and-git-revert">
+<h3><span class="section-number">6.15.2. </span>What is the difference between using git reset and git revert?<a class="headerlink" href="#what-is-the-difference-between-using-git-reset-and-git-revert" title="Permalink to this headline">#</a></h3>
+<p>git revert applies a new commit that is the opposite of the one that you want to “undo” reset actuall  resets everything back to a particular point.</p>
+</section>
+<section id="how-can-i-learn-more-neat-tricks-like-multicursor-very-usefull-and-i-do-not-know-how-i-have-never-known-about-it">
+<h3><span class="section-number">6.15.3. </span>How can I learn more neat tricks like multicursor?! Very usefull and I do not know how I have never known about it.<a class="headerlink" href="#how-can-i-learn-more-neat-tricks-like-multicursor-very-usefull-and-i-do-not-know-how-i-have-never-known-about-it" title="Permalink to this headline">#</a></h3>
+<p>I think most developers learn things like this from talking to one another or reading blogs/watching youtube/ following on social media.</p>
+<p>We will have a class on IDEs later, where one of the tasks is for you all to share tips.</p>
+</section>
+<section id="is-there-always-a-way-to-return-to-a-state-of-a-repo-no-matter-how-far-along-or-how-much-as-been-commited-or-changed">
+<h3><span class="section-number">6.15.4. </span>Is there always a way to return to a state of a repo, no matter how far along or how much as been commited or changed?<a class="headerlink" href="#is-there-always-a-way-to-return-to-a-state-of-a-repo-no-matter-how-far-along-or-how-much-as-been-commited-or-changed" title="Permalink to this headline">#</a></h3>
+<p>Yes</p>
+</section>
+<section id="what-does-the-commit-message-convention-you-showed-us-in-class-do-it-needs-a-script-to-attach-to-it-but-what-is-the-end-goal-of-the-scripts">
+<h3><span class="section-number">6.15.5. </span>What does the commit message convention you showed us in class do? It needs a script to attach to it but what is the end goal of the scripts?<a class="headerlink" href="#what-does-the-commit-message-convention-you-showed-us-in-class-do-it-needs-a-script-to-attach-to-it-but-what-is-the-end-goal-of-the-scripts" title="Permalink to this headline">#</a></h3>
+<p>It allows a script to process the commit messages in order to produce a change log.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Learning more about this or using it throughout could be an explore/build badge</p>
 </div>
+</section>
+<section id="is-there-a-way-to-write-a-script-to-automate-this-process-so-that-i-dont-need-to-write-as-many-commands">
+<h3><span class="section-number">6.15.6. </span>Is there a way to write a script to automate this process so that I don’t need to write as many commands?<a class="headerlink" href="#is-there-a-way-to-write-a-script-to-automate-this-process-so-that-i-dont-need-to-write-as-many-commands" title="Permalink to this headline">#</a></h3>
+<p>Yes we will write scripts in a few weeks.</p>
+</section>
+<section id="is-it-more-efficient-to-look-for-the-commit-id-and-create-a-branch-off-it-in-the-terminal-rather-than-to-do-it-manually-in-github">
+<h3><span class="section-number">6.15.7. </span>Is it more efficient to look for the commit id and create a branch off it in the terminal rather than to do it manually in github?<a class="headerlink" href="#is-it-more-efficient-to-look-for-the-commit-id-and-create-a-branch-off-it-in-the-terminal-rather-than-to-do-it-manually-in-github" title="Permalink to this headline">#</a></h3>
+<p>Often yes.</p>
+</section>
+<section id="do-you-know-of-some-situations-where-restore-saved-the-worst-possible-mistakes-in-a-repo">
+<h3><span class="section-number">6.15.8. </span>Do you know of some situations where restore saved the worst possible mistakes in a repo?<a class="headerlink" href="#do-you-know-of-some-situations-where-restore-saved-the-worst-possible-mistakes-in-a-repo" title="Permalink to this headline">#</a></h3>
+<p>Yes, reverting and restoring helps fix bugs all the time.  It is also how people can remove data that should have never been commited, before pushing.</p>
+</section>
 </section>
 </section>
 
@@ -705,7 +749,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">6.12. Review today’s class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">6.13. More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">6.14. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">6.15. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">6.15. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-use-the-terminal-for-any-ide-that-is-not-only-vscode-in-codespaces">6.15.1. Can you use the terminal for any IDE that is not only VScode in Codespaces?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-using-git-reset-and-git-revert">6.15.2. What is the difference between using git reset and git revert?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-learn-more-neat-tricks-like-multicursor-very-usefull-and-i-do-not-know-how-i-have-never-known-about-it">6.15.3. How can I learn more neat tricks like multicursor?! Very usefull and I do not know how I have never known about it.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-always-a-way-to-return-to-a-state-of-a-repo-no-matter-how-far-along-or-how-much-as-been-commited-or-changed">6.15.4. Is there always a way to return to a state of a repo, no matter how far along or how much as been commited or changed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-the-commit-message-convention-you-showed-us-in-class-do-it-needs-a-script-to-attach-to-it-but-what-is-the-end-goal-of-the-scripts">6.15.5. What does the commit message convention you showed us in class do? It needs a script to attach to it but what is the end goal of the scripts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-write-a-script-to-automate-this-process-so-that-i-dont-need-to-write-as-many-commands">6.15.6. Is there a way to write a script to automate this process so that I don’t need to write as many commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-more-efficient-to-look-for-the-commit-id-and-create-a-branch-off-it-in-the-terminal-rather-than-to-do-it-manually-in-github">6.15.7. Is it more efficient to look for the commit id and create a branch off it in the terminal rather than to do it manually in github?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-you-know-of-some-situations-where-restore-saved-the-worst-possible-mistakes-in-a-repo">6.15.8. Do you know of some situations where restore saved the worst possible mistakes in a repo?</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -92,11 +92,11 @@ This is the planned schedule, but is subject to change in order to adapt to how 
 
 ```{code-cell} ipython
 import pandas as pd
-pd.read_csv('schedule.csv',index_col='date')
+pd.read_csv('schedule.csv',index_col='date').sort_index()
 ```
 
 ## Tentative Lab schedule
 
 ```{code-cell} ipython
-pd.read_csv('labschedule.csv',index_col='date')
+pd.read_csv('labschedule.csv',index_col='date').sort_index()
 ```
