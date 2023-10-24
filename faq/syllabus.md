@@ -66,3 +66,17 @@ excerpts or screenshots embedded in it.
 They should be markdown files in your KWL repo.  I recommend myst markdown.
 ```
 
+## Why won't my experience badge workflow contain the new changes after I edit the workflow?
+```{toggle}
+If you find that a workflow you may have made changes to are not properly reflecting your workflow changes is because you may not be running the workflow correctly.
+
+To correctly execute an action in GitHub you should:
+
+1. Make sure you are in the actions tab in your repository
+2. On the left side of the screen the specific workflows should be available to select. 
+3. Select the desired workflow.
+4. At the top of the workflow runs there should be an option to run the workflow.
+5. Select Run Workflow to run the most recent and up to date workflow.
+
+This should help correct the workflow if it was causing issues.
+```
