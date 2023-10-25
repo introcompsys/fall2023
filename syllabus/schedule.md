@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.15.1
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
+
 # Schedule
 
 
@@ -74,117 +88,15 @@ Topics:
 
 ## Tentative Schedule
 
-Content from above will be expanded and slotted into specific classes as we go. This will always be a place you can get reminders of what you need to do next and/or what you missed if you miss a class as an overview.  More Details will be in other parts of the site, linked to here.
+This is the planned schedule, but is subject to change in order to adapt to how things go in class or additional questions that come up. 
 
-<!-- You can see samples of how this worked out in previous semesters in their notes:
-- [spring 22]()
-- [fall 22]() -->
+```{code-cell} ipython
+import pandas as pd
+pd.read_csv('schedule.csv',index_col='date').sort_index()
+```
 
-<!-- ``````{list-table} Schedule
-:header-rows: 1
-:widths: 10 15 20 15
-:name: schedule
+## Tentative Lab schedule
 
-* - Date
-  - Key Question
-  - In Class Activities
-  - Preparation
-* - 2023-01-24
-  - What are we doing this semester?
-  - Introductions, tool practice, setup
-  - Create GitHub and Prismia accounts, take stock of dev environments
-* - 2023-01-26
-  - Why study systems and tools?
-  - course  FAQ, knowledge discussion
-  - Read through the class site, notes, reflect on a thing you know well
-* - 2023-01-31
-  - How do I use git offline?
-  - cloning, pushing, file basics
-  - review notes, reflect on issues, check environment, map cs knowledge
-* - 2023-02-02
-  - Why do I need to use a terminal?
-  - bash, organizing a project
-  - review notes, practice git offline 2 ways, update kwl
-* - 2023-02-07
-  - How do programmers automate mundane tasks?
-  - shell scripting, pipes, more redirects, grep
-  - install courseutils
-* - 2023-02-09
-  - How do programmers build documentation?
-  - confirm jupyterbook is installed
-  - templating,
-* - 2023-02-14
-  - How does git really work?
-  - grading contract Q&A, git diff, hash
-  - practice, begin contract, understand git
-* - 2023-02-16
-  - What happens under the hood of git?
-  -
-  - git plumbing and more bash (pipes and find)
-* - 2023-02-21
-  - Why are git commit numbers so long?
-  - review, map git
-  - more git, number systems
-* - 2023-02-23
-  - How can git help me when I need it?
-  - reveiw numbers and hypothesize what git could help with
-  - git merges
-* - 2023-02-28
-* - 2023-03-02
-* - 2023-03-05
-  - How do I work remotely ?
-  - install reqs, reflect on grade, practice script
-  - ssh/ ssh keys, sed/ awk, file permissions
-* - 2023-03-07
-  - How do programmers keep track of all these tools?
-  - summarize IDE reflections
-  - IDE anatomy
-* - 2023-03-21
-  - How do Developers keep track of all these tools?
-  - [compare languages you know]
-  -
-* - 2023-03-23
-  - How do we choose among different programming languages?
-  - [install c compiler]
-  -
-* - 2023-03-28
-  - What happens when I build code?
-  -
-  -
-* - 2023-03-30
-  - Why is the object file unreadable on the terminal?
-  - what are operators
-  - bits, bytes, and integers/character representation
-* - 2023-04-04
-  - How does a program run?
-  - install hardware simulator
-  - hardware overview, memory, instructions, assembly
-* - 2023-04-06
-  - Where do those bitwise operations come from?
-  - review simulator
-  - gates, registers, more integer representation
-* - 2023-04-11
-  - What actually is a gate?
-  -
-  - physics, history, abstractoin of a gate
-* - 2023-04-13
-  - How do components work together?
-  -
-  - memmory, IO, bus, clocks,
-* - 2023-04-18
-  - (sub)
-  -
-  -
-* - 2023-04-20
-  - (sub)
-  -
-  -
-* - 2023-04-25
-  -
-  -
-  -
-* - 2023-04-27
-  -
-  -
-  -
-`````` -->
+```{code-cell} ipython
+pd.read_csv('labschedule.csv',index_col='date').sort_index()
+```

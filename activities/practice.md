@@ -69,3 +69,38 @@ Activities:
 Activities:
 ```{include} ../_practice/2023-10-03.md
 ```
+## 2023-10-05
+
+[related notes](../notes/2023-10-05)
+
+Activities:
+```{include} ../_practice/2023-10-05.md
+```
+## 2023-10-12
+
+[related notes](../notes/2023-10-12)
+
+Activities:
+```{include} ../_practice/2023-10-12.md
+```
+## 2023-10-17
+
+[related notes](../notes/2023-10-17)
+
+Activities:
+```{include} ../_practice/2023-10-17.md
+```
+## 2023-10-19
+
+[related notes](../notes/2023-10-19)
+
+Activities:
+```{include} ../_practice/2023-10-19.md
+```
+## 2023-10-24
+
+[related notes](../notes/2023-10-24)
+
+Activities:
+```{include} ../_practice/2023-10-24.md
+```

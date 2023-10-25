@@ -1,3 +1,9 @@
+---
+file_format: mystnb
+kernelspec:
+  name: python3
+---
+
 # About this Site
 
 Welcome to the course website for Computer Systems and Programming Tools in Fall2023 with Professor Brown.
@@ -19,7 +25,20 @@ The resources section has links and short posts that provide  more context and e
 
 ## Reading each page
 
-All class notes can be downloaded in multiple formats, including as a notebook.  Some pages of the syllabus and resources are also notebooks, if you want to see behind the curtain of how I manage the course information.
+Some pages of the syllabus and resources are also notebooks, if you want to see behind the curtain of how I manage the course information.
+
+```{code-cell} bash
+:tags: ["skip-execution"]
+# this is a comment in a clode block
+command argument --option -a
+```
+
+```{code-block} console
+:emphasize-lines: 2
+
+command output 
+important line, emphasized
+```
 
 ```{admonition} Try it Yourself
 :class: exercise
