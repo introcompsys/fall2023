@@ -41,6 +41,7 @@ parts:
     - file: faq/syllabus
     - file: faq/github
     - file: faq/tools
+    - file: faq/mermaid_tutorial
   - caption: Resources
     chapters:
     - file: resources/glossary
