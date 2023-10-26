@@ -6,7 +6,7 @@
 
 ## Tutorial for Using Mermaid
 
-Either on the [Mermaid](https://mermaid.js.org/intro/) website or within the **GitHub** markdown file that you're making edits to you can make complex flowcharts seamlessly. 
+Either on the [Mermaid](https://mermaid.live/) website or within the **GitHub** markdown file that you're making edits to you can make complex flowcharts seamlessly. 
 
 ### Using Code Blocks
 
