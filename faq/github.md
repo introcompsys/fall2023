@@ -200,9 +200,9 @@ If you have trouble, create an issue and tag `@@rhodyprog4ds/fall20instructors` 
 Doing each new assignment in its own branch is best practice. In a typical software development flow once the codebase is stable a new branch would be created for each new feature or patch. This analogy should help you build intuition for this GitHub flow and using branches.  Also, pull requests are the best way for us to give you feedback. Also, if you create a branch when you do not need it, you can easily merge them after you are done, but it is hard to isolate things onto a branch if it's on main already.
 ````
 
-## Why won't my experience badge workflow contain the new changes after I edit the workflow?
+## Why did my workflow not run correctly? 
 ```{toggle}
-If you find that a workflow you may have made changes to are not properly reflecting your workflow changes is because you may not be running the workflow correctly.
+If you find that changes you made to a workflow are not taking effect, or you run a workflow and it seems to not work, you may not be running the workflow correctly.
 
 To correctly execute an action in GitHub you should:
 
@@ -213,4 +213,6 @@ To correctly execute an action in GitHub you should:
 5. Select Run Workflow to run the most recent and up to date workflow.
 
 This should help correct the workflow if it was causing issues.
+
+**note that clicking "re-run" on a previous run does *not* work**
 ```
