@@ -2,11 +2,11 @@
 
 ## What is Mermaid?
 
-[Mermaid](https://mermaid.js.org/intro/getting-started.html) is a flowchart and diagram visualization tool based on JavaScript and uses Markdown syntax to create flowcharts that are extremely dynamic and high quality. [Mermaid](https://mermaid.js.org/intro/getting-started.html) is especially useful because you are able to display your beautiful flowcharts using backticks to create a code block. 
+[Mermaid](https://mermaid.js.org/intro/) is a flowchart and diagram visualization tool based on JavaScript and uses Markdown syntax to create flowcharts that are extremely dynamic and high quality. [Mermaid](https://mermaid.js.org/intro/) is especially useful because you are able to display your beautiful flowcharts using backticks to create a code block. 
 
 ## Tutorial for Using Mermaid
 
-Either on the [Mermaid](https://mermaid.js.org/intro/getting-started.html) website or within the **GitHub** markdown file that you're making edits to you can make complex flowcharts seamlessly. 
+Either on the [Mermaid](https://mermaid.live/) website or within the **GitHub** markdown file that you're making edits to you can make complex flowcharts seamlessly. 
 
 ### Using Code Blocks
 
