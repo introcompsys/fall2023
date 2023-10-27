@@ -560,10 +560,14 @@ derive a <em>hashing function</em> that is a general strategy.</p>
 <p>Passowrds can be encrypted and the encrypted information is stored, then when you submit a candidate password it can compare the hash of the submitted password to the hash that was stored.  Since the hashing function is nonreversible, they cannot see the password.</p>
 <p>Some sites are negligent and store passwords unencrypted, if your browser warns you about such a site, proceed with caution and definitely do not reuse a password you ever use. (you <em>should never</em> reuse passwords, but especially do not if there is a warning)</p>
 <p>An attacker who gets one of those databases, cannot actually read the passwords, but they could build a lookup table.  For example, “password” is a bad password because it has been hashed in basically every algorithm and then the value of it can be reversed.  Choosing an uncommon password makes it less likely that your password exists in a lookup table.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;password&quot;</span> <span class="o">|</span> <span class="n">git</span> <span class="nb">hash</span><span class="o">-</span><span class="nb">object</span> <span class="o">--</span><span class="n">stdin</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;password&quot;</span> <span class="o">|</span> <span class="n">git</span> <span class="nb">hash</span><span class="o">-</span><span class="nb">object</span> <span class="o">--</span><span class="n">stdin</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f3097ab13082b70f67202aab7dd9d1b35b7ceac2</span>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f3097ab13082b70f67202aab7dd9d1b35b7ceac2</span>
 </pre></div>
 </div>
 </section>

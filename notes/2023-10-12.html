@@ -485,8 +485,12 @@ document.write(`
 <section id="review-to-set-the-stage">
 <h2><span class="section-number">10.1. </span>Review to set the stage<a class="headerlink" href="#review-to-set-the-stage" title="Permalink to this headline">#</a></h2>
 <p>Let’s look at the github inclass repo.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Recall: git stores important content in <em>files</em> that it uses like variables.</p>
 <p>All of gits files, that is uses to perform the version control system actions are in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory.  Since this starts with a <code class="docutils literal notranslate"><span class="pre">.</span></code> it is “hidden” so to  see it we use the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option on <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p>
@@ -1169,22 +1173,34 @@ document.write(`
 <section id="id1">
 <h2><span class="section-number">10.7. </span>Writing a tree<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Now we can write a tre  and it will have content.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">write</span><span class="o">-</span><span class="n">tree</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">write</span><span class="o">-</span><span class="n">tree</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">d8329fc1cc938780ffdd9f94e0d364e0ea74f579</span>
 </pre></div>
 </div>
 <p>Lets examine the tree, first check the type</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="n">d832</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="n">d832</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tree</span>
 </pre></div>
 </div>
 <p>and now we can look at its contents</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="n">d832</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="n">d832</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">100644 blob 83baae61804e65cc73a7201a7252750c76066a30	test.txt</span>
 </pre></div>
@@ -1217,8 +1233,12 @@ document.write(`
     d8329f --|&gt; 83baae
         </div><p>This only keeps track of th objects, there are also still the HEAD that we have not dealt with and the index.</p>
 <p>Now two of our objects are linked! the tree points to the blob of the first version of the file.  We are getting closer to what would happend when we make a commit with a porcelain command.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
@@ -1238,8 +1258,12 @@ document.write(`
 <section id="creating-a-commit-manually">
 <h2><span class="section-number">10.8. </span>Creating a commit manually<a class="headerlink" href="#creating-a-commit-manually" title="Permalink to this headline">#</a></h2>
 <p>We can echo a commit message through a pipe into the commit-tree plumbing function to commit a particular hashed object.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;first commit&quot;</span> <span class="o">|</span> <span class="n">git</span> <span class="n">commit</span><span class="o">-</span><span class="n">tree</span> <span class="n">d8329</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;first commit&quot;</span> <span class="o">|</span> <span class="n">git</span> <span class="n">commit</span><span class="o">-</span><span class="n">tree</span> <span class="n">d8329</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">0ec6f39c964a3149d426ae45bef4385e14444b2c</span>
 </pre></div>
@@ -1251,15 +1275,23 @@ document.write(`
 <p>You can find the hash of your commit object later by comparing to mine and getting the one that is unique or by checkign the type of all of your objects until you find the one that is a commit.</p>
 </div>
 <p>We can also look at its type</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="mi">0</span><span class="n">ec6</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> <span class="mi">0</span><span class="n">ec6</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit</span>
 </pre></div>
 </div>
 <p>and we can look at the content</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="mi">0</span><span class="n">ec6</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span> <span class="mi">0</span><span class="n">ec6</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tree d8329fc1cc938780ffdd9f94e0d364e0ea74f579</span>
 <span class="go">author Sarah M Brown &lt;brownsarahm@uri.edu&gt; 1697131751 -0400</span>
@@ -1269,8 +1301,12 @@ document.write(`
 </pre></div>
 </div>
 <p>Now we check the final status of our repo</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
@@ -1335,23 +1371,35 @@ document.write(`
 <p>In our case because we made the commit manually, we did not update the branch.</p>
 <p>This is because the main branch does not <em>point</em> to any commit.</p>
 <p>We can verify by looking at the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ref: refs/heads/main</span>
 </pre></div>
 </div>
 <p>and see that:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cat: .git/refs/heads/main: No such file or directory</span>
 </pre></div>
 </div>
 <p>which does not even exist!</p>
 <p>we can see the objects though:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.git/objects//0c/1e7391ca4e59584f8b773ecdbbb9467eba1547</span>
 <span class="go">.git/objects//0e/c6f39c964a3149d426ae45bef4385e14444b2c</span>
@@ -1362,20 +1410,32 @@ document.write(`
 </pre></div>
 </div>
 <p>and we can create that file by putting the full hash of the commit into the file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">0</span><span class="n">ec6f39c964a3149d426ae45bef4385e14444b2c</span> <span class="o">&gt;</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">0</span><span class="n">ec6f39c964a3149d426ae45bef4385e14444b2c</span> <span class="o">&gt;</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>so that</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>shows the hash:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">0ec6f39c964a3149d426ae45bef4385e14444b2c</span>
 </pre></div>
 </div>
 <p>Now we check status and we are all set!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes not staged for commit:</span>
