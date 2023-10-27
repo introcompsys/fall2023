@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-10-26';</script>
@@ -438,21 +440,35 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">14.10. Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">14.11. Experience Report Evidence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">14.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-meant-by-the-term-gene-symbol">14.12.1. What is meant by the term “gene symbol” ?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-i-use-these-remote-servers-most-often">14.12.2. When would I use these remote servers most often?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-type-of-data-structure-for-storage-does-the-server-we-used-today-follow-how-does-it-version-track-and-store-files">14.12.3. What type of data structure for storage does the server we used today follow? How does it version track and store files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-the-files-on-our-seawulf-still-be-available-after-exiting">14.12.4. Will the files on our seawulf, still be available after exiting.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-fastq-and-gz-files">14.12.5. What are .fastq and .gz files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-connect-to-other-servers-other-than-the-uri-server">14.12.6. Can we connect to other servers other than the URI server?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-point-of-a-remote-server">14.12.7. What is the point of a remote server?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-the-files-download-directly-to-my-computer-or-to-the-remote-server">14.12.8. Do the files download directly to my computer or to the remote server?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-the-ssh-server-downloaded-on-my-computer">14.12.9. where is the ssh server downloaded on my computer?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-access-to-the-chmod-command-restricted-on-computers-and-servers">14.12.10. Is access to the chmod command restricted on computers and servers?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-access-the-remote-files-using-vscode-and-write-code">14.12.11. Can I access the remote files using vscode and write code?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-i-work-with-files-more-like-this-or-locally-as-a-software-engineer">14.12.12. Will I work with files more like this or locally as a software engineer?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-files-that-are-impossible-to-open-with-text-editors-because-theyre-too-long-is-it-possible-to-edit-parts-of-the-file-just-through-terminal-commands">14.12.13. for files that are impossible to open with text editors because they’re too long, is it possible to edit parts of the file just through terminal commands?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-zip-from-tthe-terminal">14.12.14. How can I zip from tthe terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-you-able-to-run-a-website-through-a-terminal">14.12.15. Are you able to run a website through a terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-incorporating-remote-server-use-with-coding-at-all-in-this-class-maybe-some-bash-scripts">14.12.1. Will we be incorporating remote server use with coding at all in this class? Maybe some bash scripts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-we-want-to-use-as-many-resources-as-possible-but-the-reomte-server-would-not-be-appropriate-because-we-still-need-to-connect-to-it">14.12.2. When would we want to use as many resources as possible but the reomte server would not be appropriate because we still need to connect to it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-real-use-case-of-using-a-remote-machine-to-do-computing">14.12.3. What is a real use case of using a remote machine to do computing?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-set-up-ssh-keys-for-secure-access-to-a-remote-git-server-in-git-bash-if-possible">14.12.4. How do I set up SSH keys for secure access to a remote Git server in Git Bash?(If possible)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-expensive-to-have-a-remote-server">14.12.5. Is it expensive to have a remote server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-set-up-our-own-remote-server">14.12.6. how do we set up our own remote server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-other-large-remote-servers-that-are-free-to-use-and-are-there-unsafe-servers">14.12.7. What are other large remote servers that are free to use, and are there unsafe servers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-worthwhile-to-look-into-using-a-remote-server-for-synchronizing-school-work-between-my-laptop-and-my-desktop-work-beyond-the-scope-of-git-github">14.12.8. Would it be worthwhile to look into using a remote server for synchronizing school work between my laptop and my desktop (work beyond the scope of git/GitHub)?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-the-point-of-seawulf">14.12.9. What’s the point of Seawulf?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-be-an-instance-that-we-may-need-to-use-a-remote-system-for-in-school">14.12.10. What would be an instance that we may need to use a remote system for in school?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-exactly-computer-intensive-is-graphics-and-pretty-shapes-such-that-it-is-a-necessity-to-cut-them-out-for-maximum-computer-resources-available">14.12.11. How exactly computer intensive is graphics and pretty shapes, such that it is a necessity to cut them out for maximum computer resources available?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-this-topic-in-previous-semesters">14.13. Questions after this topic in previous semesters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-meant-by-the-term-gene-symbol">14.13.1. What is meant by the term “gene symbol” ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-i-use-these-remote-servers-most-often">14.13.2. When would I use these remote servers most often?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-type-of-data-structure-for-storage-does-the-server-we-used-today-follow-how-does-it-version-track-and-store-files">14.13.3. What type of data structure for storage does the server we used today follow? How does it version track and store files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-the-files-on-our-seawulf-still-be-available-after-exiting">14.13.4. Will the files on our seawulf, still be available after exiting.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-fastq-and-gz-files">14.13.5. What are .fastq and .gz files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-connect-to-other-servers-other-than-the-uri-server">14.13.6. Can we connect to other servers other than the URI server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-point-of-a-remote-server">14.13.7. What is the point of a remote server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-the-files-download-directly-to-my-computer-or-to-the-remote-server">14.13.8. Do the files download directly to my computer or to the remote server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-the-ssh-server-downloaded-on-my-computer">14.13.9. where is the ssh server downloaded on my computer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-access-to-the-chmod-command-restricted-on-computers-and-servers">14.13.10. Is access to the chmod command restricted on computers and servers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-access-the-remote-files-using-vscode-and-write-code">14.13.11. Can I access the remote files using vscode and write code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-i-work-with-files-more-like-this-or-locally-as-a-software-engineer">14.13.12. Will I work with files more like this or locally as a software engineer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-files-that-are-impossible-to-open-with-text-editors-because-theyre-too-long-is-it-possible-to-edit-parts-of-the-file-just-through-terminal-commands">14.13.13. for files that are impossible to open with text editors because they’re too long, is it possible to edit parts of the file just through terminal commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-zip-from-tthe-terminal">14.13.14. How can I zip from tthe terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-you-able-to-run-a-website-through-a-terminal">14.13.15. Are you able to run a website through a terminal?</a></li>
 </ul>
 </li>
 </ul>
@@ -485,6 +501,13 @@ document.write(`
 </div>
 </aside>
 <p>Our login is the part of your uri e-mail address before the &#64;.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">l</span> <span class="n">brownsarahm</span> <span class="n">seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>When it logs in it looks like this and requires you to change your password.  They configure it with a default and with it past expired.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -529,8 +552,29 @@ document.write(`
 </pre></div>
 </div>
 <p>after you give it a new password, then it logs you out and you have to log back in.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>brownsarahm@~ $ ssh -l brownsarahm seawulf.uri.edu
+</pre></div>
+</div>
+</div>
+</div>
 <p>wehn you log in it shows you information about your recent logins.</p>
 <p>We have logged into our home directory which is empty</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[brownsarahm@seawulf ~]$ ls
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[brownsarahm@seawulf ~]$ pwd
+</pre></div>
+</div>
+</div>
+</div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/home/brownsarahm</span>
 </pre></div>
 </div>
@@ -539,6 +583,13 @@ document.write(`
 <section id="downloading-files">
 <h2><span class="section-number">14.3. </span>Downloading files<a class="headerlink" href="#downloading-files" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">wget</span></code> allows you to get files from the web.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[brownsarahm@seawulf ~]$ wget http://www.hpc-carpentry.org/hpc-shell/files/bash-lesson.tar.gz
+</pre></div>
+</div>
+</div>
+</div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">--2022-03-08 12:58:09--  http://www.hpc-carpentry.org/hpc-shell/files/bash-lesson.tar.gz</span>
 <span class="go">Resolving www.hpc-carpentry.org (www.hpc-carpentry.org)... 104.21.33.152, 172.67.146.136</span>
 <span class="go">Connecting to www.hpc-carpentry.org (www.hpc-carpentry.org)|104.21.33.152|:80... connected.</span>
@@ -554,6 +605,13 @@ document.write(`
 <p>Note that this is a reasonably sized download and it finished very quickly.  This is because the download happened <strong>on the remote server</strong> not your laptop.  The server has a high quality hard-wired connection to the internet that is very fast, unlike the wifi in our classroom.</p>
 <p>This is an advantage of using a remote system.  If your connection is slow, but stable enough to connect, you can do the work on a different computer that has better connection.</p>
 <p>Now we see we have the file.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[brownsarahm@seawulf ~]$ ls
+</pre></div>
+</div>
+</div>
+</div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash-lesson.tar.gz</span>
 </pre></div>
 </div>
@@ -563,6 +621,13 @@ document.write(`
 <h2><span class="section-number">14.4. </span>Unzipping a file on the command line<a class="headerlink" href="#unzipping-a-file-on-the-command-line" title="Permalink to this headline">#</a></h2>
 <p>This file is compressed.</p>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">tar</span></code> to see the manual aka man file of the <code class="docutils literal notranslate"><span class="pre">tar</span></code> program to learn how it works.  You can also read man files <a class="reference external" href="https://www.gnu.org/software/tar/manual/">online from GNU</a> where you can choose your format, <a class="reference external" href="https://www.gnu.org/software/tar/manual/tar.html">this page shows the full version</a>.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[brownsarahm@seawulf ~]$ tar -xvf bash-lesson.tar.gz
+</pre></div>
+</div>
+</div>
+</div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dmel-all-r6.19.gtf</span>
 <span class="go">dmel_unique_protein_isoforms_fb_2016_01.tsv</span>
 <span class="go">gene_association.fb</span>
@@ -826,66 +891,118 @@ wc: *.fastw: No such file or directory
 </section>
 <section id="questions-after-todays-class">
 <h2><span class="section-number">14.12. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<section id="will-we-be-incorporating-remote-server-use-with-coding-at-all-in-this-class-maybe-some-bash-scripts">
+<h3><span class="section-number">14.12.1. </span>Will we be incorporating remote server use with coding at all in this class? Maybe some bash scripts?<a class="headerlink" href="#will-we-be-incorporating-remote-server-use-with-coding-at-all-in-this-class-maybe-some-bash-scripts" title="Permalink to this headline">#</a></h3>
+<p>Yes.  Some in lab tomorrow and more after we learn building C code.</p>
+</section>
+<section id="when-would-we-want-to-use-as-many-resources-as-possible-but-the-reomte-server-would-not-be-appropriate-because-we-still-need-to-connect-to-it">
+<h3><span class="section-number">14.12.2. </span>When would we want to use as many resources as possible but the reomte server would not be appropriate because we still need to connect to it?<a class="headerlink" href="#when-would-we-want-to-use-as-many-resources-as-possible-but-the-reomte-server-would-not-be-appropriate-because-we-still-need-to-connect-to-it" title="Permalink to this headline">#</a></h3>
+<p>This is an interesting question, but I can not come up with such a scenario.</p>
+</section>
+<section id="what-is-a-real-use-case-of-using-a-remote-machine-to-do-computing">
+<h3><span class="section-number">14.12.3. </span>What is a real use case of using a remote machine to do computing?<a class="headerlink" href="#what-is-a-real-use-case-of-using-a-remote-machine-to-do-computing" title="Permalink to this headline">#</a></h3>
+<p>My research students, as do Professor Daniels’  use a server to run their code because the problems are too big to do on a laptop.</p>
+<p>ML works that way in industry too.  As does real genomics research both in universities and in pharma companies.</p>
+</section>
+<section id="how-do-i-set-up-ssh-keys-for-secure-access-to-a-remote-git-server-in-git-bash-if-possible">
+<h3><span class="section-number">14.12.4. </span>How do I set up SSH keys for secure access to a remote Git server in Git Bash?(If possible)<a class="headerlink" href="#how-do-i-set-up-ssh-keys-for-secure-access-to-a-remote-git-server-in-git-bash-if-possible" title="Permalink to this headline">#</a></h3>
+<p>We will set up ssh keys for server access in class next week and you will then be assigned to add them to git from GitHub docs.</p>
+</section>
+<section id="is-it-expensive-to-have-a-remote-server">
+<h3><span class="section-number">14.12.5. </span>Is it expensive to have a remote server?<a class="headerlink" href="#is-it-expensive-to-have-a-remote-server" title="Permalink to this headline">#</a></h3>
+<p>At face value, yes, but they’re typically shared costs. It might cost $10-50k to add a unit to the server, but then each use is not.</p>
+<p>You could look up billing for AWS, MSFT Azure, or Google Cloud to see hourly use rates on their servers.</p>
+<p>Also, the cost is compared to people’s salary being spent waiting around.  Even <span class="math notranslate nohighlight">\(50k, that lasts for only 3 years, could be worth it, if you consider it saves time of people who each have a salary over over \)</span>100k/ year.</p>
+</section>
+<section id="how-do-we-set-up-our-own-remote-server">
+<h3><span class="section-number">14.12.6. </span>how do we set up our own remote server?<a class="headerlink" href="#how-do-we-set-up-our-own-remote-server" title="Permalink to this headline">#</a></h3>
+<p>This is a good explore badge topic, but not something I have personally ever done. If you actually build it out, it could be a build badge.</p>
+</section>
+<section id="what-are-other-large-remote-servers-that-are-free-to-use-and-are-there-unsafe-servers">
+<h3><span class="section-number">14.12.7. </span>What are other large remote servers that are free to use, and are there unsafe servers?<a class="headerlink" href="#what-are-other-large-remote-servers-that-are-free-to-use-and-are-there-unsafe-servers" title="Permalink to this headline">#</a></h3>
+<p>Most are not really free.  Some give free access to students, many give free trials.</p>
+<p>Unsafe would be like insecure in this sense that the data is not secure.</p>
+</section>
+<section id="would-it-be-worthwhile-to-look-into-using-a-remote-server-for-synchronizing-school-work-between-my-laptop-and-my-desktop-work-beyond-the-scope-of-git-github">
+<h3><span class="section-number">14.12.8. </span>Would it be worthwhile to look into using a remote server for synchronizing school work between my laptop and my desktop (work beyond the scope of git/GitHub)?<a class="headerlink" href="#would-it-be-worthwhile-to-look-into-using-a-remote-server-for-synchronizing-school-work-between-my-laptop-and-my-desktop-work-beyond-the-scope-of-git-github" title="Permalink to this headline">#</a></h3>
+<p>That’s not the point of an HPC or server like we used today.  That is a good use for GitHub, or a cloud service that is file-focused like DropBox.</p>
+</section>
+<section id="whats-the-point-of-seawulf">
+<h3><span class="section-number">14.12.9. </span>What’s the point of Seawulf?<a class="headerlink" href="#whats-the-point-of-seawulf" title="Permalink to this headline">#</a></h3>
+<p>To learn about using remote servers. It’s separate from the research servers so that we doing low priority class work do not slow down people doing research.  The research ones are also funded with grant dollars and Seawulf is not.</p>
+</section>
+<section id="what-would-be-an-instance-that-we-may-need-to-use-a-remote-system-for-in-school">
+<h3><span class="section-number">14.12.10. </span>What would be an instance that we may need to use a remote system for in school?<a class="headerlink" href="#what-would-be-an-instance-that-we-may-need-to-use-a-remote-system-for-in-school" title="Permalink to this headline">#</a></h3>
+<p>in CSC411 there is a homework server so that all students have the same environment.</p>
+</section>
+<section id="how-exactly-computer-intensive-is-graphics-and-pretty-shapes-such-that-it-is-a-necessity-to-cut-them-out-for-maximum-computer-resources-available">
+<h3><span class="section-number">14.12.11. </span>How exactly computer intensive is graphics and pretty shapes, such that it is a necessity to cut them out for maximum computer resources available?<a class="headerlink" href="#how-exactly-computer-intensive-is-graphics-and-pretty-shapes-such-that-it-is-a-necessity-to-cut-them-out-for-maximum-computer-resources-available" title="Permalink to this headline">#</a></h3>
+<p>This is a good explore badge topic to monitor over a bit of time how much of your compute resources are being used by visualization vs the actual computation.</p>
+<p>You could do a small experiment where you print vs do not and time how long the code takes.  This could be done in any language.</p>
+</section>
+</section>
+<section id="questions-after-this-topic-in-previous-semesters">
+<h2><span class="section-number">14.13. </span>Questions after this topic in previous semesters<a class="headerlink" href="#questions-after-this-topic-in-previous-semesters" title="Permalink to this headline">#</a></h2>
 <section id="what-is-meant-by-the-term-gene-symbol">
-<h3><span class="section-number">14.12.1. </span>What is meant by the term “gene symbol” ?<a class="headerlink" href="#what-is-meant-by-the-term-gene-symbol" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.1. </span>What is meant by the term “gene symbol” ?<a class="headerlink" href="#what-is-meant-by-the-term-gene-symbol" title="Permalink to this headline">#</a></h3>
 <p>For the purpose of this class it is just a bit of the content in the file.  For completeness, since the file is genomic data is is a name for the gene at that line.</p>
 </section>
 <section id="when-would-i-use-these-remote-servers-most-often">
-<h3><span class="section-number">14.12.2. </span>When would I use these remote servers most often?<a class="headerlink" href="#when-would-i-use-these-remote-servers-most-often" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.2. </span>When would I use these remote servers most often?<a class="headerlink" href="#when-would-i-use-these-remote-servers-most-often" title="Permalink to this headline">#</a></h3>
 <p>Remote servers are used for production code, and for large computations in any sort of science setting or machine learning setting.</p>
 </section>
 <section id="what-type-of-data-structure-for-storage-does-the-server-we-used-today-follow-how-does-it-version-track-and-store-files">
-<h3><span class="section-number">14.12.3. </span>What type of data structure for storage does the server we used today follow? How does it version track and store files?<a class="headerlink" href="#what-type-of-data-structure-for-storage-does-the-server-we-used-today-follow-how-does-it-version-track-and-store-files" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.3. </span>What type of data structure for storage does the server we used today follow? How does it version track and store files?<a class="headerlink" href="#what-type-of-data-structure-for-storage-does-the-server-we-used-today-follow-how-does-it-version-track-and-store-files" title="Permalink to this headline">#</a></h3>
 <p>It is a regular unix system with a standard file system.  If we want to track versions, we use git. (or another version control system)</p>
 </section>
 <section id="will-the-files-on-our-seawulf-still-be-available-after-exiting">
-<h3><span class="section-number">14.12.4. </span>Will the files on our seawulf, still be available after exiting.<a class="headerlink" href="#will-the-files-on-our-seawulf-still-be-available-after-exiting" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.4. </span>Will the files on our seawulf, still be available after exiting.<a class="headerlink" href="#will-the-files-on-our-seawulf-still-be-available-after-exiting" title="Permalink to this headline">#</a></h3>
 <p>Yes, but not forever.  Seawulf is a teaching server that makes no promise of backing up or keeping your data forever.</p>
 </section>
 <section id="what-are-fastq-and-gz-files">
-<h3><span class="section-number">14.12.5. </span>What are .fastq and .gz files?<a class="headerlink" href="#what-are-fastq-and-gz-files" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.5. </span>What are .fastq and .gz files?<a class="headerlink" href="#what-are-fastq-and-gz-files" title="Permalink to this headline">#</a></h3>
 <p>.gz is a zip file, .fastq is a plain text output of a sequencing tool.</p>
 </section>
 <section id="can-we-connect-to-other-servers-other-than-the-uri-server">
-<h3><span class="section-number">14.12.6. </span>Can we connect to other servers other than the URI server?<a class="headerlink" href="#can-we-connect-to-other-servers-other-than-the-uri-server" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.6. </span>Can we connect to other servers other than the URI server?<a class="headerlink" href="#can-we-connect-to-other-servers-other-than-the-uri-server" title="Permalink to this headline">#</a></h3>
 <p>Yes, if you have credentials, the ssh works basically the same way.  We will learn one more thing that will give you more ability to use other servers next week.</p>
 </section>
 <section id="what-is-the-point-of-a-remote-server">
-<h3><span class="section-number">14.12.7. </span>What is the point of a remote server?<a class="headerlink" href="#what-is-the-point-of-a-remote-server" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.7. </span>What is the point of a remote server?<a class="headerlink" href="#what-is-the-point-of-a-remote-server" title="Permalink to this headline">#</a></h3>
 <p>More compute power.</p>
 </section>
 <section id="do-the-files-download-directly-to-my-computer-or-to-the-remote-server">
-<h3><span class="section-number">14.12.8. </span>Do the files download directly to my computer or to the remote server?<a class="headerlink" href="#do-the-files-download-directly-to-my-computer-or-to-the-remote-server" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.8. </span>Do the files download directly to my computer or to the remote server?<a class="headerlink" href="#do-the-files-download-directly-to-my-computer-or-to-the-remote-server" title="Permalink to this headline">#</a></h3>
 <p>The file goes to the system where the command is run, in this case, it went to the the server.</p>
 </section>
 <section id="where-is-the-ssh-server-downloaded-on-my-computer">
-<h3><span class="section-number">14.12.9. </span>where is the ssh server downloaded on my computer?<a class="headerlink" href="#where-is-the-ssh-server-downloaded-on-my-computer" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.9. </span>where is the ssh server downloaded on my computer?<a class="headerlink" href="#where-is-the-ssh-server-downloaded-on-my-computer" title="Permalink to this headline">#</a></h3>
 <p>ssh is the <em>connection protocol</em> or the set of rules by which our information is sent.</p>
 <p>The server is another computer, you were using that computer <em>through</em> your local terminal.</p>
 <p>We did not create any files on your local system today.</p>
 </section>
 <section id="is-access-to-the-chmod-command-restricted-on-computers-and-servers">
-<h3><span class="section-number">14.12.10. </span>Is access to the chmod command restricted on computers and servers?<a class="headerlink" href="#is-access-to-the-chmod-command-restricted-on-computers-and-servers" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.10. </span>Is access to the chmod command restricted on computers and servers?<a class="headerlink" href="#is-access-to-the-chmod-command-restricted-on-computers-and-servers" title="Permalink to this headline">#</a></h3>
 <p>on a file by file basis typically, eys.</p>
 </section>
 <section id="can-i-access-the-remote-files-using-vscode-and-write-code">
-<h3><span class="section-number">14.12.11. </span>Can I access the remote files using vscode and write code?<a class="headerlink" href="#can-i-access-the-remote-files-using-vscode-and-write-code" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.11. </span>Can I access the remote files using vscode and write code?<a class="headerlink" href="#can-i-access-the-remote-files-using-vscode-and-write-code" title="Permalink to this headline">#</a></h3>
 <p>Theoretically yes, but a more typical workflow would be to edit large files locally running vscode on your system then send the code to the remote server to run it. You might send one file at a time directly there or push from your local system to for example GitHub and then from GitHub on the server.</p>
 </section>
 <section id="will-i-work-with-files-more-like-this-or-locally-as-a-software-engineer">
-<h3><span class="section-number">14.12.12. </span>Will I work with files more like this or locally as a software engineer?<a class="headerlink" href="#will-i-work-with-files-more-like-this-or-locally-as-a-software-engineer" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.12. </span>Will I work with files more like this or locally as a software engineer?<a class="headerlink" href="#will-i-work-with-files-more-like-this-or-locally-as-a-software-engineer" title="Permalink to this headline">#</a></h3>
 <p>Maybe not this type specifically, but you will almost surely encounter a large file at some point. You will also likely encounter a server for some reason.</p>
 </section>
 <section id="for-files-that-are-impossible-to-open-with-text-editors-because-theyre-too-long-is-it-possible-to-edit-parts-of-the-file-just-through-terminal-commands">
-<h3><span class="section-number">14.12.13. </span>for files that are impossible to open with text editors because they’re too long, is it possible to edit parts of the file just through terminal commands?<a class="headerlink" href="#for-files-that-are-impossible-to-open-with-text-editors-because-theyre-too-long-is-it-possible-to-edit-parts-of-the-file-just-through-terminal-commands" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.13. </span>for files that are impossible to open with text editors because they’re too long, is it possible to edit parts of the file just through terminal commands?<a class="headerlink" href="#for-files-that-are-impossible-to-open-with-text-editors-because-theyre-too-long-is-it-possible-to-edit-parts-of-the-file-just-through-terminal-commands" title="Permalink to this headline">#</a></h3>
 <p>Yes! This is a good explore badge as well.</p>
 </section>
 <section id="how-can-i-zip-from-tthe-terminal">
-<h3><span class="section-number">14.12.14. </span>How can I zip from tthe terminal?<a class="headerlink" href="#how-can-i-zip-from-tthe-terminal" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.14. </span>How can I zip from tthe terminal?<a class="headerlink" href="#how-can-i-zip-from-tthe-terminal" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">zip</span> <span class="pre">file</span> <span class="pre">file</span></code> <a class="reference external" href="https://ss64.com/bash/zip.html">see the man</a></p>
 </section>
 <section id="are-you-able-to-run-a-website-through-a-terminal">
-<h3><span class="section-number">14.12.15. </span>Are you able to run a website through a terminal?<a class="headerlink" href="#are-you-able-to-run-a-website-through-a-terminal" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.13.15. </span>Are you able to run a website through a terminal?<a class="headerlink" href="#are-you-able-to-run-a-website-through-a-terminal" title="Permalink to this headline">#</a></h3>
 <p>You could launch a web server from a terminal.  You can also launch a browser.</p>
 <p>For he course website when I build the pdf, version a bash script launches a browser, uses the browsers print to pdf function and closes the browser.</p>
 </section>
@@ -971,21 +1088,35 @@ wc: *.fastw: No such file or directory
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">14.10. Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">14.11. Experience Report Evidence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">14.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-meant-by-the-term-gene-symbol">14.12.1. What is meant by the term “gene symbol” ?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-i-use-these-remote-servers-most-often">14.12.2. When would I use these remote servers most often?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-type-of-data-structure-for-storage-does-the-server-we-used-today-follow-how-does-it-version-track-and-store-files">14.12.3. What type of data structure for storage does the server we used today follow? How does it version track and store files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-the-files-on-our-seawulf-still-be-available-after-exiting">14.12.4. Will the files on our seawulf, still be available after exiting.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-fastq-and-gz-files">14.12.5. What are .fastq and .gz files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-connect-to-other-servers-other-than-the-uri-server">14.12.6. Can we connect to other servers other than the URI server?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-point-of-a-remote-server">14.12.7. What is the point of a remote server?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-the-files-download-directly-to-my-computer-or-to-the-remote-server">14.12.8. Do the files download directly to my computer or to the remote server?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-the-ssh-server-downloaded-on-my-computer">14.12.9. where is the ssh server downloaded on my computer?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-access-to-the-chmod-command-restricted-on-computers-and-servers">14.12.10. Is access to the chmod command restricted on computers and servers?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-access-the-remote-files-using-vscode-and-write-code">14.12.11. Can I access the remote files using vscode and write code?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-i-work-with-files-more-like-this-or-locally-as-a-software-engineer">14.12.12. Will I work with files more like this or locally as a software engineer?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-files-that-are-impossible-to-open-with-text-editors-because-theyre-too-long-is-it-possible-to-edit-parts-of-the-file-just-through-terminal-commands">14.12.13. for files that are impossible to open with text editors because they’re too long, is it possible to edit parts of the file just through terminal commands?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-zip-from-tthe-terminal">14.12.14. How can I zip from tthe terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-you-able-to-run-a-website-through-a-terminal">14.12.15. Are you able to run a website through a terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-incorporating-remote-server-use-with-coding-at-all-in-this-class-maybe-some-bash-scripts">14.12.1. Will we be incorporating remote server use with coding at all in this class? Maybe some bash scripts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-we-want-to-use-as-many-resources-as-possible-but-the-reomte-server-would-not-be-appropriate-because-we-still-need-to-connect-to-it">14.12.2. When would we want to use as many resources as possible but the reomte server would not be appropriate because we still need to connect to it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-real-use-case-of-using-a-remote-machine-to-do-computing">14.12.3. What is a real use case of using a remote machine to do computing?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-set-up-ssh-keys-for-secure-access-to-a-remote-git-server-in-git-bash-if-possible">14.12.4. How do I set up SSH keys for secure access to a remote Git server in Git Bash?(If possible)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-expensive-to-have-a-remote-server">14.12.5. Is it expensive to have a remote server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-set-up-our-own-remote-server">14.12.6. how do we set up our own remote server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-other-large-remote-servers-that-are-free-to-use-and-are-there-unsafe-servers">14.12.7. What are other large remote servers that are free to use, and are there unsafe servers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-worthwhile-to-look-into-using-a-remote-server-for-synchronizing-school-work-between-my-laptop-and-my-desktop-work-beyond-the-scope-of-git-github">14.12.8. Would it be worthwhile to look into using a remote server for synchronizing school work between my laptop and my desktop (work beyond the scope of git/GitHub)?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-the-point-of-seawulf">14.12.9. What’s the point of Seawulf?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-be-an-instance-that-we-may-need-to-use-a-remote-system-for-in-school">14.12.10. What would be an instance that we may need to use a remote system for in school?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-exactly-computer-intensive-is-graphics-and-pretty-shapes-such-that-it-is-a-necessity-to-cut-them-out-for-maximum-computer-resources-available">14.12.11. How exactly computer intensive is graphics and pretty shapes, such that it is a necessity to cut them out for maximum computer resources available?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-this-topic-in-previous-semesters">14.13. Questions after this topic in previous semesters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-meant-by-the-term-gene-symbol">14.13.1. What is meant by the term “gene symbol” ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-i-use-these-remote-servers-most-often">14.13.2. When would I use these remote servers most often?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-type-of-data-structure-for-storage-does-the-server-we-used-today-follow-how-does-it-version-track-and-store-files">14.13.3. What type of data structure for storage does the server we used today follow? How does it version track and store files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-the-files-on-our-seawulf-still-be-available-after-exiting">14.13.4. Will the files on our seawulf, still be available after exiting.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-fastq-and-gz-files">14.13.5. What are .fastq and .gz files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-connect-to-other-servers-other-than-the-uri-server">14.13.6. Can we connect to other servers other than the URI server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-point-of-a-remote-server">14.13.7. What is the point of a remote server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-the-files-download-directly-to-my-computer-or-to-the-remote-server">14.13.8. Do the files download directly to my computer or to the remote server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-the-ssh-server-downloaded-on-my-computer">14.13.9. where is the ssh server downloaded on my computer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-access-to-the-chmod-command-restricted-on-computers-and-servers">14.13.10. Is access to the chmod command restricted on computers and servers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-access-the-remote-files-using-vscode-and-write-code">14.13.11. Can I access the remote files using vscode and write code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-i-work-with-files-more-like-this-or-locally-as-a-software-engineer">14.13.12. Will I work with files more like this or locally as a software engineer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-files-that-are-impossible-to-open-with-text-editors-because-theyre-too-long-is-it-possible-to-edit-parts-of-the-file-just-through-terminal-commands">14.13.13. for files that are impossible to open with text editors because they’re too long, is it possible to edit parts of the file just through terminal commands?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-zip-from-tthe-terminal">14.13.14. How can I zip from tthe terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-you-able-to-run-a-website-through-a-terminal">14.13.15. Are you able to run a website through a terminal?</a></li>
 </ul>
 </li>
 </ul>
