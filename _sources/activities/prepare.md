@@ -85,3 +85,17 @@ Activities:
 Activities:
 ```{include} ../_prepare/2023-10-26.md
 ```
+
+## 2023-10-31
+
+
+Activities:
+```{include} ../_prepare/2023-10-31.md
+```
+
+## 2023-11-02
+
+
+Activities:
+```{include} ../_prepare/2023-11-02.md
+```

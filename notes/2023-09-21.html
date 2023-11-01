@@ -450,13 +450,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">5.16. More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">5.17. Experience Report Evidence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">5.18. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">5.18.1. How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">5.18.2. I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-close-pull-requests-on-the-terminal">5.18.3. can you close pull requests on the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-mv-will-it-move-all-files">5.18.4. If you do mv * will it move all files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">5.18.5. Are there any other ways of using mv that haven’t been covered yet?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-should-we-be-practicing-with-the-terminal-for-git">5.18.6. how often should we be practicing with the terminal for git?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">5.18.7. Would it be beneficial to organize files with github rather than bash?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty">5.18.1. Why does git not see new directories added to the repo while they’re empty?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that">5.18.2. After a new directory has new files in it git status only shows the direcrory name but not the files within it. Why is that?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file">5.18.3. If possible, is it common to echo a line of code into a programming file?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-experience-will-we-have-with-open-source-projects-in-this-class">5.18.4. What other experience will we have with open source projects in this class?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">5.18.5. How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">5.18.6. I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-close-pull-requests-on-the-terminal">5.18.7. can you close pull requests on the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-mv-will-it-move-all-files">5.18.8. If you do mv * will it move all files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">5.18.9. Are there any other ways of using mv that haven’t been covered yet?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-should-we-be-practicing-with-the-terminal-for-git">5.18.10. how often should we be practicing with the terminal for git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">5.18.11. Would it be beneficial to organize files with github rather than bash?</a></li>
 </ul>
 </li>
 </ul>
@@ -1605,12 +1609,28 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 </section>
 <section id="questions-after-todays-class">
 <h2><span class="section-number">5.18. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<section id="why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty">
+<h3><span class="section-number">5.18.1. </span>Why does git not see new directories added to the repo while they’re empty?<a class="headerlink" href="#why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty" title="Permalink to this headline">#</a></h3>
+<p>git only tracks <em>files</em> not directories.  It also makes note of the the path to each file.</p>
+</section>
+<section id="after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that">
+<h3><span class="section-number">5.18.2. </span>After a new directory has new files in it git status only shows the direcrory name but not the files within it. Why is that?<a class="headerlink" href="#after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that" title="Permalink to this headline">#</a></h3>
+<p>It is saying that there is a file there that is untracked, but leaves it at the directory level to give you the choice to add/ignore the whole directory at once</p>
+</section>
+<section id="if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file">
+<h3><span class="section-number">5.18.3. </span>If possible, is it common to echo a line of code into a programming file?<a class="headerlink" href="#if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file" title="Permalink to this headline">#</a></h3>
+<p>Yes!</p>
+</section>
+<section id="what-other-experience-will-we-have-with-open-source-projects-in-this-class">
+<h3><span class="section-number">5.18.4. </span>What other experience will we have with open source projects in this class?<a class="headerlink" href="#what-other-experience-will-we-have-with-open-source-projects-in-this-class" title="Permalink to this headline">#</a></h3>
+<p>We will use mostly open source tools and you can do an explore or build to learn more.</p>
+</section>
 <section id="how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">
-<h3><span class="section-number">5.18.1. </span>How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.<a class="headerlink" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.18.5. </span>How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.<a class="headerlink" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity" title="Permalink to this headline">#</a></h3>
 <p>It fills in for any number of characters.</p>
 </section>
 <section id="i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">
-<h3><span class="section-number">5.18.2. </span>I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.<a class="headerlink" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.18.6. </span>I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.<a class="headerlink" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed" title="Permalink to this headline">#</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Do not merge an unapproved badge</p>
@@ -1618,24 +1638,24 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 <p>Re-request a review</p>
 </section>
 <section id="can-you-close-pull-requests-on-the-terminal">
-<h3><span class="section-number">5.18.3. </span>can you close pull requests on the terminal?<a class="headerlink" href="#can-you-close-pull-requests-on-the-terminal" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.18.7. </span>can you close pull requests on the terminal?<a class="headerlink" href="#can-you-close-pull-requests-on-the-terminal" title="Permalink to this headline">#</a></h3>
 <p>Not with git because pull requests are not a git feature, but it is a feature of github. The <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI can do this.</p>
 </section>
 <section id="if-you-do-mv-will-it-move-all-files">
-<h3><span class="section-number">5.18.4. </span>If you do mv * will it move all files?<a class="headerlink" href="#if-you-do-mv-will-it-move-all-files" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.18.8. </span>If you do mv * will it move all files?<a class="headerlink" href="#if-you-do-mv-will-it-move-all-files" title="Permalink to this headline">#</a></h3>
 <p>In the current working directory.</p>
 </section>
 <section id="are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">
-<h3><span class="section-number">5.18.5. </span>Are there any other ways of using mv that haven’t been covered yet?<a class="headerlink" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.18.9. </span>Are there any other ways of using mv that haven’t been covered yet?<a class="headerlink" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet" title="Permalink to this headline">#</a></h3>
 <p>No those are basically the two purposes.</p>
 </section>
 <section id="how-often-should-we-be-practicing-with-the-terminal-for-git">
-<h3><span class="section-number">5.18.6. </span>how often should we be practicing with the terminal for git?<a class="headerlink" href="#how-often-should-we-be-practicing-with-the-terminal-for-git" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.18.10. </span>how often should we be practicing with the terminal for git?<a class="headerlink" href="#how-often-should-we-be-practicing-with-the-terminal-for-git" title="Permalink to this headline">#</a></h3>
 <p>Ideally, you work on badges on at least several of the days we do not have class so that you are working with it close to every day.</p>
 <p>You could also start trying to use them for your other classes.</p>
 </section>
 <section id="would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">
-<h3><span class="section-number">5.18.7. </span>Would it be beneficial to organize files with github rather than bash?<a class="headerlink" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.18.11. </span>Would it be beneficial to organize files with github rather than bash?<a class="headerlink" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash" title="Permalink to this headline">#</a></h3>
 <p>GitHub cannot organize files and doing do in broswer would be slow and difficult.  We will see that GitHub code spaces give us a virtual machine that we can work with.</p>
 </section>
 </section>
@@ -1732,13 +1752,17 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">5.16. More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">5.17. Experience Report Evidence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">5.18. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">5.18.1. How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">5.18.2. I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-close-pull-requests-on-the-terminal">5.18.3. can you close pull requests on the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-mv-will-it-move-all-files">5.18.4. If you do mv * will it move all files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">5.18.5. Are there any other ways of using mv that haven’t been covered yet?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-should-we-be-practicing-with-the-terminal-for-git">5.18.6. how often should we be practicing with the terminal for git?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">5.18.7. Would it be beneficial to organize files with github rather than bash?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty">5.18.1. Why does git not see new directories added to the repo while they’re empty?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that">5.18.2. After a new directory has new files in it git status only shows the direcrory name but not the files within it. Why is that?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file">5.18.3. If possible, is it common to echo a line of code into a programming file?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-experience-will-we-have-with-open-source-projects-in-this-class">5.18.4. What other experience will we have with open source projects in this class?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">5.18.5. How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">5.18.6. I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-close-pull-requests-on-the-terminal">5.18.7. can you close pull requests on the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-mv-will-it-move-all-files">5.18.8. If you do mv * will it move all files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">5.18.9. Are there any other ways of using mv that haven’t been covered yet?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-should-we-be-practicing-with-the-terminal-for-git">5.18.10. how often should we be practicing with the terminal for git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">5.18.11. Would it be beneficial to organize files with github rather than bash?</a></li>
 </ul>
 </li>
 </ul>
