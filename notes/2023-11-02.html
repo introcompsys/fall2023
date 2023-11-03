@@ -1,0 +1,1225 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Building &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-02';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Deadlines and Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Detailed Grade Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">More Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">KWL File List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/tools.html">Other Course Software/tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/edit/main/notes/2023-11-02.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/issues/new?title=Issue%20on%20page%20%2Fnotes/2023-11-02.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2023-11-02.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Building</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Building</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="building">
+<h1>Building<a class="headerlink" href="#building" title="Permalink to this headline">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is not filled in yet. Use a previous semester until then</p>
+<p><a class="reference external" href="https://introcompsys.github.io/fall2022/notes/2022-10-31.html">f22 build</a></p>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">l</span> <span class="n">brownsarahm</span> <span class="n">seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brownsarahm@seawulf.uri.edu&#39;s password: </span>
+<span class="go">Last login: Tue Oct 31 13:41:16 2023 from 172.20.131.240</span>
+<span class="gp">[brownsarahm@seawulf ~]$ </span><span class="nb">logout</span>
+<span class="go">Connection to seawulf.uri.edu closed.</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">f</span> <span class="o">~/</span><span class="n">seawulf</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">b</span> <span class="mi">1024</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Generating public/private rsa key pair.</span>
+<span class="go">/Users/brownsarahm/seawulf already exists.</span>
+<span class="go">Overwrite (y/n)? y</span>
+<span class="go">Enter passphrase (empty for no passphrase): </span>
+<span class="go">Enter same passphrase again: </span>
+<span class="go">Your identification has been saved in /Users/brownsarahm/seawulf.</span>
+<span class="go">Your public key has been saved in /Users/brownsarahm/seawulf.pub.</span>
+<span class="go">The key fingerprint is:</span>
+<span class="go">SHA256:/jDn06CDu24klK2z4dw6acHJuzax9685qHLaGeooX9g brownsarahm@240.131.20.172.s.wireless.uri.edu</span>
+<span class="go">The key&#39;s randomart image is:</span>
+<span class="go">+---[RSA 1024]----+</span>
+<span class="go">|                 |</span>
+<span class="go">|                 |</span>
+<span class="go">|     o           |</span>
+<span class="go">|    o .          |</span>
+<span class="go">|   + o  S        |</span>
+<span class="go">|   o@ ..  .      |</span>
+<span class="go">|  .oE&amp; o+..o     |</span>
+<span class="go">|...+&amp;o* +B. .    |</span>
+<span class="go">|oo=**X+++=+.     |</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/</span><span class="n">seawulf</span> <span class="n">brownsarahm</span><span class="nd">@seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: &quot;/Users/brownsarahm/seawulf.pub&quot;</span>
+<span class="go">/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed</span>
+<span class="go">/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys</span>
+<span class="go">brownsarahm@seawulf.uri.edu&#39;s password: </span>
+
+<span class="go">Number of key(s) added:        1</span>
+
+<span class="go">Now try logging into the machine, with:   &quot;ssh &#39;brownsarahm@seawulf.uri.edu&#39;&quot;</span>
+<span class="go">and check to make sure that only the key(s) you wanted were added.</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.					.viminfo</span>
+<span class="go">..					.virtual_documents</span>
+<span class="go">.CFUserTextEncoding			.vscode</span>
+<span class="go">.DS_Store				.xonshrc</span>
+<span class="go">.Rhistory				.zsh_history</span>
+<span class="go">.Trash					.zsh_sessions</span>
+<span class="go">.anaconda				.zshrc</span>
+<span class="go">.anaconda_backup			2023-01-24.md</span>
+<span class="go">.atom					Applications</span>
+<span class="go">.bash_history				Creative Cloud Files</span>
+<span class="go">.bash_profile				Desktop</span>
+<span class="go">.bash_profile.pysave			DigiCertHighAssuranceEVRootCA.crt</span>
+<span class="go">.bash_sessions				Documents</span>
+<span class="go">.bundle					Downloads</span>
+<span class="go">.cache					Dropbox</span>
+<span class="go">.conda					Library</span>
+<span class="go">.condarc				Movies</span>
+<span class="go">.config					Music</span>
+<span class="go">.continuum				Pictures</span>
+<span class="go">.cups					Public</span>
+<span class="go">.dropbox				PycharmProjects</span>
+<span class="go">.gem					Untitled.ipynb</span>
+<span class="go">.gitconfig				Untitled1.ipynb</span>
+<span class="go">.ipynb_checkpoints			Untitled2.ipynb</span>
+<span class="go">.ipython				Untitled3.ipynb</span>
+<span class="go">.jupyter				Untitled4.ipynb</span>
+<span class="go">.keras					Zotero</span>
+<span class="go">.local					anaconda3</span>
+<span class="go">.matplotlib				bash_profile.backup2023-09-06</span>
+<span class="go">.mono					ca-bundle.crt</span>
+<span class="go">.npm					configs</span>
+<span class="go">.python_history				demo.ipynb</span>
+<span class="go">.r					scikit_learn_data</span>
+<span class="go">.rbenv					seaborn-data</span>
+<span class="go">.ssh					seawulf</span>
+<span class="go">.tcshrc					seawulf.pub</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">.</span><span class="n">ssh</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">config		known_hosts	seawulf		seawulf.pub</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">inclass</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">seawulf</span> <span class="n">brownsarah</span><span class="nd">@seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brownsarah@seawulf.uri.edu&#39;s password: </span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/</span><span class="n">seawulf</span> <span class="n">brownsarah</span><span class="nd">@seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brownsarah@seawulf.uri.edu&#39;s password: </span>
+<span class="go">Permission denied, please try again.</span>
+<span class="go">brownsarah@seawulf.uri.edu&#39;s password: </span>
+<span class="go">Permission denied, please try again.</span>
+<span class="go">brownsarah@seawulf.uri.edu&#39;s password: </span>
+<span class="go">brownsarah@seawulf.uri.edu: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">~</span> <span class="o">|</span><span class="n">grep</span> <span class="n">seawful</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">~</span> <span class="o">|</span><span class="n">grep</span> <span class="n">seawulf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">seawulf</span>
+<span class="go">seawulf.pub</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/</span><span class="n">seawulf</span> <span class="n">brownsarahm</span><span class="nd">@seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Last login: Thu Nov  2 12:36:20 2023 from 172.20.131.240</span>
+<span class="gp">[brownsarahm@seawulf ~]$ </span>interactive
+<span class="go">salloc: Granted job allocation 27157</span>
+<span class="go">salloc: Waiting for resource configuration</span>
+<span class="go">salloc: Nodes n005 are ready for job</span>
+<span class="gp">[brownsarahm@n005 ~]$ </span>hostname
+<span class="go">n005.cluster.com</span>
+<span class="gp">[brownsarahm@n005 ~]$ </span>mkdir<span class="w"> </span>compilec
+<span class="go">mkdir: cannot create directory ‘compilec’: File exists</span>
+<span class="gp">[brownsarahm@n005 ~]$ </span>rm<span class="w"> </span>-rf<span class="w"> </span>compilec/
+<span class="gp">[brownsarahm@n005 ~]$ </span>mkdir<span class="w"> </span>compilec
+<span class="gp">[brownsarahm@n005 ~]$ </span><span class="nb">cd</span><span class="w"> </span>compilec/
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls
+<span class="gp">[brownsarahm@n005 compilec]$ </span>nano<span class="w"> </span>hello.c
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.c<span class="w"> </span>
+<span class="gp">#</span>include<span class="w"> </span>&lt;stdio.h&gt;
+<span class="go">void main () {</span>
+
+<span class="go"> printf(&quot;Hello world\n&quot;);</span>
+
+<span class="go">}</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls
+<span class="go">hello.c</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>gcc<span class="w"> </span>-E<span class="w"> </span>hello.c<span class="w"> </span>-o<span class="w"> </span>hello.i
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls
+<span class="go">hello.c  hello.i</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.i<span class="w"> </span><span class="p">|</span>head
+<span class="gp"># </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;hello.c&quot;</span>
+<span class="gp"># </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;&lt;built-in&gt;&quot;</span>
+<span class="gp"># </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;&lt;command-line&gt;&quot;</span>
+<span class="gp"># </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;/usr/include/stdc-predef.h&quot;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
+<span class="gp"># </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;&lt;command-line&gt;&quot;</span><span class="w"> </span><span class="m">2</span>
+<span class="gp"># </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;hello.c&quot;</span>
+<span class="gp"># </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;/usr/include/stdio.h&quot;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
+<span class="gp"># </span><span class="m">27</span><span class="w"> </span><span class="s2">&quot;/usr/include/stdio.h&quot;</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
+<span class="gp"># </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;/usr/include/features.h&quot;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
+<span class="gp"># </span><span class="m">375</span><span class="w"> </span><span class="s2">&quot;/usr/include/features.h&quot;</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.i<span class="w"> </span><span class="p">|</span>tail
+
+<span class="go">extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));</span>
+<span class="gp"># </span><span class="m">943</span><span class="w"> </span><span class="s2">&quot;/usr/include/stdio.h&quot;</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
+
+<span class="gp"># </span><span class="m">2</span><span class="w"> </span><span class="s2">&quot;hello.c&quot;</span><span class="w"> </span><span class="m">2</span>
+<span class="go">void main () {</span>
+
+<span class="go"> printf(&quot;Hello world\n&quot;);</span>
+
+<span class="go">}</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.i<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc-l
+<span class="go">bash: wc-l: command not found</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.i<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<span class="go">842</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.c<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<span class="go">6</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>gcc<span class="w"> </span>-S<span class="w"> </span>hello.i
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls
+<span class="go">hello.c  hello.i  hello.s</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.s
+<span class="go">	.file	&quot;hello.c&quot;</span>
+<span class="go">	.section	.rodata</span>
+<span class="go">.LC0:</span>
+<span class="go">	.string	&quot;Hello world&quot;</span>
+<span class="go">	.text</span>
+<span class="go">	.globl	main</span>
+<span class="go">	.type	main, @function</span>
+<span class="go">main:</span>
+<span class="go">.LFB0:</span>
+<span class="go">	.cfi_startproc</span>
+<span class="go">	pushq	%rbp</span>
+<span class="go">	.cfi_def_cfa_offset 16</span>
+<span class="go">	.cfi_offset 6, -16</span>
+<span class="go">	movq	%rsp, %rbp</span>
+<span class="go">	.cfi_def_cfa_register 6</span>
+<span class="go">	movl	$.LC0, %edi</span>
+<span class="go">	call	puts</span>
+<span class="go">	popq	%rbp</span>
+<span class="go">	.cfi_def_cfa 7, 8</span>
+<span class="go">	ret</span>
+<span class="go">	.cfi_endproc</span>
+<span class="go">.LFE0:</span>
+<span class="go">	.size	main, .-main</span>
+<span class="go">	.ident	&quot;GCC: (GNU) 4.8.5 20150623 (Red Hat 4.8.5-44)&quot;</span>
+<span class="go">	.section	.note.GNU-stack,&quot;&quot;,@progbits</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>gcc<span class="w"> </span>-c<span class="w"> </span>hello.s<span class="w"> </span>-o<span class="w"> </span>hello.o
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls
+<span class="go">hello.c  hello.i  hello.o  hello.s</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.o
+<span class="go">ELF&gt;?@@</span>
+<span class="go">UH???]?Hello worldGCC: (GNU) 4.8.5 20150623 (Red Hat 4.8.5-44)zRx</span>
+<span class="go">K                                                               A?C</span>
+<span class="go">??      hello.cmainputs</span>
+
+
+<span class="go">???????? .symtab.strtab.shstrtab.rela.text.data.bss.rodata.comment.note.GNU-stack.rela.eh_frame @?0</span>
+<span class="go">&amp;PP1P</span>
+<span class="go">     90\.B?W?R@</span>
+<span class="go">?</span>
+<span class="go">	?0a[brownsarahm@n005 compilec]$ gcc -o hello hello.o -lm</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls
+<span class="go">hello  hello.c  hello.i  hello.o  hello.s</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>./hello<span class="w"> </span>
+<span class="go">Hello world</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span><span class="nb">history</span>
+<span class="go">    1  ls -hw</span>
+<span class="go">    2  lshw</span>
+<span class="go">    3  exit</span>
+<span class="go">    4  ls</span>
+<span class="go">    5  pwd</span>
+<span class="go">    6  whoami</span>
+<span class="go">    7  wget http://www.hpc-carpentry.org/hpc-shell/files/bash-lesson.tar.gz</span>
+<span class="go">    8  ls</span>
+<span class="go">    9  tar -xvf bash-lesson.tar.gz </span>
+<span class="go">   10  ls</span>
+<span class="go">   11  cat dmel-all-r6.19.gtf </span>
+<span class="go">   12  head dmel-all-r6.19.gtf </span>
+<span class="go">   13  tail dmel-all-r6.19.gtf </span>
+<span class="go">   14  wc -l dmel-all-r6.19.gtf </span>
+<span class="go">   15  ls</span>
+<span class="go">   16  wc -l *.fastw</span>
+<span class="go">   17  wc -l *.fastq</span>
+<span class="go">   18  wc -l *.fastq &gt; linecounts.txt</span>
+<span class="go">   19  cat linecounts.txt </span>
+<span class="go">   20  grep Act5c dmel-all-r6.19.gtf </span>
+<span class="go">   21  head dmel-all-r6.19.gtf </span>
+<span class="go">   22  grep mRNA dmel-all-r6.19.gtf </span>
+<span class="go">   23  grep mRNA dmel-all-r6.19.gtf | wc -l</span>
+<span class="go">   24  echo &quot;echo &#39;script works&#39;&quot; &gt;&gt; demo.sh</span>
+<span class="go">   25  cat demo.sh </span>
+<span class="go">   26  ./demo.sh</span>
+<span class="go">   27  ls -l</span>
+<span class="go">   28  mkdir results</span>
+<span class="go">   29  ls -l</span>
+<span class="go">   30  pwd</span>
+<span class="go">   31  ls /home/brownsarahm</span>
+<span class="go">   32  cat /home/brownsarahm/demo.sh</span>
+<span class="go">   33  bash demo.sh </span>
+<span class="go">   34  ./ demo.sh </span>
+<span class="go">   35  ./demo.sh </span>
+<span class="go">   36  chmod +x demo.sh </span>
+<span class="go">   37  ls -l</span>
+<span class="go">   38  ./demo.sh </span>
+<span class="go">   39  nano demo.sh</span>
+<span class="go">   40  cat demo.sh </span>
+<span class="go">   41  ls -l</span>
+<span class="go">   42  nano my_job.sh</span>
+<span class="go">   43  sbatch my_job.sh </span>
+<span class="go">   44  squeue --job 23950</span>
+<span class="go">   45  interactive</span>
+<span class="go">   46  wall &quot;hello&quot;</span>
+<span class="go">   47  exit </span>
+<span class="go">   48  ls</span>
+<span class="go">   49  exit</span>
+<span class="go">   50  cat ~/.ssh/authorized_keys </span>
+<span class="go">   51  rm ~/.ssh/authorized_keys </span>
+<span class="go">   52  exit</span>
+<span class="go">   53  ls -a</span>
+<span class="go">   54  ls -al</span>
+<span class="go">   55  exit</span>
+<span class="go">   56  cat /var/log/auth.log</span>
+<span class="go">   57  exit</span>
+<span class="go">   58  ls</span>
+<span class="go">   59  ls .ssh/</span>
+<span class="go">   60  rm .ssh/</span>
+<span class="go">   61  ls</span>
+<span class="go">   62  rm .ssh/authorized_keys </span>
+<span class="go">   63  ls</span>
+<span class="go">   64  exit</span>
+<span class="go">   65  cat .ssh/authorized_keys </span>
+<span class="go">   66  exit</span>
+<span class="go">   67  ls .ssh/</span>
+<span class="go">   68  cat .ssh/authorized_keys </span>
+<span class="go">   69  cat /var/log/auth.log</span>
+<span class="go">   70  exit</span>
+<span class="go">   71  ls</span>
+<span class="go">   72  pwd</span>
+<span class="go">   73  whoami</span>
+<span class="go">   74  wget http://www.hpc-carpentry.org/hpc-shell/files/bash-lesson.tar.gz</span>
+<span class="go">   75  ls</span>
+<span class="go">   76  rm *.fastq</span>
+<span class="go">   77  tar -xvf bash-lesson.tar.gz </span>
+<span class="go">   78  cat SRR307023_1.fastq </span>
+<span class="go">   79  head SRR307023_1.fastq </span>
+<span class="go">   80  tail SRR307023_1.fastq </span>
+<span class="go">   81  wc -l SRR307023_1.fastq </span>
+<span class="go">   82  wc -l *.fastq </span>
+<span class="go">   83  wc -l dmel-all-r6.19.gtf </span>
+<span class="go">   84  grep Act5c dmel-all-r6.19.gtf </span>
+<span class="go">   85  grep mRNA dmel-all-r6.19.gtf </span>
+<span class="go">   86  echo &quot;echo &#39;script works&#39;&quot; &gt;&gt; demo.sh</span>
+<span class="go">   87  cat demo.sh </span>
+<span class="go">   88  echo &quot;echo &#39;script works&#39;&quot; &gt; demo.sh</span>
+<span class="go">   89  cat demo.sh </span>
+<span class="go">   90  ./demo.sh </span>
+<span class="go">   91  ls -l</span>
+<span class="go">   92  chmod +x demo.sh </span>
+<span class="go">   93  ls -l</span>
+<span class="go">   94  ./demo.sh </span>
+<span class="go">   95  exit</span>
+<span class="go">   96  lshw</span>
+<span class="go">   97  exit</span>
+<span class="go">   98  interactive</span>
+<span class="go">   99  grep Act5C dmel-all-r6.19.gtf </span>
+<span class="go">  100  grep Act5C dmel-all-r6.19.gtf | wc -l</span>
+<span class="go">  101  grep Act5C dmel-all-r6.19.gtf | head -n 1</span>
+<span class="go">  102  exit</span>
+<span class="go">  103  pwd</span>
+<span class="go">  104  ls</span>
+<span class="go">  105  mkdir example</span>
+<span class="go">  106  cd example/</span>
+<span class="go">  107  pwd</span>
+<span class="go">  108  mkdir ex2</span>
+<span class="go">  109  cd ex2/</span>
+<span class="go">  110  pwd</span>
+<span class="go">  111  cd </span>
+<span class="go">  112  ls -l</span>
+<span class="go">  113  ls -l --block-size=M</span>
+<span class="go">  114  exit</span>
+<span class="go">  115  ls</span>
+<span class="go">  116  ls -a</span>
+<span class="go">  117  ls .ssh/</span>
+<span class="go">  118  ls .ssh/authorized_keys </span>
+<span class="go">  119  ls</span>
+<span class="go">  120  ls .ssh/authorized_keys </span>
+<span class="go">  121  ls .ssh/authorized_keys</span>
+<span class="go">  122  exit</span>
+<span class="go">  123  ls</span>
+<span class="go">  124  lshw </span>
+<span class="go">  125  cat demo.sh </span>
+<span class="go">  126  ./demo.sh </span>
+<span class="go">  127  ls my_job.sh </span>
+<span class="go">  128  cat my_job.sh </span>
+<span class="go">  129  exit</span>
+<span class="go">  130  python3</span>
+<span class="go">  131  exit</span>
+<span class="go">  132  pwd</span>
+<span class="go">  133  lshw</span>
+<span class="go">  134  interactive</span>
+<span class="go">  135  interactive -t 0:03:00</span>
+<span class="go">  136  interactive -c 4 </span>
+<span class="go">  137  interactive</span>
+<span class="go">  138  exit</span>
+<span class="go">  139  gcc</span>
+<span class="go">  140  clear</span>
+<span class="go">  141  exit</span>
+<span class="go">  142  mkdir compilec</span>
+<span class="go">  143  cd compilec/</span>
+<span class="go">  144  ls</span>
+<span class="go">  145  nano hello.c</span>
+<span class="go">  146  cat hello.c </span>
+<span class="go">  147  ls</span>
+<span class="go">  148  nano hello.c</span>
+<span class="go">  149  gcc -E hello.c -o hello.i</span>
+<span class="go">  150  ls</span>
+<span class="go">  151  cat hello.i | head </span>
+<span class="go">  152  cat hello.c</span>
+<span class="go">  153  cat hello.i | tail </span>
+<span class="go">  154  cat hello.i | wc -l</span>
+<span class="go">  155  cat hello.c | wc -l</span>
+<span class="go">  156  gcc -S hello.i</span>
+<span class="go">  157  ls</span>
+<span class="go">  158  cat hello.s</span>
+<span class="go">  159  cat hello.c</span>
+<span class="go">  160  gcc -c hello.s -o hello.o</span>
+<span class="go">  161  ls</span>
+<span class="go">  162  cat hello.o</span>
+<span class="go">  163  gcc -o hello hello.o -lm </span>
+<span class="go">  164  ls</span>
+<span class="go">  165  ./hello </span>
+<span class="go">  166  ls -la</span>
+<span class="go">  167  ls</span>
+<span class="go">  168  rm hello.i hello.s hello.o hello</span>
+<span class="go">  169  ls</span>
+<span class="go">  170  gcc --help</span>
+<span class="go">  171  gcc -Wall -g -o hello hello.c -lm</span>
+<span class="go">  172  ls</span>
+<span class="go">  173  nano main.c</span>
+<span class="go">  174  nano help.c</span>
+<span class="go">  175  cat main.c </span>
+<span class="go">  176  cat help.c</span>
+<span class="go">  177  gcc -Wall -g -c main.c </span>
+<span class="go">  178  nano main.c</span>
+<span class="go">  179  cat main.</span>
+<span class="go">  180  cat main.c</span>
+<span class="go">  181  gcc -Wall -g -c main.c </span>
+<span class="go">  182  gcc -Wall -g -c help.c</span>
+<span class="go">  183  ls</span>
+<span class="go">  184  gcc -o demo main.o help.o -lm</span>
+<span class="go">  185  ls</span>
+<span class="go">  186  ./demo </span>
+<span class="go">  187  ./demo 6</span>
+<span class="go">  188  exit</span>
+<span class="go">  189  interactive</span>
+<span class="go">  190  exit</span>
+<span class="go">  191  ls</span>
+<span class="go">  192  wget http://www.hpc-carpentry.org/hpc-shell/files/bash-lesson.tar.gz</span>
+<span class="go">  193  ls</span>
+<span class="go">  194  man tar</span>
+<span class="go">  195  tar -xvf bash-lesson.tar.gz </span>
+<span class="go">  196  cat dmel-all-r6.19.gtf </span>
+<span class="go">  197  head dmel-all-r6.19.gtf </span>
+<span class="go">  198  man head</span>
+<span class="go">  199  head dmel-all-r6.19.gtf -n 5</span>
+<span class="go">  200  tail dmel-all-r6.19.gtf -n 5</span>
+<span class="go">  201  wc dmel-all-r6.19.gtf </span>
+<span class="go">  202  man wc</span>
+<span class="go">  203  wc -l dmel-all-r6.19.gtf </span>
+<span class="go">  204  ls</span>
+<span class="go">  205  wc -l *.fastq</span>
+<span class="go">  206  wc -l *.fastq &gt; linecounts.txt</span>
+<span class="go">  207  cat linecounts.txt </span>
+<span class="go">  208  grep Act5c dmel-all-r6.19.gtf </span>
+<span class="go">  209  grep mRNA  dmel-all-r6.19.gtf </span>
+<span class="go">  210  grep mRNA  dmel-all-r6.19.gtf |wc -l</span>
+<span class="go">  211  exit</span>
+<span class="go">  212  pwd</span>
+<span class="go">  213  ls</span>
+<span class="go">  214  rm *</span>
+<span class="go">  215  ls</span>
+<span class="go">  216  whoami</span>
+<span class="go">  217  interactive</span>
+<span class="go">  218  exit</span>
+<span class="go">  219  nano example-job.sh</span>
+<span class="go">  220  cat example-job.sh </span>
+<span class="go">  221  man echo</span>
+<span class="go">  222  bash example-job.sh </span>
+<span class="go">  223  ./example-job.sh</span>
+<span class="go">  224  ls -l</span>
+<span class="go">  225  chmod +x example-job.sh </span>
+<span class="go">  226  ls -l | grep example</span>
+<span class="go">  227  ./example-job.sh</span>
+<span class="go">  228  cp example-job.sh ex2.sh</span>
+<span class="go">  229  cp example-job.sh ex3.sh</span>
+<span class="go">  230  cp example-job.sh ex4.sh</span>
+<span class="go">  231  ls| grep ex</span>
+<span class="go">  232  ls -l</span>
+<span class="go">  233  chmod -x ex*.sh</span>
+<span class="go">  234  ls -l | grep ex</span>
+<span class="go">  235  ./example-job.sh</span>
+<span class="go">  236  chmod +x example-job.sh </span>
+<span class="go">  237  ./example-job.sh</span>
+<span class="go">  238  nano example-job.sh </span>
+<span class="go">  239  cat example-job.sh </span>
+<span class="go">  240  sbatch example-job.sh </span>
+<span class="go">  241  squeue -u brownsarahm</span>
+<span class="go">  242  sbatch example-job.sh </span>
+<span class="go">  243  squeue -u brownsarahm</span>
+<span class="go">  244  whoami</span>
+<span class="go">  245  ls </span>
+<span class="go">  246  cat slurm-27093.out </span>
+<span class="go">  247  cat slurm-27107.out </span>
+<span class="go">  248  nano example-job.sh </span>
+<span class="go">  249  logout</span>
+<span class="go">  250  cat ex2.sh </span>
+<span class="go">  251  chmod +x ex2.sh </span>
+<span class="go">  252  sbatch -J hello -o name-%j ex2.sh</span>
+<span class="go">  253  nano ex2.sh </span>
+<span class="go">  254  sbatch -J hello -o name-%j ex2.sh</span>
+<span class="go">  255  ls |grap name</span>
+<span class="go">  256  ls |grep name</span>
+<span class="go">  257  sbatch  ex2.sh</span>
+<span class="go">  258  sysapprovedbages</span>
+<span class="go">  259  sysapprovedbadges --help</span>
+<span class="go">  260  exit</span>
+<span class="go">  261  logout</span>
+<span class="go">  262  hostname</span>
+<span class="go">  263  mkdir compilec</span>
+<span class="go">  264  rm -rf compilec/</span>
+<span class="go">  265  mkdir compilec</span>
+<span class="go">  266  cd compilec/</span>
+<span class="go">  267  ls</span>
+<span class="go">  268  nano hello.c</span>
+<span class="go">  269  cat hello.c </span>
+<span class="go">  270  ls</span>
+<span class="go">  271  gcc -E hello.c -o hello.i</span>
+<span class="go">  272  ls</span>
+<span class="go">  273  cat hello.i |head</span>
+<span class="go">  274  cat hello.i |tail</span>
+<span class="go">  275  cat hello.i | wc-l</span>
+<span class="go">  276  cat hello.i | wc -l</span>
+<span class="go">  277  cat hello.c | wc -l</span>
+<span class="go">  278  gcc -S hello.i</span>
+<span class="go">  279  ls</span>
+<span class="go">  280  cat hello.s</span>
+<span class="go">  281  gcc -c hello.s -o hello.o</span>
+<span class="go">  282  ls</span>
+<span class="go">  283  cat hello.o</span>
+<span class="go">  284  gcc -o hello hello.o -lm</span>
+<span class="go">  285  ls</span>
+<span class="go">  286  ./hello </span>
+<span class="go">  287  history</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls<span class="w"> </span>-l
+<span class="go">total 44</span>
+<span class="go">-rwxr-xr-x 1 brownsarahm spring2022-csc392  8360 Nov  2 13:27 hello</span>
+<span class="go">-rw-r--r-- 1 brownsarahm spring2022-csc392    64 Nov  2 13:12 hello.c</span>
+<span class="go">-rw-r--r-- 1 brownsarahm spring2022-csc392 16865 Nov  2 13:14 hello.i</span>
+<span class="go">-rw-r--r-- 1 brownsarahm spring2022-csc392  1496 Nov  2 13:23 hello.o</span>
+<span class="go">-rw-r--r-- 1 brownsarahm spring2022-csc392   433 Nov  2 13:19 hello.s</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls<span class="w"> </span>-la
+<span class="go">total 48</span>
+<span class="go">drwxr-xr-x 2 brownsarahm spring2022-csc392    98 Nov  2 13:27 .</span>
+<span class="go">drwx------ 7 brownsarahm spring2022-csc392  4096 Nov  2 13:11 ..</span>
+<span class="go">-rwxr-xr-x 1 brownsarahm spring2022-csc392  8360 Nov  2 13:27 hello</span>
+<span class="go">-rw-r--r-- 1 brownsarahm spring2022-csc392    64 Nov  2 13:12 hello.c</span>
+<span class="go">-rw-r--r-- 1 brownsarahm spring2022-csc392 16865 Nov  2 13:14 hello.i</span>
+<span class="go">-rw-r--r-- 1 brownsarahm spring2022-csc392  1496 Nov  2 13:23 hello.o</span>
+<span class="go">-rw-r--r-- 1 brownsarahm spring2022-csc392   433 Nov  2 13:19 hello.s</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>nano<span class="w"> </span>hello.c
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.
+<span class="go">cat: hello.: No such file or directory</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.c
+<span class="gp">#</span>include<span class="w"> </span>&lt;stdio.h&gt;
+<span class="go">void main () {</span>
+
+<span class="go"> printf(&quot;Hello world!\n&quot;);</span>
+
+<span class="go">}</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>./hello<span class="w"> </span>
+<span class="go">Hello world</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>gcc<span class="w"> </span>hello.c
+<span class="gp">[brownsarahm@n005 compilec]$ </span>./hello<span class="w"> </span>
+<span class="go">Hello world</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>gcc<span class="w"> </span>hello.c<span class="w"> </span>-lm
+<span class="gp">[brownsarahm@n005 compilec]$ </span>./hello<span class="w"> </span>
+<span class="go">Hello world</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls
+<span class="go">a.out  hello  hello.c  hello.i  hello.o  hello.s</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>./a.out<span class="w"> </span>
+<span class="go">Hello world!</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>gcc<span class="w"> </span>hello.c<span class="w"> </span>-o<span class="w"> </span>hello2
+<span class="gp">[brownsarahm@n005 compilec]$ </span>./hello2
+<span class="go">Hello world!</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>gcc<span class="w"> </span>hello.c
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls
+<span class="go">a.out  hello  hello2  hello.c  hello.i  hello.o  hello.s</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>nano<span class="w"> </span>hello.c
+<span class="gp">[brownsarahm@n005 compilec]$ </span>gcc<span class="w"> </span>hello.c
+<span class="gp">[brownsarahm@n005 compilec]$ </span>ls
+<span class="go">a.out  hello  hello2  hello.c  hello.i  hello.o  hello.s</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>./a.out<span class="w"> </span>
+<span class="go">Hello world! again</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>cat<span class="w"> </span>hello.c
+<span class="gp">#</span>include<span class="w"> </span>&lt;stdio.h&gt;
+<span class="go">void main () {</span>
+
+<span class="go"> printf(&quot;Hello world! again\n&quot;);</span>
+
+<span class="go">}</span>
+<span class="gp">[brownsarahm@n005 compilec]$ </span>
+
+
+<span class="gp">#</span><span class="c1"># Prepare for Next Class</span>
+
+<span class="go">```{include} ../_prepare/2023-11-02.md</span>
+</pre></div>
+</div>
+</section>
+<section id="review-todays-class">
+<h1>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h1>
+<ol class="arabic simple">
+<li><p>create a new ssh key and configure it to your GitHub account</p></li>
+<li><p>Practice using gcc.  Repeat steps we did in class, change the order of parameters; try skipping steps to produce errors, etc. Then in <code class="docutils literal notranslate"><span class="pre">gcctips.md</span></code> summarize what you learned as a list of tips and reminders on what the parameters do/why/when you would need them (or not).  (to reinforce what we learned)</p></li>
+</ol>
+</section>
+<section id="more-practice">
+<h1>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h1>
+<ol class="arabic simple">
+<li><p>create a new ssh key and configure it to your GitHub account</p></li>
+<li><p>Install <a class="reference external" href="https://gcc.gnu.org/install/"> gcc</a> locally and practice using it.  Repeat steps we did in class on your computer and then change the order of parameters; try skipping steps to produce errors, etc. Export the list of variations you tried and summarize what you learned as a list of tips and reminders on what the parameters do/why/when you would need them (or not) in <span class="target" id="index-0"></span>gcctips.md.  (to reinforce what we learned)</p></li>
+<li><p>Write two short programs that do the same thing in different ways and compile them both to assembly (eg using a for vs while loop to sum numbers up to a number). Check the assembly to see if they produce the same thing or if it’s different. Save your code (in code blocks) and notes about your findings in <span class="target" id="index-1"></span>assemblycompare.md</p></li>
+</ol>
+</section>
+<section id="experience-report-evidence">
+<h1>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h1>
+</section>
+<section id="questions-after-todays-class">
+<h1>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h1>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Building</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
