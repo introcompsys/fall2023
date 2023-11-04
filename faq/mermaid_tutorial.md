@@ -12,14 +12,14 @@ Either on the [Mermaid](https://mermaid.live/) website or within the **GitHub** 
 
 A code block should look like the following:
 ````
-```mermaid
+```{mermaid}
 blah blah blah
 ```
 ````
 
-####Example Mermaid Code Block
+#### Example Mermaid Code Block
 
-```mermaid
+```{mermaid}
 flowchart TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
@@ -33,7 +33,7 @@ In Mermaid there are different styles for boxes with either square or round edge
 So the code above actually looks like this in it's code block:
 
 ````
-```mermaid
+```{mermaid}
 flowchart TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
