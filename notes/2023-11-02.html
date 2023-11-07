@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>SSH Keys and Building Code &#8212; Computer Systems and Programming Tools</title>
+    <title>16. SSH Keys and Building Code &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="15. How can I run a job on a remote server ?" href="2023-10-31.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
@@ -184,6 +186,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. SSH Keys and Building Code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -424,20 +428,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-we-create-ssh-keys-for">What else can we create ssh keys for?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-need-a-i-s-o-files">Why did we need a .i, .s, .o files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-are-ssh-keys-used-by-a-developer">How often are SSH keys used by a developer?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-not-need-to-do-the-intermediate-steps-when-we-changed-the-program">Why did we not need to do the intermediate steps when we changed the program?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-use-import-other-libraies-into-seawulf-and-use-them-in-a-program-made-in-seawulf">can you use/import other libraies into seawulf and use them in a program made in seawulf?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-compiling-using-the-following-line-gcc-hello-c-o-hello-does-this-remove-the-o-s-and-i-file-because-it-just-created-the-executable-file-hello">When compiling using the following line: gcc hello.c -o hello does this remove the .o .s and .i file because it just created the executable file hello?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-public-and-private-keys-the-primes-themselves-or-are-they-something-derived-from-the-primes">Are the public and private keys the primes themselves, or are they something derived from the primes?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-main-uses-of-doing-this">What are the main uses of doing this?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-this-ever-be-seen-as-a-better-alternative-to-write-code-as-opposed">Will this ever be seen as a better alternative to write code as opposed?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">16.1. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">16.2. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">16.3. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">16.4. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">16.5. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-we-create-ssh-keys-for">16.5.1. What else can we create ssh keys for?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-need-a-i-s-o-files">16.5.2. Why did we need a .i, .s, .o files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-are-ssh-keys-used-by-a-developer">16.5.3. How often are SSH keys used by a developer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-not-need-to-do-the-intermediate-steps-when-we-changed-the-program">16.5.4. Why did we not need to do the intermediate steps when we changed the program?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-use-import-other-libraies-into-seawulf-and-use-them-in-a-program-made-in-seawulf">16.5.5. can you use/import other libraies into seawulf and use them in a program made in seawulf?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-compiling-using-the-following-line-gcc-hello-c-o-hello-does-this-remove-the-o-s-and-i-file-because-it-just-created-the-executable-file-hello">16.5.6. When compiling using the following line: gcc hello.c -o hello does this remove the .o .s and .i file because it just created the executable file hello?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-public-and-private-keys-the-primes-themselves-or-are-they-something-derived-from-the-primes">16.5.7. Are the public and private keys the primes themselves, or are they something derived from the primes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-main-uses-of-doing-this">16.5.8. What are the main uses of doing this?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-this-ever-be-seen-as-a-better-alternative-to-write-code-as-opposed">16.5.9. Will this ever be seen as a better alternative to write code as opposed?</a></li>
 </ul>
 </li>
 </ul>
@@ -452,7 +456,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ssh-keys-and-building-code">
-<h1>SSH Keys and Building Code<a class="headerlink" href="#ssh-keys-and-building-code" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">16. </span>SSH Keys and Building Code<a class="headerlink" href="#ssh-keys-and-building-code" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is not filled in yet. Use a previous semester until then</p>
@@ -1104,19 +1108,19 @@ Connection to seawulf.uri.edu closed.
 </pre></div>
 </div>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.1. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <p>No separate preparation, focus on badge work and reviewing the notes if you missed class.</p>
 <p>Make sure you did the prep for 10-31, we will work from that on 11/2.</p>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.2. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>create a new ssh key and configure it to your GitHub account</p></li>
 <li><p>Practice using gcc.  Repeat steps we did in class, change the order of parameters; try skipping steps to produce errors, etc. Then in <code class="docutils literal notranslate"><span class="pre">gcctips.md</span></code> summarize what you learned as a list of tips and reminders on what the parameters do/why/when you would need them (or not).  (to reinforce what we learned)</p></li>
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>create a new ssh key and configure it to your GitHub account</p></li>
 <li><p>Install <a class="reference external" href="https://gcc.gnu.org/install/"> gcc</a> locally and practice using it.  Repeat steps we did in class on your computer and then change the order of parameters; try skipping steps to produce errors, etc. Export the list of variations you tried and summarize what you learned as a list of tips and reminders on what the parameters do/why/when you would need them (or not) in <span class="target" id="index-0"></span>gcctips.md.  (to reinforce what we learned)</p></li>
@@ -1124,46 +1128,46 @@ Connection to seawulf.uri.edu closed.
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.4. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.5. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="what-else-can-we-create-ssh-keys-for">
-<h3>What else can we create ssh keys for?<a class="headerlink" href="#what-else-can-we-create-ssh-keys-for" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.1. </span>What else can we create ssh keys for?<a class="headerlink" href="#what-else-can-we-create-ssh-keys-for" title="Permalink to this headline">#</a></h3>
 <p>You can use them for GitHub and most developer tools that have authentication provide this option.</p>
 </section>
 <section id="why-did-we-need-a-i-s-o-files">
-<h3>Why did we need a .i, .s, .o files?<a class="headerlink" href="#why-did-we-need-a-i-s-o-files" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.2. </span>Why did we need a .i, .s, .o files?<a class="headerlink" href="#why-did-we-need-a-i-s-o-files" title="Permalink to this headline">#</a></h3>
 <p>When you build your code, your tools often go from source code to executable without saving the file at the intermediate points.  We went through and stopped it at the same</p>
 </section>
 <section id="how-often-are-ssh-keys-used-by-a-developer">
-<h3>How often are SSH keys used by a developer?<a class="headerlink" href="#how-often-are-ssh-keys-used-by-a-developer" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.3. </span>How often are SSH keys used by a developer?<a class="headerlink" href="#how-often-are-ssh-keys-used-by-a-developer" title="Permalink to this headline">#</a></h3>
 <p>I cannot give a speific number, but they are used for remote systems and can be used for GitHub.</p>
 </section>
 <section id="why-did-we-not-need-to-do-the-intermediate-steps-when-we-changed-the-program">
-<h3>Why did we not need to do the intermediate steps when we changed the program?<a class="headerlink" href="#why-did-we-not-need-to-do-the-intermediate-steps-when-we-changed-the-program" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.4. </span>Why did we not need to do the intermediate steps when we changed the program?<a class="headerlink" href="#why-did-we-not-need-to-do-the-intermediate-steps-when-we-changed-the-program" title="Permalink to this headline">#</a></h3>
 <p>We did not <em>need</em> to stop at the intermediate points the first time, we stopped it after each step to look at it, so that we could learn about all of the steps.</p>
 <p>We alwasy have the option to do the whole process at once.</p>
 </section>
 <section id="can-you-use-import-other-libraies-into-seawulf-and-use-them-in-a-program-made-in-seawulf">
-<h3>can you use/import other libraies into seawulf and use them in a program made in seawulf?<a class="headerlink" href="#can-you-use-import-other-libraies-into-seawulf-and-use-them-in-a-program-made-in-seawulf" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.5. </span>can you use/import other libraies into seawulf and use them in a program made in seawulf?<a class="headerlink" href="#can-you-use-import-other-libraies-into-seawulf-and-use-them-in-a-program-made-in-seawulf" title="Permalink to this headline">#</a></h3>
 <p>Yes. To an extent, there are limits to what you can install, but the basic ones are typically here.</p>
 <p>You can see what is there with <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">available</span></code></p>
 </section>
 <section id="when-compiling-using-the-following-line-gcc-hello-c-o-hello-does-this-remove-the-o-s-and-i-file-because-it-just-created-the-executable-file-hello">
-<h3>When compiling using the following line: gcc hello.c -o hello does this remove the .o .s and .i file because it just created the executable file hello?<a class="headerlink" href="#when-compiling-using-the-following-line-gcc-hello-c-o-hello-does-this-remove-the-o-s-and-i-file-because-it-just-created-the-executable-file-hello" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.6. </span>When compiling using the following line: gcc hello.c -o hello does this remove the .o .s and .i file because it just created the executable file hello?<a class="headerlink" href="#when-compiling-using-the-following-line-gcc-hello-c-o-hello-does-this-remove-the-o-s-and-i-file-because-it-just-created-the-executable-file-hello" title="Permalink to this headline">#</a></h3>
 <p>It does not remove them, but it does skip writing the file <em>out</em> at those intermediate points.</p>
 </section>
 <section id="are-the-public-and-private-keys-the-primes-themselves-or-are-they-something-derived-from-the-primes">
-<h3>Are the public and private keys the primes themselves, or are they something derived from the primes?<a class="headerlink" href="#are-the-public-and-private-keys-the-primes-themselves-or-are-they-something-derived-from-the-primes" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.7. </span>Are the public and private keys the primes themselves, or are they something derived from the primes?<a class="headerlink" href="#are-the-public-and-private-keys-the-primes-themselves-or-are-they-something-derived-from-the-primes" title="Permalink to this headline">#</a></h3>
 <p>The product of the primes is part of the public key along with an exponent integer.  The two primes are also used to compute the private key.  The primes themselves need to be private, but are actually not needed to be know, so they are generally discarded.</p>
 </section>
 <section id="what-are-the-main-uses-of-doing-this">
-<h3>What are the main uses of doing this?<a class="headerlink" href="#what-are-the-main-uses-of-doing-this" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.8. </span>What are the main uses of doing this?<a class="headerlink" href="#what-are-the-main-uses-of-doing-this" title="Permalink to this headline">#</a></h3>
 <p>Understanding the steps of building can help you debug.</p>
 </section>
 <section id="will-this-ever-be-seen-as-a-better-alternative-to-write-code-as-opposed">
-<h3>Will this ever be seen as a better alternative to write code as opposed?<a class="headerlink" href="#will-this-ever-be-seen-as-a-better-alternative-to-write-code-as-opposed" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.9. </span>Will this ever be seen as a better alternative to write code as opposed?<a class="headerlink" href="#will-this-ever-be-seen-as-a-better-alternative-to-write-code-as-opposed" title="Permalink to this headline">#</a></h3>
 <p>Sometimes the terminal is the fastest tool you have available, like today.</p>
 </section>
 </section>
@@ -1200,6 +1204,24 @@ Connection to seawulf.uri.edu closed.
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-10-31.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>How can I run a job on a remote server ?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1218,20 +1240,20 @@ Connection to seawulf.uri.edu closed.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-we-create-ssh-keys-for">What else can we create ssh keys for?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-need-a-i-s-o-files">Why did we need a .i, .s, .o files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-are-ssh-keys-used-by-a-developer">How often are SSH keys used by a developer?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-not-need-to-do-the-intermediate-steps-when-we-changed-the-program">Why did we not need to do the intermediate steps when we changed the program?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-use-import-other-libraies-into-seawulf-and-use-them-in-a-program-made-in-seawulf">can you use/import other libraies into seawulf and use them in a program made in seawulf?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-compiling-using-the-following-line-gcc-hello-c-o-hello-does-this-remove-the-o-s-and-i-file-because-it-just-created-the-executable-file-hello">When compiling using the following line: gcc hello.c -o hello does this remove the .o .s and .i file because it just created the executable file hello?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-public-and-private-keys-the-primes-themselves-or-are-they-something-derived-from-the-primes">Are the public and private keys the primes themselves, or are they something derived from the primes?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-main-uses-of-doing-this">What are the main uses of doing this?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-this-ever-be-seen-as-a-better-alternative-to-write-code-as-opposed">Will this ever be seen as a better alternative to write code as opposed?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">16.1. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">16.2. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">16.3. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">16.4. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">16.5. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-we-create-ssh-keys-for">16.5.1. What else can we create ssh keys for?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-need-a-i-s-o-files">16.5.2. Why did we need a .i, .s, .o files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-are-ssh-keys-used-by-a-developer">16.5.3. How often are SSH keys used by a developer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-not-need-to-do-the-intermediate-steps-when-we-changed-the-program">16.5.4. Why did we not need to do the intermediate steps when we changed the program?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-use-import-other-libraies-into-seawulf-and-use-them-in-a-program-made-in-seawulf">16.5.5. can you use/import other libraies into seawulf and use them in a program made in seawulf?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-compiling-using-the-following-line-gcc-hello-c-o-hello-does-this-remove-the-o-s-and-i-file-because-it-just-created-the-executable-file-hello">16.5.6. When compiling using the following line: gcc hello.c -o hello does this remove the .o .s and .i file because it just created the executable file hello?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-public-and-private-keys-the-primes-themselves-or-are-they-something-derived-from-the-primes">16.5.7. Are the public and private keys the primes themselves, or are they something derived from the primes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-main-uses-of-doing-this">16.5.8. What are the main uses of doing this?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-this-ever-be-seen-as-a-better-alternative-to-write-code-as-opposed">16.5.9. Will this ever be seen as a better alternative to write code as opposed?</a></li>
 </ul>
 </li>
 </ul>
