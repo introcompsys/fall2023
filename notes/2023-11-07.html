@@ -426,10 +426,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-didnt-python-work-locally-for-me">Why didn’t python work locally for me?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters">Can I get a bunch of binary representations of letters and use it to write to a file in characters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-we-implementing-more-function-loops-in-the-future">Are we implementing more function/loops in the future?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code">What would be a case where we need to use bytes conversion in our code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide">Why would I want to write and compile code from a Terminal and not from and IDE?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters">Is it ok that I see blobs in the object file, not just od characters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-i-do-with-c-python-in-the-terminal">what else can i do with c / python in the terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-order-of-the-compiling-command-matter">Does the order of the compiling command matter?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-benefit-is-it-to-create-python-scripts-on-the-server">What benefit is it to create python scripts on the server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command">Is there a way to view a text file in raw bytes with a bash command?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-better-to-use-python-in-the-terminal">Is it better to use python in the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it">Most people will tell you python is extremely slow, so why are we still using it?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-explore-badge-questions">Good Explore badge questions</a></li>
 </ul>
             </nav>
         </div>
@@ -1090,11 +1106,13 @@ document.write(`
 <span class="go">&gt;&gt;&gt; exit()</span>
 </pre></div>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1"># Prepare for Next Class</span>
-
-<span class="go">```{include} ../_prepare/2023-11-07.md</span>
-</pre></div>
-</div>
+<section id="prepare-for-next-class">
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Review your IDE notes (or complete them if you have not yet) <a class="reference external" href="https://introcompsys.github.io/fall2023/notes/2023-10-12.html#prepare-for-next-class">ide_thoughts</a>.</p></li>
+<li><p>Think about what features or extensions in your favorite IDE you like the most and that you think others may not know about.</p></li>
+</ol>
+</section>
 <section id="review-todays-class">
 <h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple" start="3">
@@ -1115,6 +1133,60 @@ document.write(`
 </section>
 <section id="questions-after-todays-class">
 <h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<section id="why-didnt-python-work-locally-for-me">
+<h3>Why didn’t python work locally for me?<a class="headerlink" href="#why-didnt-python-work-locally-for-me" title="Permalink to this headline">#</a></h3>
+<p>On Windows, you may need to reinstall GitBash with different settings.</p>
+</section>
+<section id="can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters">
+<h3>Can I get a bunch of binary representations of letters and use it to write to a file in characters?<a class="headerlink" href="#can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters" title="Permalink to this headline">#</a></h3>
+<p>yes</p>
+</section>
+<section id="are-we-implementing-more-function-loops-in-the-future">
+<h3>Are we implementing more function/loops in the future?<a class="headerlink" href="#are-we-implementing-more-function-loops-in-the-future" title="Permalink to this headline">#</a></h3>
+<p>More can be done, but not a lot more in class time</p>
+</section>
+<section id="what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code">
+<h3>What would be a case where we need to use bytes conversion in our code?<a class="headerlink" href="#what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code" title="Permalink to this headline">#</a></h3>
+<p>If you need to compress data to work in a low memory environment.</p>
+</section>
+<section id="why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide">
+<h3>Why would I want to write and compile code from a Terminal and not from and IDE?<a class="headerlink" href="#why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide" title="Permalink to this headline">#</a></h3>
+<p>If you are working on a server where you do not have an IDE available. Or if you are doing something really quick.</p>
+</section>
+<section id="is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters">
+<h3>Is it ok that I see blobs in the object file, not just od characters?<a class="headerlink" href="#is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters" title="Permalink to this headline">#</a></h3>
+<p>Yes! Different computers will make different amounts of progress at this</p>
+</section>
+<section id="what-else-can-i-do-with-c-python-in-the-terminal">
+<h3>what else can i do with c / python in the terminal<a class="headerlink" href="#what-else-can-i-do-with-c-python-in-the-terminal" title="Permalink to this headline">#</a></h3>
+<p>You can do anything the langague can do through a terminal. We had programming before we had modern IDEs.</p>
+</section>
+<section id="does-the-order-of-the-compiling-command-matter">
+<h3>Does the order of the compiling command matter?<a class="headerlink" href="#does-the-order-of-the-compiling-command-matter" title="Permalink to this headline">#</a></h3>
+<p>This is a practice badge question.</p>
+</section>
+<section id="what-benefit-is-it-to-create-python-scripts-on-the-server">
+<h3>What benefit is it to create python scripts on the server?<a class="headerlink" href="#what-benefit-is-it-to-create-python-scripts-on-the-server" title="Permalink to this headline">#</a></h3>
+<p>If it is processing large amount of data or if it has complex calculations that are intensive.</p>
+</section>
+<section id="is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command">
+<h3>Is there a way to view a text file in raw bytes with a bash command?<a class="headerlink" href="#is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command" title="Permalink to this headline">#</a></h3>
+<p>the terminal cannot show it as the raw bytes, but we will see some ways to view the file in different representations.</p>
+</section>
+<section id="is-it-better-to-use-python-in-the-terminal">
+<h3>Is it better to use python in the terminal?<a class="headerlink" href="#is-it-better-to-use-python-in-the-terminal" title="Permalink to this headline">#</a></h3>
+<p>it is not better, it is just another option.  Having more options also helps you see the how it really works.</p>
+</section>
+<section id="most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it">
+<h3>Most people will tell you python is extremely slow, so why are we still using it?<a class="headerlink" href="#most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it" title="Permalink to this headline">#</a></h3>
+<p>Python is slower than C, but it is much easier to read than fast lanaguages.  So it is often faster to write.  It also has more effecitve, well written libraries and consistent performance. It is essentially the only option for modern effecitve AI models unless you are writing it all from scratch with is generally intractable.</p>
+</section>
+</section>
+<section id="good-explore-badge-questions">
+<h2>Good Explore badge questions<a class="headerlink" href="#good-explore-badge-questions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>how would linking a third file to the executable affect how it runs, if it has nothing to do with the res to the code</p></li>
+</ul>
 </section>
 </section>
 
@@ -1167,10 +1239,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-didnt-python-work-locally-for-me">Why didn’t python work locally for me?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters">Can I get a bunch of binary representations of letters and use it to write to a file in characters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-we-implementing-more-function-loops-in-the-future">Are we implementing more function/loops in the future?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code">What would be a case where we need to use bytes conversion in our code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide">Why would I want to write and compile code from a Terminal and not from and IDE?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters">Is it ok that I see blobs in the object file, not just od characters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-i-do-with-c-python-in-the-terminal">what else can i do with c / python in the terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-order-of-the-compiling-command-matter">Does the order of the compiling command matter?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-benefit-is-it-to-create-python-scripts-on-the-server">What benefit is it to create python scripts on the server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command">Is there a way to view a text file in raw bytes with a bash command?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-better-to-use-python-in-the-terminal">Is it better to use python in the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it">Most people will tell you python is extremely slow, so why are we still using it?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-explore-badge-questions">Good Explore badge questions</a></li>
 </ul>
   </nav></div>
 
