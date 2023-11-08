@@ -1,0 +1,1227 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Linking and Object file binary representation &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-07';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Deadlines and Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Detailed Grade Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">More Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">KWL File List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/tools.html">Other Course Software/tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/edit/main/notes/2023-11-07.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/introcompsys/fall2023# The URL to your book's repository/issues/new?title=Issue%20on%20page%20%2Fnotes/2023-11-07.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2023-11-07.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linking and Object file binary representation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linking-and-object-file-binary-representation">
+<h1>Linking and Object file binary representation<a class="headerlink" href="#linking-and-object-file-binary-representation" title="Permalink to this headline">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>I am behind on this, filling in this using notes from previous semesters and making a PR (only the first, not a duplicate) can be an explore badge.</p>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fa23-kwl-brownsarahm		ghic				test</span>
+<span class="go">fall2023			github-inclass-fa23-brownsarahm	tiny-book</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">cexample</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">cexample</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">main</span><span class="o">.</span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">main</span><span class="o">.</span><span class="n">c</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Used to illustrate separate compilation.</span>
+<span class="cm">Created: Joe Zachary, October 22, 1992</span>
+<span class="cm">Modified:</span>
+<span class="cm">*/</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Please enter a small positive integer: &quot;</span><span class="p">);</span>
+<span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The sum of the first n integers is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+<span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The product of the first n integers is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">product</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">help</span><span class="o">.</span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">help</span><span class="o">.</span><span class="n">c</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Used to illustrate separate compilation</span>
+
+<span class="cm">Created: Joe Zachary, October 22, 1992</span>
+<span class="cm">Modified:</span>
+
+<span class="cm">*/</span>
+
+<span class="cm">/* Requires that &quot;n&quot; be positive. Returns the sum of the</span>
+<span class="cm">  first &quot;n&quot; integers. */</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">  </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w"> </span><span class="k">return</span><span class="p">(</span><span class="n">total</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="cm">/* Requires that &quot;n&quot; be positive. Returns the product of the</span>
+<span class="cm">  first &quot;n&quot; integers. */</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">product</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">  </span><span class="n">total</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w"> </span><span class="k">return</span><span class="p">(</span><span class="n">total</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">c</span> <span class="n">main</span><span class="o">.</span><span class="n">c</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">main.c:8:1: warning: return type of &#39;main&#39; is not &#39;int&#39; [-Wmain-return-type]</span>
+<span class="go">void main () {</span>
+<span class="go">^</span>
+<span class="go">main.c:8:1: note: change return type to &#39;int&#39;</span>
+<span class="go">void main () {</span>
+<span class="go">^~~~</span>
+<span class="go">int</span>
+<span class="go">main.c:12:52: error: implicit declaration of function &#39;sum&#39; is invalid in C99</span>
+<span class="go">      [-Werror,-Wimplicit-function-declaration]</span>
+<span class="go"> printf(&quot;The sum of the first n integers is %d\n&quot;, sum(n));</span>
+<span class="go">                                                   ^</span>
+<span class="go">main.c:13:56: error: implicit declaration of function &#39;product&#39; is invalid in C99</span>
+<span class="go">      [-Werror,-Wimplicit-function-declaration]</span>
+<span class="go"> printf(&quot;The product of the first n integers is %d\n&quot;, product(n));</span>
+<span class="go">                                                       ^</span>
+<span class="go">1 warning and 2 errors generated.</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="n">gcc</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">No manual entry for gcc</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">main</span><span class="o">.</span><span class="n">c</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">main</span><span class="o">.</span><span class="n">c</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/* Used to illustrate separate compilation.</span>
+<span class="go">Created: Joe Zachary, October 22, 1992</span>
+<span class="go">Modified:</span>
+<span class="go">*/</span>
+
+<span class="gp">#</span>include<span class="w"> </span>&lt;stdio.h&gt;
+<span class="go">int sum(int n);</span>
+<span class="go">int product(int n);</span>
+
+<span class="go">void main () {</span>
+<span class="go"> int n;</span>
+<span class="go"> printf(&quot;Please enter a small positive integer: &quot;);</span>
+<span class="go"> scanf(&quot;%d&quot;, &amp;n);</span>
+<span class="go"> printf(&quot;The sum of the first n integers is %d\n&quot;, sum(n));</span>
+<span class="go"> printf(&quot;The product of the first n integers is %d\n&quot;, product(n));</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">c</span> <span class="n">main</span><span class="o">.</span><span class="n">c</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">main.c:10:1: warning: return type of &#39;main&#39; is not &#39;int&#39; [-Wmain-return-type]</span>
+<span class="go">void main () {</span>
+<span class="go">^</span>
+<span class="go">main.c:10:1: note: change return type to &#39;int&#39;</span>
+<span class="go">void main () {</span>
+<span class="go">^~~~</span>
+<span class="go">int</span>
+<span class="go">1 warning generated.</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">help.c	main.c	main.o</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">o</span> <span class="n">demo</span> <span class="n">main</span><span class="o">.</span><span class="n">o</span> <span class="o">-</span><span class="n">lm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Undefined symbols for architecture x86_64:</span>
+<span class="go">  &quot;_product&quot;, referenced from:</span>
+<span class="go">      _main in main.o</span>
+<span class="go">  &quot;_sum&quot;, referenced from:</span>
+<span class="go">      _main in main.o</span>
+<span class="go">ld: symbol(s) not found for architecture x86_64</span>
+<span class="go">clang: error: linker command failed with exit code 1 (use -v to see invocation)</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">c</span> <span class="n">help</span><span class="o">.</span><span class="n">c</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">help.c	help.o	main.c	main.o</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">o</span> <span class="n">demo</span> <span class="n">main</span><span class="o">.</span><span class="n">o</span> <span class="n">help</span><span class="o">.</span><span class="n">o</span> <span class="o">-</span><span class="n">lm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">demo</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Please enter a small positive integer: 5</span>
+<span class="go">The sum of the first n integers is 15</span>
+<span class="go">The product of the first n integers is 120</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-bash: 8: command not found</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">main</span><span class="o">.</span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">main</span><span class="o">.</span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/* Used to illustrate separate compilation.</span>
+<span class="go">Created: Joe Zachary, October 22, 1992</span>
+<span class="go">Modified:</span>
+<span class="go">*/</span>
+
+<span class="gp">#</span>include<span class="w"> </span>&lt;stdio.h&gt;
+<span class="go">int sum(int n);</span>
+<span class="go">int product(int n);</span>
+
+<span class="go">void main () {</span>
+<span class="go"> int n;</span>
+<span class="go"> printf(&quot;Hello! Please enter a small positive integer: &quot;);</span>
+<span class="go"> scanf(&quot;%d&quot;, &amp;n);</span>
+<span class="go"> printf(&quot;The sum of the first n integers is %d\n&quot;, sum(n));</span>
+<span class="go"> printf(&quot;The product of the first n integers is %d\n&quot;, product(n));</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">demo</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Please enter a small positive integer: 7</span>
+<span class="go">The sum of the first n integers is 28</span>
+<span class="go">The product of the first n integers is 5040</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">c</span> <span class="n">main</span><span class="o">.</span><span class="n">c</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">main.c:10:1: warning: return type of &#39;main&#39; is not &#39;int&#39; [-Wmain-return-type]</span>
+<span class="go">void main () {</span>
+<span class="go">^</span>
+<span class="go">main.c:10:1: note: change return type to &#39;int&#39;</span>
+<span class="go">void main () {</span>
+<span class="go">^~~~</span>
+<span class="go">int</span>
+<span class="go">1 warning generated.</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">o</span> <span class="n">demo</span> <span class="n">main</span><span class="o">.</span><span class="n">o</span> <span class="n">help</span><span class="o">.</span><span class="n">o</span> <span class="o">-</span><span class="n">lm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">demo</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Hello! Please enter a small positive integer: 8</span>
+<span class="go">The sum of the first n integers is 36</span>
+<span class="go">The product of the first n integers is 40320</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">la</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">total 136</span>
+<span class="go">drwxr-xr-x  7 brownsarahm  staff    224 Nov  7 12:53 .</span>
+<span class="go">drwxr-xr-x  9 brownsarahm  staff    288 Nov  7 12:37 ..</span>
+<span class="go">-rwxr-xr-x  1 brownsarahm  staff  50072 Nov  7 12:53 demo</span>
+<span class="go">-rw-r--r--  1 brownsarahm  staff    474 Nov  7 12:40 help.c</span>
+<span class="go">-rw-r--r--  1 brownsarahm  staff   2364 Nov  7 12:49 help.o</span>
+<span class="go">-rw-r--r--  1 brownsarahm  staff    383 Nov  7 12:52 main.c</span>
+<span class="go">-rw-r--r--  1 brownsarahm  staff   2400 Nov  7 12:53 main.o</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">demo	help.c	help.o	main.c	main.o</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">o</span> <span class="n">sumProd</span> <span class="n">main</span><span class="o">.</span><span class="n">o</span> <span class="n">help</span><span class="o">.</span><span class="n">o</span> <span class="o">-</span><span class="n">lm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">sumProd</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Hello! Please enter a small positive integer: 8</span>
+<span class="go">The sum of the first n integers is 36</span>
+<span class="go">The product of the first n integers is 40320</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">help</span><span class="o">.</span><span class="n">o</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">????8 ??X?</span>
+<span class="go">          __text__TEXT~X?__debug_str__DWARF~??__debug_abbrev__DWARFCZ?__debug_info__DWARF???__apple_names__DWARF_X?__apple_objc__DWARF?$__apple_namespac__DWARF?$3__apple_types__DWARF?GW__compact_unwind__LDH@?__eh_frame__TEXT?h?</span>
+<span class="go">           h__debug_line__DWARF??H      2</span>
+
+
+<span class="go">	,	</span>
+<span class="go">                PUH??}??E??E??E?;E???E?E?E?E????E???????E?]?UH??}??E??E??E?;E???E??E?E?E????E???????E?]?Apple clang version 12.0.0 (clang-1200.0.32.2)help.c/Library/Developer/CommandLineTools/SDKs/MacOSX.sdkMacOSX.sdk/Users/brownsarahm/Documents/inclass/systems/cexamplesumproductintnitotal%?|?:</span>
+<span class="go">                                                                               ;</span>
+<span class="go">                                                                                &#39;I?:</span>
+<span class="go">                                                                                    ;</span>
+<span class="go">                                                                                     I4:</span>
+<span class="go">                                                                                        ;</span>
+<span class="go">                                                                                         I$&gt;</span>
+
+
+<span class="go">                                                                                            ?</span>
+<span class="go">                                                                                            /6ju~=V?</span>
+<span class="go">                                                                                                    ??|?</span>
+<span class="go">                                                                                                        ??x?</span>
+<span class="go">                                                                                                           ??@&gt;V???|???x???t???HSAH</span>
+<span class="go">                       ???????</span>
+<span class="go">                              F?7?8H?2?vHSAH</span>
+<span class="go">                                            ????HSAH</span>
+<span class="go">                                                    ????HSAH</span>
+<span class="go">                                                            0??</span>
+<span class="go">                                                               4??$=@&gt;zRx</span>
+<span class="go">help.c????&gt;A?C                                                          ?$X???????=A?C</span>
+
+<span class="go">v	ut&lt;&lt;</span>
+<span class="go">            g	&lt;e?	Z&lt;_</span>
+<span class="go">v	ut&lt;&lt;</span>
+<span class="go">            g	&lt;s?	Z&lt;w3&amp; +@</span>
+<span class="go">_product_sum```</span>
+
+
+<span class="go">```{code-cell} bash</span>
+<span class="go">:tags: [&quot;skip-execution&quot;]</span>
+<span class="go">cat ~/.bash_profile</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">alias pip=pip3</span>
+<span class="go">alias python=python3</span>
+
+<span class="go">export PS1=&quot;\u@\W $ &quot;</span>
+
+<span class="gp"># </span>&gt;&gt;&gt;<span class="w"> </span>conda<span class="w"> </span>initialize<span class="w"> </span>&gt;&gt;&gt;
+<span class="gp"># </span>!!<span class="w"> </span>Contents<span class="w"> </span>within<span class="w"> </span>this<span class="w"> </span>block<span class="w"> </span>are<span class="w"> </span>managed<span class="w"> </span>by<span class="w"> </span><span class="s1">&#39;conda init&#39;</span><span class="w"> </span>!!
+<span class="go">__conda_setup=&quot;$(&#39;/Users/brownsarahm/anaconda3/bin/conda&#39; &#39;shell.bash&#39; &#39;hook&#39; 2&gt; /dev/null)&quot;</span>
+<span class="go">if [ $? -eq 0 ]; then</span>
+<span class="go">    eval &quot;$__conda_setup&quot;</span>
+<span class="go">else</span>
+<span class="go">    if [ -f &quot;/Users/brownsarahm/anaconda3/etc/profile.d/conda.sh&quot; ]; then</span>
+<span class="go">        . &quot;/Users/brownsarahm/anaconda3/etc/profile.d/conda.sh&quot;</span>
+<span class="go">    else</span>
+<span class="go">        export PATH=&quot;/Users/brownsarahm/anaconda3/bin:$PATH&quot;</span>
+<span class="go">    fi</span>
+<span class="go">fi</span>
+<span class="go">unset __conda_setup</span>
+<span class="gp"># </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span>conda<span class="w"> </span>initialize<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Python 3.11.4 (main, Jul  5 2023, 09:00:44) [Clang 14.0.6 ] on darwin</span>
+<span class="go">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span>
+<span class="go">&gt;&gt;&gt; 4+5</span>
+<span class="go">9</span>
+<span class="go">&gt;&gt;&gt; name = &#39;sarah&#39;</span>
+<span class="go">&gt;&gt;&gt; name</span>
+<span class="go">&#39;sarah&#39;</span>
+<span class="go">&gt;&gt;&gt; help(ord)</span>
+
+<span class="go">&gt;&gt;&gt; ord(&#39;s&#39;)</span>
+<span class="go">115</span>
+<span class="go">&gt;&gt;&gt; [ord(char) for char in name]</span>
+<span class="go">[115, 97, 114, 97, 104]</span>
+<span class="go">&gt;&gt;&gt; [ord(char) for char in &#39;denno&#39;]</span>
+<span class="go">[100, 101, 110, 110, 111]</span>
+<span class="go">&gt;&gt;&gt; bytearry(35)</span>
+<span class="go">Traceback (most recent call last):</span>
+<span class="go">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">NameError: name &#39;bytearry&#39; is not defined. Did you mean: &#39;bytearray&#39;?</span>
+<span class="go">&gt;&gt;&gt; bytearray(35)</span>
+<span class="go">bytearray(b&#39;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00&#39;)</span>
+<span class="go">&gt;&gt;&gt; bytearray(37)</span>
+<span class="go">bytearray(b&#39;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00&#39;)</span>
+<span class="go">&gt;&gt;&gt; bytearray(34)</span>
+<span class="go">bytearray(b&#39;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00&#39;)</span>
+<span class="go">&gt;&gt;&gt; type(bytearray(34))</span>
+<span class="go">&lt;class &#39;bytearray&#39;&gt;</span>
+<span class="go">&gt;&gt;&gt; type(34)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="go">&gt;&gt;&gt; type(print)</span>
+<span class="go">&lt;class &#39;builtin_function_or_method&#39;&gt;</span>
+<span class="go">&gt;&gt;&gt; type(ord)</span>
+<span class="go">&lt;class &#39;builtin_function_or_method&#39;&gt;</span>
+<span class="go">&gt;&gt;&gt; type(ord(&#39;s&#39;))</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="go">&gt;&gt;&gt; bytes(bytearray(34))</span>
+<span class="go">b&#39;\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00&#39;</span>
+<span class="go">&gt;&gt;&gt; bytes(bytearray(3))</span>
+<span class="go">b&#39;\x00\x00\x00&#39;</span>
+<span class="go">&gt;&gt;&gt; bytes(bytearray(2))</span>
+<span class="go">b&#39;\x00\x00&#39;</span>
+<span class="go">&gt;&gt;&gt; name_ints = [ord(char) for char in name]</span>
+<span class="go">&gt;&gt;&gt; with open(&#39;name.txt&#39;,&#39;wb&#39;) as f: </span>
+<span class="go">...     f.write(bytes(bytearray(name_ints)))</span>
+<span class="go">... </span>
+<span class="go">5</span>
+<span class="go">&gt;&gt;&gt; with open(&#39;name.txt&#39;,&#39;wb&#39;) as f: </span>
+<span class="go">...     f.write(bytes(bytearray(name_ints)))</span>
+<span class="go">... </span>
+<span class="go">5</span>
+<span class="go">&gt;&gt;&gt; exit()</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">demo		help.o		main.o		sumProd</span>
+<span class="go">help.c		main.c		name.txt</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">name</span><span class="o">.</span><span class="n">txt</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sarah```</span>
+
+
+<span class="go">```{code-cell} bash</span>
+<span class="go">:tags: [&quot;skip-execution&quot;]</span>
+<span class="go">python</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Python 3.11.4 (main, Jul  5 2023, 09:00:44) [Clang 14.0.6 ] on darwin</span>
+<span class="go">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span>
+<span class="go">&gt;&gt;&gt; name = &#39;sarah&#39;</span>
+<span class="go">&gt;&gt;&gt; name_ints = [ord(char) for char in name]</span>
+<span class="go">&gt;&gt;&gt; name_ints = [ord(char)+5 for char in name]</span>
+<span class="go">&gt;&gt;&gt; with open(&#39;name.txt&#39;,&#39;wb&#39;) as f: </span>
+<span class="go">...     f.write(bytes(bytearray(name_ints)))</span>
+<span class="go">... </span>
+<span class="go">5</span>
+<span class="go">&gt;&gt;&gt; exit()</span>
+</pre></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">name</span><span class="o">.</span><span class="n">txt</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">xfwfm```</span>
+
+
+<span class="go">```{code-cell} bash</span>
+<span class="go">:tags: [&quot;skip-execution&quot;]</span>
+<span class="go">python</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Python 3.11.4 (main, Jul  5 2023, 09:00:44) [Clang 14.0.6 ] on darwin</span>
+<span class="go">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span>
+<span class="go">&gt;&gt;&gt; name_ints = [ord(char)-100 for char in name]</span>
+<span class="go">Traceback (most recent call last):</span>
+<span class="go">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">NameError: name &#39;name&#39; is not defined</span>
+<span class="go">&gt;&gt;&gt; name = &#39;sarah&#39;</span>
+<span class="go">&gt;&gt;&gt; name_ints = [ord(char)+200 for char in name]</span>
+<span class="go">&gt;&gt;&gt; with open(&#39;name.txt&#39;,&#39;wb&#39;) as f: </span>
+<span class="go">...     f.write(bytes(bytearray(name_ints)))</span>
+<span class="go">... </span>
+<span class="go">Traceback (most recent call last):</span>
+<span class="go">  File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;</span>
+<span class="go">ValueError: byte must be in range(0, 256)</span>
+<span class="go">&gt;&gt;&gt; with open (&#39;name.txt&#39;, &#39;rb&#39;) as f:</span>
+<span class="go">...     content = f.read()</span>
+<span class="go">... </span>
+<span class="go">&gt;&gt;&gt; content</span>
+<span class="go">b&#39;&#39;</span>
+<span class="go">&gt;&gt;&gt; name_ints = [ord(char)-32 for char in name]</span>
+<span class="go">&gt;&gt;&gt; with open(&#39;name.txt&#39;,&#39;wb&#39;) as f: </span>
+<span class="go">...     f.write(bytes(bytearray(name_ints)))</span>
+<span class="go">... </span>
+<span class="go">5</span>
+<span class="go">&gt;&gt;&gt; with open (&#39;name.txt&#39;, &#39;rb&#39;) as f:</span>
+<span class="go">...     content = f.read()</span>
+<span class="go">... </span>
+<span class="go">&gt;&gt;&gt; content</span>
+<span class="go">b&#39;SARAH&#39;</span>
+<span class="go">&gt;&gt;&gt; type(content)</span>
+<span class="go">&lt;class &#39;bytes&#39;&gt;</span>
+<span class="go">&gt;&gt;&gt; bin(115)</span>
+<span class="go">&#39;0b1110011&#39;</span>
+<span class="go">&gt;&gt;&gt; char(d)</span>
+<span class="go">Traceback (most recent call last):</span>
+<span class="go">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">NameError: name &#39;char&#39; is not defined. Did you mean: &#39;chr&#39;?</span>
+<span class="go">&gt;&gt;&gt; int(&#39;4&#39;)</span>
+<span class="go">4</span>
+<span class="go">&gt;&gt;&gt; a = &#39;4&#39;</span>
+<span class="go">&gt;&gt;&gt; type(a)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+<span class="go">&gt;&gt;&gt; type(int(a))</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="go">&gt;&gt;&gt; msg = [68, 114, 46, 32, 66, 114, 111, 119, 110,10]</span>
+<span class="go">&gt;&gt;&gt; bytes(bytearray(msg))</span>
+<span class="go">b&#39;Dr. Brown\n&#39;</span>
+<span class="go">&gt;&gt;&gt; exit()</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1"># Prepare for Next Class</span>
+
+<span class="go">```{include} ../_prepare/2023-11-07.md</span>
+</pre></div>
+</div>
+<section id="review-todays-class">
+<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple" start="3">
+<li><p>Create some variations of the <code class="docutils literal notranslate"><span class="pre">hello.c</span></code> we made in class. Make <span class="target" id="index-0"></span>hello2.c print twice with 2 print commands. Make <span class="target" id="index-1"></span>hello5.c print 5 times with a for loop and <span class="target" id="index-2"></span>hello7.c print 7 times with a for loop. Build them all on the command line and make sure they run correctly.</p></li>
+<li><p>Write a bash script, <span class="target" id="index-3"></span>assembly.sh to compile each program to assembly and print the number of lines in each file.</p></li>
+<li><p>Put the output of your script in <span class="target" id="index-4"></span>hello_assembly_compare.md. Add to the file some notes on how they are similar or different based on your own reading of them.</p></li>
+</ol>
+</section>
+<section id="more-practice">
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<p>On Seawulf, modfiy <span class="target" id="index-5"></span>main.c from class to accept the integer as a command line argument instead of via input while running the program. <a class="reference external" href="http://crasseux.com/books/ctutorial/argc-and-argv.html">See this tutorial for an example</a>.
+5. Write a bash script <span class="target" id="index-6"></span>demo_test.sh that runs your compiled program for each integer from 10 to 30 (syntax for a range is <code class="docutils literal notranslate"><span class="pre">{start..end}</span></code> so this would be <code class="docutils literal notranslate"><span class="pre">{10..30}</span></code>)
+6. Write an sbatch script, <span class="target" id="index-7"></span>batchrun.sh to run your script  on a compute node and save the output to a file. The sbatch script should compile and link the program and then call the script. <a class="reference external" href="https://web.uri.edu/hpc-research-computing/using-seawulf/#sbatch">see the options</a>
+7. use <a class="reference external" href="https://www2.stat.duke.edu/comp/security/scp_man.html">scp</a> to download your modified main, script files, and output to your local computer and include them in your kwl repo.</p>
+</section>
+<section id="experience-report-evidence">
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="questions-after-todays-class">
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
