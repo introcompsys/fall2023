@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>15. How can I run a job on a remote server ? &#8212; Computer Systems and Programming Tools</title>
+    <title>How can I run a job on a remote server ? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,8 +66,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-10-31';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="16. SSH Keys and Building Code" href="2023-11-02.html" />
-    <link rel="prev" title="14. How can I work on a remote server?" href="2023-10-26.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,27 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. How can I run a job on a remote server ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -430,23 +407,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-back-in-to-seawulf">15.1. Logging back in to seawulf</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-script">15.2. Creating a script</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">15.3. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">15.4. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">15.5. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">15.6. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">15.7. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-writing-more-intricate-bash-scripts-down-the-line">15.7.1. Will we be writing more intricate bash scripts down the line?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-files-not-executable-by-default">15.7.2. why are files not executable by default?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-looking-at-the-access-permission-rwxrwxrwx-how-do-you-change-just-one-of-the-levels-and-not-all-of-them-at-once-like-if-i-want-to-change-perms-for-just-the-lowest-level">15.7.3. When looking at the access permission, -rwxrwxrwx, how do you change just one of the levels and not all of them at once? like if i want to change perms for just the lowest level.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-can-i-use-this-in-practice">15.7.4. When can I use this in practice?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-change-the-permissions-of-a-file-using-the-chmod-command-in-bash">15.7.5. How can you change the permissions of a file using the chmod command in Bash?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-bash-scripts-call-other-bash-scripts">15.7.6. Can bash scripts call other bash scripts?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-having-a-file-without-the-read-permissions-essentially-make-the-file-hidden-to-users">15.7.7. Would having a file without the read permissions essentially make the file hidden to users?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-seawulf-something-we-just-have-access-to-during-this-semester-or-will-we-have-access-to-it-after">15.7.8. Is seawulf something we just have access to during this semester or will we have access to it after?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-other-servers-have-the-ability-to-create-scripts-with-languages-besides-bash">15.7.9. Do other servers have the ability to create scripts with languages besides Bash?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-else-can-we-work-in-seawulf-to-improve-our-skills-with-cli-tools">15.7.10. How else can we work in seawulf to improve our skills with CLI tools?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-back-in-to-seawulf">Logging back in to seawulf</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-script">Creating a script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-writing-more-intricate-bash-scripts-down-the-line">Will we be writing more intricate bash scripts down the line?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-files-not-executable-by-default">why are files not executable by default?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-looking-at-the-access-permission-rwxrwxrwx-how-do-you-change-just-one-of-the-levels-and-not-all-of-them-at-once-like-if-i-want-to-change-perms-for-just-the-lowest-level">When looking at the access permission, -rwxrwxrwx, how do you change just one of the levels and not all of them at once? like if i want to change perms for just the lowest level.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-can-i-use-this-in-practice">When can I use this in practice?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-change-the-permissions-of-a-file-using-the-chmod-command-in-bash">How can you change the permissions of a file using the chmod command in Bash?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-bash-scripts-call-other-bash-scripts">Can bash scripts call other bash scripts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-having-a-file-without-the-read-permissions-essentially-make-the-file-hidden-to-users">Would having a file without the read permissions essentially make the file hidden to users?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-seawulf-something-we-just-have-access-to-during-this-semester-or-will-we-have-access-to-it-after">Is seawulf something we just have access to during this semester or will we have access to it after?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-other-servers-have-the-ability-to-create-scripts-with-languages-besides-bash">Do other servers have the ability to create scripts with languages besides Bash?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-else-can-we-work-in-seawulf-to-improve-our-skills-with-cli-tools">How else can we work in seawulf to improve our skills with CLI tools?</a></li>
 </ul>
 </li>
 </ul>
@@ -461,9 +438,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-can-i-run-a-job-on-a-remote-server">
-<h1><span class="section-number">15. </span>How can I run a job on a remote server ?<a class="headerlink" href="#how-can-i-run-a-job-on-a-remote-server" title="Permalink to this headline">#</a></h1>
+<h1>How can I run a job on a remote server ?<a class="headerlink" href="#how-can-i-run-a-job-on-a-remote-server" title="Permalink to this headline">#</a></h1>
 <section id="logging-back-in-to-seawulf">
-<h2><span class="section-number">15.1. </span>Logging back in to seawulf<a class="headerlink" href="#logging-back-in-to-seawulf" title="Permalink to this headline">#</a></h2>
+<h2>Logging back in to seawulf<a class="headerlink" href="#logging-back-in-to-seawulf" title="Permalink to this headline">#</a></h2>
 <p>First, we will log in as we did before :</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -478,7 +455,7 @@ document.write(`
 </div>
 </section>
 <section id="creating-a-script">
-<h2><span class="section-number">15.2. </span>Creating a script<a class="headerlink" href="#creating-a-script" title="Permalink to this headline">#</a></h2>
+<h2>Creating a script<a class="headerlink" href="#creating-a-script" title="Permalink to this headline">#</a></h2>
 <p>On a server where we only have terminal access, using a terminal text based editor is what we have.  For larger code, we could use git or copy the files, but to edit on the server, we only have a terminal text editor:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -931,12 +908,12 @@ hostname
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">15.3. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <p>No separate preparation, focus on badge work and reviewing the notes if you missed class.</p>
 <p>Make sure you did the prep for 10-31, we will work from that on 11/2.</p>
 </section>
 <section id="review-todays-class">
-<h2><span class="section-number">15.4. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>File permissions are represented numerically often in octal, by transforming the permissions for each level (owner, group, all) as binary into a number. Add <span class="target" id="index-0"></span>octal.md to your KWL repo and answer the following. Try to think through it on your own, but you may look up the answers, as long as you link to (or ideally cite using jupyterbook citations) a high quality source.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Describe how to transform the permissions [`r--`, `rw-`, `rwx`] to octal, by treating each set as three bits.
@@ -948,7 +925,7 @@ hostname
 </ol>
 </section>
 <section id="more-practice">
-<h2><span class="section-number">15.5. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>File permissions are represented numerically often in octal, by transforming the permissions for each level (owner, group, all) as binary into a number. Add <span class="target" id="index-1"></span>octal.md to your KWL repo and answer the following. Try to think through it on your own, but you may look up the answers, as long as you link to (or ideally cite using jupyterbook citations) a high quality source.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Describe how to transform the permissions [`r--`, `rw-`, `rwx`] to octal, by treating each set as three bits.
@@ -967,51 +944,51 @@ hostname
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">15.6. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>none</p>
 </section>
 <section id="questions-after-todays-class">
-<h2><span class="section-number">15.7. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="will-we-be-writing-more-intricate-bash-scripts-down-the-line">
-<h3><span class="section-number">15.7.1. </span>Will we be writing more intricate bash scripts down the line?<a class="headerlink" href="#will-we-be-writing-more-intricate-bash-scripts-down-the-line" title="Permalink to this headline">#</a></h3>
+<h3>Will we be writing more intricate bash scripts down the line?<a class="headerlink" href="#will-we-be-writing-more-intricate-bash-scripts-down-the-line" title="Permalink to this headline">#</a></h3>
 <p>only slightly in this class.  In CSC412, you will learn more  elaborate scripting, this course is to get you the basics.</p>
 </section>
 <section id="why-are-files-not-executable-by-default">
-<h3><span class="section-number">15.7.2. </span>why are files not executable by default?<a class="headerlink" href="#why-are-files-not-executable-by-default" title="Permalink to this headline">#</a></h3>
+<h3>why are files not executable by default?<a class="headerlink" href="#why-are-files-not-executable-by-default" title="Permalink to this headline">#</a></h3>
 <p>For safety, an executable could manipulate other files, you do not want to do that by accident.</p>
 </section>
 <section id="when-looking-at-the-access-permission-rwxrwxrwx-how-do-you-change-just-one-of-the-levels-and-not-all-of-them-at-once-like-if-i-want-to-change-perms-for-just-the-lowest-level">
-<h3><span class="section-number">15.7.3. </span>When looking at the access permission, -rwxrwxrwx, how do you change just one of the levels and not all of them at once? like if i want to change perms for just the lowest level.<a class="headerlink" href="#when-looking-at-the-access-permission-rwxrwxrwx-how-do-you-change-just-one-of-the-levels-and-not-all-of-them-at-once-like-if-i-want-to-change-perms-for-just-the-lowest-level" title="Permalink to this headline">#</a></h3>
+<h3>When looking at the access permission, -rwxrwxrwx, how do you change just one of the levels and not all of them at once? like if i want to change perms for just the lowest level.<a class="headerlink" href="#when-looking-at-the-access-permission-rwxrwxrwx-how-do-you-change-just-one-of-the-levels-and-not-all-of-them-at-once-like-if-i-want-to-change-perms-for-just-the-lowest-level" title="Permalink to this headline">#</a></h3>
 <p>This can be answered using the <code class="docutils literal notranslate"><span class="pre">man</span></code> file for <code class="docutils literal notranslate"><span class="pre">chmod</span></code></p>
 </section>
 <section id="when-can-i-use-this-in-practice">
-<h3><span class="section-number">15.7.4. </span>When can I use this in practice?<a class="headerlink" href="#when-can-i-use-this-in-practice" title="Permalink to this headline">#</a></h3>
+<h3>When can I use this in practice?<a class="headerlink" href="#when-can-i-use-this-in-practice" title="Permalink to this headline">#</a></h3>
 <p>Whenever you want to execute a file, modifying the permissions is necessary</p>
 </section>
 <section id="how-can-you-change-the-permissions-of-a-file-using-the-chmod-command-in-bash">
-<h3><span class="section-number">15.7.5. </span>How can you change the permissions of a file using the chmod command in Bash?<a class="headerlink" href="#how-can-you-change-the-permissions-of-a-file-using-the-chmod-command-in-bash" title="Permalink to this headline">#</a></h3>
+<h3>How can you change the permissions of a file using the chmod command in Bash?<a class="headerlink" href="#how-can-you-change-the-permissions-of-a-file-using-the-chmod-command-in-bash" title="Permalink to this headline">#</a></h3>
 <p>with <code class="docutils literal notranslate"><span class="pre">chmod</span></code></p>
 </section>
 <section id="can-bash-scripts-call-other-bash-scripts">
-<h3><span class="section-number">15.7.6. </span>Can bash scripts call other bash scripts?<a class="headerlink" href="#can-bash-scripts-call-other-bash-scripts" title="Permalink to this headline">#</a></h3>
+<h3>Can bash scripts call other bash scripts?<a class="headerlink" href="#can-bash-scripts-call-other-bash-scripts" title="Permalink to this headline">#</a></h3>
 <p>Yes!</p>
 </section>
 <section id="would-having-a-file-without-the-read-permissions-essentially-make-the-file-hidden-to-users">
-<h3><span class="section-number">15.7.7. </span>Would having a file without the read permissions essentially make the file hidden to users?<a class="headerlink" href="#would-having-a-file-without-the-read-permissions-essentially-make-the-file-hidden-to-users" title="Permalink to this headline">#</a></h3>
+<h3>Would having a file without the read permissions essentially make the file hidden to users?<a class="headerlink" href="#would-having-a-file-without-the-read-permissions-essentially-make-the-file-hidden-to-users" title="Permalink to this headline">#</a></h3>
 <p>Yes</p>
 </section>
 <section id="is-seawulf-something-we-just-have-access-to-during-this-semester-or-will-we-have-access-to-it-after">
-<h3><span class="section-number">15.7.8. </span>Is seawulf something we just have access to during this semester or will we have access to it after?<a class="headerlink" href="#is-seawulf-something-we-just-have-access-to-during-this-semester-or-will-we-have-access-to-it-after" title="Permalink to this headline">#</a></h3>
+<h3>Is seawulf something we just have access to during this semester or will we have access to it after?<a class="headerlink" href="#is-seawulf-something-we-just-have-access-to-during-this-semester-or-will-we-have-access-to-it-after" title="Permalink to this headline">#</a></h3>
 <p>technically, your access may not be revoked, but this server is designed only for teaching.  That means that is relatively low-powered and has very minimal data storage.</p>
 <p>If you are doing a side project, I recommend using a commerical server system like google cloud or aws.</p>
 <p>If you are doing research with a professor, ask them for access to a server that URI has for research.</p>
 </section>
 <section id="do-other-servers-have-the-ability-to-create-scripts-with-languages-besides-bash">
-<h3><span class="section-number">15.7.9. </span>Do other servers have the ability to create scripts with languages besides Bash?<a class="headerlink" href="#do-other-servers-have-the-ability-to-create-scripts-with-languages-besides-bash" title="Permalink to this headline">#</a></h3>
+<h3>Do other servers have the ability to create scripts with languages besides Bash?<a class="headerlink" href="#do-other-servers-have-the-ability-to-create-scripts-with-languages-besides-bash" title="Permalink to this headline">#</a></h3>
 <p>Some may have other default shells, but even on a server that uses bash you can run other code.  We will do that soon, we will write some C code and then run it from a bash script.</p>
 </section>
 <section id="how-else-can-we-work-in-seawulf-to-improve-our-skills-with-cli-tools">
-<h3><span class="section-number">15.7.10. </span>How else can we work in seawulf to improve our skills with CLI tools?<a class="headerlink" href="#how-else-can-we-work-in-seawulf-to-improve-our-skills-with-cli-tools" title="Permalink to this headline">#</a></h3>
+<h3>How else can we work in seawulf to improve our skills with CLI tools?<a class="headerlink" href="#how-else-can-we-work-in-seawulf-to-improve-our-skills-with-cli-tools" title="Permalink to this headline">#</a></h3>
 <p>The badges for thursday and this week’s lab will continue to build on these skills.</p>
 </section>
 </section>
@@ -1048,24 +1025,6 @@ hostname
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="2023-10-26.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>How can I work on a remote server?</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="2023-11-02.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>SSH Keys and Building Code</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -1084,23 +1043,23 @@ hostname
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-back-in-to-seawulf">15.1. Logging back in to seawulf</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-script">15.2. Creating a script</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">15.3. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">15.4. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">15.5. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">15.6. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">15.7. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-writing-more-intricate-bash-scripts-down-the-line">15.7.1. Will we be writing more intricate bash scripts down the line?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-files-not-executable-by-default">15.7.2. why are files not executable by default?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-looking-at-the-access-permission-rwxrwxrwx-how-do-you-change-just-one-of-the-levels-and-not-all-of-them-at-once-like-if-i-want-to-change-perms-for-just-the-lowest-level">15.7.3. When looking at the access permission, -rwxrwxrwx, how do you change just one of the levels and not all of them at once? like if i want to change perms for just the lowest level.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-can-i-use-this-in-practice">15.7.4. When can I use this in practice?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-change-the-permissions-of-a-file-using-the-chmod-command-in-bash">15.7.5. How can you change the permissions of a file using the chmod command in Bash?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-bash-scripts-call-other-bash-scripts">15.7.6. Can bash scripts call other bash scripts?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-having-a-file-without-the-read-permissions-essentially-make-the-file-hidden-to-users">15.7.7. Would having a file without the read permissions essentially make the file hidden to users?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-seawulf-something-we-just-have-access-to-during-this-semester-or-will-we-have-access-to-it-after">15.7.8. Is seawulf something we just have access to during this semester or will we have access to it after?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-other-servers-have-the-ability-to-create-scripts-with-languages-besides-bash">15.7.9. Do other servers have the ability to create scripts with languages besides Bash?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-else-can-we-work-in-seawulf-to-improve-our-skills-with-cli-tools">15.7.10. How else can we work in seawulf to improve our skills with CLI tools?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-back-in-to-seawulf">Logging back in to seawulf</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-script">Creating a script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-writing-more-intricate-bash-scripts-down-the-line">Will we be writing more intricate bash scripts down the line?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-files-not-executable-by-default">why are files not executable by default?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-looking-at-the-access-permission-rwxrwxrwx-how-do-you-change-just-one-of-the-levels-and-not-all-of-them-at-once-like-if-i-want-to-change-perms-for-just-the-lowest-level">When looking at the access permission, -rwxrwxrwx, how do you change just one of the levels and not all of them at once? like if i want to change perms for just the lowest level.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-can-i-use-this-in-practice">When can I use this in practice?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-change-the-permissions-of-a-file-using-the-chmod-command-in-bash">How can you change the permissions of a file using the chmod command in Bash?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-bash-scripts-call-other-bash-scripts">Can bash scripts call other bash scripts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-having-a-file-without-the-read-permissions-essentially-make-the-file-hidden-to-users">Would having a file without the read permissions essentially make the file hidden to users?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-seawulf-something-we-just-have-access-to-during-this-semester-or-will-we-have-access-to-it-after">Is seawulf something we just have access to during this semester or will we have access to it after?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-other-servers-have-the-ability-to-create-scripts-with-languages-besides-bash">Do other servers have the ability to create scripts with languages besides Bash?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-else-can-we-work-in-seawulf-to-improve-our-skills-with-cli-tools">How else can we work in seawulf to improve our skills with CLI tools?</a></li>
 </ul>
 </li>
 </ul>

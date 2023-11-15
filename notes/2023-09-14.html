@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3. How do I use git offline? &#8212; Computer Systems and Programming Tools</title>
+    <title>How do I use git offline? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,8 +66,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-14';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. How do git branches work?" href="2023-09-19.html" />
-    <link rel="prev" title="2. Course Logistics and Learning" href="2023-09-12.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,27 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. How do I use git offline?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -430,30 +407,30 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">3.1. Open a Terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-toy-repo-for-in-class">3.2. A toy repo for in class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-github">3.3. Connecting with GitHub</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authenticating-with-github">3.3.1. Authenticating with GitHub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-gitbash">3.3.2. Windows (gitbash)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-x">3.3.3. MacOS X</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-nothing-else-works">3.3.4. If nothing else works</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repo">3.3.5. Cloning a repo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">Open a Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-toy-repo-for-in-class">A toy repo for in class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-github">Connecting with GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authenticating-with-github">Authenticating with GitHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-gitbash">Windows (gitbash)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-x">MacOS X</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-nothing-else-works">If nothing else works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repo">Cloning a repo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-in-a-repo">3.4. What is in a repo?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-what-git-knows">3.5. How do I know what git knows?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-branch-with-github">3.6. Making a branch with GitHub.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">3.7. Creating a file on the terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">3.8. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">3.9. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">3.10. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">3.11. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">3.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on">3.12.1. Are the things we learned in the terminal available to revisit later on?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot">3.12.2. what’s the difference between git checkout and git pull, i used pull in 305 a lot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-situations-would-you-use-the-terminal-over-something-like-vscode-for">3.12.3. What situations would you use the terminal over something like VScode for?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run">3.12.4. Will we learn how to fix mistakes in the terminal? As in commands we did not mean to run</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal">3.12.5. Im curious about the benefits to viewing files in the terminal as opposed to quick viewing them in finder, or other things that seem to be easier outside of terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-in-a-repo">What is in a repo?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-what-git-knows">How do I know what git knows?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-branch-with-github">Making a branch with GitHub.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">Creating a file on the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on">Are the things we learned in the terminal available to revisit later on?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot">what’s the difference between git checkout and git pull, i used pull in 305 a lot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-situations-would-you-use-the-terminal-over-something-like-vscode-for">What situations would you use the terminal over something like VScode for?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run">Will we learn how to fix mistakes in the terminal? As in commands we did not mean to run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal">Im curious about the benefits to viewing files in the terminal as opposed to quick viewing them in finder, or other things that seem to be easier outside of terminal</a></li>
 </ul>
 </li>
 </ul>
@@ -468,9 +445,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-do-i-use-git-offline">
-<h1><span class="section-number">3. </span>How do I use git offline?<a class="headerlink" href="#how-do-i-use-git-offline" title="Permalink to this headline">#</a></h1>
+<h1>How do I use git offline?<a class="headerlink" href="#how-do-i-use-git-offline" title="Permalink to this headline">#</a></h1>
 <section id="open-a-terminal">
-<h2><span class="section-number">3.1. </span>Open a Terminal<a class="headerlink" href="#open-a-terminal" title="Permalink to this headline">#</a></h2>
+<h2>Open a Terminal<a class="headerlink" href="#open-a-terminal" title="Permalink to this headline">#</a></h2>
 <p>Use the same one we used in the last class</p>
 <p>and move to the folder we made to use as a working directory for in class</p>
 <div class="cell tag_skip-execution docutils container">
@@ -523,7 +500,7 @@ document.write(`
 </div>
 </section>
 <section id="a-toy-repo-for-in-class">
-<h2><span class="section-number">3.2. </span>A toy repo for in class<a class="headerlink" href="#a-toy-repo-for-in-class" title="Permalink to this headline">#</a></h2>
+<h2>A toy repo for in class<a class="headerlink" href="#a-toy-repo-for-in-class" title="Permalink to this headline">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>I removed the link from the public notes, but you can get it in prismia</p>
@@ -532,7 +509,7 @@ document.write(`
 <p><strong>only work in this repo during class time</strong> or making up class, unless specifically instructed to (will happen once in a few weeks)</p>
 </section>
 <section id="connecting-with-github">
-<h2><span class="section-number">3.3. </span>Connecting with GitHub<a class="headerlink" href="#connecting-with-github" title="Permalink to this headline">#</a></h2>
+<h2>Connecting with GitHub<a class="headerlink" href="#connecting-with-github" title="Permalink to this headline">#</a></h2>
 <p>We have two choices to Download a repository:</p>
 <ol class="arabic simple">
 <li><p>clone to maintain a link using git</p></li>
@@ -540,7 +517,7 @@ document.write(`
 </ol>
 <p>we want option 1 beacuse we are learning git</p>
 <section id="authenticating-with-github">
-<h3><span class="section-number">3.3.1. </span>Authenticating with GitHub<a class="headerlink" href="#authenticating-with-github" title="Permalink to this headline">#</a></h3>
+<h3>Authenticating with GitHub<a class="headerlink" href="#authenticating-with-github" title="Permalink to this headline">#</a></h3>
 <p>There are many ways to authenticate securely with GitHub and other git clients.  We’re going to use <em>easier</em> ones for today, but we’ll come back to the third, which is a bit more secure and is a more general type of authentication.</p>
 <ol class="arabic simple">
 <li><p>ssh keys (we will do this later)</p></li>
@@ -548,26 +525,26 @@ document.write(`
 </ol>
 </section>
 <section id="windows-gitbash">
-<h3><span class="section-number">3.3.2. </span>Windows (gitbash)<a class="headerlink" href="#windows-gitbash" title="Permalink to this headline">#</a></h3>
+<h3>Windows (gitbash)<a class="headerlink" href="#windows-gitbash" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> and paste your URL from GitHub</p></li>
 <li><p>then follow the prompts, choosing to authenticate in Browser.</p></li>
 </ul>
 </section>
 <section id="macos-x">
-<h3><span class="section-number">3.3.3. </span>MacOS X<a class="headerlink" href="#macos-x" title="Permalink to this headline">#</a></h3>
+<h3>MacOS X<a class="headerlink" href="#macos-x" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>GitHub CLI: enter <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">auth</span> <span class="pre">login</span></code> and follow the prompts.</p></li>
 <li><p>then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> and paste your URL from github</p></li>
 </ul>
 </section>
 <section id="if-nothing-else-works">
-<h3><span class="section-number">3.3.4. </span>If nothing else works<a class="headerlink" href="#if-nothing-else-works" title="Permalink to this headline">#</a></h3>
+<h3>If nothing else works<a class="headerlink" href="#if-nothing-else-works" title="Permalink to this headline">#</a></h3>
 <p>Create a <a class="reference external" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">personal access token</a>. This is a special one time password that you can use like a password, but it is limited in scope and will expire (as long as you choose settings well).</p>
 <p>Then proceed to the clone step. You may need to configure an identity later with <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code></a></p>
 </section>
 <section id="cloning-a-repo">
-<h3><span class="section-number">3.3.5. </span>Cloning a repo<a class="headerlink" href="#cloning-a-repo" title="Permalink to this headline">#</a></h3>
+<h3>Cloning a repo<a class="headerlink" href="#cloning-a-repo" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">introcompsys</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">.</span><span class="n">git</span>
@@ -599,7 +576,7 @@ document.write(`
 </section>
 </section>
 <section id="what-is-in-a-repo">
-<h2><span class="section-number">3.4. </span>What is in a repo?<a class="headerlink" href="#what-is-in-a-repo" title="Permalink to this headline">#</a></h2>
+<h2>What is in a repo?<a class="headerlink" href="#what-is-in-a-repo" title="Permalink to this headline">#</a></h2>
 <p>We can enter that folder</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -636,7 +613,7 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 <p>We also see some special “files”, <code class="docutils literal notranslate"><span class="pre">.</span></code> the current location and <code class="docutils literal notranslate"><span class="pre">..</span></code> up one directory</p>
 </section>
 <section id="how-do-i-know-what-git-knows">
-<h2><span class="section-number">3.5. </span>How do I know what git knows?<a class="headerlink" href="#how-do-i-know-what-git-knows" title="Permalink to this headline">#</a></h2>
+<h2>How do I know what git knows?<a class="headerlink" href="#how-do-i-know-what-git-knows" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://git-scm.com/docs/git-status"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></a> is your friend.</p>
 <p>Let’s see how it works:</p>
 <div class="cell tag_skip-execution docutils container">
@@ -675,7 +652,7 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 </ul>
 </section>
 <section id="making-a-branch-with-github">
-<h2><span class="section-number">3.6. </span>Making a branch with GitHub.<a class="headerlink" href="#making-a-branch-with-github" title="Permalink to this headline">#</a></h2>
+<h2>Making a branch with GitHub.<a class="headerlink" href="#making-a-branch-with-github" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Run the one action in the github in class repo one time to get the issues</p>
@@ -752,7 +729,7 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 </div>
 </section>
 <section id="creating-a-file-on-the-terminal">
-<h2><span class="section-number">3.7. </span>Creating a file on the terminal<a class="headerlink" href="#creating-a-file-on-the-terminal" title="Permalink to this headline">#</a></h2>
+<h2>Creating a file on the terminal<a class="headerlink" href="#creating-a-file-on-the-terminal" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">touch</span></code> command creates an empty file.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -941,7 +918,7 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 </ul>
 </section>
 <section id="review-todays-class">
-<h2><span class="section-number">3.8. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <p>Any steps in a badge marked <strong>lab</strong> are steps that we are going to focus in on during lab time.  Remember the goal of lab is to help you complete the work, not add additional work. The lab checkout will include some other tasks and then we will encourage you to work on this badge while we are there to help. Lab checkouts are checked only for completion though, not correctness, so steps of activities that we want you to really think about and revise if incorrect will be in a practice or review badge.</p>
 <ol class="arabic simple">
 <li><p>Read the notes. If you have any questions, post an issue on the course website repo.</p></li>
@@ -951,7 +928,7 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 </ol>
 </section>
 <section id="more-practice">
-<h2><span class="section-number">3.9. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <p>Any steps in a badge marked <strong>lab</strong> are steps that we are going to focus in on during lab time.  Remember the goal of lab is to help you complete the work, not add additional work. The lab checkout will include some other tasks and then we will encourage you to work on this badge while we are there to help. Lab checkouts are checked only for completion though, not correctness, so steps of activities that we want you to really think about and revise if incorrect will be in a practice or review badge.</p>
 <ol class="arabic simple">
 <li><p>Read the notes. If you have any questions, post an issue on the course website repo.</p></li>
@@ -961,7 +938,7 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 </ol>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">3.10. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Reply below with any questions you have about using terminals so that you can bring it up in class</p></li>
 <li><p>Be prepared to compare and contrast bash, shell, terminal, and git.</p></li>
@@ -969,29 +946,29 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">3.11. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>link to your github inclass repo</p>
 </section>
 <section id="questions-after-todays-class">
-<h2><span class="section-number">3.12. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on">
-<h3><span class="section-number">3.12.1. </span>Are the things we learned in the terminal available to revisit later on?<a class="headerlink" href="#are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on" title="Permalink to this headline">#</a></h3>
+<h3>Are the things we learned in the terminal available to revisit later on?<a class="headerlink" href="#are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on" title="Permalink to this headline">#</a></h3>
 <p>Yes, in these notest!</p>
 </section>
 <section id="whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot">
-<h3><span class="section-number">3.12.2. </span>what’s the difference between git checkout and git pull, i used pull in 305 a lot<a class="headerlink" href="#whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot" title="Permalink to this headline">#</a></h3>
+<h3>what’s the difference between git checkout and git pull, i used pull in 305 a lot<a class="headerlink" href="#whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> updates the <strong>same</strong> branch you are on. It calls <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> and then does some extra stuff. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> switches branches</p>
 </section>
 <section id="what-situations-would-you-use-the-terminal-over-something-like-vscode-for">
-<h3><span class="section-number">3.12.3. </span>What situations would you use the terminal over something like VScode for?<a class="headerlink" href="#what-situations-would-you-use-the-terminal-over-something-like-vscode-for" title="Permalink to this headline">#</a></h3>
+<h3>What situations would you use the terminal over something like VScode for?<a class="headerlink" href="#what-situations-would-you-use-the-terminal-over-something-like-vscode-for" title="Permalink to this headline">#</a></h3>
 <p>really quick edits where the time spent to open and configure VSCode does not pay off</p>
 </section>
 <section id="will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run">
-<h3><span class="section-number">3.12.4. </span>Will we learn how to fix mistakes in the terminal? As in commands we did not mean to run<a class="headerlink" href="#will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run" title="Permalink to this headline">#</a></h3>
+<h3>Will we learn how to fix mistakes in the terminal? As in commands we did not mean to run<a class="headerlink" href="#will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run" title="Permalink to this headline">#</a></h3>
 <p>Yes, for the things that can be fixed, we will also see what commands cannot be undone and what safeties are in built into CLI tools.</p>
 </section>
 <section id="im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal">
-<h3><span class="section-number">3.12.5. </span>Im curious about the benefits to viewing files in the terminal as opposed to quick viewing them in finder, or other things that seem to be easier outside of terminal<a class="headerlink" href="#im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal" title="Permalink to this headline">#</a></h3>
+<h3>Im curious about the benefits to viewing files in the terminal as opposed to quick viewing them in finder, or other things that seem to be easier outside of terminal<a class="headerlink" href="#im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal" title="Permalink to this headline">#</a></h3>
 <p>Viewing a file in finder when we know it is really small and only text requires <strong>context switching</strong> which makes it more work.  Using a GUI can be an easier way to start, it is less to remember, but once you know how things work you cannot make them any faster, you have to move your mouse so far, wait for things to load, etc.  The terminal lets you gain speed once you learn.</p>
 <p>You can also automate and script things.</p>
 <p>Finally, sometimes a GUI is a waste of resources that you do not have to spare.</p>
@@ -1030,24 +1007,6 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="2023-09-12.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Course Logistics and Learning</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="2023-09-19.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>How do git branches work?</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -1066,30 +1025,30 @@ that is because it is <em>hidden</em>.  All file names that start with <code cla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">3.1. Open a Terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-toy-repo-for-in-class">3.2. A toy repo for in class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-github">3.3. Connecting with GitHub</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authenticating-with-github">3.3.1. Authenticating with GitHub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-gitbash">3.3.2. Windows (gitbash)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-x">3.3.3. MacOS X</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-nothing-else-works">3.3.4. If nothing else works</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repo">3.3.5. Cloning a repo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">Open a Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-toy-repo-for-in-class">A toy repo for in class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-github">Connecting with GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authenticating-with-github">Authenticating with GitHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-gitbash">Windows (gitbash)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-x">MacOS X</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-nothing-else-works">If nothing else works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repo">Cloning a repo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-in-a-repo">3.4. What is in a repo?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-what-git-knows">3.5. How do I know what git knows?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-branch-with-github">3.6. Making a branch with GitHub.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">3.7. Creating a file on the terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">3.8. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">3.9. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">3.10. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">3.11. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">3.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on">3.12.1. Are the things we learned in the terminal available to revisit later on?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot">3.12.2. what’s the difference between git checkout and git pull, i used pull in 305 a lot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-situations-would-you-use-the-terminal-over-something-like-vscode-for">3.12.3. What situations would you use the terminal over something like VScode for?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run">3.12.4. Will we learn how to fix mistakes in the terminal? As in commands we did not mean to run</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal">3.12.5. Im curious about the benefits to viewing files in the terminal as opposed to quick viewing them in finder, or other things that seem to be easier outside of terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-in-a-repo">What is in a repo?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-what-git-knows">How do I know what git knows?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-branch-with-github">Making a branch with GitHub.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">Creating a file on the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-things-we-learned-in-the-terminal-available-to-revisit-later-on">Are the things we learned in the terminal available to revisit later on?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-the-difference-between-git-checkout-and-git-pull-i-used-pull-in-305-a-lot">what’s the difference between git checkout and git pull, i used pull in 305 a lot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-situations-would-you-use-the-terminal-over-something-like-vscode-for">What situations would you use the terminal over something like VScode for?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-learn-how-to-fix-mistakes-in-the-terminal-as-in-commands-we-did-not-mean-to-run">Will we learn how to fix mistakes in the terminal? As in commands we did not mean to run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#im-curious-about-the-benefits-to-viewing-files-in-the-terminal-as-opposed-to-quick-viewing-them-in-finder-or-other-things-that-seem-to-be-easier-outside-of-terminal">Im curious about the benefits to viewing files in the terminal as opposed to quick viewing them in finder, or other things that seem to be easier outside of terminal</a></li>
 </ul>
 </li>
 </ul>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9. Why are these tools organized this way? &#8212; Computer Systems and Programming Tools</title>
+    <title>Why are these tools organized this way? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,8 +66,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-10-05';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10. How does git create a commit?" href="2023-10-12.html" />
-    <link rel="prev" title="8. What is git?" href="2023-10-03.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,27 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Why are these tools organized this way?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -430,35 +407,35 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#admin">9.1. Admin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-study-design">9.2. Why should we study design?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-studying-developer-tools">9.3. Why are we studying developer tools?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-philosophy">9.4. Unix Philosophy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-issues-on-the-terminal">9.4.1. Processing issues on the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#admin">Admin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-study-design">Why should we study design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-studying-developer-tools">Why are we studying developer tools?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-philosophy">Unix Philosophy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-issues-on-the-terminal">Processing issues on the terminal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-study-computer-systems">9.5. How do we Study (computer) Systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior">9.5.1. Behavior</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">9.5.2. Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">9.5.3. Abstraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-study-computer-systems">How do we Study (computer) Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior">Behavior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">9.6. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">9.7. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">9.8. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">9.9. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">9.10. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-we-need-to-know-about-the-lower-layers-of-hardware-and-software-if-there-are-abstractions-in-place-for-us">9.10.1. Why would we need to know about the lower layers of hardware and software if there are abstractions in place for us?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-an-example-of-instruction-set-architecture">9.10.2. what an example of Instruction set architecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-install-gh">9.10.3. How to install <code class="docutils literal notranslate"><span class="pre">gh</span></code>?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-do-software-engineers-touch-machine-code">9.10.4. How often do software engineers touch machine code?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-physics-play-into-abstraction">9.10.5. how physics play into abstraction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-brew-and-gh-keep-uninstalling-from-my-terminal">9.10.6. why do brew and gh keep uninstalling from my terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-install-the-gh-cli">9.10.7. Should I install the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-gui-based-tool">9.10.8. What is a GUI based tool?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-useful-to-create-models-during-the-process-of-development-or-is-it-mostly-useful-after-the-fact">9.10.9. Is it useful to create models during the process of development, or is it mostly useful after the fact?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deep-should-we-really-understand-abstraction-layers-and-how-useful-is-it-as-a-developer-to-know-it">9.10.10. How deep should we really understand abstraction layers and how useful is it as a developer to know it?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-will-our-view-on-memory-change-with-abstraction-as-we-get-to-the-higher-level-classes">9.10.11. How will our view on memory change with abstraction as we get to the higher level classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-we-need-to-know-about-the-lower-layers-of-hardware-and-software-if-there-are-abstractions-in-place-for-us">Why would we need to know about the lower layers of hardware and software if there are abstractions in place for us?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-an-example-of-instruction-set-architecture">what an example of Instruction set architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-install-gh">How to install <code class="docutils literal notranslate"><span class="pre">gh</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-do-software-engineers-touch-machine-code">How often do software engineers touch machine code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-physics-play-into-abstraction">how physics play into abstraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-brew-and-gh-keep-uninstalling-from-my-terminal">why do brew and gh keep uninstalling from my terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-install-the-gh-cli">Should I install the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-gui-based-tool">What is a GUI based tool?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-useful-to-create-models-during-the-process-of-development-or-is-it-mostly-useful-after-the-fact">Is it useful to create models during the process of development, or is it mostly useful after the fact?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deep-should-we-really-understand-abstraction-layers-and-how-useful-is-it-as-a-developer-to-know-it">How deep should we really understand abstraction layers and how useful is it as a developer to know it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-will-our-view-on-memory-change-with-abstraction-as-we-get-to-the-higher-level-classes">How will our view on memory change with abstraction as we get to the higher level classes?</a></li>
 </ul>
 </li>
 </ul>
@@ -473,7 +450,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="why-are-these-tools-organized-this-way">
-<h1><span class="section-number">9. </span>Why are these tools organized this way?<a class="headerlink" href="#why-are-these-tools-organized-this-way" title="Permalink to this headline">#</a></h1>
+<h1>Why are these tools organized this way?<a class="headerlink" href="#why-are-these-tools-organized-this-way" title="Permalink to this headline">#</a></h1>
 <p>Today we’re going to do a bit more practical stuff, but we are also going to start to get into the philosophy of how things are organized.</p>
 <p>Understanding the context and principles will help you:</p>
 <ul class="simple">
@@ -482,7 +459,7 @@ document.write(`
 <li><p>help you understand when you should do things as they have always been done and when you should challenge and change things.</p></li>
 </ul>
 <section id="admin">
-<h2><span class="section-number">9.1. </span>Admin<a class="headerlink" href="#admin" title="Permalink to this headline">#</a></h2>
+<h2>Admin<a class="headerlink" href="#admin" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>last class notes were <a class="reference external" href="https://github.com/introcompsys/fall2023/commit/3854e147e6cab8dbab512626061209a2d3f11f03">posted</a> and <a class="reference external" href="https://github.com/introcompsys/fall2023/releases/tag/c8">announced</a>, but not <a class="reference external" href="https://github.com/introcompsys/fall2023/commit/7bfee3ba98ce7ac25dfc0c4876ba41513fa61f66">linked</a></p>
@@ -498,14 +475,14 @@ document.write(`
 </div>
 </section>
 <section id="why-should-we-study-design">
-<h2><span class="section-number">9.2. </span>Why should we study design?<a class="headerlink" href="#why-should-we-study-design" title="Permalink to this headline">#</a></h2>
+<h2>Why should we study design?<a class="headerlink" href="#why-should-we-study-design" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>it is easy to get distracted by implementation, syntax, algorithms</p></li>
 <li><p>but the core <em>principles</em> of design organize ideas into simpler rules</p></li>
 </ul>
 </section>
 <section id="why-are-we-studying-developer-tools">
-<h2><span class="section-number">9.3. </span>Why are we studying developer tools?<a class="headerlink" href="#why-are-we-studying-developer-tools" title="Permalink to this headline">#</a></h2>
+<h2>Why are we studying developer tools?<a class="headerlink" href="#why-are-we-studying-developer-tools" title="Permalink to this headline">#</a></h2>
 <p>Recall:</p>
 <blockquote>
 <div><p>The best way to learn design is to study examples [Schon1984, Petre2016], and some of the best examples of software design come from the tools programmers use in their own work.</p>
@@ -528,7 +505,7 @@ document.write(`
 </ul>
 </section>
 <section id="unix-philosophy">
-<h2><span class="section-number">9.4. </span>Unix Philosophy<a class="headerlink" href="#unix-philosophy" title="Permalink to this headline">#</a></h2>
+<h2>Unix Philosophy<a class="headerlink" href="#unix-philosophy" title="Permalink to this headline">#</a></h2>
 <p>sources:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Unix_philosophy">wiki</a></p></li>
@@ -1075,7 +1052,7 @@ document.write(`
 <p>We will see these commands again, but this reference will be useful in lab</p>
 </div>
 <section id="processing-issues-on-the-terminal">
-<h3><span class="section-number">9.4.1. </span>Processing issues on the terminal<a class="headerlink" href="#processing-issues-on-the-terminal" title="Permalink to this headline">#</a></h3>
+<h3>Processing issues on the terminal<a class="headerlink" href="#processing-issues-on-the-terminal" title="Permalink to this headline">#</a></h3>
 <p>We can use a pipe to also get a count of the issues using the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command which is for word count and its <code class="docutils literal notranslate"><span class="pre">-l</span></code> option to count lines instead.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1155,7 +1132,7 @@ document.write(`
 </section>
 </section>
 <section id="how-do-we-study-computer-systems">
-<h2><span class="section-number">9.5. </span>How do we Study (computer) Systems<a class="headerlink" href="#how-do-we-study-computer-systems" title="Permalink to this headline">#</a></h2>
+<h2>How do we Study (computer) Systems<a class="headerlink" href="#how-do-we-study-computer-systems" title="Permalink to this headline">#</a></h2>
 <p>When we think of something as a system, we can study it different ways:</p>
 <ul class="simple">
 <li><p>input/output behavior</p></li>
@@ -1169,7 +1146,7 @@ document.write(`
 <p>When we study a system we can do so in two main ways.  We can look at the input/output behavior of the system as a whole and we can look at the individual components. For each component, we can look at its behavior or the subcomponents.  We can take what we know from all fo the components and piece that together.  However, for a complex system, we cannot match individual components up to the high level behavior.  This is true in both computers and other complex systems. In the first computers in the 1940s, the only things they did was arithmetic and you could match from their components al the way up pretty easily.  Modern computers connect to the internet, send signals, load complex graphics, play sounds and many other things that are harder to decompose all at once. Outside of computers, scientists have a pretty good idea of how neurons work and that appears to be the same across mammals and other species (eg squid) but we do not understand how the whole brain of a mammal works, not even smaller mammals with less complex social lives than humans.  Understanding the parts is not always enough to understand all of the complex ways the parts can work together.  Computers are much less complicated than brains.  They were made by brains.</p>
 <p>But that fact motivates another way to study a complex  system, across levels of abstraction. You can abstract away details and focus on one representation. This can be tied literally to components, but it can also be conceptual.  For example, in CSC211 you use a model of stack and heap for memory.  It’s useful for understanding programming, but is not exactly what the hardware does.  At times, it is even more useful though than understanding exactly what the hardware does.  These abstractions also serve a social, practical purpose.  In computing, and society at large really, we use <em>standards</em> these are sets of guidelines for how to build things.  Like when you use a function, you need to know it’s API and what it is supposed to do in order to use it.  The developers could change how it does that without impacting your program, as long as the API is not changed and the high level input/output behavior stays the same.</p>
 <section id="behavior">
-<h3><span class="section-number">9.5.1. </span>Behavior<a class="headerlink" href="#behavior" title="Permalink to this headline">#</a></h3>
+<h3>Behavior<a class="headerlink" href="#behavior" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>Try something,  see what happens</p>
 </div></blockquote>
@@ -1178,7 +1155,7 @@ document.write(`
 <p>We have focused on the behavior of individual applications to this point, but there is also the overall behavior of the system in broad terms, typing on the keyboard we expect the characters to show (and when they don’t for example in a shell password, we’re surprised and concerned it is not working).</p>
 </section>
 <section id="components">
-<h3><span class="section-number">9.5.2. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">#</a></h3>
+<h3>Components<a class="headerlink" href="#components" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>Take it apart, asess the pieces</p>
 </div></blockquote>
@@ -1188,7 +1165,7 @@ document.write(`
 <p>This idea, however that we can use another tool to understand each component is an important one.  This  is also a way to again, take care and study each piece even within a software-alone system without worrying about the hardware.</p>
 </section>
 <section id="abstraction">
-<h3><span class="section-number">9.5.3. </span>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">#</a></h3>
+<h3>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>use a model</p>
 </div></blockquote>
@@ -1212,7 +1189,7 @@ This level of abstraction is the level of detail we will think about most.  We�
 </section>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">9.6. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <p><strong>note this is posted on 2023-10-05 because <a class="reference external" href="https://web.uri.edu/academic-calendars/2023-2024/#:~:text=Oct.%2010,Day%20make%20up">October 10th is a “Monday” for URI classes</a></strong></p>
 <ol class="arabic simple">
 <li><p>Read the notes from October 5 and October 3. We will build on both of them on October 12. Make sure you have completed all of the steps in the github inclass repo from September too.</p></li>
@@ -1220,7 +1197,7 @@ This level of abstraction is the level of detail we will think about most.  We�
 </ol>
 </section>
 <section id="review-todays-class">
-<h2><span class="section-number">9.7. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Read today’s notes when they are posted.</p></li>
 <li><p>Add to your <span class="target" id="index-1"></span>software.md a section about if that project does or does not adhere to the unix philosophy.</p></li>
@@ -1232,7 +1209,7 @@ This level of abstraction is the level of detail we will think about most.  We�
 </div>
 </section>
 <section id="more-practice">
-<h2><span class="section-number">9.8. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Add to your <span class="target" id="index-3"></span>software.md a section about if that project does or does not adhere to the unix philosophy and why.  You can see what badge it was previously assigned in and the instructions <a class="reference external" href="https://introcompsys.github.io/fall2023/genindex.html">on the KWL file list</a>.</p></li>
 <li><p>create <span class="target" id="index-4"></span>methods.md and answer the following:</p></li>
@@ -1245,56 +1222,56 @@ This level of abstraction is the level of detail we will think about most.  We�
 </div>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">9.9. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>Give examples of how you have used different ways of understanding things.</p>
 </section>
 <section id="questions-after-todays-class">
-<h2><span class="section-number">9.10. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="why-would-we-need-to-know-about-the-lower-layers-of-hardware-and-software-if-there-are-abstractions-in-place-for-us">
-<h3><span class="section-number">9.10.1. </span>Why would we need to know about the lower layers of hardware and software if there are abstractions in place for us?<a class="headerlink" href="#why-would-we-need-to-know-about-the-lower-layers-of-hardware-and-software-if-there-are-abstractions-in-place-for-us" title="Permalink to this headline">#</a></h3>
+<h3>Why would we need to know about the lower layers of hardware and software if there are abstractions in place for us?<a class="headerlink" href="#why-would-we-need-to-know-about-the-lower-layers-of-hardware-and-software-if-there-are-abstractions-in-place-for-us" title="Permalink to this headline">#</a></h3>
 <p>This is a great question!</p>
 <p>Most of the time that is exactly the advantage to the abstractions, but you typically need to know about the things at least in the adjacent levels. Some times knowing about more layers can help you make better design choices or understand edge case behavior.  We will see some of those throught the rest of the semester.</p>
 <p>Another part of why we teach these things in a CS degree is so that you can make a more informed choice about what you want to specialize in later, too.</p>
 </section>
 <section id="what-an-example-of-instruction-set-architecture">
-<h3><span class="section-number">9.10.2. </span>what an example of Instruction set architecture<a class="headerlink" href="#what-an-example-of-instruction-set-architecture" title="Permalink to this headline">#</a></h3>
+<h3>what an example of Instruction set architecture<a class="headerlink" href="#what-an-example-of-instruction-set-architecture" title="Permalink to this headline">#</a></h3>
 <p>the <a class="reference external" href="https://en.wikipedia.org/wiki/X86_instruction_listings">x86 isa</a> is an example.</p>
 </section>
 <section id="how-to-install-gh">
-<h3><span class="section-number">9.10.3. </span>How to install <code class="docutils literal notranslate"><span class="pre">gh</span></code>?<a class="headerlink" href="#how-to-install-gh" title="Permalink to this headline">#</a></h3>
+<h3>How to install <code class="docutils literal notranslate"><span class="pre">gh</span></code>?<a class="headerlink" href="#how-to-install-gh" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://github.com/cli/cli#installation">from their docs</a></p>
 </section>
 <section id="how-often-do-software-engineers-touch-machine-code">
-<h3><span class="section-number">9.10.4. </span>How often do software engineers touch machine code?<a class="headerlink" href="#how-often-do-software-engineers-touch-machine-code" title="Permalink to this headline">#</a></h3>
+<h3>How often do software engineers touch machine code?<a class="headerlink" href="#how-often-do-software-engineers-touch-machine-code" title="Permalink to this headline">#</a></h3>
 <p>Software engineers is a very broad category.  If you write drivers, that might be very different than if you write front ends.</p>
 <p>If you write compilers, again another very different amount.</p>
 </section>
 <section id="how-physics-play-into-abstraction">
-<h3><span class="section-number">9.10.5. </span>how physics play into abstraction<a class="headerlink" href="#how-physics-play-into-abstraction" title="Permalink to this headline">#</a></h3>
+<h3>how physics play into abstraction<a class="headerlink" href="#how-physics-play-into-abstraction" title="Permalink to this headline">#</a></h3>
 <p>The actual physics of how electricity works is the lowest level of abstraction, or most concrete/least abstract way to describe how a computer works.</p>
 </section>
 <section id="why-do-brew-and-gh-keep-uninstalling-from-my-terminal">
-<h3><span class="section-number">9.10.6. </span>why do brew and gh keep uninstalling from my terminal?<a class="headerlink" href="#why-do-brew-and-gh-keep-uninstalling-from-my-terminal" title="Permalink to this headline">#</a></h3>
+<h3>why do brew and gh keep uninstalling from my terminal?<a class="headerlink" href="#why-do-brew-and-gh-keep-uninstalling-from-my-terminal" title="Permalink to this headline">#</a></h3>
 <p>This might be a setting somewhere in your system that erases or resets things?  If you find the answer to this and add it as an FAQ, that is worth a community badge.</p>
 </section>
 <section id="should-i-install-the-gh-cli">
-<h3><span class="section-number">9.10.7. </span>Should I install the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI?<a class="headerlink" href="#should-i-install-the-gh-cli" title="Permalink to this headline">#</a></h3>
+<h3>Should I install the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI?<a class="headerlink" href="#should-i-install-the-gh-cli" title="Permalink to this headline">#</a></h3>
 <p>You can, it’s a little harder on Windows, but possible.</p>
 </section>
 <section id="what-is-a-gui-based-tool">
-<h3><span class="section-number">9.10.8. </span>What is a GUI based tool?<a class="headerlink" href="#what-is-a-gui-based-tool" title="Permalink to this headline">#</a></h3>
+<h3>What is a GUI based tool?<a class="headerlink" href="#what-is-a-gui-based-tool" title="Permalink to this headline">#</a></h3>
 <p>GUI stands for graphical user interface. Everything on a modern compputer except the terminal is a GUI.</p>
 </section>
 <section id="is-it-useful-to-create-models-during-the-process-of-development-or-is-it-mostly-useful-after-the-fact">
-<h3><span class="section-number">9.10.9. </span>Is it useful to create models during the process of development, or is it mostly useful after the fact?<a class="headerlink" href="#is-it-useful-to-create-models-during-the-process-of-development-or-is-it-mostly-useful-after-the-fact" title="Permalink to this headline">#</a></h3>
+<h3>Is it useful to create models during the process of development, or is it mostly useful after the fact?<a class="headerlink" href="#is-it-useful-to-create-models-during-the-process-of-development-or-is-it-mostly-useful-after-the-fact" title="Permalink to this headline">#</a></h3>
 <p>Models are often made before things are built.  Sometimes they are refined after, but usually they are used to guide the development.</p>
 </section>
 <section id="how-deep-should-we-really-understand-abstraction-layers-and-how-useful-is-it-as-a-developer-to-know-it">
-<h3><span class="section-number">9.10.10. </span>How deep should we really understand abstraction layers and how useful is it as a developer to know it?<a class="headerlink" href="#how-deep-should-we-really-understand-abstraction-layers-and-how-useful-is-it-as-a-developer-to-know-it" title="Permalink to this headline">#</a></h3>
+<h3>How deep should we really understand abstraction layers and how useful is it as a developer to know it?<a class="headerlink" href="#how-deep-should-we-really-understand-abstraction-layers-and-how-useful-is-it-as-a-developer-to-know-it" title="Permalink to this headline">#</a></h3>
 <p>We will see them again and they will come up at least implicitly in other classes as well.  It is important to know that they exist and what they are for sure.  How much you directly interact with them will vary though.</p>
 </section>
 <section id="how-will-our-view-on-memory-change-with-abstraction-as-we-get-to-the-higher-level-classes">
-<h3><span class="section-number">9.10.11. </span>How will our view on memory change with abstraction as we get to the higher level classes?<a class="headerlink" href="#how-will-our-view-on-memory-change-with-abstraction-as-we-get-to-the-higher-level-classes" title="Permalink to this headline">#</a></h3>
+<h3>How will our view on memory change with abstraction as we get to the higher level classes?<a class="headerlink" href="#how-will-our-view-on-memory-change-with-abstraction-as-we-get-to-the-higher-level-classes" title="Permalink to this headline">#</a></h3>
 <p>We will talk about the physical device that implements memory later and you will learn more about it again in 411 if you take that.</p>
 </section>
 </section>
@@ -1331,24 +1308,6 @@ This level of abstraction is the level of detail we will think about most.  We�
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="2023-10-03.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>What <em>is</em> git?</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="2023-10-12.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>How does git create a commit?</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -1367,35 +1326,35 @@ This level of abstraction is the level of detail we will think about most.  We�
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#admin">9.1. Admin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-study-design">9.2. Why should we study design?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-studying-developer-tools">9.3. Why are we studying developer tools?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-philosophy">9.4. Unix Philosophy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-issues-on-the-terminal">9.4.1. Processing issues on the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#admin">Admin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-study-design">Why should we study design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-studying-developer-tools">Why are we studying developer tools?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-philosophy">Unix Philosophy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-issues-on-the-terminal">Processing issues on the terminal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-study-computer-systems">9.5. How do we Study (computer) Systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior">9.5.1. Behavior</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">9.5.2. Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">9.5.3. Abstraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-study-computer-systems">How do we Study (computer) Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior">Behavior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">9.6. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">9.7. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">9.8. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">9.9. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">9.10. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-we-need-to-know-about-the-lower-layers-of-hardware-and-software-if-there-are-abstractions-in-place-for-us">9.10.1. Why would we need to know about the lower layers of hardware and software if there are abstractions in place for us?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-an-example-of-instruction-set-architecture">9.10.2. what an example of Instruction set architecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-install-gh">9.10.3. How to install <code class="docutils literal notranslate"><span class="pre">gh</span></code>?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-do-software-engineers-touch-machine-code">9.10.4. How often do software engineers touch machine code?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-physics-play-into-abstraction">9.10.5. how physics play into abstraction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-brew-and-gh-keep-uninstalling-from-my-terminal">9.10.6. why do brew and gh keep uninstalling from my terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-install-the-gh-cli">9.10.7. Should I install the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-gui-based-tool">9.10.8. What is a GUI based tool?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-useful-to-create-models-during-the-process-of-development-or-is-it-mostly-useful-after-the-fact">9.10.9. Is it useful to create models during the process of development, or is it mostly useful after the fact?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deep-should-we-really-understand-abstraction-layers-and-how-useful-is-it-as-a-developer-to-know-it">9.10.10. How deep should we really understand abstraction layers and how useful is it as a developer to know it?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-will-our-view-on-memory-change-with-abstraction-as-we-get-to-the-higher-level-classes">9.10.11. How will our view on memory change with abstraction as we get to the higher level classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-we-need-to-know-about-the-lower-layers-of-hardware-and-software-if-there-are-abstractions-in-place-for-us">Why would we need to know about the lower layers of hardware and software if there are abstractions in place for us?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-an-example-of-instruction-set-architecture">what an example of Instruction set architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-install-gh">How to install <code class="docutils literal notranslate"><span class="pre">gh</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-do-software-engineers-touch-machine-code">How often do software engineers touch machine code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-physics-play-into-abstraction">how physics play into abstraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-brew-and-gh-keep-uninstalling-from-my-terminal">why do brew and gh keep uninstalling from my terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-install-the-gh-cli">Should I install the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-gui-based-tool">What is a GUI based tool?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-useful-to-create-models-during-the-process-of-development-or-is-it-mostly-useful-after-the-fact">Is it useful to create models during the process of development, or is it mostly useful after the fact?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deep-should-we-really-understand-abstraction-layers-and-how-useful-is-it-as-a-developer-to-know-it">How deep should we really understand abstraction layers and how useful is it as a developer to know it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-will-our-view-on-memory-change-with-abstraction-as-we-get-to-the-higher-level-classes">How will our view on memory change with abstraction as we get to the higher level classes?</a></li>
 </ul>
 </li>
 </ul>

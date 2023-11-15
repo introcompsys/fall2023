@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>13. How can I use bash to automate things? &#8212; Computer Systems and Programming Tools</title>
+    <title>How can I use bash to automate things? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,8 +66,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-10-24';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14. How can I work on a remote server?" href="2023-10-26.html" />
-    <link rel="prev" title="12. Why did we learn the plubming commands?" href="2023-10-19.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,27 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. How can I use bash to automate things?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -430,33 +407,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-bash-again">13.1. What is bash again?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-this-definiton-of-bash-mean">13.2. What does this definiton of bash mean?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-from-an-example">13.3. Working from an Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-bash">13.4. Variables in Bash</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-loops">13.5. Bash Loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nesting-commands">13.6. Nesting commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals-in-bash">13.7. Conditionals in bash</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-files">13.8. Script files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gh">13.9. Using GH</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal-coloring-and-customizing-your-prompt">13.10. Terminal coloring and customizing your prompt.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">13.11. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-badge">13.12. Review Badge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-badge">13.13. Practice Badge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">13.14. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">13.15. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-will-we-be-writing-scripts-for-this-class">13.15.1. How often will we be writing scripts for this class?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-bash-scripts-commonly-used-today-in-real-world-applications-or-is-it-something-that-was-used-more-in-the-70s">13.15.2. Are bash scripts commonly used today in real world applications or is it something that was used more in the 70s?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-scope-of-loop-variables">13.15.3. What is the scope of loop variables?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-i-use-bash-instead-of-a-different-programming-language">13.15.4. When would I use bash instead of a different programming language?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-specific-tasks-do-developers-like-to-use-bash-to-automate">13.15.5. What specific tasks do developers like to use bash to automate?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-people-write-full-programs-in-bash-using-things-like-nano-or-directly-into-the-terminal">13.15.6. do people write full programs in bash using things like nano or directly into the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-save-files-that-you-create-in-the-shell">13.15.7. Is there a way to save files that you create in the shell?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-we-do-with-bash">13.15.8. what else can we do with bash?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-running-a-bash-script-with-bash-filename-remove-the-need-to-add-bin-bash-to-the-top-of-it-and-then-make-it-executable-prior-to-running">13.15.9. Does running a bash script with `bash <filename>`` remove the need to add #!/bin/bash to the top of it and then make it executable prior to running?</filename></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-create-functions-in-bash-scripts">13.15.10. Is it possible to create functions in bash scripts?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-would-we-see-bash-the-most-as-a-developer-would-we-use-this-language-more-for-an-embedded-swe-role-or-is-it-something-thats-present-in-every-type-of-programming-job">13.15.11. Where would we see bash the most as a developer? Would we use this language more for an embedded swe role or is it something that’s present in every type of programming job.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-could-i-learn-more-about-writing-something-similar-to-the-workflows-we-saw">13.15.12. Where could I learn more about writing something similar to the workflows we saw?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-bash-again">What is bash again?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-this-definiton-of-bash-mean">What does this definiton of bash mean?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-from-an-example">Working from an Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-bash">Variables in Bash</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-loops">Bash Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nesting-commands">Nesting commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals-in-bash">Conditionals in bash</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-files">Script files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gh">Using GH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal-coloring-and-customizing-your-prompt">Terminal coloring and customizing your prompt.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-badge">Review Badge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-badge">Practice Badge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-will-we-be-writing-scripts-for-this-class">How often will we be writing scripts for this class?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-bash-scripts-commonly-used-today-in-real-world-applications-or-is-it-something-that-was-used-more-in-the-70s">Are bash scripts commonly used today in real world applications or is it something that was used more in the 70s?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-scope-of-loop-variables">What is the scope of loop variables?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-i-use-bash-instead-of-a-different-programming-language">When would I use bash instead of a different programming language?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-specific-tasks-do-developers-like-to-use-bash-to-automate">What specific tasks do developers like to use bash to automate?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-people-write-full-programs-in-bash-using-things-like-nano-or-directly-into-the-terminal">do people write full programs in bash using things like nano or directly into the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-save-files-that-you-create-in-the-shell">Is there a way to save files that you create in the shell?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-we-do-with-bash">what else can we do with bash?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-running-a-bash-script-with-bash-filename-remove-the-need-to-add-bin-bash-to-the-top-of-it-and-then-make-it-executable-prior-to-running">Does running a bash script with `bash <filename>`` remove the need to add #!/bin/bash to the top of it and then make it executable prior to running?</filename></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-create-functions-in-bash-scripts">Is it possible to create functions in bash scripts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-would-we-see-bash-the-most-as-a-developer-would-we-use-this-language-more-for-an-embedded-swe-role-or-is-it-something-thats-present-in-every-type-of-programming-job">Where would we see bash the most as a developer? Would we use this language more for an embedded swe role or is it something that’s present in every type of programming job.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-could-i-learn-more-about-writing-something-similar-to-the-workflows-we-saw">Where could I learn more about writing something similar to the workflows we saw?</a></li>
 </ul>
 </li>
 </ul>
@@ -471,9 +448,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-can-i-use-bash-to-automate-things">
-<h1><span class="section-number">13. </span>How can I use bash to automate things?<a class="headerlink" href="#how-can-i-use-bash-to-automate-things" title="Permalink to this headline">#</a></h1>
+<h1>How can I use bash to automate things?<a class="headerlink" href="#how-can-i-use-bash-to-automate-things" title="Permalink to this headline">#</a></h1>
 <section id="what-is-bash-again">
-<h2><span class="section-number">13.1. </span>What is bash again?<a class="headerlink" href="#what-is-bash-again" title="Permalink to this headline">#</a></h2>
+<h2>What is bash again?<a class="headerlink" href="#what-is-bash-again" title="Permalink to this headline">#</a></h2>
 <p>So far we have used bash commands to navigate our file system as a way to learn about the file system itself. To do this we used commands like:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">mv</span></code></p></li>
@@ -506,7 +483,7 @@ document.write(`
 
         </div></section>
 <section id="what-does-this-definiton-of-bash-mean">
-<h2><span class="section-number">13.2. </span>What does this definiton of bash mean?<a class="headerlink" href="#what-does-this-definiton-of-bash-mean" title="Permalink to this headline">#</a></h2>
+<h2>What does this definiton of bash mean?<a class="headerlink" href="#what-does-this-definiton-of-bash-mean" title="Permalink to this headline">#</a></h2>
 <p>Today we will start from the main course directory.</p>
 <p>Note on macOS when I run <code class="docutils literal notranslate"><span class="pre">bash</span></code> to use the bash shell, it reminds me that MacOS prefers a different shell.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">    Last login: Sat Oct 21 17:29:01 on ttys080</span>
@@ -540,7 +517,7 @@ document.write(`
 </div>
 </section>
 <section id="working-from-an-example">
-<h2><span class="section-number">13.3. </span>Working from an Example<a class="headerlink" href="#working-from-an-example" title="Permalink to this headline">#</a></h2>
+<h2>Working from an Example<a class="headerlink" href="#working-from-an-example" title="Permalink to this headline">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Here I used <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">fa23-kwl-brownsarahm</span></code> and <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">repo</span> <span class="pre">view</span> <span class="pre">--web</span></code> to go to my KWL repo in the browser and then <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> to go back</p>
@@ -558,7 +535,7 @@ document.write(`
 </aside>
 </section>
 <section id="variables-in-bash">
-<h2><span class="section-number">13.4. </span>Variables in Bash<a class="headerlink" href="#variables-in-bash" title="Permalink to this headline">#</a></h2>
+<h2>Variables in Bash<a class="headerlink" href="#variables-in-bash" title="Permalink to this headline">#</a></h2>
 <p>We can create variables like <code class="docutils literal notranslate"><span class="pre">VARNAME=value</span></code>.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -684,7 +661,7 @@ document.write(`
 -->
 </section>
 <section id="bash-loops">
-<h2><span class="section-number">13.5. </span>Bash Loops<a class="headerlink" href="#bash-loops" title="Permalink to this headline">#</a></h2>
+<h2>Bash Loops<a class="headerlink" href="#bash-loops" title="Permalink to this headline">#</a></h2>
 <p>We can also make loops like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for loopvar in list
 do
@@ -764,7 +741,7 @@ done
 <p>and this time <code class="docutils literal notranslate"><span class="pre">Osman</span></code> is the name left in the loop variable later.</p>
 </section>
 <section id="nesting-commands">
-<h2><span class="section-number">13.6. </span>Nesting commands<a class="headerlink" href="#nesting-commands" title="Permalink to this headline">#</a></h2>
+<h2>Nesting commands<a class="headerlink" href="#nesting-commands" title="Permalink to this headline">#</a></h2>
 <p>There are examples of this in your KWL repo actions.  If we want the output of a command to be in a variable this is how to do it.</p>
 <p>To do this, let’s move to a folder with some files in it.</p>
 <div class="cell tag_skip-execution docutils container">
@@ -859,7 +836,7 @@ done
 </div>
 </section>
 <section id="conditionals-in-bash">
-<h2><span class="section-number">13.7. </span>Conditionals in bash<a class="headerlink" href="#conditionals-in-bash" title="Permalink to this headline">#</a></h2>
+<h2>Conditionals in bash<a class="headerlink" href="#conditionals-in-bash" title="Permalink to this headline">#</a></h2>
 <p>We can also do conditional statements</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -893,7 +870,7 @@ done
 </div>
 </section>
 <section id="script-files">
-<h2><span class="section-number">13.8. </span>Script files<a class="headerlink" href="#script-files" title="Permalink to this headline">#</a></h2>
+<h2>Script files<a class="headerlink" href="#script-files" title="Permalink to this headline">#</a></h2>
 <p>We can put our script into a file</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -960,7 +937,7 @@ done
 </div>
 </section>
 <section id="using-gh">
-<h2><span class="section-number">13.9. </span>Using GH<a class="headerlink" href="#using-gh" title="Permalink to this headline">#</a></h2>
+<h2>Using GH<a class="headerlink" href="#using-gh" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">fall2023</span><span class="o">/</span>
@@ -997,7 +974,7 @@ done
 </div>
 </section>
 <section id="terminal-coloring-and-customizing-your-prompt">
-<h2><span class="section-number">13.10. </span>Terminal coloring and customizing your prompt.<a class="headerlink" href="#terminal-coloring-and-customizing-your-prompt" title="Permalink to this headline">#</a></h2>
+<h2>Terminal coloring and customizing your prompt.<a class="headerlink" href="#terminal-coloring-and-customizing-your-prompt" title="Permalink to this headline">#</a></h2>
 <p>Your path settings, aliases, and the your prompt can be set with a file.</p>
 <p>On MacOS the file is called <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> and is stored at your <code class="docutils literal notranslate"><span class="pre">~</span></code> home directory.  If you use <code class="docutils literal notranslate"><span class="pre">zsh</span></code> instead of bash there is a different file, but it is similar.</p>
 <p>On linux it is <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> it should be the same in WSL on Windows.</p>
@@ -1037,82 +1014,82 @@ done
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">13.11. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Read the 3 bulleted examples of <a class="reference external" href="https://carpentries-incubator.github.io/hpc-intro/10-hpc-intro/index.html">why use a cluster</a> from HPC carpentry.</p></li>
 <li><p>Read <a class="reference external" href="https://news.ycombinator.com/item?id=22812477">this discussion of why using a remote server</a></p></li>
 </ol>
 </section>
 <section id="review-badge">
-<h2><span class="section-number">13.12. </span>Review Badge<a class="headerlink" href="#review-badge" title="Permalink to this headline">#</a></h2>
+<h2>Review Badge<a class="headerlink" href="#review-badge" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Update your KWL Chart learned column with what you’ve learned</p></li>
 <li><p>Write a bash script that you can run in your group repo to generate a file with a list of all of your PRs and. Save the script as <span class="target" id="index-0"></span>groupcontributions.sh and its output as <span class="target" id="index-1"></span>group_contributions-YYYY-MM-DD.md in your KWL repo.</p></li>
 </ol>
 </section>
 <section id="practice-badge">
-<h2><span class="section-number">13.13. </span>Practice Badge<a class="headerlink" href="#practice-badge" title="Permalink to this headline">#</a></h2>
+<h2>Practice Badge<a class="headerlink" href="#practice-badge" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Update your KWL Chart learned column with what you’ve learned</p></li>
 <li><p>Write a bash script that you can run in your group repo to generate a file with a list of all of your PRs and PR reviews (you may go in and assign yourself to these PRs to make this easier). Save the script as <span class="target" id="index-2"></span>groupcontributions.sh and its output as <span class="target" id="index-3"></span>group_contributions-YYYY-MM-DD.md in your KWL repo.</p></li>
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">13.14. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="questions-after-todays-class">
-<h2><span class="section-number">13.15. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="how-often-will-we-be-writing-scripts-for-this-class">
-<h3><span class="section-number">13.15.1. </span>How often will we be writing scripts for this class?<a class="headerlink" href="#how-often-will-we-be-writing-scripts-for-this-class" title="Permalink to this headline">#</a></h3>
+<h3>How often will we be writing scripts for this class?<a class="headerlink" href="#how-often-will-we-be-writing-scripts-for-this-class" title="Permalink to this headline">#</a></h3>
 <p>Just a few times to get practice and exposure, but they will come back in 412 and are handy in general.</p>
 </section>
 <section id="are-bash-scripts-commonly-used-today-in-real-world-applications-or-is-it-something-that-was-used-more-in-the-70s">
-<h3><span class="section-number">13.15.2. </span>Are bash scripts commonly used today in real world applications or is it something that was used more in the 70s?<a class="headerlink" href="#are-bash-scripts-commonly-used-today-in-real-world-applications-or-is-it-something-that-was-used-more-in-the-70s" title="Permalink to this headline">#</a></h3>
+<h3>Are bash scripts commonly used today in real world applications or is it something that was used more in the 70s?<a class="headerlink" href="#are-bash-scripts-commonly-used-today-in-real-world-applications-or-is-it-something-that-was-used-more-in-the-70s" title="Permalink to this headline">#</a></h3>
 <p>They are still super common.  GitHub actions can be written using bash scripting as a strategy.  Lots of systems have build scripts.</p>
 <p>The thing we would not do that often that we did today was write it from nano instead of a full IDE.</p>
 </section>
 <section id="what-is-the-scope-of-loop-variables">
-<h3><span class="section-number">13.15.3. </span>What is the scope of loop variables?<a class="headerlink" href="#what-is-the-scope-of-loop-variables" title="Permalink to this headline">#</a></h3>
+<h3>What is the scope of loop variables?<a class="headerlink" href="#what-is-the-scope-of-loop-variables" title="Permalink to this headline">#</a></h3>
 <p>In bash the loop variable has the same scope as any other variable.  It is the same in Python.  This is one of the many features that can very from language to language.</p>
 </section>
 <section id="when-would-i-use-bash-instead-of-a-different-programming-language">
-<h3><span class="section-number">13.15.4. </span>When would I use bash instead of a different programming language?<a class="headerlink" href="#when-would-i-use-bash-instead-of-a-different-programming-language" title="Permalink to this headline">#</a></h3>
+<h3>When would I use bash instead of a different programming language?<a class="headerlink" href="#when-would-i-use-bash-instead-of-a-different-programming-language" title="Permalink to this headline">#</a></h3>
 <p>When you need to do things that are file operations or other os level actions, it can be faster to run if it is in bash.</p>
 </section>
 <section id="what-specific-tasks-do-developers-like-to-use-bash-to-automate">
-<h3><span class="section-number">13.15.5. </span>What specific tasks do developers like to use bash to automate?<a class="headerlink" href="#what-specific-tasks-do-developers-like-to-use-bash-to-automate" title="Permalink to this headline">#</a></h3>
+<h3>What specific tasks do developers like to use bash to automate?<a class="headerlink" href="#what-specific-tasks-do-developers-like-to-use-bash-to-automate" title="Permalink to this headline">#</a></h3>
 <p>build processes, file manipulations, git operations.  Anything even just a few steps that would be repetitive and you would have to do often.</p>
 </section>
 <section id="do-people-write-full-programs-in-bash-using-things-like-nano-or-directly-into-the-terminal">
-<h3><span class="section-number">13.15.6. </span>do people write full programs in bash using things like nano or directly into the terminal?<a class="headerlink" href="#do-people-write-full-programs-in-bash-using-things-like-nano-or-directly-into-the-terminal" title="Permalink to this headline">#</a></h3>
+<h3>do people write full programs in bash using things like nano or directly into the terminal?<a class="headerlink" href="#do-people-write-full-programs-in-bash-using-things-like-nano-or-directly-into-the-terminal" title="Permalink to this headline">#</a></h3>
 <p>Yes! Some people especialy people who started programming a long time ago still do.</p>
 <p>More often, using a terminal text editor is a handy tool to use on occasion, but not for every day work. We will work on a remote server, which is an occasion you would use that, on Thursday.</p>
 </section>
 <section id="is-there-a-way-to-save-files-that-you-create-in-the-shell">
-<h3><span class="section-number">13.15.7. </span>Is there a way to save files that you create in the shell?<a class="headerlink" href="#is-there-a-way-to-save-files-that-you-create-in-the-shell" title="Permalink to this headline">#</a></h3>
+<h3>Is there a way to save files that you create in the shell?<a class="headerlink" href="#is-there-a-way-to-save-files-that-you-create-in-the-shell" title="Permalink to this headline">#</a></h3>
 <p>yes, today we saved the <a class="reference external" href="http://filecheck.sh">filecheck.sh</a> file.</p>
 </section>
 <section id="what-else-can-we-do-with-bash">
-<h3><span class="section-number">13.15.8. </span>what else can we do with bash?<a class="headerlink" href="#what-else-can-we-do-with-bash" title="Permalink to this headline">#</a></h3>
+<h3>what else can we do with bash?<a class="headerlink" href="#what-else-can-we-do-with-bash" title="Permalink to this headline">#</a></h3>
 <p>Its mostly for automating things and processing files or outputs.</p>
 <p>It <em>can</em> do anything though.</p>
 </section>
 <section id="does-running-a-bash-script-with-bash-filename-remove-the-need-to-add-bin-bash-to-the-top-of-it-and-then-make-it-executable-prior-to-running">
-<h3><span class="section-number">13.15.9. </span>Does running a bash script with `bash <filename>`` remove the need to add #!/bin/bash to the top of it and then make it executable prior to running?<a class="headerlink" href="#does-running-a-bash-script-with-bash-filename-remove-the-need-to-add-bin-bash-to-the-top-of-it-and-then-make-it-executable-prior-to-running" title="Permalink to this headline">#</a></h3>
+<h3>Does running a bash script with `bash <filename>`` remove the need to add #!/bin/bash to the top of it and then make it executable prior to running?<a class="headerlink" href="#does-running-a-bash-script-with-bash-filename-remove-the-need-to-add-bin-bash-to-the-top-of-it-and-then-make-it-executable-prior-to-running" title="Permalink to this headline">#</a></h3>
 <p>Yes. by running it like <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">&lt;filename</span></code> it works just like passing those lines in the file to bash.</p>
 <p>Alternatively you can put the shebang <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code> at the top to tell the computer what shell to use to run it and then treat it as an executable.</p>
 <p>We will learn about making it executable permissions wise on Thursday.</p>
 </section>
 <section id="is-it-possible-to-create-functions-in-bash-scripts">
-<h3><span class="section-number">13.15.10. </span>Is it possible to create functions in bash scripts?<a class="headerlink" href="#is-it-possible-to-create-functions-in-bash-scripts" title="Permalink to this headline">#</a></h3>
+<h3>Is it possible to create functions in bash scripts?<a class="headerlink" href="#is-it-possible-to-create-functions-in-bash-scripts" title="Permalink to this headline">#</a></h3>
 <p>Yes! <a class="reference external" href="https://www.gnu.org/software/bash/manual/html_node/Shell-Functions.html">see the GNU bash docs on functions</a></p>
 </section>
 <section id="where-would-we-see-bash-the-most-as-a-developer-would-we-use-this-language-more-for-an-embedded-swe-role-or-is-it-something-thats-present-in-every-type-of-programming-job">
-<h3><span class="section-number">13.15.11. </span>Where would we see bash the most as a developer? Would we use this language more for an embedded swe role or is it something that’s present in every type of programming job.<a class="headerlink" href="#where-would-we-see-bash-the-most-as-a-developer-would-we-use-this-language-more-for-an-embedded-swe-role-or-is-it-something-thats-present-in-every-type-of-programming-job" title="Permalink to this headline">#</a></h3>
+<h3>Where would we see bash the most as a developer? Would we use this language more for an embedded swe role or is it something that’s present in every type of programming job.<a class="headerlink" href="#where-would-we-see-bash-the-most-as-a-developer-would-we-use-this-language-more-for-an-embedded-swe-role-or-is-it-something-thats-present-in-every-type-of-programming-job" title="Permalink to this headline">#</a></h3>
 <p>I think it’s present in just about any programming job.  You will always need to work with files at times, you will alwasy have repetitive things that you do not want to do manually.  You may write more or less, but it’s alwasy a handy tool to have.</p>
 </section>
 <section id="where-could-i-learn-more-about-writing-something-similar-to-the-workflows-we-saw">
-<h3><span class="section-number">13.15.12. </span>Where could I learn more about writing something similar to the workflows we saw?<a class="headerlink" href="#where-could-i-learn-more-about-writing-something-similar-to-the-workflows-we-saw" title="Permalink to this headline">#</a></h3>
+<h3>Where could I learn more about writing something similar to the workflows we saw?<a class="headerlink" href="#where-could-i-learn-more-about-writing-something-similar-to-the-workflows-we-saw" title="Permalink to this headline">#</a></h3>
 <p>The <a class="reference external" href="https://docs.github.com/en/actions">github actions documentation</a> has instructions with how tos, API like documentation, and examples.</p>
 </section>
 </section>
@@ -1149,24 +1126,6 @@ done
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="2023-10-19.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Why did we learn the plubming commands?</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="2023-10-26.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>How can I work on a remote server?</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -1185,33 +1144,33 @@ done
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-bash-again">13.1. What is bash again?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-this-definiton-of-bash-mean">13.2. What does this definiton of bash mean?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-from-an-example">13.3. Working from an Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-bash">13.4. Variables in Bash</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-loops">13.5. Bash Loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nesting-commands">13.6. Nesting commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals-in-bash">13.7. Conditionals in bash</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-files">13.8. Script files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gh">13.9. Using GH</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal-coloring-and-customizing-your-prompt">13.10. Terminal coloring and customizing your prompt.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">13.11. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-badge">13.12. Review Badge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-badge">13.13. Practice Badge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">13.14. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">13.15. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-will-we-be-writing-scripts-for-this-class">13.15.1. How often will we be writing scripts for this class?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-bash-scripts-commonly-used-today-in-real-world-applications-or-is-it-something-that-was-used-more-in-the-70s">13.15.2. Are bash scripts commonly used today in real world applications or is it something that was used more in the 70s?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-scope-of-loop-variables">13.15.3. What is the scope of loop variables?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-i-use-bash-instead-of-a-different-programming-language">13.15.4. When would I use bash instead of a different programming language?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-specific-tasks-do-developers-like-to-use-bash-to-automate">13.15.5. What specific tasks do developers like to use bash to automate?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-people-write-full-programs-in-bash-using-things-like-nano-or-directly-into-the-terminal">13.15.6. do people write full programs in bash using things like nano or directly into the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-save-files-that-you-create-in-the-shell">13.15.7. Is there a way to save files that you create in the shell?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-we-do-with-bash">13.15.8. what else can we do with bash?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-running-a-bash-script-with-bash-filename-remove-the-need-to-add-bin-bash-to-the-top-of-it-and-then-make-it-executable-prior-to-running">13.15.9. Does running a bash script with `bash <filename>`` remove the need to add #!/bin/bash to the top of it and then make it executable prior to running?</filename></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-create-functions-in-bash-scripts">13.15.10. Is it possible to create functions in bash scripts?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-would-we-see-bash-the-most-as-a-developer-would-we-use-this-language-more-for-an-embedded-swe-role-or-is-it-something-thats-present-in-every-type-of-programming-job">13.15.11. Where would we see bash the most as a developer? Would we use this language more for an embedded swe role or is it something that’s present in every type of programming job.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-could-i-learn-more-about-writing-something-similar-to-the-workflows-we-saw">13.15.12. Where could I learn more about writing something similar to the workflows we saw?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-bash-again">What is bash again?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-this-definiton-of-bash-mean">What does this definiton of bash mean?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-from-an-example">Working from an Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-bash">Variables in Bash</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-loops">Bash Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nesting-commands">Nesting commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals-in-bash">Conditionals in bash</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-files">Script files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gh">Using GH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal-coloring-and-customizing-your-prompt">Terminal coloring and customizing your prompt.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-badge">Review Badge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-badge">Practice Badge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-will-we-be-writing-scripts-for-this-class">How often will we be writing scripts for this class?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-bash-scripts-commonly-used-today-in-real-world-applications-or-is-it-something-that-was-used-more-in-the-70s">Are bash scripts commonly used today in real world applications or is it something that was used more in the 70s?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-scope-of-loop-variables">What is the scope of loop variables?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-i-use-bash-instead-of-a-different-programming-language">When would I use bash instead of a different programming language?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-specific-tasks-do-developers-like-to-use-bash-to-automate">What specific tasks do developers like to use bash to automate?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-people-write-full-programs-in-bash-using-things-like-nano-or-directly-into-the-terminal">do people write full programs in bash using things like nano or directly into the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-save-files-that-you-create-in-the-shell">Is there a way to save files that you create in the shell?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-we-do-with-bash">what else can we do with bash?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-running-a-bash-script-with-bash-filename-remove-the-need-to-add-bin-bash-to-the-top-of-it-and-then-make-it-executable-prior-to-running">Does running a bash script with `bash <filename>`` remove the need to add #!/bin/bash to the top of it and then make it executable prior to running?</filename></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-create-functions-in-bash-scripts">Is it possible to create functions in bash scripts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-would-we-see-bash-the-most-as-a-developer-would-we-use-this-language-more-for-an-embedded-swe-role-or-is-it-something-thats-present-in-every-type-of-programming-job">Where would we see bash the most as a developer? Would we use this language more for an embedded swe role or is it something that’s present in every type of programming job.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-could-i-learn-more-about-writing-something-similar-to-the-workflows-we-saw">Where could I learn more about writing something similar to the workflows we saw?</a></li>
 </ul>
 </li>
 </ul>

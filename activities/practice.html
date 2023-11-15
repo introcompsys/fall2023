@@ -170,27 +170,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-09-12.html">2. Course Logistics and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-09-14.html">3. How do I use git offline?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-09-19.html">4. How do git branches work?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-09-26.html">6. What is a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-09-28.html">7. How do programmers communicate about code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-03.html">8. What <em>is</em> git?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-05.html">9. Why are these tools organized this way?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-12.html">10. How does git create a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-17.html">11. What is a commit number?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-24.html">13. How can I use bash to automate things?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-26.html">14. How can I work on a remote server?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-11-02.html">16. SSH Keys and Building Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-11-07.html">17. Linking and Object file binary representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notes/2023-11-09.html">18. What is an IDE?</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="kwl.html">KWL Chart</a></li>
@@ -447,6 +426,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">2023-10-31</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">2023-11-02</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">2023-11-07</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">2023-11-14</a></li>
 </ul>
             </nav>
         </div>
@@ -695,6 +675,21 @@ Course website tags by type:
 6. Write an sbatch script, <span class="target" id="index-26"></span>batchrun.sh to run your script  on a compute node and save the output to a file. The sbatch script should compile and link the program and then call the script. <a class="reference external" href="https://web.uri.edu/hpc-research-computing/using-seawulf/#sbatch">see the options</a>
 7. use <a class="reference external" href="https://www2.stat.duke.edu/comp/security/scp_man.html">scp</a> to download your modified main, script files, and output to your local computer and include them in your kwl repo.</p>
 </section>
+<section id="id17">
+<h2>2023-11-14<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
+<p><a class="reference internal" href="../notes/2023-11-14.html"><span class="doc std std-doc">related notes</span></a></p>
+<p>Activities:</p>
+<ol class="arabic simple">
+<li><p>Run and examine how rect.hack and max.hack in the <code class="docutils literal notranslate"><span class="pre">nand2tetris/projects/05/</span></code> folder work. Make notes and answer the questions below in <span class="target" id="index-27"></span>assemblyexplore.md.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. What does rect.hack do?  
+2. What did you learn trying to figure out how it works?
+3. Explain how max.hack works in detail.
+4. Write code in a high level language that would compile into this program. Try writing multiple different versions.
+5. What does this max.hack assume has happened that it doesn&#39;t include in its body?
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -781,6 +776,7 @@ Course website tags by type:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">2023-10-31</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">2023-11-02</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">2023-11-07</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">2023-11-14</a></li>
 </ul>
   </nav></div>
 

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>17. Linking and Object file binary representation &#8212; Computer Systems and Programming Tools</title>
+    <title>Linking and Object file binary representation &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,8 +66,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-07';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="18. What is an IDE?" href="2023-11-09.html" />
-    <link rel="prev" title="16. SSH Keys and Building Code" href="2023-11-02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,27 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. Linking and Object file binary representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -430,26 +407,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.1. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">17.2. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">17.3. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.4. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">17.5. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-didnt-python-work-locally-for-me">17.5.1. Why didn’t python work locally for me?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters">17.5.2. Can I get a bunch of binary representations of letters and use it to write to a file in characters?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-we-implementing-more-function-loops-in-the-future">17.5.3. Are we implementing more function/loops in the future?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code">17.5.4. What would be a case where we need to use bytes conversion in our code?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide">17.5.5. Why would I want to write and compile code from a Terminal and not from and IDE?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters">17.5.6. Is it ok that I see blobs in the object file, not just od characters?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-i-do-with-c-python-in-the-terminal">17.5.7. what else can i do with c / python in the terminal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-order-of-the-compiling-command-matter">17.5.8. Does the order of the compiling command matter?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-benefit-is-it-to-create-python-scripts-on-the-server">17.5.9. What benefit is it to create python scripts on the server?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command">17.5.10. Is there a way to view a text file in raw bytes with a bash command?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-better-to-use-python-in-the-terminal">17.5.11. Is it better to use python in the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it">17.5.12. Most people will tell you python is extremely slow, so why are we still using it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-didnt-python-work-locally-for-me">Why didn’t python work locally for me?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters">Can I get a bunch of binary representations of letters and use it to write to a file in characters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-we-implementing-more-function-loops-in-the-future">Are we implementing more function/loops in the future?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code">What would be a case where we need to use bytes conversion in our code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide">Why would I want to write and compile code from a Terminal and not from and IDE?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters">Is it ok that I see blobs in the object file, not just od characters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-i-do-with-c-python-in-the-terminal">what else can i do with c / python in the terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-order-of-the-compiling-command-matter">Does the order of the compiling command matter?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-benefit-is-it-to-create-python-scripts-on-the-server">What benefit is it to create python scripts on the server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command">Is there a way to view a text file in raw bytes with a bash command?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-better-to-use-python-in-the-terminal">Is it better to use python in the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it">Most people will tell you python is extremely slow, so why are we still using it?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-explore-badge-questions">17.6. Good Explore badge questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-explore-badge-questions">Good Explore badge questions</a></li>
 </ul>
             </nav>
         </div>
@@ -462,7 +439,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="linking-and-object-file-binary-representation">
-<h1><span class="section-number">17. </span>Linking and Object file binary representation<a class="headerlink" href="#linking-and-object-file-binary-representation" title="Permalink to this headline">#</a></h1>
+<h1>Linking and Object file binary representation<a class="headerlink" href="#linking-and-object-file-binary-representation" title="Permalink to this headline">#</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>I am behind on this, filling in this using notes from previous semesters and making a PR (only the first, not a duplicate) can be an explore badge.</p>
@@ -1111,14 +1088,14 @@ document.write(`
 </pre></div>
 </div>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">17.1. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Review your IDE notes (or complete them if you have not yet) <a class="reference external" href="https://introcompsys.github.io/fall2023/notes/2023-10-12.html#prepare-for-next-class">ide_thoughts</a>.</p></li>
 <li><p>Think about what features or extensions in your favorite IDE you like the most and that you think others may not know about.</p></li>
 </ol>
 </section>
 <section id="review-todays-class">
-<h2><span class="section-number">17.2. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple" start="3">
 <li><p>Create some variations of the <code class="docutils literal notranslate"><span class="pre">hello.c</span></code> we made in class. Make <span class="target" id="index-0"></span>hello2.c print twice with 2 print commands. Make <span class="target" id="index-1"></span>hello5.c print 5 times with a for loop and <span class="target" id="index-2"></span>hello7.c print 7 times with a for loop. Build them all on the command line and make sure they run correctly.</p></li>
 <li><p>Write a bash script, <span class="target" id="index-3"></span>assembly.sh to compile each program to assembly and print the number of lines in each file.</p></li>
@@ -1126,68 +1103,68 @@ document.write(`
 </ol>
 </section>
 <section id="more-practice">
-<h2><span class="section-number">17.3. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <p>On Seawulf, modfiy <span class="target" id="index-5"></span>main.c from class to accept the integer as a command line argument instead of via input while running the program. <a class="reference external" href="http://crasseux.com/books/ctutorial/argc-and-argv.html">See this tutorial for an example</a>.
 5. Write a bash script <span class="target" id="index-6"></span>demo_test.sh that runs your compiled program for each integer from 10 to 30 (syntax for a range is <code class="docutils literal notranslate"><span class="pre">{start..end}</span></code> so this would be <code class="docutils literal notranslate"><span class="pre">{10..30}</span></code>)
 6. Write an sbatch script, <span class="target" id="index-7"></span>batchrun.sh to run your script  on a compute node and save the output to a file. The sbatch script should compile and link the program and then call the script. <a class="reference external" href="https://web.uri.edu/hpc-research-computing/using-seawulf/#sbatch">see the options</a>
 7. use <a class="reference external" href="https://www2.stat.duke.edu/comp/security/scp_man.html">scp</a> to download your modified main, script files, and output to your local computer and include them in your kwl repo.</p>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">17.4. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="questions-after-todays-class">
-<h2><span class="section-number">17.5. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="why-didnt-python-work-locally-for-me">
-<h3><span class="section-number">17.5.1. </span>Why didn’t python work locally for me?<a class="headerlink" href="#why-didnt-python-work-locally-for-me" title="Permalink to this headline">#</a></h3>
+<h3>Why didn’t python work locally for me?<a class="headerlink" href="#why-didnt-python-work-locally-for-me" title="Permalink to this headline">#</a></h3>
 <p>On Windows, you may need to reinstall GitBash with different settings.</p>
 </section>
 <section id="can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters">
-<h3><span class="section-number">17.5.2. </span>Can I get a bunch of binary representations of letters and use it to write to a file in characters?<a class="headerlink" href="#can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters" title="Permalink to this headline">#</a></h3>
+<h3>Can I get a bunch of binary representations of letters and use it to write to a file in characters?<a class="headerlink" href="#can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters" title="Permalink to this headline">#</a></h3>
 <p>yes</p>
 </section>
 <section id="are-we-implementing-more-function-loops-in-the-future">
-<h3><span class="section-number">17.5.3. </span>Are we implementing more function/loops in the future?<a class="headerlink" href="#are-we-implementing-more-function-loops-in-the-future" title="Permalink to this headline">#</a></h3>
+<h3>Are we implementing more function/loops in the future?<a class="headerlink" href="#are-we-implementing-more-function-loops-in-the-future" title="Permalink to this headline">#</a></h3>
 <p>More can be done, but not a lot more in class time</p>
 </section>
 <section id="what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code">
-<h3><span class="section-number">17.5.4. </span>What would be a case where we need to use bytes conversion in our code?<a class="headerlink" href="#what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code" title="Permalink to this headline">#</a></h3>
+<h3>What would be a case where we need to use bytes conversion in our code?<a class="headerlink" href="#what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code" title="Permalink to this headline">#</a></h3>
 <p>If you need to compress data to work in a low memory environment.</p>
 </section>
 <section id="why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide">
-<h3><span class="section-number">17.5.5. </span>Why would I want to write and compile code from a Terminal and not from and IDE?<a class="headerlink" href="#why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide" title="Permalink to this headline">#</a></h3>
+<h3>Why would I want to write and compile code from a Terminal and not from and IDE?<a class="headerlink" href="#why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide" title="Permalink to this headline">#</a></h3>
 <p>If you are working on a server where you do not have an IDE available. Or if you are doing something really quick.</p>
 </section>
 <section id="is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters">
-<h3><span class="section-number">17.5.6. </span>Is it ok that I see blobs in the object file, not just od characters?<a class="headerlink" href="#is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters" title="Permalink to this headline">#</a></h3>
+<h3>Is it ok that I see blobs in the object file, not just od characters?<a class="headerlink" href="#is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters" title="Permalink to this headline">#</a></h3>
 <p>Yes! Different computers will make different amounts of progress at this</p>
 </section>
 <section id="what-else-can-i-do-with-c-python-in-the-terminal">
-<h3><span class="section-number">17.5.7. </span>what else can i do with c / python in the terminal<a class="headerlink" href="#what-else-can-i-do-with-c-python-in-the-terminal" title="Permalink to this headline">#</a></h3>
+<h3>what else can i do with c / python in the terminal<a class="headerlink" href="#what-else-can-i-do-with-c-python-in-the-terminal" title="Permalink to this headline">#</a></h3>
 <p>You can do anything the langague can do through a terminal. We had programming before we had modern IDEs.</p>
 </section>
 <section id="does-the-order-of-the-compiling-command-matter">
-<h3><span class="section-number">17.5.8. </span>Does the order of the compiling command matter?<a class="headerlink" href="#does-the-order-of-the-compiling-command-matter" title="Permalink to this headline">#</a></h3>
+<h3>Does the order of the compiling command matter?<a class="headerlink" href="#does-the-order-of-the-compiling-command-matter" title="Permalink to this headline">#</a></h3>
 <p>This is a practice badge question.</p>
 </section>
 <section id="what-benefit-is-it-to-create-python-scripts-on-the-server">
-<h3><span class="section-number">17.5.9. </span>What benefit is it to create python scripts on the server?<a class="headerlink" href="#what-benefit-is-it-to-create-python-scripts-on-the-server" title="Permalink to this headline">#</a></h3>
+<h3>What benefit is it to create python scripts on the server?<a class="headerlink" href="#what-benefit-is-it-to-create-python-scripts-on-the-server" title="Permalink to this headline">#</a></h3>
 <p>If it is processing large amount of data or if it has complex calculations that are intensive.</p>
 </section>
 <section id="is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command">
-<h3><span class="section-number">17.5.10. </span>Is there a way to view a text file in raw bytes with a bash command?<a class="headerlink" href="#is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command" title="Permalink to this headline">#</a></h3>
+<h3>Is there a way to view a text file in raw bytes with a bash command?<a class="headerlink" href="#is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command" title="Permalink to this headline">#</a></h3>
 <p>the terminal cannot show it as the raw bytes, but we will see some ways to view the file in different representations.</p>
 </section>
 <section id="is-it-better-to-use-python-in-the-terminal">
-<h3><span class="section-number">17.5.11. </span>Is it better to use python in the terminal?<a class="headerlink" href="#is-it-better-to-use-python-in-the-terminal" title="Permalink to this headline">#</a></h3>
+<h3>Is it better to use python in the terminal?<a class="headerlink" href="#is-it-better-to-use-python-in-the-terminal" title="Permalink to this headline">#</a></h3>
 <p>it is not better, it is just another option.  Having more options also helps you see the how it really works.</p>
 </section>
 <section id="most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it">
-<h3><span class="section-number">17.5.12. </span>Most people will tell you python is extremely slow, so why are we still using it?<a class="headerlink" href="#most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it" title="Permalink to this headline">#</a></h3>
+<h3>Most people will tell you python is extremely slow, so why are we still using it?<a class="headerlink" href="#most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it" title="Permalink to this headline">#</a></h3>
 <p>Python is slower than C, but it is much easier to read than fast lanaguages.  So it is often faster to write.  It also has more effecitve, well written libraries and consistent performance. It is essentially the only option for modern effecitve AI models unless you are writing it all from scratch with is generally intractable.</p>
 </section>
 </section>
 <section id="good-explore-badge-questions">
-<h2><span class="section-number">17.6. </span>Good Explore badge questions<a class="headerlink" href="#good-explore-badge-questions" title="Permalink to this headline">#</a></h2>
+<h2>Good Explore badge questions<a class="headerlink" href="#good-explore-badge-questions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>how would linking a third file to the executable affect how it runs, if it has nothing to do with the res to the code</p></li>
 </ul>
@@ -1225,24 +1202,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="2023-11-02.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>SSH Keys and Building Code</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="2023-11-09.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>What is an IDE?</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -1261,26 +1220,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.1. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">17.2. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">17.3. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.4. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">17.5. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-didnt-python-work-locally-for-me">17.5.1. Why didn’t python work locally for me?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters">17.5.2. Can I get a bunch of binary representations of letters and use it to write to a file in characters?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-we-implementing-more-function-loops-in-the-future">17.5.3. Are we implementing more function/loops in the future?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code">17.5.4. What would be a case where we need to use bytes conversion in our code?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide">17.5.5. Why would I want to write and compile code from a Terminal and not from and IDE?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters">17.5.6. Is it ok that I see blobs in the object file, not just od characters?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-i-do-with-c-python-in-the-terminal">17.5.7. what else can i do with c / python in the terminal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-order-of-the-compiling-command-matter">17.5.8. Does the order of the compiling command matter?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-benefit-is-it-to-create-python-scripts-on-the-server">17.5.9. What benefit is it to create python scripts on the server?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command">17.5.10. Is there a way to view a text file in raw bytes with a bash command?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-better-to-use-python-in-the-terminal">17.5.11. Is it better to use python in the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it">17.5.12. Most people will tell you python is extremely slow, so why are we still using it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-didnt-python-work-locally-for-me">Why didn’t python work locally for me?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-get-a-bunch-of-binary-representations-of-letters-and-use-it-to-write-to-a-file-in-characters">Can I get a bunch of binary representations of letters and use it to write to a file in characters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-we-implementing-more-function-loops-in-the-future">Are we implementing more function/loops in the future?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-be-a-case-where-we-need-to-use-bytes-conversion-in-our-code">What would be a case where we need to use bytes conversion in our code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-i-want-to-write-and-compile-code-from-a-terminal-and-not-from-and-ide">Why would I want to write and compile code from a Terminal and not from and IDE?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-ok-that-i-see-blobs-in-the-object-file-not-just-od-characters">Is it ok that I see blobs in the object file, not just od characters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-else-can-i-do-with-c-python-in-the-terminal">what else can i do with c / python in the terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-order-of-the-compiling-command-matter">Does the order of the compiling command matter?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-benefit-is-it-to-create-python-scripts-on-the-server">What benefit is it to create python scripts on the server?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-way-to-view-a-text-file-in-raw-bytes-with-a-bash-command">Is there a way to view a text file in raw bytes with a bash command?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-better-to-use-python-in-the-terminal">Is it better to use python in the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-people-will-tell-you-python-is-extremely-slow-so-why-are-we-still-using-it">Most people will tell you python is extremely slow, so why are we still using it?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-explore-badge-questions">17.6. Good Explore badge questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-explore-badge-questions">Good Explore badge questions</a></li>
 </ul>
   </nav></div>
 

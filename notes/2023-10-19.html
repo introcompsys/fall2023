@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>12. Why did we learn the plubming commands? &#8212; Computer Systems and Programming Tools</title>
+    <title>Why did we learn the plubming commands? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,8 +66,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-10-19';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="13. How can I use bash to automate things?" href="2023-10-24.html" />
-    <link rel="prev" title="11. What is a commit number?" href="2023-10-17.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,27 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Why did we learn the plubming commands?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -430,22 +407,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-is-the-blob-created">12.1. When is the blob created?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-git-track-file-names">12.2. How does git track file names?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-index">12.3. What is the index?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-it-show-the-help">12.4. Why does it  show the help</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-references">12.5. Git References</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-git-tag">12.6. Making a git tag</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-have-changes-i-do-not-want-to-lose-or-commit-yet">12.7. What if I have changes I do not want to lose <em>or</em> commit yet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-git-to-debug">12.8. Using git to debug</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-want-to-keep-changes-but-not-commit-them-yet">12.9. What if I want to keep changes, but not commit them yet?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-searchiing-with-bisect">12.10. Binary searchiing with bisect</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-the-stashed-content">12.11. What about the stashed content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">12.12. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">12.13. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">12.14. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">12.15. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">12.16. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-is-the-blob-created">When is the blob created?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-git-track-file-names">How does git track file names?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-index">What is the index?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-it-show-the-help">Why does it  show the help</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-references">Git References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-git-tag">Making a git tag</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-have-changes-i-do-not-want-to-lose-or-commit-yet">What if I have changes I do not want to lose <em>or</em> commit yet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-git-to-debug">Using git to debug</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-want-to-keep-changes-but-not-commit-them-yet">What if I want to keep changes, but not commit them yet?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-searchiing-with-bisect">Binary searchiing with bisect</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-the-stashed-content">What about the stashed content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
 </ul>
             </nav>
         </div>
@@ -458,7 +435,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="why-did-we-learn-the-plubming-commands">
-<h1><span class="section-number">12. </span>Why did we learn the plubming commands?<a class="headerlink" href="#why-did-we-learn-the-plubming-commands" title="Permalink to this headline">#</a></h1>
+<h1>Why did we learn the plubming commands?<a class="headerlink" href="#why-did-we-learn-the-plubming-commands" title="Permalink to this headline">#</a></h1>
 <p>You will not typically use them on a day to day basis, but they are a good way to see what happens at the interim steps and make sure that you have the right understanding of what git does.</p>
 <p>A <strong>correct</strong> understanding is essential for using more advanced features</p>
 <p>While there is of course some content that we want you to know after this course, my goal is also to teach you process, by modeling it.</p>
@@ -469,7 +446,7 @@ document.write(`
 <p>My goal is that you get good at <em>quickly</em> finding <strong>correct</strong> answers.</p>
 </div>
 <section id="when-is-the-blob-created">
-<h2><span class="section-number">12.1. </span>When is the blob created?<a class="headerlink" href="#when-is-the-blob-created" title="Permalink to this headline">#</a></h2>
+<h2>When is the blob created?<a class="headerlink" href="#when-is-the-blob-created" title="Permalink to this headline">#</a></h2>
 <p>First lets add some conent to revise a file</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -577,7 +554,7 @@ document.write(`
 </ul>
 </section>
 <section id="how-does-git-track-file-names">
-<h2><span class="section-number">12.2. </span>How does git track file names?<a class="headerlink" href="#how-does-git-track-file-names" title="Permalink to this headline">#</a></h2>
+<h2>How does git track file names?<a class="headerlink" href="#how-does-git-track-file-names" title="Permalink to this headline">#</a></h2>
 <p>Let’s trace it out?  First  we will look at our recent commits</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -689,7 +666,7 @@ document.write(`
 </div>
 </section>
 <section id="what-is-the-index">
-<h2><span class="section-number">12.3. </span>What is the index?<a class="headerlink" href="#what-is-the-index" title="Permalink to this headline">#</a></h2>
+<h2>What is the index?<a class="headerlink" href="#what-is-the-index" title="Permalink to this headline">#</a></h2>
 <p>The staging area/index</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -740,7 +717,7 @@ document.write(`
 </div>
 </section>
 <section id="why-does-it-show-the-help">
-<h2><span class="section-number">12.4. </span>Why does it  show the help<a class="headerlink" href="#why-does-it-show-the-help" title="Permalink to this headline">#</a></h2>
+<h2>Why does it  show the help<a class="headerlink" href="#why-does-it-show-the-help" title="Permalink to this headline">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This was a real question from class and is a good question!</p>
@@ -761,7 +738,7 @@ document.write(`
 </div>
 </section>
 <section id="git-references">
-<h2><span class="section-number">12.5. </span>Git References<a class="headerlink" href="#git-references" title="Permalink to this headline">#</a></h2>
+<h2>Git References<a class="headerlink" href="#git-references" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>I have commented out for now where the inspection of git tags did not go as expected.  I hope to fill this in with the answer and notify you later.</p>
@@ -961,7 +938,7 @@ c9.1
 -->
 </section>
 <section id="making-a-git-tag">
-<h2><span class="section-number">12.6. </span>Making a git tag<a class="headerlink" href="#making-a-git-tag" title="Permalink to this headline">#</a></h2>
+<h2>Making a git tag<a class="headerlink" href="#making-a-git-tag" title="Permalink to this headline">#</a></h2>
 <p>We will work in the github-inclass repo for this.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1100,7 +1077,7 @@ c9.1
 </div>
 </section>
 <section id="what-if-i-have-changes-i-do-not-want-to-lose-or-commit-yet">
-<h2><span class="section-number">12.7. </span>What if I have changes I do not want to lose <em>or</em> commit yet<a class="headerlink" href="#what-if-i-have-changes-i-do-not-want-to-lose-or-commit-yet" title="Permalink to this headline">#</a></h2>
+<h2>What if I have changes I do not want to lose <em>or</em> commit yet<a class="headerlink" href="#what-if-i-have-changes-i-do-not-want-to-lose-or-commit-yet" title="Permalink to this headline">#</a></h2>
 <p>We want to pusht the tag, but we cannot push right now:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1169,7 +1146,7 @@ c9.1
 </div>
 </section>
 <section id="using-git-to-debug">
-<h2><span class="section-number">12.8. </span>Using git to debug<a class="headerlink" href="#using-git-to-debug" title="Permalink to this headline">#</a></h2>
+<h2>Using git to debug<a class="headerlink" href="#using-git-to-debug" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>I am going to revise this later, to understand for now, refer to the <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git">git book chapter</a></p>
@@ -1220,7 +1197,7 @@ c9.1
 <p>We have the option to commit or stash.</p>
 </section>
 <section id="what-if-i-want-to-keep-changes-but-not-commit-them-yet">
-<h2><span class="section-number">12.9. </span>What if I want to keep changes, but not commit them yet?<a class="headerlink" href="#what-if-i-want-to-keep-changes-but-not-commit-them-yet" title="Permalink to this headline">#</a></h2>
+<h2>What if I want to keep changes, but not commit them yet?<a class="headerlink" href="#what-if-i-want-to-keep-changes-but-not-commit-them-yet" title="Permalink to this headline">#</a></h2>
 <p>Stash creates git objects of content that you can recover later.  It works like a first-in-first-out queue by default and is a conceptually separate set of content from the commit history (though it is still stored in the <code class="docutils literal notranslate"><span class="pre">.git/</span></code> directory)</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1235,7 +1212,7 @@ c9.1
 <p>once we stash it, our working directory is clean and we can go back to debugging</p>
 </section>
 <section id="binary-searchiing-with-bisect">
-<h2><span class="section-number">12.10. </span>Binary searchiing with bisect<a class="headerlink" href="#binary-searchiing-with-bisect" title="Permalink to this headline">#</a></h2>
+<h2>Binary searchiing with bisect<a class="headerlink" href="#binary-searchiing-with-bisect" title="Permalink to this headline">#</a></h2>
 <p>Now we can tell it the good commit again</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1326,7 +1303,7 @@ c9.1
 </div>
 </section>
 <section id="what-about-the-stashed-content">
-<h2><span class="section-number">12.11. </span>What about the stashed content<a class="headerlink" href="#what-about-the-stashed-content" title="Permalink to this headline">#</a></h2>
+<h2>What about the stashed content<a class="headerlink" href="#what-about-the-stashed-content" title="Permalink to this headline">#</a></h2>
 <p>Now that we are on main with a clean working directory it is a good time to pull the remote changes.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1470,7 +1447,7 @@ c9.1
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">12.12. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple" start="2">
 <li><p>If you have not already or right before class, review the GitHub Action <span class="xref myst">files in your KWL repo</span> and make note of what if any syntax in there is unfamilar.   (note that link may not work on the rendered website, but will work on issues)</p></li>
 <li><p>Use quote reply or edit to see how I made a relative path to a location within the repo in this issue.</p></li>
@@ -1478,7 +1455,7 @@ c9.1
 </ol>
 </section>
 <section id="review-todays-class">
-<h2><span class="section-number">12.13. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Use git bisect to find the first bad commit in the <a class="reference external" href="https://github.com/introcompsys/toy_bug">toy bug repo</a>, save the command history and the bad commit hash to <span class="target" id="index-0"></span>git_debug.md</p></li>
 <li><p>Create <span class="target" id="index-1"></span>tagtypeexplore.md  with the template below. Determine how  many of the tags in the course website are annotated vs lightweight using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> to  inspect the tags and the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code> help to determine which tags are of each type.</p></li>
@@ -1497,7 +1474,7 @@ Course website tags by type:
 </div>
 </section>
 <section id="more-practice">
-<h2><span class="section-number">12.14. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Use your github-inclass repo to create a scenario where you can fix a problem using a git command from the <a class="reference external" href="https://git-scm.com/docs">patching or debugging section of the docs</a>. Create a log of what you did using the history or git log into a file <span class="target" id="index-2"></span>gitstory.md. If you have a project in another class or another badge in this class that causes you to use one in a real scenario, that can count.  If not, for example, you could create a “bug” and then use bisect to find it.</p></li>
 <li><p>Create <span class="target" id="index-3"></span>tagtypes.md  with the template below.
@@ -1521,11 +1498,11 @@ Course website tags by type:
 </div>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">12.15. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>save your command history to <code class="docutils literal notranslate"><span class="pre">2023-10-19-log.txt</span></code> and put that file in your KWL repo</p>
 </section>
 <section id="questions-after-todays-class">
-<h2><span class="section-number">12.16. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>due to scheduling issues this will be late today</p>
@@ -1564,24 +1541,6 @@ Course website tags by type:
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="2023-10-17.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>What is a commit number?</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="2023-10-24.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>How can I use bash to automate things?</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -1600,22 +1559,22 @@ Course website tags by type:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-is-the-blob-created">12.1. When is the blob created?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-git-track-file-names">12.2. How does git track file names?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-index">12.3. What is the index?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-it-show-the-help">12.4. Why does it  show the help</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-references">12.5. Git References</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-git-tag">12.6. Making a git tag</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-have-changes-i-do-not-want-to-lose-or-commit-yet">12.7. What if I have changes I do not want to lose <em>or</em> commit yet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-git-to-debug">12.8. Using git to debug</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-want-to-keep-changes-but-not-commit-them-yet">12.9. What if I want to keep changes, but not commit them yet?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-searchiing-with-bisect">12.10. Binary searchiing with bisect</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-the-stashed-content">12.11. What about the stashed content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">12.12. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">12.13. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">12.14. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">12.15. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">12.16. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-is-the-blob-created">When is the blob created?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-git-track-file-names">How does git track file names?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-index">What is the index?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-it-show-the-help">Why does it  show the help</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-references">Git References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-git-tag">Making a git tag</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-have-changes-i-do-not-want-to-lose-or-commit-yet">What if I have changes I do not want to lose <em>or</em> commit yet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-git-to-debug">Using git to debug</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-want-to-keep-changes-but-not-commit-them-yet">What if I want to keep changes, but not commit them yet?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-searchiing-with-bisect">Binary searchiing with bisect</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-the-stashed-content">What about the stashed content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
 </ul>
   </nav></div>
 

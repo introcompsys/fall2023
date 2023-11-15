@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5. When do I get an advantage from git and bash? &#8212; Computer Systems and Programming Tools</title>
+    <title>When do I get an advantage from git and bash? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,8 +66,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-21';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. What is a commit?" href="2023-09-26.html" />
-    <link rel="prev" title="4. How do git branches work?" href="2023-09-19.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,27 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. When do I get an advantage from git and bash?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -430,41 +407,41 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">5.1. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-a-branch-offline">5.2. Merging a branch offline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-a-project-workign-with-files">5.3. Organizing a project (workign with files)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#echo-and-redirects">5.4. Echo and redirects</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-and-add-has-limitations">5.5. commit and add has limitations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redirect-file-modes">5.6. Redirect file modes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-from-mistakes-with-git-restore">5.7. Recovering from mistakes with git restore</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-these-files">5.8. What are these files?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-organized">5.9. Getting organized</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">5.10. Moving Files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-in-gitbash">5.10.1. Help in GitBash</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-on-nix-systems">5.10.2. Getting help on *nix systems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-moving">5.10.3. Back to moving.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-multiple-files-with-patterns">5.10.4. Moving multiple files with patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-a-branch-offline">Merging a branch offline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-a-project-workign-with-files">Organizing a project (workign with files)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#echo-and-redirects">Echo and redirects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-and-add-has-limitations">commit and add has limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redirect-file-modes">Redirect file modes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-from-mistakes-with-git-restore">Recovering from mistakes with git restore</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-these-files">What are these files?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-organized">Getting organized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">Moving Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-in-gitbash">Help in GitBash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-on-nix-systems">Getting help on *nix systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-moving">Back to moving.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-multiple-files-with-patterns">Moving multiple files with patterns</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-files">5.11. Renaming Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commiting-changes">5.12. Commiting Changes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-badge-with-a-file">5.13. experience badge with a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">5.14. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">5.15. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">5.16. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">5.17. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">5.18. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty">5.18.1. Why does git not see new directories added to the repo while they’re empty?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that">5.18.2. After a new directory has new files in it git status only shows the direcrory name but not the files within it. Why is that?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file">5.18.3. If possible, is it common to echo a line of code into a programming file?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-experience-will-we-have-with-open-source-projects-in-this-class">5.18.4. What other experience will we have with open source projects in this class?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">5.18.5. How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">5.18.6. I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-close-pull-requests-on-the-terminal">5.18.7. can you close pull requests on the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-mv-will-it-move-all-files">5.18.8. If you do mv * will it move all files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">5.18.9. Are there any other ways of using mv that haven’t been covered yet?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-should-we-be-practicing-with-the-terminal-for-git">5.18.10. how often should we be practicing with the terminal for git?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">5.18.11. Would it be beneficial to organize files with github rather than bash?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-files">Renaming Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commiting-changes">Commiting Changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-badge-with-a-file">experience badge with a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty">Why does git not see new directories added to the repo while they’re empty?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that">After a new directory has new files in it git status only shows the direcrory name but not the files within it. Why is that?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file">If possible, is it common to echo a line of code into a programming file?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-experience-will-we-have-with-open-source-projects-in-this-class">What other experience will we have with open source projects in this class?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-close-pull-requests-on-the-terminal">can you close pull requests on the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-mv-will-it-move-all-files">If you do mv * will it move all files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">Are there any other ways of using mv that haven’t been covered yet?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-should-we-be-practicing-with-the-terminal-for-git">how often should we be practicing with the terminal for git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">Would it be beneficial to organize files with github rather than bash?</a></li>
 </ul>
 </li>
 </ul>
@@ -479,7 +456,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="when-do-i-get-an-advantage-from-git-and-bash">
-<h1><span class="section-number">5. </span>When do I get an advantage from git and bash?<a class="headerlink" href="#when-do-i-get-an-advantage-from-git-and-bash" title="Permalink to this headline">#</a></h1>
+<h1>When do I get an advantage from git and bash?<a class="headerlink" href="#when-do-i-get-an-advantage-from-git-and-bash" title="Permalink to this headline">#</a></h1>
 <p>so far we have used git and bash to accomplish familiar goals, and git and bash feel like just extra work for familiar goals.</p>
 <p>Today, we will start to see why git and bash are essential skills: they give you efficiency gains and time traveling super powers (within your work only, sorry)</p>
 <div class="admonition-further-reading admonition">
@@ -491,7 +468,7 @@ document.write(`
 </ul>
 </div>
 <section id="setup">
-<h2><span class="section-number">5.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
 <p>First, we’ll go back to our github inclass folder</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -600,7 +577,7 @@ document.write(`
     merge origin/fun_fact
         </div></section>
 <section id="merging-a-branch-offline">
-<h2><span class="section-number">5.2. </span>Merging a branch offline<a class="headerlink" href="#merging-a-branch-offline" title="Permalink to this headline">#</a></h2>
+<h2>Merging a branch offline<a class="headerlink" href="#merging-a-branch-offline" title="Permalink to this headline">#</a></h2>
 <p>We can merge branches locally, without making a pull request in GitHub.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -688,7 +665,7 @@ document.write(`
 <p>It is ahead by 3 commits now because there were 3 commits on the fun_fact branch.</p>
 </section>
 <section id="organizing-a-project-workign-with-files">
-<h2><span class="section-number">5.3. </span>Organizing a project (workign with files)<a class="headerlink" href="#organizing-a-project-workign-with-files" title="Permalink to this headline">#</a></h2>
+<h2>Organizing a project (workign with files)<a class="headerlink" href="#organizing-a-project-workign-with-files" title="Permalink to this headline">#</a></h2>
 <p>A common question is about how to organize projects.  While our main focus
 in this class session is the <code class="docutils literal notranslate"><span class="pre">bash</span></code> commands to do it, the <em>task</em> that we are
 going to do is to organize a hypothetical python project</p>
@@ -754,7 +731,7 @@ going to do is to organize a hypothetical python project</p>
 </div>
 </section>
 <section id="echo-and-redirects">
-<h2><span class="section-number">5.4. </span>Echo and redirects<a class="headerlink" href="#echo-and-redirects" title="Permalink to this headline">#</a></h2>
+<h2>Echo and redirects<a class="headerlink" href="#echo-and-redirects" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">cat</span></code> concatenates the contents of a file to stdout, which is a special file that our terminal reads</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -824,7 +801,7 @@ going to do is to organize a hypothetical python project</p>
 <p>Now we see the text at the bottom of the file.</p>
 </section>
 <section id="commit-and-add-has-limitations">
-<h2><span class="section-number">5.5. </span>commit and add has limitations<a class="headerlink" href="#commit-and-add-has-limitations" title="Permalink to this headline">#</a></h2>
+<h2>commit and add has limitations<a class="headerlink" href="#commit-and-add-has-limitations" title="Permalink to this headline">#</a></h2>
 <p>Now we have made some changes we want, so let’s commit our changes.</p>
 <p>Last class we saw we can add and commit at the same time</p>
 <div class="cell tag_skip-execution docutils container">
@@ -924,7 +901,7 @@ going to do is to organize a hypothetical python project</p>
 </div>
 </section>
 <section id="redirect-file-modes">
-<h2><span class="section-number">5.6. </span>Redirect file modes<a class="headerlink" href="#redirect-file-modes" title="Permalink to this headline">#</a></h2>
+<h2>Redirect file modes<a class="headerlink" href="#redirect-file-modes" title="Permalink to this headline">#</a></h2>
 <p>Now, let’s go back to thinking about redirects. We saw that with two <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> we appended to the file.  With just <em>one</em> what happens?</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -976,7 +953,7 @@ typically we also have to tell it what <em>mode</em> to open the file with, and 
 </div>
 </section>
 <section id="recovering-from-mistakes-with-git-restore">
-<h2><span class="section-number">5.7. </span>Recovering from mistakes with git restore<a class="headerlink" href="#recovering-from-mistakes-with-git-restore" title="Permalink to this headline">#</a></h2>
+<h2>Recovering from mistakes with git restore<a class="headerlink" href="#recovering-from-mistakes-with-git-restore" title="Permalink to this headline">#</a></h2>
 <p>This would be bad, we lost content, but this is what git is for!</p>
 <p>It is <em>very very</em> easy to undo work since our last commit.</p>
 <p>This is good for times when you have something you have an idea and you do not know if it is going to work, so you make a commit before you try it. Then you can try it out.  If it doesn’t work you can undo and go back to the place where you made the commit.</p>
@@ -1043,7 +1020,7 @@ typically we also have to tell it what <em>mode</em> to open the file with, and 
 <p>Back how we wanted it!</p>
 </section>
 <section id="what-are-these-files">
-<h2><span class="section-number">5.8. </span>What are these files?<a class="headerlink" href="#what-are-these-files" title="Permalink to this headline">#</a></h2>
+<h2>What are these files?<a class="headerlink" href="#what-are-these-files" title="Permalink to this headline">#</a></h2>
 <p>We can use a redirect to add a bunch of text to the README file.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1149,7 +1126,7 @@ We see there are sort of 5 groups of files:</p>
 </div>
 </section>
 <section id="getting-organized">
-<h2><span class="section-number">5.9. </span>Getting organized<a class="headerlink" href="#getting-organized" title="Permalink to this headline">#</a></h2>
+<h2>Getting organized<a class="headerlink" href="#getting-organized" title="Permalink to this headline">#</a></h2>
 <p>Recall, we have just created a bunch of files.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1192,7 +1169,7 @@ We see there are sort of 5 groups of files:</p>
 </div>
 </section>
 <section id="moving-files">
-<h2><span class="section-number">5.10. </span>Moving Files<a class="headerlink" href="#moving-files" title="Permalink to this headline">#</a></h2>
+<h2>Moving Files<a class="headerlink" href="#moving-files" title="Permalink to this headline">#</a></h2>
 <p>next we will move a file there with <code class="docutils literal notranslate"><span class="pre">mv</span></code></p>
 <p>We can see how to use this by getting the error when we do not pass any arguments.</p>
 <div class="cell tag_skip-execution docutils container">
@@ -1208,7 +1185,7 @@ We see there are sort of 5 groups of files:</p>
 </div>
 <p>we get an error message that tells us how to use the command,  it takes two arguments: source and target.</p>
 <section id="help-in-gitbash">
-<h3><span class="section-number">5.10.1. </span>Help in GitBash<a class="headerlink" href="#help-in-gitbash" title="Permalink to this headline">#</a></h3>
+<h3>Help in GitBash<a class="headerlink" href="#help-in-gitbash" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">--</span><span class="n">help</span>
@@ -1224,7 +1201,7 @@ We see there are sort of 5 groups of files:</p>
 <p>This only give a basic version  on mac, but is more on Git Bash</p>
 </section>
 <section id="getting-help-on-nix-systems">
-<h3><span class="section-number">5.10.2. </span>Getting help on *nix systems<a class="headerlink" href="#getting-help-on-nix-systems" title="Permalink to this headline">#</a></h3>
+<h3>Getting help on *nix systems<a class="headerlink" href="#getting-help-on-nix-systems" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">man</span></code> shows the manfile for help for a specific command</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1236,7 +1213,7 @@ We see there are sort of 5 groups of files:</p>
 <p>It opens in a program, then we need to use <code class="docutils literal notranslate"><span class="pre">q</span></code> to exit.</p>
 </section>
 <section id="back-to-moving">
-<h3><span class="section-number">5.10.3. </span>Back to moving.<a class="headerlink" href="#back-to-moving" title="Permalink to this headline">#</a></h3>
+<h3>Back to moving.<a class="headerlink" href="#back-to-moving" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">overview</span><span class="o">.</span><span class="n">md</span> <span class="n">docs</span><span class="o">/</span>
@@ -1274,7 +1251,7 @@ We see there are sort of 5 groups of files:</p>
 </div>
 </section>
 <section id="moving-multiple-files-with-patterns">
-<h3><span class="section-number">5.10.4. </span>Moving multiple files with patterns<a class="headerlink" href="#moving-multiple-files-with-patterns" title="Permalink to this headline">#</a></h3>
+<h3>Moving multiple files with patterns<a class="headerlink" href="#moving-multiple-files-with-patterns" title="Permalink to this headline">#</a></h3>
 <p>let’s look at the list of files again.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1338,7 +1315,7 @@ files that are both for the documentation.</p>
 </section>
 </section>
 <section id="renaming-files">
-<h2><span class="section-number">5.11. </span>Renaming Files<a class="headerlink" href="#renaming-files" title="Permalink to this headline">#</a></h2>
+<h2>Renaming Files<a class="headerlink" href="#renaming-files" title="Permalink to this headline">#</a></h2>
 <p>We see that most of the test files start with <code class="docutils literal notranslate"><span class="pre">test_</span></code> but one starts with
 <code class="docutils literal notranslate"><span class="pre">tests_</span></code>. We could use the pattern <code class="docutils literal notranslate"><span class="pre">test*.py</span></code> to move them all without
 conflicting with the directory <code class="docutils literal notranslate"><span class="pre">tests/</span></code> but we also want consistent names.</p>
@@ -1422,7 +1399,7 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 </div>
 </section>
 <section id="commiting-changes">
-<h2><span class="section-number">5.12. </span>Commiting Changes<a class="headerlink" href="#commiting-changes" title="Permalink to this headline">#</a></h2>
+<h2>Commiting Changes<a class="headerlink" href="#commiting-changes" title="Permalink to this headline">#</a></h2>
 <p>we check where we are</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1545,7 +1522,7 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 </div>
 </section>
 <section id="experience-badge-with-a-file">
-<h2><span class="section-number">5.13. </span>experience badge with a file<a class="headerlink" href="#experience-badge-with-a-file" title="Permalink to this headline">#</a></h2>
+<h2>experience badge with a file<a class="headerlink" href="#experience-badge-with-a-file" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Run the action to create the branch for today’s experience badge</p></li>
 <li><p>Open a PR to propose changes from your prepare work brach <em>to</em> the branch for today’s experience badge</p></li>
@@ -1556,7 +1533,7 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 </ol>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">5.14. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Review your <a class="reference external" href="http://software.md">software.md</a> file from last prepare</p></li>
 <li><p>Review the notes from 2023-09-21</p></li>
@@ -1565,7 +1542,7 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 </ol>
 </section>
 <section id="review-todays-class">
-<h2><span class="section-number">5.15. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <p>badge steps marked <strong>lab</strong> are steps that you will be encouraged to use lab time to work on.</p>
 <ol class="arabic simple">
 <li><p>Update your KWL chart with the new items and any learned items.</p></li>
@@ -1584,7 +1561,7 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 </div>
 </section>
 <section id="more-practice">
-<h2><span class="section-number">5.16. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <p>badge steps marked <strong>lab</strong> are steps that you will be encouraged to use lab time to work on.</p>
 <ol class="arabic simple">
 <li><p>Update your KWL chart with any learned items.</p></li>
@@ -1604,7 +1581,7 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 </div>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">5.17. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>redirect the history to a file</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">&gt;&gt;</span> <span class="n">makeup_2023</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mf">21.</span><span class="n">md</span>
 </pre></div>
@@ -1612,29 +1589,29 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 <p>then move the file created to your KWL repo on your experience report branch.</p>
 </section>
 <section id="questions-after-todays-class">
-<h2><span class="section-number">5.18. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty">
-<h3><span class="section-number">5.18.1. </span>Why does git not see new directories added to the repo while they’re empty?<a class="headerlink" href="#why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty" title="Permalink to this headline">#</a></h3>
+<h3>Why does git not see new directories added to the repo while they’re empty?<a class="headerlink" href="#why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty" title="Permalink to this headline">#</a></h3>
 <p>git only tracks <em>files</em> not directories.  It also makes note of the the path to each file.</p>
 </section>
 <section id="after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that">
-<h3><span class="section-number">5.18.2. </span>After a new directory has new files in it git status only shows the direcrory name but not the files within it. Why is that?<a class="headerlink" href="#after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that" title="Permalink to this headline">#</a></h3>
+<h3>After a new directory has new files in it git status only shows the direcrory name but not the files within it. Why is that?<a class="headerlink" href="#after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that" title="Permalink to this headline">#</a></h3>
 <p>It is saying that there is a file there that is untracked, but leaves it at the directory level to give you the choice to add/ignore the whole directory at once</p>
 </section>
 <section id="if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file">
-<h3><span class="section-number">5.18.3. </span>If possible, is it common to echo a line of code into a programming file?<a class="headerlink" href="#if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file" title="Permalink to this headline">#</a></h3>
+<h3>If possible, is it common to echo a line of code into a programming file?<a class="headerlink" href="#if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file" title="Permalink to this headline">#</a></h3>
 <p>Yes!</p>
 </section>
 <section id="what-other-experience-will-we-have-with-open-source-projects-in-this-class">
-<h3><span class="section-number">5.18.4. </span>What other experience will we have with open source projects in this class?<a class="headerlink" href="#what-other-experience-will-we-have-with-open-source-projects-in-this-class" title="Permalink to this headline">#</a></h3>
+<h3>What other experience will we have with open source projects in this class?<a class="headerlink" href="#what-other-experience-will-we-have-with-open-source-projects-in-this-class" title="Permalink to this headline">#</a></h3>
 <p>We will use mostly open source tools and you can do an explore or build to learn more.</p>
 </section>
 <section id="how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">
-<h3><span class="section-number">5.18.5. </span>How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.<a class="headerlink" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity" title="Permalink to this headline">#</a></h3>
+<h3>How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.<a class="headerlink" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity" title="Permalink to this headline">#</a></h3>
 <p>It fills in for any number of characters.</p>
 </section>
 <section id="i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">
-<h3><span class="section-number">5.18.6. </span>I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.<a class="headerlink" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed" title="Permalink to this headline">#</a></h3>
+<h3>I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.<a class="headerlink" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed" title="Permalink to this headline">#</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Do not merge an unapproved badge</p>
@@ -1642,24 +1619,24 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 <p>Re-request a review</p>
 </section>
 <section id="can-you-close-pull-requests-on-the-terminal">
-<h3><span class="section-number">5.18.7. </span>can you close pull requests on the terminal?<a class="headerlink" href="#can-you-close-pull-requests-on-the-terminal" title="Permalink to this headline">#</a></h3>
+<h3>can you close pull requests on the terminal?<a class="headerlink" href="#can-you-close-pull-requests-on-the-terminal" title="Permalink to this headline">#</a></h3>
 <p>Not with git because pull requests are not a git feature, but it is a feature of github. The <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI can do this.</p>
 </section>
 <section id="if-you-do-mv-will-it-move-all-files">
-<h3><span class="section-number">5.18.8. </span>If you do mv * will it move all files?<a class="headerlink" href="#if-you-do-mv-will-it-move-all-files" title="Permalink to this headline">#</a></h3>
+<h3>If you do mv * will it move all files?<a class="headerlink" href="#if-you-do-mv-will-it-move-all-files" title="Permalink to this headline">#</a></h3>
 <p>In the current working directory.</p>
 </section>
 <section id="are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">
-<h3><span class="section-number">5.18.9. </span>Are there any other ways of using mv that haven’t been covered yet?<a class="headerlink" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet" title="Permalink to this headline">#</a></h3>
+<h3>Are there any other ways of using mv that haven’t been covered yet?<a class="headerlink" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet" title="Permalink to this headline">#</a></h3>
 <p>No those are basically the two purposes.</p>
 </section>
 <section id="how-often-should-we-be-practicing-with-the-terminal-for-git">
-<h3><span class="section-number">5.18.10. </span>how often should we be practicing with the terminal for git?<a class="headerlink" href="#how-often-should-we-be-practicing-with-the-terminal-for-git" title="Permalink to this headline">#</a></h3>
+<h3>how often should we be practicing with the terminal for git?<a class="headerlink" href="#how-often-should-we-be-practicing-with-the-terminal-for-git" title="Permalink to this headline">#</a></h3>
 <p>Ideally, you work on badges on at least several of the days we do not have class so that you are working with it close to every day.</p>
 <p>You could also start trying to use them for your other classes.</p>
 </section>
 <section id="would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">
-<h3><span class="section-number">5.18.11. </span>Would it be beneficial to organize files with github rather than bash?<a class="headerlink" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash" title="Permalink to this headline">#</a></h3>
+<h3>Would it be beneficial to organize files with github rather than bash?<a class="headerlink" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash" title="Permalink to this headline">#</a></h3>
 <p>GitHub cannot organize files and doing do in broswer would be slow and difficult.  We will see that GitHub code spaces give us a virtual machine that we can work with.</p>
 </section>
 </section>
@@ -1696,24 +1673,6 @@ whole project yet, you can use the good conventions to help yourself later.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="2023-09-19.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>How do git branches work?</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="2023-09-26.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>What is a commit?</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -1732,41 +1691,41 @@ whole project yet, you can use the good conventions to help yourself later.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">5.1. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-a-branch-offline">5.2. Merging a branch offline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-a-project-workign-with-files">5.3. Organizing a project (workign with files)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#echo-and-redirects">5.4. Echo and redirects</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-and-add-has-limitations">5.5. commit and add has limitations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redirect-file-modes">5.6. Redirect file modes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-from-mistakes-with-git-restore">5.7. Recovering from mistakes with git restore</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-these-files">5.8. What are these files?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-organized">5.9. Getting organized</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">5.10. Moving Files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-in-gitbash">5.10.1. Help in GitBash</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-on-nix-systems">5.10.2. Getting help on *nix systems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-moving">5.10.3. Back to moving.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-multiple-files-with-patterns">5.10.4. Moving multiple files with patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-a-branch-offline">Merging a branch offline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-a-project-workign-with-files">Organizing a project (workign with files)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#echo-and-redirects">Echo and redirects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-and-add-has-limitations">commit and add has limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redirect-file-modes">Redirect file modes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-from-mistakes-with-git-restore">Recovering from mistakes with git restore</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-these-files">What are these files?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-organized">Getting organized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">Moving Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-in-gitbash">Help in GitBash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-on-nix-systems">Getting help on *nix systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-moving">Back to moving.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-multiple-files-with-patterns">Moving multiple files with patterns</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-files">5.11. Renaming Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commiting-changes">5.12. Commiting Changes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-badge-with-a-file">5.13. experience badge with a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">5.14. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">5.15. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">5.16. More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">5.17. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">5.18. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty">5.18.1. Why does git not see new directories added to the repo while they’re empty?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that">5.18.2. After a new directory has new files in it git status only shows the direcrory name but not the files within it. Why is that?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file">5.18.3. If possible, is it common to echo a line of code into a programming file?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-experience-will-we-have-with-open-source-projects-in-this-class">5.18.4. What other experience will we have with open source projects in this class?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">5.18.5. How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">5.18.6. I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-close-pull-requests-on-the-terminal">5.18.7. can you close pull requests on the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-mv-will-it-move-all-files">5.18.8. If you do mv * will it move all files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">5.18.9. Are there any other ways of using mv that haven’t been covered yet?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-should-we-be-practicing-with-the-terminal-for-git">5.18.10. how often should we be practicing with the terminal for git?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">5.18.11. Would it be beneficial to organize files with github rather than bash?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-files">Renaming Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commiting-changes">Commiting Changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-badge-with-a-file">experience badge with a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-git-not-see-new-directories-added-to-the-repo-while-theyre-empty">Why does git not see new directories added to the repo while they’re empty?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#after-a-new-directory-has-new-files-in-it-git-status-only-shows-the-direcrory-name-but-not-the-files-within-it-why-is-that">After a new directory has new files in it git status only shows the direcrory name but not the files within it. Why is that?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-possible-is-it-common-to-echo-a-line-of-code-into-a-programming-file">If possible, is it common to echo a line of code into a programming file?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-experience-will-we-have-with-open-source-projects-in-this-class">What other experience will we have with open source projects in this class?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-the-be-used-consistently-to-move-a-bunch-of-file-because-we-used-it-with-the-text-infront-of-the-similarity-and-behind-it-im-just-wondering-how-its-used-for-multiple-files-because-it-was-used-both-before-the-similarity-and-after-the-similarity">How can the “*” be used consistently to move a bunch of file? because we used it with the text infront of the similarity and behind it. i’m just wondering how it’s used for multiple files, because it was used both before the similarity and after the similarity.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-some-badges-from-2-weeks-ago-that-are-awaiting-a-second-review-after-changes-had-been-fixed">I have some badges from 2 weeks ago that are awaiting a second review after changes had been fixed.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-close-pull-requests-on-the-terminal">can you close pull requests on the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-mv-will-it-move-all-files">If you do mv * will it move all files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-other-ways-of-using-mv-that-havent-been-covered-yet">Are there any other ways of using mv that haven’t been covered yet?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-should-we-be-practicing-with-the-terminal-for-git">how often should we be practicing with the terminal for git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-beneficial-to-organize-files-with-github-rather-than-bash">Would it be beneficial to organize files with github rather than bash?</a></li>
 </ul>
 </li>
 </ul>
