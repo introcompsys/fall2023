@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Course Logistics and Learning &#8212; Computer Systems and Programming Tools</title>
+    <title>2. Course Logistics and Learning &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-12';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. How do I use git offline?" href="2023-09-14.html" />
+    <link rel="prev" title="1. Welcome, Introduction, and Setup" href="2023-09-07.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -167,6 +169,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-14.html">19. What happens when we run code?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -407,34 +431,34 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-mean-to-study-computer-systems">What does it mean to study Computer Systems?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mental-models-and-learning">Mental Models and Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-for-computer-systems">Why do we need this for computer systems?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-are-designed-by-programmers">Systems are designed by programmers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-matters">Context Matters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-is-relative">Optimal is relative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-mean-to-study-computer-systems">2.1. What does it mean to study Computer Systems?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mental-models-and-learning">2.2. Mental Models and Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-for-computer-systems">2.3. Why do we need this for computer systems?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-are-designed-by-programmers">2.3.1. Systems are designed by programmers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-matters">2.3.2. Context Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-is-relative">2.3.3. Optimal is relative</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-get-organized">Let’s get organized</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal">I wonder why Mac and Linux have built-in terminals but Windows, arguably the most popular OS, does not have a built-in terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-real-questions-maybe-curious-about-downloading-github-files-using-commands">No real questions, maybe curious about downloading github files using commands</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible">I’ve seen this type of material before so I would want to know about from other things I’ve seen would be how to interact with apps (google chrome) and stuff like that if that’s even possible?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept">Will we be piping things in the command line often, or are we mostly getting an introduction to the concept?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-what-reverting-does-to-github">I want to know more about what reverting does to github</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-making-directories-in-a-shell-put-them-in-the-directory-automatically">does making directories in a shell put them in the directory automatically?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else">Are there any benefits to choosing either zsh or bash? Ease of use, compatability, or anything else</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-cd-and-cd-do-the-same-thing">why does cd and cd~ do the same thing?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use">I want to know more about how git is connected and will be applied to github and other tools we use.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-make-up-lectures">how do I make up lectures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-merge-the-add-my-name-to-readme-pull-request">Should I merge the add my name to readme pull request?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-my-lab-was-approved-can-i-merge-the-pull-request">if my lab was approved can i merge the pull request~</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder">in what cases does the terminal file explorer get used as opposed to just navigating the file explorer/finder?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different">I think I’m still just a little confused on badges, and if they’re basically this class’s version of assignments, or something completely different.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-get-organized">2.4. Let’s get organized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">2.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">2.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">2.7. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">2.8. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">2.9. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal">2.9.1. I wonder why Mac and Linux have built-in terminals but Windows, arguably the most popular OS, does not have a built-in terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-real-questions-maybe-curious-about-downloading-github-files-using-commands">2.9.2. No real questions, maybe curious about downloading github files using commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible">2.9.3. I’ve seen this type of material before so I would want to know about from other things I’ve seen would be how to interact with apps (google chrome) and stuff like that if that’s even possible?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept">2.9.4. Will we be piping things in the command line often, or are we mostly getting an introduction to the concept?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-what-reverting-does-to-github">2.9.5. I want to know more about what reverting does to github</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-making-directories-in-a-shell-put-them-in-the-directory-automatically">2.9.6. does making directories in a shell put them in the directory automatically?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else">2.9.7. Are there any benefits to choosing either zsh or bash? Ease of use, compatability, or anything else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-cd-and-cd-do-the-same-thing">2.9.8. why does cd and cd~ do the same thing?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use">2.9.9. I want to know more about how git is connected and will be applied to github and other tools we use.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-make-up-lectures">2.9.10. how do I make up lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-merge-the-add-my-name-to-readme-pull-request">2.9.11. Should I merge the add my name to readme pull request?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-my-lab-was-approved-can-i-merge-the-pull-request">2.9.12. if my lab was approved can i merge the pull request~</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder">2.9.13. in what cases does the terminal file explorer get used as opposed to just navigating the file explorer/finder?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different">2.9.14. I think I’m still just a little confused on badges, and if they’re basically this class’s version of assignments, or something completely different.</a></li>
 </ul>
 </li>
 </ul>
@@ -449,9 +473,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="course-logistics-and-learning">
-<h1>Course Logistics and Learning<a class="headerlink" href="#course-logistics-and-learning" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2. </span>Course Logistics and Learning<a class="headerlink" href="#course-logistics-and-learning" title="Permalink to this headline">#</a></h1>
 <section id="what-does-it-mean-to-study-computer-systems">
-<h2>What does it mean to study Computer Systems?<a class="headerlink" href="#what-does-it-mean-to-study-computer-systems" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1. </span>What does it mean to study Computer Systems?<a class="headerlink" href="#what-does-it-mean-to-study-computer-systems" title="Permalink to this headline">#</a></h2>
 <p><em>“Systems”</em> in computing often refers to all the parts that help make the
 “more exciting” algorithmic parts work. Systems is like the magic that helps
 you get things done in practice, so that you can shift your attention elsewhere.
@@ -484,7 +508,7 @@ that could occur at the systems level.</p>
 <p>We will look at blogs, surveys of developers, and actually examine the systems themselves.</p>
 </section>
 <section id="mental-models-and-learning">
-<h2>Mental Models and Learning<a class="headerlink" href="#mental-models-and-learning" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2. </span>Mental Models and Learning<a class="headerlink" href="#mental-models-and-learning" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>When we know something well, it is easier to do, we can do it multple ways,</p></li>
 <li><p>it is easy to explain to others and we can explain it multiple ways.</p></li>
@@ -499,9 +523,9 @@ that could occur at the systems level.</p>
 <p>Novices have sparse mental models, experts have connected mental models.</p>
 </section>
 <section id="why-do-we-need-this-for-computer-systems">
-<h2>Why do we need this for computer systems?<a class="headerlink" href="#why-do-we-need-this-for-computer-systems" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3. </span>Why do we need this for computer systems?<a class="headerlink" href="#why-do-we-need-this-for-computer-systems" title="Permalink to this headline">#</a></h2>
 <section id="systems-are-designed-by-programmers">
-<h3>Systems are designed by programmers<a class="headerlink" href="#systems-are-designed-by-programmers" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.1. </span>Systems are designed by programmers<a class="headerlink" href="#systems-are-designed-by-programmers" title="Permalink to this headline">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>this section is a little different than what I said in class, but it is still important and related.</p>
@@ -526,13 +550,13 @@ alternatives for, or even where you might invent a whole new thing that is
 better in some way.</p>
 </section>
 <section id="context-matters">
-<h3>Context Matters<a class="headerlink" href="#context-matters" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.2. </span>Context Matters<a class="headerlink" href="#context-matters" title="Permalink to this headline">#</a></h3>
 <p>This context of how things were developed can influence how we understand it.
 We will also talk about the history of computing as we go through different
 topics in class so that we can build that context up.</p>
 </section>
 <section id="optimal-is-relative">
-<h3>Optimal is relative<a class="headerlink" href="#optimal-is-relative" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.3. </span>Optimal is relative<a class="headerlink" href="#optimal-is-relative" title="Permalink to this headline">#</a></h3>
 <p>The “best” way to do something is always relative to the context.  “Best” is a
 vague term.  It could be most computationally efficient theoretically,
 fastest to run on a particular type of hardware, or easiest for another programmer
@@ -546,7 +570,7 @@ different levels of abstraction.</p>
 </section>
 </section>
 <section id="lets-get-organized">
-<h2>Let’s get organized<a class="headerlink" href="#lets-get-organized" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4. </span>Let’s get organized<a class="headerlink" href="#lets-get-organized" title="Permalink to this headline">#</a></h2>
 <p>For class you should have a folder on your computer where you will keep all of your materials.</p>
 <p>Open a terminal window.  I am going to use <code class="docutils literal notranslate"><span class="pre">bash</span></code> commands</p>
 <ul class="simple">
@@ -727,7 +751,7 @@ different levels of abstraction.</p>
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.5. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Find the glossary page for the course website, link it below. Review the terms for the next class: shell, terminal, bash, git, GitHub.</p></li>
 <li><p>Check your kwl repo before class and see if you have recieved feedback, reply or merge accordingly.</p></li>
@@ -736,14 +760,14 @@ different levels of abstraction.</p>
 </ol>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.6. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>review notes after they are posted, both rendered and the raw markdown include links to each in your badge PR</p></li>
 <li><p>map out your computing knowledge and add it to your kwl chart repo. this can be an image that you upload or a text-based outline in a file called <span class="target" id="index-0"></span>prior-knowledge-map. (optional) try mapping out using <a class="reference external" href="https://mermaid-js.github.io/mermaid/#/">mermaid</a> syntax, we’ll be using other tools that will faciltate rendering later</p></li>
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.7. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>review notes after they are posted, both rendered and the raw markdown versions. Include links to both views in your badge PR comment.</p></li>
 <li><p>read Chapter 1, “Decoding your confusion while coding” in <a class="reference external" href="https://www.manning.com/books/the-programmers-brain#toc">The Programmer’s Brain</a> add a file called <span class="target" id="index-1"></span>brain.md to your kwl repo that summarizes your thoughts on the chapter and how, if at all, it changes how you think about debugging and learning to program.</p></li>
@@ -752,37 +776,37 @@ different levels of abstraction.</p>
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.8. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>In office hours, show us that you have a folder to work in for class.</p>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.9. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal">
-<h3>I wonder why Mac and Linux have built-in terminals but Windows, arguably the most popular OS, does not have a built-in terminal?<a class="headerlink" href="#i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.1. </span>I wonder why Mac and Linux have built-in terminals but Windows, arguably the most popular OS, does not have a built-in terminal?<a class="headerlink" href="#i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal" title="Permalink to this headline">#</a></h3>
 <p>It does ahve a built in terminal, it just uses a Windows-only shell, <code class="docutils literal notranslate"><span class="pre">bash</span></code> is the most popular shell to learn, because it is used on unix and linux systems and those are most commonly used for <strong>developers</strong> and code <strong>production</strong> environments where you may only have remote, terminal only access.</p>
 </section>
 <section id="no-real-questions-maybe-curious-about-downloading-github-files-using-commands">
-<h3>No real questions, maybe curious about downloading github files using commands<a class="headerlink" href="#no-real-questions-maybe-curious-about-downloading-github-files-using-commands" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.2. </span>No real questions, maybe curious about downloading github files using commands<a class="headerlink" href="#no-real-questions-maybe-curious-about-downloading-github-files-using-commands" title="Permalink to this headline">#</a></h3>
 <p>that is what we will do Thursday</p>
 </section>
 <section id="ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible">
-<h3>I’ve seen this type of material before so I would want to know about from other things I’ve seen would be how to interact with apps (google chrome) and stuff like that if that’s even possible?<a class="headerlink" href="#ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.3. </span>I’ve seen this type of material before so I would want to know about from other things I’ve seen would be how to interact with apps (google chrome) and stuff like that if that’s even possible?<a class="headerlink" href="#ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible" title="Permalink to this headline">#</a></h3>
 <p>one step of the action that builds the course syllabus pdf launches chromium and prints the syllabus to a pdf.</p>
 </section>
 <section id="will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept">
-<h3>Will we be piping things in the command line often, or are we mostly getting an introduction to the concept?<a class="headerlink" href="#will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.4. </span>Will we be piping things in the command line often, or are we mostly getting an introduction to the concept?<a class="headerlink" href="#will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept" title="Permalink to this headline">#</a></h3>
 <p>we will be workign with the shell A LOT</p>
 </section>
 <section id="i-want-to-know-more-about-what-reverting-does-to-github">
-<h3>I want to know more about what reverting does to github<a class="headerlink" href="#i-want-to-know-more-about-what-reverting-does-to-github" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.5. </span>I want to know more about what reverting does to github<a class="headerlink" href="#i-want-to-know-more-about-what-reverting-does-to-github" title="Permalink to this headline">#</a></h3>
 <p>In a few classes, we will get there!</p>
 </section>
 <section id="does-making-directories-in-a-shell-put-them-in-the-directory-automatically">
-<h3>does making directories in a shell put them in the directory automatically?<a class="headerlink" href="#does-making-directories-in-a-shell-put-them-in-the-directory-automatically" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.6. </span>does making directories in a shell put them in the directory automatically?<a class="headerlink" href="#does-making-directories-in-a-shell-put-them-in-the-directory-automatically" title="Permalink to this headline">#</a></h3>
 <p>it puts them where you say, nothing explicit, is an implicit relative path to your current working directory.</p>
 </section>
 <section id="are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else">
-<h3>Are there any benefits to choosing either zsh or bash? Ease of use, compatability, or anything else<a class="headerlink" href="#are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.7. </span>Are there any benefits to choosing either zsh or bash? Ease of use, compatability, or anything else<a class="headerlink" href="#are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">bash</span></code> is more standard
 <code class="docutils literal notranslate"><span class="pre">zsh</span></code> can do some things a little faster</p>
 <div class="admonition note">
@@ -791,31 +815,31 @@ different levels of abstraction.</p>
 </div>
 </section>
 <section id="why-does-cd-and-cd-do-the-same-thing">
-<h3>why does cd and cd~ do the same thing?<a class="headerlink" href="#why-does-cd-and-cd-do-the-same-thing" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.8. </span>why does cd and cd~ do the same thing?<a class="headerlink" href="#why-does-cd-and-cd-do-the-same-thing" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">~</span></code> is a shortcut for home and so is nothing.</p>
 </section>
 <section id="i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use">
-<h3>I want to know more about how git is connected and will be applied to github and other tools we use.<a class="headerlink" href="#i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.9. </span>I want to know more about how git is connected and will be applied to github and other tools we use.<a class="headerlink" href="#i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use" title="Permalink to this headline">#</a></h3>
 <p>we will do this over the next few classes</p>
 </section>
 <section id="how-do-i-make-up-lectures">
-<h3>how do I make up lectures<a class="headerlink" href="#how-do-i-make-up-lectures" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.10. </span>how do I make up lectures<a class="headerlink" href="#how-do-i-make-up-lectures" title="Permalink to this headline">#</a></h3>
 <p>Read the notes and complete the experience report (makeup) action</p>
 </section>
 <section id="should-i-merge-the-add-my-name-to-readme-pull-request">
-<h3>Should I merge the add my name to readme pull request?<a class="headerlink" href="#should-i-merge-the-add-my-name-to-readme-pull-request" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.11. </span>Should I merge the add my name to readme pull request?<a class="headerlink" href="#should-i-merge-the-add-my-name-to-readme-pull-request" title="Permalink to this headline">#</a></h3>
 <p>yes</p>
 </section>
 <section id="if-my-lab-was-approved-can-i-merge-the-pull-request">
-<h3>if my lab was approved can i merge the pull request~<a class="headerlink" href="#if-my-lab-was-approved-can-i-merge-the-pull-request" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.12. </span>if my lab was approved can i merge the pull request~<a class="headerlink" href="#if-my-lab-was-approved-can-i-merge-the-pull-request" title="Permalink to this headline">#</a></h3>
 <p>yes</p>
 </section>
 <section id="in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder">
-<h3>in what cases does the terminal file explorer get used as opposed to just navigating the file explorer/finder?<a class="headerlink" href="#in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.13. </span>in what cases does the terminal file explorer get used as opposed to just navigating the file explorer/finder?<a class="headerlink" href="#in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder" title="Permalink to this headline">#</a></h3>
 <p>Once you know the terminal, it becomes faster than the GUI.  Also, if you need to programmatically move files, bash allows you to make scripts!</p>
 </section>
 <section id="i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different">
-<h3>I think I’m still just a little confused on badges, and if they’re basically this class’s version of assignments, or something completely different.<a class="headerlink" href="#i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.9.14. </span>I think I’m still just a little confused on badges, and if they’re basically this class’s version of assignments, or something completely different.<a class="headerlink" href="#i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different" title="Permalink to this headline">#</a></h3>
 <p>they’re roughly like assignments, it’s how we track what work you have completed. Not <em>all</em> assigned badges are required though, no matter what grade you want to earn.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
@@ -864,6 +888,24 @@ knowing what they are will help you reading code, and understanding things.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-09-07.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Welcome, Introduction, and Setup</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2023-09-14.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>How do I use git offline?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -882,34 +924,34 @@ knowing what they are will help you reading code, and understanding things.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-mean-to-study-computer-systems">What does it mean to study Computer Systems?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mental-models-and-learning">Mental Models and Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-for-computer-systems">Why do we need this for computer systems?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-are-designed-by-programmers">Systems are designed by programmers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-matters">Context Matters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-is-relative">Optimal is relative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-mean-to-study-computer-systems">2.1. What does it mean to study Computer Systems?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mental-models-and-learning">2.2. Mental Models and Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-for-computer-systems">2.3. Why do we need this for computer systems?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-are-designed-by-programmers">2.3.1. Systems are designed by programmers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-matters">2.3.2. Context Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-is-relative">2.3.3. Optimal is relative</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-get-organized">Let’s get organized</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal">I wonder why Mac and Linux have built-in terminals but Windows, arguably the most popular OS, does not have a built-in terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-real-questions-maybe-curious-about-downloading-github-files-using-commands">No real questions, maybe curious about downloading github files using commands</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible">I’ve seen this type of material before so I would want to know about from other things I’ve seen would be how to interact with apps (google chrome) and stuff like that if that’s even possible?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept">Will we be piping things in the command line often, or are we mostly getting an introduction to the concept?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-what-reverting-does-to-github">I want to know more about what reverting does to github</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-making-directories-in-a-shell-put-them-in-the-directory-automatically">does making directories in a shell put them in the directory automatically?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else">Are there any benefits to choosing either zsh or bash? Ease of use, compatability, or anything else</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-cd-and-cd-do-the-same-thing">why does cd and cd~ do the same thing?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use">I want to know more about how git is connected and will be applied to github and other tools we use.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-make-up-lectures">how do I make up lectures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-merge-the-add-my-name-to-readme-pull-request">Should I merge the add my name to readme pull request?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-my-lab-was-approved-can-i-merge-the-pull-request">if my lab was approved can i merge the pull request~</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder">in what cases does the terminal file explorer get used as opposed to just navigating the file explorer/finder?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different">I think I’m still just a little confused on badges, and if they’re basically this class’s version of assignments, or something completely different.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-get-organized">2.4. Let’s get organized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">2.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">2.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">2.7. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">2.8. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">2.9. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-wonder-why-mac-and-linux-have-built-in-terminals-but-windows-arguably-the-most-popular-os-does-not-have-a-built-in-terminal">2.9.1. I wonder why Mac and Linux have built-in terminals but Windows, arguably the most popular OS, does not have a built-in terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-real-questions-maybe-curious-about-downloading-github-files-using-commands">2.9.2. No real questions, maybe curious about downloading github files using commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ive-seen-this-type-of-material-before-so-i-would-want-to-know-about-from-other-things-ive-seen-would-be-how-to-interact-with-apps-google-chrome-and-stuff-like-that-if-thats-even-possible">2.9.3. I’ve seen this type of material before so I would want to know about from other things I’ve seen would be how to interact with apps (google chrome) and stuff like that if that’s even possible?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-be-piping-things-in-the-command-line-often-or-are-we-mostly-getting-an-introduction-to-the-concept">2.9.4. Will we be piping things in the command line often, or are we mostly getting an introduction to the concept?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-what-reverting-does-to-github">2.9.5. I want to know more about what reverting does to github</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-making-directories-in-a-shell-put-them-in-the-directory-automatically">2.9.6. does making directories in a shell put them in the directory automatically?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-benefits-to-choosing-either-zsh-or-bash-ease-of-use-compatability-or-anything-else">2.9.7. Are there any benefits to choosing either zsh or bash? Ease of use, compatability, or anything else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-cd-and-cd-do-the-same-thing">2.9.8. why does cd and cd~ do the same thing?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-know-more-about-how-git-is-connected-and-will-be-applied-to-github-and-other-tools-we-use">2.9.9. I want to know more about how git is connected and will be applied to github and other tools we use.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-make-up-lectures">2.9.10. how do I make up lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-i-merge-the-add-my-name-to-readme-pull-request">2.9.11. Should I merge the add my name to readme pull request?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-my-lab-was-approved-can-i-merge-the-pull-request">2.9.12. if my lab was approved can i merge the pull request~</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-what-cases-does-the-terminal-file-explorer-get-used-as-opposed-to-just-navigating-the-file-explorer-finder">2.9.13. in what cases does the terminal file explorer get used as opposed to just navigating the file explorer/finder?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-think-im-still-just-a-little-confused-on-badges-and-if-theyre-basically-this-classs-version-of-assignments-or-something-completely-different">2.9.14. I think I’m still just a little confused on badges, and if they’re basically this class’s version of assignments, or something completely different.</a></li>
 </ul>
 </li>
 </ul>

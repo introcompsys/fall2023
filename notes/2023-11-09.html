@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What is an IDE? &#8212; Computer Systems and Programming Tools</title>
+    <title>18. What is an IDE? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-09';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="19. What happens when we run code?" href="2023-11-14.html" />
+    <link rel="prev" title="17. Linking and Object file binary representation" href="2023-11-07.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -167,6 +169,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. What is an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-14.html">19. What happens when we run code?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -407,22 +431,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-your-notes">Review your notes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-person">In person</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-github">On GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-your-notes">18.1. Review your notes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-person">18.1.1. In person</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-github">18.1.2. On GitHub</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">In person</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asynchronous">Asynchronous</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">18.2. Learn more</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">18.2.1. In person</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asynchronous">18.2.2. Asynchronous</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-and-extensions">Features and Extensions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-reports">Experience Reports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-and-extensions">18.3. Features and Extensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-reports">18.4. Experience Reports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">18.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">18.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">18.7. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">18.8. Questions After Today’s Class</a></li>
 </ul>
             </nav>
         </div>
@@ -435,11 +459,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="what-is-an-ide">
-<h1>What is an IDE?<a class="headerlink" href="#what-is-an-ide" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">18. </span>What is an IDE?<a class="headerlink" href="#what-is-an-ide" title="Permalink to this headline">#</a></h1>
 <p>Work through the following on your own or in groups in class.</p>
 <p>If in class, make sure to stop at 1:35 to leave extra time for the experience report, because it is a little longer than the regular in class experience badges.</p>
 <section id="review-your-notes">
-<h2>Review your notes<a class="headerlink" href="#review-your-notes" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.1. </span>Review your notes<a class="headerlink" href="#review-your-notes" title="Permalink to this headline">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Do this before proceeding to the next section.
@@ -451,7 +475,7 @@ The x.y are sections and the x.y.z are subsections.</p>
 <p>Spend 15-20 minutes on this</p>
 </div>
 <section id="in-person">
-<h3>In person<a class="headerlink" href="#in-person" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">18.1.1. </span>In person<a class="headerlink" href="#in-person" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>What different tasks did all of you use an IDE for?</p></li>
 <li><p>What features of an IDE did you all use?</p></li>
@@ -461,12 +485,12 @@ The x.y are sections and the x.y.z are subsections.</p>
 <p>Update your individual IDE notes with 1-2 things you learned from your peers. Include this updated file in your experience report.</p>
 </section>
 <section id="on-github">
-<h3>On GitHub<a class="headerlink" href="#on-github" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">18.1.2. </span>On GitHub<a class="headerlink" href="#on-github" title="Permalink to this headline">#</a></h3>
 <p>There are questions on the <a class="reference external" href="https://github.com/introcompsys/discussion-fa23-community/discussions/14">GitHub Discussion</a>. Update your individual IDE notes in your KWL repo with links to your post and replies.</p>
 </section>
 </section>
 <section id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.2. </span>Learn more<a class="headerlink" href="#learn-more" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This should take the majority of class time.
@@ -479,7 +503,7 @@ Spend 30-40 minutes on this.</p>
 <li><p>Most popular in <a class="reference external" href="https://survey.stackoverflow.co/2022/#most-popular-technologies-new-collab-tools">2022</a></p></li>
 </ul>
 <section id="id1">
-<h3>In person<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">18.2.1. </span>In person<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>In class with your peers you can divide these up and read one and then share key points with others.</p>
 <p>With your group, build a large list of IDE attributes or features that would be important, and make a table of how would you evaluate attribute?  Which ones would you evaluate by just if it exists or not?  Which ones would you evaluate in different degrees, what attributes of them would you evaluate?</p>
 <p>Discuss with your group how you would rank them.  You do not all have to agree on a final ranking, but notice the differences.</p>
@@ -487,14 +511,14 @@ Spend 30-40 minutes on this.</p>
 <p>Have one member of the group summarize  what your group discussed <a class="reference external" href="https://github.com/introcompsys/discussion-fa23-community/discussions/15">on GitHub</a> for your classmates.  Note the ranking, with any disagreements. Include your group members by &#64; mentioning them.</p>
 </section>
 <section id="asynchronous">
-<h3>Asynchronous<a class="headerlink" href="#asynchronous" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">18.2.2. </span>Asynchronous<a class="headerlink" href="#asynchronous" title="Permalink to this headline">#</a></h3>
 <p>After reading the above, also read at least 3 different articles or blog posts about the “best IDE” for your favorite language or for multiple languages.</p>
 <p>Notice what  IDE attributes or features the authors think is important, and how they evaluate each criterion. Which ones are evaluted as present/missing?  Which ones are evaluated in more detail.</p>
 <p>Join the discussion on <a class="reference external" href="https://github.com/introcompsys/discussion-fa23-community/discussions/15">on GitHub</a>  summarizing what you found the most important criteria to be and if you personally agree or not. Link your sources.</p>
 </section>
 </section>
 <section id="features-and-extensions">
-<h2>Features and Extensions<a class="headerlink" href="#features-and-extensions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.3. </span>Features and Extensions<a class="headerlink" href="#features-and-extensions" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Skip this if the above runs over time, otherwise spend a few minutes preparing and then only 2-3 minutes per student demo-ing your feature or extension.</p>
@@ -504,22 +528,22 @@ Spend 30-40 minutes on this.</p>
 <p>Optional: Try using the Air media to demo it.</p>
 </section>
 <section id="experience-reports">
-<h2>Experience Reports<a class="headerlink" href="#experience-reports" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.4. </span>Experience Reports<a class="headerlink" href="#experience-reports" title="Permalink to this headline">#</a></h2>
 <p>For today, whether you are in class or asynchronous use the experience report (makeup) action.  Use ISO date format: YYYY-MM-DD for the workflow input.</p>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.5. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <p>Review the prep from 2023-11-07 or do it if you have not.</p>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.6. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Try a new IDE and make some notes about how it was to learn in <span class="target" id="index-0"></span>newide.md  What is easy? hard?  What could you apply from the ones you already use?  Were there features you had trouble finding?</p></li>
 <li><p>Add at least one comment on others’ posts on the <a class="reference external" href="https://github.com/introcompsys/discussion-fa23-community/discussions/categories/ide-class">GitHub discussions</a> about IDEs.</p></li>
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.7. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <p>The first three tasks are the practice task, Option A and Option B are pre-approved explore badges.  Hover over one of them on your issue to create an independent issue to track it.  Title the new issue <code class="docutils literal notranslate"><span class="pre">Explore:</span> <span class="pre">IDE-X</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is <code class="docutils literal notranslate"><span class="pre">A</span></code> or <code class="docutils literal notranslate"><span class="pre">B</span></code> based on your choice. On the explore badge, when it is ready for submission, request a review from Dr. Brown.</p>
 <ol class="arabic simple">
 <li><p>Examine the IDE you use most and add <span class="target" id="index-1"></span>frequentide.md to your kwl with notes about which features it does/not have based on what you learned in the in-class activity.</p></li>
@@ -531,7 +555,7 @@ The example code can be any language, can be very simple, can even have a bug in
 </ol>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">18.8. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <p>Will be gathered from your experience reports.</p>
 </section>
 </section>
@@ -567,6 +591,24 @@ The example code can be any language, can be very simple, can even have a bug in
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-11-07.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Linking and Object file binary representation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2023-11-14.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>What happens when we run code?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -585,22 +627,22 @@ The example code can be any language, can be very simple, can even have a bug in
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-your-notes">Review your notes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-person">In person</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-github">On GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-your-notes">18.1. Review your notes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-person">18.1.1. In person</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-github">18.1.2. On GitHub</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">In person</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asynchronous">Asynchronous</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">18.2. Learn more</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">18.2.1. In person</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asynchronous">18.2.2. Asynchronous</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-and-extensions">Features and Extensions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-reports">Experience Reports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-and-extensions">18.3. Features and Extensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-reports">18.4. Experience Reports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">18.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">18.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">18.7. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">18.8. Questions After Today’s Class</a></li>
 </ul>
   </nav></div>
 

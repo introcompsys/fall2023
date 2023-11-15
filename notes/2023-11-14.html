@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What happens when we run code? &#8212; Computer Systems and Programming Tools</title>
+    <title>19. What happens when we run code? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-14';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="18. What is an IDE?" href="2023-11-09.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -167,6 +169,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">19. What happens when we run code?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -407,26 +431,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-emulator">Start the emulator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-program">Load a program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-computer-actually-add-constants">How does the computer actually add constants?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-code">High level code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifications-to-try">Modifications to try</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-ideas">Explore ideas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-with-variable-names">Be careful with variable names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-there-be-a-detailed-breakdown-of-todays-class-in-the-notes">Will there be a detailed breakdown of today’s class in the notes?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-this-be-used-for-more-than-just-seeing-how-things-get-stored-in-memory">Can this be used for more than just seeing how things get stored in memory?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-the-roms-hack-files">Why are the roms .hack files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-you-say-is-the-most-complex-operation-a-cpu-can-do">What would you say is the most complex operation a CPU can do?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-process-become-more-complex-with-more-processors">Does the process become more complex with more processors?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-more-that-one-alus-in-modern-cpus-if-so-does-the-number-have-some-relation-to-the-number-of-cpu-cores-or-threads">Are there more that one ALUs in modern CPUs? If so, does the number have some relation to the number of CPU cores or threads?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-cpu-emulator">What is the CPU Emulator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-the-first-two-likes-of-rect-hack-do">what do the first two likes of rect.hack do?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-emulator">19.1. Start the emulator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-program">19.2. Load a program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-computer-actually-add-constants">19.3. How does the computer actually add constants?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-code">19.4. High level code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifications-to-try">19.5. Modifications to try</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-ideas">19.6. Explore ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-with-variable-names">19.7. Be careful with variable names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">19.8. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">19.9. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">19.10. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">19.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">19.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-there-be-a-detailed-breakdown-of-todays-class-in-the-notes">19.12.1. Will there be a detailed breakdown of today’s class in the notes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-this-be-used-for-more-than-just-seeing-how-things-get-stored-in-memory">19.12.2. Can this be used for more than just seeing how things get stored in memory?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-the-roms-hack-files">19.12.3. Why are the roms .hack files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-you-say-is-the-most-complex-operation-a-cpu-can-do">19.12.4. What would you say is the most complex operation a CPU can do?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-process-become-more-complex-with-more-processors">19.12.5. Does the process become more complex with more processors?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-more-that-one-alus-in-modern-cpus-if-so-does-the-number-have-some-relation-to-the-number-of-cpu-cores-or-threads">19.12.6. Are there more that one ALUs in modern CPUs? If so, does the number have some relation to the number of CPU cores or threads?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-cpu-emulator">19.12.7. What is the CPU Emulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-the-first-two-likes-of-rect-hack-do">19.12.8. what do the first two likes of rect.hack do?</a></li>
 </ul>
 </li>
 </ul>
@@ -441,10 +465,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="what-happens-when-we-run-code">
-<h1>What happens when we run code?<a class="headerlink" href="#what-happens-when-we-run-code" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">19. </span>What happens when we run code?<a class="headerlink" href="#what-happens-when-we-run-code" title="Permalink to this headline">#</a></h1>
 <p>Today we are going to use a CPU emulator to see what happens when we run code.  This also lets us start to learn some of the components in a computer in a little bit more detail.</p>
 <section id="start-the-emulator">
-<h2>Start the emulator<a class="headerlink" href="#start-the-emulator" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.1. </span>Start the emulator<a class="headerlink" href="#start-the-emulator" title="Permalink to this headline">#</a></h2>
 <p>For more on how the emulator works see the <a class="reference external" href="https://www.nand2tetris.org/_files/ugd/44046b_24b3a15aa628404fbf6dacd86d7da3af.pdf">CPU Emulator Tutorial</a>.</p>
 <p>For much more detail about how this all works <a class="reference external" href="https://www.nand2tetris.org/_files/ugd/44046b_d70026d8c1424487a451eaba3e372132.pdf">chapter 4</a> of the related text book has description of the machine code and assembly language.</p>
 <div class="sd-tab-set docutils">
@@ -464,7 +488,7 @@ Windows</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="load-a-program">
-<h2>Load a program<a class="headerlink" href="#load-a-program" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.2. </span>Load a program<a class="headerlink" href="#load-a-program" title="Permalink to this headline">#</a></h2>
 <p>We’re going to use the test cases from the book’s project 5:</p>
 <ol class="arabic simple">
 <li><p>File</p></li>
@@ -476,7 +500,7 @@ Windows</label><div class="sd-tab-content docutils">
 <p>We’re not going to <em>do</em> project 5, which is to build a CPU, but instead to use the test.</p>
 </section>
 <section id="how-does-the-computer-actually-add-constants">
-<h2>How does the computer actually add constants?<a class="headerlink" href="#how-does-the-computer-actually-add-constants" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.3. </span>How does the computer actually add constants?<a class="headerlink" href="#how-does-the-computer-actually-add-constants" title="Permalink to this headline">#</a></h2>
 <p>This program adds constants, 2+3.</p>
 <p>It is a program, assembly code that we are loading to the simulator’s ROM, which is memory that gets read only by the CPU.</p>
 <p>The simulator has a few key parts:</p>
@@ -504,7 +528,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ul>
 </section>
 <section id="high-level-code">
-<h2>High level code<a class="headerlink" href="#high-level-code" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.4. </span>High level code<a class="headerlink" href="#high-level-code" title="Permalink to this headline">#</a></h2>
 <p>This code is equivlatent to:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
 </pre></div>
@@ -520,7 +544,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ul>
 </section>
 <section id="modifications-to-try">
-<h2>Modifications to try<a class="headerlink" href="#modifications-to-try" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.5. </span>Modifications to try<a class="headerlink" href="#modifications-to-try" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Change the program to add 3+4</p></li>
 <li><p>Change the program to store the result in memory location 16 instead of 0</p></li>
@@ -528,7 +552,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ul>
 </section>
 <section id="explore-ideas">
-<h2>Explore ideas<a class="headerlink" href="#explore-ideas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.6. </span>Explore ideas<a class="headerlink" href="#explore-ideas" title="Permalink to this headline">#</a></h2>
 <p>Create some experiments in the simulator and write new programs.  Here are some ideas, but you can try anything you are curious about.</p>
 <ul class="simple">
 <li><p>What line do you change to change where it outputs the data?</p></li>
@@ -538,7 +562,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ul>
 </section>
 <section id="be-careful-with-variable-names">
-<h2>Be careful with variable names<a class="headerlink" href="#be-careful-with-variable-names" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.7. </span>Be careful with variable names<a class="headerlink" href="#be-careful-with-variable-names" title="Permalink to this headline">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This was a bit of a tangent, but is a useful to know thing</p>
@@ -586,13 +610,13 @@ Windows</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.8. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Refresh your knowledge of logical operations/ logic gates: and, or, xor, not.  For an example reference <a class="reference external" href="https://lodev.org/logicemu/#id=logic_gates">see the logicemu emulator we will use in class</a></p></li>
 </ol>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.9. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Run and examine how rect.hack and max.hack in the <code class="docutils literal notranslate"><span class="pre">nand2tetris/projects/05/</span></code> folder work. Make notes and answer the questions below in <span class="target" id="index-0"></span>assemblyexplore.md.</p></li>
 </ol>
@@ -603,7 +627,7 @@ Windows</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.10. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Run and examine how rect.hack and max.hack in the <code class="docutils literal notranslate"><span class="pre">nand2tetris/projects/05/</span></code> folder work. Make notes and answer the questions below in <span class="target" id="index-1"></span>assemblyexplore.md.</p></li>
 </ol>
@@ -616,43 +640,43 @@ Windows</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.11. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>Add in your experience report the modifcations to the code as above.</p>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">19.12. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="will-there-be-a-detailed-breakdown-of-todays-class-in-the-notes">
-<h3>Will there be a detailed breakdown of today’s class in the notes?<a class="headerlink" href="#will-there-be-a-detailed-breakdown-of-todays-class-in-the-notes" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">19.12.1. </span>Will there be a detailed breakdown of today’s class in the notes?<a class="headerlink" href="#will-there-be-a-detailed-breakdown-of-todays-class-in-the-notes" title="Permalink to this headline">#</a></h3>
 <p>It’s an overview, but there are links to the textbook chapter for more detail.  If you have a specific question, open an issue and I can add that specific detail here.</p>
 </section>
 <section id="can-this-be-used-for-more-than-just-seeing-how-things-get-stored-in-memory">
-<h3>Can this be used for more than just seeing how things get stored in memory?<a class="headerlink" href="#can-this-be-used-for-more-than-just-seeing-how-things-get-stored-in-memory" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">19.12.2. </span>Can this be used for more than just seeing how things get stored in memory?<a class="headerlink" href="#can-this-be-used-for-more-than-just-seeing-how-things-get-stored-in-memory" title="Permalink to this headline">#</a></h3>
 <p>You can use the emulator for also testing how how this type of assembly code works.</p>
 </section>
 <section id="why-are-the-roms-hack-files">
-<h3>Why are the roms .hack files?<a class="headerlink" href="#why-are-the-roms-hack-files" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">19.12.3. </span>Why are the roms .hack files?<a class="headerlink" href="#why-are-the-roms-hack-files" title="Permalink to this headline">#</a></h3>
 <p>this CPU is a simplified CPU that is just the essentials for the sake of learning.  Hack is the name of the machine language that this CPU uses.</p>
 </section>
 <section id="what-would-you-say-is-the-most-complex-operation-a-cpu-can-do">
-<h3>What would you say is the most complex operation a CPU can do?<a class="headerlink" href="#what-would-you-say-is-the-most-complex-operation-a-cpu-can-do" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">19.12.4. </span>What would you say is the most complex operation a CPU can do?<a class="headerlink" href="#what-would-you-say-is-the-most-complex-operation-a-cpu-can-do" title="Permalink to this headline">#</a></h3>
 <p>This is a hard question.  The CPU does all of the thing sthat our computers do other than the actual display and input.  However, what is the most complex single instruction, is a little bit more clear.</p>
 <p>We can think of complexity in different ways, but I will, for the sake of this answer, say that the largest circuit is th emost complex.  In that case, it is probably multiplication.</p>
 </section>
 <section id="does-the-process-become-more-complex-with-more-processors">
-<h3>Does the process become more complex with more processors?<a class="headerlink" href="#does-the-process-become-more-complex-with-more-processors" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">19.12.5. </span>Does the process become more complex with more processors?<a class="headerlink" href="#does-the-process-become-more-complex-with-more-processors" title="Permalink to this headline">#</a></h3>
 <p>The base is the same, but there are added steps to schedule and assign work to separate processors.</p>
 </section>
 <section id="are-there-more-that-one-alus-in-modern-cpus-if-so-does-the-number-have-some-relation-to-the-number-of-cpu-cores-or-threads">
-<h3>Are there more that one ALUs in modern CPUs? If so, does the number have some relation to the number of CPU cores or threads?<a class="headerlink" href="#are-there-more-that-one-alus-in-modern-cpus-if-so-does-the-number-have-some-relation-to-the-number-of-cpu-cores-or-threads" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">19.12.6. </span>Are there more that one ALUs in modern CPUs? If so, does the number have some relation to the number of CPU cores or threads?<a class="headerlink" href="#are-there-more-that-one-alus-in-modern-cpus-if-so-does-the-number-have-some-relation-to-the-number-of-cpu-cores-or-threads" title="Permalink to this headline">#</a></h3>
 <p>Yes, CPU “cores” are roughly equivalent to ALUs.  Occaionally there are additional ALUs that are used as if they are simpler because of the way mass production and economy of scale works…</p>
 <p>Threads are a software level abstraction.  The number of threads that execute in parallel truly is the one per core, but you can have more threads than cores, and they’ll get scheduled partially in parallel and partially in sequence.</p>
 </section>
 <section id="what-is-the-cpu-emulator">
-<h3>What is the CPU Emulator<a class="headerlink" href="#what-is-the-cpu-emulator" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">19.12.7. </span>What is the CPU Emulator<a class="headerlink" href="#what-is-the-cpu-emulator" title="Permalink to this headline">#</a></h3>
 <p>It is a program that is designed to simulate what happens in a CPU which is the centrl processing unit of a computer.</p>
 </section>
 <section id="what-do-the-first-two-likes-of-rect-hack-do">
-<h3>what do the first two likes of rect.hack do?<a class="headerlink" href="#what-do-the-first-two-likes-of-rect-hack-do" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">19.12.8. </span>what do the first two likes of rect.hack do?<a class="headerlink" href="#what-do-the-first-two-likes-of-rect-hack-do" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">&#64;0</span></code> puts 0 in the address register.  <code class="docutils literal notranslate"><span class="pre">D=M</span></code> loads the value from the memory location indicated in the address register to the D register.  Together this means that it loads the value of the RAM at location 0 to the D register.</p>
 </section>
 </section>
@@ -689,6 +713,24 @@ Windows</label><div class="sd-tab-content docutils">
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-11-09.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>What is an IDE?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -707,26 +749,26 @@ Windows</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-emulator">Start the emulator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-program">Load a program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-computer-actually-add-constants">How does the computer actually add constants?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-code">High level code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifications-to-try">Modifications to try</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-ideas">Explore ideas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-with-variable-names">Be careful with variable names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-there-be-a-detailed-breakdown-of-todays-class-in-the-notes">Will there be a detailed breakdown of today’s class in the notes?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-this-be-used-for-more-than-just-seeing-how-things-get-stored-in-memory">Can this be used for more than just seeing how things get stored in memory?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-the-roms-hack-files">Why are the roms .hack files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-you-say-is-the-most-complex-operation-a-cpu-can-do">What would you say is the most complex operation a CPU can do?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-process-become-more-complex-with-more-processors">Does the process become more complex with more processors?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-more-that-one-alus-in-modern-cpus-if-so-does-the-number-have-some-relation-to-the-number-of-cpu-cores-or-threads">Are there more that one ALUs in modern CPUs? If so, does the number have some relation to the number of CPU cores or threads?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-cpu-emulator">What is the CPU Emulator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-the-first-two-likes-of-rect-hack-do">what do the first two likes of rect.hack do?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-emulator">19.1. Start the emulator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-a-program">19.2. Load a program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-computer-actually-add-constants">19.3. How does the computer actually add constants?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-code">19.4. High level code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifications-to-try">19.5. Modifications to try</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-ideas">19.6. Explore ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-with-variable-names">19.7. Be careful with variable names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">19.8. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">19.9. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">19.10. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">19.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">19.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-there-be-a-detailed-breakdown-of-todays-class-in-the-notes">19.12.1. Will there be a detailed breakdown of today’s class in the notes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-this-be-used-for-more-than-just-seeing-how-things-get-stored-in-memory">19.12.2. Can this be used for more than just seeing how things get stored in memory?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-the-roms-hack-files">19.12.3. Why are the roms .hack files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-you-say-is-the-most-complex-operation-a-cpu-can-do">19.12.4. What would you say is the most complex operation a CPU can do?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-the-process-become-more-complex-with-more-processors">19.12.5. Does the process become more complex with more processors?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-more-that-one-alus-in-modern-cpus-if-so-does-the-number-have-some-relation-to-the-number-of-cpu-cores-or-threads">19.12.6. Are there more that one ALUs in modern CPUs? If so, does the number have some relation to the number of CPU cores or threads?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-cpu-emulator">19.12.7. What is the CPU Emulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-the-first-two-likes-of-rect-hack-do">19.12.8. what do the first two likes of rect.hack do?</a></li>
 </ul>
 </li>
 </ul>

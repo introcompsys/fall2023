@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How do programmers communicate about code? &#8212; Computer Systems and Programming Tools</title>
+    <title>7. How do programmers communicate about code? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-28';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8. What is git?" href="2023-10-03.html" />
+    <link rel="prev" title="6. What is a commit?" href="2023-09-26.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -167,6 +169,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-14.html">19. What happens when we run code?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -407,46 +431,46 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-your-codespace">Closing your Codespace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-and-explore-ideas">Build and Explore Ideas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-documentation">Why Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-documentation">What is documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-documentation-so-important">Why is documentation so important?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-docstring">What is a docstring</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book">Install Jupyter-book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-jupyer-book">Parts of a Jupyer book</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">starting a git repo locally</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">Retiring racist language</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-jupyter-book">Structure of a Jupyter book</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-tools-mean-we-do-not-have-to-write-bibliographies-manually">Dev tools mean we do not have to write bibliographies manually</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-options">Configuration options</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-organization">Content Organization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-book">Building a book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-your-codespace">7.1. Closing your Codespace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-and-explore-ideas">7.2. Build and Explore Ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-documentation">7.3. Why Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-documentation">7.4. What is documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-documentation-so-important">7.5. Why is documentation so important?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-docstring">7.6. What is a docstring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-we-do-it">7.7. So, how do we do it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book">7.8. Install Jupyter-book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-jupyer-book">7.9. Parts of a Jupyer book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">7.9.1. starting a git repo locally</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">7.9.2. Retiring racist language</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-jupyter-book">7.9.3. Structure of a Jupyter book</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-tools-mean-we-do-not-have-to-write-bibliographies-manually">7.9.4. Dev tools mean we do not have to write bibliographies manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-options">7.9.5. Configuration options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-organization">7.9.6. Content Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-book">7.9.7. Building a book</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-built-files">Ignoring Built files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">How do I push a repo that I made locally to GitHub?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python">Why would one experience missing .exe files within their python library, even after reinstalling python?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">Can you create an entire repository with only git?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">What is jupyter used for</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files">Is it possible to edit the Jupyter Book website on a web front site or does it have to be in the files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-their-alternatives-to-jupyterbook-that-have-similar-functionality">Are their alternatives to Jupyterbook that have similar functionality?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-built-files">7.10. Ignoring Built files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">7.11. How do I push a repo that I made locally to GitHub?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">7.12. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">7.13. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">7.14. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">7.15. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">7.16. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python">7.16.1. Why would one experience missing .exe files within their python library, even after reinstalling python?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">7.16.2. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">7.16.3. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">7.16.4. Can you create an entire repository with only git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">7.16.5. What is jupyter used for</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">7.16.6. My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">7.16.7. So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files">7.16.8. Is it possible to edit the Jupyter Book website on a web front site or does it have to be in the files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-their-alternatives-to-jupyterbook-that-have-similar-functionality">7.16.9. Are their alternatives to Jupyterbook that have similar functionality?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.16.10. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.16.11. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-questions-for-explore-badges">Good Questions for Explore Badges</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-platforms-libraries-are-used-to-generate-similar-webpages">What other platforms/libraries are used to generate similar webpages?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-questions-for-explore-badges">7.17. Good Questions for Explore Badges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-platforms-libraries-are-used-to-generate-similar-webpages">7.17.1. What other platforms/libraries are used to generate similar webpages?</a></li>
 </ul>
 </li>
 </ul>
@@ -461,11 +485,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-do-programmers-communicate-about-code">
-<h1>How do programmers communicate about code?<a class="headerlink" href="#how-do-programmers-communicate-about-code" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">7. </span>How do programmers communicate about code?<a class="headerlink" href="#how-do-programmers-communicate-about-code" title="Permalink to this headline">#</a></h1>
 <p>Today we are going to pick up from where we left off talking about the conventional commits.</p>
 <p>That is a core example of the types of detailed communication we do in programming that is embedded into the work.</p>
 <section id="closing-your-codespace">
-<h2>Closing your Codespace<a class="headerlink" href="#closing-your-codespace" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.1. </span>Closing your Codespace<a class="headerlink" href="#closing-your-codespace" title="Permalink to this headline">#</a></h2>
 <p>Use the <a class="reference external" href="https://github.com/codespaces">codespace page</a> to see all of yours.</p>
 <p>Check that your github-inclass repo has no ucnommited changes.  If it does you need to commit them, there are two strategies:</p>
 <ul class="simple">
@@ -474,12 +498,12 @@ document.write(`
 </ul>
 </section>
 <section id="build-and-explore-ideas">
-<h2>Build and Explore Ideas<a class="headerlink" href="#build-and-explore-ideas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.2. </span>Build and Explore Ideas<a class="headerlink" href="#build-and-explore-ideas" title="Permalink to this headline">#</a></h2>
 <p>I am going to put ideas in the <a class="reference external" href="https://github.com/introcompsys/discussion-fa23-community">discussions repo</a></p>
 <p>I violated the instructions a little, but I thought it made the most sense.</p>
 </section>
 <section id="why-documentation">
-<h2>Why Documentation<a class="headerlink" href="#why-documentation" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.3. </span>Why Documentation<a class="headerlink" href="#why-documentation" title="Permalink to this headline">#</a></h2>
 <p>Today we will talk about documentation, there are several reasons this is important:</p>
 <ul class="simple">
 <li><p><strong>using</strong> official documentation is the best way to get better at the tools</p></li>
@@ -509,7 +533,7 @@ document.write(`
 </ul>
 </section>
 <section id="what-is-documentation">
-<h2>What is documentation<a class="headerlink" href="#what-is-documentation" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.4. </span>What is documentation<a class="headerlink" href="#what-is-documentation" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We opened this page and discussed the different types of documentation in the table in class</p>
@@ -519,14 +543,14 @@ document.write(`
 <p>Data Science is only <em>one</em> type of programing, but this is still pretty representative. The main difference is that in this case the “target” users  are often data scientists and more technically skilled than the “target” users of, for example, a social media app. This would mean that user-facing docs would vary.</p>
 </section>
 <section id="why-is-documentation-so-important">
-<h2>Why is documentation so important?<a class="headerlink" href="#why-is-documentation-so-important" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.5. </span>Why is documentation so important?<a class="headerlink" href="#why-is-documentation-so-important" title="Permalink to this headline">#</a></h2>
 <p>we should probably spend more time on it</p>
 <p><img alt="differenc ein time spent vs should" src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs10606-018-9333-1/MediaObjects/10606_2018_9333_Fig4_HTML.png?as=webp" /></p>
 <p><a class="reference external" href="https://link.springer.com/article/10.1007/s10606-018-9333-1/figures/4">via</a>
 <a class="reference external" href="https://bids.berkeley.edu/news/most-developers-think-we-should-spend-more-time-documentation">source</a></p>
 </section>
 <section id="what-is-a-docstring">
-<h2>What is a docstring<a class="headerlink" href="#what-is-a-docstring" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.6. </span>What is a docstring<a class="headerlink" href="#what-is-a-docstring" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
@@ -552,13 +576,13 @@ document.write(`
 </div>
 </section>
 <section id="so-how-do-we-do-it">
-<h2>So, how do we do it?<a class="headerlink" href="#so-how-do-we-do-it" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.7. </span>So, how do we do it?<a class="headerlink" href="#so-how-do-we-do-it" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://docathon.github.io/docathon/pages/resources.html#documentation-tools">Documenation Tools</a></p>
 <p><a class="reference external" href="https://www.writethedocs.org/">write the docs</a></p>
 <p><a class="reference external" href="https://lwn.net/Articles/705224/">linux kernel uses sphinx</a> and here is <a class="reference external" href="https://lwn.net/Articles/692704/">why</a> and <a class="reference external" href="https://lwn.net/Articles/692705/">how it works</a></p>
 </section>
 <section id="install-jupyter-book">
-<h2>Install Jupyter-book<a class="headerlink" href="#install-jupyter-book" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.8. </span>Install Jupyter-book<a class="headerlink" href="#install-jupyter-book" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://jupyterbook.org/intro.html">Jupyterbook</a> wraps sphinx and uses markdown instead of restructured text. The project authors <a class="reference external" href="https://jupyterbook.org/en/stable/explain/sphinx.html">note in the documenation</a> that it “can be thought of as an <em>opinionated distribution of Sphinx</em>”. We’re going to use this, so that we can use most of the power of sphinx without having to learn ReStructured Text which is more complex than markdown syntax.</p>
 <p><a class="reference external" href="https://jupyterbook.org/en/stable/start/overview.html#install-jupyter-book">install jupyterbook</a> on Mac or linux those instructions will work on your regular terminal, if you have python installed. On Windows those instructions will work in the Anaconda prompt or any other terminal that is set up with python. If these steps do not make sense see the <a class="reference external" href="https://introcompsys.github.io/spring2023/syllabus/tools.html#recommendation">recommendations</a> in the syllabus for more instructions including videos of the Python install process in both Mac and Windows.</p>
 <div class="cell tag_skip-execution docutils container">
@@ -616,7 +640,7 @@ document.write(`
 </div>
 </section>
 <section id="parts-of-a-jupyer-book">
-<h2>Parts of a Jupyer book<a class="headerlink" href="#parts-of-a-jupyer-book" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.9. </span>Parts of a Jupyer book<a class="headerlink" href="#parts-of-a-jupyer-book" title="Permalink to this headline">#</a></h2>
 <p>First we go in the directory:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -639,7 +663,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="starting-a-git-repo-locally">
-<h3>starting a git repo locally<a class="headerlink" href="#starting-a-git-repo-locally" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.9.1. </span>starting a git repo locally<a class="headerlink" href="#starting-a-git-repo-locally" title="Permalink to this headline">#</a></h3>
 <p>Before we work with the files, let’s commit the current version</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -690,7 +714,7 @@ document.write(`
 <p>Here we are faced with a social aspect of computing that is <em>also</em> a good reminder about how git actually works</p>
 </section>
 <section id="retiring-racist-language">
-<span id="nomaster"></span><h3>Retiring racist language<a class="headerlink" href="#retiring-racist-language" title="Permalink to this headline">#</a></h3>
+<span id="nomaster"></span><h3><span class="section-number">7.9.2. </span>Retiring racist language<a class="headerlink" href="#retiring-racist-language" title="Permalink to this headline">#</a></h3>
 <p>Historically the default branch was called master.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html">derived from a master/slave analogy</a> which is not even how git works, but was adopted terminology from other projects</p></li>
@@ -798,7 +822,7 @@ this is added to a <a class="reference internal" href="../resources/windows.html
 </div>
 </section>
 <section id="structure-of-a-jupyter-book">
-<h3>Structure of a Jupyter book<a class="headerlink" href="#structure-of-a-jupyter-book" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.9.3. </span>Structure of a Jupyter book<a class="headerlink" href="#structure-of-a-jupyter-book" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
@@ -822,12 +846,12 @@ this is added to a <a class="reference internal" href="../resources/windows.html
 <p>the extention (<code class="docutils literal notranslate"><span class="pre">.yml</span></code>) is <a class="reference external" href="https://yaml.org/">yaml</a>, which stands for “YAML Ain’t Markup Language”. It consists of key, value pairs and is deigned to be a human-friendly way to encode data for use in any programming language.</p>
 </section>
 <section id="dev-tools-mean-we-do-not-have-to-write-bibliographies-manually">
-<h3>Dev tools mean we do not have to write bibliographies manually<a class="headerlink" href="#dev-tools-mean-we-do-not-have-to-write-bibliographies-manually" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.9.4. </span>Dev tools mean we do not have to write bibliographies manually<a class="headerlink" href="#dev-tools-mean-we-do-not-have-to-write-bibliographies-manually" title="Permalink to this headline">#</a></h3>
 <p>bibliographies are generated with <a class="reference external" href="http://www.bibtex.org/">bibtex</a> which takes structured information from the references in a <a class="reference external" href="http://www.bibtex.org/Format/">bibtex file</a> with help from <a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/en/latest/">sphinxcontrib-bibtex</a></p>
 <p>For general reference, reference managers like <a class="reference external" href="https://www.zotero.org/">zotero</a> and <a class="reference external" href="https://www.mendeley.com/">mendeley</a> can track all of your sources and output the references in bibtex format that you can use anywhere or sync with tools like MS Word or Google Docs.</p>
 </section>
 <section id="configuration-options">
-<h3>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.9.5. </span>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">#</a></h3>
 <p>The config file template is pretty complete, including the URL of the webpage with all of the detailed setting options.</p>
 <p>The configuration file, tells jupyter-book basic iformation about the book, it provides all of the settings that jupyterbook and sphinx need to render the content as whatever output format we want.</p>
 <div class="cell tag_skip-execution docutils container">
@@ -873,7 +897,7 @@ this is added to a <a class="reference internal" href="../resources/windows.html
 </div>
 </section>
 <section id="content-organization">
-<h3>Content Organization<a class="headerlink" href="#content-organization" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.9.6. </span>Content Organization<a class="headerlink" href="#content-organization" title="Permalink to this headline">#</a></h3>
 <p>The table of contents file describe how to put the other files in order.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -895,7 +919,7 @@ this is added to a <a class="reference internal" href="../resources/windows.html
 </div>
 </section>
 <section id="building-a-book">
-<h3>Building a book<a class="headerlink" href="#building-a-book" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.9.7. </span>Building a book<a class="headerlink" href="#building-a-book" title="Permalink to this headline">#</a></h3>
 <p>We can transform from raw source to an output by <strong>building</strong> the book</p>
 <p>Building is transforming from input to output format.  In this case from markdown, yaml, and notebook files into HTML.</p>
 <p>We will see later that building is also what we refer to the whole process from source code to executable.</p>
@@ -1022,7 +1046,7 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
 </section>
 </section>
 <section id="ignoring-built-files">
-<h2>Ignoring Built files<a class="headerlink" href="#ignoring-built-files" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.10. </span>Ignoring Built files<a class="headerlink" href="#ignoring-built-files" title="Permalink to this headline">#</a></h2>
 <p>The built site files are compeltey redundant, content wise, to the original markdown files.</p>
 <p>We do not want to keep track of changes for the built files since they are generated from the source files. It’s redundant and makes it less clear where someone should update content.</p>
 <div class="cell tag_skip-execution docutils container">
@@ -1110,7 +1134,7 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
 <p>What it does is, when git goes to add, it skips any specific files that match both the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;path&gt;</span></code> AND any of the paths listed in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
 </section>
 <section id="how-do-i-push-a-repo-that-i-made-locally-to-github">
-<h2>How do I push a repo that I made locally to GitHub?<a class="headerlink" href="#how-do-i-push-a-repo-that-i-made-locally-to-github" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.11. </span>How do I push a repo that I made locally to GitHub?<a class="headerlink" href="#how-do-i-push-a-repo-that-i-made-locally-to-github" title="Permalink to this headline">#</a></h2>
 <p>Right now, we do not have any remotes</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -1190,78 +1214,78 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.12. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Follow up on your grade plan PR and self reflection that you complete in lab</p></li>
 </ol>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.13. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Review the notes, <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">jupyterbook docs</a>, and experiment with the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CLI to determine what files are required to make <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code> run. Make your kwl repo into a jupyter book. Set it so that the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory is not under version control.</p></li>
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">docs.md</span></code> to your KWL repo and explain the most important things to know about documentation in your own words using other programming concepts you have learned so far.  Include in a markdown (same as HTML <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">comment</span> <span class="pre">--&gt;</span></code> ) comment the list of CSC courses you have taken for context while we give you feedback.</p></li>
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.14. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Review the notes, <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">jupyterbook docs</a>, and experiment with the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CLI to determine what files are required to make <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code> run. Make your kwl repo into a jupyter book. Set it so that the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory is not under version control.</p></li>
 <li><p>Learn about the documentation ecosystem in another language that you know using at least one official source and additional sources as you find helpful. In <code class="docutils literal notranslate"><span class="pre">docs.md</span></code> include a summary of your findings and compare and contrast it to jupyter book/sphinx.  Include a <a class="reference external" href="https://jupyterbook.org/en/stable/content/citations.html">bibtex based bibliography</a> of the sources you used. You can use <a class="reference external" href="https://url-to-bibtex.vercel.app/">this generator</a> for informal sources and <a class="reference external" href="https://digitalmeasures.oregonstate.edu/training/export-bibtex-google-scholar">google scholar</a> for formal sources.</p></li>
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.15. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>Tiny book repo should exist. Append your terminal output or this repo’s git log  to your experience report.</p>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.16. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python">
-<h3>Why would one experience missing .exe files within their python library, even after reinstalling python?<a class="headerlink" href="#why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.1. </span>Why would one experience missing .exe files within their python library, even after reinstalling python?<a class="headerlink" href="#why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python" title="Permalink to this headline">#</a></h3>
 <p>it is probably a missing path</p>
 </section>
 <section id="if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">
-<h3>If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?<a class="headerlink" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.2. </span>If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?<a class="headerlink" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore" title="Permalink to this headline">#</a></h3>
 <p>To track the files in the build directory you would need to delete it from the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p>
 <p>Also, of note, git does not track folders, it tracks files, but listing folder paths can help</p>
 </section>
 <section id="will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">
-<h3>Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?<a class="headerlink" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.3. </span>Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?<a class="headerlink" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax" title="Permalink to this headline">#</a></h3>
 <p>Default it works with Python, but the <a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/describing-code.html#other-languages-c-c-others">sphinx docs</a> describe how to work with other languages. The jupyter book docs include a page on how <a class="reference external" href="https://jupyterbook.org/en/stable/explain/sphinx.html">sphinx and jupyter-book</a> are related and a <a class="reference external" href="https://jupyterbook.org/en/stable/advanced/sphinx.html">page on how to use other sphinx features in a jupyter book</a>.</p>
 <p>Jupyter notebooks also have <a class="reference external" href="https://docs.jupyter.org/en/latest/projects/kernels.html">alternative kernels</a> so notebook styled pages can be written in these languages as well.</p>
 </section>
 <section id="can-you-create-an-entire-repository-with-only-git">
-<h3>Can you create an entire repository with only git?<a class="headerlink" href="#can-you-create-an-entire-repository-with-only-git" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.4. </span>Can you create an entire repository with only git?<a class="headerlink" href="#can-you-create-an-entire-repository-with-only-git" title="Permalink to this headline">#</a></h3>
 <p>By definition git is what makes a git repository.</p>
 </section>
 <section id="what-is-jupyter-used-for">
-<h3>What is jupyter used for<a class="headerlink" href="#what-is-jupyter-used-for" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.5. </span>What is jupyter used for<a class="headerlink" href="#what-is-jupyter-used-for" title="Permalink to this headline">#</a></h3>
 <p>Jupyter is a large software project designed to support computational sciences.</p>
 <p>it includes the notebook file format specification, the lab interface for working with them, the hub for hosting it on a server.</p>
 <p>Jupyter-book is a separate, but related, project that is highly compatible.</p>
 </section>
 <section id="my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">
-<h3>My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.<a class="headerlink" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.6. </span>My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.<a class="headerlink" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen" title="Permalink to this headline">#</a></h3>
 <p>This sounds like you may have copied the ssh url to the remote instead of the https version?</p>
 </section>
 <section id="so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">
-<h3>So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?<a class="headerlink" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.7. </span>So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?<a class="headerlink" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia" title="Permalink to this headline">#</a></h3>
 <p>Python things do not work in GitBash by default, but do work in Anaconda Prompt, where git operations do not work. You may need to use two terminals, but should be able to do everything you need.</p>
 </section>
 <section id="is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files">
-<h3>Is it possible to edit the Jupyter Book website on a web front site or does it have to be in the files?<a class="headerlink" href="#is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.8. </span>Is it possible to edit the Jupyter Book website on a web front site or does it have to be in the files?<a class="headerlink" href="#is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files" title="Permalink to this headline">#</a></h3>
 <p>You have to edit the source files not the built ones to keep the changes.</p>
 <p>You can however, add custom HTML and/or CSS.</p>
 </section>
 <section id="are-their-alternatives-to-jupyterbook-that-have-similar-functionality">
-<h3>Are their alternatives to Jupyterbook that have similar functionality?<a class="headerlink" href="#are-their-alternatives-to-jupyterbook-that-have-similar-functionality" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.9. </span>Are their alternatives to Jupyterbook that have similar functionality?<a class="headerlink" href="#are-their-alternatives-to-jupyterbook-that-have-similar-functionality" title="Permalink to this headline">#</a></h3>
 <p>Yes, this is the practice badge.</p>
 </section>
 <section id="id1">
-<h3>If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.10. </span>If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>It has to not be in .gitignore to be tracked.</p>
 </section>
 <section id="id2">
-<h3>Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.16.11. </span>Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>By default it looks for Python, but you can configure it to work with other languages.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -1270,9 +1294,9 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
 </section>
 </section>
 <section id="good-questions-for-explore-badges">
-<h2>Good Questions for Explore Badges<a class="headerlink" href="#good-questions-for-explore-badges" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.17. </span>Good Questions for Explore Badges<a class="headerlink" href="#good-questions-for-explore-badges" title="Permalink to this headline">#</a></h2>
 <section id="what-other-platforms-libraries-are-used-to-generate-similar-webpages">
-<h3>What other platforms/libraries are used to generate similar webpages?<a class="headerlink" href="#what-other-platforms-libraries-are-used-to-generate-similar-webpages" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.17.1. </span>What other platforms/libraries are used to generate similar webpages?<a class="headerlink" href="#what-other-platforms-libraries-are-used-to-generate-similar-webpages" title="Permalink to this headline">#</a></h3>
 <p>Learning about the landscape of static site generators is a great topic.</p>
 </section>
 </section>
@@ -1309,6 +1333,24 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-09-26.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>What is a commit?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2023-10-03.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>What <em>is</em> git?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1327,46 +1369,46 @@ build <a class="reference external" href="https://www.sphinx-doc.org/en/master/d
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-your-codespace">Closing your Codespace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-and-explore-ideas">Build and Explore Ideas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-documentation">Why Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-documentation">What is documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-documentation-so-important">Why is documentation so important?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-docstring">What is a docstring</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book">Install Jupyter-book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-jupyer-book">Parts of a Jupyer book</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">starting a git repo locally</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">Retiring racist language</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-jupyter-book">Structure of a Jupyter book</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-tools-mean-we-do-not-have-to-write-bibliographies-manually">Dev tools mean we do not have to write bibliographies manually</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-options">Configuration options</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-organization">Content Organization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-book">Building a book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-your-codespace">7.1. Closing your Codespace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-and-explore-ideas">7.2. Build and Explore Ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-documentation">7.3. Why Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-documentation">7.4. What is documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-documentation-so-important">7.5. Why is documentation so important?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-docstring">7.6. What is a docstring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-we-do-it">7.7. So, how do we do it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book">7.8. Install Jupyter-book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-jupyer-book">7.9. Parts of a Jupyer book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">7.9.1. starting a git repo locally</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">7.9.2. Retiring racist language</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-jupyter-book">7.9.3. Structure of a Jupyter book</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-tools-mean-we-do-not-have-to-write-bibliographies-manually">7.9.4. Dev tools mean we do not have to write bibliographies manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-options">7.9.5. Configuration options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-organization">7.9.6. Content Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-book">7.9.7. Building a book</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-built-files">Ignoring Built files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">How do I push a repo that I made locally to GitHub?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python">Why would one experience missing .exe files within their python library, even after reinstalling python?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">Can you create an entire repository with only git?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">What is jupyter used for</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files">Is it possible to edit the Jupyter Book website on a web front site or does it have to be in the files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-their-alternatives-to-jupyterbook-that-have-similar-functionality">Are their alternatives to Jupyterbook that have similar functionality?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-built-files">7.10. Ignoring Built files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">7.11. How do I push a repo that I made locally to GitHub?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">7.12. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">7.13. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">7.14. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">7.15. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">7.16. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-one-experience-missing-exe-files-within-their-python-library-even-after-reinstalling-python">7.16.1. Why would one experience missing .exe files within their python library, even after reinstalling python?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-i-want-to-track-the-build-file-will-it-automatically-be-tracked-now-or-do-i-have-to-remove-it-from-gitignore">7.16.2. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-jupyter-book-look-for-a-universal-syntax-for-documentation-or-will-it-look-for-a-language-dependent-syntax">7.16.3. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-create-an-entire-repository-with-only-git">7.16.4. Can you create an entire repository with only git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyter-used-for">7.16.5. What is jupyter used for</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-related-to-hooking-up-to-remote-it-might-be-irrelavent-now-but-could-be-a-learning-experience-i-had-trouble-setting-up-my-xcode-local-git-repo-with-github-it-kept-giving-an-error-about-needing-a-ssh-eventually-i-got-it-working-using-some-tutorials-online-but-im-wondering-what-would-have-made-that-happen">7.16.6. My question is related to hooking up to remote. It might be irrelavent now but could be a learning experience, I had trouble setting up my xcode local git repo with github, it kept giving an error about needing a ssh, eventually I got it working using some tutorials online but I’m wondering what would have made that happen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-pip3-install-jupyter-book-ended-up-not-working-up-on-git-bash-so-i-had-to-install-anaconda-navigator-now-i-am-using-the-powershell-prompt-there-should-i-expect-massive-differences-even-though-i-managed-to-catch-up-via-the-commands-you-posted-in-prismia">7.16.7. So pip3 install jupyter-book ended up not working up on Git Bash so I had to install Anaconda.Navigator. Now I am using the powershell prompt there. Should I expect massive differences even though I managed to catch up via the commands you posted in Prismia?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-edit-the-jupyter-book-website-on-a-web-front-site-or-does-it-have-to-be-in-the-files">7.16.8. Is it possible to edit the Jupyter Book website on a web front site or does it have to be in the files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-their-alternatives-to-jupyterbook-that-have-similar-functionality">7.16.9. Are their alternatives to Jupyterbook that have similar functionality?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.16.10. If I want to track the _build file will it automatically be tracked now or do I have to remove it from gitignore?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.16.11. Will jupyter book look for a universal syntax for documentation or will it look for a language dependent syntax?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-questions-for-explore-badges">Good Questions for Explore Badges</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-platforms-libraries-are-used-to-generate-similar-webpages">What other platforms/libraries are used to generate similar webpages?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-questions-for-explore-badges">7.17. Good Questions for Explore Badges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-platforms-libraries-are-used-to-generate-similar-webpages">7.17.1. What other platforms/libraries are used to generate similar webpages?</a></li>
 </ul>
 </li>
 </ul>

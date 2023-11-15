@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How do git branches work? &#8212; Computer Systems and Programming Tools</title>
+    <title>4. How do git branches work? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-09-19';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. When do I get an advantage from git and bash?" href="2023-09-21.html" />
+    <link rel="prev" title="3. How do I use git offline?" href="2023-09-14.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -167,6 +169,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-17.html">11. What is a commit number?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-14.html">19. What happens when we run code?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -407,24 +431,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">Review</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-do-not-sync-automatically">Branches do not sync automatically</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-will-downlaod-and-update">Pull will downlaod and update</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-branch-locally">making a new branch locally</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-conflicts">Merge conflicts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems">How would you fix a merge conflict involving other people trying to commit on other systems?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on">are there situations where if you accidently make another branch, that you can merge it can into the one you wanted to be working on?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases">could you fix a merge conflict in github rather than in the local terminal in some cases?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-does-the-rebase-command-do">What exactly does the rebase command do?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-point-does-using-git-locally-give">What point does using git locally give?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-were-some-of-my-command-prompts-different-from-yours">Why were some of my command prompts different from yours?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal">What website do you find the most useful to resolve issues relating to git within the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github">Would it be reasonable to never use the local Terminal and just always use github?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">4.1. Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-do-not-sync-automatically">4.2. Branches do not sync automatically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-will-downlaod-and-update">4.3. Pull will downlaod and update</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-branch-locally">4.4. making a new branch locally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-conflicts">4.5. Merge conflicts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">4.6. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">4.7. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">4.8. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">4.9. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">4.10. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems">4.10.1. How would you fix a merge conflict involving other people trying to commit on other systems?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on">4.10.2. are there situations where if you accidently make another branch, that you can merge it can into the one you wanted to be working on?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases">4.10.3. could you fix a merge conflict in github rather than in the local terminal in some cases?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-does-the-rebase-command-do">4.10.4. What exactly does the rebase command do?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-point-does-using-git-locally-give">4.10.5. What point does using git locally give?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-were-some-of-my-command-prompts-different-from-yours">4.10.6. Why were some of my command prompts different from yours?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal">4.10.7. What website do you find the most useful to resolve issues relating to git within the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github">4.10.8. Would it be reasonable to never use the local Terminal and just always use github?</a></li>
 </ul>
 </li>
 </ul>
@@ -439,9 +463,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-do-git-branches-work">
-<h1>How do git branches work?<a class="headerlink" href="#how-do-git-branches-work" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">4. </span>How do git branches work?<a class="headerlink" href="#how-do-git-branches-work" title="Permalink to this headline">#</a></h1>
 <section id="review">
-<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">#</a></h2>
 <p>Recall, We can move around and examine the computer’s file structure using shell commands.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -490,7 +514,7 @@ document.write(`
 <p>this is as we left off.</p>
 </section>
 <section id="branches-do-not-sync-automatically">
-<h2>Branches do not sync automatically<a class="headerlink" href="#branches-do-not-sync-automatically" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.2. </span>Branches do not sync automatically<a class="headerlink" href="#branches-do-not-sync-automatically" title="Permalink to this headline">#</a></h2>
 <p>Now we will look in GitHub and see what is there.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -619,7 +643,7 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <p>Merge the PR and then the issue closes.</p>
 </section>
 <section id="pull-will-downlaod-and-update">
-<h2>Pull will downlaod and update<a class="headerlink" href="#pull-will-downlaod-and-update" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.3. </span>Pull will downlaod and update<a class="headerlink" href="#pull-will-downlaod-and-update" title="Permalink to this headline">#</a></h2>
 <p>We will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> again now all at once, this will do the work that fetch did before and the checkout.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -719,7 +743,7 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 </div>
 </section>
 <section id="making-a-new-branch-locally">
-<h2>making a new branch locally<a class="headerlink" href="#making-a-new-branch-locally" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.4. </span>making a new branch locally<a class="headerlink" href="#making-a-new-branch-locally" title="Permalink to this headline">#</a></h2>
 <p>We’ve used <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to switch branchs before.  To also create a branch at the same time, we use the <code class="docutils literal notranslate"><span class="pre">-b</span></code> option.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
@@ -968,7 +992,7 @@ It does not work at first because this branch does not have a remote.</p>
 <p>This time the returned message from the remote includes the link to the page to make a PR. We are not goign to make the PR though</p>
 </section>
 <section id="merge-conflicts">
-<h2>Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.5. </span>Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Permalink to this headline">#</a></h2>
 <p>First, in your browser edit the <a class="reference external" href="http://about.md">about.md</a> file to have a second fun fact.</p>
 <p>Then edit it locally to also have 2 fun facts.</p>
 <div class="cell tag_skip-execution docutils container">
@@ -1217,7 +1241,7 @@ It does not work at first because this branch does not have a remote.</p>
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.6. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Read the notes from 2023-09-19 carefully</p></li>
 <li><p>Examine an open source project on GitHub.  Answer the reflection questions below in <code class="docutils literal notranslate"><span class="pre">software.md</span></code> in your kwl repo on a branch that is linked to this issue.  You do not need to make the PR, we will work with this in class on 2023-09-21.</p></li>
@@ -1246,14 +1270,14 @@ It does not work at first because this branch does not have a remote.</p>
 </ul>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.7. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Create a merge conflict in your github in class repo and resolve it using your favorite IDE,. Describe how you created it, show the files, and describe how your IDE helps or does not help in <span class="target" id="index-0"></span>ide_merge_conflict.md. Give advice for when you think someone should resolve a merge conflict manually vs using an IDE. (if you do not regulary use an, IDE, try VSCode)</p></li>
 <li><p>Read more details about <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">git branches</a>(you can also use other resources) add <code class="docutils literal notranslate"><span class="pre">branches.md</span></code> to your KWL repo and describe how branches work, in your own words. Include one question you have about branches or one scenario you think they could help you with.</p></li>
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.8. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Create a merge conflict in your github in class repo and resolve it using your favorite IDE, then create one and resolve it on GitHub in browser(this requires the merge conflict to occur on a PR). Describe how you created it, show the files, and describe how your IDE helps or does not help in <span class="target" id="index-1"></span>ide_merge_conflict.md. Give advice for when you think someone should resolve a merge conflict in GitHub vs using an IDE. (if you do not regulary use an, IDE, try VSCode)</p></li>
 <li><p>Learn about <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks">GitHub forks</a> and more about <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">git branches</a>(you can also use other resources)</p></li>
@@ -1261,7 +1285,7 @@ It does not work at first because this branch does not have a remote.</p>
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.9. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>this is for if you miss class and need to make it up</p>
@@ -1269,38 +1293,38 @@ It does not work at first because this branch does not have a remote.</p>
 <p>run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">&gt;&gt;</span> <span class="pre">inclass2023-09-19.md</span></code> and then copy that new file into your KWL repo on the branch for your experience report</p>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.10. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems">
-<h3>How would you fix a merge conflict involving other people trying to commit on other systems?<a class="headerlink" href="#how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.10.1. </span>How would you fix a merge conflict involving other people trying to commit on other systems?<a class="headerlink" href="#how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems" title="Permalink to this headline">#</a></h3>
 <p>The same way we did in class.</p>
 </section>
 <section id="are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on">
-<h3>are there situations where if you accidently make another branch, that you can merge it can into the one you wanted to be working on?<a class="headerlink" href="#are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.10.2. </span>are there situations where if you accidently make another branch, that you can merge it can into the one you wanted to be working on?<a class="headerlink" href="#are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on" title="Permalink to this headline">#</a></h3>
 <p>yes, exactly!</p>
 </section>
 <section id="could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases">
-<h3>could you fix a merge conflict in github rather than in the local terminal in some cases?<a class="headerlink" href="#could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.10.3. </span>could you fix a merge conflict in github rather than in the local terminal in some cases?<a class="headerlink" href="#could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases" title="Permalink to this headline">#</a></h3>
 <p>Yes, when the merge conflict arises as a result of a pull request and it is simple you can resolve it in <a class="reference external" href="http://github.com">github.com</a></p>
 </section>
 <section id="what-exactly-does-the-rebase-command-do">
-<h3>What exactly does the rebase command do?<a class="headerlink" href="#what-exactly-does-the-rebase-command-do" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.10.4. </span>What exactly does the rebase command do?<a class="headerlink" href="#what-exactly-does-the-rebase-command-do" title="Permalink to this headline">#</a></h3>
 <p>I described it in more detail above with links to git docs.</p>
 </section>
 <section id="what-point-does-using-git-locally-give">
-<h3>What point does using git locally give?<a class="headerlink" href="#what-point-does-using-git-locally-give" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.10.5. </span>What point does using git locally give?<a class="headerlink" href="#what-point-does-using-git-locally-give" title="Permalink to this headline">#</a></h3>
 <p>it’s the only way to keep your work in git and also run code locally</p>
 </section>
 <section id="why-were-some-of-my-command-prompts-different-from-yours">
-<h3>Why were some of my command prompts different from yours?<a class="headerlink" href="#why-were-some-of-my-command-prompts-different-from-yours" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.10.6. </span>Why were some of my command prompts different from yours?<a class="headerlink" href="#why-were-some-of-my-command-prompts-different-from-yours" title="Permalink to this headline">#</a></h3>
 <p>Not sure, but it might be the version of git.</p>
 </section>
 <section id="what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal">
-<h3>What website do you find the most useful to resolve issues relating to git within the terminal?<a class="headerlink" href="#what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.10.7. </span>What website do you find the most useful to resolve issues relating to git within the terminal?<a class="headerlink" href="#what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal" title="Permalink to this headline">#</a></h3>
 <p>I tend to rely on using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see where it is at, thinking about where I want to get and then searching and using eg stackoverflow for things I do not know how to do.</p>
 <p>that said <a class="reference external" href="https://nic-hartley.github.io/git-gud/">git gud</a> can help you visualize and we will have some other visualizations  soon.</p>
 </section>
 <section id="would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github">
-<h3>Would it be reasonable to never use the local Terminal and just always use github?<a class="headerlink" href="#would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.10.8. </span>Would it be reasonable to never use the local Terminal and just always use github?<a class="headerlink" href="#would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github" title="Permalink to this headline">#</a></h3>
 <p>No, that means you would not be able to run your code to work.  Even if you work on most clous services, you still need to use the “local” terminal, on that cloud instance.</p>
 </section>
 </section>
@@ -1337,6 +1361,24 @@ It does not work at first because this branch does not have a remote.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-09-14.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>How do I use git offline?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2023-09-21.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>When do I get an advantage from git and bash?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1355,24 +1397,24 @@ It does not work at first because this branch does not have a remote.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">Review</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-do-not-sync-automatically">Branches do not sync automatically</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-will-downlaod-and-update">Pull will downlaod and update</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-branch-locally">making a new branch locally</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-conflicts">Merge conflicts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems">How would you fix a merge conflict involving other people trying to commit on other systems?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on">are there situations where if you accidently make another branch, that you can merge it can into the one you wanted to be working on?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases">could you fix a merge conflict in github rather than in the local terminal in some cases?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-does-the-rebase-command-do">What exactly does the rebase command do?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-point-does-using-git-locally-give">What point does using git locally give?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-were-some-of-my-command-prompts-different-from-yours">Why were some of my command prompts different from yours?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal">What website do you find the most useful to resolve issues relating to git within the terminal?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github">Would it be reasonable to never use the local Terminal and just always use github?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">4.1. Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-do-not-sync-automatically">4.2. Branches do not sync automatically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-will-downlaod-and-update">4.3. Pull will downlaod and update</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-branch-locally">4.4. making a new branch locally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-conflicts">4.5. Merge conflicts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">4.6. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">4.7. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">4.8. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">4.9. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">4.10. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-you-fix-a-merge-conflict-involving-other-people-trying-to-commit-on-other-systems">4.10.1. How would you fix a merge conflict involving other people trying to commit on other systems?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-situations-where-if-you-accidently-make-another-branch-that-you-can-merge-it-can-into-the-one-you-wanted-to-be-working-on">4.10.2. are there situations where if you accidently make another branch, that you can merge it can into the one you wanted to be working on?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-fix-a-merge-conflict-in-github-rather-than-in-the-local-terminal-in-some-cases">4.10.3. could you fix a merge conflict in github rather than in the local terminal in some cases?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-does-the-rebase-command-do">4.10.4. What exactly does the rebase command do?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-point-does-using-git-locally-give">4.10.5. What point does using git locally give?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-were-some-of-my-command-prompts-different-from-yours">4.10.6. Why were some of my command prompts different from yours?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-website-do-you-find-the-most-useful-to-resolve-issues-relating-to-git-within-the-terminal">4.10.7. What website do you find the most useful to resolve issues relating to git within the terminal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#would-it-be-reasonable-to-never-use-the-local-terminal-and-just-always-use-github">4.10.8. Would it be reasonable to never use the local Terminal and just always use github?</a></li>
 </ul>
 </li>
 </ul>

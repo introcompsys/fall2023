@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What is a commit number? &#8212; Computer Systems and Programming Tools</title>
+    <title>11. What is a commit number? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -68,6 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-10-17';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="12. Why did we learn the plubming commands?" href="2023-10-19.html" />
+    <link rel="prev" title="10. How does git create a commit?" href="2023-10-12.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,6 +171,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General URI Policies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-19.html">4. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-21.html">5. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-26.html">6. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-09-28.html">7. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-03.html">8. What <em>is</em> git?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-05.html">9. Why are these tools organized this way?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-12.html">10. How does git create a commit?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. What is a commit number?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-19.html">12. Why did we learn the plubming commands?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-24.html">13. How can I use bash to automate things?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-26.html">14. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-10-31.html">15. How can I run a job on a remote server ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-02.html">16. SSH Keys and Building Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-14.html">19. What happens when we run code?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -409,58 +433,58 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-hash">What is a hash?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-in-passwords">Hashing in passwords</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-in-git">Hashing in Git</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hashes-are-cryptographic">Git hashes are cryptographic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hashing-algorithm">Git hashing algorithm</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-we-have-many-more-git-objects-than-commits">Remember we have many more git objects than commits</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workign-with-git-hashes">Workign with git hashes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">11.1. Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-hash">11.2. What is a hash?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-in-passwords">11.3. Hashing in passwords</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-in-git">11.4. Hashing in Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hashes-are-cryptographic">11.4.1. Git hashes are cryptographic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hashing-algorithm">11.4.2. Git hashing algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-we-have-many-more-git-objects-than-commits">11.4.3. Remember we have many more git objects than commits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workign-with-git-hashes">11.4.4. Workign with git hashes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-to-the-alphanumeric-hashes-we-see">How do we get to the alphanumeric hashes we see?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-number">What is a Number ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-to-the-alphanumeric-hashes-we-see">11.5. How do we get to the alphanumeric hashes we see?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-number">11.5.1. What is a Number ?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-number-system">What is a number system?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hindu-arabic">Hindu Arabic</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-does-the-name-come-from">Where does the name come from?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerals">Numerals</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#place-based">Place based</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-number-system">11.6. What is a number system?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hindu-arabic">11.6.1. Hindu Arabic</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-does-the-name-come-from">11.6.1.1. Where does the name come from?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerals">11.6.1.2. Numerals</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#place-based">11.6.1.3. Place based</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roman-numerals">Roman Numerals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roman-numerals">11.6.2. Roman Numerals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-bases">Different Bases</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal">Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary">Binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#octal">Octal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hexadecimal">Hexadecimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-bases">11.7. Different Bases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal">11.7.1. Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary">11.7.2. Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#octal">11.7.3. Octal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hexadecimal">11.7.4. Hexadecimal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gittransition">gittransition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-might-the-password-table-looklike">What might the password table looklike?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-have-to-keep-creating-bigger-and-bigger-number-systems-when-computers-get-too-fast-at-brute-forcing-hashes">Will we have to keep creating bigger and bigger number systems when computers get too fast at brute forcing hashes?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-letters-used-in-hexadecimal-representation-global-like-if-all-countries-that-may-not-use-english-have-to-use-the-english-characters-in-hex-a-b-c-d-e-f">Are the letters used in hexadecimal representation global? Like if all countries that may not use english have to use the english characters in hex A,B,C,D,E,F?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-numbers-so-complicated">Why are numbers so complicated?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-main-difference-between-hash-tables-and-hash-functions">What is the main difference between hash tables and hash functions?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-word-password-hash-has-been-easily-reverised-couldnt-that-just-be-done-with-every-word-in-a-language">If the word “password” hash has been easily reverised, couldn’t that just be done with every word in a language?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-is-a-relay">What exactly is a relay?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-hashing-algorithms-that-use-numerical-systems-greater-than-base-16">Are there any hashing algorithms that use numerical systems greater than base 16?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-a-developer-create-a-function-to-hash-passwords-and-store-them-securely">How would a developer create a function to hash passwords and store them securely?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">11.8. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">11.9. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">11.10. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gittransition">11.11. gittransition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">11.12. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">11.13. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-might-the-password-table-looklike">11.13.1. What might the password table looklike?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-have-to-keep-creating-bigger-and-bigger-number-systems-when-computers-get-too-fast-at-brute-forcing-hashes">11.13.2. Will we have to keep creating bigger and bigger number systems when computers get too fast at brute forcing hashes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-letters-used-in-hexadecimal-representation-global-like-if-all-countries-that-may-not-use-english-have-to-use-the-english-characters-in-hex-a-b-c-d-e-f">11.13.3. Are the letters used in hexadecimal representation global? Like if all countries that may not use english have to use the english characters in hex A,B,C,D,E,F?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-numbers-so-complicated">11.13.4. Why are numbers so complicated?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-main-difference-between-hash-tables-and-hash-functions">11.13.5. What is the main difference between hash tables and hash functions?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-word-password-hash-has-been-easily-reverised-couldnt-that-just-be-done-with-every-word-in-a-language">11.13.6. If the word “password” hash has been easily reverised, couldn’t that just be done with every word in a language?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-is-a-relay">11.13.7. What exactly is a relay?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-hashing-algorithms-that-use-numerical-systems-greater-than-base-16">11.13.8. Are there any hashing algorithms that use numerical systems greater than base 16?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-a-developer-create-a-function-to-hash-passwords-and-store-them-securely">11.13.9. How would a developer create a function to hash passwords and store them securely?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-that-are-a-good-explore-badge">Questions that are a good explore badge</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-good-practices-for-adding-authentication-to-my-program">What are good practices for adding authentication to my program?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-learn-more-about-encryption">I want to learn more about encryption</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-and-quantum-computing">Hashing and Quantum computing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-that-are-a-good-explore-badge">11.14. Questions that are a good explore badge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-good-practices-for-adding-authentication-to-my-program">11.14.1. What are good practices for adding authentication to my program?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-learn-more-about-encryption">11.14.2. I want to learn more about encryption</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-and-quantum-computing">11.14.3. Hashing and Quantum computing</a></li>
 </ul>
 </li>
 </ul>
@@ -475,16 +499,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="what-is-a-commit-number">
-<h1>What is a commit number?<a class="headerlink" href="#what-is-a-commit-number" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">11. </span>What is a commit number?<a class="headerlink" href="#what-is-a-commit-number" title="Permalink to this headline">#</a></h1>
 <section id="announcements">
-<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.1. </span>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>follow the prepare for 10/19 to get announcements from the repo commit messages</p>
 </div>
 </section>
 <section id="what-is-a-hash">
-<h2>What is a hash?<a class="headerlink" href="#what-is-a-hash" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.2. </span>What is a hash?<a class="headerlink" href="#what-is-a-hash" title="Permalink to this headline">#</a></h2>
 <p>a hash is:</p>
 <ul class="simple">
 <li><p>a fixed size value that can be used to represent data of arbitrary sizes</p></li>
@@ -537,7 +561,7 @@ derive a <em>hashing function</em> that is a general strategy.</p>
 </ul>
 </section>
 <section id="hashing-in-passwords">
-<h2>Hashing in passwords<a class="headerlink" href="#hashing-in-passwords" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.3. </span>Hashing in passwords<a class="headerlink" href="#hashing-in-passwords" title="Permalink to this headline">#</a></h2>
 <p>Passowrds can be encrypted and the encrypted information is stored, then when you submit a candidate password it can compare the hash of the submitted password to the hash that was stored.  Since the hashing function is nonreversible, they cannot see the password.</p>
 <p>Some sites are negligent and store passwords unencrypted, if your browser warns you about such a site, proceed with caution and definitely do not reuse a password you ever use. (you <em>should never</em> reuse passwords, but especially do not if there is a warning)</p>
 <p>An attacker who gets one of those databases, cannot actually read the passwords, but they could build a lookup table.  For example, “password” is a bad password because it has been hashed in basically every algorithm and then the value of it can be reversed.  Choosing an uncommon password makes it less likely that your password exists in a lookup table.</p>
@@ -553,7 +577,7 @@ derive a <em>hashing function</em> that is a general strategy.</p>
 </div>
 </section>
 <section id="hashing-in-git">
-<h2>Hashing in Git<a class="headerlink" href="#hashing-in-git" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.4. </span>Hashing in Git<a class="headerlink" href="#hashing-in-git" title="Permalink to this headline">#</a></h2>
 <p>In git we hash both the content directly to store it in the database (.git) directory
 and the commit information.</p>
 <p>Recall, when we were working in our toy repo we created an empty repository and
@@ -562,7 +586,7 @@ commit our commits had different hashes because we have different names and
 made the commits at different seconds. We also saw that <em>two</em> entries were
 created in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory for the commit.</p>
 <section id="git-hashes-are-cryptographic">
-<h3>Git hashes are cryptographic<a class="headerlink" href="#git-hashes-are-cryptographic" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.4.1. </span>Git hashes are cryptographic<a class="headerlink" href="#git-hashes-are-cryptographic" title="Permalink to this headline">#</a></h3>
 <p>This is a Secure Hashing Algorithm that is derived from cryptography.  Because
 it is secure, no set of mathematical options can directly decrypt an SHA-1  hash.
 It is designed so that any possible content that we put in it returns a unique
@@ -638,7 +662,7 @@ unique values.</p>
 </div>
 </section>
 <section id="git-hashing-algorithm">
-<h3>Git hashing algorithm<a class="headerlink" href="#git-hashing-algorithm" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.4.2. </span>Git hashing algorithm<a class="headerlink" href="#git-hashing-algorithm" title="Permalink to this headline">#</a></h3>
 <p>Git was originally designed to use SHA-1.</p>
 <p>The SHA-1 Algorithm hashes content into a fixed length of 160 bits.</p>
 <p>This means
@@ -663,7 +687,7 @@ it will switch too. The developers at GitHub an other git hosts are among the mo
 the change since they write code that directly interacts with git objects.</p>
 </section>
 <section id="remember-we-have-many-more-git-objects-than-commits">
-<h3>Remember we have many more git objects than commits<a class="headerlink" href="#remember-we-have-many-more-git-objects-than-commits" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.4.3. </span>Remember we have many more git objects than commits<a class="headerlink" href="#remember-we-have-many-more-git-objects-than-commits" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">fa23</span><span class="o">-</span><span class="n">brownsarahm</span><span class="o">/.</span><span class="n">git</span><span class="o">/</span><span class="n">objects</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
@@ -749,7 +773,7 @@ the change since they write code that directly interacts with git objects.</p>
 </div>
 </section>
 <section id="workign-with-git-hashes">
-<h3>Workign with git hashes<a class="headerlink" href="#workign-with-git-hashes" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.4.4. </span>Workign with git hashes<a class="headerlink" href="#workign-with-git-hashes" title="Permalink to this headline">#</a></h3>
 <p>Mostly, a shorter version of the commit is sufficient to be unique, so we can use those to refer to commits by just a few characters:</p>
 <ul class="simple">
 <li><p>minimum 4</p></li>
@@ -896,15 +920,15 @@ the change since they write code that directly interacts with git objects.</p>
 </section>
 </section>
 <section id="how-do-we-get-to-the-alphanumeric-hashes-we-see">
-<h2>How do we get to the alphanumeric hashes we see?<a class="headerlink" href="#how-do-we-get-to-the-alphanumeric-hashes-we-see" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.5. </span>How do we get to the alphanumeric hashes we see?<a class="headerlink" href="#how-do-we-get-to-the-alphanumeric-hashes-we-see" title="Permalink to this headline">#</a></h2>
 <p>Let’s build this up with some review</p>
 <section id="what-is-a-number">
-<h3>What is a Number ?<a class="headerlink" href="#what-is-a-number" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.5.1. </span>What is a Number ?<a class="headerlink" href="#what-is-a-number" title="Permalink to this headline">#</a></h3>
 <p>a mathematical object used to count, measure and label</p>
 </section>
 </section>
 <section id="what-is-a-number-system">
-<h2>What is a number system?<a class="headerlink" href="#what-is-a-number-system" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.6. </span>What is a number system?<a class="headerlink" href="#what-is-a-number-system" title="Permalink to this headline">#</a></h2>
 <p>While numbers represent <strong>quantities</strong> that conceptually, exist all over, the numbers themselves are a cultural artifact. For example, we all have a way to represent a single item, but that can look very different.</p>
 <p>for example I could express the value of a single item in different ways:</p>
 <ul class="simple">
@@ -912,10 +936,10 @@ the change since they write code that directly interacts with git objects.</p>
 <li><p>I</p></li>
 </ul>
 <section id="hindu-arabic">
-<h3>Hindu Arabic<a class="headerlink" href="#hindu-arabic" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.6.1. </span>Hindu Arabic<a class="headerlink" href="#hindu-arabic" title="Permalink to this headline">#</a></h3>
 <p>In modern, western cultures, our number system is called the  hindu-arabic system, it consists of a set of <strong>numerals</strong>: 0,1,2,3,4,5,6,7,8,9 and uses a <strong>place based</strong> system with <strong>base 10</strong>.</p>
 <section id="where-does-the-name-come-from">
-<h4>Where does the name come from?<a class="headerlink" href="#where-does-the-name-come-from" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">11.6.1.1. </span>Where does the name come from?<a class="headerlink" href="#where-does-the-name-come-from" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>invented by Hindu mathematicians in India 600 or earlier</p></li>
 <li><p>called “Arabic” numerals in the West because Arab merchants introduced them to Europeans</p></li>
@@ -923,17 +947,17 @@ the change since they write code that directly interacts with git objects.</p>
 </ul>
 </section>
 <section id="numerals">
-<h4>Numerals<a class="headerlink" href="#numerals" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">11.6.1.2. </span>Numerals<a class="headerlink" href="#numerals" title="Permalink to this headline">#</a></h4>
 <p>are the visual characters used to represent quantities</p>
 </section>
 <section id="place-based">
-<h4>Place based<a class="headerlink" href="#place-based" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">11.6.1.3. </span>Place based<a class="headerlink" href="#place-based" title="Permalink to this headline">#</a></h4>
 <p>We use a <strong>place based</strong> system. That means that the position or place of the symbol changes its meaning. So 1, 10, and 100 are all different values. This system is also a decimal system, or base 10. So we refer to the places and the ones (<span class="math notranslate nohighlight">\(10^0\)</span>), the tens (<span class="math notranslate nohighlight">\(10^1\)</span>), the hundreds(<span class="math notranslate nohighlight">\(10^2\)</span>), etc for all powers of 10.</p>
 <p>Number systems can use different characters, use different strategies for representing larger quantities, or both.</p>
 </section>
 </section>
 <section id="roman-numerals">
-<h3>Roman Numerals<a class="headerlink" href="#roman-numerals" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.6.2. </span>Roman Numerals<a class="headerlink" href="#roman-numerals" title="Permalink to this headline">#</a></h3>
 <p>is a number system that uses different numerals and is not a place based system</p>
 <p>There are symbols for specific values: 1=I, V=5, X=10, L =50, C = 100, D=500, M = 1000.</p>
 <p>Not all systems are place based, for example Roman numerals.
@@ -949,9 +973,9 @@ In this system the subsequent symbols are either added or subtracted, with no (n
 </section>
 </section>
 <section id="different-bases">
-<h2>Different Bases<a class="headerlink" href="#different-bases" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.7. </span>Different Bases<a class="headerlink" href="#different-bases" title="Permalink to this headline">#</a></h2>
 <section id="decimal">
-<h3>Decimal<a class="headerlink" href="#decimal" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.7.1. </span>Decimal<a class="headerlink" href="#decimal" title="Permalink to this headline">#</a></h3>
 <p>To represent larger numbers than we have digits on we have a base (10) and then.</p>
 <div class="math notranslate nohighlight">
 \[10 = 10*1 + 1*0\]</div>
@@ -960,7 +984,7 @@ In this system the subsequent symbols are either added or subtracted, with no (n
 <p>we have the ones  (<span class="math notranslate nohighlight">\(10^0) place, tens (\)</span>10^1<span class="math notranslate nohighlight">\() place, hundreds (\)</span>10^2) place etc.</p>
 </section>
 <section id="binary">
-<h3>Binary<a class="headerlink" href="#binary" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.7.2. </span>Binary<a class="headerlink" href="#binary" title="Permalink to this headline">#</a></h3>
 <p>Binary is any base two system, and it can be represented using any different characters.</p>
 <p>Binary number systems have origins in  ancient cultures:</p>
 <ul class="simple">
@@ -978,7 +1002,7 @@ In this system the subsequent symbols are either added or subtracted, with no (n
 \[ 1001 =&gt; 8*1 + 4*0 + 2*0 + 1*1  = 9\]</div>
 </section>
 <section id="octal">
-<h3>Octal<a class="headerlink" href="#octal" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.7.3. </span>Octal<a class="headerlink" href="#octal" title="Permalink to this headline">#</a></h3>
 <p>Is base 8. This too has history in other cultures, not only in computer science.  It is rooted in cultures that counted using the spaces <em>between</em> fingers instead of counting using fingers.</p>
 <p>This numbering system was popular in 6 bit and 12 bit computers, but is has origins before that. Native Americans using the Yuki Language (based in what is now California)<a class="reference external" href="https://www.jstor.org/stable/2686959?origin=crossref&amp;seq=1#metadata_info_tab_contents">used an octal system because they count using the spaces between fingers</a>
 and speakers of the
@@ -993,14 +1017,14 @@ Europeans debated using decimal vs octal in the 1600-1800s for various reasons b
 <p>In computer science we use octal a lot because it reduces every 3 bits of a number in binary to a single character.  So for a large number, in binary say <code class="docutils literal notranslate"><span class="pre">101110001100</span></code> we can change to <code class="docutils literal notranslate"><span class="pre">5614</span></code> which is easier to read, for a person.</p>
 </section>
 <section id="hexadecimal">
-<h3>Hexadecimal<a class="headerlink" href="#hexadecimal" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.7.4. </span>Hexadecimal<a class="headerlink" href="#hexadecimal" title="Permalink to this headline">#</a></h3>
 <p>base 16, commonin CS because its 4 bits. we use 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F.</p>
 <p>This is commonly used for representing colors</p>
  <input type="color" id="colorpicker" value="#0000ff"><p>This is how the git hash is 160 bits, or 20 bytes (one byte is 8 bits) but we represent it as 40 characters.  160/4=40.</p>
 </section>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.8. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Review <a class="reference external" href="https://github.com/introcompsys/fall2023/releases">the course website releases</a> to get familiar with what content appears there</p></li>
 <li><p>Review the GitHub Action <span class="xref myst">files in your KWL repo</span> and make note of what if any syntax in there is unfamilar.   (note that link may not work on the rendered website, but will work on issues)</p></li>
@@ -1010,14 +1034,14 @@ Europeans debated using decimal vs octal in the 1600-1800s for various reasons b
 </ol>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.9. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>find 2 more real world examples of using other number systems (either different bases or different symbols and bases) that are current. Describe them in <code class="docutils literal notranslate"><span class="pre">numbers.md</span></code>. Include links to your sources and be sure that the sources are trust worthy.</p></li>
 <li><p>Calculate the maximum number of git objects that a repo can have without needing to use more than the minimum number of characters to refer to any object and include that number in  <span class="target" id="index-0"></span>gitcounts.md  with a title <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Git</span> <span class="pre">counts</span></code>. Describe the scenario that would get you to that number of objects with the maximum <em>or</em> minimum number of commits in terms of what types of objects would exist.  Assume normal git use with porcelain commands, not atypical cases with plubming commands. <em>If you get stuck, outline what you know and then request a review.</em></p></li>
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.10. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Read about the Learn more about the <a class="reference external" href="https://shattered.io/">SHA-1 collision attach</a></p></li>
 <li><p>Learn more about how git is working on changing from SHA-1 to SHA-256 and answer the transition questions below <span class="target" id="index-1"></span>gittransition.md</p></li>
@@ -1026,7 +1050,7 @@ Europeans debated using decimal vs octal in the 1600-1800s for various reasons b
 </ol>
 </section>
 <section id="gittransition">
-<h2>gittransition<a class="headerlink" href="#gittransition" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.11. </span>gittransition<a class="headerlink" href="#gittransition" title="Permalink to this headline">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>## transition questions
 
 1. Why make the switch?
@@ -1036,13 +1060,13 @@ Europeans debated using decimal vs octal in the 1600-1800s for various reasons b
 </div>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.12. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>none</p>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.13. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="what-might-the-password-table-looklike">
-<h3>What might the password table looklike?<a class="headerlink" href="#what-might-the-password-table-looklike" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.13.1. </span>What might the password table looklike?<a class="headerlink" href="#what-might-the-password-table-looklike" title="Permalink to this headline">#</a></h3>
 <p>You can check your own passwords against a collection of breech-revealed passwords, or download such a table at <a class="reference external" href="https://haveibeenpwned.com/Passwords">haveibeenpwned</a></p>
 <p>Conceptually it could be as simmpel as 2 columns:</p>
 <table class="table">
@@ -1061,38 +1085,38 @@ Europeans debated using decimal vs octal in the 1600-1800s for various reasons b
 </table>
 </section>
 <section id="will-we-have-to-keep-creating-bigger-and-bigger-number-systems-when-computers-get-too-fast-at-brute-forcing-hashes">
-<h3>Will we have to keep creating bigger and bigger number systems when computers get too fast at brute forcing hashes?<a class="headerlink" href="#will-we-have-to-keep-creating-bigger-and-bigger-number-systems-when-computers-get-too-fast-at-brute-forcing-hashes" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.13.2. </span>Will we have to keep creating bigger and bigger number systems when computers get too fast at brute forcing hashes?<a class="headerlink" href="#will-we-have-to-keep-creating-bigger-and-bigger-number-systems-when-computers-get-too-fast-at-brute-forcing-hashes" title="Permalink to this headline">#</a></h3>
 <p>Most systems lock people out after a few tries to try to contol this, but potentially.</p>
 <p>This is also why we typically have 2 factors now.</p>
 </section>
 <section id="are-the-letters-used-in-hexadecimal-representation-global-like-if-all-countries-that-may-not-use-english-have-to-use-the-english-characters-in-hex-a-b-c-d-e-f">
-<h3>Are the letters used in hexadecimal representation global? Like if all countries that may not use english have to use the english characters in hex A,B,C,D,E,F?<a class="headerlink" href="#are-the-letters-used-in-hexadecimal-representation-global-like-if-all-countries-that-may-not-use-english-have-to-use-the-english-characters-in-hex-a-b-c-d-e-f" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.13.3. </span>Are the letters used in hexadecimal representation global? Like if all countries that may not use english have to use the english characters in hex A,B,C,D,E,F?<a class="headerlink" href="#are-the-letters-used-in-hexadecimal-representation-global-like-if-all-countries-that-may-not-use-english-have-to-use-the-english-characters-in-hex-a-b-c-d-e-f" title="Permalink to this headline">#</a></h3>
 <p>The letters we use are not limited to English. The English alphabet descends largely from the latin alphabet, as do many other European languages.  Further, since globalization, even some languages that historically had their own alphabets have adopted the English alphabet or one that is very similar.</p>
 <p>Historically people may have used others for hex, but in programming contexts we all use the same latin alphabet .</p>
 </section>
 <section id="why-are-numbers-so-complicated">
-<h3>Why are numbers so complicated?<a class="headerlink" href="#why-are-numbers-so-complicated" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.13.4. </span>Why are numbers so complicated?<a class="headerlink" href="#why-are-numbers-so-complicated" title="Permalink to this headline">#</a></h3>
 <p>Fundamentally, counting can happen in many different ways.  What we talked about today is abstractions and representations that have been developed over 1000s of years over the entire planet.</p>
 <p>People are complicated and vary a alot</p>
 </section>
 <section id="what-is-the-main-difference-between-hash-tables-and-hash-functions">
-<h3>What is the main difference between hash tables and hash functions?<a class="headerlink" href="#what-is-the-main-difference-between-hash-tables-and-hash-functions" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.13.5. </span>What is the main difference between hash tables and hash functions?<a class="headerlink" href="#what-is-the-main-difference-between-hash-tables-and-hash-functions" title="Permalink to this headline">#</a></h3>
 <p>Strictly speaking, a hash function could be used to produce a hash table, a hash table is sort of a special case.</p>
 <p>A hash function tells how to produce the hash from the input. A hash table could assign hashes to content arbitrarily.</p>
 </section>
 <section id="if-the-word-password-hash-has-been-easily-reverised-couldnt-that-just-be-done-with-every-word-in-a-language">
-<h3>If the word “password” hash has been easily reverised, couldn’t that just be done with every word in a language?<a class="headerlink" href="#if-the-word-password-hash-has-been-easily-reverised-couldnt-that-just-be-done-with-every-word-in-a-language" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.13.6. </span>If the word “password” hash has been easily reverised, couldn’t that just be done with every word in a language?<a class="headerlink" href="#if-the-word-password-hash-has-been-easily-reverised-couldnt-that-just-be-done-with-every-word-in-a-language" title="Permalink to this headline">#</a></h3>
 <p>Yes, it could, that is why we have rules about what makes a good password.  That increases the possible options.</p>
 <p>There are a lot of words in a language, but it’s a lot less than the total number of valid pass words, which do not have to be meaningful and typically can be any mix of letters in upper (26) or lower (+26) case, numbers (+10), or special characters (maybe another +20 or more). This means a password of length <span class="math notranslate nohighlight">\(d\)</span> can be <span class="math notranslate nohighlight">\(26*2+10+20 = 82^d\)</span> options.  Even for just length 2 there are then 6724 possible options.  For length 4 there are over 45 million.  So once you allow long passwords that are 30+ characters, it becomes really hard to store all of those options.</p>
 </section>
 <section id="what-exactly-is-a-relay">
-<h3>What exactly is a relay?<a class="headerlink" href="#what-exactly-is-a-relay" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.13.7. </span>What exactly is a relay?<a class="headerlink" href="#what-exactly-is-a-relay" title="Permalink to this headline">#</a></h3>
 <p>We will see this later when we talk more about hardware.  It is an electrically operated switch.</p>
 <p><img alt="Relay from wikipedia" src="https://en.wikipedia.org/wiki/Relay#/media/File:Delta_Electronics_DPS-350FB_A_-_board_1_-_OEG_SDT-SS-112M_-_case_removed-3045.jpg" /></p>
 <p>the <a class="reference external" href="https://en.wikipedia.org/wiki/Relay">wikipedia</a> article also has an animation</p>
 </section>
 <section id="are-there-any-hashing-algorithms-that-use-numerical-systems-greater-than-base-16">
-<h3>Are there any hashing algorithms that use numerical systems greater than base 16?<a class="headerlink" href="#are-there-any-hashing-algorithms-that-use-numerical-systems-greater-than-base-16" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.13.8. </span>Are there any hashing algorithms that use numerical systems greater than base 16?<a class="headerlink" href="#are-there-any-hashing-algorithms-that-use-numerical-systems-greater-than-base-16" title="Permalink to this headline">#</a></h3>
 <p>The hashing algorithm does not necessarily select a specific base. For example the SHA-1 algorithm is defined using a series of bitwise and mathematical operations on the binary representation of the content:</p>
 <ul class="simple">
 <li><p>split the messages into batches of length 512 bits</p></li>
@@ -1108,26 +1132,26 @@ Europeans debated using decimal vs octal in the 1600-1800s for various reasons b
 <p>Any base can be used to write out the strings. 16 is the highest commonly used, but for example the <a class="reference external" href="https://en.wikipedia.org/wiki/SHA-1#:~:text=%5Bedit%5D-,Example%20hashes,-%5Bedit%5D">wikipedia article on SHA-1 uses both base 64 and 16 in the examples</a></p>
 </section>
 <section id="how-would-a-developer-create-a-function-to-hash-passwords-and-store-them-securely">
-<h3>How would a developer create a function to hash passwords and store them securely?<a class="headerlink" href="#how-would-a-developer-create-a-function-to-hash-passwords-and-store-them-securely" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.13.9. </span>How would a developer create a function to hash passwords and store them securely?<a class="headerlink" href="#how-would-a-developer-create-a-function-to-hash-passwords-and-store-them-securely" title="Permalink to this headline">#</a></h3>
 <p>In general, a developer would not develop a new hash function, you wouls use an existing one. Increasingly, authentication standards or using other authentication tools are common.</p>
 </section>
 </section>
 <section id="questions-that-are-a-good-explore-badge">
-<h2>Questions that are a good explore badge<a class="headerlink" href="#questions-that-are-a-good-explore-badge" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.14. </span>Questions that are a good explore badge<a class="headerlink" href="#questions-that-are-a-good-explore-badge" title="Permalink to this headline">#</a></h2>
 <div class="community admonition">
 <p class="admonition-title">Where to collate these?</p>
 <p>Ideas for where/how to collate questions like this are welcome and worth a community badge</p>
 </div>
 <section id="what-are-good-practices-for-adding-authentication-to-my-program">
-<h3>What are good practices for adding authentication to my program?<a class="headerlink" href="#what-are-good-practices-for-adding-authentication-to-my-program" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.14.1. </span>What are good practices for adding authentication to my program?<a class="headerlink" href="#what-are-good-practices-for-adding-authentication-to-my-program" title="Permalink to this headline">#</a></h3>
 <p>This could be a good explore badge or potentially even a build on this topic</p>
 </section>
 <section id="i-want-to-learn-more-about-encryption">
-<h3>I want to learn more about encryption<a class="headerlink" href="#i-want-to-learn-more-about-encryption" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.14.2. </span>I want to learn more about encryption<a class="headerlink" href="#i-want-to-learn-more-about-encryption" title="Permalink to this headline">#</a></h3>
 <p>If you make this a little more specific it could be a great explore badge.  You could try out an encryption library or read and write a summary or something else that makes sense to you.</p>
 </section>
 <section id="hashing-and-quantum-computing">
-<h3>Hashing and Quantum computing<a class="headerlink" href="#hashing-and-quantum-computing" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.14.3. </span>Hashing and Quantum computing<a class="headerlink" href="#hashing-and-quantum-computing" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Once quantum computing is more prominent, will hashing algorithms change because now it will can be both 0 and 1?</p></li>
 <li><p>Will current hashing algorithms be safe against quantum computing?</p></li>
@@ -1172,6 +1196,24 @@ Europeans debated using decimal vs octal in the 1600-1800s for various reasons b
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-10-12.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>How does git create a commit?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2023-10-19.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Why did we learn the plubming commands?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1190,58 +1232,58 @@ Europeans debated using decimal vs octal in the 1600-1800s for various reasons b
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-hash">What is a hash?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-in-passwords">Hashing in passwords</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-in-git">Hashing in Git</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hashes-are-cryptographic">Git hashes are cryptographic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hashing-algorithm">Git hashing algorithm</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-we-have-many-more-git-objects-than-commits">Remember we have many more git objects than commits</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workign-with-git-hashes">Workign with git hashes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">11.1. Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-hash">11.2. What is a hash?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-in-passwords">11.3. Hashing in passwords</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-in-git">11.4. Hashing in Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hashes-are-cryptographic">11.4.1. Git hashes are cryptographic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hashing-algorithm">11.4.2. Git hashing algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-we-have-many-more-git-objects-than-commits">11.4.3. Remember we have many more git objects than commits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workign-with-git-hashes">11.4.4. Workign with git hashes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-to-the-alphanumeric-hashes-we-see">How do we get to the alphanumeric hashes we see?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-number">What is a Number ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-to-the-alphanumeric-hashes-we-see">11.5. How do we get to the alphanumeric hashes we see?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-number">11.5.1. What is a Number ?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-number-system">What is a number system?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hindu-arabic">Hindu Arabic</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-does-the-name-come-from">Where does the name come from?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerals">Numerals</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#place-based">Place based</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-number-system">11.6. What is a number system?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hindu-arabic">11.6.1. Hindu Arabic</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-does-the-name-come-from">11.6.1.1. Where does the name come from?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerals">11.6.1.2. Numerals</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#place-based">11.6.1.3. Place based</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roman-numerals">Roman Numerals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roman-numerals">11.6.2. Roman Numerals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-bases">Different Bases</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal">Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary">Binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#octal">Octal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hexadecimal">Hexadecimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-bases">11.7. Different Bases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal">11.7.1. Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary">11.7.2. Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#octal">11.7.3. Octal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hexadecimal">11.7.4. Hexadecimal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gittransition">gittransition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-might-the-password-table-looklike">What might the password table looklike?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-have-to-keep-creating-bigger-and-bigger-number-systems-when-computers-get-too-fast-at-brute-forcing-hashes">Will we have to keep creating bigger and bigger number systems when computers get too fast at brute forcing hashes?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-letters-used-in-hexadecimal-representation-global-like-if-all-countries-that-may-not-use-english-have-to-use-the-english-characters-in-hex-a-b-c-d-e-f">Are the letters used in hexadecimal representation global? Like if all countries that may not use english have to use the english characters in hex A,B,C,D,E,F?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-numbers-so-complicated">Why are numbers so complicated?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-main-difference-between-hash-tables-and-hash-functions">What is the main difference between hash tables and hash functions?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-word-password-hash-has-been-easily-reverised-couldnt-that-just-be-done-with-every-word-in-a-language">If the word “password” hash has been easily reverised, couldn’t that just be done with every word in a language?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-is-a-relay">What exactly is a relay?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-hashing-algorithms-that-use-numerical-systems-greater-than-base-16">Are there any hashing algorithms that use numerical systems greater than base 16?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-a-developer-create-a-function-to-hash-passwords-and-store-them-securely">How would a developer create a function to hash passwords and store them securely?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">11.8. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">11.9. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">11.10. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gittransition">11.11. gittransition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">11.12. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">11.13. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-might-the-password-table-looklike">11.13.1. What might the password table looklike?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-we-have-to-keep-creating-bigger-and-bigger-number-systems-when-computers-get-too-fast-at-brute-forcing-hashes">11.13.2. Will we have to keep creating bigger and bigger number systems when computers get too fast at brute forcing hashes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-letters-used-in-hexadecimal-representation-global-like-if-all-countries-that-may-not-use-english-have-to-use-the-english-characters-in-hex-a-b-c-d-e-f">11.13.3. Are the letters used in hexadecimal representation global? Like if all countries that may not use english have to use the english characters in hex A,B,C,D,E,F?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-numbers-so-complicated">11.13.4. Why are numbers so complicated?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-main-difference-between-hash-tables-and-hash-functions">11.13.5. What is the main difference between hash tables and hash functions?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-word-password-hash-has-been-easily-reverised-couldnt-that-just-be-done-with-every-word-in-a-language">11.13.6. If the word “password” hash has been easily reverised, couldn’t that just be done with every word in a language?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-exactly-is-a-relay">11.13.7. What exactly is a relay?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-hashing-algorithms-that-use-numerical-systems-greater-than-base-16">11.13.8. Are there any hashing algorithms that use numerical systems greater than base 16?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-a-developer-create-a-function-to-hash-passwords-and-store-them-securely">11.13.9. How would a developer create a function to hash passwords and store them securely?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-that-are-a-good-explore-badge">Questions that are a good explore badge</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-good-practices-for-adding-authentication-to-my-program">What are good practices for adding authentication to my program?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-learn-more-about-encryption">I want to learn more about encryption</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-and-quantum-computing">Hashing and Quantum computing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-that-are-a-good-explore-badge">11.14. Questions that are a good explore badge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-good-practices-for-adding-authentication-to-my-program">11.14.1. What are good practices for adding authentication to my program?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-learn-more-about-encryption">11.14.2. I want to learn more about encryption</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-and-quantum-computing">11.14.3. Hashing and Quantum computing</a></li>
 </ul>
 </li>
 </ul>
