@@ -667,11 +667,11 @@ is what basically everyone uses, but it is technically a choice hardware manufac
 </pre></div>
 </div>
 <p>would represent:
-$<span class="math notranslate nohighlight">\( (-1)*0 + \left(1 + 0\cdot 2^{-1} + 1\cdot 2^{-2} + \ldots  + 0\cdot 2^{-51} + 0\cdot 2^{-52} \times \right) 2^{1023-1023} = 0 + (1 + \frac{1}{2}) \times 2^0  = 1.5 \times 1 =  1.25 \)</span>$</p>
+$<span class="math notranslate nohighlight">\( (-1)*0 + \left(1 + 0\cdot 2^{-1} + 1\cdot 2^{-2} + 0\cdot 2^{-3}  + \ldots  + 0\cdot 2^{-51} + 0\cdot 2^{-52} \times \right) 2^{1023-1023} = 0 + (1 + \frac{1}{2}) \times 2^0  = 1.5 \times 1 =  1.25 \)</span>$</p>
 <!-- #endregion -->
 <p>You can see this visually using <a class="reference external" href="https://float.exposed/0x3ff4000000000000">float exposed</a></p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>the URL of that link is to <code class="docutils literal notranslate"><span class="pre">float.exposed/0x3ff4000000000000</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">3ff4000000000000</span></code> is the number we want to view in hex.  Since the first 12 bits of the 64bit nubme are the sign and expontend, the first 3 characters represent those then the remaining 13 characters represent the 52 bits of the fraction.</p>
 <p>So <code class="docutils literal notranslate"><span class="pre">3ff=011111111</span></code> and then 4000000000000=0100000000000000000000000000000000000000000000000000`</p>
@@ -683,7 +683,7 @@ $<span class="math notranslate nohighlight">\( (-1)*0 + \left(1 + 0\cdot 2^{-1} 
 <p>To see more examples of numbers doing surprising and interesting things try <a class="reference external" href="https://memory-spy.wizardzines.com/game#">memory spy</a>```</p>
 </div>
 </aside>
-<p>Python can give you the float representation of</p>
+<p>Python can give you the hex representation of a float:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="o">.</span><span class="n">hex</span><span class="p">(</span><span class="mf">1.25</span><span class="p">)</span>
@@ -696,6 +696,7 @@ $<span class="math notranslate nohighlight">\( (-1)*0 + \left(1 + 0\cdot 2^{-1} 
 </div>
 </div>
 </div>
+<p>This matches what we saw above, but it takes some re-arranging, this is a good practice.</p>
 <!-- #region -->
 </section>
 <section id="how-do-we-get-numbers-into-this-form">
@@ -728,11 +729,11 @@ $<span class="math notranslate nohighlight">\( (-1)*0 + \left(1 + 0\cdot 2^{-1} 
 \[J \approx \frac{2^N }{10}\]</div>
 <p>We want to use exactly 53 bits to represent <span class="math notranslate nohighlight">\(J\)</span> because it needs to be represented by the part of the float standard that is <span class="math notranslate nohighlight">\(1+\sum_{i=1}^{52} b_{52-i}2^{-i}\)</span>. Which is 52 bits that can be either 0 or 1, plus the left most bit is a fixed 1 from the <span class="math notranslate nohighlight">\(1+\)</span> in the definition.</p>
 <p>We can use this to find what <span class="math notranslate nohighlight">\(N\)</span> needs to be first.</p>
-<p>we want <span class="math notranslate nohighlight">\(J \approx  \frac{2^N }{10}\)</span> to be greater than or equal to <span class="math notranslate nohighlight">\(2^{52}\)</span> and less than <span class="math notranslate nohighlight">\(2^{53}\)</span>, or equivalently</p>
+<p>we want <span class="math notranslate nohighlight">\(J \approx  \frac{2^N }{10}\)</span> to be greater than or equal to <span class="math notranslate nohighlight">\(2^{52}\)</span> and less than <span class="math notranslate nohighlight">\(2^{53}\)</span>, or equivalently:</p>
 <div class="math notranslate nohighlight">
 \[ 2^{52} &lt;= \frac{2^N }{10} &lt; 2^{53} \]</div>
 <p>Since <span class="math notranslate nohighlight">\(10 =8+2 =  2^3 +2^1\)</span> then <span class="math notranslate nohighlight">\(2^3&lt;10&lt;2^4\)</span>
-We can also bound our quantity like this:</p>
+We can change the bounds of our inequality above.</p>
 <div class="math notranslate nohighlight">
 \[  \frac{2^N }{16} = \frac{2^N }{2^4} &lt; \frac{2^N }{10} &lt; \frac{2^N }{2^3} = \frac{2^N }{8} \]</div>
 <p>and then we can re-write the middle comparison like this:</p>
@@ -741,7 +742,8 @@ We can also bound our quantity like this:</p>
 <p>so if we want:</p>
 <div class="math notranslate nohighlight">
 \[ 2^{52} &lt;= \frac{2^N }{10} &lt; 2^{53} \]</div>
-<p>then best <span class="math notranslate nohighlight">\(N\)</span> is 56, but we can check it.</p>
+<p>then best <span class="math notranslate nohighlight">\(N\)</span> is 56, because that will make the upper inequality the same as the lower one.</p>
+<p>We can also check tha this does what we want.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">52</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">56</span> <span class="o">//</span><span class="mi">10</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">**</span><span class="mi">53</span>
@@ -757,7 +759,7 @@ We can also bound our quantity like this:</p>
 <p>Now we can get the number we will use for <span class="math notranslate nohighlight">\(J\)</span>. So far, mathematically, we would have:</p>
 <div class="math notranslate nohighlight">
 \[J \approx \frac{2^{56}} {10}\]</div>
-<p>but we need to find an integer value, so we divide that out and separate the <code class="docutils literal notranslate"><span class="pre">q</span></code>uotient and <code class="docutils literal notranslate"><span class="pre">r</span></code>emainder</p>
+<p>but we need to find an integer value, so we divide and separate the <code class="docutils literal notranslate"><span class="pre">q</span></code>uotient and <code class="docutils literal notranslate"><span class="pre">r</span></code>emainder.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">56</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -765,7 +767,7 @@ We can also bound our quantity like this:</p>
 </div>
 </div>
 </div>
-<p>Then we check the remainder to decide if we should round up by 1 or not.</p>
+<p>Next we check the remainder to decide if we should round up by 1 or not.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span>
@@ -778,7 +780,7 @@ We can also bound our quantity like this:</p>
 </div>
 </div>
 </div>
-<p><span class="math notranslate nohighlight">\( 6 &gt; 5 = \frac{10}{2}\)</span>  so we round up</p>
+<p><span class="math notranslate nohighlight">\( 6 &gt; 5 = \frac{10}{2}\)</span>  so we round up.  Since the remainder is more than half of the divisor it is closer to the next number up, so we increment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">J</span> <span class="o">=</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span>
@@ -792,7 +794,7 @@ We can also bound our quantity like this:</p>
 </div>
 </div>
 </div>
-<p>then we chan check the length in bits of that number</p>
+<p>then we can check the length in bits of that number</p>
 <p>Python can print it for us:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -820,6 +822,33 @@ We can also bound our quantity like this:</p>
 </div>
 </div>
 <p>Which is 53 as expected! To get the actual number we represent in the fraction part we  want to drop the left most bit.</p>
+<p>To actually represent our final number, we  want to drop the left most bit.  Remember, we found the number that gets represented including the additional 1 outside of the sum of the bits in the fraction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">significand</span> <span class="o">=</span> <span class="n">J</span><span class="o">-</span><span class="mi">2</span><span class="o">**</span><span class="mi">52</span>
+<span class="n">significand</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2702159776422298
+</pre></div>
+</div>
+</div>
+</div>
+<p>or in binary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="n">significand</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0b1001100110011001100110011001100110011001100110011010&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <p>Now, we go back to the <span class="math notranslate nohighlight">\(e\)</span>. We need <span class="math notranslate nohighlight">\(52-e+1023 = 56\)</span> so we solve to find
 $<span class="math notranslate nohighlight">\(e = 52+1023-56\)</span>$</p>
 <div class="cell docutils container">
@@ -835,6 +864,23 @@ $<span class="math notranslate nohighlight">\(e = 52+1023-56\)</span>$</p>
 </div>
 </div>
 </div>
+<p>So our representation of .1 would be:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp_bin</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">e</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">sig_bin</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">significand</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="n">exp_bin</span> <span class="o">+</span> <span class="n">sig_bin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;011111110111001100110011001100110011001100110011001100110011010&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>dropping the first two characters is because those are the 0b syntax indicator, not the actual binary.</p>
+<p><a class="reference external" href="https://float.exposed/0x3fb999999999999a">see on float exposed</a></p>
 <p>Python doesn’t provide a binary reprsentation of floats, but it does provide a hex representation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="o">.</span><span class="n">hex</span><span class="p">(</span><span class="mf">.1</span><span class="p">)</span>
 </pre></div>
