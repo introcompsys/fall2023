@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How does a computer represent non integer quantities? &#8212; Computer Systems and Programming Tools</title>
+    <title>21. How does a computer represent non integer quantities? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -68,6 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-21';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="20. How can we use logical operations?" href="2023-11-16.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -171,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
@@ -191,6 +193,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-11-14.html">19. What happens when we run code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-16.html">20. How can we use logical operations?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">21. How does a computer represent non integer quantities?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -431,21 +435,30 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-try-a-fixed-point">Let’s Try a Fixed point</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-fractions">Binary fractions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-scientific-notation">Review: Scientific  Notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers-are-not-all-exact">Floating point numbers are not all  exact</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-ieee-standard">Floating point IEEE standard</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-standard">Double Standard</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-read-a-number-like-this">How do we read a number like this?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-numbers-into-this-form">How do we get numbers into this form?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-try-a-fixed-point">21.1. Let’s Try a Fixed point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-fractions">21.2. Binary fractions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-scientific-notation">21.3. Review: Scientific  Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers-are-not-all-exact">21.4. Floating point numbers are not all  exact</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-ieee-standard">21.5. Floating point IEEE standard</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-standard">21.5.1. Double Standard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-read-a-number-like-this">21.5.2. How do we read a number like this?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-numbers-into-this-form">21.5.3. How do we get numbers into this form?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">21.6. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">21.7. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">21.8. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">21.9. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">21.10. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-cant-systems-just-interpret-decimal-numbers-like-humans-can">21.10.1. Why can’t systems just interpret decimal numbers like humans can?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-how-bad-can-the-approximations-get-when-calculating-floats-how-much-precision-gets-lost-when-dealing-with-fractional-numbers">21.10.2. My question is how bad can the approximations get when calculating floats? How much precision gets lost when dealing with fractional numbers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#did-the-people-that-came-from-an-academia-background-typically-design-and-implement-these-low-level-systems-or-people-in-industry">21.10.3. Did the people that came from an academia background typically design and implement these low-level systems or people in industry?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-practice-what-we-learned-today-for-better-understanding">21.10.4. How can I practice what we learned today for better understanding?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-this-process-of-going-through-all-the-bits-increase-in-time-with-more-bytes-or-is-there-a-set-number-of-bits">21.10.5. Does this process of going through all the bits increase in time with more bytes? Or is there a set number of bits?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-different-was-the-initial-standard-from-the-one-that-exists-today">21.10.6. How different was the initial standard from the one that exists today?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-we-able-to-assign-0-1-to-a-variable-despite-that">21.10.7. How are we able to assign 0.1 to a variable despite that?</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -458,11 +471,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-does-a-computer-represent-non-integer-quantities">
-<h1>How does a computer represent non integer quantities?<a class="headerlink" href="#how-does-a-computer-represent-non-integer-quantities" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">21. </span>How does a computer represent non integer quantities?<a class="headerlink" href="#how-does-a-computer-represent-non-integer-quantities" title="Permalink to this headline">#</a></h1>
 <p>So far we have looked at how computers represent integers in binary and how it can do math using logic gates.</p>
 <p>A lot of operations we do require representing quatntities that are not whole numbers.</p>
 <section id="lets-try-a-fixed-point">
-<h2>Let’s Try a Fixed point<a class="headerlink" href="#lets-try-a-fixed-point" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.1. </span>Let’s Try a Fixed point<a class="headerlink" href="#lets-try-a-fixed-point" title="Permalink to this headline">#</a></h2>
 <p>Let’s experiment with an 8 bit representation with 1 bit for sign and then the next 4 used for the part of the  number greater than 0 and the last 3 for the fractional part.</p>
 <!-- ![]() -->
 <!-- drawing on fixed/flaot -->
@@ -524,14 +537,14 @@ document.write(`
 </div>
 </section>
 <section id="binary-fractions">
-<h2>Binary fractions<a class="headerlink" href="#binary-fractions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.2. </span>Binary fractions<a class="headerlink" href="#binary-fractions" title="Permalink to this headline">#</a></h2>
 <p>What if instead, we could represent numbers with a fixed point, is to use base two fractions, just like we represent numbers in deceimal.   Instead of the points to the right of the decimal being the <span class="math notranslate nohighlight">\(\frac{1}{10}\)</span>, <span class="math notranslate nohighlight">\(\frac{1}{100}\)</span>, <span class="math notranslate nohighlight">\(\frac{1}{100}\)</span> they are the <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>, <span class="math notranslate nohighlight">\(\frac{1}{4}\)</span>, <span class="math notranslate nohighlight">\(\frac{1}{8}\)</span> etc.</p>
 <p>In this fixed point we would have, for example:
 <code class="docutils literal notranslate"><span class="pre">0101.1010</span></code> would be $<span class="math notranslate nohighlight">\(0*2^3 + 1*2^2 + 0*2^2 + 1*2^0 + 1*\frac{1}{2^{-1}} + 0*\frac{1}{2^{-2}} + 1*\frac{1}{2^{-}} + 0*\frac{1}{2^{-4}} = 4 + 1 + \frac{1}{2} + \frac{1}{8} = 5 + \frac{5}{8}= 5.625\)</span>$</p>
 <p>In this case we still have a small set of numbers, but it’s a different set of possible numbers.</p>
 </section>
 <section id="review-scientific-notation">
-<h2>Review: Scientific  Notation<a class="headerlink" href="#review-scientific-notation" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.3. </span>Review: Scientific  Notation<a class="headerlink" href="#review-scientific-notation" title="Permalink to this headline">#</a></h2>
 <p>We can write  numbers in many different forms. We have written integers through many different bases so far.</p>
 <p>For example in scientific contexts, we often write numbers (in base 10) like:</p>
 <div class="math notranslate nohighlight">
@@ -547,7 +560,7 @@ document.write(`
 <p>In math, we do not have to block out how many place values we are goign to use in advance explicitly, but to build a computer we do.  So we have to decide how many bits we will use and how to use each one of them.</p>
 </section>
 <section id="floating-point-numbers-are-not-all-exact">
-<h2>Floating point numbers are not all  exact<a class="headerlink" href="#floating-point-numbers-are-not-all-exact" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.4. </span>Floating point numbers are not all  exact<a class="headerlink" href="#floating-point-numbers-are-not-all-exact" title="Permalink to this headline">#</a></h2>
 <p>Before we dig into the details, let’s review why this matters.</p>
 <p>Julia Evans asked people on Mastodon for examples how floats do weird things and then <a class="reference external" href="https://jvns.ca/blog/2023/01/13/examples-of-floating-point-problems/">wrote a blog post</a> summarizing eight examples, and the link to the mastodon thread with even more replies.</p>
 <p>She also wrote a <a class="reference external" href="https://jvns.ca/blog/2023/06/23/new-zine--how-integers-and-floats-work/">zine</a> with complementary resources.  If you would like a print copy of the zine, email Dr. Brown.</p>
@@ -595,7 +608,7 @@ Even rounding does not make it work.</p>
 <!-- #region -->
 </section>
 <section id="floating-point-ieee-standard">
-<h2>Floating point IEEE standard<a class="headerlink" href="#floating-point-ieee-standard" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.5. </span>Floating point IEEE standard<a class="headerlink" href="#floating-point-ieee-standard" title="Permalink to this headline">#</a></h2>
 <p>Now, lets see how these numbers are actually represented.</p>
 <p><a class="reference external" href="https://ieeexplore.ieee.org/document/8766229">IEEE Floating Point </a>
 is what basically everyone uses, but it is technically a choice hardware manufacturers can techically make.</p>
@@ -611,7 +624,7 @@ is what basically everyone uses, but it is technically a choice hardware manufac
 <p>In python, <code class="docutils literal notranslate"><span class="pre">float</span></code> is 64 bit on a 64 bit computer.</p>
 <p>in Javascript, there are no integers, only floats with the precision specified by the architecture.</p>
 <section id="double-standard">
-<h3>Double Standard<a class="headerlink" href="#double-standard" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">21.5.1. </span>Double Standard<a class="headerlink" href="#double-standard" title="Permalink to this headline">#</a></h3>
 <p>this is a double precision float or binary64 inthe current standard.</p>
 <p>it was called double in the original, offiically, so it is commonly called that.</p>
 <p>In this case we will use:</p>
@@ -625,7 +638,7 @@ is what basically everyone uses, but it is technically a choice hardware manufac
 <!-- #region -->
 </section>
 <section id="how-do-we-read-a-number-like-this">
-<h3>How do we read a number like this?<a class="headerlink" href="#how-do-we-read-a-number-like-this" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">21.5.2. </span>How do we read a number like this?<a class="headerlink" href="#how-do-we-read-a-number-like-this" title="Permalink to this headline">#</a></h3>
 <p>if the sign bit is <span class="math notranslate nohighlight">\(s\)</span> and the number represented by the exponent bits is <span class="math notranslate nohighlight">\(e\)</span> and the 52 bits are number from right most is 0 and the last one is 52.</p>
 <p>Then we read it as a value like:</p>
 <div class="math notranslate nohighlight">
@@ -686,7 +699,7 @@ $<span class="math notranslate nohighlight">\( (-1)*0 + \left(1 + 0\cdot 2^{-1} 
 <!-- #region -->
 </section>
 <section id="how-do-we-get-numbers-into-this-form">
-<h3>How do we get numbers into this form?<a class="headerlink" href="#how-do-we-get-numbers-into-this-form" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">21.5.3. </span>How do we get numbers into this form?<a class="headerlink" href="#how-do-we-get-numbers-into-this-form" title="Permalink to this headline">#</a></h3>
 <p>Now, let’s return to our example of .1.</p>
 <p>First we take the sign of the number for the sign bit, but then to get the exponent and fraction, we have more work to do.</p>
 <p>To figure this out, we’ll start by manipulating the format that we need to get our number into:</p>
@@ -837,27 +850,61 @@ $<span class="math notranslate nohighlight">\(e = 52+1023-56\)</span>$</p>
 </section>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.6. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <p>none</p>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.7. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Write a C program to compare values as doubles and as float (single precision/32bit) to see that this comparison issue is related to the IEEE standard and is not language specific.  Make notes and comparison around its behavior and include the program in a code cell in  <span class="target" id="index-0"></span>cdouble.md</p></li>
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.8. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Write a C program to compare values as doubles and as float (single precision/32bit) to see that this comparison issue is related to the IEEE standard and is not language specific.  Make notes and comparison around its behavior and include the program in a code cell in  <span class="target" id="index-1"></span>cdouble.md</p></li>
 <li><p>In <span class="target" id="index-2"></span>floatexpt.md design an experiment using the <code class="docutils literal notranslate"><span class="pre">fractions.Fraction</span></code> class in Python that shows helps illustrate why <code class="docutils literal notranslate"><span class="pre">.1*3</span> <span class="pre">==</span> <span class="pre">.3</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code> but <code class="docutils literal notranslate"><span class="pre">.1*4</span> <span class="pre">==.4</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>. Your file must include both code and interpretation of the results.</p></li>
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.9. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">21.10. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<section id="why-cant-systems-just-interpret-decimal-numbers-like-humans-can">
+<h3><span class="section-number">21.10.1. </span>Why can’t systems just interpret decimal numbers like humans can?<a class="headerlink" href="#why-cant-systems-just-interpret-decimal-numbers-like-humans-can" title="Permalink to this headline">#</a></h3>
+<p>Because it has to be represented mechanically or electrically for it to be a machine.</p>
+</section>
+<section id="my-question-is-how-bad-can-the-approximations-get-when-calculating-floats-how-much-precision-gets-lost-when-dealing-with-fractional-numbers">
+<h3><span class="section-number">21.10.2. </span>My question is how bad can the approximations get when calculating floats? How much precision gets lost when dealing with fractional numbers?<a class="headerlink" href="#my-question-is-how-bad-can-the-approximations-get-when-calculating-floats-how-much-precision-gets-lost-when-dealing-with-fractional-numbers" title="Permalink to this headline">#</a></h3>
+<p>The quality of the approximation varies depending on the particular number.</p>
+<p>At the bottom of
+<a class="reference external" href="https://float.exposed/0x3ff0000000000000">float exposed</a> you can see how close the next value is.</p>
+<p>For 1 (the link above) the next number is a little more than 2.22e-16 away.</p>
+<p>For <a class="reference external" href="https://float.exposed/0x44bf9400">1532.625</a> the next value is  1.22e-4 away.</p>
+<p>For <a class="reference external" href="https://float.exposed/0x4330000000000001">4503599627370497.0</a>  to <a class="reference external" href="https://float.exposed/0x433fffffffffffff">9007199254740991.0</a>the next value is 1.0 away, that is we can only represent integers between those two values, nothing in between.</p>
+</section>
+<section id="did-the-people-that-came-from-an-academia-background-typically-design-and-implement-these-low-level-systems-or-people-in-industry">
+<h3><span class="section-number">21.10.3. </span>Did the people that came from an academia background typically design and implement these low-level systems or people in industry?<a class="headerlink" href="#did-the-people-that-came-from-an-academia-background-typically-design-and-implement-these-low-level-systems-or-people-in-industry" title="Permalink to this headline">#</a></h3>
+<p>A lot of this work was deep collaborations between academia and industry.  Some of it occured in universities, some of it was at places like  Bell Laboratory. That was a research instittue inside of the for profit Bell Telephone Company.</p>
+</section>
+<section id="how-can-i-practice-what-we-learned-today-for-better-understanding">
+<h3><span class="section-number">21.10.4. </span>How can I practice what we learned today for better understanding?<a class="headerlink" href="#how-can-i-practice-what-we-learned-today-for-better-understanding" title="Permalink to this headline">#</a></h3>
+<p>This is a hard topic and it will come back up in CSC411.</p>
+<p>Also, I recommend reading these notes carefully, and trying the float.exposed site.</p>
+</section>
+<section id="does-this-process-of-going-through-all-the-bits-increase-in-time-with-more-bytes-or-is-there-a-set-number-of-bits">
+<h3><span class="section-number">21.10.5. </span>Does this process of going through all the bits increase in time with more bytes? Or is there a set number of bits?<a class="headerlink" href="#does-this-process-of-going-through-all-the-bits-increase-in-time-with-more-bytes-or-is-there-a-set-number-of-bits" title="Permalink to this headline">#</a></h3>
+<p>This standard is a fixed size of 64 bits, but ther are others with different numbers of bits.</p>
+</section>
+<section id="how-different-was-the-initial-standard-from-the-one-that-exists-today">
+<h3><span class="section-number">21.10.6. </span>How different was the initial standard from the one that exists today?<a class="headerlink" href="#how-different-was-the-initial-standard-from-the-one-that-exists-today" title="Permalink to this headline">#</a></h3>
+<p>The initial standard defined fewer basic formats, more were introduced in 2008.  Official IEEE standards are not free so they’re slightly harder to read easily.</p>
+</section>
+<section id="how-are-we-able-to-assign-0-1-to-a-variable-despite-that">
+<h3><span class="section-number">21.10.7. </span>How are we able to assign 0.1 to a variable despite that?<a class="headerlink" href="#how-are-we-able-to-assign-0-1-to-a-variable-despite-that" title="Permalink to this headline">#</a></h3>
+<p>We do not actually get a .1 for doing math.  It is close, but not exact.  Unless your programming environment has a different base type.</p>
+</section>
 </section>
 </section>
 
@@ -892,6 +939,24 @@ $<span class="math notranslate nohighlight">\(e = 52+1023-56\)</span>$</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-11-16.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">20. </span>How can we use logical operations?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -910,21 +975,30 @@ $<span class="math notranslate nohighlight">\(e = 52+1023-56\)</span>$</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-try-a-fixed-point">Let’s Try a Fixed point</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-fractions">Binary fractions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-scientific-notation">Review: Scientific  Notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers-are-not-all-exact">Floating point numbers are not all  exact</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-ieee-standard">Floating point IEEE standard</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-standard">Double Standard</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-read-a-number-like-this">How do we read a number like this?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-numbers-into-this-form">How do we get numbers into this form?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-try-a-fixed-point">21.1. Let’s Try a Fixed point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-fractions">21.2. Binary fractions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-scientific-notation">21.3. Review: Scientific  Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers-are-not-all-exact">21.4. Floating point numbers are not all  exact</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-ieee-standard">21.5. Floating point IEEE standard</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-standard">21.5.1. Double Standard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-read-a-number-like-this">21.5.2. How do we read a number like this?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-numbers-into-this-form">21.5.3. How do we get numbers into this form?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">21.6. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">21.7. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">21.8. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">21.9. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">21.10. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-cant-systems-just-interpret-decimal-numbers-like-humans-can">21.10.1. Why can’t systems just interpret decimal numbers like humans can?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-how-bad-can-the-approximations-get-when-calculating-floats-how-much-precision-gets-lost-when-dealing-with-fractional-numbers">21.10.2. My question is how bad can the approximations get when calculating floats? How much precision gets lost when dealing with fractional numbers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#did-the-people-that-came-from-an-academia-background-typically-design-and-implement-these-low-level-systems-or-people-in-industry">21.10.3. Did the people that came from an academia background typically design and implement these low-level systems or people in industry?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-practice-what-we-learned-today-for-better-understanding">21.10.4. How can I practice what we learned today for better understanding?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-this-process-of-going-through-all-the-bits-increase-in-time-with-more-bytes-or-is-there-a-set-number-of-bits">21.10.5. Does this process of going through all the bits increase in time with more bytes? Or is there a set number of bits?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-different-was-the-initial-standard-from-the-one-that-exists-today">21.10.6. How different was the initial standard from the one that exists today?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-we-able-to-assign-0-1-to-a-variable-despite-that">21.10.7. How are we able to assign 0.1 to a variable despite that?</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

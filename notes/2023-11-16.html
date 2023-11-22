@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How can we use logical operations? &#8212; Computer Systems and Programming Tools</title>
+    <title>20. How can we use logical operations? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -68,6 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-16';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="21. How does a computer represent non integer quantities?" href="2023-11-21.html" />
+    <link rel="prev" title="19. What happens when we run code?" href="2023-11-14.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -171,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
@@ -191,6 +193,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-11-07.html">17. Linking and Object file binary representation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-11-09.html">18. What is an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-11-14.html">19. What happens when we run code?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">20. How can we use logical operations?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-21.html">21. How does a computer represent non integer quantities?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -431,29 +435,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-think-about-bitwise-operations">Why do we need to think about bitwise operations?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitwise-operators-review">Bitwise operators review</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-as-an-algorithm">Adding as an Algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-as-logic-gates">Adding as logic gates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-carry">Implementing the carry</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-more-bits">Adding more bits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-this">Why do this?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-will-we-be-using-the-emulator-moving-foward">How often will we be using the emulator moving foward?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-bitwise-operations-are-there-that-do-more-efficient-things-like-swap-the-values-of-two-variables">What other bitwise operations are there that do more efficient things like swap the values of two variables?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-of-a-disadvantage-performace-wise-is-using-the-gates-that-are-changed-to-fit-economies-of-scale-vs-the-simplifies-versions">How much of a disadvantage (<em>performace wise</em>) is using the gates that are changed to fit economies of scale vs the simplifies versions?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-do-any-mathematical-operation-with-bitwise-operations-like-square-root-cubed-root-division-etc">Could you do any mathematical operation with bitwise operations like square root, cubed root, division, etc?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-we-implement-this-in-code">How would we implement this in code?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-curcuits-and-gates-the-things-inside-a-processor">Are the curcuits and gates the things inside a processor?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-common-to-use-tricks-like-the-one-above-in-embedded-systems">Is it common to use tricks like the one above in embedded systems?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-this-so-confusing-and-how-can-i-understand-how-to-do-these-operations-better">Why is this so confusing and how can I understand how to do these operations better?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-think-about-bitwise-operations">20.1. Why do we need to think about bitwise operations?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitwise-operators-review">20.2. Bitwise operators review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-as-an-algorithm">20.3. Adding as an Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-as-logic-gates">20.4. Adding as logic gates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-carry">20.5. Implementing the carry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-more-bits">20.6. Adding more bits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-this">20.7. Why do this?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">20.8. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">20.9. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">20.10. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">20.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">20.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-will-we-be-using-the-emulator-moving-foward">20.12.1. How often will we be using the emulator moving foward?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-bitwise-operations-are-there-that-do-more-efficient-things-like-swap-the-values-of-two-variables">20.12.2. What other bitwise operations are there that do more efficient things like swap the values of two variables?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-of-a-disadvantage-performace-wise-is-using-the-gates-that-are-changed-to-fit-economies-of-scale-vs-the-simplifies-versions">20.12.3. How much of a disadvantage (<em>performace wise</em>) is using the gates that are changed to fit economies of scale vs the simplifies versions?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-do-any-mathematical-operation-with-bitwise-operations-like-square-root-cubed-root-division-etc">20.12.4. Could you do any mathematical operation with bitwise operations like square root, cubed root, division, etc?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-we-implement-this-in-code">20.12.5. How would we implement this in code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-curcuits-and-gates-the-things-inside-a-processor">20.12.6. Are the curcuits and gates the things inside a processor?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-common-to-use-tricks-like-the-one-above-in-embedded-systems">20.12.7. Is it common to use tricks like the one above in embedded systems?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-this-so-confusing-and-how-can-i-understand-how-to-do-these-operations-better">20.12.8. Why is this so confusing and how can I understand how to do these operations better?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#will-this-be-extremely-useful-if-we-started-working-with-computers-at-its-very-foundation-physics-discrete-math-etc">Will this be extremely useful if we started working with computers at its very foundation? (Physics, Discrete Math etc.)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#will-this-be-extremely-useful-if-we-started-working-with-computers-at-its-very-foundation-physics-discrete-math-etc">20.13. Will this be extremely useful if we started working with computers at its very foundation? (Physics, Discrete Math etc.)</a></li>
 </ul>
             </nav>
         </div>
@@ -466,9 +470,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-can-we-use-logical-operations">
-<h1>How can we use logical operations?<a class="headerlink" href="#how-can-we-use-logical-operations" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">20. </span>How can we use logical operations?<a class="headerlink" href="#how-can-we-use-logical-operations" title="Permalink to this headline">#</a></h1>
 <section id="why-do-we-need-to-think-about-bitwise-operations">
-<h2>Why do we need to think about bitwise operations?<a class="headerlink" href="#why-do-we-need-to-think-about-bitwise-operations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.1. </span>Why do we need to think about bitwise operations?<a class="headerlink" href="#why-do-we-need-to-think-about-bitwise-operations" title="Permalink to this headline">#</a></h2>
 <p>Understanding them is prereq to what we will see today and that will help you understand hardware overall.</p>
 <p>You of course will not <em>need</em> every single thing we teach you in every single class.</p>
 <ul class="simple">
@@ -477,7 +481,7 @@ document.write(`
 </ul>
 </section>
 <section id="bitwise-operators-review">
-<h2>Bitwise operators review<a class="headerlink" href="#bitwise-operators-review" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.2. </span>Bitwise operators review<a class="headerlink" href="#bitwise-operators-review" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>&amp; : and</p></li>
 <li><p>| : or</p></li>
@@ -493,7 +497,7 @@ document.write(`
 </ul>
 <p>Let’s review truth tables for and, or, and xor.</p>
 <table class="table" id="truth-and">
-<caption><span class="caption-text">AND</span><a class="headerlink" href="#truth-and" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 20.1 </span><span class="caption-text">AND</span><a class="headerlink" href="#truth-and" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -525,7 +529,7 @@ document.write(`
 </tbody>
 </table>
 <table class="table" id="truth-or">
-<caption><span class="caption-text">OR</span><a class="headerlink" href="#truth-or" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 20.2 </span><span class="caption-text">OR</span><a class="headerlink" href="#truth-or" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -557,7 +561,7 @@ document.write(`
 </tbody>
 </table>
 <table class="table" id="truth-xor">
-<caption><span class="caption-text">XOR</span><a class="headerlink" href="#truth-xor" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 20.3 </span><span class="caption-text">XOR</span><a class="headerlink" href="#truth-xor" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -592,7 +596,7 @@ document.write(`
 <p>There are more gate operations; you can see a simulation for <a class="reference external" href="https://lodev.org/logicemu/#id=gates16">16 gates</a></p>
 </section>
 <section id="adding-as-an-algorithm">
-<h2>Adding as an Algorithm<a class="headerlink" href="#adding-as-an-algorithm" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.3. </span>Adding as an Algorithm<a class="headerlink" href="#adding-as-an-algorithm" title="Permalink to this headline">#</a></h2>
 <p>Let’s review adding binary numbers.</p>
 <p><strong>remember, binary is a place-based system like the decimal placed based system you are likely familiar with</strong></p>
 <p>How do you add each of the following:</p>
@@ -615,10 +619,10 @@ document.write(`
 <p>In this case in the ones place we add 0 + 1 to get one, the two ones add to 0 with carry then 1 + 0 + 0 gives another 1.</p>
 </section>
 <section id="adding-as-logic-gates">
-<h2>Adding as logic gates<a class="headerlink" href="#adding-as-logic-gates" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.4. </span>Adding as logic gates<a class="headerlink" href="#adding-as-logic-gates" title="Permalink to this headline">#</a></h2>
 <p>let’s make a truth table for adding two bits.</p>
 <table class="table" id="truth-add">
-<caption><span class="caption-text">Add</span><a class="headerlink" href="#truth-add" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 20.4 </span><span class="caption-text">Add</span><a class="headerlink" href="#truth-add" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -660,18 +664,18 @@ document.write(`
 <p>This makes up the <a class="reference external" href="https://lodev.org/logicemu/#id=half_adder">half adder, try one out at this simulator</a>.</p>
 </section>
 <section id="implementing-the-carry">
-<h2>Implementing the carry<a class="headerlink" href="#implementing-the-carry" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.5. </span>Implementing the carry<a class="headerlink" href="#implementing-the-carry" title="Permalink to this headline">#</a></h2>
 <p>So this lets us as two bits, but what about adding a number with more bits?</p>
 <p>We can put multiple together, but there’s one more wrinkle: the carry.</p>
 <p>That’s what makes a <a class="reference external" href="https://lodev.org/logicemu/#id=full_adder">full adder</a> different.  It adds three single bits, or a carry and two bits and outputs the result as a sum bit and a carry bit.</p>
 </section>
 <section id="adding-more-bits">
-<h2>Adding more bits<a class="headerlink" href="#adding-more-bits" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.6. </span>Adding more bits<a class="headerlink" href="#adding-more-bits" title="Permalink to this headline">#</a></h2>
 <p>Then we can link many of those together to get an <a class="reference external" href="https://lodev.org/logicemu/#id=ripple_carry_adder">8 bit ripple adder</a>.</p>
 <p>Alternatively, we can “lookahead” with the carry bit, passing it forward multiple places all at once, as shown in this <a class="reference external" href="https://lodev.org/logicemu/#id=cla_adder">4 bit carry lookahead adder</a>.</p>
 </section>
 <section id="why-do-this">
-<h2>Why do this?<a class="headerlink" href="#why-do-this" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.7. </span>Why do this?<a class="headerlink" href="#why-do-this" title="Permalink to this headline">#</a></h2>
 <p>Workign through this example also reinforces not only the facts of how the binary works so that you can understand <em>how</em> a computer works.  Working with these abstractions to break down higher level operations into components like this (addition is a more complex operation than <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">xor</span></code>) help you see how this can be done.</p>
 <p>Sometimes you have low level problems like resource constraints and bitwise operations can be useful.</p>
 <p>We may not do this all the time, but when we need it, we need it.</p>
@@ -762,7 +766,7 @@ document.write(`
 <p><img alt="3 and 4 represented in binary in 2 registers labeled a and b" src="../_images/xor_swap_3.svg" /></p>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.8. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>In <span class="target" id="index-0"></span>fractionalbinary.md use 8 bits to represent the following numbers by using 4 bits as usual (8,2,4,1) and the other 4 bits are 1/2, 1/4, 1/8, 1/16th:</p></li>
 </ol>
@@ -777,7 +781,7 @@ document.write(`
 </ol>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.9. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>While we saw many types of gates today, but we actually could get all of the operations needed using only NAND gates. Work out how to use NAND gates to implement <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> in <span class="target" id="index-1"></span>nandandor.md</p></li>
 <li><p>Add <span class="target" id="index-2"></span>bitwise.md to your kwl and write the bitwise operations required for the following transformations (replace the <code class="docutils literal notranslate"><span class="pre">(_)</span></code> with a bitwise operator (<code class="docutils literal notranslate"><span class="pre">&amp;,</span> <span class="pre">|,</span> <span class="pre">^,</span> <span class="pre">&gt;&gt;,</span> <span class="pre">&lt;&lt;</span></code>)):</p>
@@ -797,7 +801,7 @@ document.write(`
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.10. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>While we saw many types of gates today, but we actually could get all of the operations needed using only NAND gates. Work out how to use NAND gates to implement a half adder and describe it in <span class="target" id="index-3"></span>nandhalf.md</p></li>
 <li><p>In <span class="target" id="index-4"></span>addertypes.md compare ripple adders and lookahead adders.</p>
@@ -824,49 +828,49 @@ document.write(`
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.11. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 <p>Nothing separate</p>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.12. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="how-often-will-we-be-using-the-emulator-moving-foward">
-<h3>How often will we be using the emulator moving foward?<a class="headerlink" href="#how-often-will-we-be-using-the-emulator-moving-foward" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">20.12.1. </span>How often will we be using the emulator moving foward?<a class="headerlink" href="#how-often-will-we-be-using-the-emulator-moving-foward" title="Permalink to this headline">#</a></h3>
 <p>We will use the logic emulator a few more times.</p>
 </section>
 <section id="what-other-bitwise-operations-are-there-that-do-more-efficient-things-like-swap-the-values-of-two-variables">
-<h3>What other bitwise operations are there that do more efficient things like swap the values of two variables?<a class="headerlink" href="#what-other-bitwise-operations-are-there-that-do-more-efficient-things-like-swap-the-values-of-two-variables" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">20.12.2. </span>What other bitwise operations are there that do more efficient things like swap the values of two variables?<a class="headerlink" href="#what-other-bitwise-operations-are-there-that-do-more-efficient-things-like-swap-the-values-of-two-variables" title="Permalink to this headline">#</a></h3>
 <p>This is a good expore badge idea</p>
 </section>
 <section id="how-much-of-a-disadvantage-performace-wise-is-using-the-gates-that-are-changed-to-fit-economies-of-scale-vs-the-simplifies-versions">
-<h3>How much of a disadvantage (<em>performace wise</em>) is using the gates that are changed to fit economies of scale vs the simplifies versions?<a class="headerlink" href="#how-much-of-a-disadvantage-performace-wise-is-using-the-gates-that-are-changed-to-fit-economies-of-scale-vs-the-simplifies-versions" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">20.12.3. </span>How much of a disadvantage (<em>performace wise</em>) is using the gates that are changed to fit economies of scale vs the simplifies versions?<a class="headerlink" href="#how-much-of-a-disadvantage-performace-wise-is-using-the-gates-that-are-changed-to-fit-economies-of-scale-vs-the-simplifies-versions" title="Permalink to this headline">#</a></h3>
 <p>Calculating this out is a good way to extend the practice badge today into an explore badge.</p>
 <p>Consider the time to pass through each gate as constant, but compare how the number of total gates changes.</p>
 </section>
 <section id="could-you-do-any-mathematical-operation-with-bitwise-operations-like-square-root-cubed-root-division-etc">
-<h3>Could you do any mathematical operation with bitwise operations like square root, cubed root, division, etc?<a class="headerlink" href="#could-you-do-any-mathematical-operation-with-bitwise-operations-like-square-root-cubed-root-division-etc" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">20.12.4. </span>Could you do any mathematical operation with bitwise operations like square root, cubed root, division, etc?<a class="headerlink" href="#could-you-do-any-mathematical-operation-with-bitwise-operations-like-square-root-cubed-root-division-etc" title="Permalink to this headline">#</a></h3>
 <p>We can break anything down into bitwise operations.  Some are more complicated than others, but all the computer has is bitwise operations, so everything can be done with those.</p>
 </section>
 <section id="how-would-we-implement-this-in-code">
-<h3>How would we implement this in code?<a class="headerlink" href="#how-would-we-implement-this-in-code" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">20.12.5. </span>How would we implement this in code?<a class="headerlink" href="#how-would-we-implement-this-in-code" title="Permalink to this headline">#</a></h3>
 <p>This is how the computer implements your code as electrical activity.</p>
 <p>If the question is only about the XOR swap algorithm, I put real python code in the notes.</p>
 </section>
 <section id="are-the-curcuits-and-gates-the-things-inside-a-processor">
-<h3>Are the curcuits and gates the things inside a processor?<a class="headerlink" href="#are-the-curcuits-and-gates-the-things-inside-a-processor" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">20.12.6. </span>Are the curcuits and gates the things inside a processor?<a class="headerlink" href="#are-the-curcuits-and-gates-the-things-inside-a-processor" title="Permalink to this headline">#</a></h3>
 <p>Yes the processor contains circuits made up of gates.</p>
 </section>
 <section id="is-it-common-to-use-tricks-like-the-one-above-in-embedded-systems">
-<h3>Is it common to use tricks like the one above in embedded systems?<a class="headerlink" href="#is-it-common-to-use-tricks-like-the-one-above-in-embedded-systems" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">20.12.7. </span>Is it common to use tricks like the one above in embedded systems?<a class="headerlink" href="#is-it-common-to-use-tricks-like-the-one-above-in-embedded-systems" title="Permalink to this headline">#</a></h3>
 <p>Yes</p>
 </section>
 <section id="why-is-this-so-confusing-and-how-can-i-understand-how-to-do-these-operations-better">
-<h3>Why is this so confusing and how can I understand how to do these operations better?<a class="headerlink" href="#why-is-this-so-confusing-and-how-can-i-understand-how-to-do-these-operations-better" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">20.12.8. </span>Why is this so confusing and how can I understand how to do these operations better?<a class="headerlink" href="#why-is-this-so-confusing-and-how-can-i-understand-how-to-do-these-operations-better" title="Permalink to this headline">#</a></h3>
 <p>More practice and maybe office hours?</p>
 <p>It is confusing because it is new.</p>
 </section>
 </section>
 <section id="will-this-be-extremely-useful-if-we-started-working-with-computers-at-its-very-foundation-physics-discrete-math-etc">
-<h2>Will this be extremely useful if we started working with computers at its very foundation? (Physics, Discrete Math etc.)<a class="headerlink" href="#will-this-be-extremely-useful-if-we-started-working-with-computers-at-its-very-foundation-physics-discrete-math-etc" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">20.13. </span>Will this be extremely useful if we started working with computers at its very foundation? (Physics, Discrete Math etc.)<a class="headerlink" href="#will-this-be-extremely-useful-if-we-started-working-with-computers-at-its-very-foundation-physics-discrete-math-etc" title="Permalink to this headline">#</a></h2>
 <p>Yes! That is the type of cases where bitwise operations are the level that you reason at.</p>
 </section>
 </section>
@@ -902,6 +906,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-11-14.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>What happens when we run code?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2023-11-21.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">21. </span>How does a computer represent non integer quantities?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -920,29 +942,29 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-think-about-bitwise-operations">Why do we need to think about bitwise operations?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitwise-operators-review">Bitwise operators review</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-as-an-algorithm">Adding as an Algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-as-logic-gates">Adding as logic gates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-carry">Implementing the carry</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-more-bits">Adding more bits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-this">Why do this?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-will-we-be-using-the-emulator-moving-foward">How often will we be using the emulator moving foward?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-bitwise-operations-are-there-that-do-more-efficient-things-like-swap-the-values-of-two-variables">What other bitwise operations are there that do more efficient things like swap the values of two variables?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-of-a-disadvantage-performace-wise-is-using-the-gates-that-are-changed-to-fit-economies-of-scale-vs-the-simplifies-versions">How much of a disadvantage (<em>performace wise</em>) is using the gates that are changed to fit economies of scale vs the simplifies versions?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-do-any-mathematical-operation-with-bitwise-operations-like-square-root-cubed-root-division-etc">Could you do any mathematical operation with bitwise operations like square root, cubed root, division, etc?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-we-implement-this-in-code">How would we implement this in code?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-curcuits-and-gates-the-things-inside-a-processor">Are the curcuits and gates the things inside a processor?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-common-to-use-tricks-like-the-one-above-in-embedded-systems">Is it common to use tricks like the one above in embedded systems?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-this-so-confusing-and-how-can-i-understand-how-to-do-these-operations-better">Why is this so confusing and how can I understand how to do these operations better?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-think-about-bitwise-operations">20.1. Why do we need to think about bitwise operations?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitwise-operators-review">20.2. Bitwise operators review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-as-an-algorithm">20.3. Adding as an Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-as-logic-gates">20.4. Adding as logic gates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-carry">20.5. Implementing the carry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-more-bits">20.6. Adding more bits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-this">20.7. Why do this?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">20.8. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">20.9. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">20.10. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">20.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">20.12. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-often-will-we-be-using-the-emulator-moving-foward">20.12.1. How often will we be using the emulator moving foward?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-bitwise-operations-are-there-that-do-more-efficient-things-like-swap-the-values-of-two-variables">20.12.2. What other bitwise operations are there that do more efficient things like swap the values of two variables?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-of-a-disadvantage-performace-wise-is-using-the-gates-that-are-changed-to-fit-economies-of-scale-vs-the-simplifies-versions">20.12.3. How much of a disadvantage (<em>performace wise</em>) is using the gates that are changed to fit economies of scale vs the simplifies versions?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-do-any-mathematical-operation-with-bitwise-operations-like-square-root-cubed-root-division-etc">20.12.4. Could you do any mathematical operation with bitwise operations like square root, cubed root, division, etc?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-would-we-implement-this-in-code">20.12.5. How would we implement this in code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-the-curcuits-and-gates-the-things-inside-a-processor">20.12.6. Are the curcuits and gates the things inside a processor?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-common-to-use-tricks-like-the-one-above-in-embedded-systems">20.12.7. Is it common to use tricks like the one above in embedded systems?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-this-so-confusing-and-how-can-i-understand-how-to-do-these-operations-better">20.12.8. Why is this so confusing and how can I understand how to do these operations better?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#will-this-be-extremely-useful-if-we-started-working-with-computers-at-its-very-foundation-physics-discrete-math-etc">Will this be extremely useful if we started working with computers at its very foundation? (Physics, Discrete Math etc.)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#will-this-be-extremely-useful-if-we-started-working-with-computers-at-its-very-foundation-physics-discrete-math-etc">20.13. Will this be extremely useful if we started working with computers at its very foundation? (Physics, Discrete Math etc.)</a></li>
 </ul>
   </nav></div>
 
