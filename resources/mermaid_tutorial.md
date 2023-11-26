@@ -23,11 +23,11 @@ blah blah blah
 
 ```{mermaid}
 flowchart TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
+    A[blank] -->|blank| B(blank)
+    B --> C{blank}
+    C -->|blank| D[blank]
+    C -->|blank| E[blank]
+    C -->|blank| F[blank]
 ```
 
 In Mermaid there are different styles for boxes with either square or round edges and the option to give a description of each item in its pipe.
@@ -37,11 +37,11 @@ So the code above actually looks like this in it's code block:
 ````
 ```{mermaid}
 flowchart TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
+    A[blank] -->|blank| B(blank)
+    B --> C{blank}
+    C -->|blank| D[blank]
+    C -->|blank| E[blank]
+    C -->|blank| F[blank]
 ```
 ````
 
