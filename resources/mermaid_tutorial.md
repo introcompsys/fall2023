@@ -4,7 +4,7 @@
 
 [Mermaid](https://mermaid.js.org/intro/) is a flowchart and diagram visualization tool based on JavaScript and uses Markdown syntax to create flowcharts that are extremely dynamic and high quality. [Mermaid](https://mermaid.js.org/intro/) is especially useful because you are able to display your beautiful flowcharts using backticks to create a code block. 
 
-There are plenty of types of 
+There are plenty of types of diagrams with mermaid and you can explore the other types [here](https://mermaid.js.org/config/Tutorials.html).
 
 ## Tutorial for Using Mermaid
 
@@ -13,9 +13,9 @@ Either on [Mermaid](https://mermaid.live/edit#pako:eNp1j00OgjAQha8ymZUmcAEWJgp6A
 ### Using Code Blocks
 
 A code block should look like the following:
-````
-```{mermaid}
-blah blah blah
+````{toggle}
+```{toggle}
+This is a code block
 ```
 ````
 
@@ -34,7 +34,7 @@ In Mermaid there are different styles for boxes with either square or round edge
 
 So the code above actually looks like this in it's code block:
 
-````
+````{toggle}
 ```{mermaid}
 flowchart TD
     A[blank] -->|blank| B(blank)
