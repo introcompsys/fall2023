@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How do different types of storage work together? &#8212; Computer Systems and Programming Tools</title>
+    <title>23. How do different types of storage work together? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-30';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="22. What is a computer?" href="2023-11-28.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
@@ -191,6 +193,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-11-14.html">19. What happens when we run code?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-11-16.html">20. How can we use logical operations?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-11-21.html">21. How does a computer represent non integer quantities?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-28.html">22. What <em>is</em> a computer?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">23. How do different types of storage work together?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -431,27 +435,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-know-about-this">Why do we need to know about this?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-vs-software-abstraction">Hardware vs Software abstraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-store-a-value">How to store a value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-way-to-physically-store-a-value">another way to physically store a value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-kind-of-tools-did-you-use-for-a-software-defined-radio">What kind of tools did you use for a software defined radio?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-raid-ever-be-100-fail-proof">Will RAID ever be 100% fail proof?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-clock-speed-of-a-computer-how-fast-the-clock-goes-on-and-off-and-is-there-ever-an-error-that-occours-if-the-clock-speed-goes-too-slow">Is the clock speed of a computer how fast the clock goes on and off? and is there ever an error that occours if the clock speed goes too slow?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-you-think-this-area-in-computer-science-software-engineering-is-harder-than-other-fields-like-data-science-or-web-development">Do you think this area in computer science/software engineering is harder than other fields like data science or web development?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-these-different-types-of-ram-not-be-included-or-are-they-in-every-computer">Can these different types of ram not be included or are they in every computer?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-a-computer-has-extensive-resources-would-it-be-more-effcient-to-never-use-dram-and-only-use-sram">If a computer has extensive resources would it be more effcient to never use DRAM and only use SRAM?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-eeprom">What is EEPROM?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-knowing-the-hardware-internal-components-of-the-computer-help-improve-ones-understanding-of-what-theyre-trying-to-achieve-as-a-developer-for-something-like-a-program">How does knowing the hardware/internal components of the computer help improve one’s understanding of what they’re trying to achieve as a developer for something like a program?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-would-it-cost-to-fix-a-cable-that-a-whale-found-itself-tangled-in">How much would it cost to fix a cable that a whale found itself tangled in?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-rom-still-used-in-modern-computers">Is ROM still used in modern computers?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-a-kind-of-storage-become-absolete">When does a kind of storage become absolete?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-they-go-down-to-set-the-transatlantic-cable-how-long-does-it-take-to-get-them-back-up">When they go down to set the transatlantic cable how long does it take to get them back up?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-know-about-this">23.1. Why do we need to know about this?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-vs-software-abstraction">23.2. Hardware vs Software abstraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-store-a-value">23.3. How to store a value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-way-to-physically-store-a-value">23.4. another way to physically store a value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">23.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">23.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">23.7. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">23.8. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">23.9. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-kind-of-tools-did-you-use-for-a-software-defined-radio">23.9.1. What kind of tools did you use for a software defined radio?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-raid-ever-be-100-fail-proof">23.9.2. Will RAID ever be 100% fail proof?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-clock-speed-of-a-computer-how-fast-the-clock-goes-on-and-off-and-is-there-ever-an-error-that-occours-if-the-clock-speed-goes-too-slow">23.9.3. Is the clock speed of a computer how fast the clock goes on and off? and is there ever an error that occours if the clock speed goes too slow?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-you-think-this-area-in-computer-science-software-engineering-is-harder-than-other-fields-like-data-science-or-web-development">23.9.4. Do you think this area in computer science/software engineering is harder than other fields like data science or web development?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-these-different-types-of-ram-not-be-included-or-are-they-in-every-computer">23.9.5. Can these different types of ram not be included or are they in every computer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-a-computer-has-extensive-resources-would-it-be-more-effcient-to-never-use-dram-and-only-use-sram">23.9.6. If a computer has extensive resources would it be more effcient to never use DRAM and only use SRAM?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-eeprom">23.9.7. What is EEPROM?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-knowing-the-hardware-internal-components-of-the-computer-help-improve-ones-understanding-of-what-theyre-trying-to-achieve-as-a-developer-for-something-like-a-program">23.9.8. How does knowing the hardware/internal components of the computer help improve one’s understanding of what they’re trying to achieve as a developer for something like a program?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-would-it-cost-to-fix-a-cable-that-a-whale-found-itself-tangled-in">23.9.9. How much would it cost to fix a cable that a whale found itself tangled in?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-rom-still-used-in-modern-computers">23.9.10. Is ROM still used in modern computers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-a-kind-of-storage-become-absolete">23.9.11. When does a kind of storage become absolete?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-they-go-down-to-set-the-transatlantic-cable-how-long-does-it-take-to-get-them-back-up">23.9.12. When they go down to set the transatlantic cable how long does it take to get them back up?</a></li>
 </ul>
 </li>
 </ul>
@@ -466,12 +470,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-do-different-types-of-storage-work-together">
-<h1>How do different types of storage work together?<a class="headerlink" href="#how-do-different-types-of-storage-work-together" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">23. </span>How do different types of storage work together?<a class="headerlink" href="#how-do-different-types-of-storage-work-together" title="Permalink to this headline">#</a></h1>
 <p>How do you think about memory?</p>
 <p>What was shared in common with your classmates?</p>
 <p>What was different?</p>
 <section id="why-do-we-need-to-know-about-this">
-<h2>Why do we need to know about this?<a class="headerlink" href="#why-do-we-need-to-know-about-this" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">23.1. </span>Why do we need to know about this?<a class="headerlink" href="#why-do-we-need-to-know-about-this" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>computers are not magic and edge cases help you see that</p></li>
 <li><p>in case you want to do high performance programming</p></li>
@@ -479,7 +483,7 @@ document.write(`
 </ul>
 </section>
 <section id="hardware-vs-software-abstraction">
-<h2>Hardware vs Software abstraction<a class="headerlink" href="#hardware-vs-software-abstraction" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">23.2. </span>Hardware vs Software abstraction<a class="headerlink" href="#hardware-vs-software-abstraction" title="Permalink to this headline">#</a></h2>
 <p>Abstraction is to remove details and use higher level units</p>
 <p>in hardware our abstractions are less leaky becuase it is less forgiving.</p>
 <p>software abstractions can suffer from leaks; think git- it’s hard to learn because the abstraction is leaky.</p>
@@ -490,7 +494,7 @@ document.write(`
 </ul>
 </section>
 <section id="how-to-store-a-value">
-<h2>How to store a value<a class="headerlink" href="#how-to-store-a-value" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">23.3. </span>How to store a value<a class="headerlink" href="#how-to-store-a-value" title="Permalink to this headline">#</a></h2>
 <p>We need a few more components:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://lodev.org/logicemu/#id=mux">mux</a> select one of two values</p></li>
@@ -501,7 +505,7 @@ document.write(`
 (1963)</p>
 </section>
 <section id="another-way-to-physically-store-a-value">
-<h2>another way to physically store a value<a class="headerlink" href="#another-way-to-physically-store-a-value" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">23.4. </span>another way to physically store a value<a class="headerlink" href="#another-way-to-physically-store-a-value" title="Permalink to this headline">#</a></h2>
 <p>DRAM uses one transistor and one capacitor. (SRAM uses 4-6 transistors)</p>
 <p>a capacitor holds a charge for a time, but gradually fades, so it has to be refreshed</p>
 <p>ROM is a diode matrix traditionally</p>
@@ -548,11 +552,11 @@ document.write(`
 </ul>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">23.5. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <p>None.</p>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">23.6. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <p><em>this is integrative-2</em></p>
 <ol class="arabic simple">
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">conclusion.md</span></code> to your KWL repo. In the file include 2 sections: summary with an overall description of what you learned and how this course was/not helpful to you (paragraph or bullet form is fine) key points with the top 10 thigns you want to make sure you remember from this class</p></li>
@@ -560,7 +564,7 @@ document.write(`
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">23.7. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <p><em>this is integrative-2</em></p>
 <ol class="arabic simple">
 <li><p>Create <code class="docutils literal notranslate"><span class="pre">in_five_years.md</span></code> and answer the following two questions: What do you think you will remember from this class in five years? What parts of this course’s content do you think will change the most in five years?</p></li>
@@ -569,56 +573,56 @@ document.write(`
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">23.8. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">23.9. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 <section id="what-kind-of-tools-did-you-use-for-a-software-defined-radio">
-<h3>What kind of tools did you use for a software defined radio?<a class="headerlink" href="#what-kind-of-tools-did-you-use-for-a-software-defined-radio" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.1. </span>What kind of tools did you use for a software defined radio?<a class="headerlink" href="#what-kind-of-tools-did-you-use-for-a-software-defined-radio" title="Permalink to this headline">#</a></h3>
 <p>I worked with matlab batch processing implemented the processing of the data from scratch with C.</p>
 </section>
 <section id="will-raid-ever-be-100-fail-proof">
-<h3>Will RAID ever be 100% fail proof?<a class="headerlink" href="#will-raid-ever-be-100-fail-proof" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.2. </span>Will RAID ever be 100% fail proof?<a class="headerlink" href="#will-raid-ever-be-100-fail-proof" title="Permalink to this headline">#</a></h3>
 <p>RAID configurations can be data failure proof as long as not too many drives die at the same time and that they are all replaced as soon as they fail.</p>
 </section>
 <section id="is-the-clock-speed-of-a-computer-how-fast-the-clock-goes-on-and-off-and-is-there-ever-an-error-that-occours-if-the-clock-speed-goes-too-slow">
-<h3>Is the clock speed of a computer how fast the clock goes on and off? and is there ever an error that occours if the clock speed goes too slow?<a class="headerlink" href="#is-the-clock-speed-of-a-computer-how-fast-the-clock-goes-on-and-off-and-is-there-ever-an-error-that-occours-if-the-clock-speed-goes-too-slow" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.3. </span>Is the clock speed of a computer how fast the clock goes on and off? and is there ever an error that occours if the clock speed goes too slow?<a class="headerlink" href="#is-the-clock-speed-of-a-computer-how-fast-the-clock-goes-on-and-off-and-is-there-ever-an-error-that-occours-if-the-clock-speed-goes-too-slow" title="Permalink to this headline">#</a></h3>
 <p>It is the frequency of the clock signal we will learn more about next week.</p>
 </section>
 <section id="do-you-think-this-area-in-computer-science-software-engineering-is-harder-than-other-fields-like-data-science-or-web-development">
-<h3>Do you think this area in computer science/software engineering is harder than other fields like data science or web development?<a class="headerlink" href="#do-you-think-this-area-in-computer-science-software-engineering-is-harder-than-other-fields-like-data-science-or-web-development" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.4. </span>Do you think this area in computer science/software engineering is harder than other fields like data science or web development?<a class="headerlink" href="#do-you-think-this-area-in-computer-science-software-engineering-is-harder-than-other-fields-like-data-science-or-web-development" title="Permalink to this headline">#</a></h3>
 <p>I think they’re just different. Working with hardware is certainly a different pace.</p>
 </section>
 <section id="can-these-different-types-of-ram-not-be-included-or-are-they-in-every-computer">
-<h3>Can these different types of ram not be included or are they in every computer?<a class="headerlink" href="#can-these-different-types-of-ram-not-be-included-or-are-they-in-every-computer" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.5. </span>Can these different types of ram not be included or are they in every computer?<a class="headerlink" href="#can-these-different-types-of-ram-not-be-included-or-are-they-in-every-computer" title="Permalink to this headline">#</a></h3>
 <p>most modern computers have cache, RAM, ROM, and solid state storage. these are implemented with different types of physical memory.</p>
 </section>
 <section id="if-a-computer-has-extensive-resources-would-it-be-more-effcient-to-never-use-dram-and-only-use-sram">
-<h3>If a computer has extensive resources would it be more effcient to never use DRAM and only use SRAM?<a class="headerlink" href="#if-a-computer-has-extensive-resources-would-it-be-more-effcient-to-never-use-dram-and-only-use-sram" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.6. </span>If a computer has extensive resources would it be more effcient to never use DRAM and only use SRAM?<a class="headerlink" href="#if-a-computer-has-extensive-resources-would-it-be-more-effcient-to-never-use-dram-and-only-use-sram" title="Permalink to this headline">#</a></h3>
 <p>This might be possible, but I am not sure.</p>
 </section>
 <section id="what-is-eeprom">
-<h3>What is EEPROM?<a class="headerlink" href="#what-is-eeprom" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.7. </span>What is EEPROM?<a class="headerlink" href="#what-is-eeprom" title="Permalink to this headline">#</a></h3>
 <p>Electrically Erasable Programmable Read Only memory</p>
 </section>
 <section id="how-does-knowing-the-hardware-internal-components-of-the-computer-help-improve-ones-understanding-of-what-theyre-trying-to-achieve-as-a-developer-for-something-like-a-program">
-<h3>How does knowing the hardware/internal components of the computer help improve one’s understanding of what they’re trying to achieve as a developer for something like a program?<a class="headerlink" href="#how-does-knowing-the-hardware-internal-components-of-the-computer-help-improve-ones-understanding-of-what-theyre-trying-to-achieve-as-a-developer-for-something-like-a-program" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.8. </span>How does knowing the hardware/internal components of the computer help improve one’s understanding of what they’re trying to achieve as a developer for something like a program?<a class="headerlink" href="#how-does-knowing-the-hardware-internal-components-of-the-computer-help-improve-ones-understanding-of-what-theyre-trying-to-achieve-as-a-developer-for-something-like-a-program" title="Permalink to this headline">#</a></h3>
 <p>It helps you think through how abstractions work and understanding what actually happens will help you deign more efficient code.</p>
 </section>
 <section id="how-much-would-it-cost-to-fix-a-cable-that-a-whale-found-itself-tangled-in">
-<h3>How much would it cost to fix a cable that a whale found itself tangled in?<a class="headerlink" href="#how-much-would-it-cost-to-fix-a-cable-that-a-whale-found-itself-tangled-in" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.9. </span>How much would it cost to fix a cable that a whale found itself tangled in?<a class="headerlink" href="#how-much-would-it-cost-to-fix-a-cable-that-a-whale-found-itself-tangled-in" title="Permalink to this headline">#</a></h3>
 <p>the cable is mostly burried.  It gets damaged mostly by anchors of ships.</p>
 </section>
 <section id="is-rom-still-used-in-modern-computers">
-<h3>Is ROM still used in modern computers?<a class="headerlink" href="#is-rom-still-used-in-modern-computers" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.10. </span>Is ROM still used in modern computers?<a class="headerlink" href="#is-rom-still-used-in-modern-computers" title="Permalink to this headline">#</a></h3>
 <p>Only for the very beginning of the boot sequence, but yes.</p>
 </section>
 <section id="when-does-a-kind-of-storage-become-absolete">
-<h3>When does a kind of storage become absolete?<a class="headerlink" href="#when-does-a-kind-of-storage-become-absolete" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.11. </span>When does a kind of storage become absolete?<a class="headerlink" href="#when-does-a-kind-of-storage-become-absolete" title="Permalink to this headline">#</a></h3>
 <p>That is a good question, but I do not have a precise answer.</p>
 </section>
 <section id="when-they-go-down-to-set-the-transatlantic-cable-how-long-does-it-take-to-get-them-back-up">
-<h3>When they go down to set the transatlantic cable how long does it take to get them back up?<a class="headerlink" href="#when-they-go-down-to-set-the-transatlantic-cable-how-long-does-it-take-to-get-them-back-up" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">23.9.12. </span>When they go down to set the transatlantic cable how long does it take to get them back up?<a class="headerlink" href="#when-they-go-down-to-set-the-transatlantic-cable-how-long-does-it-take-to-get-them-back-up" title="Permalink to this headline">#</a></h3>
 <p>I do not know this and a quick search did not yeild results.  Finding this is worth a commnity badge (could be expanded to an explore).</p>
 </section>
 </section>
@@ -655,6 +659,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-11-28.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">22. </span>What <em>is</em> a computer?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -673,27 +695,27 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-know-about-this">Why do we need to know about this?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-vs-software-abstraction">Hardware vs Software abstraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-store-a-value">How to store a value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-way-to-physically-store-a-value">another way to physically store a value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-kind-of-tools-did-you-use-for-a-software-defined-radio">What kind of tools did you use for a software defined radio?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-raid-ever-be-100-fail-proof">Will RAID ever be 100% fail proof?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-clock-speed-of-a-computer-how-fast-the-clock-goes-on-and-off-and-is-there-ever-an-error-that-occours-if-the-clock-speed-goes-too-slow">Is the clock speed of a computer how fast the clock goes on and off? and is there ever an error that occours if the clock speed goes too slow?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-you-think-this-area-in-computer-science-software-engineering-is-harder-than-other-fields-like-data-science-or-web-development">Do you think this area in computer science/software engineering is harder than other fields like data science or web development?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-these-different-types-of-ram-not-be-included-or-are-they-in-every-computer">Can these different types of ram not be included or are they in every computer?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-a-computer-has-extensive-resources-would-it-be-more-effcient-to-never-use-dram-and-only-use-sram">If a computer has extensive resources would it be more effcient to never use DRAM and only use SRAM?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-eeprom">What is EEPROM?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-knowing-the-hardware-internal-components-of-the-computer-help-improve-ones-understanding-of-what-theyre-trying-to-achieve-as-a-developer-for-something-like-a-program">How does knowing the hardware/internal components of the computer help improve one’s understanding of what they’re trying to achieve as a developer for something like a program?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-would-it-cost-to-fix-a-cable-that-a-whale-found-itself-tangled-in">How much would it cost to fix a cable that a whale found itself tangled in?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-rom-still-used-in-modern-computers">Is ROM still used in modern computers?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-a-kind-of-storage-become-absolete">When does a kind of storage become absolete?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-they-go-down-to-set-the-transatlantic-cable-how-long-does-it-take-to-get-them-back-up">When they go down to set the transatlantic cable how long does it take to get them back up?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-know-about-this">23.1. Why do we need to know about this?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-vs-software-abstraction">23.2. Hardware vs Software abstraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-store-a-value">23.3. How to store a value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-way-to-physically-store-a-value">23.4. another way to physically store a value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">23.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">23.6. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">23.7. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">23.8. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">23.9. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-kind-of-tools-did-you-use-for-a-software-defined-radio">23.9.1. What kind of tools did you use for a software defined radio?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#will-raid-ever-be-100-fail-proof">23.9.2. Will RAID ever be 100% fail proof?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-clock-speed-of-a-computer-how-fast-the-clock-goes-on-and-off-and-is-there-ever-an-error-that-occours-if-the-clock-speed-goes-too-slow">23.9.3. Is the clock speed of a computer how fast the clock goes on and off? and is there ever an error that occours if the clock speed goes too slow?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-you-think-this-area-in-computer-science-software-engineering-is-harder-than-other-fields-like-data-science-or-web-development">23.9.4. Do you think this area in computer science/software engineering is harder than other fields like data science or web development?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-these-different-types-of-ram-not-be-included-or-are-they-in-every-computer">23.9.5. Can these different types of ram not be included or are they in every computer?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-a-computer-has-extensive-resources-would-it-be-more-effcient-to-never-use-dram-and-only-use-sram">23.9.6. If a computer has extensive resources would it be more effcient to never use DRAM and only use SRAM?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-eeprom">23.9.7. What is EEPROM?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-knowing-the-hardware-internal-components-of-the-computer-help-improve-ones-understanding-of-what-theyre-trying-to-achieve-as-a-developer-for-something-like-a-program">23.9.8. How does knowing the hardware/internal components of the computer help improve one’s understanding of what they’re trying to achieve as a developer for something like a program?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-would-it-cost-to-fix-a-cable-that-a-whale-found-itself-tangled-in">23.9.9. How much would it cost to fix a cable that a whale found itself tangled in?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-rom-still-used-in-modern-computers">23.9.10. Is ROM still used in modern computers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-a-kind-of-storage-become-absolete">23.9.11. When does a kind of storage become absolete?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-they-go-down-to-set-the-transatlantic-cable-how-long-does-it-take-to-get-them-back-up">23.9.12. When they go down to set the transatlantic cable how long does it take to get them back up?</a></li>
 </ul>
 </li>
 </ul>

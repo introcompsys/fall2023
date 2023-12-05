@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What is a computer? &#8212; Computer Systems and Programming Tools</title>
+    <title>22. What is a computer? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2023-11-28';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="23. How do different types of storage work together?" href="2023-11-30.html" />
+    <link rel="prev" title="21. How does a computer represent non integer quantities?" href="2023-11-21.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -169,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="2023-09-07.html">1. Welcome, Introduction, and Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-12.html">2. Course Logistics and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-09-14.html">3. How do I use git offline?</a></li>
@@ -191,6 +193,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2023-11-14.html">19. What happens when we run code?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-11-16.html">20. How can we use logical operations?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-11-21.html">21. How does a computer represent non integer quantities?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">22. What <em>is</em> a computer?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2023-11-30.html">23. How do different types of storage work together?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -431,44 +435,44 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-start-with-a-dictionary">Let’s start with a dictionary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">Computers as people</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">Computers as Machines</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">How much do we talk about computers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-start-with-a-dictionary">22.1. Let’s start with a dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">22.1.1. Computers as people</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">22.1.2. Computers as Machines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">22.1.3. How much do we talk about computers?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">Mechanical Calculators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">How did this change over time?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">Model K Adder (1937)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">Intel 4004 (1971)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">So how do these thigns actually work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">22.2. Mechanical Calculators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">22.3. How did this change over time?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">22.3.1. Model K Adder (1937)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">22.3.2. Intel 4004 (1971)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">22.3.3. So how do these thigns actually work</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">Early Computers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">von Neumann Architecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">Apollo Guidance Computer (AGC)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">Storage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">Questions After Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-stray-away-from-simplicity-of-early-computers">Why did we stray away from simplicity of early computers?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-if-we-are-in-a-plateau-now-or-if-it-is-possible-to-go-through-another-massive-leap-in-tech-soon">My question is if we are in a plateau now or if it is possible to go through another massive leap in tech soon?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">What are the PC, MAR, MDR, etc. and what do they do</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">how does a motherboard work with all of these</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-learn-more-about-the-basics-of-computers">How can I learn more about the basics of Computers?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-examples-of-von-neumann-architectures">What are some examples of von Neumann Architectures?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-gigahertz-a-measure-of-electricity-or-computing-speed">Is Gigahertz a measure of electricity or computing speed?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-what-point-were-most-if-not-all-human-computers-phased-out">At what point were most, if not all, human computers phased out?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-we-tried-to-add-a-gpu-to-von-neumanns-architecture-would-it-just-be-its-own-thing-or-there-would-be-a-way-to-fit-it-in-the-diagram">If we tried to add a GPU to Von Neumann’s architecture, would it just be its own thing or there would be a way to fit it in the diagram?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-types-of-architecture-were-there">What other types of architecture were there?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">How do Quantum computer logic gates differ from what we use now exactly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">22.4. Early Computers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">22.5. von Neumann Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">22.6. Apollo Guidance Computer (AGC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">22.7. Storage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">22.8. Questions After Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-stray-away-from-simplicity-of-early-computers">22.8.1. Why did we stray away from simplicity of early computers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-if-we-are-in-a-plateau-now-or-if-it-is-possible-to-go-through-another-massive-leap-in-tech-soon">22.8.2. My question is if we are in a plateau now or if it is possible to go through another massive leap in tech soon?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">22.8.3. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">22.8.4. how does a motherboard work with all of these</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-learn-more-about-the-basics-of-computers">22.8.5. How can I learn more about the basics of Computers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-examples-of-von-neumann-architectures">22.8.6. What are some examples of von Neumann Architectures?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-gigahertz-a-measure-of-electricity-or-computing-speed">22.8.7. Is Gigahertz a measure of electricity or computing speed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-what-point-were-most-if-not-all-human-computers-phased-out">22.8.8. At what point were most, if not all, human computers phased out?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-we-tried-to-add-a-gpu-to-von-neumanns-architecture-would-it-just-be-its-own-thing-or-there-would-be-a-way-to-fit-it-in-the-diagram">22.8.9. If we tried to add a GPU to Von Neumann’s architecture, would it just be its own thing or there would be a way to fit it in the diagram?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-types-of-architecture-were-there">22.8.10. What other types of architecture were there?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">22.8.11. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">22.8.12. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">22.8.13. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">22.9. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">22.10. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">22.11. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">22.12. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">22.13. Questions After Today’s Class</a></li>
 </ul>
             </nav>
         </div>
@@ -481,7 +485,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="what-is-a-computer">
-<h1>What <em>is</em> a computer?<a class="headerlink" href="#what-is-a-computer" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">22. </span>What <em>is</em> a computer?<a class="headerlink" href="#what-is-a-computer" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>how, physically, do we get the components we have seen?</p></li>
 <li><p>what other components do we need?</p></li>
@@ -495,7 +499,7 @@ document.write(`
 <li><p>how does that influence computing as a discipline?</p></li>
 </ul>
 <section id="lets-start-with-a-dictionary">
-<h2>Let’s start with a dictionary<a class="headerlink" href="#lets-start-with-a-dictionary" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.1. </span>Let’s start with a dictionary<a class="headerlink" href="#lets-start-with-a-dictionary" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://www.oed.com/dictionary/computer_n?">we can start with a dictionary</a></p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -508,7 +512,7 @@ document.write(`
 <li><p>note that this starts with reference to a person.</p></li>
 </ul>
 <section id="computers-as-people">
-<h3>Computers as people<a class="headerlink" href="#computers-as-people" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.1.1. </span>Computers as people<a class="headerlink" href="#computers-as-people" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Use of the word computer to refer to the person still common how recently  1950s</p></li>
 <li><p>the movie <a class="reference external" href="https://www.imdb.com/title/tt4846340/">hidden figures</a> is available on Disney+ with subscription or other streaming platforms for ~$4 streaming rental.</p></li>
@@ -516,16 +520,16 @@ document.write(`
 </ul>
 </section>
 <section id="computers-as-machines">
-<h3>Computers as Machines<a class="headerlink" href="#computers-as-machines" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.1.2. </span>Computers as Machines<a class="headerlink" href="#computers-as-machines" title="Permalink to this headline">#</a></h3>
 <p>Computers as machines started later. We started with mechanical, analog and then moved to electronic and then digital.</p>
 </section>
 <section id="how-much-do-we-talk-about-computers">
-<h3>How much do we talk about computers?<a class="headerlink" href="#how-much-do-we-talk-about-computers" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.1.3. </span>How much do we talk about computers?<a class="headerlink" href="#how-much-do-we-talk-about-computers" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://books.google.com/ngrams/graph?year_start=1800&amp;year_end=2019&amp;corpus=26&amp;smoothing=7&amp;case_insensitive=on&amp;content=computer&amp;direct_url=t4%3B%2Ccomputer%3B%2Cc0%3B%2Cs0%3B%3Bcomputer%3B%2Cc0%3B%3BComputer%3B%2Cc0%3B%3BCOMPUTER%3B%2Cc0#t4%3B%2Ccomputer%3B%2Cc0%3B%2Cs0%3B%3Bcomputer%3B%2Cc0%3B%3BComputer%3B%2Cc0%3B%3BCOMPUTER%3B%2Cc0">how much do we talk about them changes over time </a></p>
 </section>
 </section>
 <section id="mechanical-calculators">
-<h2>Mechanical Calculators<a class="headerlink" href="#mechanical-calculators" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.2. </span>Mechanical Calculators<a class="headerlink" href="#mechanical-calculators" title="Permalink to this headline">#</a></h2>
 <p>how do we actually like physically make it be machine</p>
 <p>well we’ve we’ve talked we handed out that like it’s going to reduce down to or isn’t my check and logical operations write those de back much further than</p>
 <p><img alt="pascal" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Pascaline-CnAM_823-1-IMG_1506-black.jpg" /></p>
@@ -537,11 +541,11 @@ document.write(`
 <p>Contrast this royal privelege with the 1970s where in resolving some other conflict, a court that declared the content of the computer that they cannot be found it at all and it’s free for anyone to use the concept of a computer</p>
 </section>
 <section id="how-did-this-change-over-time">
-<h2>How did this change over time?<a class="headerlink" href="#how-did-this-change-over-time" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.3. </span>How did this change over time?<a class="headerlink" href="#how-did-this-change-over-time" title="Permalink to this headline">#</a></h2>
 <p>calculators that are still analog so they’re still working with mechanical systems using Waze electricity becomes easier</p>
 <p><a class="reference external" href="https://www.computerhistory.org/timeline/computers/">timeline of computing</a></p>
 <section id="model-k-adder-1937">
-<h3>Model K Adder (1937)<a class="headerlink" href="#model-k-adder-1937" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.3.1. </span>Model K Adder (1937)<a class="headerlink" href="#model-k-adder-1937" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>George Stibitz took some pieces at home from work at Bell Laboratory and got it working on his kitchen table.</p></li>
 <li><p>it can do four bit addition</p></li>
@@ -557,7 +561,7 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </ul>
 </section>
 <section id="intel-4004-1971">
-<h3>Intel 4004 (1971)<a class="headerlink" href="#intel-4004-1971" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.3.2. </span>Intel 4004 (1971)<a class="headerlink" href="#intel-4004-1971" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>First commercially produced microprocessor</p></li>
 <li><p>2,250 transistors</p></li>
@@ -566,7 +570,7 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </ul>
 </section>
 <section id="so-how-do-these-thigns-actually-work">
-<h3>So how do these thigns actually work<a class="headerlink" href="#so-how-do-these-thigns-actually-work" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.3.3. </span>So how do these thigns actually work<a class="headerlink" href="#so-how-do-these-thigns-actually-work" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=GcDshWmhF4A">We can build an adder mechanically with marbles and wood</a></p></li>
 </ul>
@@ -581,13 +585,13 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </section>
 </section>
 <section id="early-computers">
-<h2>Early Computers<a class="headerlink" href="#early-computers" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.4. </span>Early Computers<a class="headerlink" href="#early-computers" title="Permalink to this headline">#</a></h2>
 <p>During this time small, lots of small computers were made, but each was made completely by its creators, there was no standards, per say.</p>
 <p>These computers were also stored program computers. Meaning their operation at a program level was fixed by the circuitry.</p>
 <p>switch the circuit to do different things between the numbers so this would get us bitwise operations of an indoor and outdoor on our numbers</p>
 </section>
 <section id="von-neumann-architecture">
-<h2>von Neumann Architecture<a class="headerlink" href="#von-neumann-architecture" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.5. </span>von Neumann Architecture<a class="headerlink" href="#von-neumann-architecture" title="Permalink to this headline">#</a></h2>
 <p><img alt="Von Neumann Architecturediagram " src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Von_Neumann_Architecture.svg/2560px-Von_Neumann_Architecture.svg.png" /></p>
 <p><img alt="a bit mroe detail" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Computer_Systems_-_Von_Neumann_Architecture_Large_poster_anchor_chart.svg" /></p>
 <p>what else do we need besides ALU for to have like a whole computer</p>
@@ -595,14 +599,14 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 <p>In 1945 we get a draft of a general template. This is basically what we use today.</p>
 </section>
 <section id="apollo-guidance-computer-agc">
-<h2>Apollo Guidance Computer (AGC)<a class="headerlink" href="#apollo-guidance-computer-agc" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.6. </span>Apollo Guidance Computer (AGC)<a class="headerlink" href="#apollo-guidance-computer-agc" title="Permalink to this headline">#</a></h2>
 <p>The AGC was the onboard computer for NASA’s Apollo programs. It provided navigation for the control capsule as well as controlled the spacecraft during moon landings. The AGC had only 72KB of fixed memory (589,824 bits). Unlike many early computers, the software for the AGC was stored in its memory and was not physically built into its hardware’s circuitry.</p>
 <p>Additionally, this computer had RAM, which was memory that could be changed by the computer while it was running. This memory had a capacity of only 4KB (32,768 bits), which was still enough to store all the data needed to perform all calculations necessary for the missions. The AGC could be controlled by the astronauts in the command capsule by sending commands via a numeric keyboard. Its user interface consisted of a simple screen and a set of status lights that relayed information to the astronauts.</p>
 <p>This computer is very similar to how modern computers work in the sense that it can keep data in its fixed memory even while the computer is off.</p>
 <p>To learn more about the AGC and how it worked, you can view <a class="reference external" href="https://bigthink.com/hard-science/phone-computer-moon-landing/">this</a> article, or view the <a class="reference external" href="https://history.nasa.gov/computers/Ch2-5.html">official NASA public docs</a> on it.</p>
 </section>
 <section id="storage">
-<h2>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.7. </span>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>there are some thigns we have not yet seen in detail in that diagram</p></li>
 <li><p>Ram Is Random Access we can access it whenever we want we can read and write to</p></li>
@@ -617,61 +621,61 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </ul>
 </section>
 <section id="questions-after-class">
-<h2>Questions After Class<a class="headerlink" href="#questions-after-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.8. </span>Questions After Class<a class="headerlink" href="#questions-after-class" title="Permalink to this headline">#</a></h2>
 <section id="why-did-we-stray-away-from-simplicity-of-early-computers">
-<h3>Why did we stray away from simplicity of early computers?<a class="headerlink" href="#why-did-we-stray-away-from-simplicity-of-early-computers" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.1. </span>Why did we stray away from simplicity of early computers?<a class="headerlink" href="#why-did-we-stray-away-from-simplicity-of-early-computers" title="Permalink to this headline">#</a></h3>
 <p>Computers got more complex in their architecutre so that they can complete more complex calculations and run more complex problems.</p>
 </section>
 <section id="my-question-is-if-we-are-in-a-plateau-now-or-if-it-is-possible-to-go-through-another-massive-leap-in-tech-soon">
-<h3>My question is if we are in a plateau now or if it is possible to go through another massive leap in tech soon?<a class="headerlink" href="#my-question-is-if-we-are-in-a-plateau-now-or-if-it-is-possible-to-go-through-another-massive-leap-in-tech-soon" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.2. </span>My question is if we are in a plateau now or if it is possible to go through another massive leap in tech soon?<a class="headerlink" href="#my-question-is-if-we-are-in-a-plateau-now-or-if-it-is-possible-to-go-through-another-massive-leap-in-tech-soon" title="Permalink to this headline">#</a></h3>
 <p>We’re out of the range where Moore’s law applies.  Quantum computing is on the horizon, but it breaks the abstractions.  It switches from bits being the basis to cubits, which are stochastic as the basis.</p>
 </section>
 <section id="what-are-the-pc-mar-mdr-etc-and-what-do-they-do">
-<h3>What are the PC, MAR, MDR, etc. and what do they do<a class="headerlink" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.3. </span>What are the PC, MAR, MDR, etc. and what do they do<a class="headerlink" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do" title="Permalink to this headline">#</a></h3>
 <p>They are various registers that each have a specific role.  Learning all of these these in more detail is a good Explore badge or a single one is in more practice.</p>
 </section>
 <section id="how-does-a-motherboard-work-with-all-of-these">
-<h3>how does a motherboard work with all of these<a class="headerlink" href="#how-does-a-motherboard-work-with-all-of-these" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.4. </span>how does a motherboard work with all of these<a class="headerlink" href="#how-does-a-motherboard-work-with-all-of-these" title="Permalink to this headline">#</a></h3>
 <p>A motherboard contains all most of those components.  This is also a good Deeper explroation.</p>
 </section>
 <section id="how-can-i-learn-more-about-the-basics-of-computers">
-<h3>How can I learn more about the basics of Computers?<a class="headerlink" href="#how-can-i-learn-more-about-the-basics-of-computers" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.5. </span>How can I learn more about the basics of Computers?<a class="headerlink" href="#how-can-i-learn-more-about-the-basics-of-computers" title="Permalink to this headline">#</a></h3>
 <p>The computer histroy museum links above are a good place to start.</p>
 <p>This is a good explore badge topic.</p>
 </section>
 <section id="what-are-some-examples-of-von-neumann-architectures">
-<h3>What are some examples of von Neumann Architectures?<a class="headerlink" href="#what-are-some-examples-of-von-neumann-architectures" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.6. </span>What are some examples of von Neumann Architectures?<a class="headerlink" href="#what-are-some-examples-of-von-neumann-architectures" title="Permalink to this headline">#</a></h3>
 <p>This is the desing that our computers all use.</p>
 </section>
 <section id="is-gigahertz-a-measure-of-electricity-or-computing-speed">
-<h3>Is Gigahertz a measure of electricity or computing speed?<a class="headerlink" href="#is-gigahertz-a-measure-of-electricity-or-computing-speed" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.7. </span>Is Gigahertz a measure of electricity or computing speed?<a class="headerlink" href="#is-gigahertz-a-measure-of-electricity-or-computing-speed" title="Permalink to this headline">#</a></h3>
 <p>it is a measurement of frequency which is the inverse of time. If somethign happens at a frequency of 1Hz, it occurs once per second.  10Hz is 10 time per second.</p>
 <p>In the processor it is the speed of the clock signal; a factor in howmany calculations the comptuer can do per second.</p>
 </section>
 <section id="at-what-point-were-most-if-not-all-human-computers-phased-out">
-<h3>At what point were most, if not all, human computers phased out?<a class="headerlink" href="#at-what-point-were-most-if-not-all-human-computers-phased-out" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.8. </span>At what point were most, if not all, human computers phased out?<a class="headerlink" href="#at-what-point-were-most-if-not-all-human-computers-phased-out" title="Permalink to this headline">#</a></h3>
 <p>Some point in the late 70s or 80s I think. NASA employed people in this role throught 70s.</p>
 <p>More research on this detail is a good community badge option.</p>
 </section>
 <section id="if-we-tried-to-add-a-gpu-to-von-neumanns-architecture-would-it-just-be-its-own-thing-or-there-would-be-a-way-to-fit-it-in-the-diagram">
-<h3>If we tried to add a GPU to Von Neumann’s architecture, would it just be its own thing or there would be a way to fit it in the diagram?<a class="headerlink" href="#if-we-tried-to-add-a-gpu-to-von-neumanns-architecture-would-it-just-be-its-own-thing-or-there-would-be-a-way-to-fit-it-in-the-diagram" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.9. </span>If we tried to add a GPU to Von Neumann’s architecture, would it just be its own thing or there would be a way to fit it in the diagram?<a class="headerlink" href="#if-we-tried-to-add-a-gpu-to-von-neumanns-architecture-would-it-just-be-its-own-thing-or-there-would-be-a-way-to-fit-it-in-the-diagram" title="Permalink to this headline">#</a></h3>
 <p>It is outside of the CPU, but it is also newer as a separate component, so it is separate.</p>
 </section>
 <section id="what-other-types-of-architecture-were-there">
-<h3>What other types of architecture were there?<a class="headerlink" href="#what-other-types-of-architecture-were-there" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.10. </span>What other types of architecture were there?<a class="headerlink" href="#what-other-types-of-architecture-were-there" title="Permalink to this headline">#</a></h3>
 <p>The main competing architecutre was the Harvard architecutre.  This is a good explore badge topic.</p>
 </section>
 <section id="when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">
-<h3>When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?<a class="headerlink" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.11. </span>When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?<a class="headerlink" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones" title="Permalink to this headline">#</a></h3>
 <p>What definition dependsd on the context.  If you are talking to a child who is trying to learn basic typing they need to know different things than a teenager trying to choose what type of comptuer to bring to college, which is different than the model you need to keep in mind when you’re working in a high level language, which is different than what you need when you are writing drivers.</p>
 </section>
 <section id="how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">
-<h3>How do Quantum computer logic gates differ from what we use now exactly<a class="headerlink" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.12. </span>How do Quantum computer logic gates differ from what we use now exactly<a class="headerlink" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly" title="Permalink to this headline">#</a></h3>
 <p>Quantum computers operate on a fundamentally different object, instead of bits they have <a class="reference external" href="https://quantum-computing.ibm.com/composer/docs/iqx/guide/the-qubit">qubits</a>.  There represent, essetially some uncertainty, or randomness in the behavior, so then there are different operations needed.</p>
 <p>URI has a <a class="reference external" href="https://web.uri.edu/physics/quantum/">MS in Quantum Computing in the Physics Dept</a></p>
 </section>
 <section id="intel-4004-1971-how-it-worked-by-tyler-hanlon">
-<h3>Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon<a class="headerlink" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">22.8.13. </span>Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon<a class="headerlink" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon" title="Permalink to this headline">#</a></h3>
 <p>This was the first general purpose programmable processor which people could buy and then make or buy their own software to customize it with. This was a breakthorugh in computing as it allowed consumers to have a say in what software was used in their electronics without having to make their own. This was extremely influential advancmenet inearly comuting technologies becuase it made multiple softwares more accessible and deliverable to a wider audience. It is one of the smallest microprocessors ever made, and was develope for use in a Japanese calculator company, but was powerful enought o actually be used for a wide variety of functions.</p>
 <p>Sources:
 <a class="reference external" href="https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That's%20when%20the%20Intel%C2%AE,wide%20variety%20of%20electronic%20devices">https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That’s when the Intel®,wide variety of electronic devices</a>.</p>
@@ -679,11 +683,11 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </section>
 </section>
 <section id="prepare-for-next-class">
-<h2>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.9. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Permalink to this headline">#</a></h2>
 <p>Spend a few minutes thinking about what you know about memory and reading and writing files in programming. Make some notes about it (that you do not need to submit).  (you’ll discuss this with classmates at the start of class)</p>
 </section>
 <section id="review-todays-class">
-<h2>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.10. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Pick a component that is in the more detailed von Neumann (other than the ALU) and contribute an explanation of what it is to your group repo. Coordinate with your team so that each contribution is a different component by creating an issue stating what you will work on before contributing. Link to your PR in the group repo in your badge PR. All contributions should include a description of the component- what it does and how it is built- and it’s predecessors.  All must include sources as markdown links.</p></li>
 <li><p>review a classmate’s PR providing feedback and either approving or requesting changes</p></li>
@@ -691,7 +695,7 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </ol>
 </section>
 <section id="more-practice">
-<h2>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.11. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Pick a component that is in the more detailed von Neumann (other than the ALU) and contribute an explanation of what it is to your group repo. Coordinate with your team so that each contribution is a different component by creating an issue stating what you will work on before contributing. Link to your PR in the group repo in your badge PR. All contributions should include a description of the component- what it does and how it is built- and it’s predecessors.  All must include sources as markdown links.</p></li>
 <li><p>review a classmate’s PR providing feedback and either approving or requesting changes</p></li>
@@ -706,10 +710,10 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </div>
 </section>
 <section id="experience-report-evidence">
-<h2>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.12. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="questions-after-todays-class">
-<h2>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">22.13. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -744,6 +748,24 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-11-21.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">21. </span>How does a computer represent non integer quantities?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2023-11-30.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">23. </span>How do different types of storage work together?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -762,44 +784,44 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-start-with-a-dictionary">Let’s start with a dictionary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">Computers as people</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">Computers as Machines</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">How much do we talk about computers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-start-with-a-dictionary">22.1. Let’s start with a dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">22.1.1. Computers as people</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">22.1.2. Computers as Machines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">22.1.3. How much do we talk about computers?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">Mechanical Calculators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">How did this change over time?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">Model K Adder (1937)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">Intel 4004 (1971)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">So how do these thigns actually work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">22.2. Mechanical Calculators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">22.3. How did this change over time?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">22.3.1. Model K Adder (1937)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">22.3.2. Intel 4004 (1971)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">22.3.3. So how do these thigns actually work</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">Early Computers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">von Neumann Architecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">Apollo Guidance Computer (AGC)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">Storage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">Questions After Class</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-stray-away-from-simplicity-of-early-computers">Why did we stray away from simplicity of early computers?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-if-we-are-in-a-plateau-now-or-if-it-is-possible-to-go-through-another-massive-leap-in-tech-soon">My question is if we are in a plateau now or if it is possible to go through another massive leap in tech soon?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">What are the PC, MAR, MDR, etc. and what do they do</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">how does a motherboard work with all of these</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-learn-more-about-the-basics-of-computers">How can I learn more about the basics of Computers?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-examples-of-von-neumann-architectures">What are some examples of von Neumann Architectures?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-gigahertz-a-measure-of-electricity-or-computing-speed">Is Gigahertz a measure of electricity or computing speed?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-what-point-were-most-if-not-all-human-computers-phased-out">At what point were most, if not all, human computers phased out?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-we-tried-to-add-a-gpu-to-von-neumanns-architecture-would-it-just-be-its-own-thing-or-there-would-be-a-way-to-fit-it-in-the-diagram">If we tried to add a GPU to Von Neumann’s architecture, would it just be its own thing or there would be a way to fit it in the diagram?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-types-of-architecture-were-there">What other types of architecture were there?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">How do Quantum computer logic gates differ from what we use now exactly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">22.4. Early Computers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">22.5. von Neumann Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">22.6. Apollo Guidance Computer (AGC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">22.7. Storage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">22.8. Questions After Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-did-we-stray-away-from-simplicity-of-early-computers">22.8.1. Why did we stray away from simplicity of early computers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-question-is-if-we-are-in-a-plateau-now-or-if-it-is-possible-to-go-through-another-massive-leap-in-tech-soon">22.8.2. My question is if we are in a plateau now or if it is possible to go through another massive leap in tech soon?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">22.8.3. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">22.8.4. how does a motherboard work with all of these</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-learn-more-about-the-basics-of-computers">22.8.5. How can I learn more about the basics of Computers?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-examples-of-von-neumann-architectures">22.8.6. What are some examples of von Neumann Architectures?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-gigahertz-a-measure-of-electricity-or-computing-speed">22.8.7. Is Gigahertz a measure of electricity or computing speed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-what-point-were-most-if-not-all-human-computers-phased-out">22.8.8. At what point were most, if not all, human computers phased out?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-we-tried-to-add-a-gpu-to-von-neumanns-architecture-would-it-just-be-its-own-thing-or-there-would-be-a-way-to-fit-it-in-the-diagram">22.8.9. If we tried to add a GPU to Von Neumann’s architecture, would it just be its own thing or there would be a way to fit it in the diagram?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-other-types-of-architecture-were-there">22.8.10. What other types of architecture were there?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">22.8.11. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">22.8.12. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">22.8.13. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">22.9. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">22.10. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">22.11. More Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">22.12. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">22.13. Questions After Today’s Class</a></li>
 </ul>
   </nav></div>
 
