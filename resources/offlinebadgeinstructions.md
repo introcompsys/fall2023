@@ -28,6 +28,8 @@ badgeissue=$(gh issue list --label review -L 1 --json number | jq -r '.[0].numbe
 Here we are getting the issue list, sorting by review, getting the most recent review issue, and getting the issue number with json.
 Then we're going to pipe a jq -r '.[0].number' command to get the raw output of the gh command and we get the number of the issue for our variable.
 
+*Note*: If you want to change the badge type you need to replace review with practice in the label part of the badgeissue command.
+
 
 Next we're going to make a variable called badgeinstructions and assign the gh issue view command to it:
 ```{toggle}
@@ -43,3 +45,11 @@ Now we're gonna echo the badgeinstructions into the output file as well:
 ```{toggle}
 echo "$badgeinstructions" >> $outputfile
 ```
+
+Once we do this we should be all set to run the script:
+
+```{toggle}
+bash badgeinstructions.sh
+```
+
+Now we are all set!
