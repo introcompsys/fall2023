@@ -1,2 +1,5 @@
 # Testimonials from Fall 2023 students
-
+As you start this class next semester, I would highly recommend attending as many clasees as you can.  Attending a lot of classes can reduce the amount of work nedded to complete other badges and also provide
+knowledge about how to complete certain badges,  speaking about badges, I believe it is best to have a clear goal in mind once you start this class.  Having a goal to reach for the overall class can help you
+in making plans and a schedule to work on the badges that will help you achieve that goal.  Once that is established, I would recommend starting each badge assigned as soo as possible.  That way, you won't have to worry about falling behind and creating more work for yourself near the end of the semester.  Also, make sure to ask for help if you really need it.  The professors and TA's are there to help you achieve the 
+grade you want in the class.  If you follow these step, I can almost assure you will achieve the grade you set for yourself for this class.  
