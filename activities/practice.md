@@ -97,3 +97,80 @@ Activities:
 Activities:
 ```{include} ../_practice/2023-10-19.md
 ```
+## 2023-10-24
+
+[related notes](../notes/2023-10-24)
+
+Activities:
+```{include} ../_practice/2023-10-24.md
+```
+## 2023-10-31
+
+[related notes](../notes/2023-10-31)
+
+Activities:
+```{include} ../_practice/2023-10-31.md
+```
+## 2023-11-02
+
+[related notes](../notes/2023-11-02)
+
+Activities:
+```{include} ../_practice/2023-11-02.md
+```
+## 2023-11-07
+
+[related notes](../notes/2023-11-07)
+
+Activities:
+```{include} ../_practice/2023-11-07.md
+```
+## 2023-11-14
+
+[related notes](../notes/2023-11-14)
+
+Activities:
+```{include} ../_practice/2023-11-14.md
+```
+## 2023-11-16
+
+[related notes](../notes/2023-11-16)
+
+Activities:
+```{include} ../_practice/2023-11-16.md
+```
+## 2023-11-21
+
+[related notes](../notes/2023-11-21)
+
+Activities:
+```{include} ../_practice/2023-11-21.md
+```
+## 2023-11-28
+
+[related notes](../notes/2023-11-28)
+
+Activities:
+```{include} ../_practice/2023-11-28.md
+```
+## 2023-11-30
+
+[related notes](../notes/2023-11-30)
+
+Activities:
+```{include} ../_practice/2023-11-30.md
+```
+## 2023-12-05
+
+[related notes](../notes/2023-12-05)
+
+Activities:
+```{include} ../_practice/2023-12-05.md
+```
+## 2023-12-07
+
+[related notes](../notes/2023-12-07)
+
+Activities:
+```{include} ../_practice/2023-12-07.md
+```
