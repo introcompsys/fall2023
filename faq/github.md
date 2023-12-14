@@ -199,3 +199,20 @@ If you have trouble, create an issue and tag `@@rhodyprog4ds/fall20instructors` 
 ````
 Doing each new assignment in its own branch is best practice. In a typical software development flow once the codebase is stable a new branch would be created for each new feature or patch. This analogy should help you build intuition for this GitHub flow and using branches.  Also, pull requests are the best way for us to give you feedback. Also, if you create a branch when you do not need it, you can easily merge them after you are done, but it is hard to isolate things onto a branch if it's on main already.
 ````
+
+## Why did my workflow not run correctly? 
+```{toggle}
+If you find that changes you made to a workflow are not taking effect, or you run a workflow and it seems to not work, you may not be running the workflow correctly.
+
+To correctly execute an action in GitHub you should:
+
+1. Make sure you are in the actions tab in your repository
+2. On the left side of the screen the specific workflows should be available to select. 
+3. Select the desired workflow.
+4. At the top of the workflow runs there should be an option to run the workflow.
+5. Select Run Workflow to run the most recent and up to date workflow.
+
+This should help correct the workflow if it was causing issues.
+
+**note that clicking "re-run" on a previous run does *not* work**
+```

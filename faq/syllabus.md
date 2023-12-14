@@ -65,4 +65,3 @@ excerpts or screenshots embedded in it.
 
 They should be markdown files in your KWL repo.  I recommend myst markdown.
 ```
-
