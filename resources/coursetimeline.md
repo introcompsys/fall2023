@@ -2,7 +2,7 @@
 
 For an easy visual of how the course is going to go over the next few months and what it will cover you can use this timeline to keep track of what part of the semester we're at.
 
-```{mermaid}
+```mermaid
 timeline
     title CSC 392 Course Timeline
         section Week 1
