@@ -62,20 +62,9 @@ Truth Table:
 
 A great way to understand and familiarize yourself with logic operators is to write functions for each logic gate in a program that take input A and B as parameters and return the output.
 
-Here is an example of an AND gate program in python:
+#### Challenge
 
-```{toggle}
-
-def andgate(inputA, inputB) -> list:
-    output = []
-    for i in range(0,4):
-        if(inputA[i] == 1 && inputB[i] == 1):
-            output[i] == 1
-        elif(inputA[i] != 1):
-            output[i] == 0
-    return output
-
-```
+In your Inclass repo, create a program that contains each logic gate as a function and post your experience to the [discussions page](https://github.com/introcompsys/discussion-fa23-community/discussions).
 
 ## External resources
 
